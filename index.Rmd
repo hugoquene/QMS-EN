@@ -1,0 +1,86 @@
+--- 
+title: "Quantitative Methods and Statistics"
+author:
+  name: Hugo Quené \& Huub van den Bergh
+  affiliation: Universiteit Utrecht
+  email: h.quene@uu.nl
+date: "Version compiled `r format(Sys.time(), '%d %b %Y')`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib, hhmhto.bib, pandoc.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: rstudio/KMS-NL
+description: "Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands."
+---
+
+# Preface {-}
+
+TO BE TRANSLATED 
+
+Data spelen een steeds belangrijker rol, ook in de geesteswetenschappen. 
+De beschikbaarheid van digitale gegevens  (o.a. tekst, spraak, video, en gedragsregistraties) leidt tot nieuwe onderzoeksvragen, die vooral met kwantitatieve methoden beantwoord worden. 
+Dit boek biedt onderzoekers en studenten een overzicht en inleiding van de belangrijkste kwantitatieve methoden en statistische technieken in de geesteswetenschappen. Het boek geeft de lezer een stevig methodologisch fundament voor kwantitatief onderzoek, en biedt een inleiding in de meest gebruikte statistische technieken om gegevens te beschrijven en om hypothesen te toetsen. Daarmee is de lezer ook in staat om kwantitatief onderzoek kritisch te beoordelen.
+
+Dit tekstboek wordt gebruikt als leesstof bij de cursus *Methoden en Statistiek 1* aan de Universiteit Utrecht. Het boek is tevens bruikbaar voor zelfstudie op inleidend niveau, voor iedereen die meer wil weten over kwantitatieve methoden en statistiek. 
+
+De hoofdtekst is gevrijwaard van wiskundige afleidingen en formules, die voor geesteswetenschappers immers weinig bruikbaar zijn. De uitleg is vooral conceptueel, en rijk aan voorbeelden van geesteswetenschappelijk onderzoek. Waar nodig worden formules aangeboden in een aparte paragraaf. 
+
+Dit boek bevat ook aanwijzingen over hoe de besproken statistische analyses en visualisaties uitgevoerd kunnen worden in twee veelgebruikte programma's, nl. SPSS (versie 22 en later) en R (versie 3.0 en later). Ook deze aanwijzingen staan los van de hoofdtekst, in afzonderlijke paragrafen. 
+
+Graag willen we onze mede-docenten danken voor de vele discussies en voorbeelden die op enige wijze verwerkt zijn in dit tekstboek. Onze studenten danken we voor hun nieuwsgierigheid en nauwkeurigheid die geleid heeft tot deze versie van dit tekstboek.  
+
+Ook betonen wij grote dank aan 
+Gerrit Bloothooft, 
+Margot van den Berg, 
+Willemijn Heeren, 
+Caspar van Lissa,
+Els Rose, 
+Tobias Quené, 
+Kirsten Schutter
+en Marijn Struiksma, 
+voor hun adviezen, data, en/of commentaar bij eerdere versies.
+
+Utrecht, October 2020
+
+Hugo Quené, <https://www.hugoquene.nl>
+
+Huub van den Bergh
+
+---
+
+## Notation {-}
+
+Following international usage we use the point as decimal symbol; hence we write $\frac{3}{2}=1.5$. Note that the decimal symbol may vary between computers and between software packages on the same computer. Check which decimal symbol is used by (each software package on) your computer. 
+
+## License {-}
+
+This document is licensed under the _GNU GPL 3_ license (for details see 
+https://www.gnu.org/licenses/gpl-3.0.en.html). 
+
+## Citation {-}
+
+Please cite this work as follows (in APA style):
+
+Quené, H. \& Van den Bergh, H. (2020). *Quantitative Methods and Statistics*. 
+Retrieved 8 Oct 2020 from https://hugoquene.github.io/QMS-EN/ .
+
+## Technical details {-}
+
+The original Dutch version of this text has been written in LaTeX, and was then converted to Rmarkdown, using `pandoc` [@pandoc] and the `bookdown` [@R-bookdown] in [Rstudio](https://www.rstudio.com). The Dutch version is available at https://hugoquene.github.io/KMS-NL/ . \
+The English translation is based on the Dutch LaTeX version (for Part I) and Rmarkdown version (for Parts II and III). \
+Other versions of this textbook (EPUB, PDF, HTML), the source code (in Rmarkdown) of the text including examples, accompanying datasets, and figures as separate files, are all available at  https://github.com/hugoquene/QMS-EN/ . 
+
+## Over de auteurs {-}
+
+Beide auteurs zijn verbonden aan de Faculteit Geesteswetenschappen van de Universiteit Utrecht. HQ is hoogleraar Kwantitatieve Methoden van Empirisch Onderzoek in de Geesteswetenschappen, en geeft daarnaast leiding aan het Centre for Digital Humanities. HvdB is hoogleraar Didactiek en Toetsing van het Taalvaardigheidsonderwijs, en is daarnaast vaksectievoorzitter Nederlands bij het College voor Toetsen en Examens (CvTE).
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+require(lattice)
+require(nnet)
+knitr::write_bib( c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```

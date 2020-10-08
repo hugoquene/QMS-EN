@@ -17,21 +17,18 @@ description: "Textbook on Quantitative Methods and Statistics, used a.o. in unde
 
 # Preface {-}
 
-TO BE TRANSLATED 
+Data are becoming ever more important, in all parts of society, including in the humanities in academia. The availability of large amounts of digital data (such as text, speech, video, behavioural measurements) raises new research questions, which are typically and often investigated using quantitative methods. 
+Aimed at humanities researchers and students, this book offers an overview of and introduction into the most important quantitative methods and statistical techniques used in the humanities. The book provides a solid methodological foundation for quantitative research, and it introduces the most commonly used statistical techniques to describe data and to test hypotheses. This will also enable the reader to critically evaluate such quantitative research. 
 
-Data spelen een steeds belangrijker rol, ook in de geesteswetenschappen. 
-De beschikbaarheid van digitale gegevens  (o.a. tekst, spraak, video, en gedragsregistraties) leidt tot nieuwe onderzoeksvragen, die vooral met kwantitatieve methoden beantwoord worden. 
-Dit boek biedt onderzoekers en studenten een overzicht en inleiding van de belangrijkste kwantitatieve methoden en statistische technieken in de geesteswetenschappen. Het boek geeft de lezer een stevig methodologisch fundament voor kwantitatief onderzoek, en biedt een inleiding in de meest gebruikte statistische technieken om gegevens te beschrijven en om hypothesen te toetsen. Daarmee is de lezer ook in staat om kwantitatief onderzoek kritisch te beoordelen.
+This textbook is being used in the course on *Methods and Statistics 1* at Utrecht University (Linguistics program). The book is also highly suitable for self-study at a basic level, for everybody who wishes to learn more about quantitative methods and statistics. 
 
-Dit tekstboek wordt gebruikt als leesstof bij de cursus *Methoden en Statistiek 1* aan de Universiteit Utrecht. Het boek is tevens bruikbaar voor zelfstudie op inleidend niveau, voor iedereen die meer wil weten over kwantitatieve methoden en statistiek. 
+The main text has been kept free of mathematical derivations and formulas, which are typically not very helpful for humanities scholars and students. Our explanation is rather conceptual, and rich in examples. Where necessary we present derivations and formulas in separate sections. 
 
-De hoofdtekst is gevrijwaard van wiskundige afleidingen en formules, die voor geesteswetenschappers immers weinig bruikbaar zijn. De uitleg is vooral conceptueel, en rijk aan voorbeelden van geesteswetenschappelijk onderzoek. Waar nodig worden formules aangeboden in een aparte paragraaf. 
+This book also contains instructions on how to "do" the statistical analyses and visualisations, both in SPSS (version 22 or later) and in R (version 3.0 or later). These instructions too are in separate sections. 
 
-Dit boek bevat ook aanwijzingen over hoe de besproken statistische analyses en visualisaties uitgevoerd kunnen worden in twee veelgebruikte programma's, nl. SPSS (versie 22 en later) en R (versie 3.0 en later). Ook deze aanwijzingen staan los van de hoofdtekst, in afzonderlijke paragrafen. 
+We would like to thank our co-teachers in various courses for the many discussions and examples that have been used in any shape or form in this textbook. We thank our students for their curiosity and for their sharp eyes in spotting errors and inconsistencies in previous versions. 
 
-Graag willen we onze mede-docenten danken voor de vele discussies en voorbeelden die op enige wijze verwerkt zijn in dit tekstboek. Onze studenten danken we voor hun nieuwsgierigheid en nauwkeurigheid die geleid heeft tot deze versie van dit tekstboek.  
-
-Ook betonen wij grote dank aan 
+We are also thankful to 
 Gerrit Bloothooft, 
 Margot van den Berg, 
 Willemijn Heeren, 
@@ -39,16 +36,16 @@ Caspar van Lissa,
 Els Rose, 
 Tobias Quené, 
 Kirsten Schutter
-en Marijn Struiksma, 
-voor hun adviezen, data, en/of commentaar bij eerdere versies.
+and Marijn Struiksma, 
+for their advice, data, comments and suggestions. 
 
-THANK YOU TRANSLATORS: ALEXEI, JOANNA.
+We thank Aleksei Nazarov and Joanna Wall for translating this book from Dutch to English. 
 
 Utrecht, October 2020
 
 Hugo Quené, <https://www.hugoquene.nl>
 
-Huub van den Bergh
+Huub van den Bergh, <https://www.uu.nl/staff/HHvandenBergh>
 
 ---
 

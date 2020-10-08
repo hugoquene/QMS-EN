@@ -1,4 +1,5 @@
 book_filename: "QMS-EN"
-rmd_files: ["index.Rmd"]
+rmd_files: ["index.Rmd",
+            "references.Rmd"]
 output_dir: "docs"
 delete_merged_file: true

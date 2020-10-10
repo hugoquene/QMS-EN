@@ -1,409 +1,108 @@
-# (PART\*) Deel I: Methodologie {-}
+# (PART\*) Part I: Methodology {-}
 
-# Inleiding {#ch:inleiding}
+# Introduction {#ch:introduction}
 
-In dit tekstboek worden de grondbeginselen, methoden en technieken van
-empirisch wetenschappelijk onderzoek besproken, zowel in algemene zin
-als toegespitst op het brede domein van taal en communicatie. We zullen ons bezighouden met vragen als: Wat is een goede onderzoeksvraag? Welke methode is de beste om de onderzoeksvraag te beantwoorden? Hoe kunnen onderzoekers zinnige en valide conclusies trekken uit (statistische analyses van) hun gegevens? In dit tekstboek beperken we ons tot de belangrijkste grondbeginselen, en tot de belangrijkste methoden en technieken. In dit eerste hoofdstuk zullen we een overzicht geven van verschillende typen en vormen van wetenschappelijk onderzoek. In het vervolg van dit tekstboek geven we de meeste aandacht aan methoden van wetenschappelijk onderzoek waarbij empirische observaties uitgedrukt worden in de vorm van getallen (kwantitatief), die geanalyseerd worden met behulp van statistische technieken.
+In this textbook, we will discuss the fundamental concepts of and methods and analytic techniques for empirical scientific inquiry, both in general and as applied to the broad domain of language and communication. We will look at questions such as: What is a good research question? Which methodology is best for answering a given research question? How can researchers draw meaningful and valid conclusions from (statistical analyses of) their data? In this textbook, we will restrict ourselves to the most important fundamental concepts, and to the most important research methodologies and analytical techniques. In this first chapter, we will provide an overview of various types and forms of scientific research. In the following chapters, we will focus most of our attention on scientific research methodologies in which empirical observations are expressed in terms of numbers (quantitative), which may be analysed using statistical techniques.
 
-## Wetenschappelijk onderzoek {#sec:wetenschappelijk-onderzoek}
+## Scientific research {#sec:scientific-research}
 
-Om te beginnen moeten we een vraag stellen die terugslaat op de
-allereerste zin hierboven: wat is eigenlijk wetenschappelijk onderzoek?
-Wat is het verschil tussen wetenschappelijk en niet-wetenschappelijk
-onderzoek (bijv. door onderzoeksjournalisten)? Onderzoek dat een
-wetenschapper uitvoert, hoeft nog geen wetenschappelijk onderzoek te
-zijn. Evenmin is journalistiek onderzoek per definitie
-onwetenschappelijk omdat het door een journalist wordt uitgevoerd. In
-dit tekstboek hanteren we de volgende definitie [@KL00, p.14]:
+To begin, we have to ask a question that refers back to the very first sentence above: what exactly is scientific research? What is the difference between scientific and non-scientific research (e.g., by investigative journalists)? Research conducted by a scholar does not necessarily have to be scientific research. Nor is research by journalists non-scientific by definition just because it is conducted by a journalist. In this textbook, we will follow this definition [@KL00, p.14]:
 
 > "Scientific
 research is systematic, controlled, empirical, amoral, public, and
 critical investigation of natural phenomena. It is guided by theory and hypotheses about the presumed relations among such phenomena." 
 
-Wetenschappelijk onderzoek is systematisch en gecontroleerd.
-Wetenschappelijk onderzoek is zodanig ontworpen dat we geloof kunnen
-hechten aan de conclusies, omdat die conclusies goed onderbouwd zijn.
-Het onderzoek kan door anderen herhaald worden, met (hopelijk) dezelfde
-resultaten. Deze eis van repliceerbaarheid maakt ook dat
-wetenschappelijk onderzoek zeer nauwgezet wordt ontworpen en uitgevoerd
-(zie Hoofdstukken \@ref(ch:integriteit) en \@ref(ch:ontwerp)). De sterkste vorm van controle is die van een
-wetenschappelijk experiment; we besteden daarom in dit tekstboek veel
-aandacht aan experimenteel onderzoek (§\@ref(sec:experimenteel-onderzoek)). Mogelijke alternatieve
-verklaringen voor het onderzochte verschijnsel worden één voor één
-onderzocht en zo mogelijk uitgesloten, zodat tenslotte slechts één
-verklaring overblijft [@KL00]. Die verklaring vormt dan onze
-wetenschappelijk onderbouwde conclusie of theorie over het onderzochte
-verschijnsel.
+Scientific research is systematic and controlled. Scientific research is designed such that its conclusions may be believed, because these conclusions are well-motivated. A research study can be repeated by others, which will (hopefully) lead to the same results. This demand that research be replicable also means that scientific research is designed and conducted in highly controlled ways (see Chapters \@ref(ch:integriteit) and \@ref(ch:ontwerp)). 
+The strongest form of control is found in a scientific experiment: we will therefore devote considerable attention to experimental research (§\@ref(sec:experimenteel-onderzoek)). Any possible alternative explanations for the phenomenon studied are looked into one by one and excluded if possible, so that, in the end, we are left with one single explanation [@KL00]. This explanation, then, forms our scientifically motivated conclusion on or theory of the phenomenon studied.
 
-Ook wordt in de definitie gesteld dat wetenschappelijk onderzoek
-*empirisch* van aard is. De conclusies die de onderzoeker trekt moeten
-uiteindelijk gebaseerd zijn op (systematische en gecontroleerde)
-waarnemingen of observaties van een verschijnsel in de werkelijkheid --- bijvoorbeeld op de waargenomen inhoud van een tekst, of op het
-waargenomen gedrag van een proefpersoon. Als die waarneming ontbreekt,
-dan kunnen de eventuele conclusies niet logisch verbonden worden met de werkelijkheid, waardoor ze geen wetenschappelijke waarde hebben.
-Vertrouwelijke gegevens uit een onbekende bron, of inzichten verkregen
-in een droom of in een mystieke beleving, zijn niet empirisch
-onderbouwd, en kunnen dus niet de basis vormen van een wetenschappelijke theorie.
+The definition above also states that scientific research is empirical. The conclusion a research draws about a phenomenon must ultimately be based on (systematic and controlled) observations of that phenomenon in reality – for example, on the observed content of a text or the behaviour observed in a test subject. If such observation is absent, then any conclusion drawn from such research cannot be logically connected to reality, which means that it has no scientific value. Confidential data from an unknown source or insights gained from a dream or in a mystical experience are not empirically motivated, and, hence, may not form the basis of a scientific theory.
 
-### Theorie {#sec:theorie}
+### Theory {#sec:theory}
 
-Het doel van wetenschappelijk
-onderzoek is te komen tot een theorie over een deel van de
-werkelijkheid. Die theorie is te zien als een coherente en consistente
-verzameling van "justified true beliefs" [@Mort03]. In deze
-overtuigingen, en in de theorie, wordt geabstraheerd van de complexe
-werkelijkheid van de natuurlijke verschijnselen, naar een abstract
-mentaal *construct*, dat uit zijn aard niet rechtstreeks waarneembaar
-is. Voorbeelden van dergelijke constructen zijn: leesvaardigheid,
-intelligentie, activatie-niveau, verstaanbaarheid, omvang van iemands
-actieve woordenschat, schoenmaat, woon-werk-afstand, introvertheid, etc.
+The goal of all scientific research is to arrive at a theory of a part of reality. This theory can be seen as a coherent and consistent collection of "justified true beliefs" [@Mort03]. These beliefs as well as the theory they form abstract away from the complex reality of natural phenomena to an abstract mental *construct*, which in its very nature is not directly observable. Examples of similar constructs include: reading ability, intelligence, activation level, intelligibility, active vocabulary size, shoe size, length of commute, introversion, etc.
 
-Een onderzoeker definieert in een theorie niet alleen verschillende
-constructen, maar ook specificeert hij de *verbanden* of relaties tussen
-deze constructen. Pas wanneer zowel de constructen gedefinieerd zijn als
-de relaties tussen de constructen gespecificeerd zijn, kan een
-onderzoeker komen tot een systematische verklaring van het onderzochte
-verschijnsel. Deze verklaring of theorie kan weer de basis zijn van een
-*voorspelling* over het onderzochte verschijnsel: het aantal gesproken
-talen op de wereld zal verminderen in de 21e eeuw; teksten zonder
-voegwoorden zullen moeilijker te begrijpen zijn dan teksten met
-voegwoorden; kinderen die tweetalig opgroeien zullen niet slechter
-presteren op school dan eentalige kinderen.
+When building a theory, a researcher not only defines various constructs, but also specifies the *relationships* between these constructs. It is only when the constructs have been defined and the relationships between these constructs have been specified that a researcher can arrive at a systematic explanation of the phenomenon studied. This explanation or theory can, in turn, form the basis of a *prediction* about the phenomenon studied: the number of spoken languages will decrease in the 21st century; texts without overt conjunctions will be more difficult to understand than texts with overt conjunctions; children with a bilingual upbringing will perform no worse at school than monolingual children.
 
-Wetenschappelijk onderzoek is er in vele verschillende typen en vormen,
-die op verschillende manieren ingedeeld kunnen worden. In de volgende sectie \@ref(sec:paradigmata) bespreken we een indeling op basis van
-paradigma, de manier waarop de onderzoeker tegen de werkelijkheid
-aankijkt. Onderzoek kan ook ingedeeld worden op een continuüm van
-'zuiver theoretisch' naar 'toegepast'. Een derde manier om onderzoek in
-te delen is gericht op het type onderzoek, bijvoorbeeld
-instrumentatieonderzoek (§\@ref(sec:instrumentatie-onderzoek)), beschrijvend onderzoek (§\@ref(sec:beschrijvend-onderzoek)),
-en experimenteel onderzoek (§\@ref(sec:experimenteel-onderzoek)). 
+Scientific research comes in many kinds and forms, which may be classified in various ways. In §\@ref(sec:paradigmata), we will discuss a classification based on paradigm: a researcher’s outlook on reality. Research can also be classified according to a continuum between ‘purely theoretical’ to ‘applied’. A third way of classifying research is oriented towards the type of research, for instance, instrument validation (§\@ref(sec:instrument-validation)), descriptive research (§\@ref(sec:beschrijvend-onderzoek)), and experimental research (§\@ref(sec:experimenteel-onderzoek)).
 
-## Paradigmata {#sec:paradigmata}
+## Paradigms {#sec:paradigms}
 
-Eén criterium om typen onderzoek te onderscheiden is op basis van het
-gebruikte paradigma, de manier waarop de onderzoeker tegen de
-werkelijkheid aankijkt. In dit tekstboek besteden we nagenoeg alleen
-aandacht aan het empirisch-analytisch paradigma, omdat dit het meest
-uitgewerkte en meest invloedrijke paradigma is. Heden ten dage kan deze
-benadering opgevat worden als 'de' standaardopvatting, waar andere
-paradigma's zich min of meer tegen afzetten.
+One criterion to distinguish different kinds of research is on the basis of the paradigm used: the researcher’s outlook on reality. In this textbook, we have spent almost all of our attention on the empirical-analytical paradigm, because this paradigm has been written about the most and is the most influential. At present, this approach can be seen as ‘the’ standard approach, against the backdrop of which other paradigms try to distinguish themselves.
 
-Binnen het *empirisch-analytische paradigma* onderscheiden we twee
-varianten: het positivisme en het kritisch-rationalisme. Beide
-stromingen hebben gemeen dat er aangenomen wordt dat er wetmatigheden
-zijn die 'ontdekt' kunnen worden: verschijnselen kunnen beschreven en
-verklaard worden in abstracte termen (constructen). Het verschil tussen
-beide stromingen binnen de empirisch-analytische traditie is gelegen in
-de pretentie van de uitspraken die gedaan worden. Volgens de
-positivisten is het mogelijk om uitspraken te doen vanuit feitelijke
-waarnemingen naar een theorie. Op basis van de observaties kunnen we
-generaliseren naar een algemeen geldende regel, door middel van
-inductie. (De vogels die ik zie, die hoor ik ook fluiten, dus alle
-vogels fluiten.)
+Within the *empirical-analytical* paradigm, we distinguish two variants: positivism and critical rationalism. Both schools of thought share the assumption that there exist lawful generalizations that can be ‘discovered’: phenomena may be described and explained in terms of abstractions (constructs). The difference between the two schools within the empirical-analytical tradition lies in the way generalizations are treated. Positivists claim that it is possible to make statements from factual observations towards a theory. Based on the observations made, we may generalize towards a general principle by means of induction. (All birds I have seen are also perceived by me to be singing, so all birds sing.)
 
-De tweede stroming is het kritisch-rationalisme. De aanhangers van deze
-stroming keren zich tegen bovengenoemde inducties: al hoor ik talloze
-vogels ook fluiten, dan nog kan ik geen zekerheid verkrijgen over de
-veronderstelde algemene regel. Maar we kunnen het wel omkeren, en
-proberen aan te tonen dat de veronderstelde algemene regel of hypothese *niet* juist is. Hoe werkt dat? Op basis van de algemeen geldende regel
-kunnen we voorspellingen afleiden voor specifieke observaties, door
-middel van deductie. (Als alle vogels fluiten, dan moet het zo zijn dat
-alle vogels in mijn steekproef fluiten.) Als niet alle vogels in mijn
-steekproef fluiten, dan is de algemene regel blijkbaar onjuist. Dit
-wordt het falsificatie-principe genoemd; we bespreken dat uitgebreider
-in sectie \@ref(sec:falsificatie).
+The second school is critical rationalism. Those within this school of thought oppose the inductive statements mentioned above: even if I see masses of birds and they all sing, I still cannot say with certainty that the supposed general principle is true. But, say critical rationalists, we can indeed turn this on its head: we may try to show that the supposed general rule or hypothesis is not true. How would this work? From the general principle, we can derive predictions about specific observations by using deduction. (If all birds sing, then it must be true that all birds in my sample do sing.) If it is not the case that all birds in my sample sing, this means the general principle must be false. This is called the falsification principle, which we will discuss in more detail in \@ref(sec:falsificatie).
 
-Ook aan het kritisch-rationalisme kleven echter tenminste twee bezwaren.
-Met het falsificatieprincipe kunnen waarnemingen (empirische feiten,
-observaties, onderzoeksresultaten) gebruikt worden om theoretische
-uitspraken te doen (met betrekking tot hypothesen). Strikt genomen moet
-een veronderstelde algemene regel meteen verworpen worden na één
-geslaagde falsificatie (een van de vogels in mijn steekproef fluit
-niet): als theorie en observatie niet overeenstemmen, dan faalt de
-theorie, volgens de kritisch-rationalisten. Maar om te komen tot een
-observatie moet een onderzoeker vele keuzes maken (bijv.: hoe maak ik
-een goede steekproef, wat is een vogel, hoe bepaal ik of een vogel
-fluit?), die de geldigheid van de observaties onzeker kunnen maken. Er
-kan dus ook iets mis zijn met de waarnemingen zelf (horen), of met de
-operationalisaties van de gebruikte constructen (vogels, fluiten).
+However, critical rationalism, too, has at least two drawbacks. The falsification principle allows us to use observations (empirical facts, research results) to make theoretical statements (regarding specific hypotheses). Strictly speaking, a supposed general principle should be immediately rejected after a single successful instance of falsification (one of the birds in my sample does not sing): if there is a mismatch between theory and observations, then, according to critical rationalists, the theory fails. But to arrive at an observation, a researcher has to make many choices (e.g., how do I draw an appropriate sample, what is a bird, how do I determine whether a bird sings?), which may cast doubt on the validity of the observations. This means that a theory/observation mismatch could also indicate a problem with the observations themselves (hearing), or with the way the constructs in the theory (birds, singing) are operationalized.
 
-Een tweede probleem is dat er in de praktijk eigenlijk zeer weinig
-theorieën zijn die werkelijk iets uitsluiten. Wanneer er discrepanties
-waargenomen worden tussen theorie en observaties, dan wordt de theorie
-bijgeschaafd, zodat de nieuwe observaties toch weer binnen de theorie
-passen. Theorieën worden dan ook zelden volledig verworpen.
+A second drawback is that, in practice, there are very few theories that truly exclude some type of observation. When we observe discrepancies between a theory and observations made, the theory is adjusted such that the new observations still fit within the theory. In this way, theories are very rarely completely rejected.
 
-Een tweede paradigma is de kritische benadering. Het *kritische paradigma*
-onderscheidt zich van andere paradigmata in de nadruk op
-maatschappelijke bepaaldheden; 'de' werkelijkheid bestaat niet, ons
-beeld ervan is een voorlopige, door maatschappelijke oorzaken bepaalde
-werkelijkheid. Inzicht in de maatschappelijke verhoudingen heeft zelf
-dus ook invloed op die werkelijkheid. Onze wetenschapsopvatting zoals
-verwoord in bovengenoemde definities van onderzoek en theorie wordt in
-het kritische paradigma dan ook afgewezen. Kritische onderzoekers menen
-dat onderzoeksprocessen niet los gezien kunnen worden van de
-maatschappelijke context waarin het onderzoek is verricht. Deze laatste
-visie wordt overigens overgenomen door steeds meer onderzoekers, ook
-door hen die andere paradigmata aanhangen.
+One alternative paradigm is the critical approach. The *critical paradigm* is distinguished from other paradigms by its emphasis on the role of society; there is no one true reality: our image of reality is not a final one, and it is determined by social factors. Thus, insight into relationships within society, by itself, influences this reality. This means that our concept of science, as formulated in the definitions of research and theory given above, is rejected in the critical paradigm. Critical researchers claim that research processes cannot be seen as separate from the social context in which research is conducted. However, we must add that this latter viewpoint has lately been taken over by more and more researchers, including those that follow other paradigms.
 
-## Instrumentatie-onderzoek {#sec:instrumentatie-onderzoek}
+## Instrument validation {#sec:instrument-validation}
 
-Onderzoek is, zoals gezegd, een gesystematiseerde en gecontroleerde
-wijze om empirische gegevens te verzamelen en te interpreteren.
-Onderzoekers streven naar inzicht in natuurlijke verschijnselen, en in
-de wijze waarop (de constructen van) die verschijnselen met elkaar
-samenhangen. Een voorwaarde hiervoor is dat de onderzoeker deze
-verschijnselen daadwerkelijk kan meten, d.i. uitdrukken in een
-observatie (bij voorkeur in de vorm van een getal).
-Instrumentatieonderzoek is voornamelijk gericht op de constructie van
-instrumenten of methoden om verschijnselen, gedrag, vaardigheden,
-attitudes, etc. meetbaar te maken. De ontwikkeling van goede
-meetinstrumenten is bepaald geen sinecure: het is ambachtelijk handwerk,
-waarbij de constructeur vele valkuilen moet zien te vermijden. Het
-meetbaar maken van verschijnselen, van gedrag of van constructen noemen
-we de *operationalisatie*. Een concrete leestoets is bijvoorbeeld op te
-vatten als een operationalisatie van het abstracte construct
-'leesvaardigheid'.
+As stated above, research is a systematized and controlled way of collecting and interpreting empirical data. Researchers strive for insight into natural phenomena and into the way in which (constructs corresponding to) these phenomena are related to one another. One requirement for this is that the researcher be able to actually measure said phenomena, i.e., to express them in terms of an observation (preferable, in the form of a number). Instrument validation research is predominantly concerned with constructing instruments or methods to make phenomena, behaviour, ability, attitudes, etc. measurable. The development of good instruments for measurement is by no means an easy task: they truly have to be crafted by hand, and there are many pitfalls that have to be avoided. The process of making phenomena, behaviour, or constructs measurable is called *operationalization*. For instance, a specific reading test can be seen as an operationalization of the abstract construct of 'reading ability'.
 
-We kunnen een nuttig onderscheid maken tussen het abstracte theoretische
-construct en het gemeten construct, ofwel een onderscheid tussen: het
-begrip-zoals-bedoeld en het begrip-zoals-bepaald. Het is uiteraard de
-bedoeling dat het begrip-zoals-bepaald (de toets, de vragenlijst, de
-observatie) het begrip-zoals-bedoeld (het theoretische construct) zo
-goed mogelijk benadert. Indien het theoretische construct goed wordt
-benaderd, dan spreken we van een adequate of valide meting.
+It is useful to make a distinction between the abstract theoretical construct and the construct as it is used for measurements, which means: a distinction between the concept-as-intended and the concept-as-defined. Naturally, the desired situation is for the concept-as-defined (the test or questionnaire or observation) to maximally approach the concept-as-intended (the theoretical construct). If the theoretical construct is given a good approximation, we speak of an adequate or valid measurement.
 
-Bij operationalisatie van een begrip-zoals-bedoeld moeten talloze keuzen
-ge-maakt worden. Zo moet het CITO (Centraal instituut voor
-toetsontwikkeling) elk jaar tekstbegripstoetsen construeren om de
-leesvaardigheid van eindexamenkandidaten te meten. Daarvoor moet
-allereerst een tekst gekozen of geredigeerd worden. Deze tekst mag niet
-te moeilijk, maar ook niet te makkelijk zijn voor de doelgroep. Voorts
-mag het onderwerp van de tekst niet al te bekend zijn, omdat anders de
-bij sommige leerlingen aanwezige algemene kennis kan interfereren met de
-meningen en standpunten die in de tekst naar voren gebracht worden.
-Vervolgens moeten de vragen zó ontworpen worden dat de verschillende
-passages in de tekst aan bod komen. Ook moeten de vragen zó samengesteld
-zijn dat het theoretische construct 'leesvaardigheid' adequaat
-geoperationaliseerd wordt. Tot slot moet ook nog rekening gehouden
-worden met de examens uit voorafgaande jaren; het nieuwe examen mag
-immers niet al te veel afwijken van oude examens.
+When a concept-as-intended is operationalized, the amount of choices to be made is innumerable. For instance, the Dutch government institute that develops standardized tests for primary and secondary education, the CITO (Centraal instituut voor toetsontwikkeling, or Central Test Development Institute) must develop new reading comprehension tests each year to measure the reading ability exhibited by students taking the centralized final exams for secondary school students (eindexamens). For this purpose, the first step is to choose and possibly edit a text. This text cannot be too challenging for the target audience, but may also not be too easy. Furthermore, the topic of the text may not be too well-known – otherwise, some students’ general background knowledge may interfere with the opinions and standpoints brought forward in the text. At the next step, questions must be developed in such a way that the various parts of the text are all covered. In addition, the questions must be constructed in such a way that the theoretical concept of ‘reading ability’ is adequately operationalized. Finally, exams administered in previous years must also be taken into consideration, because this year’s exam may not differ too much from previous years’ exams.
 
-Een construct moet dus op de juiste wijze geoperationaliseerd zijn, om
-observaties te verkrijgen die niet alleen valide zijn (een goede
-benadering van het abstracte construct, zie Hoofdstuk \@ref(ch:validiteit)) 
-maar die ook betrouwbaar zijn (ongeveer
-gelijke observaties bij herhaalde meting, zie
-Hoofdstuk \@ref(ch:betrouwbaarheid)). 
-In ieder onderzoek zijn de validiteit
-en de betrouwbaarheid van een meting cruciaal; we besteden dan ook twee hoofdstukken aan deze begrippen.
-Maar in instrumentatieonderzoek zijn
-deze begrippen zelfs essentieel, omdat dit type onderzoek juist beoogt
-om valide en betrouwbare instrumenten te leveren, die een goede
-operationatisatie zijn van het abstracte construct-zoals-bedoeld.
+To sum up, a construct must be correctly operationalized in order to arrive at observations that are not only valid (a good approximation of the abstract construct, see Chapter \@ref(ch:validiteit)) but also reliable (observations must be more or less identical when measurement is repeated, see Chapter \@ref(ch:betrouwbaarheid)). In each research study, the validity and reliability of any instance of measurement are crucial; because of this, we will spend two chapters on just these concepts. However, in instrument validation research, specifically, these concepts are absolutely essential, because this type of research itself is meant to yield valid and reliable instruments that are a good operationalization of the abstract construct-as-intended.
 
-## Beschrijvend onderzoek {#sec:beschrijvend-onderzoek}
+## Descriptive research {#sec:descriptive-research}
 
-Met beschrijvend onderzoek bedoelen we onderzoek dat voornamelijk
-gericht is op de beschrijving van een bepaald natuurlijk verschijnsel in
-de werkelijkheid. De onderzoeker richt zich dus vooral op een
-*beschrijving* van het verschijnsel: het huidige vaardigheidsniveau, het
-verloop van een proces of een discussie, de wijze waarop de lessen
-Nederlands in het voortgezet onderwijs vorm worden gegeven, de politieke
-voorkeur van stemmers vlak voor verkiezingen, de samenhang tussen het
-aantal uren zelfstudie en het eindcijfer dat een student behaalt, etc.
-Kortom, ook de onderwerpen voor beschrijvend onderzoek kunnen zeer
-divers zijn.
+Descriptive research refers to research predominantly geared towards describing a particular natural phenomenon in reality. This means that the researcher mostly aims for a description of the phenomenon: the current level of ability, the way in which a particular process or discussion proceeds, the way in which Dutch language classes in secondary education take shape, voters’ political preferences immediately before an election, the correlation between the number of hours a student spent on individual study and the final mark they received, etc. In short, the potential topics of descriptive research are also be very diverse.
 
 ---
 
-> *Voorbeeld 1.1*: [@DTE13] hebben opnames van conversaties gekozen of gemaakt in 10 talen. Uit die opgenomen conversaties zijn woorden genomen waarmee een luisteraar om
-"open verduidelijking" vraagt: woordjes als *hè* (Nederlands), *huh*
-(Engels), *ã?* (Siwu). Van deze woorden is de klankvorm en het
-toonhoogteverloop vastgesteld, met akoestische metingen en met
-fonetische transcripties door experts. Een conclusie van dit
-beschrijvende onderzoek luidt dat deze tussenvoegsels in de
-verschillende talen veel meer op elkaar lijken (in klankvorm en
-toonhoogteverloop) dan op grond van toeval te verwachten is. 
+> *Example 1.1*: @DTE13 made or chose recordings of conversations in 10 languages. Within these conversations, they took words used by a listener to seek "open clarification": little words like *huh* (English), *hè* (Dutch), *ã?* (Siwu). They determined the sound shape and pitch contour of these words using acoustic measurements and phonetic transcriptions made by experts. One of the conclusions of this descriptive research is that these interjections in the various languages studied are much more alike (in terms of sound shape and pitch contour) than would be expected based on chance.
 
 ---
 
-Dit voorbeeld illustreert dat beschrijvend onderzoek niet ophoudt als de
-gegevens (klankvormen, toonhoogteverloop) beschreven zijn. Vaak zijn
-*verbanden* tussen de verzamelde gegevens ook zeer interessant (zie §\@ref(sec:wetenschappelijk-onderzoek)).
-Zo wordt in opiniepeilingen naar het stemgedrag bij verkiezingen vaak
-een verband gelegd tussen het gepeilde stemgedrag enerzijds, en
-leeftijd, geslacht en opleidingsniveau van de respondent anderzijds. En
-evenzo wordt in onderwijskundig onderzoek een verband gelegd tussen
-aantal uren studietijd enerzijds, en studiesucces van de respondent
-anderzijds. Dit type van beschrijvend onderzoek, waarbij een correlatie
-wordt vastgesteld tussen mogelijke oorzaken en mogelijke gevolgen, wordt
-ook aangeduid als *correlationeel onderzoek*.
+This example illustrates the fact that descriptive research does not stop when the data (sound shapes, pitch contours) have been described. Oftentimes, relationships between the data points gathered are also very interesting (see §\@ref(sec:scientific-research)). For instance, in opinion polls that investigate voting behaviour in elections, a connection is often made between the voting behaviour polled, on the one side, and age, sex, and level of education, on the other side. In the same way, research in education makes a connection between the number of hours spent studying, on the one side, and performance in educational assessment, on the other side. This type of descriptive research, in which a correlation is found between possible causes and possible effects, is otherwise also referred to as *correlational research*.
 
-Het essentiële verschil tussen beschrijvend en experimenteel onderzoek
-is gelegen in de vraag naar oorzaak en gevolg. Op basis van beschrijvend
-onderzoek kan een causaal verband tussen oorzaak en gevolg *niet* goed
-vastgesteld worden. Uit beschrijvend onderzoek zou kunnen blijken dat er
-een samenhang is tussen een bepaald soort voeding en een langere
-levensduur. Is het voedingspatroon dan ook de oorzaak van de langere
-levensduur? Dat hoeft bepaald niet het geval te zijn: het is ook
-mogelijk dat dat soort voeding vooral genuttigd wordt door mensen die
-relatief hoog opgeleid en welvarend zijn, en door deze *andere* factoren
-ook relatief langer in leven zijn[^fn01-1]. Om vast te kunnen stellen of er
-een causaal verband is, moeten we experimenteel onderzoek opzetten en
-uitvoeren.
+The essential difference between descriptive and experimental research lies in the question as to cause and effect. Based on descriptive research, a causal relationship between cause and effect *cannot* be properly established. Descriptive research might show that there is a correlation between a particular type of nutrition and a longer lifespan. Does this mean that this type of nutrition is the cause of a longer lifespan? This is definitely not necessarily the case: it is also possible that this type of food is mainly consumed by people who are relatively highly educated and wealthy, and who live longer because of these other factors[^fn01-1]. In order to determine whether there is a causal relationship, we must set up and conduct experimental research.
 
-## Experimenteel onderzoek {#sec:experimenteel-onderzoek}
+## Experimental research {#sec:experimental-research}
 
-Experimenteel onderzoek wordt gekenmerkt doordat de onderzoeker een
-bepaald aspect van de onderzoeksomstandigheden systematisch varieert
-[@SCC02]. Het effect van deze manipulatie staat dan centraal in het
-onderzoek. Een onderzoeker vermoedt bijvoorbeeld dat een bepaalde nieuwe
-lesmethode zal resulteren in betere prestatie van de leerlingen dan de
-huidige lesmethode. De onderzoeker wil deze hypothese toetsen door
-middel van een experimenteel onderzoek. Hij manipuleert het type
-onderwijs: sommige klassen of groepen krijgen les volgens de nieuwe
-experimentele lesmethode en andere klassen of groepen krijgen les op de
-traditionele wijze. Het effect van de nieuwe lesmethode wordt
-geëvalueerd door de prestaties van de twee soorten schoolklassen te
-vergelijken, na de 'behandeling' met de oude vs. nieuwe lesmethode.
+Experimental research is characterized by the researcher’s systematically manipulating a particular aspect of the circumstances under which a study is conducted [@SCC02]. The effect arising from this manipulation now becomes central in the research study. For instance, a researcher suspects that a particular new method of teaching will result in better student performance compared to the current teaching method. The researcher wants to test this hypothesis using experimental research. She or he manipulates the type of teaching: some groups of students are taught according to the novel, experimental teaching method, and other groups of students are taught according to the traditional method. The novel teaching method’s effect is evaluated by comparing both types of student groups’ performance after they have been ‘treated’ with the old vs. new teaching method.
 
-Experimenteel onderzoek heeft als voordeel dat we de
-onderzoeksresultaten doorgaans mogen interpreteren als het gevolg van de
-experimentele manipulatie. Omdat de onderzoeker het onderzoek
-systematisch controleert en slechts één aspect (i.c. de lesmethode)
-varieert, kunnen eventuele verschillen tussen de prestaties van de twee
-categorieën alleen toegeschreven worden aan het veranderde kenmerk, i.c.
-aan de lesmethode. Dit veranderde kenmerk moet dan logischerwijs wel de
-oorzaak zijn van de geobserveerde verschillen. Experimenteel onderzoek
-is dus gericht op de evaluatie van causale verbanden.
+The advantage of experimental research is that we may usually interpret the research results as the consequence or effect of the experimental manipulation. Because the research systematically controls the study and varies just one aspect of it (in this case, the method of teaching), possible differences between the performance observed in the two categories can only be ascribed to the aspect that has been varied (the method of teaching). Logically speaking, this aspect that was varied is the only thing that could have cause the observed differences. Thus, experimental research is oriented towards evaluating causal relationships.
 
-Deze redenering vereist wel dat proefpersonen (of schoolklassen, in
-bovenstaand voorbeeld) volgens het toeval, aselect (Eng. 'at random'),
-worden toegewezen aan de experimentele condities (i.c. de oude of nieuwe
-lesmethode). Deze aselecte toewijzing (Eng. 'random assignment') is de
-beste methode om eventuele niet-relevante verschillen tussen de
-behandelcondities uit te sluiten. Een dergelijk experiment met aselecte
-toewijzing van proefpersonen aan condities wordt een *gerandomiseerd
-experiment* genoemd (Eng. 'randomized experiment', 'true experiment', ).
-Om bij ons voorbeeld te blijven: als de onderzoeker de oude lesmethode
-zou inzetten bij jongens, en de nieuwe lesmethode bij meisjes, dan is
-een eventueel verschil in prestaties niet meer uitsluitend toe te
-schrijven aan het gemanipuleerde kenmerk (de lesmethode), maar ook aan
-een niet-gemanipuleerd maar wel relevant kenmerk, hier het geslacht van
-de leerlingen. Zo'n mogelijk verstorend kenmerk wordt een *storende
-variabele* (Eng. 'confound') genoemd. In
-Hoofdstuk \@ref(ch:ontwerp) bespreken we hoe we deze storende variabelen
-kunnen neutraliseren, door random toewijzing van proefpersonen (of
-schoolklassen) aan de experimentele condities, in combinatie met andere maatregelen.
+This reasoning does require that test subjects (or groups of students, as in the example above) are assigned to experimental conditions (in our example, the old or the new method of teaching) at random. This random assignment is the best method to exclude any non-relevant differences between the conditions of treatment. Such an experiment with random assignment of test subjects to conditions is called a *randomized experiment* or *true experiment* [@SCC02]. To remain with our example: if the researcher had used the old research method only with boys, and the new research method only with girls, then any difference in performance can no longer just be attributed to the manipulated factor (teaching method), but also to a non-manipulated but definitely relevant factor, in this case, the students’ sex. Such a possible disruptive factor is called a confound. In Chapter \@ref(ch:design), we will discuss how we can neutralize such confounds by random assignment of test subjects (or groups of students) to experimental conditions, combined with other measures.
 
-Er is ook experimenteel onderzoek waarbij een bepaald aspect (zoals
-lesmethode) wel systematisch varieert, maar waarbij de proefpersonen of
-schoolklassen *niet aselect* zijn toegewezen aan de experimentele
-condities; dit wordt *quasi-experimenteel* onderzoek genoemd [@SCC02].
-In het bovenstaande voorbeeld is daarvan sprake als de gebruikte
-lesmethode onderzocht wordt, met gegevens van schoolklassen waarvan niet
-de onderzoeker maar de docent bepaald heeft of de oude of nieuwe
-lesmethode gebruikt wordt. Als de nieuwe lesmethode betere prestaties
-zou opleveren, dan weten we *niet* met zekerheid dat het verschil in
-prestaties toe te schrijven is aan de lesmethode. Ook het enthousiasme
-of de werkstijl van de docent kan een storende variabele zijn geweest in dit quasi-experiment. In dit tekstboek zullen we verschillende
-voorbeelden van quasi-experimenteel onderzoek tegenkomen.
+There also exists experimental research in which a particular aspect (such as teaching method) is indeed systematically varied, but in which test subjects or groups of students are not randomly assigned to the experimental conditions; this is called *quasi-experimental research* [@SCC02]. In the example above, this term would be applicable if teaching method were investigated using data from groups of students for which it was not the researcher, but their teacher who determined whether the old or new teaching method would be used. In addition, the teacher’s enthusiasm or teaching style might be a confound in this quasi-experiment. We will encounter various examples of quasi-experimental research in the remainder of this textbook.
 
-Binnen het type van experimenteel onderzoek kunnen we een verdere
-verdeling aanbrengen, tussen laboratoriumonderzoek en veldonderzoek. In
-beide typen experimenteel onderzoek wordt een aspect van de
-werkelijkheid gemanipuleerd. Het verschil tussen beide typen onderzoek
-is gelegen in de mate waarin de onderzoeker in staat is om allerlei
-storende aspecten van de werkelijkheid onder controle te houden. In
-laboratoriumonderzoek kan de onderzoeker zeer exact bepalen onder welke
-omgevingscondities de observaties worden gedaan, en kan de onderzoeker
-dus ook vele mogelijke storende variabelen onder controle houden (denk
-aan verlichting, temperatuur, omgevingslawaai, etc.). In veldonderzoek
-is dit niet het geval. De onderzoeker is 'in het vrije veld' niet in
-staat om alle (mogelijk relevante) aspecten van de werkelijkheid
-volledig onder controle te houden.
+Within the type of experimental research, we can also make a further division: that between laboratory research and field research. In both types of experimental research, some aspect of reality is manipulated. The difference between both types of research lies in the degree to which the researcher is able to keep under control the various confounds present in reality. In laboratory research, the researcher can very precisely determine under which environmental conditions observations are made, which means that the researcher can keep many possible confounds (such as lighting, temperature, ambient noise, etc.) under control. In field research, this is not the case. When ‘out in the field’, the researcher is not able to keep all (possibly relevant) aspects of reality fully under control.
 
 ---
 
-> *Voorbeeld 1.2*: Margot van den Berg
-onderzocht samen met collega's van de Universiteit van Ghana en de
-Universiteit van Lomé hoe meertalige sprekers hun talen gebruiken als
-zij eigenschappen zoals kleur, grootte en waarde moeten benoemen door
-middel van een zogenaamde *Director-Matcher task* [@BAEYT2017]. In deze
-taak gaf de ene onderzoeksdeelnemer (de directeur) aanwijzingen aan een
-ander (de uitvoerder) om een reeks voorwerpen in een bepaalde volgorde
-neer te zetten. Zo konden in een kort tijdsbestek veel voorkomens van
-eigenschapswoorden worden verzameld ('Zet de gele auto naast de rode
-auto maar boven de kleine slipper'). De gesprekken werden opgenomen,
-uitgeschreven en vervolgens onderzocht op taalkeuze, moment van
-taalwisseling en type grammaticale constructie. Bij dergelijk veldwerk
-kunnen echter allerlei niet-gecontroleerde aspecten in de omgeving van
-invloed zijn op de geluidsopnames, en daarmee op de gegevens: "kakelende kippen, een buurman die z'n motor aan het repareren is en 'm om de  haverklap moet starten terwijl je een gesprek aan het opnemen bent,
-keiharde regen op het aluminium dak van het gebouw waar de interviews
-plaats vinden." (Margot van den Berg, pers.comm.)
+> *Example 1.2:* Margot van den Berg and colleagues from the Universities of Utrecht, Ghana and Lomé investigated how multilingual speakers use their languages when they have to name attributes like colour, size, and value in a so-called Director-Matcher task [@BAEYT2017]. In this task, one research participant (the 'director') gave clues to another participant (the 'matcher') to arrange a set of objects in a particular order. This allowed the researchers to collect many instances of attribute words in a short period of time ("Put the yellow car next to the red car, but above the small sandal"). The interactions were recorded, transcribed, en subsequently investigated for language choice, moment of language switch, and type of grammatical construction. In this type of fieldwork, however, various kinds of non-controlled aspects in the environment may influence the sound recordings and, thus, the data, including "clucking chickens, a neighbour who was repairing his motorbike and had to start it every other second while we were trying to record a conversation, pouring rain on top of the aluminium roof of the building where the interviews took place." (Margot van den Berg, personal communication)	
 
 ---
 
-> *Voorbeeld 1.3*: Bij het luisteren naar gesproken zinnen kunnen we uit de oogbewegingen van een proefpersoon afleiden, hoe die gesproken zinnen worden verwerkt. In een zgn. ‘visual world’-taak krijgen luisteraars een zin te horen (bijv. “Bert zegt dat het konijn is gegroeid”), terwijl ze kijken naar meerdere afbeeldingen op het scherm (meestal 4, bijv. een schelp, pauw, zaag, en wortel). Luisteraars blijken vooral te kijken naar de afbeelding die geassocieerd is aan het woord dat ze op dat moment mentaal verwerken: als ze het woord _konijn_ verwerken, dan kijken ze naar de wortel (exacter gezegd: ze kijken vaker en langer naar de wortel dan naar de andere afbeeldingen). Met een zgn. 'eye tracker' kan worden vastgesteld naar welke positie van het scherm de proefpersoon kijkt (door observatie van de pupillen). De onderzoeker kan zo dus observeren welk woord op welk moment mentaal verwerkt wordt [@KMR12]. Dergelijk onderzoek kan het beste uitgevoerd worden in een laboratorium, met controle over achtergrondgeluiden, verlichting, en positie van de ogen t.o.v. computerscherm.
+> *Example 1.3*: When listening to spoken sentences, we can infer from a test subject’s eye movements how these spoken sentences are processed. In a so-called 'visual world' task, listeners are presented with a spoken sentence (e.g., "Bert says that the rabbit has grown"), while they are looking at multiple images on the screen (usually 4 of them, e.g., a sea shell, a peacock, a saw, and a carrot). It turns out that listeners will predominantly be looking at the image associated with the word they are currently mentally processing: when they are processing *rabbit*, they will look at the carrot.  A so-called 'eye tracker' device allows researchers to determine the position on the screen that a test subject is looking at (through observation of their pupils). In this way, the researcher can therefore observe which word is mentally processed at which time [@KMR12]. Research of this kind is best conducted in a laboratory, where one can control background noise, lighting, and the position of test subjects’ eyes relative to the computer screen.
 
 ---
 
-Laboratoriumonderzoek en veldonderzoek hebben beide voordelen en
-nadelen. Het grote voordeel van laboratoriumonderzoek is natuurlijk de
-mate waarin de onderzoeker allerlei externe zaken onder controle kan
-houden. In een laboratorium zal het experiment niet vaak verstoord
-worden door een startende motor of door een regenbui. Dit voordeel van
-laboratoriumonderzoek is echter ook een belangrijk nadeel, nl. dat het
-onderzoek plaatsvindt in een min of meer kunstmatige omgeving. Het is
-dan nog maar de vraag in hoeverre resultaten die onder kunstmatige
-omstandigheden verkregen zijn, ook zullen gelden in het leven van
-alledag buiten het laboratorium. Dit laatste is dan ook een punt in het
-voordeel van veldonderzoek: het onderzoek wordt verricht onder
-natuurlijke omstandigheden. Het nadeel van veldonderzoek is dan weer dat
-er in het veld kan van alles gebeuren wat de onderzoeksresultaten
-beïnvloedt, maar waar de onderzoeker geen controle over kan houden (zie het bovenstaande 
-voorbeeld). De keuze die een onderzoeker maakt tussen
-beide typen experimenteel onderzoek wordt uiteraard sterk bepaald door
-de vraagstelling van het onderzoek. Sommige vraagstellingen laten zich
-beter in laboratoriumsituaties onderzoeken, terwijl andere beter in
-veldsituaties onderzocht kunnen worden (zoals bovenstaande voorbeelden
-illustreren).
+Both laboratory research and field research have advantages and disadvantages. The great advantage of laboratory research is, of course, the degree to which the researcher can keep all kinds of external matters under control. In a laboratory, the experiment is not likely to be disturbed by a starting engine or a downpour. However, this advantage of laboratory research also forms an important disadvantage, namely: the research takes place in a more or less artificial environment. It is not at all clear to what extent results obtained under artificial circumstances will also be true of everyday life outside the laboratory. Because of this, the latter forms a point to the advantage of field researcher: the research is conducted under circumstances that are natural. However, the disadvantage of field research is that many things can happen in the field that may influence the research results, but remain outside of the researcher’s control (see example 1.2). The choice between both types of experimental research that a researcher has to make is obviously strongly guided by their research question. Some questions are better suited to being investigated in laboratory situations, while others are better suited to being investigated field situations (as is illustrated by the examples above).
 
-## Vooruitblik 
 
-Dit tekstboek bestaat uit drie delen. Deel I (hoofdstukken 1 tot en met 7) van dit tekstboek behandelt
-methoden van onderzoek, en geeft een toelichting bij allerlei termen en
-begrippen die van belang zijn bij het ontwerpen en opzetten van goed
-wetenschappelijk onderzoek.
+## Outline of this textbook 
 
-In deel II (hoofdstukken 8 tot en met 12) van het tekstboek behandelen we de beschrijvende statistiek
-(Eng. 'descriptive statistics') en in deel III (hoofdstukken 13 tot en met 17) behandelen we de
-elementaire technieken uit de toetsende statistiek (Eng. 'inferential
-statistics'). Met deze laatste twee delen streven we drie doelen na. 
+This textbook consists of three parts. Part I (Chapter 1 to 7) covers research methods and explains various terms and concepts that are important in designing and setting up a good scientific research study.
 
-Allereerst willen we dat je in staat bent om artikelen en andere verslagen waarin
-statistische verwerkings- en toetsingstechnieken zijn gebruikt, kritisch
-te beoordelen. 
-Ten tweede willen we dat je dat je de noodzakelijke
-kennis en inzicht hebt in de belangrijkste statistische procedures. 
-Ten derde willen we met deze statistische delen bereiken dat je in staat
-bent om zelfstandig statistische bewerkingen uit te voeren voor je eigen
-onderzoek, bijvoorbeeld voor je stage of eindwerkstuk.
+In part II (Chapters 8 to 12), we will cover descriptive statistics, and in part III (Capters 13 to 17), we will cover the basic methods of inferential statistics. These two parts are designed to work towards three goals. 
 
-Deze drie doelen zijn geordend in volgorde van belangrijkheid. Wij menen
-dat een adequate en kritische interpretatie van statistische resultaten
-en de conclusies die daaraan verbonden kunnen worden van groot belang is
-voor alle studenten. Om die reden besteden we in dit tekstboek dan ook
-relatief veel aandacht (in deel I) aan de 'filosofie' of methodologie achter de besproken statistische technieken en analyses. 
+Firstly, we would like for you to be able to critically evaluate articles and other reports in which statistical methods of processing and testing hypotheses on data have been used. 
+Secondly, we would like for you to have the knowledge and insight necessary for the most important statistical procedures. Thirdly, these parts on statistics are meant to enable you to perform statistical analysis on your own for your own research, for instance, for your internship or final thesis.
 
-In aparte secties geven we
-aan hoe je de besproken statistische analyses zelf kunt uitvoeren in
-SPSS (een populair pakket voor statistische analyses) en in R (een wat
-moeilijker, maar ook krachtiger en veelzijdiger pakket, met stijgende
-populariteit). 
-Voor studenten en medewerkers van de Universiteit Utrecht zijn beide statistische pakketten  geïnstalleerd in `MyWorkSpace`. SPSS is beschikbaar via <https://SurfSpot.nl> voor een sterk gereduceerde prijs. R is vrijelijk beschikbaar via <https://www.R-project.org>. Een korte inleiding in het gebruik van R is te vinden via <https://hugoquene.github.io/emlar2020/>. 
+These three goals are ordered by importance. We believe that an adequate and critical interpretation of statistical results and the conclusions that may be connected to these is of great importance to all students. For this reason, part I of this textbook devotes considerable attention to the 'philosophy' or methodology behind the statistical techniques and analyses we will discuss later. 
+	
+We will also give you instructions on how you can perform these statistical analyses yourself in SPSS (a popular software package for statistical analysis) and in R (a slightly more challenging, but also much more powerful and versatile software package that has been gaining popularity).
+For students and employees at Utrecht University, both packages are pre-installed in `MyWorkSpace`. SPSS is available at <https://SurfSpot.nl> for a small fee. 
+R is freely available at <https://www.R-project.org>. 
+A brief introduction to R can be found at <https://hugoquene.github.io/emlar2020/>. 
 
-[^fn01-1]: Het is zelfs mogelijk dat het onderzochte voedingspatroon de oorzaak is van een relatief *kortere* levensduur, maar dat dit negatieve effect gemaskeerd wordt door de sterkere, positieve effecten van opleidingsniveau en welvaartsniveau op de levensduur.
+
+[^fn01-1]: It is even possible that the nutrition habits under study cause people to live *shorter*, but that this negative effect is masked by the stronger positive effects of education and wealth. 

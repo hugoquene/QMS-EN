@@ -63,13 +63,17 @@ https://www.gnu.org/licenses/gpl-3.0.en.html).
 Please cite this work as follows (in APA style):
 
 Quené, H. \& Van den Bergh, H. (2020). *Quantitative Methods and Statistics*. 
-Retrieved 8 Oct 2020 from https://hugoquene.github.io/QMS-EN/ .
+Retrieved 21 Oct 2020 from https://hugoquene.github.io/QMS-EN/ .
 
 ## Technical details {-}
 
-The original Dutch version of this text was written in LaTeX, and was then converted to Rmarkdown, using `pandoc` [@pandoc] and the `bookdown` [@R-bookdown] in [Rstudio](https://www.rstudio.com). The Dutch version is available at https://hugoquene.github.io/KMS-NL/ . \
-The English translation is based on the Dutch LaTeX version (for Part I) and Rmarkdown version (for Parts II and III). \
-Other versions of this textbook (EPUB, PDF, HTML), the source code (in Rmarkdown) of the text including examples, accompanying datasets, and figures as separate files, are all available at  https://github.com/hugoquene/QMS-EN/ . 
+All materials for this textbook are available at 
+<https://github.com/hugoquene/QMS-EN>: 
+this includes other versions of this textbook (EPUB, PDF, HTML), the source code (Rmarkdown and R) of the text including figures and examples, accompanying datasets used in the text, and figures as separate files.
+
+The original Dutch version of this text was written in LaTeX, and was then converted to Rmarkdown, using `pandoc` [@pandoc] and the `bookdown` [@R-bookdown] in [Rstudio](https://www.rstudio.com). The Dutch version is available at <https://hugoquene.github.io/KMS-NL>.
+The English translation is based on the Dutch LaTeX version (for Part I) and Rmarkdown version (for Parts II and III).
+
 
 ## About the authors {-}
 

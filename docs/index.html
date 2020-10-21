@@ -89,6 +89,22 @@
 <li class="chapter" data-level="1.5" data-path="ch-introduction.html"><a href="ch-introduction.html#sec:experimental-research"><i class="fa fa-check"></i><b>1.5</b> Experimental research</a></li>
 <li class="chapter" data-level="1.6" data-path="ch-introduction.html"><a href="ch-introduction.html#outline-of-this-textbook"><i class="fa fa-check"></i><b>1.6</b> Outline of this textbook</a></li>
 </ul></li>
+<li class="chapter" data-level="2" data-path="ch-research.html"><a href="ch-research.html"><i class="fa fa-check"></i><b>2</b> Hypothesis testing research</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="ch-research.html"><a href="ch-research.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.2" data-path="ch-research.html"><a href="ch-research.html#sec:variables"><i class="fa fa-check"></i><b>2.2</b> Variables</a></li>
+<li class="chapter" data-level="2.3" data-path="ch-research.html"><a href="ch-research.html#sec:independendependentvariables"><i class="fa fa-check"></i><b>2.3</b> Independent and dependent variables</a></li>
+<li class="chapter" data-level="2.4" data-path="ch-research.html"><a href="ch-research.html#sec:falsification"><i class="fa fa-check"></i><b>2.4</b> Falsification and null hypothesis</a></li>
+<li class="chapter" data-level="2.5" data-path="ch-research.html"><a href="ch-research.html#sec:empiricalcycle"><i class="fa fa-check"></i><b>2.5</b> The empirical cycle</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="ch-research.html"><a href="ch-research.html#observation"><i class="fa fa-check"></i><b>2.5.1</b> observation</a></li>
+<li class="chapter" data-level="2.5.2" data-path="ch-research.html"><a href="ch-research.html#induction"><i class="fa fa-check"></i><b>2.5.2</b> induction</a></li>
+<li class="chapter" data-level="2.5.3" data-path="ch-research.html"><a href="ch-research.html#deduction"><i class="fa fa-check"></i><b>2.5.3</b> deduction</a></li>
+<li class="chapter" data-level="2.5.4" data-path="ch-research.html"><a href="ch-research.html#testing"><i class="fa fa-check"></i><b>2.5.4</b> testing</a></li>
+<li class="chapter" data-level="2.5.5" data-path="ch-research.html"><a href="ch-research.html#evaluation"><i class="fa fa-check"></i><b>2.5.5</b> evaluation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="ch-research.html"><a href="ch-research.html#sec:makingchoices"><i class="fa fa-check"></i><b>2.6</b> Making choices</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Created with bookdown</a></li>
@@ -116,7 +132,7 @@
 <address class="author_afil">
 Utrecht University<br><a class="author_email" href="mailto:#"><a href="mailto:h.quene@uu.nl" class="email">h.quene@uu.nl</a></a>
 </address>
-<p class="date"><em>Version compiled 16 Oct 2020</em></p>
+<p class="date"><em>Version compiled 21 Oct 2020</em></p>
 </div>
 <div id="preface" class="section level1 unnumbered">
 <h1>Preface</h1>
@@ -154,13 +170,15 @@ for their advice, data, comments and suggestions.</p>
 <h2>Citation</h2>
 <p>Please cite this work as follows (in APA style):</p>
 <p>Quené, H. &amp; Van den Bergh, H. (2020). <em>Quantitative Methods and Statistics</em>.
-Retrieved 8 Oct 2020 from <a href="https://hugoquene.github.io/QMS-EN/" class="uri">https://hugoquene.github.io/QMS-EN/</a> .</p>
+Retrieved 21 Oct 2020 from <a href="https://hugoquene.github.io/QMS-EN/" class="uri">https://hugoquene.github.io/QMS-EN/</a> .</p>
 </div>
 <div id="technical-details" class="section level2 unnumbered">
 <h2>Technical details</h2>
-<p>The original Dutch version of this text was written in LaTeX, and was then converted to Rmarkdown, using <code>pandoc</code> <span class="citation">(MacFarlane <a href="#ref-pandoc" role="doc-biblioref">2020</a>)</span> and the <code>bookdown</code> <span class="citation">(Xie <a href="#ref-R-bookdown" role="doc-biblioref">2020</a>)</span> in <a href="https://www.rstudio.com">Rstudio</a>. The Dutch version is available at <a href="https://hugoquene.github.io/KMS-NL/" class="uri">https://hugoquene.github.io/KMS-NL/</a> .<br />
-The English translation is based on the Dutch LaTeX version (for Part I) and Rmarkdown version (for Parts II and III).<br />
-Other versions of this textbook (EPUB, PDF, HTML), the source code (in Rmarkdown) of the text including examples, accompanying datasets, and figures as separate files, are all available at <a href="https://github.com/hugoquene/QMS-EN/" class="uri">https://github.com/hugoquene/QMS-EN/</a> .</p>
+<p>All materials for this textbook are available at
+<a href="https://github.com/hugoquene/QMS-EN" class="uri">https://github.com/hugoquene/QMS-EN</a>:
+this includes other versions of this textbook (EPUB, PDF, HTML), the source code (Rmarkdown and R) of the text including figures and examples, accompanying datasets used in the text, and figures as separate files.</p>
+<p>The original Dutch version of this text was written in LaTeX, and was then converted to Rmarkdown, using <code>pandoc</code> <span class="citation">(MacFarlane <a href="#ref-pandoc" role="doc-biblioref">2020</a>)</span> and the <code>bookdown</code> <span class="citation">(Xie <a href="#ref-R-bookdown" role="doc-biblioref">2020</a>)</span> in <a href="https://www.rstudio.com">Rstudio</a>. The Dutch version is available at <a href="https://hugoquene.github.io/KMS-NL" class="uri">https://hugoquene.github.io/KMS-NL</a>.
+The English translation is based on the Dutch LaTeX version (for Part I) and Rmarkdown version (for Parts II and III).</p>
 </div>
 <div id="about-the-authors" class="section level2 unnumbered">
 <h2>About the authors</h2>

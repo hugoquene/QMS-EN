@@ -2,6 +2,7 @@ book_filename: "QMS-EN"
 rmd_files: ["index.Rmd",
             "ch01introduction.Rmd",
             "ch02research.Rmd",
+            "ch03integrity.Rmd",
             "references.Rmd"]
 output_dir: "docs"
 delete_merged_file: true

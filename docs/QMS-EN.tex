@@ -79,7 +79,7 @@
 
 \title{Quantitative Methods and Statistics}
 \author{true}
-\date{Version compiled 21 Oct 2020}
+\date{Version compiled 22 Oct 2020}
 
 \begin{document}
 \maketitle
@@ -608,20 +608,14 @@ However, if \(n = 30\) children would participate in each of the two groups, and
 
 A study's design (see Chapter \ref{ch:ontwerp}) has to be as efficient as possible, and the researcher has to start thinking about it at an early stage. First of all, efficiency depends on choices regarding how the independent variables are manipulated. Is there a separate group of test subjects for each condition of the independent variable (meaning we have ``between-subjects'' conditions, like in example 3.2 above)? In a between-subjects design that involves two groups, we need about \(n = (5.6/d)^2\) subjects in each group (for further explanation of this, see \citet{Gelm07}, and see §\ref{sec:ttest-effectsize}). Or are all test subjects involved in all conditions (meaning we have ``within-subjects'' conditions)? A within-subjects design with two conditions requires only \(n = (2.8/d)^2\) subjects in each condition, and the study will therefore also have lower expenses and indirect cost for a much smaller number of test subjects. In general, this means that, if possible, it is much better to manipulate independent variables within subjects than it is between subjects. However, this is not always possible, firstly because individual characteristics only differ between subjects by definition (for example: female/male sex, multilingual/monolingual youth, aphasia/no aphasia, etc.). Secondly, we must take proper care to recognize effects of so-called transfer between conditions, which threaten our study's validity (for example: experience, learning, fatigue, maturation). We will return to this in §\ref{sec:validiteit}.
 
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
-\begin{quote}
-\emph{Example 3.3}: Being multilingual or being female are characteristics that may only vary between individuals. But other conditions may also vary within individuals, for instance, the day on which a cognitive measurement is taken. Suppose that we expect a difference of \(D = 2\) points between cognitive measurements taken on Monday and on Friday, respectively (with \(s = 4\) and \(d = 0.5\), see example 3.2). If we manipulate the day of measurement between subjects, meaning we make separate groups for children tested on Monday and those tested on Friday, this entails that we need \(n = (5.6/0.5)^2 = 126\) children in each group, yielding a total of \(N = 252\). However, if we manipulate the day of measurement within subjects, meaning that we observe each test subject on Monday and also on Friday, this entails that we need a total of just \(n = (2.8/05)^2 = 32\) children in each group (\(N=62\)). The within-subjects design means that far fewer children's routines will need to be disturbed for our cognitive measurements. However, we must be properly aware of learning effects between the first and second measurement, and take appropriate precautionary measures. For instance, we can no longer use the same questionnaires in both conditions.
-\end{quote}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+Being multilingual or being female are characteristics that may only vary between individuals. But other conditions may also vary within individuals, for instance, the day on which a cognitive measurement is taken. Suppose that we expect a difference of \(D = 2\) points between cognitive measurements taken on Monday and on Friday, respectively (with \(s = 4\) and \(d = 0.5\), see example 3.2). If we manipulate the day of measurement between subjects, meaning we make separate groups for children tested on Monday and those tested on Friday, this entails that we need \(n = (5.6/0.5)^2 = 126\) children in each group, yielding a total of \(N = 252\). However, if we manipulate the day of measurement within subjects, meaning that we observe each test subject on Monday and also on Friday, this entails that we need a total of just \(N = (2.8/05)^2 = 32\) children. The within-subjects design means that far fewer children's routines will need to be disturbed for our cognitive measurements. However, we must be properly aware of learning effects between the first and second measurement, and take appropriate precautionary measures. For instance, we can no longer use the same questionnaires in both conditions.
 
 A study's efficiency also depends on the dependent variable, in particular, on the observations' level of measurement (Chapter \ref{ch:levelofmeasurement}), accuracy, and reliability (Chapter \ref{ch:reliability}). The lower the level of measurement, the lower also the study's efficiency. As accuracy goes down, the study's efficiency also goes down, and more subjects and observations will be needed to be able to draw valid conclusions.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{quote}
-\emph{Example 3.4}: Suppose that we would like to examine a difference between two within-subjects conditions, and suppose that the actual difference between them is 2 points (which yields \(s_D = 4\) and \(d = 0.5\), see example 3.2). However, suppose that we decide to look only at the \emph{direction} and not at the size of the difference between the two observations for each subject: does the subject have a positive or negative difference between the first and second condition? This binomial dependent variable contains less information than the original point score (it contains just the direction and not the size of the difference), making the study less efficient. For this specific example, this means we would need 59 instead of 34 test subjects.
+\emph{Example 3.3}: Suppose that we would like to examine a difference between two within-subjects conditions, and suppose that the actual difference between them is 2 points (which yields \(s_D = 4\) and \(d = 0.5\), see example 3.2). However, suppose that we decide to look only at the \emph{direction} and not at the size of the difference between the two observations for each subject: does the subject have a positive or negative difference between the first and second condition? This binomial dependent variable contains less information than the original point score (it contains just the direction and not the size of the difference), making the study less efficient. For this specific example, this means we would need 59 instead of 34 test subjects.
 \end{quote}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -669,7 +663,7 @@ If you are working with digitized data (e.g., in Excel, or SPSS, or R), make sur
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{quote}
-\emph{Example 3.5}: The file found at \textless{}\url{http://tinyurl.com/nj4pjaq}. contains data from 80 speakers of Dutch, partially taken from the Corpus of Spoken Dutch (Corpus Gesproken Nederlands or CGN). The first line contains the variable names. Each subsequent line corresponds to one speaker. The pieces of data on each line are separated by spaces. The first column contains the anonymized speaker ID code, as used in the CGN. In the fifth column, the speaker's region of origin is coded with a single letter:
+\emph{Example 3.4}: The file found at \textless{}\url{http://tinyurl.com/nj4pjaq}. contains data from 80 speakers of Dutch, partially taken from the Corpus of Spoken Dutch (Corpus Gesproken Nederlands or CGN). The first line contains the variable names. Each subsequent line corresponds to one speaker. The pieces of data on each line are separated by spaces. The first column contains the anonymized speaker ID code, as used in the CGN. In the fifth column, the speaker's region of origin is coded with a single letter:
 \texttt{W} for Western region (Randstad), \texttt{M} Central (Mid), \texttt{N} North, \texttt{S} South) \citep{Quene08}. Because of the careful annotation, these data may still be used with no problem, even if they were collected over 20 years ago by fellow researchers.
 \end{quote}
 
@@ -690,7 +684,7 @@ The researchers involved in a study must discuss amongst each other who will be 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{quote}
-\emph{Example 3.6}: A, a student research assistant, helped collect data, but has made no other contributions, and is not entirely sure what the research is about. This means that A need not be listed as a co-author on the report, but the authors do have to describe and acknowledge A's contribution in their report.
+\emph{Example 3.5}: A, a student research assistant, helped collect data, but has made no other contributions, and is not entirely sure what the research is about. This means that A need not be listed as a co-author on the report, but the authors do have to describe and acknowledge A's contribution in their report.
 \end{quote}
 
 \begin{quote}

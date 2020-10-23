@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="ch-research.html"/>
-<link rel="next" href="references.html"/>
+<link rel="next" href="ch-levelsofmeasurement.html"/>
 <script src="libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -113,6 +113,15 @@
 <li class="chapter" data-level="3.4" data-path="ch-integrity.html"><a href="ch-integrity.html#data"><i class="fa fa-check"></i><b>3.4</b> Data</a></li>
 <li class="chapter" data-level="3.5" data-path="ch-integrity.html"><a href="ch-integrity.html#writing"><i class="fa fa-check"></i><b>3.5</b> Writing</a></li>
 </ul></li>
+<li class="chapter" data-level="4" data-path="ch-levelsofmeasurement.html"><a href="ch-levelsofmeasurement.html"><i class="fa fa-check"></i><b>4</b> Levels of measurement</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="ch-levelsofmeasurement.html"><a href="ch-levelsofmeasurement.html#introduction-1"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.2" data-path="ch-levelsofmeasurement.html"><a href="ch-levelsofmeasurement.html#sec:nominal"><i class="fa fa-check"></i><b>4.2</b> Nominal</a></li>
+<li class="chapter" data-level="4.3" data-path="ch-levelsofmeasurement.html"><a href="ch-levelsofmeasurement.html#sec:ordinal"><i class="fa fa-check"></i><b>4.3</b> Ordinal</a></li>
+<li class="chapter" data-level="4.4" data-path="ch-levelsofmeasurement.html"><a href="ch-levelsofmeasurement.html#sec:interval"><i class="fa fa-check"></i><b>4.4</b> Interval</a></li>
+<li class="chapter" data-level="4.5" data-path="ch-levelsofmeasurement.html"><a href="ch-levelsofmeasurement.html#sec:ratio"><i class="fa fa-check"></i><b>4.5</b> Ratio</a></li>
+<li class="chapter" data-level="4.6" data-path="ch-levelsofmeasurement.html"><a href="ch-levelsofmeasurement.html#sec:orderinglevelsofmeasurement"><i class="fa fa-check"></i><b>4.6</b> Ordering of levels of measurement</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Created with bookdown</a></li>
@@ -171,7 +180,7 @@
 </blockquote>
 <hr />
 <p>A study’s design (see Chapter <a href="#ch:ontwerp"><strong>??</strong></a>) has to be as efficient as possible, and the researcher has to start thinking about it at an early stage. First of all, efficiency depends on choices regarding how the independent variables are manipulated. Is there a separate group of test subjects for each condition of the independent variable (meaning we have “between-subjects” conditions, like in example 3.2 above)? In a between-subjects design that involves two groups, we need about <span class="math inline">\(n = (5.6/d)^2\)</span> subjects in each group (for further explanation of this, see <span class="citation">Gelman and Hill (<a href="#ref-Gelm07" role="doc-biblioref">2007</a>)</span>, and see §<a href="#sec:ttest-effectsize"><strong>??</strong></a>). Or are all test subjects involved in all conditions (meaning we have “within-subjects” conditions)? A within-subjects design with two conditions requires only <span class="math inline">\(n = (2.8/d)^2\)</span> subjects in each condition, and the study will therefore also have lower expenses and indirect cost for a much smaller number of test subjects. In general, this means that, if possible, it is much better to manipulate independent variables within subjects than it is between subjects. However, this is not always possible, firstly because individual characteristics only differ between subjects by definition (for example: female/male sex, multilingual/monolingual youth, aphasia/no aphasia, etc.). Secondly, we must take proper care to recognize effects of so-called transfer between conditions, which threaten our study’s validity (for example: experience, learning, fatigue, maturation). We will return to this in §<a href="#sec:validiteit"><strong>??</strong></a>.</p>
-<p>Being multilingual or being female are characteristics that may only vary between individuals. But other conditions may also vary within individuals, for instance, the day on which a cognitive measurement is taken. Suppose that we expect a difference of <span class="math inline">\(D = 2\)</span> points between cognitive measurements taken on Monday and on Friday, respectively (with <span class="math inline">\(s = 4\)</span> and <span class="math inline">\(d = 0.5\)</span>, see example 3.2). If we manipulate the day of measurement between subjects, meaning we make separate groups for children tested on Monday and those tested on Friday, this entails that we need <span class="math inline">\(n = (5.6/0.5)^2 = 126\)</span> children in each group, yielding a total of <span class="math inline">\(N = 252\)</span>. However, if we manipulate the day of measurement within subjects, meaning that we observe each test subject on Monday and also on Friday, this entails that we need a total of just <span class="math inline">\(N = (2.8/05)^2 = 32\)</span> children. The within-subjects design means that far fewer children’s routines will need to be disturbed for our cognitive measurements. However, we must be properly aware of learning effects between the first and second measurement, and take appropriate precautionary measures. For instance, we can no longer use the same questionnaires in both conditions.</p>
+<p>Being multilingual or being female are characteristics that may only vary between individuals. But other conditions may also vary within individuals, for instance, the day on which a cognitive measurement is taken. Suppose that we expect a difference of <span class="math inline">\(D = 2\)</span> points between cognitive measurements taken on Monday and on Friday, respectively (with <span class="math inline">\(s = 4\)</span> and <span class="math inline">\(d = 0.5\)</span>, see example 3.2). If we manipulate the day of measurement between subjects, meaning we make separate groups for children tested on Monday and those tested on Friday, this entails that we need <span class="math inline">\(n = (5.6/0.5)^2 = 126\)</span> children in each group, yielding a total of <span class="math inline">\(N = 252\)</span>. However, if we manipulate the day of measurement within subjects, meaning that we observe each test subject on Monday and also on Friday, this entails that we need a total of just <span class="math inline">\(N = (2.8/0.5)^2 = 32\)</span> children. The within-subjects design means that far fewer children’s routines will need to be disturbed for our cognitive measurements. However, we must be properly aware of learning effects between the first and second measurement, and take appropriate precautionary measures. For instance, we can no longer use the same questionnaires in both conditions.</p>
 <p>A study’s efficiency also depends on the dependent variable, in particular, on the observations’ level of measurement (Chapter <a href="#ch:levelofmeasurement"><strong>??</strong></a>), accuracy, and reliability (Chapter <a href="#ch:reliability"><strong>??</strong></a>). The lower the level of measurement, the lower also the study’s efficiency. As accuracy goes down, the study’s efficiency also goes down, and more subjects and observations will be needed to be able to draw valid conclusions.</p>
 <hr />
 <blockquote>
@@ -293,7 +302,7 @@ combined with BibTeX (<a href="https://www.bibtex.org" class="uri">https://www.b
         </div>
       </div>
 <a href="ch-research.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="ch-levelsofmeasurement.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

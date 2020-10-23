@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.10.22)  22 OCT 2020 17:41
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.10.22)  23 OCT 2020 11:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -962,22 +962,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 729--730
 [][][][] [][] [][][][][][][][][][][] [] [][][][][][][][] [][] [][][] [][]
  []
 
-(./QMS-EN.bbl [46] [47] [48
+[46] [47] [48
 
-] [49]) [50] (./QMS-EN.aux)
+]
+Chapter 4.
+[49] [50] [51] (./QMS-EN.bbl [52] [53
+
+]) [54] (./QMS-EN.aux)
 Package rerunfilecheck Info: File `QMS-EN.out' has not changed.
-(rerunfilecheck)             Checksum: 8C6EB59166CB62AD74BA7DD21E102876;3632.
+(rerunfilecheck)             Checksum: 121B1AEDF410B973B8EEF4C8B0F56B86;4496.
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 16737 strings out of 479441
- 291625 string characters out of 5880450
+ 16745 strings out of 479441
+ 291760 string characters out of 5880450
  758140 words of memory out of 5000000
- 35835 multiletter control sequences out of 15000+600000
+ 35843 multiletter control sequences out of 15000+600000
  541587 words of font info for 88 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  84i,8n,118p,1871b,527s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on QMS-EN.pdf (50 pages).
+Output written on QMS-EN.pdf (54 pages).

@@ -1,0 +1,272 @@
+# Validity {#ch:validity}
+
+## Introduction
+
+The goal of experimental research is to test a hypothesis. Hypotheses may also be tested in other, non-experimental research, but in the following, we will restrict ourselves to experimental research, i.e., research that uses the experiment as its methodology, for the sake of clarity. In experimental research, we attempt to argue for the plausibility of a causal relationship between certain factors. If an experiment study has results that confirm the research hypothesis (i.e., the null hypothesis is rejected), it is plausible that a change in the independent variable is the *cause* of a change, or *effect*, in the dependent variable. In this manner, experimental research allows us to conclude with some degree of certainty that, for instance, a difference in medical treatment after a stroke is the cause, or an important cause, of a difference in patients' language ability as observed 6 months post-stroke. The experiment has made it plausible that there is a causal relationship between the method of treatment (independent variable) and the resulting language ability (dependent variable).
+
+## Causality {#sec:causality}
+
+A causal relationship between two variables is distinct from 'just' a relationship or correlation between two variables. If two phenomena correlate with one another, one does not have to be the cause of the other. One example can be seen in the correlation between individuals height and their weight: tall people are, in general, heavier than short people (and vice versa: short people are generally lighter than tall people). Does this mean that we can speak of a causal relationship between height and weight? Is one property (partially) cause by the other? No: in this example, there is, indeed, a correlation, but no causal relationship between the properties: both height and weight are "caused" by other variables, including genetic properties and diet. A second example is the correlation between motivation and language ability in second language learners: highly motivated students learn to speak a new second language better and more fluently than those with low motivation do, but here, also, it is unclear which is the cause and which is the effect.
+
+A causal relationship is a specific type of correlation. A causal relationship is a correlation between two phenomena or properties, for which there are also certain additional requirements [@SCC02]. 
+Firstly, the cause has to precede the effect (it is after treatment that improvement occurs). Secondly, the effect should not occur if the cause is not there (no improvement without treatment).
+Moreover, the effect -- at least, in theory -- should always occur whenever the cause is present (treatment always results in improvement). 
+Thirdly, we cannot find any plausible explanation for the effect's occurrence, other than the possible cause we are considering. When we know the causal mechanism (we understand why treatment causes improvement), we are better able to exclude other plausible explanations. Unfortunately, however, this is very rarely the case in the behavioural sciences, which include linguistics. We do determine that a treatment results in improvement, but the theory that ties cause (treatment) and effect (improvement) together is rarely complete and has crucial gaps. This means that we must take appropriate precautionary measures in setting up our research methodology in order to exclude any possible alternative explanations of the effects we find.
+
+
+## Validity {#sec:validity}
+
+A statement or conclusion is *valid* whenever it is *true* and *justified.* A true statement corresponds to reality: the statement that *every child learns at least one language* is true, because this statement appropriately represents reality. A justified statement lends its validity from the empirical evidence upon which is it based: every child observed by us or by others is learning or has learned a language (except for certain extraordinary cases, for which we need a separate explanation). A statement's justification becomes stronger with an increasingly stronger and more reliable method of (direct or indirect) observation. This also means that a statement's validity is not a categorical property (valid/not valid) but a gradual property: a statement can be relatively more or less valid.
+
+Three aspects of a statement's validity may be distinguished:
+
+1.	To which degree are the conclusions about the relationships between the dependent and independent variable valid? This question pertains to *internal validity*.
+
+2.	To which degree are the operationalizations of the dependent and independent variable (the ways in which they are worked out) adequate? This question pertains to *construct validity*.
+
+3.	To which degree can the conclusions reached be generalized to other test subjects, stimuli, conditions, situations, observations? This question pertains to *external validity*.
+
+These three forms of validity will be further illustrated in the following sections.
+
+
+## Internal validity {#sec:internalvalidity}
+
+As you already know, it is our aim in an experimental study to exclude as many alternative explanations of our results as possible. After all, we must demonstrate that there is a causal relationship between two variables, X and Y, and this means keeping any confounding factors under control as much as possible. Let us take a look at example 5.1.
+
+---
+
+> *Example 5.1*: @Verh04 investigated (among others) the hypothesis that older individuals (above 45 years old) speak more slowly than younger individuals (under 40 years old). To do this, they recorded speech from 160 speakers, divided equally between both age groups, in an interview that lasted about 15 minutes. After a phonetic analysis of their articulation rate, it turned out that the younger group spoke relatively fast at 4.78 syllables per second, while the older group spoke remarkably slower at 4.52 syllables per second [@Verh04, p.302]. We conclude that the latter group's higher age is the *cause* of their lower rate of speaking – but is this conclusion justified?
+
+---
+
+This question of a conclusion's justification is a question about the study's internal validity. Internal validity pertains to the relationships between variables that are measured or manipulated, and is not dependent on the (theoretical) constructs represented by the various variables (hence the name 'internal validity'). In other words: the question of internal validity is one of possible alternative explanations of the research results that were found. Many of the possible alternative explanations can be pre-empted by the way in which the data are collected. In the following, we will discuss the most prominent threats to internal validity [@SCC02].
+
+1. **History** is a threat to internal validity. The concept of 'history' includes, among others, events that took place between (or during) pretest and posttest; here, 'history' refers to events that are not a part of an experimental manipulation (the independent variable), but that might influence the dependent variable. For instance, a heat wave can influence test subjects' behaviour in a study.
+
+In a laboratory, 'history' is kept under control by isolating test subjects from outside influences (such as a heat wave), or by choosing dependent variables that could barely be influenced by external factors. In research performed outside of a laboratory, including field research, it is much more difficult and often even impossible to keep outside influences under control. The following example makes this clear.
+
+---
+
+> *Example 5.2*: A study compares two methods to teach students at a school to speak a second language, in this case, Modern Greek. The first group is to learn Greek words and grammar in a classroom over a period of several weeks. The second group goes on a field trip to Greece for the same period of time, during which students have to converse in the target language. The total time spent on language study is the same for both groups. Afterwards, it turns out that the second groups' language ability is higher than that of the first group. Was this difference in the dependent variable's value indeed caused by the teaching method (independent variable)?
+
+---
+
+2. **Maturation** stands for participants' natural process of getting older, or maturing, during a study. If the participants become increasingly older, more developed, more experienced, or stronger during a study, then, unless this maturation was considered in the research question, maturation forms a threat to internal validity. For instance, in experiments in which reaction times are measured, we usually see that a test subject's reaction times become faster over the duration of the experiment as a consequence of training and practice. In such cases, we can protect internal validity against this learning effect by offering stimuli in a separate random order for each test subject.
+
+In most cases, maturation occurs because participants perform the same task or answer the same questions many times in a row. However, maturation can also happen when participants are asked to provide their answers in a way they are not used to, e.g., because of an unexpected way of asking the question, or through an unusual type of multiple choice question. During the first few times a test subject answers a question in such a study, the method of answering may interfere with the answer itself. Afterwards, we could compare, e.g., the first and the last quarter of a test subject's answers to check whether there might have been an effect of experience, i.e., maturation.
+
+3. The **instrumentation** or instruments used for a study may also form a threat to internal validity. Different instruments that are deemed to be measuring the same construct should always produce identical measurements. Conversely, the same instrument should always produce identical measurements under different circumstances. For experiments administered by a computer, this is usually not a problem. However, in the case of questionnaires, or the assessment of writing assignments, internal validity may, indeed, be under threat.
+
+In many studies, observations are made both before a treatment and after. Identical tests could be used for this, but that might lead to a learning effect (see above). For this reason, researchers often use different tests between pretest and posttest. However, this might lead to an instrumentation effect. The researcher has to consider the possible advantages and disadvantages of each option.
+
+> *Example 5.3*: @Rijl86 investigated the effect of peer evaluation on the quality of writing. The setup of his study was as follows (with some simplifications): first, students write an essay on topic A, followed by writing instruction that includes peer evaluation, after which the students write another essay – this time, on topic B. The writing done in the pretest and posttest is assessed, after which the researchers test whether average performance differs between both measurements.
+
+> In this study, it is not only the intervention (writing instruction) that forms a clear difference between the pretest and posttest: the writing assignment's topic (A or B) differs, as well. It is doubtful whether both writing assignments measure the same thing. This difference of instrumentation threatens internal validity because it may well be that, at different moments, a (partially) different aspect of writing ability was measured. Instrumentation (here: the difference between the writing assignments' topics) provides a plausible alternative explanation for the difference in writing ability, which may add to or replace the explanation given by the independent variable (here: the writing instruction provided between measurements).
+
+---
+
+4. An additional threat to internal validity is known as the effect of **regression to the mean**. Regression to the mean may play a role whenever the study is focussed on special groups, for instance, bad readers, bad writers, but to an equal extent: good readers, good writers, etc. Let us first give an example, since the phenomenon is not immediately clear from an intuitive point of view.
+
+---
+
+> *Example 5.4*: There is some controversy about the use of illustrations in children's books. Some argue that books used to teach children how to read should contain no illustrations (or as few as possible): illustrations distract the child from features of words they should be learning. Others argue that illustrations may provide essential information: illustrations serve as an additional source of information.
+
+> @Dona83 investigated how illustrations influenced the understanding of a text. The researcher selected 120 students (of a student body of 1868) from the 1st and 3rd year of primary/elementary education; 60 from each year. According to their performance on a reading test administered earlier, it turned out that, of the 60 students in each year, 30 could be classified as strong readers, and 30 could be classified as less strong readers. Each student was shown the same text, either with or without illustrations (independent variable), see Table \@ref(tab:designDona83).
+
+> The results turned out to mainly support the second hypothesis: illustrations improve the understanding of a text, even with inexperienced readers. The illustrated text was better understood by the less strong readers, and younger readers, too, showed improvement when illustrations were added.
+
+---
+
+Table: (#tab:designDona83) Conditions in the study by Donald (1983).
+
+  group   reading ability   condition   $n$              
+ ------- ----------------- ----------- -----
+  1            weak          without     15               
+  1            weak           with       15               
+  1           strong         without     15               
+  1           strong          with       15               
+  3            weak          without     15               
+  3            weak           with       15               
+  3           strong         without     15               
+  3           strong          with       15               
+
+So, what is wrong with this study? The answer to this question can be found in how students were selected. Readers were classified as 'strong' or 'less strong' based on a reading ability test, but their performance on this test are always influenced by random factors that have nothing to do with reading ability: Tom was not feeling well and did not perform well on the test, Sarah was not able to concentrate, Nick was having knee troubles, Julie was extraordinarily motivated and outdid herself. In other words: the assessment of reading ability was not entirely reliable. This means that (1) the less strong readers who happened to have performed above their level were unjustly classified as strong readers instead of as less strong readers; and, conversely, (2) strong readers who happened to have performed below their level were unjustly deemed to be less strong readers. Thus, the group of less strong readers will always contain some readers that are not that bad at all, and the group of strong readers will always contain a few that are not so strong, after all.
+
+When the actually-strong readers that were unjustly classified as non-strong readers are given a second reading test (after having studied a text with or without illustrations), they will typically go back to performance at their usual, higher level. This means that a higher score on the second test (the posttest) might be an artefact of the method of selection. The same is true, with the necessary changes, for the actually-less-strong readers that have unjustly been selected as strong readers. When these students are given a second reading test, they, too, will typically go back to performance at their usual (lower) level. Thus, their score on the posttest will be lower than their score on the pretest.
+	
+For the study by @Dona83 used as an example here, this means that the difference found between strong and less strong readers is partially due to randomness. Even if the independent variable has no effect, the group of 'strong' readers will, on average, perform worse, while the group of 'less strong' readers will, on average, perform better. In other words: the difference between the two groups is smaller during the posttest than during the pretest, as a consequence of random variation: regression to the mean. As you may expect, research results may be muddled by this phenomenon. As we saw above, an experimental effect may be weakened or disappear as a consequence of regression to the mean; conversely, regression to the mean can be misidentified as an experimental effect (for extensive discussion, see @RMP18).
+
+Generally speaking, regression to the mean may occur when a classification is made based on a pretest whose scores are correlated with the scores on the posttest (see Chapter \@ref(ch:correlation))). If there is no correlation at all between pretest and posttest, regression to the mean even plays the main role: in this case, any difference between pretest and posttest must be the consequence of regression to the mean. If there is a perfect correlation, regression to the mean does not play a role, but the pretest is also not informative, since (after the fact) it turned out to be completely predictable from the posttest.
+
+Regression to the mean may offer an alternative explanation for an alleged substantial score increase between pretest and posttest for a lower performing group (e.g., less strong readers) compared to a smaller increase for a higher performing group (e.g., strong readers). Conversely, it might also offer an alternative explanation for an alleged score decrease between pretest and posttest for a higher performing group (e.g., strong readers) compared to a lower performing group (e.g., less strong readers).
+
+It is better when groups are *not* composed according to one of the measurements (pretest or posttest), but, instead, on the basis of on some other, independent criterion. In the latter case, the test subjects in both groups will have a more or less average score on the pretest, which minimizes the effect of regression to the mean. Each group will have about equal numbers of test subjects whose scores fell out too high by accident and those whose scores fell out too low, both on the pretest and the posttest.
+
+5. A fifth threat to internal validity comes in the form of **selection**. This refers (mainly) to a distribution of test subjects between various conditions under which the groups are not equivalent at the beginning of the study. For instance, when the experimental condition contains all the smarter students, while the control condition contains only the less bright ones, any effect that is found may no longer be attributed to manipulation of the independent variable. The difference in initial levels (here: in intelligence) will provide a plausible alternative explanation that threatens internal validity.
+
+---
+
+> *Example 5.5*: To make a fair comparison between schools of the same type[^fn05-1], we must consider differences between schools regarding their students' level at entry. Imagine that school A has students that start at level 50, and perform at level 100 on their final exams (we are using an arbitrary scale here). School B has students that start at level 30, and perform at level 90 on their final exams (on the same scale). Is school B worse than A (because of lower final performance), or is school B better than A (because final performance shows a smaller difference)?
+
+---
+
+Research in education often does not provide the opportunity to randomly assign students in different classes to various conditions, because this may lead to insurmountable organizational problems. These organizational problems involve more than just (randomly) splitting classes, even though the latter may already be difficult to put into practice. The researcher also has to account for possible transfer effects between conditions: students will talk to one another, and might even teach each other the essential characteristics of the experimental condition(s). This is at least one way in which the absence of an effect could be explained. Because of the problems sketched out here, it often occurs that entire classes are assigned to one of the conditions. However, classes consist of students that go to the same school. When students (and their parents) choose a school, self-selection takes place (in the Dutch education system), which leads to differences between conditions (that is, between classes within conditions) in terms of students' initial performance. This means that any differences we find between conditions could also have been caused by students' self-selection of schools.
+
+In the above, we have already indicated the most straightforward way to give different conditions the same initial level: assign students to conditions by chance, or, at random. This method is known as randomization [@SCC02, p.294 ff]. For instance, we might randomize test subjects' assignment to conditions by giving each student a random number (see Appendix \@ref(app:randomnumbers))), and then assigning 'even students' to one condition and 'odd students', to the other. When test subjects are randomly assigned to conditions, all differences between test subjects within the various conditions are based on chance, and are thus averaged out. In this way, it is most likely that there are no systematic differences between the groups or conditions distinguished. However, this is only true if the groups are sufficiently large.
+
+*Randomization*, or random assignment of test subjects to conditions, is to be distinguished from random sampling from a population (see §\@ref(sec:randomsample)) below). In the case of random sampling, we randomly select test subjects from the population of possible test subjects to be included in our sample; our goal in this case is that the sample(s) resemble the population from which they are drawn (it is drawn). In the case of randomization, we randomly assign the test subjects within the sample to the various conditions in the study; our goal in this case is that the samples resemble each other.
+
+One alternative method to create two equal groups is *matching*. In the case of matching, test subjects are first measured on a number of relevant variables. After this, pairs are formed that have an equal score on these variables. Within each pair, one test subject is assigned to one condition, and the other, to the other condition. However, matching has various drawbacks. Firstly, regression to the mean might play a role. Secondly, matching is very labour-intensive when test subjects have to be matched on multiple variables, and it requires a sizeable group of potential test subjects. Thirdly matching only reckons with variables that the researcher deems relevant, but not with other, unknown variables. Randomization does not only randomize these relevant variables, but also other properties that might potentially play a role without the researcher's realizing this. In short, randomization, even if it is relatively simple, is far preferable to matching.
+
+6. **Attrition** of respondents or of participants is the final threat to internal validity. In some cases, a researcher will start with a sizeable number of test subjects, but, as the study continues, test subjects drop out. As long as the percentage of drop-out (attrition) remains small, there is no problem. However, a problem does arise when attrition is selective to one of the conditions distinguished. In the latter case, we will not be able to say much about this condition at all. The problem of attrition is mainly relevant to longitudinal research: research in which a small number of respondents is followed over a longer period of time. In this case, we might be confronted with people's moving house, or passing away over the course of the experiment, or participants that are no longer willing to be a part of the study, etc. This may lead to a great reduction in the number of respondents.
+
+In the preceding paragraphs, we discussed a number of frequently occurring problems that may threaten a study's internal validity. However, this list is by no means an exhaustive one. Each type of research has problems of its own, and it is the researcher's task to remain aware of possible threats to internal validity. To this end, always try to think of plausible explanations that might explain a possible effect to the same extent as, or maybe even better than, the cause you are planning to investigate. In this manner, the researcher must adopt the mindset of their own greatest sceptic, who is by no means convinced that the factor investigated is truly the cause of the effect found. Which possible alternative explanations might this sceptic come up with, and how would the researcher be able to eliminate these threats to validity through the way the study is set up? This requires an excellent insight into the logical relationships between the research questions, the variables that are investigated, the results, and the conclusion.
+
+## Construct validity {#sec:constructvalidity} 
+
+In an experimental study, an independent variable is manipulated. Depending on the research question, this may be done in many different ways. In the same manner, the way in which the dependent variable(s) is/are measured may take different shapes. The way in which the independent and dependent variables are formulated is called these variables' *operationalization*. For instance, students' reading ability may be operationalized as (a) their score on a reading comprehension test with open-ended questions; (b) their score on a reading comprehension test with multiple choice questions; (c) their score on a so-called cloze test (fill in the missing word); or (d) as the degree to which students can execute written instructions. In most cases, there are quite a few ways to operationalize a variable, and it is rarely the case that a theory would entail just one possible description for the way the independent or dependent variables must be operationalized. *Construct validity*, or *concept validity*, refers to the degree to which the operationalization of both the dependent variable(s) and the independent variable(s) adequately mirrors the theoretical constructs that the study focuses on. In other words: are the independent and dependent variables properly related to the theoretical concepts the study focuses on?
+
+---
+
+> *Example 5.6*: Infants' and toddlers' language development is difficult to observe, especially in the case of auditory and perceptual development in these test subjects, who can barely speak, if at all. One often used method is the Head Turn Preference Paradigm [@John10]. In this method, each trial starts by having the infant look at a green flashing light straight ahead. Once a child's attention has thus been captured, the green light is extinguished, and a red light starts flashing at the test subject's left or right hand side. The child turns their head to be able to see the flashing light. A sound file containing speech is then played on a loudspeaker placed next to this peripheral flashing light. The dependent variable is the period of time during which the child keeps looking to the side (with less than 2 seconds of interruption). After this, a new trial is started. The time spent looking at the light is interpreted as indicating the degree to which the child prefers the spoken stimulus.
+
+> However, interpreting the looking times obtained is difficult, because children sometimes prefer new sound stimuli (e.g., sentences in an unknown language) and sometimes prefer familiar stimuli (e.g., grammatical vs. ungrammatical sentences). Even when the stimuli have been carefully adjusted to the test subject's level of development, it is still difficult to relate the dependent variable (looking time) to the intended theoretical construct (the child's preference).
+
+---
+
+> *Example 5.7*: As indicated above, the concept of reading ability may be operationalized in various ways. Some argue that reading ability cannot be properly measured by multiple choice questions (Houtman 1986, Shohamy 1984). In multiple choice questions, answers are very strongly influenced by other notions, such as general background, aptitude at guessing, experience with earlier tests, and the way the question itself is asked, as is illustrated in the following question:
+
+> Who of the following individuals published an autobiography within the last few years?\
+a. Joan of Arc *(general background)*\
+b. my neighbour *(way the question is asked, experience)*\
+c. Malala Yousafzai *(general background)*\
+d. Alexander Graham Bell *(general background)*\
+
+> This question is clearly lacking in construct validity for measuring knowledge on autobiographies.
+
+---
+
+Of course, the problems with construct validity mentioned above arise not only for written questions or multiple choice questions, but also for questions one might ask test subjects orally.
+
+--- 
+
+> *Example 5.8*: If we orally ask parents the question, How often do you read to your child?, this question in itself suggests to them that it is desirable to read to one's child, and parents might overestimate how often they do this. This means that we are not only measuring the construct of 'behaviour around reading to one's child', but also the construct of 'propensity towards socially desirable answers' (see below).
+
+---
+
+A construct that is notably difficult to operationalize is that of *writing ability*. What is a good or bad product of writing? And what exactly is writing ability? Can writing ability be measured by counting relevant content elements in a text, should we count sentences or words, or perhaps mainly  connectives (*therefore, because, since, although*, etc.), should we collect multiple judgments that readers have about the written text (regarding goal-orientedness, audience-orientedness, and style), or should we collect a single judgment from readers regarding the text's global quality, should we count spelling errors, etc? The operationalization problems arise from the lack of a theory of writing ability, from which we might derive a definition of the quality of writing products [@BM93]. This makes it easy to criticize research into writing quality, but makes it difficult to formulate alternative operationalizations of the construct.
+
+Another difficult construct is the *intelligibility* of a spoken sentence. Intelligibility may be operationalized in various ways. The first option is that the researcher speak the words or sentences in question, and the test subject repeat them out loud, with errors in reproduction being counted; one disadvantage of this is that there is hardly any control over the researcher's model pronunciation. A second option is that the words or sentences be recorded in advance and the same procedure be followed for the rest; one disadvantage that remains is that responses are influenced by world knowledge, grammatical expectations, familiarity with the speaker or their use of language, etc. The most reliable method is that of the so-called 'speech reception threshold' [@Plomp79], which is described in the next example. However, this method does have the disadvantages of being time-consuming, being difficult to administer automatically, and requiring a great amount of stimulus material (speech recordings) for a single measurement.
+
+---
+
+> *Example 5.9*: We present a list of 13 spoken sentences masked with noise. The speech-to-noise ratio (SNR) is expressed in dB. A SNR of 0 dB means that speech and noise are equally loud, a SNR of +3 dB means that the speech is 3 dB *louder* than the noise, while a SNR of -2 dB means that the speech is 2 dB *less loud* than the noise, etc. After each sentence, the listener has to repeat the sentence he or she just heard. If this is done correctly, then the SNR for the next sentence is decreased by 2 dB (less speech, more noise); if the response had a error, the SNR for the next sentence is increased by 2 dB (more speech, less noise). After a few sentences, we see little variation in the SNR, which starts swinging back and forth around an optimal value. The average SNR over the last 10 sentences played to the test subject is the so-called 'speech reception threshold' (SRT). This SRT may also be interpreted as the SNR under which half of the sentences was understood correctly.
+
+---
+
+So far, we have only talked about problems around the construct validity of the dependent variables. However, the operationalization of the *in*dependent variable is also often questioned. After all, the researcher has had to make many choices while operationalizing their independent variable (see §\@ref(sec:makingchoices))), and the choices made can often be contested.
+	
+A study is not construct valid, or concept valid, if the operationalizations of the independent variables cannot withstand the test of criticism. A study is also not construct valid if the independent variable is not a valid operationalization of the theoretical-concept-as-intended. If this operationalization is not valid, we are, in fact, manipulating something different from what we intended. In this case, the relationship between the dependent variable and the independent variable-as-intended that was manipulated is no longer unambiguous. Any observed differences in the dependent variable are not necessarily caused by the independent variable-as-intended, but could also be influenced by other factors. One well-known effect of this kind is the so-called Hawthorne effect.
+
+---
+
+> *Example 5.10*: Management at the Hawthorne Works Factory (Western Electric Company) in Cicero, Illinois, USA was alarmed by the company's bad performance. A team of researchers scrutinized the way things were done, investigating more or less anything one can think of: working hours, salary, breaks, lighting, heating, staff and management meetings, management style, etc. This results of this study (from 1927) showed that productivity had increased by leaps and bounds – but there was no correlation with any of the independent variables. In the end, the increase in productivity was attributed to the increased attention towards the employees.
+
+---
+
+Thus, we observe the Hawthorne effect when a change in behaviour does not correlate with the manipulation of any independent variable, but this change in behaviour is the consequence of a psychological phenomenon: participants who know they are being observed are more eager to show (what they think is) the desired behaviour.
+
+---
+
+> *Example 5.11*: @RDCPW78 compared the effectiveness of two methods for improving reading ability in less strong readers. Students were selected based on their scores on three tests. The 72 students selected were randomly assigned to one of two method conditions (structured teaching of reading skills versus programmed instruction). In the first condition, the structured teaching was delivered by four instructors, who taught a small group (of four students). This, in fact, leads to a student-teacher of 1 : 1. In the second condition (programmed instruction), the teachers left the students to their own devices as much as possible. The experiment ran for 75 sessions of 45 minutes each. After the second observation, it turned out that the students who were taught according to the first (structured) method had made more progress than the students taught using the second method (programmed instruction).
+
+> So far, there are no problems with this study. However, a problem does arise if we concluded that the structured method is better than the programmed instruction. An alternative explanation, one that cannot be excluded in this study, is that the effect found does not (exclusively) follow from the method used, but (also) from the greater individual attention in the first condition (structured teaching).
+
+---
+
+Just like for internal validity, we can also mention a number of validity-threatening factors for construct or concept validity.
+
+1. One threat to concept validity is **mono-operationalization**. Many studies operationalize the dependent variable in one way only. The test subjects are only asked to perform one task, e.g., a single auditory task with measurement of reaction times (over multiple trials), or a single questionnaire (with multiple questions). In this case, the study's validity rests entirely on this specific operationalization of the dependent variable, and no further data are available on the validity of this specific operationalization. This means that the researcher leaves room for doubt: strictly speaking, we have nothing but the researcher's word as evidence for the validity of their way of operationalizing the variable. There is a much better way to carry out this kind of research, namely, by considering different operationalizations of the construct to be measured. For instance, this can be done by having test subjects perform multiple auditory tasks, while counting erroneous responses in addition to measuring reaction times; or by not only having test subjects fill out a questionnaire, but also observing the construct intended through other tasks and methods of observation. When test subjects' performance on the various types of response is highly correlated, this can be used to demonstrate that all these tests represent the same construct. This is called *convergent validity*. We speak of convergent validity when performance on instruments that represent the same theoretical construct is highly correlated (or, converges).
+
+However, it is not sufficient to demonstrate that tests meant to measure the same concept or construct are, indeed, convergently valid. After all, this does not show what construct they refer to, or whether the construct measured is actually the intended construct. Did we actually measure a speaker's 'fluentness' using multiple methods, or did we, in reality, measure the construct of 'attention' or 'speaking rate' each time? Did we actually measure 'degree of reading comprehension' using different converging methods, or did we, in reality, measure the construct of 'performance anxiety' each time? To ensure construct validity, we really have to demonstrate that the operationalizations are *divergently valid* compared to operationalizations that aim to measure some other aspect or some other (related) skill or ability. In short, the researcher must be able to show that performance on instruments (operationalizations) that represent a single skill or ability (construct) is highly correlated (is convergent), while performance on instruments that represent different skills or abilities is hardly correlated, if at all (is divergent).
+
+2. The **researcher's expectations** -- which are manifested in both conscious and unconscious behaviour -- may also threaten a study's construct validity. The researcher is but human, and therefore by no means immune to the influence their own expectations might have on the outcome of their study. Unfortunately, it is difficult to ascertain after the fact how the researcher might have influenced an experiment.
+
+---
+
+> *Example 5.12*: Clever Hans (in German: Kluger Hans) was a horse with alleged arithmetic skills. When Clever Hans was asked, *how much is 4 + 4?*, the horse stomped its right front hoof 8 times, and when asked, *how much is 3 – 1?*, Hans stomped his front hoof twice. Clever Hans caused quite a stir and became the object of various studies. In 1904, a committee determined that Clever Hans was, indeed, able to do arithmetic (and communicate with humans). Later, however, Carl Stumpf, a member of the research committee, together with his assistant, Oskar Pfungst, established that "the horse fails to solve the problem posed when the solution is not known to any of those present" [@Pfung07, p.185, vert. AN], or when the horse cannot see the person who does know the solution. "Thus, [the horse] required optical help" (idem). After careful observation, it turned out that Clever Hans' owner (and any other people present) showed very slight signs of relaxation as soon as Hans had stomped his right front leg the correct number of times. This unintentional sign was a sufficient incentive for Clever Hans to stop stomping (i.e., to keep his front hoof down), in order to receive his reward of carrots and bread [@Pfung07] [@Watz77, p.38--47].
+
+> A more recent, perhaps comparable case is that of Alex, a parrot with extraordinary cognitive skills, see, a.o., @BLLB14 and @Alex15.
+
+---
+
+This famous example illustrates how subtle a researcher's or experimenter's[^fn05-2] influence on the object of study can be. It goes without saying that this influence threatens construct validity. For this reason, it is better when the researcher does not also function as the experimenter. Studies in which the researcher also is the one who administers the treatment or teaches the students or judges performance may be criticized, because researcher (and their expectations) may influence the outcome, which threatens the independent variable's construct validity. Researchers may, however, defend themselves against this 'experimenter bias'. For instance, in the Head Turn Preference Paradigm (example 5.6), it is customary that the experimenter does not know which group a test subject belongs to, and does not hear which sound file is being played [@John10, p.74].
+
+3. Another threat to construct validity may be summarized by the term **motivation**. There are at least two facets to the validity threat of motivation. If (at least) one of the conditions in a study is very taxing or unpleasant, test subjects may lose motivation and put in less effort into their tasks. Their performance will be less strong, but this is an effect of (a lack of) motivation, rather than a direct effect of the independent variable (here: condition). This means that the effect is not necessarily caused by manipulation of the intended construct, but may (also) be caused by unintentional manipulation of test subjects' *motivation.* The opposite situation could, of course, also be a threat to construct validity. If one of the conditions is particularly motivating for the test subjects, any potential effect may be attributed to matters of motivation. In this case, we may also be looking at an effect of an unintentionally manipulated variable.
+	
+4. Yet another threat to validity has to do with the choice of the range of values of an independent variable, i.e., its **'dosage'**, that will be considered. If the independent variable is 'the number of times test subjects are allowed to read a poem silently before reading it aloud', the researcher has to determine which values of the variable will be included: one time, two, three times, more times? If the independent variable is 'the time test subjects may spend studying', the researcher must choose how long each group of subjects will be allowed to study: five minutes, fifteen minutes, two hours? The researcher makes a choice out of the possible dosages of the independent variable, 'study time'. On the basis of this dosage, the researcher might conclude that the dependent variable is not influenced by the independent variable. In fact, however, the researcher should conclude that there seems to be no correlation between the dependent variable and the *chosen dosage of* the independent variable. A possible effect might be concealed by the choice of dosage (values) of the independent variable.
+
+---
+
+> *Example 5.12*: If a passenger car and a pedestrian collide, there is a risk of this being fatal to the pedestrian. This risk of pedestrian fatality is relatively small (less than 20%) when the speed of collision is smaller than about 50 km/h (about 31 mph). If we limited our research into the relationship between speed of collision and risk of pedestrian fatality to such small 'dosages' of collision speed, we might conclude that collision speed has no influence on the risk of pedestrian fatality. This would be an erroneous conclusion (which type of error?), because, at higher speeds of collision, the risk of pedestrian fatality increases to almost 100% [@Rosen11; @SWOV12].
+
+---
+
+5. A further threat to construct validity is caused by the **guiding influence of pretests**. In many studies, the independent variable is measured repeatedly, both before and after manipulation of the dependent variable: the so-called pretest and posttest. However, the nature and content of the pretest can leave an imprint upon test subjects. In this manner, a test subject may lose their naïveté, which lessens the effect of the independent variable (e.g., treatment). Any difference in scores between experimental conditions can thus be explained in several ways. This is because we may be purely dealing with an effect of the independent variable, but we may also be dealing with an effect of the pretest and the independent variable combined. Moreover, sometimes we can explain the lack of an effect by the fact that a pretest has been performed 
+(see the Solomon four group design, in Chapter \@ref(ch:design), 
+for a design that takes this possibility into account).
+
+---
+
+> *Example 5.14*: We can compare the effects of two treatments in an experiment in which participants are divided into two groups by random assignment. The first group (E) is first given a pretest, then treatment, then a posttest. The second group (C) is given no pretest and no treatment, only a posttest, which, for this group, is the only measurement.
+
+> If we find a difference between the two groups during the posttest, this may not automatically be attributed to the difference in treatment. The difference may also be (partially) caused by the pretest's guiding influence, e.g., as a consequence of a guiding choice of words or sentence structure in the questions or tasks in the pretest. Perhaps the participants in group E have learnt something during the pretest, i.e., not during treatment, which makes them perform better or differently on the posttest compared to the participants in group C.
+
+---
+
+6. Another problem that may influence construct validity is participants' tendency to answer in a **socially desirable** way. This is simply people's inclination to give an answer that is desirable in a given social situation, and will therefore not lead to problems or loss of face. An example may clarify this.
+
+---
+
+> *Example 5.15*: In opinion polls before elections, respondents are prone to giving socially desirable answers, which is also true for the question of whether the respondent is planning on actually casting their vote [@Karp05]. Respondents show a stronger inclination towards the socially desirable answer ("yes, I will vote") with increasing level of education, which leads to overestimation of the turnout rate for higher-educated voters compared to lower-educated ones. This, in turn, has consequences for the poll results for the various parties, because political parties' popularity differs between voters of different levels of education.
+
+---
+
+This effect was partially responsible for the overestimation of the number of Clinton votes and underestimation of the number of Trump votes in the opinion polls prior to the 2016 US presidential election.
+
+7. One last problem regarding construct validity concerns **limited generalizability**. When research results are presented, we regularly hear remarks such as, 'I do agree with your conclusion that X influences Y, but how about...' The dots may be filled out with all types of things: applicability to other populations, or other genres, or other languages. Whereas these aspects are important, they do not play a direct role in the study itself: after all, we carried out our study using a specific choice of population, genre, language(s), etc.
+
+Nevertheless, we still recommend facing such questions of generalizability. Are the conclusions reached also applicable to another population or language, and why (not)? Which other factors might influence this generalizability? Could it be that a favourable effect for one population or language turns to an unfavourable effect for some other population or language that was outside the scope of the study?
+
+
+## External validity {#sec:externalvalidity}
+
+Based on the data collected, a researcher – barring any unexpected problems – may draw the conclusion: *in this study, XYZ is true*. However, it is rarely a researcher's goal to draw conclusions that are true just for one study. A researcher would not just like to show that being bilingual has a positive influence on language development *in the sample of children studied*. A researcher would like to draw conclusions such as: being bilingual has a positive influence on language development *in children*. The researcher would like to generalize. The same holds for daily life: we might taste a single spoonful of soup from an entire pot, and then express a judgment on the entire pot of soup. We assume that our findings based on the one spoonful may be generalized to the entire pot, and that it is not necessary to eat the entire pot before we can form a judgment.
+
+The question of whether a researcher may generalize their results is the question of a study's external validity [@SCC02]. The aspects of a study generalization pertains to include:
+
+- units: are the results also true for other elements (e.g., schools, individuals, texts) from the population that did not take part in the study?
+
+- treatment: are the results also true for other types of treatment that are similar to the specific conditions in this study?
+
+- situations: are the results also true outside the specific context of this study?
+
+- time: are this study's results also true at different times?
+
+For external validity, we distinguish between (1) generalization *to* a specific intended population, situation, and time, and (2) generalization *over* other populations, situations, and times. Generalizing *to* and *over* are two aspects of external validity that must be carefully separated. Generalizing *to* a population (of individuals, or often, of language material) has to do with how representative the sample used is: to which extent does the sample properly mirror the population (of individuals, words, or relevant possible sentences)? Thus, "generalizing to" is tied directly to the goals of the study; a study's goals cannot be reached unless it is possible to generalize to the populations defined. Generalizing *over* populations has to do with the degree to which the conclusions we formulate are true for sub-populations we may recognize. Let us illustrate this with an example.
+
+---
+
+> *Example 5.16*: @LevA10 looked into whether listeners found speakers with a foreign accent in their English pronunciation to be less credible. The stimuli were made by having speakers with no accent, a light accent, or a strong accent pronounce various sentences (e.g., *A giraffe can hold more water than a camel*). Listeners (all native speakers of English) indicated to which extent they thought the sentence was true. The results showed that the listeners judged the sentences to be true to a lesser extent when the sentence had been spoken by a speaker with a stronger foreign accent.
+
+---
+
+We may assume that this outcome can be generalized *to* the intended population, namely, all native listeners of American English. This generalization can be made despite the possibility that various listeners were perhaps influenced by the speaker's foreign accent to different degrees.
+
+Perhaps a later analysis might show that there is a difference between female and male listeners. It is not impossible that women and men might differ in their sensitivity to the speaker's accent. Such an (imagined) outcome would show that we may not generalize *over* sub-populations within our population, even though we may still generalize *to* the target population.
+
+In (applied) linguistic research, researchers often attempt to *simultaneously* generalize *to* two populations of units, namely, *individuals* (or schools, or families) and *stimuli* (words, sentences, texts, etc.). We want to show that the results are true not just for the language users we studied, but for other language users, as well. At the same time, we also want to show that the results are true not just for the stimuli we investigated, but also for other, similar language material in the population from which we drew our sample of stimuli. This simultaneous generalization requires studies to have a complex design, because we see repeated observations both within test subjects (multiple judgments from the same test subject) and within stimuli (multiple judgments on the same stimulus). After the observations have been made, the stimuli, test subjects, and conditions are combined in a clever way to protect internal validity as best as possible. Naturally, generalization to other language material does require that the stimuli be randomly selected from the (sometimes infinitely large) population of all possible language material (see Chapter \@ref(ch:sampling)).
+
+[^fn05-1]: The secondary school system in the Netherlands distinguishes three major types (VMBO, HAVO, VWO), which differ in the length of the curriculum and in whether they are geared more towards practical or academic learning.
+
+[^fn05-2]: The experimenter is the person who administers an experiment to a participant or informant. The experimenter may be a person distinct from the researchers who devised the research hypotheses, constructed stimuli, and/or recruited participants.

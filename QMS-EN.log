@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.10.22)  23 OCT 2020 11:31
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.10.22)  23 OCT 2020 23:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -818,23 +818,13 @@ LaTeX Warning: Reference `ch:design' on page 17 undefined on input line 251.
 [17] [18] [19] [20]
 Chapter 2.
 
-LaTeX Warning: Reference `ch:validity' on page 21 undefined on input line 297.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [21
 
-] [22]
-
-LaTeX Warning: Reference `ch:validity' on page 23 undefined on input line 350.
-
-[23]
+] [22] [23]
 
 LaTeX Warning: Reference `ch:sampling' on page 24 undefined on input line 370.
-
-
-LaTeX Warning: Reference `ch:validity' on page 24 undefined on input line 370.
 
 [24] [25] [26]
 
@@ -862,9 +852,6 @@ LaTeX Warning: Reference `sec:instrumentatie-onderzoek' on page 34 undefined on
  input line 542.
 
 
-LaTeX Warning: Reference `ch:validity' on page 34 undefined on input line 542.
-
-
 LaTeX Warning: Reference `ch:reliability' on page 34 undefined on input line 54
 2.
 
@@ -872,12 +859,7 @@ LaTeX Warning: Reference `ch:reliability' on page 34 undefined on input line 54
 
 ]
 Chapter 3.
-[37]
-
-LaTeX Warning: Reference `sec:internalvalidity' on page 38 undefined on input l
-ine 589.
-
-[38]
+[37] [38]
 
 LaTeX Warning: Reference `sec:ttoets-formules' on page 39 undefined on input li
 ne 596.
@@ -966,22 +948,57 @@ Underfull \hbox (badness 10000) in paragraph at lines 729--730
 
 ]
 Chapter 4.
-[49] [50] [51] (./QMS-EN.bbl [52] [53
+[49] [50] [51] [52]
+Chapter 5.
+[53
 
-]) [54] (./QMS-EN.aux)
+] [54] [55] [56] [57]
+Overfull \vbox (28.05089pt too high) has occurred while \output is active []
+
+[58]
+
+LaTeX Warning: Reference `ch:correlation' on page 59 undefined on input line 92
+9.
+
+[59] [60]
+
+LaTeX Warning: Reference `app:randomnumbers' on page 61 undefined on input line
+ 953.
+
+
+LaTeX Warning: Reference `sec:randomsample' on page 61 undefined on input line 
+955.
+
+[61] [62]
+Underfull \hbox (badness 10000) in paragraph at lines 991--996
+
+ []
+
+[63] [64] [65] [66] [67] [68] [69]
+
+LaTeX Warning: Reference `ch:design' on page 70 undefined on input line 1108.
+
+[70] [71] [72]
+
+LaTeX Warning: Reference `ch:sampling' on page 73 undefined on input line 1184.
+
+
+(./QMS-EN.bbl [73] [74
+
+] [75] [76]) [77] (./QMS-EN.aux)
 Package rerunfilecheck Info: File `QMS-EN.out' has not changed.
-(rerunfilecheck)             Checksum: 121B1AEDF410B973B8EEF4C8B0F56B86;4496.
+(rerunfilecheck)             Checksum: A99A312D057D4C98A7F1E5D7FDA6D959;5331.
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 16745 strings out of 479441
- 291760 string characters out of 5880450
+ 16804 strings out of 479441
+ 292613 string characters out of 5880450
  758140 words of memory out of 5000000
- 35843 multiletter control sequences out of 15000+600000
+ 35902 multiletter control sequences out of 15000+600000
  541587 words of font info for 88 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  84i,8n,118p,1871b,527s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on QMS-EN.pdf (54 pages).
+Output written on QMS-EN.pdf (77 pages).

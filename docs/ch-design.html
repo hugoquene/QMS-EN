@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>6 Design | Quantitative Methods and Statistics</title>
+  <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="6 Design | Quantitative Methods and Statistics" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
+  <meta name="github-repo" content="rstudio/QMS-EN" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="6 Design | Quantitative Methods and Statistics" />
+  
+  <meta name="twitter:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="ch-validity.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/header-attrs-2.1/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Quantitative Methods and Statistics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#notation"><i class="fa fa-check"></i>Notation</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#citation"><i class="fa fa-check"></i>Citation</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#technical-details"><i class="fa fa-check"></i>Technical details</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-authors"><i class="fa fa-check"></i>About the authors</a></li>
+</ul></li>
+<li class="part"><span><b>Part I: Methodology</b></span></li>
+<li class="chapter" data-level="1" data-path="ch-introduction.html"><a href="ch-introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="ch-introduction.html"><a href="ch-introduction.html#sec:scientific-research"><i class="fa fa-check"></i><b>1.1</b> Scientific research</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="ch-introduction.html"><a href="ch-introduction.html#sec:theory"><i class="fa fa-check"></i><b>1.1.1</b> Theory</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="ch-introduction.html"><a href="ch-introduction.html#sec:paradigms"><i class="fa fa-check"></i><b>1.2</b> Paradigms</a></li>
+<li class="chapter" data-level="1.3" data-path="ch-introduction.html"><a href="ch-introduction.html#sec:instrument-validation"><i class="fa fa-check"></i><b>1.3</b> Instrument validation</a></li>
+<li class="chapter" data-level="1.4" data-path="ch-introduction.html"><a href="ch-introduction.html#sec:descriptive-research"><i class="fa fa-check"></i><b>1.4</b> Descriptive research</a></li>
+<li class="chapter" data-level="1.5" data-path="ch-introduction.html"><a href="ch-introduction.html#sec:experimental-research"><i class="fa fa-check"></i><b>1.5</b> Experimental research</a></li>
+<li class="chapter" data-level="1.6" data-path="ch-introduction.html"><a href="ch-introduction.html#outline-of-this-textbook"><i class="fa fa-check"></i><b>1.6</b> Outline of this textbook</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="ch-research.html"><a href="ch-research.html"><i class="fa fa-check"></i><b>2</b> Hypothesis testing research</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="ch-research.html"><a href="ch-research.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.2" data-path="ch-research.html"><a href="ch-research.html#sec:variables"><i class="fa fa-check"></i><b>2.2</b> Variables</a></li>
+<li class="chapter" data-level="2.3" data-path="ch-research.html"><a href="ch-research.html#sec:independendependentvariables"><i class="fa fa-check"></i><b>2.3</b> Independent and dependent variables</a></li>
+<li class="chapter" data-level="2.4" data-path="ch-research.html"><a href="ch-research.html#sec:falsification"><i class="fa fa-check"></i><b>2.4</b> Falsification and null hypothesis</a></li>
+<li class="chapter" data-level="2.5" data-path="ch-research.html"><a href="ch-research.html#sec:empiricalcycle"><i class="fa fa-check"></i><b>2.5</b> The empirical cycle</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="ch-research.html"><a href="ch-research.html#observation"><i class="fa fa-check"></i><b>2.5.1</b> observation</a></li>
+<li class="chapter" data-level="2.5.2" data-path="ch-research.html"><a href="ch-research.html#induction"><i class="fa fa-check"></i><b>2.5.2</b> induction</a></li>
+<li class="chapter" data-level="2.5.3" data-path="ch-research.html"><a href="ch-research.html#deduction"><i class="fa fa-check"></i><b>2.5.3</b> deduction</a></li>
+<li class="chapter" data-level="2.5.4" data-path="ch-research.html"><a href="ch-research.html#testing"><i class="fa fa-check"></i><b>2.5.4</b> testing</a></li>
+<li class="chapter" data-level="2.5.5" data-path="ch-research.html"><a href="ch-research.html#evaluation"><i class="fa fa-check"></i><b>2.5.5</b> evaluation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="ch-research.html"><a href="ch-research.html#sec:makingchoices"><i class="fa fa-check"></i><b>2.6</b> Making choices</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="ch-integrity.html"><a href="ch-integrity.html"><i class="fa fa-check"></i><b>3</b> Integrity</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="ch-integrity.html"><a href="ch-integrity.html#sec:integrity-introduction"><i class="fa fa-check"></i><b>3.1</b> Introduction</a></li>
+<li class="chapter" data-level="3.2" data-path="ch-integrity.html"><a href="ch-integrity.html#sec:design"><i class="fa fa-check"></i><b>3.2</b> Design</a></li>
+<li class="chapter" data-level="3.3" data-path="ch-integrity.html"><a href="ch-integrity.html#participants-and-informants"><i class="fa fa-check"></i><b>3.3</b> Participants and informants</a></li>
+<li class="chapter" data-level="3.4" data-path="ch-integrity.html"><a href="ch-integrity.html#data"><i class="fa fa-check"></i><b>3.4</b> Data</a></li>
+<li class="chapter" data-level="3.5" data-path="ch-integrity.html"><a href="ch-integrity.html#writing"><i class="fa fa-check"></i><b>3.5</b> Writing</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ch-levelsofmeasurement.html"><a href="ch-levelsofmeasurement.html"><i class="fa fa-check"></i><b>4</b> Levels of measurement</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="ch-levelsofmeasurement.html"><a href="ch-levelsofmeasurement.html#introduction-1"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.2" data-path="ch-levelsofmeasurement.html"><a href="ch-levelsofmeasurement.html#sec:nominal"><i class="fa fa-check"></i><b>4.2</b> Nominal</a></li>
+<li class="chapter" data-level="4.3" data-path="ch-levelsofmeasurement.html"><a href="ch-levelsofmeasurement.html#sec:ordinal"><i class="fa fa-check"></i><b>4.3</b> Ordinal</a></li>
+<li class="chapter" data-level="4.4" data-path="ch-levelsofmeasurement.html"><a href="ch-levelsofmeasurement.html#sec:interval"><i class="fa fa-check"></i><b>4.4</b> Interval</a></li>
+<li class="chapter" data-level="4.5" data-path="ch-levelsofmeasurement.html"><a href="ch-levelsofmeasurement.html#sec:ratio"><i class="fa fa-check"></i><b>4.5</b> Ratio</a></li>
+<li class="chapter" data-level="4.6" data-path="ch-levelsofmeasurement.html"><a href="ch-levelsofmeasurement.html#sec:orderinglevelsofmeasurement"><i class="fa fa-check"></i><b>4.6</b> Ordering of levels of measurement</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ch-validity.html"><a href="ch-validity.html"><i class="fa fa-check"></i><b>5</b> Validity</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="ch-validity.html"><a href="ch-validity.html#introduction-2"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="ch-validity.html"><a href="ch-validity.html#sec:causality"><i class="fa fa-check"></i><b>5.2</b> Causality</a></li>
+<li class="chapter" data-level="5.3" data-path="ch-validity.html"><a href="ch-validity.html#sec:validity"><i class="fa fa-check"></i><b>5.3</b> Validity</a></li>
+<li class="chapter" data-level="5.4" data-path="ch-validity.html"><a href="ch-validity.html#sec:internalvalidity"><i class="fa fa-check"></i><b>5.4</b> Internal validity</a></li>
+<li class="chapter" data-level="5.5" data-path="ch-validity.html"><a href="ch-validity.html#sec:constructvalidity"><i class="fa fa-check"></i><b>5.5</b> Construct validity</a></li>
+<li class="chapter" data-level="5.6" data-path="ch-validity.html"><a href="ch-validity.html#sec:externalvalidity"><i class="fa fa-check"></i><b>5.6</b> External validity</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="ch-design.html"><a href="ch-design.html"><i class="fa fa-check"></i><b>6</b> Design</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="ch-design.html"><a href="ch-design.html#sec:design-introduction"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="ch-design.html"><a href="ch-design.html#sec:betweenwithinparticipants"><i class="fa fa-check"></i><b>6.2</b> Between or within ?</a></li>
+<li class="chapter" data-level="6.3" data-path="ch-design.html"><a href="ch-design.html#sec:one-shot-single-case-design"><i class="fa fa-check"></i><b>6.3</b> The one-shot single-case design</a></li>
+<li class="chapter" data-level="6.4" data-path="ch-design.html"><a href="ch-design.html#sec:one-group-pretest-posttest-design"><i class="fa fa-check"></i><b>6.4</b> The one-group pretest-posttest design</a></li>
+<li class="chapter" data-level="6.5" data-path="ch-design.html"><a href="ch-design.html#sec:pretest-posttest-control-group-design"><i class="fa fa-check"></i><b>6.5</b> The pretest-posttest-control group design</a></li>
+<li class="chapter" data-level="6.6" data-path="ch-design.html"><a href="ch-design.html#sec:solomon-four-groups-design"><i class="fa fa-check"></i><b>6.6</b> The Solomon-four-groups design</a></li>
+<li class="chapter" data-level="6.7" data-path="ch-design.html"><a href="ch-design.html#the-posttest-only-control-group-design"><i class="fa fa-check"></i><b>6.7</b> The posttest-only control group design</a></li>
+<li class="chapter" data-level="6.8" data-path="ch-design.html"><a href="ch-design.html#sec:factorial-designs"><i class="fa fa-check"></i><b>6.8</b> Factorial designs</a></li>
+<li class="chapter" data-level="6.9" data-path="ch-design.html"><a href="ch-design.html#sec:within-subject-designs"><i class="fa fa-check"></i><b>6.9</b> Within-subject designs</a></li>
+<li class="chapter" data-level="6.10" data-path="ch-design.html"><a href="ch-design.html#designing-a-study"><i class="fa fa-check"></i><b>6.10</b> Designing a study</a></li>
+<li class="chapter" data-level="6.11" data-path="ch-design.html"><a href="ch-design.html#in-conclusion"><i class="fa fa-check"></i><b>6.11</b> In conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Created with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Quantitative Methods and Statistics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ch:design" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> Design</h1>
+<div id="sec:design-introduction" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Introduction</h2>
+<p>Many of the problems around validity discussed in Chapter <a href="ch-validity.html#ch:validity">5</a> can be avoided by properly collecting high-quality data. A study’s <em>design</em> indicates which schema or plan will be used to collect the required data. Using a proper and strong design allows us to neutralize many of the possible threats to validity, which increases our study’s strength. Therefore, it is a good idea to spend a good amount of time thinking through your study’s design in advance! Naturally, a study’s design must be closely coordinated with the research question at hand: after all, the data obtained in the study must allow the researcher to give a valid answer to the research question.</p>
+<p>The research designs discussed in this chapter are but a limited selection of all possible designs. Some designs will be discussed predominantly to indicate what can go wrong with a “weak” design; conversely, other designs are popular because they enable us to make our research relatively “strong”.</p>
+<p>A research design is composed of various elements:</p>
+<ul>
+<li><em>time</em>, usually depicted as passing in the direction of reading. Temporal order is important to be able to establish a causal relationship: the cause comes first, its effect comes after (§ (§<a href="ch-validity.html#sec:causality">5.2</a>)). However, temporal order is a necessary but not a sufficient condition to establish a causal relationship. Put differently, even when the effect (e.g., recovery) does actually happen after the cause (e.g., treatment), this does not entail that the treatment actually cause the recovery. Perhaps the recovery happened spontaneously, or the recovery is the effect of some other cause not considered in the study.</li>
+</ul>
+<hr />
+<blockquote>
+<p><em>Example 6.1</em>: Imagine Gus: whenever someone has a nettle sting, an insect bite, eczema, or a bruise, Gus sprays some Glassex (Windex) on it – after a few days, the problem vanishes. Gus is convinced his Glassex treatment is the cause of recovery. However, this is a misconception known as “post hoc ergo propter hoc” (“after this, therefore because of this”; also known as “post hoc fallacy”). It is most probable that the problem would have healed properly even without the Glassex treatment. This means that recovery does not prove that the Glassex treatment is necessary. (This example is taken from the 2004 feature film, <em>My Big Fat Greek Wedding</em>).</p>
+</blockquote>
+<hr />
+<ul>
+<li><p><em>groups</em> of units (e.g., participants); a group will usually correspond to a line in the design.</p></li>
+<li><p><em>treatment</em>, normally depicted as X (as in X-ray). Types of treatment may also include a lack of treatment (“control”), or non-experimental usual care.</p></li>
+<li><p><em>observation</em>, normally depicted as O (as in Oscar).</p></li>
+<li><p><em>assignment</em> of participants to groups or conditions of treatment may happen in various ways. Most often, we will do this at random (indicated below as “R”), because this usually leads to the best protection of the study’s validity.</p></li>
+</ul>
+</div>
+<div id="sec:betweenwithinparticipants" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Between or within ?</h2>
+<p>For the study’s design it is important whether an independent variable is manipulated between participants or within participants. In many studies in linguistics, in which multiple texts, sentences, or words are offered as stimuli, the same is true of distinctions between stimuli versus within stimuli. Variables that are individual to the participant, such as sex (boy/girl) or whether they are multilingual, may normally only vary between subjects: the same participant may not participate in both sex groups in a study, and monolingual participants may not participate in the group of multilingual participants. However, with other variables, which have to do with the way in which stimuli are processed, this is, indeed, possible. The same participant might write with their left and their right hand, or may be observed preceding and following treatment. In this case, the researcher must choose in their researcher design how treatment and observations are combined. We will return to this in §<a href="#sec:afhankelijkegroepen"><strong>??</strong></a>.</p>
+</div>
+<div id="sec:one-shot-single-case-design" class="section level2" number="6.3">
+<h2><span class="header-section-number">6.3</span> The one-shot single-case design</h2>
+<p>This is a weak design, in which observations are made one single time: after treatment. This research design may be schematized as follows:</p>
+<pre><code>  X   O</code></pre>
+<p>For instance, we might count for all final projects written by students in a particular cohort of a particular programme how many errors (of a certain type) occur in these final projects. This may generate some interest, but these data have very little scientific value. There is no way to compare this to other data (for other students and/or for other projects by the same students). It is not possible to draw a valid conclusion about possible effects that “treatment” (studying in the programme, X) might have on the observations (number of errors, <code>O</code>).</p>
+<p>Sometimes, data from a one-shot single-case study are forcibly compared to other data, for instance, with normative results for a large control group. Imagine we would like to investigate whether a new method of teaching languages would lead to better language ability in the target language. After a course that uses the new teaching method, we measure language ability and compare it to previously published results for a control group that used the traditional teaching method. This approach is frequently used, but, notwithstanding, there are various factors that threaten its validity (see §<a href="ch-validity.html#sec:internalvalidity">5.4</a>), including history (the new participants have different histories and biographies compared to the control group in the past), maturation (the new participants might have undergone more extensive or less extensive development compare to the control group), instrumentation (the test might not be equally suitable for individuals taught by the new teaching method as it is for those taught by the traditional method), and attrition (attrition of participants prior to the observation is not known, neither for the traditional method, nor for the new method).</p>
+<hr />
+<blockquote>
+<p><em>Example 6.2</em>: An interviewer may ask so-called ‘closed’ questions, which only have a few possible answers (<em>which of these three kinds of vegetables do you like best: peas, green beans, or broccoli?</em>), or ‘open’ questions, in which the way the question is asked does not limit the possible answers (<em>what kind of vegetables do you like best?</em>). There is also a third category, namely, open question with example answers (<em>what kind of vegetables do you like best, for instance, peas, or green beans, or…?</em>). However, it is not clear whether these example answers do or do not have a guiding effect, i.e., whether such questions are rather comparable with closed questions, or with open ones. <span class="citation">Houtkoop-Steenstra (<a href="#ref-Houtk91" role="doc-biblioref">1991</a>)</span> studied recorded conversations between doctors and their patients. The doctors would frequently ask open questions with example answers. Most of the time, patients turned out <em>not</em> to have interpreted the question as a guiding one; they primarily interpreted the question as a prompt for narration.</p>
+</blockquote>
+<blockquote>
+<p>This study can be seen as a one-shot single-case design, without any comparison with data from other conditions. While the conclusions drawn are, indeed, based on empirical observations, we do not know what answer the interviewee would have given if the question had been posed differently.</p>
+</blockquote>
+<hr />
+<p>Despite all these drawbacks, a one-shot single-case study may be useful during the observation phase within the empirical cycle, when the objective is to get some ideas and to formulate (global) hypotheses, which may be tested later.</p>
+</div>
+<div id="sec:one-group-pretest-posttest-design" class="section level2" number="6.4">
+<h2><span class="header-section-number">6.4</span> The one-group pretest-posttest design</h2>
+<p>In a one-group pretest-posttest design, data are collected for one group. At the first point in time (usually indicated as <code>T1</code>, but sometimes as <code>T0</code>), a first measurement is carried out (pretest, <code>O1</code>), after which the group is exposed to an experimental treatment, following which, at a later point in time (<code>T2</code>), a second measurement is taken (posttest, <code>O2</code>). A one-group pretest-posttest design may be schematized as follows:</p>
+<pre><code>  O1   X   O2</code></pre>
+<p>As shown in the diagram, the treatment, <code>X</code>, does not vary: everyone gets the same treatment, because there is just one group. The time of measurement, usually indicated as a pretest, <code>T0</code> (<code>O1</code>), and a posttest, <code>T1</code> (<code>O2</code>), varies within participants.</p>
+<p>This design is generally better than the previous one-shot one-case design, and it is definitely better than having no data at all. Despite this, we still consider it a weak research design, because it fails to address various threats to validity (see §<a href="ch-validity.html#sec:internalvalidity">5.4</a>)). Any difference between <code>O2</code> and <code>O1</code> may not exclusively be attributed to treatment <code>X</code> that was carried out in between: this effect might also be the consequence of maturation (improvement follows from participants’ maturation) or of history (improvement follows from one or several events other than <code>X</code> that occurred between the time of <code>O1</code> and that of <code>O2</code>). If the treatment, <code>X</code>, or the posttest, <code>O2</code>, is dependent on participants’ scores on the pretest, <code>O1</code>, then regression to the mean may also threaten validity. In short, this research design has various drawbacks because the hypothesis about the independent variable’s effect cannot always be answered in a valid way.</p>
+</div>
+<div id="sec:pretest-posttest-control-group-design" class="section level2" number="6.5">
+<h2><span class="header-section-number">6.5</span> The pretest-posttest-control group design</h2>
+<p>The problems mentioned above can partially be solved by adding a control group to the design, which results in a pretest-posttest-control group design. This means that the study involves two groups of elements (participants), which, in a diagram, is shown as two lines. This design is used very often. Whenever possible, researchers try to make the two groups as closely comparable as possible by assigning subjects to the two groups at random. This model can be schematized as follows (<code>R</code> stands for random assignment to the two groups):</p>
+<pre><code>  R   O1   X   O2
+  R   O3       O4</code></pre>
+<p>This research design is popular because it can neutralize many threats to internal validity (see §<a href="ch-validity.html#sec:internalvalidity">5.4</a>). The effect of the manipulation or treatment (<code>X</code>) is evaluated by comparing two differences, <code>(O2 – O1)</code> and <code>(O4 – O3)</code>. Strictly speaking, this research design has not one but two independent variables that may influence measurements: (1) the manipulation or treatment, <code>X</code> or not <code>X</code>, varying between subjects, and (2) the time of measurement, usually indicated as a pretest, <code>T0</code>, and a posttest, <code>T1</code>, varying within subjects.</p>
+<p>This design does take effects of history into account, at least, to the degree that such effects may have occurred equally for both groups. It does not take into account events that might have influenced just one of the groups (conditions). This does means that, if such an event has occurred for one group and not the other, this difference in history might also be responsible for an unequal difference between pretest and posttest in one group compared to the other.</p>
+<p>Threats to internal validity coming from maturation can be easily eliminated in this research design. After all, we expect any effect of maturation to be equally manifested in both groups, which is why it cannot be of any influence on the difference between <code>(O2 – O1)</code> and <code>(O4 – O3)</code>. Of course, this does presume that the pretest was administered to both groups at the same time, and that the same holds for the posttest.</p>
+<p>Any disruptive effect of instrumentation is likewise neutralized, as long as the requirements on comparable conditions of measurement are satisfied, and measurements are taken with the same instrument, for instance, the same device, computer program, or printed test. However, if observers or raters are recruited, like in the case of research into writing ability, instrumentation becomes a more complicated factor. In this case, it is highly important that these raters do <em>not</em> know which participants produced the fragments or responses to be judged, or under which condition this happened. Otherwise, the raters may (unwittingly and unintentionally) allow their expectations to play a role in the formation of their judgment. In this latter case, we would not be showing an effect of the independent variable, but an effect of the raters’ bias.</p>
+<p>The problem of regression to the mean also plays a smaller role in this design. In case the participants have been randomly assigned to one of two groups, and all participants’ data are entered into an analysis at the same time, regression to the mean does not play any role, since regression to the mean is expected to take place at equal rates in both groups, so that it does not have any influence on our analysis of the difference between <code>(O2 – O1)</code> and <code>(O4 – O3)</code>.</p>
+<p>The problem of participant selection is excluded in this design by randomly choosing the sample of participants from of the entire population, and by then randomly assigning participants to one of both groups or conditions. Naturally, the law of large numbers is at work here: if a larger sample is randomly split into two groups, there is a greater chance that the two groups will be equivalent compared to when the same is done for a smaller sample.</p>
+<p>However, attrition can actually be a reason for a difference between <code>(O2 – O1)</code> and <code>(O4 – O3)</code>. This threat to validity is difficult to control. After all, we cannot force a participant to keep participating in a study, and we cannot stop them from moving or passing away. Therefore, attrition may form a problem, especially when attrition rates differ between the two groups or conditions. It is best practice to report any attrition in the research report, and to discuss any potential consequences it may have.</p>
+<p>Summarizing, we can say that this pretest-posttest control group design allows us to control the various factors that threaten internal validity reasonably well. But how about construct validity (see §<a href="ch-validity.html#sec:constructvalidity">5.5</a>))? These threats were not touched upon earlier in our discussion of the one-shot one-case design and the one-group pretest-posttest design, because these designs already generated serious doubt regarding their internal validity.</p>
+<p>It must be said that not all aspects of construct validity have repercussions for a study’s design. Some aspects that concern manner of operationalization, such as convergent and divergent validity, are irrelevant to choosing a research design. However, other aspects are, indeed, relevant: the researcher’s expectations, attention, motivation, and the guiding influence of pretests.</p>
+<p>The pretest-posttest control group research design does not provide adequate guarantees for any of these four threats to construct validity. The researcher’s <em>expectations</em> may play a role both in the experimental and control conditions, even if it is a different role. This because there are two measurements at two points in time. Moreover, any difference between <code>(O2 – O1)</code> and <code>(O4 – O3)</code> might be attributable to the (additional) <em>attention</em> given to the experimental condition: the so-called Hawthorne effect (see example 5.10 in Chapter <a href="ch-validity.html#ch:validity">5</a>). This effect plays a role predominantly if participants in one condition (group) receive more attention compared to the other condition (group), as is the case in the Hawthorne effect.</p>
+<p>A third threat to construct validity is formed by <em>motivation.</em> Sometimes, one of the conditions can be so demoralizing that participants in this condition stop seriously participating in the study. Just like in the case of attention, the crucial factor is not so much the appeal of a particular condition, but any differences between conditions in terms of their appeal.</p>
+<p>In addition, construct validity in the pretest-posttest control group design can be threatened by the guiding influence of <em>pretests.</em> Because of a pretest (<code>O1</code> and <code>O3</code>), participants may develop a (greater) awareness of certain aspects of the study, which means that they will no longer behave like naïve participants. In such cases, the pretest can be considered to be a type of manipulation (see example 6.3 below).</p>
+</div>
+<div id="sec:solomon-four-groups-design" class="section level2" number="6.6">
+<h2><span class="header-section-number">6.6</span> The Solomon-four-groups design</h2>
+<p>The Solomon four-group design is used much less often than the pretest-posttest control group design. Despite this, the former design is clearly preferable to the pretest-posttest control group design: in particular, it allows for better control of threats to construct validity.</p>
+<p>In the Solomon four-group design, four conditions are distinguished, to which participants are assigned at random. In the first two conditions, a pretest is administered first, after which one of both groups is given the experimental treatment. Then, both groups undergo a posttest. Up until this point, the Solomon four-group design is identical to the pretest-posttest control group design. However, no pretest is administered in the third and fourth conditions. In one of the two conditions, participants are given the experimental treatment, but not in the other condition. Finally, both of these groups are given a posttest. We may schematize the Solomon four-group design as follows:</p>
+<pre><code>  O1   X   O2
+  O3       O4
+       X   O5
+           O6</code></pre>
+<p>Summarizing, we can say that the Solomon four-group design is an expansion of the pretest-posttest control group design by two groups, which do not participate in the pretest. Because of these two additional conditions with no pretest, we can take into account the guiding influence of pretests (see example 5.14), since this guiding influence is absent from the third and fourth groups. In addition, the effect of manipulating the independent variable, <code>X</code>, is tested several times, namely, in the four comparisons of <code>O2</code> versus <code>O1</code>, <code>O2</code> versus <code>O4</code>, <code>O5</code> versus <code>O6</code>, and <code>(O2 – O1)</code> versus <code>(O4 – O3)</code>. The effect of the possibly guiding pretest is tested in the two comparisons of <code>O2</code> versus <code>O5</code>, <code>O4</code> versus <code>O6</code>. Thus, we can show effects of both treatment and pretest in the same study. However, this does mean we must employ two additional groups of participants (compared to the pretest-posttest control group design).</p>
+<hr />
+<blockquote>
+<p><em>Example 6.3</em>: A study done by <span class="citation">Ayres, Hopf, and Will (<a href="#ref-AHW00" role="doc-biblioref">2000</a>)</span> examined the effect that habituation training (<code>X</code>) has on fear of public speaking. Fear of public speaking was measured by having the participant first hold a speech, and then fill out two questionnaires on fear of (public) speaking. These together form one measurement. One group received habituation training by watching a training video that lasted about 20 minutes; the second group was given a break of the same duration, instead. The study used a Solomon four-group design to allow for studying a possible guiding influence of the pretest. After all, it is possible that the pretest (of which the talk they gave was a part) itself forms an instance of training for the participants, so that any positive effects after “treatment” <code>X</code> (habituation training) may not be attributed to said treatment, but (also) to the pretest. However, the results showed that the habituation training, indeed, did have a strongly favourable effect on fear of public speaking, and that the pretest alone (with no treatment) had no effect at all on participants’ degree of fear of public speaking.</p>
+</blockquote>
+<hr />
+</div>
+<div id="the-posttest-only-control-group-design" class="section level2" number="6.7">
+<h2><span class="header-section-number">6.7</span> The posttest-only control group design</h2>
+<p>A great amount of studies feature a pretest, because researchers want to demonstrate that the two (or more) groups researched do not differ from one another at the beginning of the study. Nevertheless, an adequate research design does not have to feature a pretest. If the groups are of sufficient size, and if participants (or other units of interest) have been assigned to groups in a completely random way, statistical analysis alone is sufficient to show that the groups are quite comparable. For instance, if we divide 100 participants between 2 groups in a completely random way, there is an extraordinarily small chance of the two groups’ showing a difference on the pretest. Therefore, for many cases like this, a posttest control group design is sufficient. This design may be schematized as follows:</p>
+<pre><code>      X   O5
+          O6</code></pre>
+<p>However, this design is only adequate if the groups are large enough, and if participants have been randomly assigned to the conditions. If these demands cannot be met, this design is also insufficient.</p>
+<hr />
+<blockquote>
+<p><em>Example 6.4</em>: Following up on the study by <span class="citation">Houtkoop-Steenstra (<a href="#ref-Houtk91" role="doc-biblioref">1991</a>)</span> (see example 6.2), <span class="citation">Wijffels, Bergh, and Dillen (<a href="#ref-Wijff92" role="doc-biblioref">1992</a>)</span> investigated to which extent questions with or without example answers are interpreted as guiding the listener in an oral (phone) interview. To this purpose, five questions on crime were constructed. Two versions of each question were made: one with example answers, and one without. Each respondent (in a sample of 50) was asked two to three questions with example answers, and two to three questions without example answers. The division of questions between the two types (with or without example answers) was randomized, which means that we may assume that the group of respondents that heard a particular question with example answers does not differ from the group of respondents that heard the exact same question without example answers. If both groups answer the same or similarly, we may assume that example answers have no guiding effect, but if respondents often use example answers to respond to a question, we may assume that the example answers do have a guiding effect. Analysis revealed that such a guiding effect did, indeed, occur for 4 out of 5 questions.</p>
+</blockquote>
+<hr />
+<p>These two studies, <span class="citation">Houtkoop-Steenstra (<a href="#ref-Houtk91" role="doc-biblioref">1991</a>)</span> and <span class="citation">Wijffels, Bergh, and Dillen (<a href="#ref-Wijff92" role="doc-biblioref">1992</a>)</span>, illustrate the gradual progress of scientific knowledge. <span class="citation">Houtkoop-Steenstra (<a href="#ref-Houtk91" role="doc-biblioref">1991</a>)</span> establishes that the professional literature has predominantly looked at written interviews, and asks whether the same effects are seen in oral face-to-face interviews. She concludes that, in face-to-face conversations, example answers do not have a guiding influence. <span class="citation">Wijffels, Bergh, and Dillen (<a href="#ref-Wijff92" role="doc-biblioref">1992</a>)</span> investigate the same hypothesis in an experiment that uses oral interviews over the phone, and conclude that example answers do have a guiding influence in these phone conversations.</p>
+</div>
+<div id="sec:factorial-designs" class="section level2" number="6.8">
+<h2><span class="header-section-number">6.8</span> Factorial designs</h2>
+<p>So far, we have talked about experimental designs in which one single independent variable is manipulated. However, many researchers are (also) interested in the effect of simultaneously manipulating multiple independent variables. Designs in which several factors are varied at the same time are called factorial designs. We already saw an example of this in our discussion of the pretest-posttest control group design (§§<a href="ch-design.html#sec:pretest-posttest-control-group-design">6.5</a>), in which both time and treatment were varied.</p>
+<hr />
+<blockquote>
+<p><em>Example 6.5</em>: <span class="citation">Drake and Ben El Heni (<a href="#ref-Drake03" role="doc-biblioref">2003</a>)</span> investigated the perception of musical structure. We may indirectly measure this perception by asking listeners to tap along with the music. If a listener does not understand or recognize the structure of a musical fragment, they will tend to tap every beat (analytical listening). The better a listener understands and recognizes a fragment’s structure, the more they will tend to tap along with higher-level units (synthetic or predictive listening): they will not tap once every beat, but once every measure or once per musical phrase. The time interval between taps (called the inter-onset interval or IOI) thus forms an indication of the perceived musical structure. Two groups of listeners participated in the study: one in France and one in Tunisia<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a>. All participants listened to 12 pieces of music, of which 6 derived from French musical culture, and the other 6, from Tunisian musical culture (the pieces of music differed in terms of time signature, tempo, and degree of popularity). Results are summarized visually in Figure 6.1.</p>
+</blockquote>
+<div class="figure" style="text-align: center"><span id="fig:drakebenelheni2003fig2"></span>
+<img src="figures/DrakeBenElHeni2003Fig2.png" alt="Average time interval between taps (IOI, in ms) for two groups of listeners and two types of music (from Drake and Ben El Heni, 2003, Fig.2)."  />
+<p class="caption">
+Figure 6.1: Average time interval between taps (IOI, in ms) for two groups of listeners and two types of music (from Drake and Ben El Heni, 2003, Fig.2).
+</p>
+</div>
+<blockquote>
+<p>These results show that there is no difference between both groups (French vs. Tunisian listeners; both groups have the same IOI on average), and that there is also no difference between both types of music (French vs. Tunisian music; both types of music result in the same IOI on average). Does this mean that the two independent variables have no effect at all? They absolutely do: it turned out that French listeners produced longer IOIs between taps when listening to French music, while, on the other hand, Tunisian listeners produced longer IOIs when listening to Tunisian music. Thus, all listeners produced longer IOIs when listening to a type of music they knew, and shorter IOIs when listening to a type of music they did not know. <span class="citation">Drake and Ben El Heni (<a href="#ref-Drake03" role="doc-biblioref">2003</a>)</span> conclude that listeners are better able to recognize and understand musical structure in music from their own musical culture compared to music from another culture. This pattern is a classic crossover interaction effect, in which one independent variable’s effect is exactly opposite in the various conditions defined by the other independent variable.</p>
+</blockquote>
+<hr />
+<p>If it turns out that there is an interaction effect, we cannot sensibly interpret any main effects. This was already illustrated in example 6.5: we cannot conclude that there is no difference between the types of music. However, the size (and direction) of the difference depends on the other independent variable(s), in this case, group/nationality of listeners. Many studies are specifically aimed at demonstrating interaction effects: it is not main effects that are the topic of research, but their interaction, precisely as in example 6.5 above.</p>
+<p>It is difficult to schematize a factorial research design, because it features multiple independent variables (with multiple levels each). We could schematically represent these by indexing the manipulation, which was previously shown simply as <code>X</code>. The first index (subscript) indicates the level for the first independent variable or factor, while the second index indicates the second factor’s level. Following this system, we can schematize the design from example 6.5 as follows:</p>
+<p>Als er een interactie-effect blijkt op te treden, dan is het zinloos om
+een eventueel hoofdeffect te interpreteren. Dat werd al geïllustreerd in
+Voorbeeld 6.5 hierboven: we kunnen niet concluderen dat er géén
+verschil is tussen de muzieksoorten. Maar de grootte (en richting) van
+het verschil is afhankelijk van de andere onafhankelijke variabele(n),</p>
+<pre><code>  R    X_{1,1}   O1
+  R    X_{1,2}   O2
+  R    X_{2,1}   O3
+  R    X_{2,2}   O4</code></pre>
+<p>Combining many factors into one big factorial design may often seem seductive: why not investigate how all these factors interact with one another? However, the most sensible option is not to do this, and, instead, limit the number of factors. Firstly, as we will see later, the number of observation has to keep up with the number of possible combinations of factors. Adding more factors means that many more participants (or other units) are needed. Secondly, it is more difficult to guarantee that all combinations of factors are perfectly comparable <span class="citation">(Shadish, Cook, and Campbell <a href="#ref-SCC02" role="doc-biblioref">2002</a>, 266)</span>: may we reasonably compare Tunisian participants listening to Tunisian music in Tunisian with French participants listening to French music in France? The more combinations of factors are featured in the study, the trickier it becomes to ensure that these combinations are comparable. Thirdly, interactions are notoriously difficult to interpret, which also becomes trickier as interactions become more complex and span a greater number of factors. For all of these reasons, it is better to study the effects of multiple factors in separate individual studies <span class="citation">(Quené <a href="#ref-Quene10" role="doc-biblioref">2010</a>)</span>.</p>
+<p>We will come back later to the analysis and interpretation of data from factorial experimental designs (Chapter <a href="#ch:anova"><strong>??</strong></a>).
+In the meantime, we will concentrate on designs that have just one independent variable.</p>
+</div>
+<div id="sec:within-subject-designs" class="section level2" number="6.9">
+<h2><span class="header-section-number">6.9</span> Within-subject designs</h2>
+<p>At the outset of the chapter, we spoke about manipulating an independent variable either between or within subjects ((§<a href="ch-design.html#sec:betweenwithinparticipants">6.2</a>). In most designs discussed above, a separate group was formed for each value of the independent variable(s); we call this a between subjects design. The independent variable’s value differs between participants.</p>
+<p>However, some independent variables may also be manipulated within participants. In such cases, we take repeated measures for (within) the same participants from the same group, switching out different conditions of the independent variable. In the example below, the independent variable, ‘language’ (native or non-native), is varied within participants. We call this a within subjects design.</p>
+<hr />
+<blockquote>
+<p><em>Example 6.6</em>: <span class="citation">De Jong et al. (<a href="#ref-JGSH13" role="doc-biblioref">2015</a>)</span> investigated the fluency of participants’ speech in their native language (Turkish) and in a non-native language (Dutch). The participants first performed a number of speech production tasks in their native language, a few weeks after which they did the same for Dutch. One of the dependent variables was the number of filled pauses (e.g., <em>uh, uhm</em>) per second of speech: the greater the prevalence of pauses, the lesser the degree of fluency. As we might expect, the speakers did turn out to produce more pauses (i.e., speak less fluently) in the non-native language compared to their native language. However, one of the goals of this study was to investigate to which extent we may trace back individual fluency differences in the non-native language to individual fluency differences in the native language. These two measurements turned out to be highly correlated (<span class="math inline">\(r = 0.73\)</span>; see Chapter <a href="#ch:correlation"><strong>??</strong></a> for more on this). Speakers that have many pauses in the non-native language also have many pauses in their native language. The researchers argue that we must take this correlation into account when teaching and testing speaking ability in a non-native language.</p>
+</blockquote>
+<hr />
+<p>The research design described here can be schematized as follows:</p>
+<pre><code>   X1   O1   X2   O2</code></pre>
+<p>Despite the many threats it poses to internal validity (including history, maturation, guiding influence of pretests), such a design is often useful. In the example above, it is essential that it is the <em>same</em> participants that carry out speaking tasks in both languages (conditions) – no other method will be adequate for answering the research questions.</p>
+</div>
+<div id="designing-a-study" class="section level2" number="6.10">
+<h2><span class="header-section-number">6.10</span> Designing a study</h2>
+<p>A researcher who intends to carry out a study has to settle on a way of collecting data: they have to choose a particular design for their study. Sometimes, a standard designed may be chosen, for instance, one of the designs discussed above. In other cases, the researcher will have to devise their own design. Naturally, the design chosen should fit well with the research question <span class="citation">(Levin <a href="#ref-Levin99" role="doc-biblioref">1999</a>)</span>, and it should exclude as many disruptive, potentially validity-threatening variables as possible. Designing a study is a skill that researchers hone with practice. In the example below, we will try to show to you which reasoning and arguments play a role in developing a design for a study.</p>
+<p>Suppose that we would like to investigate whether the way in which test questions are asked, as open vs. closed questions, influences students’ scores on the relevant test. If we use a simple design, we will first administer a test with open questions to a group of respondents, and then, a comparable test with closed questions to the same respondents. If the resulting scores are sufficiently correlated, we conclude that both tests measure the same thing, and that performance on the test is not significantly influenced by the way questions are asked. This design can be schematized as follows:</p>
+<pre><code>   Open   O1   Closed   O2</code></pre>
+<p>However, this research design does have various weaknesses. Firstly, it is not prudent to first administer all open question tests at the first time point, and leave all closed question tests for the second time point. This is because performance on the second test will always be influenced by effects of ordering (transfer effects): respondents remember and, thus, learn something from the first measurement. However, this transfer always works in one direction, which means that we expect relatively higher performance on the test with closed questions (at the second time point). Because of this, it is better to randomly distribute the open question and close question tests between the first and second time point.</p>
+<p>Secondly, all respondents might have been influenced by any events that took place between the two time points (history), for instance, by some instruction relevant to the test’s subject matter. Because there is no control group, we cannot take this type of effect into account.</p>
+<p>A third problem lies in the way in which the reasoning from findings to conclusions is constructed. For the current example, we defined this reasoning as follows: if scores on both tests are sufficiently correlated, both tests measure the same thing. If you stop and think about it, you might agree with us that this is a strange bit of reasoning. The underlying research question really seems to be whether the correlation between performance on different tests with different types of questions is the same as the correlation between performance on different tests with the same types of questions, since we do assume that the latter group of tests measure the same thing. This, in itself, defines a control group: respondents who, at both points in time, write tests with the same types of questions. Just to be sure, let us add not one, but two control groups: one with open questions at both time points, and one with closed questions at both time points.</p>
+<p>By doing this, we have improved the design in at least two ways: (1) tests are randomized between times of measurement, and (2) relevant control groups have been added. At this point, we may schematize our design as follows:</p>
+<pre><code>       Exp. group 1       Open    O1   Closed   O2
+       Exp. group 2      Closed   O3    Open    O4
+      Control group 1     Open    O5    Open    O6
+      Control group 2    Closed   O7   Closed   O8</code></pre>
+<p>For all four groups, we may now determine the correlation between their performance at the first and the second time point. We can subsequently compare these correlation results between the four groups, and use this to answer the research question. This example shows us that the conclusions that can be draw from research results are directly dependent on the design that was chosen <span class="citation">(Levin <a href="#ref-Levin99" role="doc-biblioref">1999</a>)</span>. In the first design, a low correlation would lead to a conclusion that the two types of testing investigated do <em>not</em> test for the same intellectual skills in our respondents. However, in the second design, the same low correlation in the first group (experimental group 1) does not have to lead to the same conclusion! This is because the conclusion also depends on the degree of correlation that was found in the other groups.</p>
+</div>
+<div id="in-conclusion" class="section level2" number="6.11">
+<h2><span class="header-section-number">6.11</span> In conclusion</h2>
+<p>Despite all the books, manuals, websites, and other instructional materials that are available, it is still much too often that we encounter studies with methodological problems in their research questions, operationalization, design, drawing of samples, and/or data collection. Not only do these problems cause a waste of time, money, and energy, but they also yield knowledge that is less reliable, valid, and robust than would otherwise have been possible. The following checklist for good research practice (partly taken from <a href="https://www.linkedin.com/groups/4292855/4292855-6093149378770464768" class="uri">https://www.linkedin.com/groups/4292855/4292855-6093149378770464768</a>) may preempt many problems during a study’s later stages.</p>
+<ol style="list-style-type: decimal">
+<li><p>Give your research questions plenty of thought, and formulate them fully into the smallest detail. If the questions have not been formulated clearly, or if there are many sub-questions, keep working on the questions.</p></li>
+<li><p>Arrange the research questions according to their priority. This will help in making good choices regarding design, sampling, operationalization, etc.</p></li>
+<li><p>Think long and hard about your study’s design. According to an informal rule of thumb, each hour spent thinking about your study’s design will save you 10 hours of additional data analysis and interpretation in the future. Put differently: spending an hour less on thinking about your design will cost you 10 hours of work down the road.</p></li>
+<li><p>Think of various alternative designs for your study, and think about each possible design option’s advantages and disadvantages.</p></li>
+<li><p>Imagine the future: you have completed your research project, analysed your data, and written your report or thesis. Which message would you like to impart upon the readers of your report? How does your study’s design contribute to this message? What might you change in your design to make this message even clearer? Think of the direction you would like to take, not just of where you are now.</p></li>
+<li><p>Write a research plan in which you describe the various methodological aspects of your study. Explain the details of and the reasoning behind your research questions, design, sample, method of measurement, data collection, instruments of measurement (e.g., questionnaire, software), other requirements (e.g., laboratory environment, transportation), and statistical processing. You will be able to reuse parts of this research plan in your report. When writing your plan, make sure to include a schedule: when will which milestone be reached?</p></li>
+<li><p>Write out what statistical analyses you will use on your data before your actually start collecting any data. Again, be as explicit as possible (using a script, step-by-step plan, or similar). Make up a miniature collection of fake observations, or real observations from the pilot phase of your study, and analyse these data as if this were your definitive collection of data. Make adjustments to your research plan as needed.</p></li>
+<li><p>Once you are collecting data, do <em>not</em> make any changes to your research plan. Keep to this plan and the schedule you made. Analyse your data in the way specified in the (previously adjusted) research plan. Do discuss in your report any problems that arose during the study. If serious problems occur, halt your project, and consider starting anew with an improved version of your study.</p></li>
+</ol>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-AHW00">
+<p>Ayres, Joe, Tim Hopf, and Anthony Will. 2000. “Are Reductions in CA an Experimental Artifact? A Solomon Four-Group Answer.” <em>Communication Quarterly</em> 48 (1): 19–26. <a href="http://dx.doi.org/10.1080/01463370009385576">http://dx.doi.org/10.1080/01463370009385576</a>.</p>
+</div>
+<div id="ref-JGSH13">
+<p>De Jong, Nivja H., Rachel Groenhout, Rob Schoonen, and Jan H. Hulstijn. 2015. “Second Language Fluency: Speaking Style or Proficiency? Correcting Measures of Second Language Fluency for First Language Behavior.” <em>Applied Psycholinguistics</em> 36 (2): 223–43. <a href="https://doi.org/10.1017/S0142716413000210">https://doi.org/10.1017/S0142716413000210</a>.</p>
+</div>
+<div id="ref-Drake03">
+<p>Drake, Carolyn, and Jamel Ben El Heni. 2003. “Synchronizing with Music: Intercultural Differences.” <em>Annals of the New York Academy of Sciences</em> 999 (1): 429–37. <a href="http://dx.doi.org/10.1196/annals.1284.053">http://dx.doi.org/10.1196/annals.1284.053</a>.</p>
+</div>
+<div id="ref-Houtk91">
+<p>Houtkoop-Steenstra, Hanneke. 1991. “Hoe Een Gesloten Vraag Toch Open Kan Zijn.” <em>Tijdschrift Voor Taalbeheersing</em> 13 (3): 185–96.</p>
+</div>
+<div id="ref-Levin99">
+<p>Levin, Irwin P. 1999. <em>Relating Statistics and Experimental Design: An Introduction</em>. Sage University Papers Series on Quantitative Applications in the Social Sciences; 07-125. Thousand Oaks, CA: Sage.</p>
+</div>
+<div id="ref-Quene10">
+<p>Quené, Hugo. 2010. “How to Design and Analyze Language Acquisition Studies.” In <em>Experimental Methods in Language Acquisition Research</em>, edited by Elma Blom and Sharon Unsworth, 269–87. Amsterdam: Benjamins.</p>
+</div>
+<div id="ref-SCC02">
+<p>Shadish, William R., Thomas D. Cook, and Donald T. Campbell. 2002. <em>Experimental and Quasi-Experimental Designs for Generalized Causal Inference</em>. Belmont, CA: Wadsworth.</p>
+</div>
+<div id="ref-Wijff92">
+<p>Wijffels, Janneke, Huub van den Bergh, and S. van Dillen. 1992. “Het Sturend Effect van Vragen Met Voorbeeldantwoorden.” <em>Tijdschrift Voor Taalbeheersing</em> 14 (2): 136–47.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="10">
+<li id="fn10"><p>Note that participants are not randomly assigned to one of these two groups, which, strictly speaking, makes this a quasi-experimental study (see Chapter 1).<a href="ch-design.html#fnref10" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ch-validity.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/ch06design.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["QMS-EN.pdf", "QMS-EN.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

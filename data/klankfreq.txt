@@ -1,0 +1,17 @@
+# Klankfrequenties van het Nederlands, Tabel 1
+# bron: https://www.academia.edu/627882/Klankfrequenties_in_het_Nederlands
+# Luyckx et al 2007
+# HQ 20161204
+hoofdklasse onderklasse aantal
+C plos  585999 
+C fric  426097 
+C liq   249275 
+C nas   361742 
+C glide 146344
+V lang  365887 
+V kort  428832 
+V schwa 341260 
+V diph   61638 
+# V leen     615
+# V nas      531
+V rest	  1146

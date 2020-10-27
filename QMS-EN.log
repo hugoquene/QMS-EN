@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.10.22)  27 OCT 2020 16:07
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.10.22)  27 OCT 2020 16:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -761,11 +761,11 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 6.99925pt on input line 2.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 4.99947pt on input line 2.
-[3])
+[3] [4])
 \tf@toc=\write4
 \openout4 = `QMS-EN.toc'.
 
-[4] [5] [6
+[5] [6
 
 ] [7] [8] [9] [10
 
@@ -958,10 +958,6 @@ LaTeX Warning: Reference `ch:correlation' on page 61 undefined on input line 92
 
 [61] [62]
 
-LaTeX Warning: Reference `app:randomnumbers' on page 63 undefined on input line
- 953.
-
-
 LaTeX Warning: Reference `sec:randomsample' on page 63 undefined on input line 
 955.
 
@@ -995,22 +991,26 @@ LaTeX Warning: Reference `ch:anova' on page 88 undefined on input line 1393.
 LaTeX Warning: Reference `ch:correlation' on page 88 undefined on input line 14
 06.
 
-[88] [89] [90] [91] (./QMS-EN.bbl [92] [93
+[88] [89] [90] [91] [92]
+Appendix A.
+(./QMS-EN.bbl [93
 
-] [94] [95]) [96] (./QMS-EN.aux)
+] [94] [95
+
+] [96] [97]) [98] (./QMS-EN.aux)
 Package rerunfilecheck Info: File `QMS-EN.out' has not changed.
-(rerunfilecheck)             Checksum: C41F8DCD1D2625213F9705B2C37A081C;7473.
+(rerunfilecheck)             Checksum: EBA6F27E49E8425ED1C5B31152380A31;7598.
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 16850 strings out of 479441
- 293597 string characters out of 5880450
+ 16851 strings out of 479441
+ 293605 string characters out of 5880450
  758140 words of memory out of 5000000
- 35945 multiletter control sequences out of 15000+600000
+ 35946 multiletter control sequences out of 15000+600000
  541587 words of font info for 88 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  84i,8n,118p,1871b,527s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on QMS-EN.pdf (96 pages).
+Output written on QMS-EN.pdf (98 pages).

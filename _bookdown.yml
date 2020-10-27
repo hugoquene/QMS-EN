@@ -6,6 +6,7 @@ rmd_files: ["index.Rmd",
             "ch04levelsofmeasurement.Rmd",
             "ch05validity.Rmd",
             "ch06design.Rmd",
+            "a1randomnumbers.Rmd",
             "references.Rmd"]
 output_dir: "docs"
 delete_merged_file: true

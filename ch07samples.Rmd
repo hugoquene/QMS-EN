@@ -1,0 +1,112 @@
+# Samples {#ch:samples}
+
+In generalizing the outcome of a study to the population or the sample, the quality of the sample is all-important. Does the sample adequately reflect the population? To give an extreme example of this: if a sample consists of girls in the last year of primary education, we cannot properly generalize the results to the population of students in primary education, because the sample does not form a good reflection of this population (which consists of boys and girls in all years of the curriculum).
+
+Depending on the method used by the researchers to select participants, many kinds of samples may be distinguished. In this chapter, we make a rough distinction between: (1) convenience samples, (2) systematically drawn samples, and (3) samples drawn at random. For further discussion of the way in which samples may be drawn and the problems that play a role in this, we refer the reader to standard reference works on this topic [@Coch77; @Thom12].
+
+## Convenience samples {#sec:convenience-samples}
+
+Work in the social sciences often uses samples that happen to present themselves to the researcher, so-called *convenience samples*. The researcher carries out the experiment with individuals that happen to be available to them more or less by chance. Some studies use paid or unpaid volunteers. In other studies, students are recruited, who are required to log some number of hours as participants as a part of their studies, or, sometimes, a colleague of the researcher"s sends their own students to participate in the study. A sample of this kind is not without its dangers. The researcher has no control whatsoever over the degree to which results can be generalized to the population. Of course, the researcher does have a population in mind, and will exclude participants that do not form a part of the intended population (such as non-native speakers) from the study, but the researcher cannot say anything about how representative the sample is.
+
+It is especially in psychology that this convenience sampling has led to heated discussion. For instance, a survey showed that 67% of samples used in published studies in psychology performed in the US was exclusively composed of undergraduate students enrolled in Psychology courses at American universities [@Henr10]. Naturally, samples like this are hardly representative. As a consequence, the theories based on these data have but a limited scope: they are likely to apply predominantly to the type of individuals (first world, young, highly educated, white) that are also highly represented in the samples [@Henr10]. Research in linguistics often also uses a convenience sample. Children that participate as participants often have highly educated parents (who often tend to have a linguistics background themselves, which likely means that they have above-average verbal skills), and adult participants are often students from the researchers' environment, who, therefore, also have above-average levels of education and verbal skill.
+
+Despite the valid objections raised against this type of sample, practical considerations often force researchers to use a convenience sample that presents itself. In such cases, we recommend keeping track of the extent to which this convenience sample distinguishes itself from the population over which the researcher would like to generalize. To conclude this discussion of samples that present themselves naturally, we provide an example of the dangers this type of sample carries.
+
+
+---
+
+> *Example 7.1*: Some years ago, there was a televised contest in which nine candidates competed on their singing skills. Viewers were invited to announce their preference by phone. For each of the nine candidates, a separate phone line had been opened. For each call, the corresponding candidate received one point. The person with the greatest number of points within a set time limit would win. The audience's response was overwhelming: large swaths of the Dutch phone network were over capacity. Very soon, one of the candidates turned out to have a considerable lead over the others. However, in the course of the evening, this lead became smaller and smaller. In the end, there was only a few calls' difference between the top two candidates. It was striking to see that, as the evening progressed, the relative differences between participants gradually diminished.
+
+---
+
+We may see this voting procedure as drawing a sample of callers or voters. However, this sample is far from representative. If many voters would like to vote for the same candidate, the phone line dedicated to this candidate will reach and exceed its capacity. This means that singers who drew many callers will receive relatively fewer votes than singers who draw few callers, because the latter singers' phone lines will not be over capacity. It is precisely for the most popular candidates that a voter is most likely to be unable to cast their vote. Because of this, the real difference in the number of calls per candidate will be far greater than what the organizers measured. The organizers themselved caused this systematic distortion of the results (bias) by opening a separate phone line for each of the nine candidates. The data could have been much more representative if the organizers had opened nine phone lines accessible through one single phone number. In such a scenario, the sample of callers who were able to cast their vote would have been representative for the population of all callers, which was not the case in reality.
+	
+
+## Systematic samples {#sec:systematic-samples}
+
+When the elements in the *sampling space* (i.e., the set of possible elements in a sample) are systematically ordered in some way, a reasonably representative sample can be obtained using a *systematic sampling procedure*. Ordering may, for instance, involve a list of names.
+
+---
+
+> *Example 7.2*: Let us assume for the moment that we would like to make study of language ability in students in the third year of secondary education. However, the entire population of third year students is far too great to measure all third year students' language ability (reading, writing, speaking, and listening): this group contains about 200,000 students. Consequently, we need to draw a sample. The Dutch Ministry of Education, Culture, and Science has a system in which a list of all schools with third year students is included. An obvious way of proceeding would be to take this list and include each 100th school on the list into the sample. This procedure will presumably result in a reasonably representative sample.
+
+---
+
+However, two factors may muddle the waters in drawing such a systematic sample, the first of which is the *response rate*. If a considerable proportion of schools that were contacted do not cooperate, we are actually dealing with self-selection (see §\@ref(sec:internalvalidity) point 5) and, thus, with a convenience sample that presents itself (see §\@ref(sec:convenience-samples)). This is an unwanted situation, since the schools that did cooperate presumably have a greater ‘sense of duty' than the schools that refused participation or than the average school. Moreover, students in the responding and non-responding schools may differ from one another (see §\@ref(sec:internalvalidity) point 5). This means that the eventual sample may perhaps be no longer representative of the population of all third year students. This, in turn, has as a consequence that the results measured cannot be properly generalized to other third year students at other schools.
+	
+The second factor that may influence whether a systematic sample is representative is the presence of a *disruptive trend effect*. We speak of a disruptive trend effect when elements of the population have a greater chance of ending up in the sample if they have a certain characteristic, compared to population elements that do not have this characteristic. In our example of measuring language ability in third year students, we are dealing with a disruptive trend effect. This is because not all students have an equal chance of being in the sample. After all, it is each individual *school* (not: each individual student) that has an equal chance of being in the sample. The consequence of this is that the sample will contain relatively many third year students from small schools with relatively few students, while, conversely, there will be relatively few third year students from large schools with relatively many students. Thus, third year students from large schools will be underrepresented. Is this a bad thing? It might be, because language ability (dependent variable) is partially influenced by the type of instruction, and type of instruction is influenced by the size of a school. This means that the sample described above is not representative for the population of third year students. Once again, this means that the results measured cannot be properly generalized to other third year students at other schools.
+	
+
+## Random samples {#sec:random-samples}
+
+The disruptive trend effect described above can be avoided by *random sampling*. Random sampling may happen in various ways, of which we will discuss three.
+
+The first type is simple random sampling: in this procedure, all elements of the population have an equal chance of being drawn. This may, for instance, be realized by giving all elements a *random* number and, depending on the size of the sample, selecting each $n$-th element. For choosing random numbers, researchers can make use of tables of random numbers (see Appendix  \@ref(app:randomnumbers)). Random numbers can also be generated by calculators, computers, spreadsheet programs, etc. (Using this type of random numbers is advisable, since a "random" order created by humans is not truly random.) However, one condition for applying this method is that the elements of the population (sampling space) are registered in advance, so that they may all be given numbers in some way.
+
+---
+
+> *Example 7.3*: We would like to draw a sample of n = 400 primary schools, which is about 4% of the population of primary schools in the Netherlands. To do this, we request from the Dutch Ministry of Education, Culture, and Science a list of all 9,000 primary schools; this list is the sampling space. After this, we number all schools with subsequent numbers $(1, 2, 3 \ldots,  9000)$. Finally, we select all primary schools whose number happen to end in 36, 43, 59, or 70 (see Appendix \@ref(app:randomnumbers), first column, last two digits). Using this procedure, we randomly select 4 of 100 possible last-two-digit combinations, or 4% of all schools.
+
+---
+
+The second type of random sampling is *stratified random sampling*. We are dealing with this type of sampling when we know the value of a particular characteristic (e.g., religious denomination) for each element of the population, and we make sure that elements within the sample are divided equally according to this characteristic. To do this, we divide the sample into so-called ‘strata' or layers (Lat. *stratum*, ‘cover, layer,' related to English *street*, originally meaning ‘paved road'). Let us return to our primary school example to clarify a few things. Suppose that, for whatever reason, we are now interested in making the sample (still 4% of the population of primary schools) such that public, catholic, and protestant schools are represented in equal amounts. We therefore devise three lists, a separate one for each type of school. Within each list, we proceed just like for simple random sampling. Eventually, our three sub-samples from the three strata are combined.
+
+*Quota sampling* goes one step further compared to stratified random sampling: we now also take advantage of the fact that we know the distribution of a certain characteristic (e.g., denomination) within the population. From the list of primary schools, we might have gleaned that 35% of schools is public, 31% is catholic, 31% is protestant, and 3% has some other denomination. From this sampling space, we now draw multiple ‘stratified' random samples such that the proportion of schools in each stratum correctly reflects the proportions of this characteristic in the sampling space $(35 : 31 : 31 : 3)$.
+
+### SPSS
+
+In order to create a column containing random numbers; 
+```
+Transform > Compute...
+```
+Select an existing variable (drag to Variables panel) or enter the name of a new variable.
+From the panel "Function Group", choose "Random numbers", and choose `RV.UNIFORM`.
+This function samples **r**andom **v**alues from a flat or  **uniform** probability distribution, meaning that each number between the lower and upper limit has an equal chance of being sampled.
+Enter `0` as lower limit and `9999` as upper limit, or use other limits as appropriate. 
+Confirm with `OK`.
+This results in a (new or overwritten existing) column with random numbers. 
+
+If you wish to sample random numbers from a normal density distribution (see Chapter  \@ref(ch:kansverdelingen)), then use the function `RV.NORMAL(mean,stdev)`. 
+
+We may provide a starting value for the random number generator, in order to make reproducible analyses (and examples):
+```
+Transform > Random Number Generators...
+```
+In the panel "Active Generator Initialization", check the option `Set Starting Point`, and enter a starting value, such as your favourite number. Confirm with `OK`.
+
+You can use the resulting random numbers for randomly selecting units (e.g. participants, stimuli) for a sample, and also to randomly assign the selected units to conditions, treatments, groups, etc. 
+
+### R
+
+In R we may generate random numbers using the predefined function `runif`. 
+This function samples **r**andom values from a flat or  **unif**orm probability distribution, meaning that each number between the lower and upper limit has an equal chance of being sampled. The default limits are $(0,1)$. You may round off the resulting random values to integer numbers, as was done in Appendix \@ref(app:randomnumbers). 
+
+If you wish to sample random numbers from a normal density distribution (see Chapter  \@ref(ch:kansverdelingen)), then use the function `rnorm(n,mean,sd)`. 
+
+We may provide a starting value (called a "seed") for the random number generator, in order to make reproducible analyses (and examples), using the predefined function `set.seed`:
+
+```{r runif}
+set.seed(20200912) # reproducible example, number is date on which this chunk was added
+round ( runif( n=5, min=0, max=9999 ) ) # similar to Appendix A
+```
+
+You can use the resulting random numbers for randomly selecting units (e.g. participants, stimuli) for a sample, and also to randomly assign the selected units to conditions, treatments, groups, etc. 
+
+
+## Sample size {#sec:sample-size}
+
+When you read various research articles, one of the first things that catches the eye is the enormous variation in the number of respondents. In some studies, several thousands of participants are involved, while others only have several multiples of 10, or even fewer. Here, we will discuss two aspects that influence the required size of one's sample: the population's relative homogeneity, and the type of sampling. In the chapters that follow, we will discuss two more aspects that influence the desired sample size: the desired precision (effect size, §\@ref(sec:ttest-effectsize)) and the desired likelihood to demonstrate an effect if it is present in the population (power, §\@ref(sec:effectsize-power)).
+
+---
+
+> *Example 7.4*: When cars are tested (for magazines or television), only one car of each type is tested. The results of this tested token are generalized without reservation to all cars of the same type and make. This is possible because the population of cars to which generalization is made is especially homogenous, since the manufacturer strives to make the various tokens of a car type they sell maximally identical.
+
+---
+
+Firstly, the required sample size depends on the population's homogeneity. If a population is *homogeneous*, like the cars in example 7.4, a small sample will suffice. Things are different when, for instance, we would like to analyse conversation patterns in pre-schoolers. When looking at pre-schoolers' conversation patterns, we come across great differences; conversation patterns exhibit  a very high degree of variation. (Some children speak in full sentences, others mainly remain silent. Moreover, there are great individual differences in children's linguistic development.) This means that, to obtain a reasonable picture of language development in pre-schoolers, we need a much bigger sample. Thus, the required sample size increases as the population to which we would like to generalize is less homogeneous (more heterogeneous).
+
+Secondly, the required sample size also depends on the nature of the sample. If a population contains clear strata, but – for whatever reason – we do not apply stratified or quota sampling, then we will need a larger sample compared to a situation where we had, indeed, applied one of these two methods. This is because, in these two latter methods, the researcher actively ensures that strata are represented in the sample either to equal extents, or according to the correct proportions; in simple random sampling, this is left to chance. We must then appeal to the "law of large numbers" to make sure that a sufficient number of elements from each stratum makes its way into the sample, in order to justify generalization of the results to these various strata. Obviously, this law only works with a sufficiently large sample. When the sample is small, we can in no way be sure that the various strata are represented in the sample to a sufficient extent.
+
+Returning to our primary school example, if we selected three primary schools according to simple random sampling, the chance that this would lead to exactly one public, one catholic, and one protestant school is, no doubt, present. However, other outcomes are quite likely, as well, and even much more likely. If we use stratified or quota sampling, we are guaranteed to have one element (school) of each denomination in our sample. This improves our grounds for generalization, and strengthens external validity.
+
+After all these recommendations that are worth taking to heart, it is now time to discuss how we can describe and analyse research data to properly answer our research questions. This will be done in the next part of this book.

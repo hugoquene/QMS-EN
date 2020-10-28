@@ -3,9 +3,9 @@
 # Random numbers {#app:randomnumbers}
 
 ```{r A1, echo=FALSE}
-set.seed(20140314) # datum van eerste versie
-rand1 <- matrix( round(runif(20*10)*10^4), nrow=20,ncol=10 )
+set.seed(20140314) # date of initial version
+rand1 <- matrix( round(runif(20*10)*10^4), nrow=20,ncol=10 ) # use default limits, multiply by 10e4
 knitr::kable(
   rand1, booktabs=TRUE, col.names=rep("",10),  
-  caption = "The table below contains 200 randomn numbers between 0 and 9999." )
+  caption = "The table below contains 200 random numbers between 0 and 9999." )
 ```

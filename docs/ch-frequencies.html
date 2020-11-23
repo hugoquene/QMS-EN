@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>7 Samples | Quantitative Methods and Statistics</title>
+  <title>8 Frequencies | Quantitative Methods and Statistics</title>
   <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="7 Samples | Quantitative Methods and Statistics" />
+  <meta property="og:title" content="8 Frequencies | Quantitative Methods and Statistics" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rstudio/QMS-EN" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="7 Samples | Quantitative Methods and Statistics" />
+  <meta name="twitter:title" content="8 Frequencies | Quantitative Methods and Statistics" />
   
   <meta name="twitter:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="ch-design.html"/>
-<link rel="next" href="ch-frequencies.html"/>
+<link rel="prev" href="ch-samples.html"/>
+<link rel="next" href="ch-centre-and-dispersion.html"/>
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -297,100 +297,389 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ch:samples" class="section level1" number="7">
-<h1><span class="header-section-number">7</span> Samples</h1>
-<p>In generalizing the outcome of a study to the population or the sample, the quality of the sample is all-important. Does the sample adequately reflect the population? To give an extreme example of this: if a sample consists of girls in the last year of primary education, we cannot properly generalize the results to the population of students in primary education, because the sample does not form a good reflection of this population (which consists of boys and girls in all years of the curriculum).</p>
-<p>Depending on the method used by the researchers to select participants, many kinds of samples may be distinguished. In this chapter, we make a rough distinction between: (1) convenience samples, (2) systematically drawn samples, and (3) samples drawn at random. For further discussion of the way in which samples may be drawn and the problems that play a role in this, we refer the reader to standard reference works on this topic <span class="citation">(Cochran <a href="#ref-Coch77" role="doc-biblioref">1977</a>; Thompson <a href="#ref-Thom12" role="doc-biblioref">2012</a>)</span>.</p>
-<div id="sec:convenience-samples" class="section level2" number="7.1">
-<h2><span class="header-section-number">7.1</span> Convenience samples</h2>
-<p>Work in the social sciences often uses samples that happen to present themselves to the researcher, so-called <em>convenience samples</em>. The researcher carries out the experiment with individuals that happen to be available to them more or less by chance. Some studies use paid or unpaid volunteers. In other studies, students are recruited, who are required to log some number of hours as participants as a part of their studies, or, sometimes, a colleague of the researcher"s sends their own students to participate in the study. A sample of this kind is not without its dangers. The researcher has no control whatsoever over the degree to which results can be generalized to the population. Of course, the researcher does have a population in mind, and will exclude participants that do not form a part of the intended population (such as non-native speakers) from the study, but the researcher cannot say anything about how representative the sample is.</p>
-<p>It is especially in psychology that this convenience sampling has led to heated discussion. For instance, a survey showed that 67% of samples used in published studies in psychology performed in the US was exclusively composed of undergraduate students enrolled in Psychology courses at American universities <span class="citation">(Henrich, Heine, and Norenzayan <a href="#ref-Henr10" role="doc-biblioref">2010</a>)</span>. Naturally, samples like this are hardly representative. As a consequence, the theories based on these data have but a limited scope: they are likely to apply predominantly to the type of individuals (first world, young, highly educated, white) that are also highly represented in the samples <span class="citation">(Henrich, Heine, and Norenzayan <a href="#ref-Henr10" role="doc-biblioref">2010</a>)</span>. Research in linguistics often also uses a convenience sample. Children that participate as participants often have highly educated parents (who often tend to have a linguistics background themselves, which likely means that they have above-average verbal skills), and adult participants are often students from the researchers’ environment, who, therefore, also have above-average levels of education and verbal skill.</p>
-<p>Despite the valid objections raised against this type of sample, practical considerations often force researchers to use a convenience sample that presents itself. In such cases, we recommend keeping track of the extent to which this convenience sample distinguishes itself from the population over which the researcher would like to generalize. To conclude this discussion of samples that present themselves naturally, we provide an example of the dangers this type of sample carries.</p>
+<div id="ch:frequencies" class="section level1" number="8">
+<h1><span class="header-section-number">8</span> Frequencies</h1>
+<div id="introduction-3" class="section level2" number="8.1">
+<h2><span class="header-section-number">8.1</span> Introduction</h2>
+<p>When analysing data, a distinction is often made between
+qualitative and quantitative methods. With the first method,
+observations (e.g. answers in interviews) are represented in
+words, and with the second method, observations (e.g. speech
+pauses in interviews) are represented in numbers. In our opinion,
+the difference between qualitative and quantitative methods
+lies in how observations are represented, and
+how arguments are made on the basis of these observations.
+Sometimes it is also possible to analyse the very same data (e.g. 
+interviews) both qualitatively and quantitatively. The major
+advantages of quantitative methods are that the data can be summarised
+relatively straightforwardly (this is the subject of this part of the
+syllabus), and that it is relatively simple to draw meaningful conclusions
+on the basis of the observations.</p>
+</div>
+<div id="sec:frequencies" class="section level2" number="8.2">
+<h2><span class="header-section-number">8.2</span> Frequencies</h2>
+<p>Quantitative data can be reported in various different ways.
+The most straightforward way would be to report the raw data, preferably
+sorted according to the observed variable’s value.
+The disadvantage of this is that a potential pattern in the observations
+will not be easily visible.</p>
 <hr />
 <blockquote>
-<p><em>Example 7.1</em>: Some years ago, there was a televised contest in which nine candidates competed on their singing skills. Viewers were invited to announce their preference by phone. For each of the nine candidates, a separate phone line had been opened. For each call, the corresponding candidate received one point. The person with the greatest number of points within a set time limit would win. The audience’s response was overwhelming: large swaths of the Dutch phone network were over capacity. Very soon, one of the candidates turned out to have a considerable lead over the others. However, in the course of the evening, this lead became smaller and smaller. In the end, there was only a few calls’ difference between the top two candidates. It was striking to see that, as the evening progressed, the relative differences between participants gradually diminished.</p>
+<p><em>Example 8.1</em>: Students <span class="math inline">\((N=50)\)</span> in a first year
+course reported the following values for their shoe size, a
+variable of an interval level of measurement:<br />
+36, 36, 37, 37, 37, 37, 37, 37, 38, 38, 38, 38, 38, 38, 39, 39, 39, 39,
+39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 40, 40, 40,
+40, 40, 40, 41, 41, 41, 41, 41, 42, 42, 43, 43, 44, ??.<br />
+One of the students did not provide an answer; this missing answer is
+shown here as ??.</p>
 </blockquote>
 <hr />
-<p>We may see this voting procedure as drawing a sample of callers or voters. However, this sample is far from representative. If many voters would like to vote for the same candidate, the phone line dedicated to this candidate will reach and exceed its capacity. This means that singers who drew many callers will receive relatively fewer votes than singers who draw few callers, because the latter singers’ phone lines will not be over capacity. It is precisely for the most popular candidates that a voter is most likely to be unable to cast their vote. Because of this, the real difference in the number of calls per candidate will be far greater than what the organizers measured. The organizers themselved caused this systematic distortion of the results (bias) by opening a separate phone line for each of the nine candidates. The data could have been much more representative if the organizers had opened nine phone lines accessible through one single phone number. In such a scenario, the sample of callers who were able to cast their vote would have been representative for the population of all callers, which was not the case in reality.</p>
-</div>
-<div id="sec:systematic-samples" class="section level2" number="7.2">
-<h2><span class="header-section-number">7.2</span> Systematic samples</h2>
-<p>When the elements in the <em>sampling space</em> (i.e., the set of possible elements in a sample) are systematically ordered in some way, a reasonably representative sample can be obtained using a <em>systematic sampling procedure</em>. Ordering may, for instance, involve a list of names.</p>
+<p>It is usually more insightful and efficient to summarise observations
+and report them in the form of a <em>frequency</em> for each value.
+This frequency indicates the <em>number</em> of observations which have a certain value,
+or which have a value in a certain interval or class. In order to get
+the frequencies, we thus <em>count</em> the number of observations with a certain
+value, or the number of observations in a certain interval. These
+frequencies are reported in a table. We call such a table a
+frequency distribution.</p>
+<p>As a first example, Table <a href="ch-frequencies.html#tab:klankfreq">8.1</a> provides a
+frequency distribution of a discrete variable of <em>nominal</em> level of measurement,
+namely the phonological class of sounds in Dutch <span class="citation">(Luyckx et al. <a href="#ref-LKCG07" role="doc-biblioref">2007</a>)</span>.
+#52-56</p>
+<table>
+<caption><span id="tab:klankfreq">Table 8.1: </span>Frequency distribution
+of the phonological class of sounds
+in the <em>Corpus of Spoken Dutch</em>
+(C=consonant, V=vowel).</caption>
+<thead>
+<tr class="header">
+<th align="left">hoofdklasse</th>
+<th align="left">onderklasse</th>
+<th align="right">aantal</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">C</td>
+<td align="left">plos</td>
+<td align="right">585999</td>
+</tr>
+<tr class="even">
+<td align="left">C</td>
+<td align="left">fric</td>
+<td align="right">426097</td>
+</tr>
+<tr class="odd">
+<td align="left">C</td>
+<td align="left">liq</td>
+<td align="right">249275</td>
+</tr>
+<tr class="even">
+<td align="left">C</td>
+<td align="left">nas</td>
+<td align="right">361742</td>
+</tr>
+<tr class="odd">
+<td align="left">C</td>
+<td align="left">glide</td>
+<td align="right">146344</td>
+</tr>
+<tr class="even">
+<td align="left">V</td>
+<td align="left">lang</td>
+<td align="right">365887</td>
+</tr>
+<tr class="odd">
+<td align="left">V</td>
+<td align="left">kort</td>
+<td align="right">428832</td>
+</tr>
+<tr class="even">
+<td align="left">V</td>
+<td align="left">schwa</td>
+<td align="right">341260</td>
+</tr>
+<tr class="odd">
+<td align="left">V</td>
+<td align="left">diph</td>
+<td align="right">61638</td>
+</tr>
+<tr class="even">
+<td align="left">V</td>
+<td align="left">rest</td>
+<td align="right">1146</td>
+</tr>
+</tbody>
+</table>
+<p>As a second example, Table <a href="ch-frequencies.html#tab:shoesize">8.2</a> provides a
+frequency distribution of a continuous variable of <em>interval</em>
+level of measurement, namely the aforementioned shoe size
+of first year students (Example 8.1).</p>
+<table>
+<caption><span id="tab:shoesize">Table 8.2: </span> Frequency distribution of the self-reported shoe sizes of <span class="math inline">\(N=50\)</span> students in a first year course (see Example 8.1 above).</caption>
+<tbody>
+<tr class="odd">
+<td align="left">Shoe size</td>
+<td align="center">36</td>
+<td align="center">37</td>
+<td align="center">38</td>
+<td align="center">39</td>
+<td align="center">40</td>
+<td align="center">41</td>
+<td align="center">42</td>
+<td align="center">43</td>
+<td align="center">44</td>
+<td align="center">??</td>
+</tr>
+<tr class="even">
+<td align="left">Number</td>
+<td align="center">2</td>
+<td align="center">6</td>
+<td align="center">6</td>
+<td align="center">19</td>
+<td align="center">6</td>
+<td align="center">5</td>
+<td align="center">2</td>
+<td align="center">2</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+</tbody>
+</table>
+<p>Nevertheless, when a numerical variable is able to assume a great many different
+values, the frequency distribution thus consequently becomes large and confusing.
+We then add together values in a certain interval,
+and afterwards make a frequency distribution on the smaller number
+of intervals or classes.</p>
 <hr />
 <blockquote>
-<p><em>Example 7.2</em>: Let us assume for the moment that we would like to make study of language ability in students in the third year of secondary education. However, the entire population of third year students is far too great to measure all third year students’ language ability (reading, writing, speaking, and listening): this group contains about 200,000 students. Consequently, we need to draw a sample. The Dutch Ministry of Education, Culture, and Science has a system in which a list of all schools with third year students is included. An obvious way of proceeding would be to take this list and include each 100th school on the list into the sample. This procedure will presumably result in a reasonably representative sample.</p>
+<p><em>Example 8.2</em>: When Queen Beatrix of the Netherlands was giving her last Queen’s Speech,
+on 18th September 2012, she paused some <span class="math inline">\(305\times\)</span>. The frequency distribution
+of the pause length (measured in seconds) is shown in
+Table <a href="ch-frequencies.html#tab:queensspeech2012pauses">8.3</a>.</p>
 </blockquote>
 <hr />
-<p>However, two factors may muddle the waters in drawing such a systematic sample, the first of which is the <em>response rate</em>. If a considerable proportion of schools that were contacted do not cooperate, we are actually dealing with self-selection (see §<a href="ch-validity.html#sec:internalvalidity">5.4</a> point 5) and, thus, with a convenience sample that presents itself (see §<a href="ch-samples.html#sec:convenience-samples">7.1</a>). This is an unwanted situation, since the schools that did cooperate presumably have a greater ‘sense of duty’ than the schools that refused participation or than the average school. Moreover, students in the responding and non-responding schools may differ from one another (see §<a href="ch-validity.html#sec:internalvalidity">5.4</a> point 5). This means that the eventual sample may perhaps be no longer representative of the population of all third year students. This, in turn, has as a consequence that the results measured cannot be properly generalized to other third year students at other schools.</p>
-<p>The second factor that may influence whether a systematic sample is representative is the presence of a <em>disruptive trend effect</em>. We speak of a disruptive trend effect when elements of the population have a greater chance of ending up in the sample if they have a certain characteristic, compared to population elements that do not have this characteristic. In our example of measuring language ability in third year students, we are dealing with a disruptive trend effect. This is because not all students have an equal chance of being in the sample. After all, it is each individual <em>school</em> (not: each individual student) that has an equal chance of being in the sample. The consequence of this is that the sample will contain relatively many third year students from small schools with relatively few students, while, conversely, there will be relatively few third year students from large schools with relatively many students. Thus, third year students from large schools will be underrepresented. Is this a bad thing? It might be, because language ability (dependent variable) is partially influenced by the type of instruction, and type of instruction is influenced by the size of a school. This means that the sample described above is not representative for the population of third year students. Once again, this means that the results measured cannot be properly generalized to other third year students at other schools.</p>
+<table>
+<caption><span id="tab:queensspeech2012pauses">Table 8.3: </span> Frequency distribution of the length of speech pauses (seconds)
+in the Queen’s Speech of 18th September 2012, given by Queen Beatrix of the Netherlands
+<span class="math inline">\((N=305)\)</span>.</caption>
+<thead>
+<tr class="header">
+<th align="center">Interval</th>
+<th align="right">Number</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">4.50–4.99</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="center">4.00–4.49</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="center">3.50–3.99</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="center">3.00–3.49</td>
+<td align="right">7</td>
+</tr>
+<tr class="odd">
+<td align="center">2.50–2.99</td>
+<td align="right">4</td>
+</tr>
+<tr class="even">
+<td align="center">2.00–2.49</td>
+<td align="right">25</td>
+</tr>
+<tr class="odd">
+<td align="center">1.50–1.99</td>
+<td align="right">32</td>
+</tr>
+<tr class="even">
+<td align="center">1.00–1.49</td>
+<td align="right">16</td>
+</tr>
+<tr class="odd">
+<td align="center">0.50–0.99</td>
+<td align="right">67</td>
+</tr>
+<tr class="even">
+<td align="center">0.00–0.49</td>
+<td align="right">151</td>
+</tr>
+</tbody>
+</table>
+<div id="sec:intervals" class="section level3" number="8.2.1">
+<h3><span class="header-section-number">8.2.1</span> Intervals</h3>
+<p>For a variable of nominal and ordinal level of measurement, we generally
+use the original categories to make the frequency distribution
+(see Table <a href="ch-frequencies.html#tab:klankfreq">8.1</a>), although it is possible to add categories
+together. For a variable of interval or ratio level of measurement, a
+researcher can choose the number of intervals in the frequency distribution
+themself. Sometimes that is not necessary, for instance because the variable has
+a clear number of different discrete values (see Table <a href="ch-frequencies.html#tab:shoesize">8.2</a>).
+However, sometimes, as a researcher you have to decide for yourself how many
+intervals you should distinguish, and how to determine the
+interval boundaries (see Table <a href="ch-frequencies.html#tab:queensspeech2012pauses">8.3</a>).
+In this instance, the following are recommended <span class="citation">(Ferguson and Takane <a href="#ref-Ferg89" role="doc-biblioref">1989</a>, Ch.2)</span>:</p>
+<ul>
+<li><p>Ensure that all observations (i.e. the entire range) fall into
+roughly 10 to 20 intervals.</p></li>
+<li><p>Ensure that all intervals are equally wide.</p></li>
+<li><p>Make the lower limit of the first or second interval the same as
+the width of the intervals (see
+Table <a href="ch-frequencies.html#tab:queensspeech2012pauses">8.3</a>: every interval is 0.50 s
+wide, and the second interval’s lower limit is also 0.50).</p></li>
+<li><p>Order the intervals in a frequency distribution from bottom
+to top in increasing order (i.e. from top to bottom in
+descending order), see
+Table <a href="#tab:troonrede2012pauzes"><strong>??</strong></a>).</p></li>
+</ul>
+<p>The wider we make the intervals, the more information we lose
+about the precise distribution within each interval.</p>
 </div>
-<div id="sec:random-samples" class="section level2" number="7.3">
-<h2><span class="header-section-number">7.3</span> Random samples</h2>
-<p>The disruptive trend effect described above can be avoided by <em>random sampling</em>. Random sampling may happen in various ways, of which we will discuss three.</p>
-<p>The first type is simple random sampling: in this procedure, all elements of the population have an equal chance of being drawn. This may, for instance, be realized by giving all elements a <em>random</em> number and, depending on the size of the sample, selecting each <span class="math inline">\(n\)</span>-th element. For choosing random numbers, researchers can make use of tables of random numbers (see Appendix <a href="app-randomnumbers.html#app:randomnumbers">A</a>). Random numbers can also be generated by calculators, computers, spreadsheet programs, etc. (Using this type of random numbers is advisable, since a “random” order created by humans is not truly random.) However, one condition for applying this method is that the elements of the population (sampling space) are registered in advance, so that they may all be given numbers in some way.</p>
-<hr />
-<blockquote>
-<p><em>Example 7.3</em>: We would like to draw a sample of n = 400 primary schools, which is about 4% of the population of primary schools in the Netherlands. To do this, we request from the Dutch Ministry of Education, Culture, and Science a list of all 9,000 primary schools; this list is the sampling space. After this, we number all schools with subsequent numbers <span class="math inline">\((1, 2, 3 \ldots, 9000)\)</span>. Finally, we select all primary schools whose number happen to end in 36, 43, 59, or 70 (see Appendix <a href="app-randomnumbers.html#app:randomnumbers">A</a>, first column, last two digits). Using this procedure, we randomly select 4 of 100 possible last-two-digit combinations, or 4% of all schools.</p>
-</blockquote>
-<hr />
-<p>The second type of random sampling is <em>stratified random sampling</em>. We are dealing with this type of sampling when we know the value of a particular characteristic (e.g., religious denomination) for each element of the population, and we make sure that elements within the sample are divided equally according to this characteristic. To do this, we divide the sample into so-called ‘strata’ or layers (Lat. <em>stratum</em>, ‘cover, layer,’ related to English <em>street</em>, originally meaning ‘paved road’). Let us return to our primary school example to clarify a few things. Suppose that, for whatever reason, we are now interested in making the sample (still 4% of the population of primary schools) such that public, catholic, and protestant schools are represented in equal amounts. We therefore devise three lists, a separate one for each type of school. Within each list, we proceed just like for simple random sampling. Eventually, our three sub-samples from the three strata are combined.</p>
-<p><em>Quota sampling</em> goes one step further compared to stratified random sampling: we now also take advantage of the fact that we know the distribution of a certain characteristic (e.g., denomination) within the population. From the list of primary schools, we might have gleaned that 35% of schools is public, 31% is catholic, 31% is protestant, and 3% has some other denomination. From this sampling space, we now draw multiple ‘stratified’ random samples such that the proportion of schools in each stratum correctly reflects the proportions of this characteristic in the sampling space <span class="math inline">\((35 : 31 : 31 : 3)\)</span>.</p>
-<div id="spss" class="section level3" number="7.3.1">
-<h3><span class="header-section-number">7.3.1</span> SPSS</h3>
-<p>In order to create a column containing random numbers;</p>
-<pre><code>Transform &gt; Compute...</code></pre>
-<p>Select an existing variable (drag to Variables panel) or enter the name of a new variable.
-From the panel “Function Group”, choose “Random numbers”, and choose <code>RV.UNIFORM</code>.
-This function samples <strong>r</strong>andom <strong>v</strong>alues from a flat or <strong>uniform</strong> probability distribution, meaning that each number between the lower and upper limit has an equal chance of being sampled.
-Enter <code>0</code> as lower limit and <code>9999</code> as upper limit, or use other limits as appropriate.
-Confirm with <code>OK</code>.
-This results in a (new or overwritten existing) column with random numbers.</p>
-<p>If you wish to sample random numbers from a normal density distribution (see Chapter <a href="#ch:kansverdelingen"><strong>??</strong></a>), then use the function <code>RV.NORMAL(mean,stdev)</code>.</p>
-<p>We may provide a starting value for the random number generator, in order to make reproducible analyses (and examples):</p>
-<pre><code>Transform &gt; Random Number Generators...</code></pre>
-<p>In the panel “Active Generator Initialization”, check the option <code>Set Starting Point</code>, and enter a starting value, such as your favourite number. Confirm with <code>OK</code>.</p>
-<p>You can use the resulting random numbers for randomly selecting units (e.g. participants, stimuli) for a sample, and also to randomly assign the selected units to conditions, treatments, groups, etc.</p>
+<div id="spss-1" class="section level3" number="8.2.2">
+<h3><span class="header-section-number">8.2.2</span> SPSS</h3>
+<pre><code>Analyze &gt; Descriptive Statistics &gt; Frequencies...</code></pre>
+<p>Select variable (drag to the “Variable(s)” panel).<br />
+Tick: <code>Display frequency tables</code>.<br />
+Choose <code>Format</code>, choose: <code>Order by: Descending values</code>.<br />
+Confirm with <code>OK</code>.<br />
+</p>
 </div>
-<div id="r" class="section level3" number="7.3.2">
-<h3><span class="header-section-number">7.3.2</span> R</h3>
-<p>In R we may generate random numbers using the predefined function <code>runif</code>.
-This function samples <strong>r</strong>andom values from a flat or <strong>unif</strong>orm probability distribution, meaning that each number between the lower and upper limit has an equal chance of being sampled. The default limits are <span class="math inline">\((0,1)\)</span>. You may round off the resulting random values to integer numbers, as was done in Appendix <a href="app-randomnumbers.html#app:randomnumbers">A</a>.</p>
-<p>If you wish to sample random numbers from a normal density distribution (see Chapter <a href="#ch:kansverdelingen"><strong>??</strong></a>), then use the function <code>rnorm(n,mean,sd)</code>.</p>
-<p>We may provide a starting value (called a “seed”) for the random number generator, in order to make reproducible analyses (and examples), using the predefined function <code>set.seed</code>:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="ch-samples.html#cb12-1" aria-hidden="true"></a><span class="kw">set.seed</span>(<span class="dv">20200912</span>) <span class="co"># reproducible example, number is date on which this chunk was added</span></span>
-<span id="cb12-2"><a href="ch-samples.html#cb12-2" aria-hidden="true"></a><span class="kw">round</span> ( <span class="kw">runif</span>( <span class="dt">n=</span><span class="dv">5</span>, <span class="dt">min=</span><span class="dv">0</span>, <span class="dt">max=</span><span class="dv">9999</span> ) ) <span class="co"># similar to Appendix A</span></span></code></pre></div>
-<pre><code>## [1] 8193 7482 4206 1684 5653</code></pre>
-<p>You can use the resulting random numbers for randomly selecting units (e.g. participants, stimuli) for a sample, and also to randomly assign the selected units to conditions, treatments, groups, etc.</p>
+<div id="r-1" class="section level3" number="8.2.3">
+<h3><span class="header-section-number">8.2.3</span> R</h3>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="ch-frequencies.html#cb15-1" aria-hidden="true"></a>enq2011 &lt;-<span class="st"> </span><span class="kw">read.table</span>( </span>
+<span id="cb15-2"><a href="ch-frequencies.html#cb15-2" aria-hidden="true"></a>    <span class="dt">file=</span><span class="kw">url</span>(<span class="st">&quot;http://www.hugoquene.nl/R/enq2011.txt&quot;</span>), </span>
+<span id="cb15-3"><a href="ch-frequencies.html#cb15-3" aria-hidden="true"></a>    <span class="dt">header=</span><span class="ot">TRUE</span> )</span>
+<span id="cb15-4"><a href="ch-frequencies.html#cb15-4" aria-hidden="true"></a><span class="kw">table</span>( enq2011<span class="op">$</span>shoe, <span class="dt">useNA=</span><span class="st">&quot;ifany&quot;</span> ) </span></code></pre></div>
+<p>The output of the above <code>table</code> command is shown in Table <a href="ch-frequencies.html#tab:shoesize">8.2</a>.
+The code <code>NA</code> (Not Available) is used in R to indicate missing data.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="ch-frequencies.html#cb16-1" aria-hidden="true"></a><span class="kw">table</span>( <span class="kw">cut</span>( troon2012, <span class="dt">breaks=</span><span class="kw">seq</span>(<span class="dt">from=</span><span class="dv">0</span>,<span class="dt">to=</span><span class="dv">5</span>,<span class="dt">by=</span><span class="fl">0.5</span>) ) )</span></code></pre></div>
+<p>Parse this task from the innermost brackets outwards:
+(i) <code>seq</code>: make a sequence from 0 to 5 (units, here: seconds) in increments of 0.5 seconds,
+(ii) <code>cut</code>: cut up the dependent variable <code>length</code> in intervals based on this sequence,
+(iii) <code>table</code>: make a frequency distribution of these intervals.</p>
+<p>This task’s output is shown (in edited form) in Table <a href="ch-frequencies.html#tab:queensspeech2012pauses">8.3</a>.</p>
 </div>
 </div>
-<div id="sec:sample-size" class="section level2" number="7.4">
-<h2><span class="header-section-number">7.4</span> Sample size</h2>
-<p>When you read various research articles, one of the first things that catches the eye is the enormous variation in the number of respondents. In some studies, several thousands of participants are involved, while others only have several multiples of 10, or even fewer. Here, we will discuss two aspects that influence the required size of one’s sample: the population’s relative homogeneity, and the type of sampling. In the chapters that follow, we will discuss two more aspects that influence the desired sample size: the desired precision (effect size, §<a href="#sec:ttest-effectsize"><strong>??</strong></a>) and the desired likelihood to demonstrate an effect if it is present in the population (power, §<a href="#sec:effectsize-power"><strong>??</strong></a>).</p>
-<hr />
-<blockquote>
-<p><em>Example 7.4</em>: When cars are tested (for magazines or television), only one car of each type is tested. The results of this tested token are generalized without reservation to all cars of the same type and make. This is possible because the population of cars to which generalization is made is especially homogenous, since the manufacturer strives to make the various tokens of a car type they sell maximally identical.</p>
-</blockquote>
-<hr />
-<p>Firstly, the required sample size depends on the population’s homogeneity. If a population is <em>homogeneous</em>, like the cars in example 7.4, a small sample will suffice. Things are different when, for instance, we would like to analyse conversation patterns in pre-schoolers. When looking at pre-schoolers’ conversation patterns, we come across great differences; conversation patterns exhibit a very high degree of variation. (Some children speak in full sentences, others mainly remain silent. Moreover, there are great individual differences in children’s linguistic development.) This means that, to obtain a reasonable picture of language development in pre-schoolers, we need a much bigger sample. Thus, the required sample size increases as the population to which we would like to generalize is less homogeneous (more heterogeneous).</p>
-<p>Secondly, the required sample size also depends on the nature of the sample. If a population contains clear strata, but – for whatever reason – we do not apply stratified or quota sampling, then we will need a larger sample compared to a situation where we had, indeed, applied one of these two methods. This is because, in these two latter methods, the researcher actively ensures that strata are represented in the sample either to equal extents, or according to the correct proportions; in simple random sampling, this is left to chance. We must then appeal to the “law of large numbers” to make sure that a sufficient number of elements from each stratum makes its way into the sample, in order to justify generalization of the results to these various strata. Obviously, this law only works with a sufficiently large sample. When the sample is small, we can in no way be sure that the various strata are represented in the sample to a sufficient extent.</p>
-<p>Returning to our primary school example, if we selected three primary schools according to simple random sampling, the chance that this would lead to exactly one public, one catholic, and one protestant school is, no doubt, present. However, other outcomes are quite likely, as well, and even much more likely. If we use stratified or quota sampling, we are guaranteed to have one element (school) of each denomination in our sample. This improves our grounds for generalization, and strengthens external validity.</p>
-<p>After all these recommendations that are worth taking to heart, it is now time to discuss how we can describe and analyse research data to properly answer our research questions. This will be done in the next part of this book.</p>
+<div id="sec:barcharts" class="section level2" number="8.3">
+<h2><span class="header-section-number">8.3</span> Bar charts</h2>
+<p>A bar chart is the graphical representation of the
+frequency distribution of a discrete, categorical variable (of
+nominal or ordinal level of measurement). A bar chart is constructed
+of rectangles. All rectangles are equally wide, and the
+rectangle’s height corresponds with the frequency of that category. The
+surface area of each rectangle thus also corresponds with that category’s frequency.
+In contrast to a histogram, the rectangles are <em>not</em>
+joined up to each other along the horizontal axis, to
+show that we are dealing with discrete categories.</p>
+<div class="figure"><span id="fig:klankfreq-barplot"></span>
+<img src="QMS-EN_files/figure-html/klankfreq-barplot-1.png" alt="Bar chat of the frequency distribution of phonological class of sounds in the Corpus of Spoken Dutch (C=consonant, V=vowel)." width="672" />
+<p class="caption">
+Figure 8.1: Bar chat of the frequency distribution of phonological class of sounds in the Corpus of Spoken Dutch (C=consonant, V=vowel).
+</p>
+</div>
+<p>A bar chart helps us to determine at a glance the most important
+distributional characteristics of a discrete variable:
+the most characteristic (most frequently occurring) value, and the
+distribution across categories. For the sound frequencies
+in Dutch (Figure <a href="ch-frequencies.html#fig:klankfreq-barplot">8.1</a>), we
+see that amongst the consonants the plosives
+occur the most, that amongst the vowels the
+short vowels occur the most, that diphthongs
+are not used much (the sounds in <em>ei, ui, au</em>), and that
+more consonants are used compared with vowels.</p>
+<p>Tip: Avoid shading and other 3D-effects in a bar chart! These make
+the width and height of a rectangle less readable, and
+the visible surface area of a shaded rectangle or
+of a bar no longer corresponds well with the frequency.</p>
+</div>
+<div id="sec:histograms" class="section level2" number="8.4">
+<h2><span class="header-section-number">8.4</span> Histograms</h2>
+<p>A histogram is the graphical representation of a frequency distribution of
+a continuous, numerical variable (of interval or ratio level of measurement).
+A histogram is constructed of rectangles. The width of each
+rectangle corresponds with the interval width (a rectangle can
+also be one unit wide) and the height corresponds with the frequency
+of that interval or value. The surface area of each rectangle
+therefore corresponds with the frequency. In contrast to a
+bar chart, the rectangles do join up to each other
+along the horizontal axis.</p>
+<div class="figure"><span id="fig:troonrede2012-hist"></span>
+<img src="QMS-EN_files/figure-html/troonrede2012-hist-1.png" alt="Histogram for the lengths of pauses (in seconds) in the Queen's Speech of 18 September 2012, read by Queen Beatrix (N=305)." width="672" />
+<p class="caption">
+Figure 8.2: Histogram for the lengths of pauses (in seconds) in the Queen’s Speech of 18 September 2012, read by Queen Beatrix (N=305).
+</p>
+</div>
+<p>A histogram helps up to determine at a glance the most important distributional characteristics
+of a continuous variable: the most characteristic
+(most frequently occurring) value, the degree of dispersion, the
+number of peaks in the frequency distribution, the position of the peaks,
+and potential outliers.
+(see §<a href="ch-centre-and-dispersion.html#sec:outliers">9.4.2</a>).
+For the pauses in the Queen’s Speech of 2012
+(Figure <a href="ch-frequencies.html#fig:troonrede2012-hist">8.2</a>), we see that the majority of pauses
+last between 0.25 and 0.75 s (these are presumably pauses for breath),
+that there are two peaks in the distribution (the second peak is at 2 s),
+and that there is one extremely long pause (with a duration
+of almost 5 s).</p>
+<p>Tip: Avoid shading and other 3D-effects in a histogram! These
+make the width and height of a rectangle less readable,
+and the visible surface area of a shaded rectangle or of a bar
+no longer correspond well with the frequency.</p>
+<div id="spss-2" class="section level3" number="8.4.1">
+<h3><span class="header-section-number">8.4.1</span> SPSS</h3>
+<pre><code>Analyze &gt; Descriptive Statistics &gt; Frequencies...</code></pre>
+<p>Select variable (drag to the “Variable(s)” panel).<br />
+Choose <code>Charts</code>, then pick <code>Chart type: Bar chart</code> for a
+bar chart or <code>Chart type: Histogram</code> for a histogram (see
+the above text for the difference between these options).<br />
+Confirm with <code>OK</code>.<br />
+</p>
+</div>
+<div id="r-2" class="section level3" number="8.4.2">
+<h3><span class="header-section-number">8.4.2</span> R</h3>
+<p>You can make a bar chart like Figure <a href="ch-frequencies.html#fig:klankfreq-barplot">8.1</a> in R with the
+following commands:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="ch-frequencies.html#cb18-1" aria-hidden="true"></a><span class="co"># read data</span></span>
+<span id="cb18-2"><a href="ch-frequencies.html#cb18-2" aria-hidden="true"></a>klankfreq &lt;-<span class="st"> </span><span class="kw">read.table</span>( <span class="dt">file=</span><span class="st">&quot;data/klankfreq.txt&quot;</span>, <span class="dt">header=</span>T )</span>
+<span id="cb18-3"><a href="ch-frequencies.html#cb18-3" aria-hidden="true"></a><span class="co"># make barplot from column `number` in dataset `klankfreq`</span></span>
+<span id="cb18-4"><a href="ch-frequencies.html#cb18-4" aria-hidden="true"></a><span class="kw">with</span>( klankfreq, <span class="kw">barplot</span>( number, <span class="dt">beside=</span>T, </span>
+<span id="cb18-5"><a href="ch-frequencies.html#cb18-5" aria-hidden="true"></a>                          <span class="dt">ylab=</span><span class="st">&quot;Number&quot;</span>,</span>
+<span id="cb18-6"><a href="ch-frequencies.html#cb18-6" aria-hidden="true"></a>                          <span class="dt">main=</span><span class="st">&quot;Sound frequencies in Dutch (N=2968220)&quot;</span>,</span>
+<span id="cb18-7"><a href="ch-frequencies.html#cb18-7" aria-hidden="true"></a>                          <span class="dt">col=</span><span class="kw">ifelse</span>(klankfreq[,<span class="dv">1</span>]<span class="op">==</span><span class="st">&quot;V&quot;</span>,<span class="st">&quot;grey40&quot;</span>,<span class="st">&quot;grey20&quot;</span>) ) ) -&gt;<span class="st"> </span>klankfreq_barplot</span>
+<span id="cb18-8"><a href="ch-frequencies.html#cb18-8" aria-hidden="true"></a><span class="co"># make labels along the bottommost horizontal axis</span></span>
+<span id="cb18-9"><a href="ch-frequencies.html#cb18-9" aria-hidden="true"></a><span class="kw">axis</span>(<span class="dt">side=</span><span class="dv">1</span>, <span class="dt">at=</span>klankfreq_barplot, <span class="dt">labels=</span>klankfreq<span class="op">$</span>hoofdklasse)</span>
+<span id="cb18-10"><a href="ch-frequencies.html#cb18-10" aria-hidden="true"></a><span class="kw">axis</span>(<span class="dt">side=</span><span class="dv">1</span>, <span class="dt">at=</span>klankfreq_barplot, <span class="dt">tick=</span>F, <span class="dt">line=</span><span class="dv">1</span>, <span class="dt">labels=</span>klankfreq<span class="op">$</span>onderklasse )</span>
+<span id="cb18-11"><a href="ch-frequencies.html#cb18-11" aria-hidden="true"></a><span class="co"># or simpler: with(klankfreq, barplot(number) ) # all defaults </span></span></code></pre></div>
+<p>You can make a histogram like in Figure <a href="ch-frequencies.html#fig:troonrede2012-hist">8.2</a>
+in R with the follow commands:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="ch-frequencies.html#cb19-1" aria-hidden="true"></a><span class="co"># read dataset </span></span>
+<span id="cb19-2"><a href="ch-frequencies.html#cb19-2" aria-hidden="true"></a><span class="kw">load</span>(<span class="dt">file=</span><span class="st">&quot;data/pauses6.Rda&quot;</span>)</span>
+<span id="cb19-3"><a href="ch-frequencies.html#cb19-3" aria-hidden="true"></a><span class="co"># extract pause lengths (columns 12) for the year 2012, into a separate dataset `troon2012`</span></span>
+<span id="cb19-4"><a href="ch-frequencies.html#cb19-4" aria-hidden="true"></a>troon2012 &lt;-<span class="st"> </span>pauses6[ pauses6<span class="op">$</span>jaar<span class="op">==</span><span class="dv">2012</span>, <span class="dv">12</span> ] <span class="co"># save col_12 as single vector</span></span>
+<span id="cb19-5"><a href="ch-frequencies.html#cb19-5" aria-hidden="true"></a><span class="co"># make histogram</span></span>
+<span id="cb19-6"><a href="ch-frequencies.html#cb19-6" aria-hidden="true"></a><span class="kw">hist</span>( troon2012, </span>
+<span id="cb19-7"><a href="ch-frequencies.html#cb19-7" aria-hidden="true"></a>      <span class="dt">breaks=</span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="dt">by=</span><span class="fl">0.25</span>),</span>
+<span id="cb19-8"><a href="ch-frequencies.html#cb19-8" aria-hidden="true"></a>      <span class="dt">col=</span><span class="st">&quot;grey80&quot;</span>,</span>
+<span id="cb19-9"><a href="ch-frequencies.html#cb19-9" aria-hidden="true"></a>      <span class="dt">xlab=</span><span class="st">&quot;Length of pause (s)&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Number&quot;</span>, </span>
+<span id="cb19-10"><a href="ch-frequencies.html#cb19-10" aria-hidden="true"></a>      <span class="dt">main=</span><span class="st">&quot;Queen&#39;s Speech 2012 (N=305 pauses)&quot;</span> ) -&gt;<span class="st"> </span>troonrede2012pauzes_hist</span></code></pre></div>
 
 </div>
 </div>
-
-
-
+</div>
 <h3>References</h3>
 <div id="refs" class="references">
-<div id="ref-Coch77">
-<p>Cochran, W. G. 1977. <em>Sampling Techniques</em>. 3e ed. New York: Wiley.</p>
+<div id="ref-Ferg89">
+<p>Ferguson, George A., and Yoshio Takane. 1989. <em>Statistical Analysis in Psychology and Education</em>. 6e ed. New York: McGraw-Hill.</p>
 </div>
-<div id="ref-Henr10">
-<p>Henrich, Joseph, Steven J. Heine, and Ara Norenzayan. 2010. “The Weirdest People in the World?” <em>Behavioral and Brain Sciences</em> 33 (2-3): 61–83.</p>
-</div>
-<div id="ref-Thom12">
-<p>Thompson, Steven K. 2012. <em>Sampling</em>. 3e ed. Wiley Series in Probability and Statistics. Hoboken, NJ: John Wiley.</p>
+<div id="ref-LKCG07">
+<p>Luyckx, Kim, Hanne Kloots, Evie Coussé, and Steven Gillis. 2007. “Klankfrequenties in Het Nederlands.” In <em>Tussen Taal, Spelling En Onderwijs: Essays Bij Het Emeritaat van Frans Daems</em>, edited by D. Sandra, R. Rijmenans, P. Cuvelier, and P. Van Petegem. Academia Press. <a href="https://www.academia.edu/627882/Klankfrequenties_in_het_Nederlands">https://www.academia.edu/627882/Klankfrequenties_in_het_Nederlands</a>.</p>
 </div>
 </div>
             </section>
@@ -398,8 +687,8 @@ This function samples <strong>r</strong>andom values from a flat or <strong>unif
           </div>
         </div>
       </div>
-<a href="ch-design.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="ch-frequencies.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="ch-samples.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ch-centre-and-dispersion.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -430,7 +719,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/ch07samples.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/ch08frequencies.Rmd",
 "text": "Edit"
 },
 "history": {

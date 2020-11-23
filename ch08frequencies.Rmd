@@ -1,0 +1,318 @@
+# (PART\*) Part 2: Descriptive statistics {-}
+
+# Frequencies {#ch:frequencies}
+
+## Introduction
+
+When analysing data, a distinction is often made between 
+qualitative and quantitative methods. With the first method, 
+observations (e.g. answers in interviews) are represented in 
+words, and with the second method, observations (e.g. speech 
+pauses in interviews) are represented in numbers. In our opinion, 
+the difference between qualitative and quantitative methods
+lies in how observations are represented, and
+how arguments are made on the basis of these observations.
+Sometimes it is also possible to analyse the very same data (e.g. 
+interviews) both qualitatively and quantitatively. The major 
+advantages of quantitative methods are that the data can be summarised
+relatively straightforwardly (this is the subject of this part of the 
+syllabus), and that it is relatively simple to draw meaningful conclusions
+on the basis of the observations. 
+
+
+## Frequencies {#sec:frequencies}
+
+Quantitative data can be reported in various different ways.
+The most straightforward way would be to report the raw data, preferably
+sorted according to the observed variable's value.
+The disadvantage of this is that a potential pattern in the observations
+will not be easily visible. 
+
+---
+
+> *Example 8.1*: Students $(N=50)$ in a first year
+course reported the following values for their shoe size, a
+variable of an interval level of measurement:\
+36, 36, 37, 37, 37, 37, 37, 37, 38, 38, 38, 38, 38, 38, 39, 39, 39, 39,
+39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 40, 40, 40,
+40, 40, 40, 41, 41, 41, 41, 41, 42, 42, 43, 43, 44, ??.\
+One of the students did not provide an answer; this missing answer is 
+shown here as ??.
+
+---
+
+It is usually more insightful and efficient to summarise observations
+and report them in the form of a *frequency* for each value.
+This frequency indicates the *number* of observations which have a certain value,
+or which have a value in a certain interval or class. In order to get
+the frequencies, we thus *count* the number of observations with a certain
+value, or the number of observations in a certain interval. These
+frequencies are reported in a table. We call such a table a 
+frequency distribution.
+
+As a first example, Table \@ref(tab:klankfreq) provides a
+frequency distribution of a discrete variable of *nominal* level of measurement,
+namely the phonological class of sounds in Dutch [@LKCG07].
+#52-56
+```{r klankfreq, echo=FALSE}
+klankfreq <- read.table( file="data/klankfreq.txt", header=T )
+# print(klankfreq)
+knitr::kable( klankfreq, 
+              booktabs=TRUE, 
+              caption="Frequency distribution 
+              of the phonological class of sounds
+              in the *Corpus of Spoken Dutch* 
+              (C=consonant, V=vowel)." )
+```
+
+As a second example, Table \@ref(tab:shoesize) provides a
+frequency distribution of a continuous variable of *interval*
+level of measurement, namely the aforementioned shoe size
+of first year students (Example 8.1).
+
+Table: (#tab:shoesize) Frequency distribution of the self-reported shoe sizes of $N=50$ students in a first year course (see Example 8.1 above).
+
+  ------------ ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+  Shoe size     36   37   38   39   40   41   42   43   44   ??
+  Number        2    6    6    19   6    5    2    2    1    1
+  ------------ ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+
+Nevertheless, when a numerical variable is able to assume a great many different
+values, the frequency distribution thus consequently becomes large and confusing.
+We then add together values in a certain interval,
+and afterwards make a frequency distribution on the smaller number
+of intervals or classes.
+
+---
+
+> *Example 8.2*: When Queen Beatrix of the Netherlands was giving her last Queen's Speech,
+on 18th September 2012, she paused some $305\times$. The frequency distribution 
+of the pause length (measured in seconds) is shown in
+Table \@ref(tab:queensspeech2012pauses).
+
+---
+
+Table: (#tab:queensspeech2012pauses) Frequency distribution of the length of speech pauses (seconds)
+in the Queen's Speech of 18th September 2012, given by Queen Beatrix of the Netherlands 
+$(N=305)$.
+
+    Interval     Number
+  ------------ --------
+   4.50--4.99         1
+   4.00--4.49         0
+   3.50--3.99         2
+   3.00--3.49         7
+   2.50--2.99         4
+   2.00--2.49        25
+   1.50--1.99        32
+   1.00--1.49        16
+   0.50--0.99        67
+   0.00--0.49       151
+
+
+### Intervals {#sec:intervals}
+
+For a variable of nominal and ordinal level of measurement, we generally
+use the original categories to make the frequency distribution
+(see Table \@ref(tab:klankfreq)), although it is possible to add categories 
+together. For a variable of interval or ratio level of measurement, a
+researcher can choose the number of intervals in the frequency distribution
+themself. Sometimes that is not necessary, for instance because the variable has 
+a clear number of different discrete values (see Table \@ref(tab:shoesize)). 
+However, sometimes, as a researcher you have to decide for yourself how many 
+intervals you should distinguish, and how to determine the 
+interval boundaries (see Table \@ref(tab:queensspeech2012pauses)). 
+In this instance, the following are recommended [@Ferg89, Ch.2]:
+
+-   Ensure that all observations (i.e. the entire range) fall into
+    roughly 10 to 20 intervals. 
+
+-   Ensure that all intervals are equally wide.
+
+-   Make the lower limit of the first or second interval the same as
+     the width of the intervals (see
+     Table \@ref(tab:queensspeech2012pauses): every interval is 0.50 s 
+     wide, and the second interval's lower limit is also 0.50).
+
+-   Order the intervals in a frequency distribution from bottom
+    to top in increasing order (i.e. from top to bottom in 
+    descending order), see
+    Table \@ref(tab:troonrede2012pauzes)).
+    
+The wider we make the intervals, the more information we lose
+about the precise distribution within each interval. 
+
+
+### SPSS
+
+```
+Analyze > Descriptive Statistics > Frequencies...
+```
+
+Select variable (drag to the "Variable(s)" panel).\
+Tick: `Display frequency tables`.\
+Choose `Format`, choose: `Order by: Descending values`.\
+Confirm with `OK`.\
+
+
+### R
+
+```{r schoenmaat02, eval=FALSE}
+enq2011 <- read.table( 
+    file=url("http://www.hugoquene.nl/R/enq2011.txt"), 
+    header=TRUE )
+table( enq2011$shoe, useNA="ifany" ) 
+```
+
+The output of the above `table` command is shown in Table \@ref(tab:shoesize). 
+The code `NA` (Not Available) is used in R to indicate missing data. 
+
+
+```{r troonredes12-1, echo=FALSE}
+load(file="data/pauses6.Rda")
+troon2012 <- pauses6[ pauses6$jaar==2012, 12 ] # save col_12 as single vector
+# troon2012 <- subset(pauses6[,c(12)], pauses6$jaar==2012)
+```
+
+```{r troonredes2012-2, eval=FALSE}
+table( cut( troon2012, breaks=seq(from=0,to=5,by=0.5) ) )
+```
+
+Parse this task from the innermost brackets outwards:
+(i) `seq`: make a sequence from 0 to 5 (units, here: seconds) in increments of 0.5 seconds, 
+(ii) `cut`: cut up the dependent variable `length` in intervals based on this sequence,
+(iii) `table`: make a frequency distribution of these intervals. 
+
+
+This task's output is shown (in edited form) in Table \@ref(tab:queensspeech2012pauses).
+
+## Bar charts {#sec:barcharts}
+
+A bar chart is the graphical representation of the 
+frequency distribution of a discrete, categorical variable (of
+nominal or ordinal level of measurement). A bar chart is constructed 
+of rectangles. All rectangles are equally wide, and the 
+rectangle's height corresponds with the frequency of that category. The
+surface area of each rectangle thus also corresponds with that category's frequency. 
+In contrast to a histogram, the rectangles are *not* 
+joined up to each other along the horizontal axis, to 
+show that we are dealing with discrete categories. 
+
+
+```{r klankfreq-barplot, echo=FALSE, fig.cap="Bar chat of the frequency distribution of phonological class of sounds in the Corpus of Spoken Dutch (C=consonant, V=vowel)."}
+klankfreq <- read.table(file="data/klankfreq.txt", header=T)
+with(klankfreq, barplot( aantal, beside=T, 
+        ylab="Number", 
+        main=paste("Sound frequencies in Dutch (N=",
+                   sum(klankfreq$aantal), " spraakklanken)", sep=""),
+        col=ifelse(klankfreq[,1]=="V","grey40","grey20") ) ) -> klankfreq_barplot
+axis(side=1, at=klankfreq_barplot, labels=klankfreq$hoofdklasse)
+axis(side=1, at=klankfreq_barplot, tick=F, line=1, labels=klankfreq$onderklasse )
+# simpler: with(klankfreq, barplot(aantal) ) # all defaults 
+```
+
+A bar chart helps us to determine at a glance the most important
+distributional characteristics of a discrete variable:
+the most characteristic (most frequently occurring) value, and the 
+distribution across categories. For the sound frequencies
+in Dutch (Figure \@ref(fig:klankfreq-barplot)), we 
+see that amongst the consonants the plosives 
+occur the most, that amongst the vowels the 
+short vowels occur the most, that diphthongs 
+are not used much (the sounds in *ei, ui, au*), and that 
+more consonants are used compared with vowels.
+
+
+Tip: Avoid shading and other 3D-effects in a bar chart! These make
+the width and height of a rectangle less readable, and 
+the visible surface area of a shaded rectangle or
+of a bar no longer corresponds well with the frequency.
+
+
+## Histograms {#sec:histograms}
+
+A histogram is the graphical representation of a frequency distribution of
+a continuous, numerical variable (of interval or ratio level of measurement).
+A histogram is constructed of rectangles. The width of each
+rectangle corresponds with the interval width (a rectangle can 
+also be one unit wide) and the height corresponds with the frequency
+of that interval or value. The surface area of each rectangle
+therefore corresponds with the frequency. In contrast to a 
+bar chart, the rectangles do join up to each other 
+along the horizontal axis. 
+
+```{r troonrede2012-hist, echo=FALSE, fig.cap="Histogram for the lengths of pauses (in seconds) in the Queen's Speech of 18 September 2012, read by Queen Beatrix (N=305)."}
+hist( troon2012, 
+      breaks=seq(0, 5, by=0.25),
+      col="grey80",
+      xlab="Pause length (s)", ylab="Number", 
+      main="Queen's Speech 2012 (N=305 pauses)" ) -> troonrede2012pauzes_hist
+# print(troonrede2012pauzes_hist$breaks)
+# print(troonrede2012pauzes_hist$counts)
+```
+
+A histogram helps up to determine at a glance the most important distributional characteristics
+of a continuous variable: the most characteristic
+(most frequently occurring) value, the degree of dispersion, the
+number of peaks in the frequency distribution, the position of the peaks, 
+and potential outliers. 
+(see §\@ref(sec:outliers)). 
+For the pauses in the Queen's Speech of 2012
+(Figure \@ref(fig:troonrede2012-hist)), we see that the majority of pauses
+last between 0.25 and 0.75 s (these are presumably pauses for breath),
+that there are two peaks in the distribution (the second peak is at 2 s),
+and that there is one extremely long pause (with a duration
+of almost 5 s). 
+
+Tip: Avoid shading and other 3D-effects in a histogram! These 
+make the width and height of a rectangle less readable,
+and the visible surface area of a shaded rectangle or of a bar
+no longer correspond well with the frequency.
+
+
+### SPSS
+
+```
+Analyze > Descriptive Statistics > Frequencies...
+```
+
+Select variable (drag to the "Variable(s)" panel).\
+Choose `Charts`, then pick `Chart type: Bar chart`  for a 
+bar chart or `Chart type: Histogram` for a histogram (see
+the above text for the difference between these options).\
+Confirm with `OK`.\
+
+### R
+
+You can make a bar chart like Figure \@ref(fig:klankfreq-barplot) in R with the 
+following commands: 
+
+```{r klankfreq-barplot-voorbeeld, eval=FALSE}
+# read data
+klankfreq <- read.table( file="data/klankfreq.txt", header=T )
+# make barplot from column `number` in dataset `klankfreq`
+with( klankfreq, barplot( number, beside=T, 
+                          ylab="Number",
+                          main="Sound frequencies in Dutch (N=2968220)",
+                          col=ifelse(klankfreq[,1]=="V","grey40","grey20") ) ) -> klankfreq_barplot
+# make labels along the bottommost horizontal axis
+axis(side=1, at=klankfreq_barplot, labels=klankfreq$hoofdklasse)
+axis(side=1, at=klankfreq_barplot, tick=F, line=1, labels=klankfreq$onderklasse )
+# or simpler: with(klankfreq, barplot(number) ) # all defaults 
+```
+
+You can make a histogram like in Figure \@ref(fig:troonrede2012-hist)
+in R with the follow commands:
+
+```{r troonrede2012-hist-voorbeeld, eval=FALSE}
+# read dataset 
+load(file="data/pauses6.Rda")
+# extract pause lengths (columns 12) for the year 2012, into a separate dataset `troon2012`
+troon2012 <- pauses6[ pauses6$jaar==2012, 12 ] # save col_12 as single vector
+# make histogram
+hist( troon2012, 
+      breaks=seq(0, 5, by=0.25),
+      col="grey80",
+      xlab="Length of pause (s)", ylab="Number", 
+      main="Queen's Speech 2012 (N=305 pauses)" ) -> troonrede2012pauzes_hist
+```

@@ -119,7 +119,7 @@
 
 \title{Quantitative Methods and Statistics}
 \author{true}
-\date{Version compiled 23 Nov 2020}
+\date{Version compiled 27 Nov 2020}
 
 \begin{document}
 \maketitle
@@ -3024,6 +3024,42 @@ new variable, called here \texttt{zReading} (note in the parentheses in the firs
 \bottomrule
 \end{tabular}
 \end{table}
+
+\hypertarget{app:criticalZvalues}{%
+\chapter{Standard normal probability distribution}\label{app:criticalZvalues}}
+
+\includegraphics{QMS-EN_files/figure-latex/kritiekeZwaarden-hulpfiguur-1.pdf}
+
+The critical value \(Z^*\) given below has a probability of \(p\) under \(H_0\), i.e.,
+\(P(Z \geq Z^*|H_0)=p\) (blue area),
+and it has a probability of \(B\) to have a value in the interval \((-Z^*, +Z^*)\).
+The \(Z\) distribution is symmetrical around \(Z=0\), hence \(P(Z < -Z^*) = P(Z > Z^*)\).
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+The first table reports the critical boundary values \(Z^*\) for some frequently used probabilities of \(p\) and frequently used confidence intervals of \(B\):
+
+\begin{tabular}{ccccccccc}
+\toprule
+p & 0.2 & 0.1 & 0.05 & 0.025 & 0.01 & 0.005 & 0.0025 & 0.001\\
+\midrule
+B & 60\% & 80\% & 90\% & 95\% & 98\% & 99\% & 99.5\% & 99.8\%\\
+Z* & 0.8416 & 1.282 & 1.645 & 1.960 & 2.326 & 2.576 & 2.807 & 3.090\\
+\bottomrule
+\end{tabular}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+The second table reports the probabilities \(p\) and confidence intervals \(B\) voor some frequently used critical values of \(Z^*\):
+
+\begin{tabular}{cccccccc}
+\toprule
+p & 0.3085 & 0.1587 & 0.0668 & 0.0228 & 0.0062 & 0.0013 & 0.0002\\
+\midrule
+B & 38.29\% & 68.27\% & 86.64\% & 95.45\% & 98.76\% & 99.73\% & 99.95\%\\
+Z* & 0.5 & 1 & 1.5 & 2 & 2.5 & 3 & 3.5\\
+\bottomrule
+\end{tabular}
 
   \bibliography{book.bib,packages.bib,hhmhto.bib,pandoc.bib}
 

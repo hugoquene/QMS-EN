@@ -1,0 +1,69 @@
+# Standard normal probability distribution {#app:criticalZvalues}
+
+<!-- kritiekeZwaarden_hulpfiguur.R, no caption, no labels -->
+```{r kritiekeZwaarden-hulpfiguur, echo=FALSE, fig.height=2}
+op <- par(mar=c(3,1,1,1)+0.1)
+xx <- seq(1,4,by=.01)
+curve( dnorm(x), from=-4, to=4, xaxt="n", yaxt="n", xlab="", ylab="", bty="n", lwd=3 )
+yy <- dnorm(xx,0,1)
+polygon( x=c(1,xx), y=c(0,yy), col="lavender", border="lavender" )
+curve( dnorm(x), from=-4, to=4, xaxt="n", yaxt="n", xlab="", ylab="", bty="n", lwd=3, add=T )
+text( 1.5, dnorm(1.5)*.4, "p", adj=.5, cex=1 )
+axis( side=1, at=c(0,1), labels=c("0","Z*"), cex=1, tick=F, line=-1 ) # cex is ignored
+abline( h=0, lty=1, col="grey70" )
+segments( x0=0, x1=0, y0=0, y1=dnorm(0), col="grey70" )
+segments( x0=1, x1=1, y0=0, y1=yy[1], col="grey70" )
+curve( dnorm(x), from=-4, to=4, xaxt="n", yaxt="n", xlab="", ylab="", bty="n", lwd=3, add=T )
+par(op)
+```
+
+The critical value $Z^*$ given below has a probability of $p$ under $H_0$, i.e., 
+$P(Z \geq Z^*|H_0)=p$ (blue area), 
+and it has a probability of $B$ to have a value in the interval $(-Z^*, +Z^*)$. 
+The $Z$ distribution is symmetrical around $Z=0$, hence $P(Z < -Z^*) = P(Z > Z^*)$.
+
+---
+
+The first table reports the critical boundary values $Z^*$ for some frequently used probabilities of $p$ and frequently used confidence intervals of $B$:
+
+```{r A2.1, echo=FALSE}
+pvals <- c(.2,.1,.05,.025,.01,.005,.0025,.001)
+appendixZ1 <- matrix("",nrow=1,ncol=1+length(pvals)) # matrix of char strings
+for (i in 1:1) 
+  for (j in 1:length(pvals))
+    appendixZ1[i,j+1] <- format( qnorm( p=pvals[j], lower.tail=FALSE),
+                               digits=4, nsmall=3 )
+appendixZ1 <- rbind(
+  c( "p", as.character(pvals) ),
+  c( "B", paste(as.character(100-200*pvals),"%",sep="" ) ),
+  appendixZ1
+)
+appendixZ1[3,1] <- "Z*"
+# suppress first row, and use as column names
+knitr::kable(
+  appendixZ1[-1,], booktabs=TRUE, col.names=appendixZ1[1,], align="c" )
+```
+
+---
+
+The second table reports the probabilities $p$ and confidence intervals $B$ voor some frequently used critical values of $Z^*$:
+
+```{r A2.2, echo=FALSE}
+Zvals <- seq(from=0.5, to=3.5, by=0.5)
+pvals <- pnorm(Zvals, lower.tail=FALSE )
+appendixZ2 <- matrix("",nrow=1,ncol=length(pvals)+1)
+# for (i in 1:1) 
+#  for (j in 1:length(pvals))
+#    appendixZ2[i,j+1] <- format( Zvals,
+#                               digits=3, nsmall=1 )
+appendixZ2[1,2:ncol(appendixZ2)] <- Zvals
+appendixZ2 <- rbind(
+  c( "p", format(pvals, digits=1, nsmall=4) ),
+  c( "B", paste(as.character(round(100-200*pvals,digits=2)),"%",sep="" ) ),
+  appendixZ2
+)
+appendixZ2[3,1] <- "Z*"
+# suppress first row, and use as column names
+knitr::kable(
+  appendixZ2[-1,], booktabs=TRUE, col.names=appendixZ2[1,], align="c" )
+```

@@ -116,3 +116,4 @@ sec:standardscores
 spss-3
 r-3
 app:randomnumbers
+app:criticalZvalues

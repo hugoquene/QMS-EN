@@ -7,10 +7,19 @@ xx <- seq(1,4,by=.01)
 curve( dnorm(x), from=-4, to=4, xaxt="n", yaxt="n", xlab="", ylab="", bty="n", lwd=3 )
 yy <- dnorm(xx,0,1)
 polygon( x=c(1,xx), y=c(0,yy), col="lavender", border="lavender" )
+# 20201128 added other polygon corresponding to B, three commands
+xx <- seq(-1,1,by=.01) 
+yy <- dnorm(xx,0,1)
+polygon( x=c(-1,xx,1), y=c(0,yy,0), col="wheat1", border="wheat1" )
+#
 curve( dnorm(x), from=-4, to=4, xaxt="n", yaxt="n", xlab="", ylab="", bty="n", lwd=3, add=T )
 text( 1.5, dnorm(1.5)*.4, "p", adj=.5, cex=1 )
+# 20201128 added other polygon corresponding to B, two more commands
+text( -0.5, dnorm(0.5)*.4, "B/2", adj=.5, cex=1 )
+text( +0.5, dnorm(0.5)*.4, "B/2", adj=.5, cex=1 )
 axis( side=1, at=c(0,1), labels=c("0","Z*"), cex=1, tick=F, line=-1 ) # cex is ignored
-abline( h=0, lty=1, col="grey70" )
+# abline( h=0, lty=1, col="grey70" ) # should not extend outside tails of distribution
+segments( x0=-4, x1=4, y0=0, col="grey70" ) # as X axis
 segments( x0=0, x1=0, y0=0, y1=dnorm(0), col="grey70" )
 segments( x0=1, x1=1, y0=0, y1=yy[1], col="grey70" )
 curve( dnorm(x), from=-4, to=4, xaxt="n", yaxt="n", xlab="", ylab="", bty="n", lwd=3, add=T )
@@ -18,8 +27,8 @@ par(op)
 ```
 
 The critical value $Z^*$ given below has a probability of $p$ under $H_0$, i.e., 
-$P(Z \geq Z^*|H_0)=p$ (blue area), 
-and it has a probability of $B$ to have a value in the interval $(-Z^*, +Z^*)$. 
+$P(Z > Z^*|H_0)=p$ (the blue area), 
+and it has a probability of $B$ to have a value in the interval $(-Z^*, +Z^*)$ (the yellow area). 
 The $Z$ distribution is symmetrical around $Z=0$, hence $P(Z < -Z^*) = P(Z > Z^*)$.
 
 ---

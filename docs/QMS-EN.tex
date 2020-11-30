@@ -119,7 +119,7 @@
 
 \title{Quantitative Methods and Statistics}
 \author{true}
-\date{Version compiled 27 Nov 2020}
+\date{Version compiled 30 Nov 2020}
 
 \begin{document}
 \maketitle
@@ -1709,13 +1709,13 @@ namely the phonological class of sounds in Dutch \citep{LKCG07}.
 \begin{table}
 
 \caption{\label{tab:klankfreq}Frequency distribution 
-              of the phonological class of sounds
+              of the phonological class of speech sounds
               in the *Corpus of Spoken Dutch* 
-              (C=consonant, V=vowel).}
+              (C=consonant, V=vowel; lang=long vowel, kort=short vowel).}
 \centering
 \begin{tabular}[t]{llr}
 \toprule
-hoofdklasse & onderklasse & aantal\\
+main.class & sub.class & count\\
 \midrule
 C & plos & 585999\\
 C & fric & 426097\\
@@ -1880,7 +1880,7 @@ show that we are dealing with discrete categories.
 \begin{figure}
 \centering
 \includegraphics{QMS-EN_files/figure-latex/klankfreq-barplot-1.pdf}
-\caption{\label{fig:klankfreq-barplot}Bar chat of the frequency distribution of phonological class of sounds in the Corpus of Spoken Dutch (C=consonant, V=vowel).}
+\caption{\label{fig:klankfreq-barplot}Bar chart of the frequency distribution of phonological class of speech sounds in the Corpus of Spoken Dutch (C=consonant, V=vowel).}
 \end{figure}
 
 A bar chart helps us to determine at a glance the most important
@@ -1891,7 +1891,7 @@ in Dutch (Figure \ref{fig:klankfreq-barplot}), we
 see that amongst the consonants the plosives
 occur the most, that amongst the vowels the
 short vowels occur the most, that diphthongs
-are not used much (the sounds in \emph{ei, ui, au}), and that
+are not used much (the sounds in Dutch \emph{ei, ui, au}), and that
 more consonants are used compared with vowels.
 
 Tip: Avoid shading and other 3D-effects in a bar chart! These make
@@ -1959,15 +1959,17 @@ following commands:
 \begin{Highlighting}[]
 \CommentTok{\# read data}
 \NormalTok{klankfreq \textless{}{-}}\StringTok{ }\KeywordTok{read.table}\NormalTok{( }\DataTypeTok{file=}\StringTok{"data/klankfreq.txt"}\NormalTok{, }\DataTypeTok{header=}\NormalTok{T )}
-\CommentTok{\# make barplot from column \textasciigrave{}number\textasciigrave{} in dataset \textasciigrave{}klankfreq\textasciigrave{}}
-\KeywordTok{with}\NormalTok{( klankfreq, }\KeywordTok{barplot}\NormalTok{( number, }\DataTypeTok{beside=}\NormalTok{T, }
-                          \DataTypeTok{ylab=}\StringTok{"Number"}\NormalTok{,}
-                          \DataTypeTok{main=}\StringTok{"Sound frequencies in Dutch (N=2968220)"}\NormalTok{,}
+\CommentTok{\# 20201130 column names in English}
+\KeywordTok{dimnames}\NormalTok{(klankfreq)[[}\DecValTok{2}\NormalTok{]] \textless{}{-}}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"main.class"}\NormalTok{,}\StringTok{"sub.class"}\NormalTok{,}\StringTok{"count"}\NormalTok{)}
+\CommentTok{\# make barplot from column \textasciigrave{}count\textasciigrave{} in dataset \textasciigrave{}klankfreq\textasciigrave{}}
+\KeywordTok{with}\NormalTok{( klankfreq, }\KeywordTok{barplot}\NormalTok{( count, }\DataTypeTok{beside=}\NormalTok{T, }
+                          \DataTypeTok{ylab=}\StringTok{"Frequency"}\NormalTok{,}
+                          \DataTypeTok{main=}\StringTok{"Frequencies of speech sounds in Dutch (N=2968220)"}\NormalTok{,}
                           \DataTypeTok{col=}\KeywordTok{ifelse}\NormalTok{(klankfreq[,}\DecValTok{1}\NormalTok{]}\OperatorTok{==}\StringTok{"V"}\NormalTok{,}\StringTok{"grey40"}\NormalTok{,}\StringTok{"grey20"}\NormalTok{) ) ) {-}\textgreater{}}\StringTok{ }\NormalTok{klankfreq\_barplot}
 \CommentTok{\# make labels along the bottommost horizontal axis}
-\KeywordTok{axis}\NormalTok{(}\DataTypeTok{side=}\DecValTok{1}\NormalTok{, }\DataTypeTok{at=}\NormalTok{klankfreq\_barplot, }\DataTypeTok{labels=}\NormalTok{klankfreq}\OperatorTok{$}\NormalTok{hoofdklasse)}
-\KeywordTok{axis}\NormalTok{(}\DataTypeTok{side=}\DecValTok{1}\NormalTok{, }\DataTypeTok{at=}\NormalTok{klankfreq\_barplot, }\DataTypeTok{tick=}\NormalTok{F, }\DataTypeTok{line=}\DecValTok{1}\NormalTok{, }\DataTypeTok{labels=}\NormalTok{klankfreq}\OperatorTok{$}\NormalTok{onderklasse )}
-\CommentTok{\# or simpler: with(klankfreq, barplot(number) ) \# all defaults }
+\KeywordTok{axis}\NormalTok{(}\DataTypeTok{side=}\DecValTok{1}\NormalTok{, }\DataTypeTok{at=}\NormalTok{klankfreq\_barplot, }\DataTypeTok{labels=}\NormalTok{klankfreq}\OperatorTok{$}\NormalTok{main.class)}
+\KeywordTok{axis}\NormalTok{(}\DataTypeTok{side=}\DecValTok{1}\NormalTok{, }\DataTypeTok{at=}\NormalTok{klankfreq\_barplot, }\DataTypeTok{tick=}\NormalTok{F, }\DataTypeTok{line=}\DecValTok{1}\NormalTok{, }\DataTypeTok{labels=}\NormalTok{klankfreq}\OperatorTok{$}\NormalTok{sub.class )}
+\CommentTok{\# or simpler: with(klankfreq, barplot(count) ) \# all defaults }
 \end{Highlighting}
 \end{Shaded}
 
@@ -1984,7 +1986,7 @@ in R with the follow commands:
 \KeywordTok{hist}\NormalTok{( troon2012, }
       \DataTypeTok{breaks=}\KeywordTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DataTypeTok{by=}\FloatTok{0.25}\NormalTok{),}
       \DataTypeTok{col=}\StringTok{"grey80"}\NormalTok{,}
-      \DataTypeTok{xlab=}\StringTok{"Length of pause (s)"}\NormalTok{, }\DataTypeTok{ylab=}\StringTok{"Number"}\NormalTok{, }
+      \DataTypeTok{xlab=}\StringTok{"Length of pause (s)"}\NormalTok{, }\DataTypeTok{ylab=}\StringTok{"Frequency"}\NormalTok{, }
       \DataTypeTok{main=}\StringTok{"Queen\textquotesingle{}s Speech 2012 (N=305 pauses)"}\NormalTok{ ) {-}\textgreater{}}\StringTok{ }\NormalTok{troonrede2012pauzes\_hist}
 \end{Highlighting}
 \end{Shaded}
@@ -2494,7 +2496,7 @@ observations to standard scores (see §\ref{sec:standardscores} below),
 (b) when we want to describe a variable
 which is normally distributed (see §\ref{sec:normaldistribution}, and
 (c) when we want to test hypotheses with the help of a normally distributed variable (see
-§@ref(sec:ttoets.onesample) et seq.).
+§\ref{sec:ttest-onesample} et seq.).
 
 \hypertarget{mad}{%
 \subsection{MAD}\label{mad}}
@@ -2596,10 +2598,8 @@ might be \(43/15 \approx 2.86667\). However, the precision
 in this example is not as good as this decimal number suggests. In fact,
 here one deviant answer already brings about a deviation of
 \(\pm0.06667\) in the mean. Besides, a mean score
-is always the result of a division operation, and ``with division
-and multiplication, the rule is that the result must contain just as many
-significant numbers as the measurement value with the smallest number
-of significant figures.'' (Translation JW) \footnote{\url{https://nl.wikipedia.org/wiki/Significant_cijfer}}
+is always the result of a division operation, and
+``{[}for{]} quantities created from measured quantities by multiplication and division, the calculated result should have as many significant figures as the measured number with the least number of significant figures'' \footnote{\url{https://en.wikipedia.org/wiki/Significant_figures}}.
 In this example, the mean's numerator (\(43\)) and its denominator (\(15\)) both consist
 of 2 significant figures. The mean score should be reported as \(2.9\) points, with only
 one figure after the decimal point.
@@ -2637,7 +2637,7 @@ num.obs.(denominator) & num.signif.figures & example fraction & report as\tabula
 \subsubsection{Background}\label{background-1}}
 
 The rules for percentages arise from those in
-§\ref{sec:significantfigures-mean} applied to division operations.
+§\ref{sec:significantfigures-means} applied to division operations.
 If the denominator is larger than 100, the percentage (with two significant
 figures) is the result of a scaling ``down'' (from a denominator
 larger than 100 to a denominator of precisely 100 percentage points).
@@ -2668,7 +2668,7 @@ significant figures) suggest. Or put otherwise: the number of 6
 failed students (i.e.~a number with one significant figure) means we have
 to render the proportion with only one significant figure, and thus not
 as a percentage. It is preferable to report the proportion itself (\(23/29\)), or
-if not the ``odds'' (\(23/6=4\)) rounded off to the correct number of significant
+the ``odds'' (\(23/6=4\)) rounded off to the correct number of significant
 figures\footnote{These ``odds'' indicate that they are 23 successful students to 6 failed students, i.e., rounded u,p 4 successful students for every failed student.}.
 \end{quote}
 
@@ -3031,8 +3031,8 @@ new variable, called here \texttt{zReading} (note in the parentheses in the firs
 \includegraphics{QMS-EN_files/figure-latex/kritiekeZwaarden-hulpfiguur-1.pdf}
 
 The critical value \(Z^*\) given below has a probability of \(p\) under \(H_0\), i.e.,
-\(P(Z \geq Z^*|H_0)=p\) (blue area),
-and it has a probability of \(B\) to have a value in the interval \((-Z^*, +Z^*)\).
+\(P(Z > Z^*|H_0)=p\) (the blue area),
+and it has a probability of \(B\) to have a value in the interval \((-Z^*, +Z^*)\) (the yellow area).
 The \(Z\) distribution is symmetrical around \(Z=0\), hence \(P(Z < -Z^*) = P(Z > Z^*)\).
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}

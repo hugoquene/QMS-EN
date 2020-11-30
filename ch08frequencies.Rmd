@@ -56,13 +56,15 @@ namely the phonological class of sounds in Dutch [@LKCG07].
 #52-56
 ```{r klankfreq, echo=FALSE}
 klankfreq <- read.table( file="data/klankfreq.txt", header=T )
+# 20201130 column names in English
+dimnames(klankfreq)[[2]] <- c("main.class","sub.class","count")
 # print(klankfreq)
 knitr::kable( klankfreq, 
               booktabs=TRUE, 
               caption="Frequency distribution 
-              of the phonological class of sounds
+              of the phonological class of speech sounds
               in the *Corpus of Spoken Dutch* 
-              (C=consonant, V=vowel)." )
+              (C=consonant, V=vowel; lang=long vowel, kort=short vowel)." )
 ```
 
 As a second example, Table \@ref(tab:shoesize) provides a
@@ -199,12 +201,12 @@ joined up to each other along the horizontal axis, to
 show that we are dealing with discrete categories. 
 
 
-```{r klankfreq-barplot, echo=FALSE, fig.cap="Bar chat of the frequency distribution of phonological class of sounds in the Corpus of Spoken Dutch (C=consonant, V=vowel)."}
+```{r klankfreq-barplot, echo=FALSE, fig.cap="Bar chart of the frequency distribution of phonological class of speech sounds in the Corpus of Spoken Dutch (C=consonant, V=vowel)."}
 klankfreq <- read.table(file="data/klankfreq.txt", header=T)
 with(klankfreq, barplot( aantal, beside=T, 
         ylab="Number", 
-        main=paste("Sound frequencies in Dutch (N=",
-                   sum(klankfreq$aantal), " spraakklanken)", sep=""),
+        main=paste("Speech sound frequencies in Dutch (N=",
+                   sum(klankfreq$aantal), " sounds)", sep=""),
         col=ifelse(klankfreq[,1]=="V","grey40","grey20") ) ) -> klankfreq_barplot
 axis(side=1, at=klankfreq_barplot, labels=klankfreq$hoofdklasse)
 axis(side=1, at=klankfreq_barplot, tick=F, line=1, labels=klankfreq$onderklasse )
@@ -219,7 +221,7 @@ in Dutch (Figure \@ref(fig:klankfreq-barplot)), we
 see that amongst the consonants the plosives 
 occur the most, that amongst the vowels the 
 short vowels occur the most, that diphthongs 
-are not used much (the sounds in *ei, ui, au*), and that 
+are not used much (the sounds in Dutch *ei, ui, au*), and that 
 more consonants are used compared with vowels.
 
 
@@ -290,15 +292,17 @@ following commands:
 ```{r klankfreq-barplot-voorbeeld, eval=FALSE}
 # read data
 klankfreq <- read.table( file="data/klankfreq.txt", header=T )
-# make barplot from column `number` in dataset `klankfreq`
-with( klankfreq, barplot( number, beside=T, 
-                          ylab="Number",
-                          main="Sound frequencies in Dutch (N=2968220)",
+# 20201130 column names in English
+dimnames(klankfreq)[[2]] <- c("main.class","sub.class","count")
+# make barplot from column `count` in dataset `klankfreq`
+with( klankfreq, barplot( count, beside=T, 
+                          ylab="Frequency",
+                          main="Frequencies of speech sounds in Dutch (N=2968220)",
                           col=ifelse(klankfreq[,1]=="V","grey40","grey20") ) ) -> klankfreq_barplot
 # make labels along the bottommost horizontal axis
-axis(side=1, at=klankfreq_barplot, labels=klankfreq$hoofdklasse)
-axis(side=1, at=klankfreq_barplot, tick=F, line=1, labels=klankfreq$onderklasse )
-# or simpler: with(klankfreq, barplot(number) ) # all defaults 
+axis(side=1, at=klankfreq_barplot, labels=klankfreq$main.class)
+axis(side=1, at=klankfreq_barplot, tick=F, line=1, labels=klankfreq$sub.class )
+# or simpler: with(klankfreq, barplot(count) ) # all defaults 
 ```
 
 You can make a histogram like in Figure \@ref(fig:troonrede2012-hist)
@@ -313,6 +317,6 @@ troon2012 <- pauses6[ pauses6$jaar==2012, 12 ] # save col_12 as single vector
 hist( troon2012, 
       breaks=seq(0, 5, by=0.25),
       col="grey80",
-      xlab="Length of pause (s)", ylab="Number", 
+      xlab="Length of pause (s)", ylab="Frequency", 
       main="Queen's Speech 2012 (N=305 pauses)" ) -> troonrede2012pauzes_hist
 ```

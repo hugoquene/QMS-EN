@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.10.22)  27 NOV 2020 17:56
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.10.22)  30 NOV 2020 11:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1037,7 +1037,7 @@ Chapter 8.
 [103
 
 ]
-Overfull \vbox (168.72635pt too high) has occurred while \output is active []
+Overfull \vbox (180.72635pt too high) has occurred while \output is active []
 
 [104]
 
@@ -1069,7 +1069,7 @@ Chapter 9.
 File: QMS-EN_files/figure-latex/waittime-hist-1.pdf Graphic file (type pdf)
 <use QMS-EN_files/figure-latex/waittime-hist-1.pdf>
 [113]
-Underfull \hbox (badness 10000) in paragraph at lines 2165--2165
+Underfull \hbox (badness 10000) in paragraph at lines 2167--2167
 [][][][]$[][][][] [] [] [] [][][] [] [][][] [] [][] [] [][] [][] [][] [] [][][]
 [] [] [][][][][][] [] [][][][][][][] [][] [][][][][][][][][][][] [] [][][][][][
 ][] [] [][][][][] []
@@ -1078,14 +1078,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 2165--2165
 [114] [115]
 
 LaTeX Warning: Reference `fig:centraltendencies' on page 116 undefined on input
- line 2280.
+ line 2282.
 
 File: QMS-EN_files/figure-latex/centrummaten-1.pdf Graphic file (type pdf)
 <use QMS-EN_files/figure-latex/centrummaten-1.pdf>
 [116] [117]
 
 LaTeX Warning: Reference `sec:integriteit-inleiding' on page 118 undefined on i
-nput line 2379.
+nput line 2381.
 
 [118]
 File: QMS-EN_files/figure-latex/cito-boxplot-1.pdf Graphic file (type pdf)
@@ -1093,19 +1093,23 @@ File: QMS-EN_files/figure-latex/cito-boxplot-1.pdf Graphic file (type pdf)
 [119] [120]
 
 LaTeX Warning: Reference `sec:ttoets-vrijheidsgraden' on page 121 undefined on 
-input line 2449.
+input line 2451.
 
 
 LaTeX Warning: Reference `sec:normaldistribution' on page 121 undefined on inpu
-t line 2495.
+t line 2497.
+
+
+LaTeX Warning: Reference `sec:ttest-onesample' on page 121 undefined on input l
+ine 2499.
 
 [121]
 
 LaTeX Warning: Reference `sec:normaldistribution' on page 122 undefined on inpu
-t line 2518.
+t line 2520.
 
 
-Underfull \hbox (badness 1009) in paragraph at lines 2523--2534
+Underfull \hbox (badness 1009) in paragraph at lines 2525--2536
 \TU/lmr/m/n/10 standard deviation, amongst others because the MAD is less
  []
 
@@ -1115,10 +1119,6 @@ Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;
 
 LaTeX Warning: Reference `tab:signiffigurepercentage' on page 124 undefined on 
 input line 2615.
-
-
-LaTeX Warning: Reference `sec:significantfigures-mean' on page 124 undefined on
- input line 2640.
 
 [124] [125]
 
@@ -1187,8 +1187,8 @@ LaTeX Warning: There were undefined references.
  ) 
 Here is how much of TeX's memory you used:
  17474 strings out of 479441
- 304618 string characters out of 5880450
- 762510 words of memory out of 5000000
+ 304610 string characters out of 5880450
+ 762560 words of memory out of 5000000
  36549 multiletter control sequences out of 15000+600000
  541603 words of font info for 90 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191

@@ -88,7 +88,8 @@ The mean waiting time is $(\sum X)/N = 22/10 = 2.2$ minutes.
 ---
 
 The mean of $X$ is usually expressed with one decimal figure more than
-the scores of $X$.
+the scores of $X$ (see also §\@ref(sec:significantfigures-means) below about the number of significant
+figures with which we represent the mean). 
 
 The mean can be understood as the "balance point" of a distribution:
 the observations on both sides hold each other "in equilibrium", as
@@ -210,7 +211,7 @@ the harmonic mean is a better central tendency. We firstly convert
 the speed (words per time unit) into its inverse 
 (see \@ref(eq:harmonicmean), in denominator, within sum sign),
 i.e. to *time* per word: 0.005, 0.004, and 0.002 (time units per
-word, see footnote[^fn09-3]). We then mean these times, to
+word, see footnote[^fn09-3]). We then average these times, to
 a mean of 0.00366 hours per word, and finally we again take the 
 inverse of this. The harmonic mean speed of writing is then $1/0.00366=273$
 words per hour, closer to the "actual" mean of 254 words per hour.
@@ -330,9 +331,10 @@ income are.
 Quartiles are a simple and useful measure for this [@Tukey77].
 We split the ordered observations into two halves; the dividing line 
 between these is the median. We then halve each of these halves again into quarters.
-The quartiles are formed by the diving lines between these
-quarters; as such, there are three quartiles. The first quartile $Q_1$ is the lowermost half's median, $Q_2$ is the uppermost 
-half's median. Half of the observations (namely the second and third quarters) are
+The quartiles are formed by the dividing lines between these
+quarters; as such, there are three quartiles. The first quartile $Q_1$ is the lowermost half's median, 
+$Q_2$ is the median of all $n$ observations, and the third quartile $Q_3$ is the uppermost half's median. 
+Half of the observations (namely the second and third quarters) are
 between $Q_1$ and $Q_3$. The distance between $Q_1$ and $Q_3$ is
 called the "interquartile range" (IQR). This IQR is a first measure which
 can be used for the dispersion of observations with respect to their
@@ -440,7 +442,7 @@ each observation deviates from the mean, thus $(x_i-\overline{x})$. However, if 
 add up all the deviations, they always total zero! After all, the positive and negative
 deviations cancel each other out (check that out for yourself in 
 Table \@#ref(tab:cito)).
-Instead of calculating the mean of the deviations themselves, we thus calculate the means
+Instead of calculating the mean of the deviations themselves, we thus calculate the mean
 of the squares of those deviations. Both the positive and negative deviations
 result in positive squared deviations. We then calculate the mean of all 
 those squared deviations, i.e. we add them up and divide them by 
@@ -467,7 +469,7 @@ observations. As such, the variance is a quantity which is not expressed
 in the original units (e.g. seconds, cm, score),
 but in squared units (e.g. $\textrm{s}^2$,
 $\textrm{cm}^2$, $\textrm{score}^2$). In order to return to the
-original units, we take the root of the variance. We call the result the
+original units, we take the square root of the variance. We call the result the
 *standard deviation*, indicated by the symbol $s$:
 
 \begin{equation}
@@ -573,7 +575,7 @@ Table \@ref(tab:signiffiguresmean).
 Let us assume that I have measured the distance from my house to my work 
 along a fixed route a number of times. The mean of those measurements
 supposedly amounts to $2.954321$ km. By reporting the mean with 7 figures,
-I am suggesting here that I know precisely what the distance $2954321$ millimetres is,
+I am suggesting here that I know precisely that the distance $2954321$ millimetres is,
 and at most $1$ mm more or less: 
 the last figure is estimated or rounded off. The number of significant figures
 (in this example 7) indicates the degree of precision. In this example, the 

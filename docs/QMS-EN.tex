@@ -119,7 +119,7 @@
 
 \title{Quantitative Methods and Statistics}
 \author{true}
-\date{Version compiled 30 Nov 2020}
+\date{Version compiled 01 Dec 2020}
 
 \begin{document}
 \maketitle
@@ -2089,7 +2089,8 @@ The mean waiting time is \((\sum X)/N = 22/10 = 2.2\) minutes.
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 The mean of \(X\) is usually expressed with one decimal figure more than
-the scores of \(X\).
+the scores of \(X\) (see also §\ref{sec:significantfigures-means} below about the number of significant
+figures with which we represent the mean).
 
 The mean can be understood as the ``balance point'' of a distribution:
 the observations on both sides hold each other ``in equilibrium'', as
@@ -2163,9 +2164,9 @@ the score 2 occurs the most often (\(4\times\)); this is the mode.
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{quote}
-\emph{Example 9.4}: In 2014, the mean income per household in the Netherlands was €34,200.
-The modal income (per household) was between €18,000 and €20,000\footnote{\url{http://www.cbs.nl/nl-NL/menu/themas/inkomen-bestedingen/cijfers/extra/inkomensverdeling.htm}}. As such, in
-2014, most households in the Netherlands fell within this income class.
+\emph{Example 9.4}: In 2018, the mean income per household in the Netherlands was €29,500.
+The modal income (per household) was between €18,000 and €20,000\footnote{\url{https://www.cbs.nl/nl-nl/visualisaties/inkomensverdeling}}. As such, in
+2018, most households in the Netherlands fell within this income class.
 \end{quote}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -2215,8 +2216,8 @@ the speed (words per time unit) into its inverse
 (see \eqref{eq:harmonicmean}, in denominator, within sum sign),
 i.e.~to \emph{time} per word: 0.005, 0.004, and 0.002 (time units per
 word, see footnote\footnote{This is comparable with sports like rowing, swimming, cycling, ice skating, etc., where
-  the time over an agreed distance is also measured and compared, rather than the speed over an
-  agreed time.}). We then mean these times, to
+  the time over an agreed distance is measured and compared, rather than the speed over an
+  agreed time.}). We then average these times, to
 a mean of 0.00366 hours per word, and finally we again take the
 inverse of this. The harmonic mean speed of writing is then \(1/0.00366=273\)
 words per hour, closer to the ``actual'' mean of 254 words per hour.
@@ -2284,8 +2285,8 @@ the various central tendencies, for asymmetrically distributed observations.
 
 \begin{figure}
 \centering
-\includegraphics{QMS-EN_files/figure-latex/centrummaten-1.pdf}
-\caption{\label{fig:centrummaten}Histogram of a variable with positively skewed (asymmetric) frequency distribution, with (1) the median, (2) the 10\% trimmed mean, (3) the 10\% winsorized mean, and (4) the arithmetic mean, indicated. The observed scores are marked along the horizontal axis.}
+\includegraphics{QMS-EN_files/figure-latex/centraltendencies-1.pdf}
+\caption{\label{fig:centraltendencies}Histogram of a variable with positively skewed (asymmetric) frequency distribution, with (1) the median, (2) the 10\% trimmed mean, (3) the 10\% winsorized mean, and (4) the arithmetic mean, indicated. The observed scores are marked along the horizontal axis.}
 \end{figure}
 
 The arithmetic mean is the most sensitive to extreme values:
@@ -2316,9 +2317,10 @@ income are.
 Quartiles are a simple and useful measure for this \citep{Tukey77}.
 We split the ordered observations into two halves; the dividing line
 between these is the median. We then halve each of these halves again into quarters.
-The quartiles are formed by the diving lines between these
-quarters; as such, there are three quartiles. The first quartile \(Q_1\) is the lowermost half's median, \(Q_2\) is the uppermost
-half's median. Half of the observations (namely the second and third quarters) are
+The quartiles are formed by the dividing lines between these
+quarters; as such, there are three quartiles. The first quartile \(Q_1\) is the lowermost half's median,
+\(Q_2\) is the median of all \(n\) observations, and the third quartile \(Q_3\) is the uppermost half's median.
+Half of the observations (namely the second and third quarters) are
 between \(Q_1\) and \(Q_3\). The distance between \(Q_1\) and \(Q_3\) is
 called the ``interquartile range'' (IQR). This IQR is a first measure which
 can be used for the dispersion of observations with respect to their
@@ -2378,7 +2380,7 @@ In the reading scores in Table \ref{tab:cito}, we encounter one extreme value, n
 generally lies at \(1.5 \times \textrm{IQR}\). If a value is more than
 \(1.5 \times \textrm{IQR}\) above or under \(Q_1\), we consider that
 observation to be an outlier. Check these observations again (recall the principle of
-diligence, see §\ref{sec:integriteit-inleiding}).
+diligence, see §\ref{sec:integrity-introduction}).
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -2430,7 +2432,7 @@ each observation deviates from the mean, thus \((x_i-\overline{x})\). However, i
 add up all the deviations, they always total zero! After all, the positive and negative
 deviations cancel each other out (check that out for yourself in
 Table @\#ref(tab:cito)).
-Instead of calculating the mean of the deviations themselves, we thus calculate the means
+Instead of calculating the mean of the deviations themselves, we thus calculate the mean
 of the squares of those deviations. Both the positive and negative deviations
 result in positive squared deviations. We then calculate the mean of all
 those squared deviations, i.e.~we add them up and divide them by
@@ -2448,7 +2450,7 @@ The numerator of
 this fraction is referred to as the ``sum of squared deviations'' or
 ``sum of squares'' (SS) and the denominator is referred to as the number of
 ``degrees of freedom'' of the numerator (d.f.; see
-§\ref{sec:ttoets-vrijheidsgraden}).
+§\ref{sec:ttest-degreesoffreedom}).
 
 Nowadays, we always calculate the variance with a calculator
 or computer.
@@ -2461,7 +2463,7 @@ observations. As such, the variance is a quantity which is not expressed
 in the original units (e.g.~seconds, cm, score),
 but in squared units (e.g.~\(\textrm{s}^2\),
 \(\textrm{cm}^2\), \(\textrm{score}^2\)). In order to return to the
-original units, we take the root of the variance. We call the result the
+original units, we take the square root of the variance. We call the result the
 \emph{standard deviation}, indicated by the symbol \(s\):
 
 \begin{equation}
@@ -2581,7 +2583,7 @@ Table \ref{tab:signiffiguresmean}.
 Let us assume that I have measured the distance from my house to my work
 along a fixed route a number of times. The mean of those measurements
 supposedly amounts to \(2.954321\) km. By reporting the mean with 7 figures,
-I am suggesting here that I know precisely what the distance \(2954321\) millimetres is,
+I am suggesting here that I know precisely that the distance is \(2954321\) millimetres,
 and at most \(1\) mm more or less:
 the last figure is estimated or rounded off. The number of significant figures
 (in this example 7) indicates the degree of precision. In this example, the
@@ -2615,7 +2617,7 @@ than 100 (observations, instances). If the numerator is smaller than 100
 see Table \ref{tab:signiffigurepercentage}.
 
 \begin{longtable}[]{@{}rccc@{}}
-\caption{\label{tab:signifigurepercentage} The number of significant figures in the reported
+\caption{\label{tab:signiffigurepercentage} The number of significant figures in the reported
 proportion (or percentage) is related to the number of significant figures of the number
 of observations in the denominator of the fraction.}\tabularnewline
 \toprule
@@ -2669,7 +2671,7 @@ failed students (i.e.~a number with one significant figure) means we have
 to render the proportion with only one significant figure, and thus not
 as a percentage. It is preferable to report the proportion itself (\(23/29\)), or
 the ``odds'' (\(23/6=4\)) rounded off to the correct number of significant
-figures\footnote{These ``odds'' indicate that they are 23 successful students to 6 failed students, i.e., rounded u,p 4 successful students for every failed student.}.
+figures\footnote{These ``odds'' indicate that there are 23 successful students to 6 failed students, i.e., rounded up, 4 successful students for every failed student.}.
 \end{quote}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -2703,7 +2705,7 @@ The centre measures and dispersion measures can be arranged
 as in Table \ref{tab:centredispersionmeasures}.
 
 \begin{longtable}[]{@{}lcc@{}}
-\caption{\label{tab:centredispersionmeasures} Overview of discussed centre measures and dispersion measures.}\tabularnewline
+\caption{\label{tab:centredispersionmeasures} Overview of discussed centre measures and dispersion measures. For assumptions abbreviated to \emph{(a \& b \& c)}, see text below table.}\tabularnewline
 \toprule
 Distribution & Centre measure & Dispersion measure\tabularnewline
 \midrule
@@ -2724,10 +2726,10 @@ they are less sensitive for outliers or for potential \emph{a}symmetry in the
 frequency distribution, as the examples in this chapter show.
 
 The most \textbf{efficient} measures are at the bottom of
-Table \ref{tab:centredispersionmeasures}: average and standard deviation.
+Table \ref{tab:centredispersionmeasures}: mean and standard deviation.
 These measures are efficient: they represent the centre and the dispersion
-the best, they have the smallest standard deviation, and they need
-the smallest number of observations relatively for this. The other measures
+the best, they have themselves the smallest standard deviation, and they need
+the (relatively) smallest number of observations for this. The other measures
 occupy a between position: the trimmed measures are somewhat more robust,
 and the winsorized measures somewhat more efficient.
 
@@ -2960,27 +2962,17 @@ Various \textbf{dispersion measures} are also pre-programmed:
 \end{verbatim}
 
 In contrast, we have to calculate \textbf{standard scores} ourselves, and save them ourselves as a
-new variable, called here \texttt{zReading} (note in the parentheses in the first line):
+new variable, called here \texttt{zReading} (note the parentheses in the first line):
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{zReading \textless{}{-}}\StringTok{ }\NormalTok{(cito}\OperatorTok{$}\NormalTok{Reading}\OperatorTok{{-}}\KeywordTok{mean}\NormalTok{(cito}\OperatorTok{$}\NormalTok{Reading)) }\OperatorTok{/}\StringTok{ }\KeywordTok{sd}\NormalTok{(cito}\OperatorTok{$}\NormalTok{Reading) }\CommentTok{\# z{-}scores}
+\NormalTok{zReading \textless{}{-}}\StringTok{ }\NormalTok{(cito}\OperatorTok{$}\NormalTok{Lezen}\OperatorTok{{-}}\KeywordTok{mean}\NormalTok{(cito}\OperatorTok{$}\NormalTok{Lezen)) }\OperatorTok{/}\StringTok{ }\KeywordTok{sd}\NormalTok{(cito}\OperatorTok{$}\NormalTok{Lezen) }\CommentTok{\# standardized (z) reading scores}
+\KeywordTok{head}\NormalTok{(zReading) }\CommentTok{\# first few observations of variable zReading}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## Warning in mean.default(cito$Reading): argument is not numeric or logical:
-## returning NA
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{head}\NormalTok{(zReading) }\CommentTok{\# first pair of observations of variable zReading}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## numeric(0)
+## [1] -1.1575990  0.6776189  2.3716662 -0.3105753  0.1129365 -0.7340872
 \end{verbatim}
 
 \hypertarget{appendix-appendices}{%

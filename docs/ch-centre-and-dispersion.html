@@ -381,7 +381,8 @@ The mean waiting time is <span class="math inline">\((\sum X)/N = 22/10 = 2.2\)<
 </blockquote>
 <hr />
 <p>The mean of <span class="math inline">\(X\)</span> is usually expressed with one decimal figure more than
-the scores of <span class="math inline">\(X\)</span>.</p>
+the scores of <span class="math inline">\(X\)</span> (see also §<a href="ch-centre-and-dispersion.html#sec:significantfigures-means">9.6.1</a> below about the number of significant
+figures with which we represent the mean).</p>
 <p>The mean can be understood as the “balance point” of a distribution:
 the observations on both sides hold each other “in equilibrium”, as
 illustrated in Figure <a href="ch-centre-and-dispersion.html#fig:waittime-hist">9.1</a>, where the “blocks”
@@ -439,9 +440,9 @@ the score 2 occurs the most often (<span class="math inline">\(4\times\)</span>)
 </blockquote>
 <hr />
 <blockquote>
-<p><em>Example 9.4</em>: In 2014, the mean income per household in the Netherlands was €34,200.
+<p><em>Example 9.4</em>: In 2018, the mean income per household in the Netherlands was €29,500.
 The modal income (per household) was between €18,000 and €20,000<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a>. As such, in
-2014, most households in the Netherlands fell within this income class.</p>
+2018, most households in the Netherlands fell within this income class.</p>
 </blockquote>
 <hr />
 <p>The mode is even less sensitive than the mean to extreme values of
@@ -482,7 +483,7 @@ the harmonic mean is a better central tendency. We firstly convert
 the speed (words per time unit) into its inverse
 (see <a href="ch-centre-and-dispersion.html#eq:harmonicmean">(9.2)</a>, in denominator, within sum sign),
 i.e. to <em>time</em> per word: 0.005, 0.004, and 0.002 (time units per
-word, see footnote<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a>). We then mean these times, to
+word, see footnote<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a>). We then average these times, to
 a mean of 0.00366 hours per word, and finally we again take the
 inverse of this. The harmonic mean speed of writing is then <span class="math inline">\(1/0.00366=273\)</span>
 words per hour, closer to the “actual” mean of 254 words per hour.</p>
@@ -535,10 +536,10 @@ is <span class="math inline">\(\overline{x}_t=2\)</span> minutes.</p>
 </div>
 <div id="comparison-of-central-tendencies" class="section level3" number="9.3.7">
 <h3><span class="header-section-number">9.3.7</span> comparison of central tendencies</h3>
-<p>Figure <a href="#fig:centraltendencies"><strong>??</strong></a> illustrates the differences between
+<p>Figure <a href="ch-centre-and-dispersion.html#fig:centraltendencies">9.2</a> illustrates the differences between
 the various central tendencies, for asymmetrically distributed observations.</p>
-<div class="figure"><span id="fig:centrummaten"></span>
-<img src="QMS-EN_files/figure-html/centrummaten-1.png" alt="Histogram of a variable with positively skewed (asymmetric) frequency distribution, with (1) the median, (2) the 10% trimmed mean, (3) the 10% winsorized mean, and (4) the arithmetic mean, indicated. The observed scores are marked along the horizontal axis." width="672" />
+<div class="figure"><span id="fig:centraltendencies"></span>
+<img src="QMS-EN_files/figure-html/centraltendencies-1.png" alt="Histogram of a variable with positively skewed (asymmetric) frequency distribution, with (1) the median, (2) the 10% trimmed mean, (3) the 10% winsorized mean, and (4) the arithmetic mean, indicated. The observed scores are marked along the horizontal axis." width="672" />
 <p class="caption">
 Figure 9.2: Histogram of a variable with positively skewed (asymmetric) frequency distribution, with (1) the median, (2) the 10% trimmed mean, (3) the 10% winsorized mean, and (4) the arithmetic mean, indicated. The observed scores are marked along the horizontal axis.
 </p>
@@ -569,9 +570,10 @@ income are.</p>
 <p>Quartiles are a simple and useful measure for this <span class="citation">(Tukey <a href="#ref-Tukey77" role="doc-biblioref">1977</a>)</span>.
 We split the ordered observations into two halves; the dividing line
 between these is the median. We then halve each of these halves again into quarters.
-The quartiles are formed by the diving lines between these
-quarters; as such, there are three quartiles. The first quartile <span class="math inline">\(Q_1\)</span> is the lowermost half’s median, <span class="math inline">\(Q_2\)</span> is the uppermost
-half’s median. Half of the observations (namely the second and third quarters) are
+The quartiles are formed by the dividing lines between these
+quarters; as such, there are three quartiles. The first quartile <span class="math inline">\(Q_1\)</span> is the lowermost half’s median,
+<span class="math inline">\(Q_2\)</span> is the median of all <span class="math inline">\(n\)</span> observations, and the third quartile <span class="math inline">\(Q_3\)</span> is the uppermost half’s median.
+Half of the observations (namely the second and third quarters) are
 between <span class="math inline">\(Q_1\)</span> and <span class="math inline">\(Q_3\)</span>. The distance between <span class="math inline">\(Q_1\)</span> and <span class="math inline">\(Q_3\)</span> is
 called the “interquartile range” (IQR). This IQR is a first measure which
 can be used for the dispersion of observations with respect to their
@@ -686,7 +688,7 @@ uppermost half is <span class="math inline">\(Q_3=29\)</span>. The interquartile
 generally lies at <span class="math inline">\(1.5 \times \textrm{IQR}\)</span>. If a value is more than
 <span class="math inline">\(1.5 \times \textrm{IQR}\)</span> above or under <span class="math inline">\(Q_1\)</span>, we consider that
 observation to be an outlier. Check these observations again (recall the principle of
-diligence, see §<a href="#sec:integriteit-inleiding"><strong>??</strong></a>).</p>
+diligence, see §<a href="ch-integrity.html#sec:integrity-introduction">3.1</a>).</p>
 <hr />
 <blockquote>
 <p>Example 9.9:
@@ -731,7 +733,7 @@ each observation deviates from the mean, thus <span class="math inline">\((x_i-\
 add up all the deviations, they always total zero! After all, the positive and negative
 deviations cancel each other out (check that out for yourself in
 Table @#ref(tab:cito)).
-Instead of calculating the mean of the deviations themselves, we thus calculate the means
+Instead of calculating the mean of the deviations themselves, we thus calculate the mean
 of the squares of those deviations. Both the positive and negative deviations
 result in positive squared deviations. We then calculate the mean of all
 those squared deviations, i.e. we add them up and divide them by
@@ -745,7 +747,7 @@ those squared deviations, i.e. we add them up and divide them by
 this fraction is referred to as the “sum of squared deviations” or
 “sum of squares” (SS) and the denominator is referred to as the number of
 “degrees of freedom” of the numerator (d.f.; see
-§<a href="#sec:ttoets-vrijheidsgraden"><strong>??</strong></a>).</p>
+§<a href="#sec:ttest-degreesoffreedom"><strong>??</strong></a>).</p>
 <p>Nowadays, we always calculate the variance with a calculator
 or computer.</p>
 </div>
@@ -756,7 +758,7 @@ observations. As such, the variance is a quantity which is not expressed
 in the original units (e.g. seconds, cm, score),
 but in squared units (e.g. <span class="math inline">\(\textrm{s}^2\)</span>,
 <span class="math inline">\(\textrm{cm}^2\)</span>, <span class="math inline">\(\textrm{score}^2\)</span>). In order to return to the
-original units, we take the root of the variance. We call the result the
+original units, we take the square root of the variance. We call the result the
 <em>standard deviation</em>, indicated by the symbol <span class="math inline">\(s\)</span>:</p>
 <p><span class="math display" id="eq:standarddeviation">\[\begin{equation}
   s = \sqrt{s^2} = \sqrt{ \frac{ \sum (x_i - \overline{x})^2 } {n-1} }
@@ -880,7 +882,7 @@ Table <a href="ch-centre-and-dispersion.html#tab:signiffiguresmean">9.2</a>.</p>
 <p>Let us assume that I have measured the distance from my house to my work
 along a fixed route a number of times. The mean of those measurements
 supposedly amounts to <span class="math inline">\(2.954321\)</span> km. By reporting the mean with 7 figures,
-I am suggesting here that I know precisely what the distance <span class="math inline">\(2954321\)</span> millimetres is,
+I am suggesting here that I know precisely that the distance is <span class="math inline">\(2954321\)</span> millimetres,
 and at most <span class="math inline">\(1\)</span> mm more or less:
 the last figure is estimated or rounded off. The number of significant figures
 (in this example 7) indicates the degree of precision. In this example, the
@@ -910,9 +912,9 @@ Use and report a rounded off percentage (i.e. two significant
 figures) only if the fraction’s numerator is larger
 than 100 (observations, instances). If the numerator is smaller than 100
 (observations, instances), then percentages are misleading,
-see Table <a href="#tab:signiffigurepercentage"><strong>??</strong></a>.</p>
+see Table <a href="ch-centre-and-dispersion.html#tab:signiffigurepercentage">9.3</a>.</p>
 <table>
-<caption><span id="tab:signifigurepercentage">Table 9.3: </span> The number of significant figures in the reported
+<caption><span id="tab:signiffigurepercentage">Table 9.3: </span> The number of significant figures in the reported
 proportion (or percentage) is related to the number of significant figures of the number
 of observations in the denominator of the fraction.</caption>
 <thead>
@@ -1010,7 +1012,7 @@ and a boxplot (§<a href="ch-centre-and-dispersion.html#sec:boxplot">9.4.3</a>).
 <p>The centre measures and dispersion measures can be arranged
 as in Table <a href="ch-centre-and-dispersion.html#tab:centredispersionmeasures">9.4</a>.</p>
 <table>
-<caption><span id="tab:centredispersionmeasures">Table 9.4: </span> Overview of discussed centre measures and dispersion measures.</caption>
+<caption><span id="tab:centredispersionmeasures">Table 9.4: </span> Overview of discussed centre measures and dispersion measures. For assumptions abbreviated to <em>(a &amp; b &amp; c)</em>, see text below table.</caption>
 <thead>
 <tr class="header">
 <th align="left">Distribution</th>
@@ -1041,10 +1043,10 @@ at the top (median, quartiles, IQR, MAD). These measures are robust:
 they are less sensitive for outliers or for potential <em>a</em>symmetry in the
 frequency distribution, as the examples in this chapter show.</p>
 <p>The most <strong>efficient</strong> measures are at the bottom of
-Table <a href="ch-centre-and-dispersion.html#tab:centredispersionmeasures">9.4</a>: average and standard deviation.
+Table <a href="ch-centre-and-dispersion.html#tab:centredispersionmeasures">9.4</a>: mean and standard deviation.
 These measures are efficient: they represent the centre and the dispersion
-the best, they have the smallest standard deviation, and they need
-the smallest number of observations relatively for this. The other measures
+the best, they have themselves the smallest standard deviation, and they need
+the (relatively) smallest number of observations for this. The other measures
 occupy a between position: the trimmed measures are somewhat more robust,
 and the winsorized measures somewhat more efficient.</p>
 <p>However, the most efficient measures also demand the furthest reaching
@@ -1174,12 +1176,10 @@ column(s) to the data file.<br />
 <div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="ch-centre-and-dispersion.html#cb41-1" aria-hidden="true"></a><span class="kw">mad</span>(cito<span class="op">$</span>Lezen)  <span class="co"># MAD</span></span></code></pre></div>
 <pre><code>## [1] 5.1891</code></pre>
 <p>In contrast, we have to calculate <strong>standard scores</strong> ourselves, and save them ourselves as a
-new variable, called here <code>zReading</code> (note in the parentheses in the first line):</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="ch-centre-and-dispersion.html#cb43-1" aria-hidden="true"></a>zReading &lt;-<span class="st"> </span>(cito<span class="op">$</span>Reading<span class="op">-</span><span class="kw">mean</span>(cito<span class="op">$</span>Reading)) <span class="op">/</span><span class="st"> </span><span class="kw">sd</span>(cito<span class="op">$</span>Reading) <span class="co"># z-scores</span></span></code></pre></div>
-<pre><code>## Warning in mean.default(cito$Reading): argument is not numeric or logical:
-## returning NA</code></pre>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="ch-centre-and-dispersion.html#cb45-1" aria-hidden="true"></a><span class="kw">head</span>(zReading) <span class="co"># first pair of observations of variable zReading</span></span></code></pre></div>
-<pre><code>## numeric(0)</code></pre>
+new variable, called here <code>zReading</code> (note the parentheses in the first line):</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="ch-centre-and-dispersion.html#cb43-1" aria-hidden="true"></a>zReading &lt;-<span class="st"> </span>(cito<span class="op">$</span>Lezen<span class="op">-</span><span class="kw">mean</span>(cito<span class="op">$</span>Lezen)) <span class="op">/</span><span class="st"> </span><span class="kw">sd</span>(cito<span class="op">$</span>Lezen) <span class="co"># standardized (z) reading scores</span></span>
+<span id="cb43-2"><a href="ch-centre-and-dispersion.html#cb43-2" aria-hidden="true"></a><span class="kw">head</span>(zReading) <span class="co"># first few observations of variable zReading</span></span></code></pre></div>
+<pre><code>## [1] -1.1575990  0.6776189  2.3716662 -0.3105753  0.1129365 -0.7340872</code></pre>
 
 </div>
 </div>
@@ -1201,9 +1201,9 @@ new variable, called here <code>zReading</code> (note in the parentheses in the 
 <li id="fn11"><p>In American English, the strip of ground in the middle of a road is called the
 “median (strip)” (British English: “central reservation”); this strip splits the road into
 two equally large halves.<a href="ch-centre-and-dispersion.html#fnref11" class="footnote-back">↩︎</a></p></li>
-<li id="fn12"><p><a href="http://www.cbs.nl/nl-NL/menu/themas/inkomen-bestedingen/cijfers/extra/inkomensverdeling.htm" class="uri">http://www.cbs.nl/nl-NL/menu/themas/inkomen-bestedingen/cijfers/extra/inkomensverdeling.htm</a><a href="ch-centre-and-dispersion.html#fnref12" class="footnote-back">↩︎</a></p></li>
+<li id="fn12"><p><a href="https://www.cbs.nl/nl-nl/visualisaties/inkomensverdeling" class="uri">https://www.cbs.nl/nl-nl/visualisaties/inkomensverdeling</a><a href="ch-centre-and-dispersion.html#fnref12" class="footnote-back">↩︎</a></p></li>
 <li id="fn13"><p>This is comparable with sports like rowing, swimming, cycling, ice skating, etc., where
-the time over an agreed distance is also measured and compared, rather than the speed over an
+the time over an agreed distance is measured and compared, rather than the speed over an
 agreed time.<a href="ch-centre-and-dispersion.html#fnref13" class="footnote-back">↩︎</a></p></li>
 <li id="fn14"><p>In a classic boxplot, the lines extend to the minimum and maximum <span class="citation">(Tukey <a href="#ref-Tukey77" role="doc-biblioref">1977</a>)</span> and
 outliers are not indicated separately.<a href="ch-centre-and-dispersion.html#fnref14" class="footnote-back">↩︎</a></p></li>
@@ -1213,7 +1213,7 @@ sample (namely the mean) to determine the dispersion. If you are only interested
 dispersion in your <em>sample</em> of observations, and not in the population, divide it by <span class="math inline">\(n\)</span>.<a href="ch-centre-and-dispersion.html#fnref15" class="footnote-back">↩︎</a></p></li>
 <li id="fn16"><p>Positive deviations remain unchanged, negative deviations are reversed.<a href="ch-centre-and-dispersion.html#fnref16" class="footnote-back">↩︎</a></p></li>
 <li id="fn17"><p><a href="https://en.wikipedia.org/wiki/Significant_figures" class="uri">https://en.wikipedia.org/wiki/Significant_figures</a><a href="ch-centre-and-dispersion.html#fnref17" class="footnote-back">↩︎</a></p></li>
-<li id="fn18"><p>These “odds” indicate that they are 23 successful students to 6 failed students, i.e., rounded u,p 4 successful students for every failed student.<a href="ch-centre-and-dispersion.html#fnref18" class="footnote-back">↩︎</a></p></li>
+<li id="fn18"><p>These “odds” indicate that there are 23 successful students to 6 failed students, i.e., rounded up, 4 successful students for every failed student.<a href="ch-centre-and-dispersion.html#fnref18" class="footnote-back">↩︎</a></p></li>
 <li id="fn19"><p>Check: <span class="math inline">\(z = +2 = \frac{(x_i-\overline{x})}{s_x}\)</span>, thus <span class="math inline">\(2 s = (x_i-\overline{x})\)</span>, thus <span class="math inline">\(x_i = \overline{x}+2s\)</span>.<a href="ch-centre-and-dispersion.html#fnref19" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>

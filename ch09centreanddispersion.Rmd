@@ -163,11 +163,11 @@ the score 2 occurs the most often ($4\times$); this is the mode.
 
 ---
 
-> *Example 9.4*: In 2014, the mean income per household in the Netherlands was €34,200.
+> *Example 9.4*: In 2018, the mean income per household in the Netherlands was €29,500.
 The modal income (per household) was between €18,000 and €20,000[^fn09-2]. As such, in 
-2014, most households in the Netherlands fell within this income class.
+2018, most households in the Netherlands fell within this income class.
 
-[^fn09-2]: http://www.cbs.nl/nl-NL/menu/themas/inkomen-bestedingen/cijfers/extra/inkomensverdeling.htm
+[^fn09-2]: https://www.cbs.nl/nl-nl/visualisaties/inkomensverdeling 
 
 ---
 
@@ -269,8 +269,8 @@ is $\overline{x}_t=2$ minutes.
 Figure \@ref(fig:centraltendencies) illustrates the differences between
 the various central tendencies, for asymmetrically distributed observations.
 
-```{r centrummaten, echo=FALSE, fig.cap="Histogram of a variable with positively skewed (asymmetric) frequency distribution, with (1) the median, (2) the 10% trimmed mean, (3) the 10% winsorized mean, and (4) the arithmetic mean, indicated. The observed scores are marked along the horizontal axis."}
-# centrummaten.R
+```{r centraltendencies, echo=FALSE, fig.cap="Histogram of a variable with positively skewed (asymmetric) frequency distribution, with (1) the median, (2) the 10% trimmed mean, (3) the 10% winsorized mean, and (4) the arithmetic mean, indicated. The observed scores are marked along the horizontal axis."}
+# this script was previously named `centrummaten.R`
 set.seed(2015) # date of first version
 xx <- rlnorm(100, meanlog=3,sdlog=0.8)*5; 
 # hist(xx) # xx is indeed lognormally distributed
@@ -383,7 +383,7 @@ In the reading scores in Table \@ref(tab:cito), we encounter one extreme value, 
 generally lies at $1.5 \times \textrm{IQR}$. If a value is more than 
 $1.5 \times \textrm{IQR}$ above or under $Q_1$, we consider that
 observation to be an outlier. Check these observations again (recall the principle of
-diligence, see §\@ref(sec:integriteit-inleiding)).
+diligence, see §\@ref(sec:integrity-introduction)).
 
 ---
 
@@ -457,7 +457,7 @@ The numerator of
 this fraction is referred to as the "sum of squared deviations" or
 "sum of squares" (SS) and the denominator is referred to as the number of 
 "degrees of freedom" of the numerator (d.f.; see
-§\@ref(sec:ttoets-vrijheidsgraden)).
+§\@ref(sec:ttest-degreesoffreedom)).
 
 Nowadays, we always calculate the variance with a calculator
 or computer. 
@@ -575,7 +575,7 @@ Table \@ref(tab:signiffiguresmean).
 Let us assume that I have measured the distance from my house to my work 
 along a fixed route a number of times. The mean of those measurements
 supposedly amounts to $2.954321$ km. By reporting the mean with 7 figures,
-I am suggesting here that I know precisely that the distance $2954321$ millimetres is,
+I am suggesting here that I know precisely that the distance is $2954321$ millimetres,
 and at most $1$ mm more or less: 
 the last figure is estimated or rounded off. The number of significant figures
 (in this example 7) indicates the degree of precision. In this example, the 
@@ -607,7 +607,7 @@ than 100 (observations, instances). If the numerator is smaller than 100
 (observations, instances), then percentages are misleading,
 see Table \@ref(tab:signiffigurepercentage).
 
-Table: (#tab:signifigurepercentage) The number of significant figures in the reported
+Table: (#tab:signiffigurepercentage) The number of significant figures in the reported
 proportion (or percentage) is related to the number of significant figures of the number
 of observations in the denominator of the fraction. 
 
@@ -682,7 +682,7 @@ and a boxplot (§\@ref(sec:boxplot)).
 The centre measures and dispersion measures can be arranged
 as in Table \@ref(tab:centredispersionmeasures). 
 
-Table: (#tab:centredispersionmeasures) Overview of discussed centre measures and dispersion measures. 
+Table: (#tab:centredispersionmeasures) Overview of discussed centre measures and dispersion measures. For assumptions abbreviated to *(a & b & c)*, see text below table. 
 
   Distribution           Centre measure               Dispersion measure
   ------------------- ---------------------------  ----------------------
@@ -696,10 +696,10 @@ they are less sensitive for outliers or for potential *a*symmetry in the
 frequency distribution, as the examples in this chapter show.
 
 The most **efficient** measures are at the bottom of 
-Table \@ref(tab:centredispersionmeasures): average and standard deviation.
+Table \@ref(tab:centredispersionmeasures): mean and standard deviation.
 These measures are efficient: they represent the centre and the dispersion
-the best, they have the smallest standard deviation, and they need 
-the smallest number of observations relatively for this. The other measures 
+the best, they have themselves the smallest standard deviation, and they need 
+the (relatively) smallest number of observations for this. The other measures 
 occupy a between position: the trimmed measures are somewhat more robust,
 and the winsorized measures somewhat more efficient. 
 
@@ -842,16 +842,16 @@ mad(cito$Lezen)  # MAD
 ```
 
 In contrast, we have to calculate **standard scores** ourselves, and save them ourselves as a
-new variable, called here `zReading` (note in the parentheses in the first line):
+new variable, called here `zReading` (note the parentheses in the first line):
 ```{r cito-zscores}
-zReading <- (cito$Reading-mean(cito$Reading)) / sd(cito$Reading) # z-scores
-head(zReading) # first pair of observations of variable zReading
+zReading <- (cito$Lezen-mean(cito$Lezen)) / sd(cito$Lezen) # standardized (z) reading scores
+head(zReading) # first few observations of variable zReading
 ```
 
 
 
 [^fn09-3]: This is comparable with sports like rowing, swimming, cycling, ice skating, etc., where 
-the time over an agreed distance is also measured and compared, rather than the speed over an 
+the time over an agreed distance is measured and compared, rather than the speed over an 
 agreed time. 
 
 [^fn09-4]: In a classic boxplot, the lines extend to the minimum and maximum [@Tukey77] and
@@ -866,6 +866,6 @@ dispersion in your *sample* of observations, and not in the population, divide i
 
 [^fn09-7]: <https://en.wikipedia.org/wiki/Significant_figures>
 
-[^fn09-8]: These "odds" indicate that they are 23 successful students to 6 failed students, i.e., rounded u,p 4 successful students for every failed student.
+[^fn09-8]: These "odds" indicate that there are 23 successful students to 6 failed students, i.e., rounded up, 4 successful students for every failed student.
 
 [^fn09-9]: Check: $z = +2 = \frac{(x_i-\overline{x})}{s_x}$, thus $2 s = (x_i-\overline{x})$, thus $x_i = \overline{x}+2s$.

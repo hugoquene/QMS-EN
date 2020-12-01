@@ -9,12 +9,12 @@ fig:klankfreq-barplot
 fig:troonrede2012-hist
 fig:waittime-hist
 eq:harmonicmean
-fig:centrummaten
+fig:centraltendencies
 tab:cito
 fig:cito-boxplot
 eq:standarddeviation
 tab:signiffiguresmean
-tab:signifigurepercentage
+tab:signiffigurepercentage
 tab:centredispersionmeasures
 eq:zscores
 tab:A1

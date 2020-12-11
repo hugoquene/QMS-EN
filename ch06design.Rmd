@@ -142,7 +142,7 @@ These two studies, @Houtk91 and @Wijff92, illustrate the gradual progress of sci
 
 ## Factorial designs {#sec:factorial-designs}
 
-So far, we have talked about experimental designs in which one single independent variable is manipulated. However, many researchers are (also) interested in the effect of simultaneously manipulating multiple independent variables. Designs in which several factors are varied at the same time are called factorial designs. We already saw an example of this in our discussion of the pretest-posttest control group design (§§\@ref(sec:pretest-posttest-control-group-design)), in which both time and treatment were varied.
+So far, we have talked about experimental designs in which one single independent variable is manipulated. However, many researchers are (also) interested in the effect of simultaneously manipulating multiple independent variables. Designs in which several factors are varied at the same time are called factorial designs. We already saw an example of this in our discussion of the pretest-posttest control group design (§\@ref(sec:pretest-posttest-control-group-design)), in which both time and treatment were varied.
 
 ---
 
@@ -159,12 +159,6 @@ knitr::include_graphics("figures/DrakeBenElHeni2003Fig2.png")
 If it turns out that there is an interaction effect, we cannot sensibly interpret any main effects. This was already illustrated in example 6.5: we cannot conclude that there is no difference between the types of music. However, the size (and direction) of the difference depends on the other independent variable(s), in this case, group/nationality of listeners. Many studies are specifically aimed at demonstrating interaction effects: it is not main effects that are the topic of research, but their interaction, precisely as in example 6.5 above.
 
 It is difficult to schematize a factorial research design, because it features multiple independent variables (with multiple levels each). We could schematically represent these by indexing the manipulation, which was previously shown simply as `X`. The first index (subscript) indicates the level for the first independent variable or factor, while the second index indicates the second factor’s level. Following this system, we can schematize the design from example 6.5 as follows:
-
-Als er een interactie-effect blijkt op te treden, dan is het zinloos om
-een eventueel hoofdeffect te interpreteren. Dat werd al geïllustreerd in
-Voorbeeld 6.5 hierboven: we kunnen niet concluderen dat er géén
-verschil is tussen de muzieksoorten. Maar de grootte (en richting) van
-het verschil is afhankelijk van de andere onafhankelijke variabele(n),
 
 ```
   R    X_{1,1}   O1

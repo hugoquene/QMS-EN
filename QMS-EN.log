@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.10.22)  1 DEC 2020 20:43
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.10.22)  11 DEC 2020 23:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1001,11 +1001,11 @@ File: figures/DrakeBenElHeni2003Fig2.pdf Graphic file (type pdf)
 <use figures/DrakeBenElHeni2003Fig2.pdf>
 [86] [87]
 
-LaTeX Warning: Reference `ch:anova' on page 88 undefined on input line 1433.
+LaTeX Warning: Reference `ch:anova' on page 88 undefined on input line 1427.
 
 
 LaTeX Warning: Reference `ch:correlation' on page 88 undefined on input line 14
-46.
+40.
 
 [88] [89] [90] [91] [92]
 Chapter 7.
@@ -1014,21 +1014,21 @@ Chapter 7.
 ] [94] [95] [96] [97]
 
 LaTeX Warning: Reference `ch:kansverdelingen' on page 98 undefined on input lin
-e 1590.
+e 1584.
 
 
 LaTeX Warning: Reference `ch:kansverdelingen' on page 98 undefined on input lin
-e 1608.
+e 1602.
 
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 1614.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 1608.
 
 LaTeX Warning: Reference `sec:ttest-effectsize' on page 98 undefined on input l
-ine 1628.
+ine 1622.
 
 
 LaTeX Warning: Reference `sec:effectsize-power' on page 98 undefined on input l
-ine 1628.
+ine 1622.
 
 [98] [99] [100] [101
 
@@ -1042,10 +1042,10 @@ Overfull \vbox (180.72635pt too high) has occurred while \output is active []
 [104]
 
 LaTeX Warning: Reference `tab:troonrede2012pauzes' on page 105 undefined on inp
-ut line 1821.
+ut line 1815.
 
 [105]
-Underfull \hbox (badness 10000) in paragraph at lines 1834--1838
+Underfull \hbox (badness 10000) in paragraph at lines 1828--1832
 
  []
 
@@ -1057,7 +1057,7 @@ File: QMS-EN_files/figure-latex/troonrede2012-hist-1.pdf Graphic file (type pdf
 )
 <use QMS-EN_files/figure-latex/troonrede2012-hist-1.pdf>
 [107]
-Underfull \hbox (badness 10000) in paragraph at lines 1946--1951
+Underfull \hbox (badness 10000) in paragraph at lines 1940--1945
 
  []
 
@@ -1078,23 +1078,23 @@ File: QMS-EN_files/figure-latex/cito-boxplot-1.pdf Graphic file (type pdf)
 [119] [120]
 
 LaTeX Warning: Reference `sec:ttest-degreesoffreedom' on page 121 undefined on 
-input line 2453.
+input line 2447.
 
 
 LaTeX Warning: Reference `sec:normaldistribution' on page 121 undefined on inpu
-t line 2499.
+t line 2493.
 
 
 LaTeX Warning: Reference `sec:ttest-onesample' on page 121 undefined on input l
-ine 2501.
+ine 2495.
 
 [121]
 
 LaTeX Warning: Reference `sec:normaldistribution' on page 122 undefined on inpu
-t line 2522.
+t line 2516.
 
 
-Underfull \hbox (badness 1009) in paragraph at lines 2527--2538
+Underfull \hbox (badness 1009) in paragraph at lines 2521--2532
 \TU/lmr/m/n/10 standard deviation, amongst others because the MAD is less
  []
 
@@ -1103,36 +1103,36 @@ Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;
 [123] [124] [125]
 
 LaTeX Warning: Reference `ch:probability-distributions' on page 126 undefined o
-n input line 2779.
+n input line 2773.
 
 [126]
-Underfull \hbox (badness 10000) in paragraph at lines 2815--2820
+Underfull \hbox (badness 10000) in paragraph at lines 2809--2814
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2821--2822
+Underfull \hbox (badness 10000) in paragraph at lines 2815--2816
 
  []
 
 
-Underfull \hbox (badness 3098) in paragraph at lines 2827--2832
+Underfull \hbox (badness 3098) in paragraph at lines 2821--2826
 \TU/lmr/m/n/10 Choose \TU/lmtt/m/n/10 Options\TU/lmr/m/n/10 ; tick: \TU/lmtt/m/
 n/10 Mean, Number of cases, Standard deviation,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2827--2832
+Underfull \hbox (badness 10000) in paragraph at lines 2821--2826
 
  []
 
 [127]
-Underfull \hbox (badness 10000) in paragraph at lines 2833--2834
+Underfull \hbox (badness 10000) in paragraph at lines 2827--2828
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2839--2843
+Underfull \hbox (badness 10000) in paragraph at lines 2833--2837
 
  []
 
@@ -1140,7 +1140,7 @@ File: QMS-EN_files/figure-latex/cito-summary-boxplot-1.pdf Graphic file (type p
 df)
 <use QMS-EN_files/figure-latex/cito-summary-boxplot-1.pdf>
 [128] [129]
-Overfull \hbox (33.0pt too wide) in paragraph at lines 2976--2976
+Overfull \hbox (33.0pt too wide) in paragraph at lines 2970--2970
 []\TU/lmtt/m/n/10 ## [1] -1.1575990  0.6776189  2.3716662 -0.3105753  0.1129365
  -0.7340872[] 
  []

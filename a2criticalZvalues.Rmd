@@ -55,7 +55,7 @@ knitr::kable(
 
 ---
 
-The second table reports the probabilities $p$ and confidence intervals $B$ voor some frequently used critical values of $Z^*$:
+The second table reports the probabilities $p$ and confidence intervals $B$ for some frequently used critical values of $Z^*$:
 
 ```{r A2.2, echo=FALSE}
 Zvals <- seq(from=0.5, to=3.5, by=0.5)

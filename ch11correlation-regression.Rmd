@@ -1,0 +1,712 @@
+# Correlation and regression {#ch:correlation-regression}
+
+## Introduction
+
+Most empirical research is focused on establishing associations between
+variables. In experimental research, this primarily concerns associations
+between independent and dependent variables. In the coming section, we will 
+look in more detail at the distinct ways of establishing whether a "significant"
+(meaningful, non-accidental) relation exists between 
+the independent and dependent variables. In addition, the researcher might be 
+interested in the associations between several dependent variables,
+for example the associations between the judgements of several
+raters or judges (see also Chapter \@ref(ch:reliability)).
+
+In quasi-experimental research, the difference between
+independent and dependent variables is usually less clear. Several
+variables are observed and the researcher is particularly interested
+in the associations between the observed
+variables. What, for instance, is the association between the scores for reading,
+arithmetic, and geography in the CITO study (see
+Table \@ref(tab:cito))? In this chapter, we will look in more detail
+into the ways of expressing the association in a number:
+a correlation coefficient. There are different correlation coefficients depending on 
+the variable's levels of measurement, which we will 
+examine more in this chapter.
+
+It is advisable to always first make a graphic representation of 
+an association between the variables, in the form of a so-called
+*scatter plot*, 
+like in Figure \@ref(fig:cito-scatter). Each point in this scatter plot 
+corresponds with a pupil (or more generally, with a unit from a 
+sample). The position of each point (pupil) is determined by the observed
+values of two variables (here $X$ is the score for the reading test, 
+$Y$ is the score for the arithmetic test). A scatter plot like this helps us to
+interpret a potential correlation, and to inspect whether the observations
+indeed satisfy the preconditions for calculating a correlation from the
+observations. In any case, look at (a) the presence of a potential correlation,
+(b) the form of that correlation (linear, exponential,...), 
+(c) potential outliers (extreme observations, see §\@ref(sec:outliers)),
+and (d) the distribution of the two variables, 
+see §\@ref(sec:robustefficient).
+
+```{r cito-scatter, echo=FALSE, fig.cap="Scatter plot of the scores of a reading test and an arithmetic test; see text.", fig.width=5, fig.align="center"}
+cito <- read.table(file="data/cito.txt", header=TRUE)
+# variable names are Lezen=Reading, Rekenen=Arithmetic, WO=Geography, ...
+with(cito, plot( Lezen, Rekenen, 
+                 pch=16,cex=1.5, xlim=c(18,47), ylim=c(18,37),
+                 xlab="Reading", ylab="Arithmetic") )
+plotrix::axis.break(axis=1) # break in lowest X-axis
+plotrix::axis.break(axis=2) # break in left Y-axis
+```
+
+This scatter plot shows (a) that there is a relation between the scores
+for reading and arithmetic. The relation is (b) approximately linear, i.e.
+can be described as a straight line; we will return to this in 
+§\@ref(sec:regression).
+The relation also helps us to explain the dispersion in the two 
+variables. After all, the dispersion in the arithmetic scores can
+be partially understood or explained from the dispersion in the reading test:
+pupils who achieve a relatively good score in reading, also achieve this
+in arithmetic. The observations from the two variables thus not
+only provide information about the two variables themselves, but moreover
+about the association between the variables. In this scatter plot, we can moreover
+see (c) that the highest reading score is an outlier (see also
+Fig.\@ref(fig:cito-boxplot)); such outliers can have a disproportionately
+large influence on the correlation found. 
+
+
+## Pearson product-moment correlation {#sec:Pearson}
+
+The Pearson product-moment correlation coefficient is referred to with
+the symbol $r$ (in the case of two variables). This coefficient can be
+used if both variables are observed on the interval level of measurement
+(§\@ref(sec:interval)), and if both variables are approximately
+normally distributed
+(§\@ref(sec:normaldistribution)). Nowadays, we do this calculation
+by computer.
+
+For the observations in the scatter plot in
+Fig.\@ref(fig:cito-scatter), we can find a correlation of $r=+.79$. The 
+correlation coefficient is a number that is by definition between $-1$
+and $+1$. A positive correlation coefficient indicates a positive relation:
+a larger value of $X$ corresponds with a larger value
+of $Y$. A negative correlation indicates a negative relation: 
+a larger value of $X$ corresponds with a smaller value of
+$Y$. A value of $r$ which is close to zero indicates a weak
+or absent correlation: the dispersion in $X$ is not related to the 
+dispersion in $Y$; there is no or only a weak correlation. We call a correlation of
+$.4<r<.6$ (or $-.6 < r < -.4$) moderate. A correlation of 
+$r>.6$ (or $r< -.6$) indicates a strong association. If $r=1$ (or
+$r=-1$), then all observations are precisely on a straight line. 
+Figure \@ref(fig:cor-scatter) shows several scatter plots with the 
+accompanying correlation coefficients.
+
+
+```{r cor-scatter, echo=FALSE, fig.cap="Some scatter plots of observations with accompanying correlation coefficients.", fig.align="center"}
+# original version named correlationincolor.r, for statistiek1011, HQ 20110601
+op <- par( mfrow=c(2,4), mar=c(2,2,2,1), oma=c(3,3,1,1) )  # 2 rows 4 cols
+tol <- .005 # tolerance between intended and simulated correlation coef
+for (i in c(.9,.7,.5,.3) ) {
+	Sigma <- matrix( c(1,i,i,1), ncol=2 )
+	repeat {
+		aux <- mvrnorm( n=50, mu=c(0,3), Sigma=Sigma )
+		thisr <- sqrt(summary(lm(aux[,2]~aux[,1]))[[8]]) * sign(coef(lm(aux[,2]~aux[,1]))[[2]])
+		if (abs(thisr-i)<=tol) {break}
+	}
+# colours are gradient between 5/6 and 6/6 of rainbow
+# note that colours are inverted relative to original version, blue pos red neg
+	plot(aux, type="n", xlab="",ylab="",
+		xlim=c(-2.6,2.6),ylim=c(0.4,5.6), pch=16 )
+	abline(a=3,b=1,lty=2,col="grey")
+	points(aux, cex=2, 
+		 col=rainbow(n=1,start=(5/6-i/6)), pch=16 )
+	text(-2,5, paste("r = ",round(thisr,2),sep=""), cex=1.5, adj=0 )
+}
+for (i in c(-.9,-.7,-.5,-.3) ) {
+	Sigma <- matrix( c(1,i,i,1), ncol=2 )
+	repeat {
+		aux <- mvrnorm( n=50, mu=c(0,3), Sigma=Sigma )
+		thisr <- sqrt(summary(lm(aux[,2]~aux[,1]))[[8]]) * sign(coef(lm(aux[,2]~aux[,1]))[[2]])
+		if (abs(thisr-i)<=tol) {break}
+	}
+# note that colours are inverted relative to original version, blue pos red neg
+	plot(aux, type="n", xlab="",ylab="",
+		 xlim=c(-2.6,2.6),ylim=c(0.4,5.6), pch=16 )
+	abline(a=3,b=-1,lty=2,col="grey")
+	points(aux, cex=2, 
+		   col=rainbow(n=1,start=(5/6-i/6)), pch=16 )
+	text(-2,5, paste("r = ",round(thisr,2),sep=""), cex=1.5, adj=0 )
+}
+mtext(side=1,"x",outer=T,line=1,cex=2)
+mtext(side=2,"y",outer=T,line=1,cex=2)
+```
+
+The correlation we see between the scores of the two variables (like
+$r=.79$ between scores for the reading test and arithmetic test,
+Fig.\@ref(fig:cito-scatter)) might also be the result of 
+chance variations in the observations. After all, it is possible that
+the pupils who have a good score on the reading test achieve
+a good score on the arithmetic test purely by chance --- also when there is
+actually *not* a correlation between the two variables in the population. We 
+refer to the unknown correlation in the population with the Greek letter
+$\rho$ ("rho"); as such, it is also possible that $\rho=0$. Even if $\rho=0$,
+it is possible to have $n=10$ pupils in the sample who *by chance* combine
+high scores on one part with high scores on the other part (and by chance not
+have pupils in the sample who combine high scores on one part with low scores
+on the other part). We can estimate what the probability $p$ is
+of finding this correlation of $r=0.79$ or stronger in a sample of
+$n=10$ students, if the association in the population is actually
+nil (i.e. if $\rho=0$). We call this probability $p$ the 
+*significance* of the correlation coefficient; in Chapter \@ref(ch:testing),
+we will look in more detail at this term 'significance'. 
+In anticipation of this: if this probability $p$ is smaller than
+$.05$, then we assume that the correlation found $r$ is *not by chance*,
+i.e. is *significant*. We often see a small probability $p$ with a strong
+correlation $r$. The correlation coefficient $r$ indicates the direction
+and strength of the relation, and the significance $p$ indicates the probability
+of finding this relation by chance if $\rho=0$ in the population. We report
+these findings as follows[^fn11-1]:
+
+---
+
+> *Example 11.1:* 
+The scores of the $n=10$ pupils on the CITO test subparts in
+Table \@ref(tab:cito) show a strong correlation between the scores
+on the Reading and Arithmetic tests: Pearson $r=0.79, p=.007$. Pupils 
+with a relatively high score on one test generally also achieve
+a relatively high score on the other test.
+
+---
+
+In many studies, we are interested in the correlations between more
+than two variables. These correlations between variables are often 
+reported in a so-called pairwise
+correlation matrix like 
+Table \@ref(tab:cito-correlations), which is a table where the correlations
+of all pairs of correlations are reported.
+
+Table: (#tab:cito-correlations) Correlations between the three parts of the CITO
+test, as summarised in Table \@ref(tab:cito), with the accompanying significance level between brackets.
+
+                        Reading       Arithmetic      Geography
+  ------------------ -------------- -------------- --------------
+  Reading             1.00                 
+  Arithmetic          0.79 (.007)    1.00   
+  Geography          -0.51 (.131)   -0.01 (.970)         1.00
+
+In this matrix, only the lowest (left) half of the complete
+matrix is shown. This also suffices because the cells are mirrored
+along the diagonal: after all, the correlation between Reading (column 1) and Arithmetic
+(row 2) is the same as the correlation between Arithmetic (row 2) and
+Reading (row 1). In the cells on the diagonal, the pairwise correlation matrix 
+always contains the value $1.00$, since a variable always correlates perfectly with 
+itself.
+We report these findings as follows:
+
+---
+
+> *Examples 11.2:* The 
+pairwise correlations between scores from the $n=10$ pupils on the
+three subparts of the CITO test are summarised in
+Table \@ref(tab:cito-correlations). We can see a strong correlation between
+the scores for the Reading and Arithmetic tests: pupils with a relatively
+high score on the Reading test generally also achieve a relatively high
+score on the Arithmetic test. The remaining correlations were
+not significant.
+
+---
+
+### Formulas
+
+The simplest formula for the Pearson product-moment correlation coefficient
+$r$ makes use of the standard normal scores we already used earlier
+(§\@ref(sec:standardscores)): 
+\begin{equation}
+    r_{XY} = \frac{\sum z_X z_Y}{n-1}
+  (\#eq:pearson)
+\end{equation}
+    
+Just like when we calculate variance 
+(formula \@ref(eq:variance)), we divide again by
+$(n-1)$ to make an estimate of the association in the population. 
+
+
+### SPSS
+
+For Pearson's product-moment correlation coefficient:
+
+```
+Analyze > Correlate > Bivariate...
+```
+
+Choose `Pearsons` correlation coefficient, tick:
+`Flag significant correlations`. Confirm `OK`. The resulting
+output (table) does not satisfy the style requirements; as such, you should 
+take the data into or convert it into a table of your own which does satisfy these requirements.
+
+
+### R
+
+```{r cito-example}
+cito <- read.table(file="data/cito.txt", header=TRUE)
+# variable names are Lezen=Reading, Rekenen=Arithmetic, WO=Geography, ...
+dimnames(cito)[[2]] <- c( "Pupil", "Reading", "Arithmetic", "Geography",
+                          "UrbanRural", "Arith.2cat" )
+cor( cito[,2:4] ) # correlation matrix of columns 2,3,4
+with( cito, cor.test( Reading, Arithmetic ) )
+```
+
+
+## Regression {#sec:regression}
+
+The simplest relation that we can distinguish and describe is a linear
+relation, i.e. a straight line in the scatter plot
+(see Fig.\@ref(fig:cor-scatter)). This straight line indicates which value
+of $Y_i$ is predicted, on the basis of the value of $X_i$. This predicted value of 
+$Y_i$ is noted as $\widehat{Y_i}$
+("Y-hat"). The best prediction $\widehat{Y_i}$ is based on both the value
+of $X_i$ and the linear relation between $X$ and $Y$:
+\begin{equation}
+    \widehat{Y_i} = a + b {X_i} 
+  (\#eq:linearmodel2)
+\end{equation}    
+The straight line is described with
+two parameters, namely the intercept (or constant) $a$ and the slope $b$
+[^fn11-2]. The straight line which describes the linear relation is often 
+referred to as the "regression line"; 
+after all, we try to trace the observed values of $Y$ back to this linear
+function of the values of $X$.
+
+The difference between the observed value $Y$ and the predicted value
+$\widehat{Y}$ $(Y-\widehat{Y})$ is called the *residual* (symbol
+$e$). In other words, the observed value is considered to be 
+the sum of two components, namely the predicted value and the residual:
+<!-- https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#equations -->
+\begin{align}
+    Y   &= \widehat{Y} + e \\
+        &= a + b X + e 
+  (\#eq:linearmodel3)
+\end{align}
+
+The above rationale is illustrated in the scatter plot in 
+Figure \@ref(fig:cito-linearmodel). The dashed line indicates the linear relation
+between the two tests:
+\begin{equation}
+    \widehat{\textrm{Arithmetic}} = 12.97 + 0.52 \times \textrm{Reading}
+  (\#eq:cito-linearmodel)
+\end{equation}
+
+
+```{r cito-linearmodel, echo=FALSE, fig.cap="Scatter plot of the scores of a reading test and an arithmetic test. The diagram also indicates the regression line (dashed line), the predicted value (green) and residual (red) of the arithmetic test for pupil 2, the average (plus symbol), and markings for pupil 2 and 3; see text.", fig.width=5, fig.align="center"}
+# modified from chunk above
+# original version, named cito.R, by HQ 20160228 and 20160406
+# data set `cito` is still available
+with(cito, plot(Reading,Arithmetic,pch=16,cex=1.5, xlim=c(18,47), ylim=c(18,37)) )
+plotrix::axis.break(axis=1) # break in lowest X-axis
+plotrix::axis.break(axis=2) # break in left Y-axis
+lm1 <- lm(Arithmetic~Reading, data=cito) 
+segments( x0=cito$Reading[2], y0=0, y1=fitted(lm1)[2], col="green", lwd=6 )
+segments( x0=cito$Reading[2], y0=fitted(lm1)[2], y1=cito$Arithmetic[2], col="red", 
+lwd=6 )
+abline(lm1,col="purple",lwd=2,lty=2)
+with(cito, points( mean(Reading), mean(Arithmetic), pch=3, cex=2) ) # means
+with(cito, text( Reading[2]+1,Arithmetic[2], "2", cex=0.75, adj=0) ) 
+# influential points
+with(cito, text( Reading[3]+1,Arithmetic[3], "3", cex=0.75, adj=0) )
+```
+
+This dashed line thus indicates what the value $\widehat{Y}$ is for 
+each value of $X$. For the second pupil with $X_2 = 32$, 
+we thus predict $\widehat{Y_2} = 12.97 + (0.52) (32) = 29.61$
+(predicted vowel, green line fragment). For all observations which are not
+precisely on the regression line (dashed line), 
+there is a deviation between the predicted
+score $\widehat{Y}$ and the observed score $Y$ (residual, red line
+fragment). For the second pupil, this deviation is
+$e_2 = (Y_2 - \widehat{Y_2}) = (36-29.61) = 6.49$ (residual, red
+line fragment).
+
+As stated, the observed values of $Y$ are considered to be the
+sum of two components, the predicted value $\widehat{Y}$
+(green) and the residual $e$ (red). In the same way, the total *variance*
+of $Y$ can be considered to be the sum of the two *variances* of these
+components:
+\begin{equation}
+    s^2_{Y} = s^2_{\widehat{Y}} + s^2_e
+  (\#eq:variance-pred-res)
+\end{equation}
+Of the total variance
+$s^2_Y$ of Y, one part ($s^2_{\widehat{Y}}$) can be traced back to and/or
+explained from the variance of $X$, via the linear relation described
+with parameters $a$ and $b$ (see
+formula \@ref(eq:linearmodel2)), and the other part ($s^2_e$) cannot be retraced 
+or explained. The second part, the non-predicted variance of the residuals is also called
+the residual variance or unexplained variance.
+
+When we are able to make a good prediction $Y$ from $X$, i.e. when the Pearson
+product-moment correlation coefficient $r$ is high
+(Fig. \@ref(fig:cor-scatter), left), then the residuals $e$ are thus relatively
+small, the observations are close around the regression line in the scatter
+plot, and then the residual variance $s^2_e$ is also relatively small.
+Conversely, when we are *not* able to predict $Y$ well from $X$, i.e.
+when the correlation coefficient is relatively low (Fig. \@ref(fig:cor-scatter), right),
+then the residuals $e$ are thus relatively large, the observations are widely dispersed
+around the regression line in the scatter plot, and then the residual variance $s^2_e$ is thus
+also relatively large. The square of the Pearson 
+product-moment correlation coefficient $r$ indicates what the relative size of the
+two variance components is, with respect to the total 
+variance:
+\begin{align}
+    r^2 & = \frac{s^2_{\widehat{Y}}}{s^2_Y} \\
+        & = 1 - \frac{s^2_e}{s^2_Y}
+  (\#eq:r2)
+\end{align}
+This statistic $r^2$ is referred to as the "proportion of explained
+variance" or as the "coefficient of determination".
+
+The values of the linear parameters $a$ and $b$ in
+formula \@ref(eq:linearmodel2) are so chosen that the collective
+residuals are as small as possible, i.e. that the residual variance
+$s^2_e$ is as small as possible ("least squares fit"), and thus $r^2$
+is as large as possible (see 
+§\@ref(sec:regression-formulas)). In this way, we can find a straight line 
+which best fits the observations for $X$ and $Y$.
+
+A linear regression can also be reported as follows:
+
+---
+
+> *Example 11.3:*
+Based on a linear regression analysis, it appears that the score
+for Arithmetic is related to that for Reading: $b=0.51, r=.79, p_r=.007$, over $n=10$
+pupils. This linear regression model explains $r^2=.51$ of the 
+total variance in the arithmetic scores (the residual standard deviation is
+$s_e= \sqrt{82.803/(n-1-1)} = 3.217$).
+
+---
+
+### Formulas {#sec:regression-formulas}
+
+For linear regression of $y$ on $x$, we try to estimate the coefficients $a$
+and $b$ such that (the square of) the deviation between the predicted value $\hat{y}$
+and the observed value $y$ is as small as possible, in other words that the
+square of the residuals $(y-\hat{y})$ is as small as possible. This is called the 
+"least squares" method (see 
+<http://www.itl.nist.gov/div898/handbook/pmd/section4/pmd431.htm>).
+
+The best estimation for $b$ is
+$$b = \frac{ \sum_{i=1}^n (x_i-\overline{x})(y_i-\overline{y}) } { \sum_{i=1}^n (x_i-\overline{x})^2 }$$
+
+The best estimation for $a$ is $$a = \overline{y} - b \overline{x}$$
+
+### SPSS
+
+For linear regression:
+
+``` {.console}
+Analyze > Regression > Linear...
+```
+Choose `Dependent variable: Arithmetic` and choose
+`Independent variable: Reading`. Under the button `Statistics`, tick
+`Model fit`, tick `R squared change`, choose `Estimates`, and afterwards
+`Continue`.\
+Under the button `Plot`, tick `Histogram` and tick also
+`Normal probability plot`; these options are required to a get a 
+numerical (!) summary over the residuals.\ 
+(already check once)
+Under the button `Options`, choose `Include constant` to also have
+the constant coefficient $a$ calculated. Confirm all choices with `OK`. 
+
+The resulting output includes several tables and figures; you cannot
+transfer these directly into your report. The table titled *Model
+Summary* contains the correlation coefficient, indicated here with capital
+letter $R=.749$.\
+The table titled *Coefficients* contains the regression coefficients. The
+line which has the designation `(Constant)` states coefficient $a=13.25$;
+the line titled `Reading` states coefficient $b=0.51$.\
+The table titled *Residual Statistics* provides information about both
+the predicted values and the residuals. Check whether the mean of the residual 
+is indeed null. In this table, we can also see (line 2, column 4) that
+the standard variation of the residuals is $3.212$.
+
+### R
+
+```{r}
+summary( m1 <- lm( Arithmetic~Reading, data=cito ) )
+```
+
+The command `lm` specifies a linear regression model, with `Arithmetic`
+as the dependent variable and `Reading` as the predictor. This model is
+saved as an object called `m1`, and that is used again directly as an argument
+(input) for reporting. In the reporting of model `m1` the constant coefficient
+$a$ is referred to as the `Intercept`.
+
+
+```{r}
+sd( resid( m1 ) ) # s.d. of residuals according to `m1`
+```
+
+
+## Influential observations
+
+In the previous section, we saw that the aim in a correlation analysis
+or regression analysis is for a minimal residual variance. 
+Earlier we also already saw that outliers or extreme observations, by definition,
+make a relatively large contribution to variance. Together, this means that
+outliers or extreme observations can have a large influence on the size of
+the correlation or on the regression found (the linear relation found). Pupil 3 has an
+extremely high score for Reading (see also
+Fig.\@ref(fig:cito-boxplot)). If we discount pupil 3, then this would not greatly
+change the correlation ($r_{-3}=.79$) but it would change the slope of the regression line 
+($b=0.84$, more than one and a half times as large as if pupil 3 were in fact included).
+This observation thus "pulls" hard on the regression line, precisely because
+this observation has an extreme value for $X$ and therefore has much influence.
+
+Non-extreme observations can, however, also have a large influence on the
+correlation and regression, if they are far away from the regression line
+and thus make a large contribution to the residual variance. This too can be seen in 
+Fig.\@ref(fig:cito-linearmodel).
+Pupil 2 has no extreme scores
+but does have the largest residual. If we discounted this pupil 2 then the 
+correlation would be considerably higher
+($r_{-2}=.86$) but the slope of the regression line would only 
+change a little ($b=0.45$).
+
+As such, for a correlation analysis or regression analysis you always have
+to make and study a scatter plot in order to see to what extent the results
+have been influenced by one or a small number of observations. When doing so, pay 
+particular attention to observations which are far away from the mean, to each 
+of the two variables, and to observations which are far away from 
+the regression line. 
+
+## Spearman's rank correlation coefficient {#sec:Spearman}
+
+The variables whose correlation we want to investigate 
+are not always both expressed on the interval level of measurement
+(§\@ref(sec:interval)), regardless whether or not the researchers 
+want to and are able to assume that both variables are 
+approximately normally distributed 
+(§\@ref(sec:normaldistribution)).
+In that case, the product-moment correlation is less suitable for 
+quantifying the association. If the data is indeed expressed on an 
+ordinal level of measurement, then we can use other correlation coefficients
+to express the association: Spearman's rank correlation coefficient
+($r_s$) and Kendall's $\tau$ (the Greek letter "tau"). Both of these coefficients
+are based on the ranking of the observations; we can thus always compute these correlations
+when we are able to order the observations. Nowadays, we also perform this calculation
+by computer. In this chapter, we only discuss the Spearman's rank correlation
+coefficient.
+
+The Spearman's rank correlation coefficient is equal to the Pearson 
+product-moment correlation coefficient applied to the ranks of
+the observations. We convert every observation from a variable to 
+a rank number, from the smallest observed value (rank 1)
+to the largest observed value (rank $n$). If two or more observations
+have the same value, then they also receive the same 
+(mean) rank. In
+Table \@ref(tab:cito-ranks), you can see the ranks of the scores for Reading
+and Arithmetic, ordered here according to the ranks for Reading. 
+
+Table: (#tab:cito-ranks) Ranks for the scores of 10 pupils on parts of a test, as summarised in
+Table \@ref(tab:cito), with difference $v_i$ between the two ranks per pupil. 
+
+
+  Pupil             1     9    6    4    10    8   5     7    2    3
+  ---------------- ---- ---- --- ----- ----- --- ---- ----- ---- ----
+  Reading           1    2    3   4.5   4.5   6   7     8    9    10
+  Arithmetic        2    4    1    4    6.5   4   8    6.5   10   9
+  Difference $v_i$ -1   -2    1   0.5   -2    2   -1   1.5   -1   1
+
+The ranking in Table \@ref(tab:cito-ranks) makes it clear at a glance that
+the three pupils with the lowest score for Reading (nos. 1, 9, 6) also almost achieved
+the lowest scores for Arithmetic. That indicates a positive
+relation. The two best readers (nos. 2 and 3) are also the two best
+arithmeticians. That also indicates a positive relation. However, there is
+also no question of a perfect positive relation (thus here $r_s<1$), because
+then the two rankings would match perfectly.
+
+Think how Table \@ref(tab:cito-ranks) would look if there were a perfect
+negative relation ($r_s=-1$) between the scores for Reading and 
+Arithmetic, and how the table would look if there were no correlation whatsoever
+($r_s=0$) between these scores.
+
+### Formulas
+
+The association between the rankings of the two variables is expressed
+in the Spearman's rank correlation coefficient:
+\begin{equation}
+    r_s = 1 - \frac{6 \sum v_i^2}{n(n^2-1)}
+  (\#eq:spearman)
+\end{equation}
+in which $v_i$ stands for
+the difference in rankings on both variables for respondent $i$. The fraction
+in this formula gets larger and $r_s$ thus gets smaller, the larger the 
+differences between the ranks are.
+However, this formula can only be used if there are no "ties" (shared rankings) in the
+variables; for the dataset in Table \@ref(tab:cito-ranks) with "ties" in both variables
+we have to use another formula.
+
+As can be seen, the Spearman's rank correlation $r_s$ is not equal to the
+Pearson product-moment correlation $r$ for the scores observed. 
+If the preconditions of the Pearson coefficient are satisfied, then this
+Pearson product-moment correlation coefficient provides a better estimation of the
+association than the Spearman's rank correlation coefficient. However, if the preconditions
+are *not* satisfied, then the Spearman's coefficient should be preferred again. The
+Spearman's coefficient is, amongst others, less sensitive for influential extreme
+observations --- after all, such outliers have less weighting once the
+raw scores have been replaced by the ranks. 
+
+### SPSS
+
+For Spearman's rank correlation coefficient:
+
+```
+Analyze > Correlate > Bivariate...
+```
+
+Choose `Spearman` rank correlation coefficient, tick:
+`Flag significant correlations`. Confirm with `OK`. The resulting 
+output (table) does not satisfy the style requirements; you thus have to take
+the data into or convert it into a table of your own which does satisfy these requirements,
+and report according to the usual conventions for correlation analysis.
+
+### R
+
+```{r}
+with(cito, cor.test( Reading,Arithmetic, method="spearman" ) )
+```
+
+
+## Phi {#sec:Phi}
+The two variables for which we want to investigate the association are themselves
+not always expressed on an ordinal level of measurement (Chapter \@ref(ch:levelsofmeasurement)).
+Even if both of the variables are measured only on a nominal level of measurement,
+then a correlation can still be calculated, namely the phi correlation coefficient 
+(symbol $r_\Phi$, with Greek letter "Phi"). This correlation coefficient can also be used
+if one of the two variables is measured on a nominal level of measurement, 
+and the other one is measured on an ordinal level of measurement. 
+
+With our CITO test example, let us assume that the first five
+pupils come from a large city (urban), and the last five from the
+countryside (rural). The pupil's place of origin is a nominal variable,
+with 2 categories, here randomly referred to as `1` resp. `0` (see
+§\@ref(sec:nominal); a nominal variable with precisely 2 
+categories is also called a binomial or dichotomous variable).
+We now ask ourselves whether there is some association between a
+pupil's place of origin and their score for the Arithmetic part of the CITO test. 
+The second variable is of interval level of measurement. We convert this to a 
+nominal level of measurement. That can be done in many ways, and it is the
+researcher's role to make a wise choice when doing so. Here, we 
+choose the often used 'mean split': one of the categories (low, code `0`) 
+consists of scores smaller than or equal to the mean
+(§\@ref(sec:mean)), and the other category consists of scores larger
+than the mean (high, code `1`). We summarise the number of pupils in each of the
+$2\times 2$ categories in a contingency table 
+(Tabel \@ref(tab:cito-contingency-table)).
+
+Table: (#tab:cito-contingency-table) Contingency table of $n=10$ pupils, subdivided according
+to origin (urban=1, rural=0) and according to category of score for the Arithmetic part of 
+the CITO test ('mean split', low=0, high=1), with letter designations for the number
+of observations; see text.
+
+  Origin             Low (0)   High (1)    Total
+  ---------------- ---------- ---------- ---------------
+  Rural (0)           5 (A)     0 (B)       5 (A+B)
+  Urban (1)           2 (C)     3 (D)       5 (C+D)
+  Total              7 (A+C)   3 (B+D)     10 (A+B+C+D)
+  ---------------- ---------- ---------- ---------------
+
+The nominal correlation coefficient $r_\Phi$ is equal to the Pearson
+product-moment correlation coefficient applied to the binomial codes
+(`0` and `1`) of the observations. All 5 pupils from the rural countryside
+have an Arithmetic score which is equal to or lower than average
+($\overline{y}=$ `r mean(cito$Arithmetic)`); out of the pupils from the urban city, 2 have a 
+score which is (equal to or) lower than average. There is thus an association	
+between the binomial codes of the rows (origin) and those of the columns
+(score categories) in Table \@ref(tab:cito-contingency-table). 
+This association is quantified in the 
+correlation coefficient $r_\Phi=0.65$ for this data.
+
+### Formulas
+
+The nominal correlation coefficient $r_\Phi$ is calculated as follows,
+where the letters refer to the numbers in the cells of a contingency table
+(see Table \@ref(tab:cito-contingency-table)):
+\begin{equation}
+    r_\Phi = \frac{(AD-BC)}{\sqrt{(A+B)(C+D)(A+C)(B+D)}}
+  (\#eq:phi)
+\end{equation}
+
+For the example discussed above we then find
+$$
+    r_\Phi = \frac{(15-0)}{\sqrt{(5)(5)(7)(3)}} = \frac{15}{22.91} = 0.65
+$$
+
+### SPSS
+
+The dataset `cito` already contains the variable `UrbanRural` which indicates the 
+origin of the pupils. However, for completeness, we will still show how you can 
+construct a variable like this for yourself.
+```
+Transform > Recode into different variables...
+```
+
+Choose `Pupil` as the old variable and fill in as the new name for the new variable
+`UrbanRural2`. Indicate that the old values in `Range` from
+1 to 5 (old) have to be transformed to the new value 1, and likewise that
+pupils 6 to 10 have to get the new value 0 for the new variable
+`UrbanRural2`.
+
+For `Arithmetic` it is a bit more complex. You firstly have to delete
+your transformation rules (which relate to `UrbanRural`). Then, make a new variable
+again in the same way as before, named `Arithmetic2`.
+All values from the lowest value to the mean ($27.2$) are transformed to the
+new value 0 for this new variable. All values
+from the mean ($27.2$) to the highest value are transformed to the new value 1.
+
+After this preparatory work, we can finally calculate $r_\Phi$.
+
+```
+Analyze > Descriptives > Crosstabs...
+```
+
+
+Select the variables `UrbanRural2` (in the "Rows" panel) and `Arithmetic2`
+(in the  "Columns" panel) for
+contingency table \@ref(tab: cito-contingency-table).\
+Choose `Statistics…` and tick the option `Phi and Cramer’s V`!\
+Confirm firstly with `Continue` and then again with `OK`.
+
+### R
+
+The dataset `cito` already contains a variable `UrbanRural` which indicates the pupils' origins.
+However, for completeness, let us still see how you can construct such a variable for yourself.
+```{r phi1}
+UrbanRural2 <- ifelse( cito$Pupil<6, 1, 0) # 1=urban, 0=rural
+Arithmetic2 <- ifelse( cito$Arithmetic>mean(cito$Arithmetic), 1, 0 ) # 1=high, 0=low
+```
+Here we build a new variable `Arithmetic2`, which has the value `1` if the score for
+Arithmetic is higher than the average, and otherwise has the value `0`.
+
+In R, we also start by making a contingency table (Table \@ref(tab:cito-contingency-table) and we then calculate the $r_\Phi$ over the contingency table.
+``` {r}
+print( table(UrbanRural2,Arithmetic2) -> citocontingencytable ) 
+# make and store a contingency table
+if (require(psych)) { # for psych::phi
+  phi(citocontingencytable) # contingency table made earlier is input here!
+}
+```
+
+## Last but not least {#sec:correlationcausation}
+
+At the end of this chapter, we want to emphasise again that an association or correlation 
+between two variables does not necessarily mean
+that there is a causal relation between the variables, in other words
+a correlation does not mean that one variable (e.g. treatment) is the consequence of 
+the other variable (e.g. cure).
+The common saying for this is "correlation does not imply
+causation," see also Example 6.1 (Chapter \@ref(ch:design)) 
+and accompanying Figure \@ref(fig:xkcd552).
+
+```{r xkcd552, echo=FALSE, fig.cap="_Correlation does not imply causation_, borrowed with permission from <http://xkcd.com/552>.", fig.align="center"}
+knitr::include_graphics("figures/correlation.png")
+```
+
+
+[^fn11-1]: When the correlation found $r$ is *not* significant, then this can thus be by chance,
+and then we discount an interpretation of the correlation. We do then state in our report
+the correlation coefficient found and the established significance for it. 
+
+[^fn11-2]: In school books, this comparison is described as $Y = a X + b$, with $a$ as the slope
+and $b$ as the intercept; however, we keep to the conventional international notation here.

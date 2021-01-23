@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>12 Reliability | Quantitative Methods and Statistics</title>
+  <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="12 Reliability | Quantitative Methods and Statistics" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
+  <meta name="github-repo" content="rstudio/QMS-EN" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="12 Reliability | Quantitative Methods and Statistics" />
+  
+  <meta name="twitter:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="ch-correlation-regression.html"/>
+<link rel="next" href="app-randomnumbers.html"/>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Quantitative Methods and Statistics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#notation"><i class="fa fa-check"></i>Notation</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#citation"><i class="fa fa-check"></i>Citation</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#technical-details"><i class="fa fa-check"></i>Technical details</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-authors"><i class="fa fa-check"></i>About the authors</a></li>
+</ul></li>
+<li class="part"><span><b>Part I: Methodology</b></span></li>
+<li class="chapter" data-level="1" data-path="ch-introduction.html"><a href="ch-introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="ch-introduction.html"><a href="ch-introduction.html#sec:scientific-research"><i class="fa fa-check"></i><b>1.1</b> Scientific research</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="ch-introduction.html"><a href="ch-introduction.html#sec:theory"><i class="fa fa-check"></i><b>1.1.1</b> Theory</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="ch-introduction.html"><a href="ch-introduction.html#sec:paradigms"><i class="fa fa-check"></i><b>1.2</b> Paradigms</a></li>
+<li class="chapter" data-level="1.3" data-path="ch-introduction.html"><a href="ch-introduction.html#sec:instrument-validation"><i class="fa fa-check"></i><b>1.3</b> Instrument validation</a></li>
+<li class="chapter" data-level="1.4" data-path="ch-introduction.html"><a href="ch-introduction.html#sec:descriptive-research"><i class="fa fa-check"></i><b>1.4</b> Descriptive research</a></li>
+<li class="chapter" data-level="1.5" data-path="ch-introduction.html"><a href="ch-introduction.html#sec:experimental-research"><i class="fa fa-check"></i><b>1.5</b> Experimental research</a></li>
+<li class="chapter" data-level="1.6" data-path="ch-introduction.html"><a href="ch-introduction.html#outline-of-this-textbook"><i class="fa fa-check"></i><b>1.6</b> Outline of this textbook</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="ch-research.html"><a href="ch-research.html"><i class="fa fa-check"></i><b>2</b> Hypothesis testing research</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="ch-research.html"><a href="ch-research.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.2" data-path="ch-research.html"><a href="ch-research.html#sec:variables"><i class="fa fa-check"></i><b>2.2</b> Variables</a></li>
+<li class="chapter" data-level="2.3" data-path="ch-research.html"><a href="ch-research.html#sec:independendependentvariables"><i class="fa fa-check"></i><b>2.3</b> Independent and dependent variables</a></li>
+<li class="chapter" data-level="2.4" data-path="ch-research.html"><a href="ch-research.html#sec:falsification"><i class="fa fa-check"></i><b>2.4</b> Falsification and null hypothesis</a></li>
+<li class="chapter" data-level="2.5" data-path="ch-research.html"><a href="ch-research.html#sec:empiricalcycle"><i class="fa fa-check"></i><b>2.5</b> The empirical cycle</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="ch-research.html"><a href="ch-research.html#observation"><i class="fa fa-check"></i><b>2.5.1</b> observation</a></li>
+<li class="chapter" data-level="2.5.2" data-path="ch-research.html"><a href="ch-research.html#induction"><i class="fa fa-check"></i><b>2.5.2</b> induction</a></li>
+<li class="chapter" data-level="2.5.3" data-path="ch-research.html"><a href="ch-research.html#deduction"><i class="fa fa-check"></i><b>2.5.3</b> deduction</a></li>
+<li class="chapter" data-level="2.5.4" data-path="ch-research.html"><a href="ch-research.html#testing"><i class="fa fa-check"></i><b>2.5.4</b> testing</a></li>
+<li class="chapter" data-level="2.5.5" data-path="ch-research.html"><a href="ch-research.html#evaluation"><i class="fa fa-check"></i><b>2.5.5</b> evaluation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="ch-research.html"><a href="ch-research.html#sec:makingchoices"><i class="fa fa-check"></i><b>2.6</b> Making choices</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="ch-integrity.html"><a href="ch-integrity.html"><i class="fa fa-check"></i><b>3</b> Integrity</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="ch-integrity.html"><a href="ch-integrity.html#sec:integrity-introduction"><i class="fa fa-check"></i><b>3.1</b> Introduction</a></li>
+<li class="chapter" data-level="3.2" data-path="ch-integrity.html"><a href="ch-integrity.html#sec:design"><i class="fa fa-check"></i><b>3.2</b> Design</a></li>
+<li class="chapter" data-level="3.3" data-path="ch-integrity.html"><a href="ch-integrity.html#participants-and-informants"><i class="fa fa-check"></i><b>3.3</b> Participants and informants</a></li>
+<li class="chapter" data-level="3.4" data-path="ch-integrity.html"><a href="ch-integrity.html#data"><i class="fa fa-check"></i><b>3.4</b> Data</a></li>
+<li class="chapter" data-level="3.5" data-path="ch-integrity.html"><a href="ch-integrity.html#writing"><i class="fa fa-check"></i><b>3.5</b> Writing</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ch-levelsofmeasurement.html"><a href="ch-levelsofmeasurement.html"><i class="fa fa-check"></i><b>4</b> Levels of measurement</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="ch-levelsofmeasurement.html"><a href="ch-levelsofmeasurement.html#introduction-1"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.2" data-path="ch-levelsofmeasurement.html"><a href="ch-levelsofmeasurement.html#sec:nominal"><i class="fa fa-check"></i><b>4.2</b> Nominal</a></li>
+<li class="chapter" data-level="4.3" data-path="ch-levelsofmeasurement.html"><a href="ch-levelsofmeasurement.html#sec:ordinal"><i class="fa fa-check"></i><b>4.3</b> Ordinal</a></li>
+<li class="chapter" data-level="4.4" data-path="ch-levelsofmeasurement.html"><a href="ch-levelsofmeasurement.html#sec:interval"><i class="fa fa-check"></i><b>4.4</b> Interval</a></li>
+<li class="chapter" data-level="4.5" data-path="ch-levelsofmeasurement.html"><a href="ch-levelsofmeasurement.html#sec:ratio"><i class="fa fa-check"></i><b>4.5</b> Ratio</a></li>
+<li class="chapter" data-level="4.6" data-path="ch-levelsofmeasurement.html"><a href="ch-levelsofmeasurement.html#sec:orderinglevelsofmeasurement"><i class="fa fa-check"></i><b>4.6</b> Ordering of levels of measurement</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ch-validity.html"><a href="ch-validity.html"><i class="fa fa-check"></i><b>5</b> Validity</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="ch-validity.html"><a href="ch-validity.html#introduction-2"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="ch-validity.html"><a href="ch-validity.html#sec:causality"><i class="fa fa-check"></i><b>5.2</b> Causality</a></li>
+<li class="chapter" data-level="5.3" data-path="ch-validity.html"><a href="ch-validity.html#sec:validity"><i class="fa fa-check"></i><b>5.3</b> Validity</a></li>
+<li class="chapter" data-level="5.4" data-path="ch-validity.html"><a href="ch-validity.html#sec:internalvalidity"><i class="fa fa-check"></i><b>5.4</b> Internal validity</a></li>
+<li class="chapter" data-level="5.5" data-path="ch-validity.html"><a href="ch-validity.html#sec:constructvalidity"><i class="fa fa-check"></i><b>5.5</b> Construct validity</a></li>
+<li class="chapter" data-level="5.6" data-path="ch-validity.html"><a href="ch-validity.html#sec:externalvalidity"><i class="fa fa-check"></i><b>5.6</b> External validity</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="ch-design.html"><a href="ch-design.html"><i class="fa fa-check"></i><b>6</b> Design</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="ch-design.html"><a href="ch-design.html#sec:design-introduction"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="ch-design.html"><a href="ch-design.html#sec:betweenwithinparticipants"><i class="fa fa-check"></i><b>6.2</b> Between or within ?</a></li>
+<li class="chapter" data-level="6.3" data-path="ch-design.html"><a href="ch-design.html#sec:one-shot-single-case-design"><i class="fa fa-check"></i><b>6.3</b> The one-shot single-case design</a></li>
+<li class="chapter" data-level="6.4" data-path="ch-design.html"><a href="ch-design.html#sec:one-group-pretest-posttest-design"><i class="fa fa-check"></i><b>6.4</b> The one-group pretest-posttest design</a></li>
+<li class="chapter" data-level="6.5" data-path="ch-design.html"><a href="ch-design.html#sec:pretest-posttest-control-group-design"><i class="fa fa-check"></i><b>6.5</b> The pretest-posttest-control group design</a></li>
+<li class="chapter" data-level="6.6" data-path="ch-design.html"><a href="ch-design.html#sec:solomon-four-groups-design"><i class="fa fa-check"></i><b>6.6</b> The Solomon-four-groups design</a></li>
+<li class="chapter" data-level="6.7" data-path="ch-design.html"><a href="ch-design.html#the-posttest-only-control-group-design"><i class="fa fa-check"></i><b>6.7</b> The posttest-only control group design</a></li>
+<li class="chapter" data-level="6.8" data-path="ch-design.html"><a href="ch-design.html#sec:factorial-designs"><i class="fa fa-check"></i><b>6.8</b> Factorial designs</a></li>
+<li class="chapter" data-level="6.9" data-path="ch-design.html"><a href="ch-design.html#sec:within-subject-designs"><i class="fa fa-check"></i><b>6.9</b> Within-subject designs</a></li>
+<li class="chapter" data-level="6.10" data-path="ch-design.html"><a href="ch-design.html#designing-a-study"><i class="fa fa-check"></i><b>6.10</b> Designing a study</a></li>
+<li class="chapter" data-level="6.11" data-path="ch-design.html"><a href="ch-design.html#in-conclusion"><i class="fa fa-check"></i><b>6.11</b> In conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="ch-samples.html"><a href="ch-samples.html"><i class="fa fa-check"></i><b>7</b> Samples</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="ch-samples.html"><a href="ch-samples.html#sec:convenience-samples"><i class="fa fa-check"></i><b>7.1</b> Convenience samples</a></li>
+<li class="chapter" data-level="7.2" data-path="ch-samples.html"><a href="ch-samples.html#sec:systematic-samples"><i class="fa fa-check"></i><b>7.2</b> Systematic samples</a></li>
+<li class="chapter" data-level="7.3" data-path="ch-samples.html"><a href="ch-samples.html#sec:random-samples"><i class="fa fa-check"></i><b>7.3</b> Random samples</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="ch-samples.html"><a href="ch-samples.html#spss"><i class="fa fa-check"></i><b>7.3.1</b> SPSS</a></li>
+<li class="chapter" data-level="7.3.2" data-path="ch-samples.html"><a href="ch-samples.html#r"><i class="fa fa-check"></i><b>7.3.2</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="ch-samples.html"><a href="ch-samples.html#sec:sample-size"><i class="fa fa-check"></i><b>7.4</b> Sample size</a></li>
+</ul></li>
+<li class="part"><span><b>Part II: Descriptive statistics</b></span></li>
+<li class="chapter" data-level="8" data-path="ch-frequencies.html"><a href="ch-frequencies.html"><i class="fa fa-check"></i><b>8</b> Frequencies</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="ch-frequencies.html"><a href="ch-frequencies.html#introduction-3"><i class="fa fa-check"></i><b>8.1</b> Introduction</a></li>
+<li class="chapter" data-level="8.2" data-path="ch-frequencies.html"><a href="ch-frequencies.html#sec:frequencies"><i class="fa fa-check"></i><b>8.2</b> Frequencies</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="ch-frequencies.html"><a href="ch-frequencies.html#sec:intervals"><i class="fa fa-check"></i><b>8.2.1</b> Intervals</a></li>
+<li class="chapter" data-level="8.2.2" data-path="ch-frequencies.html"><a href="ch-frequencies.html#spss-1"><i class="fa fa-check"></i><b>8.2.2</b> SPSS</a></li>
+<li class="chapter" data-level="8.2.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#r-1"><i class="fa fa-check"></i><b>8.2.3</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#sec:barcharts"><i class="fa fa-check"></i><b>8.3</b> Bar charts</a></li>
+<li class="chapter" data-level="8.4" data-path="ch-frequencies.html"><a href="ch-frequencies.html#sec:histograms"><i class="fa fa-check"></i><b>8.4</b> Histograms</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="ch-frequencies.html"><a href="ch-frequencies.html#spss-2"><i class="fa fa-check"></i><b>8.4.1</b> SPSS</a></li>
+<li class="chapter" data-level="8.4.2" data-path="ch-frequencies.html"><a href="ch-frequencies.html#r-2"><i class="fa fa-check"></i><b>8.4.2</b> R</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html"><i class="fa fa-check"></i><b>9</b> Centre and dispersion</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#introduction-4"><i class="fa fa-check"></i><b>9.1</b> Introduction</a></li>
+<li class="chapter" data-level="9.2" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#symbols"><i class="fa fa-check"></i><b>9.2</b> Symbols</a></li>
+<li class="chapter" data-level="9.3" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#central-tendencies"><i class="fa fa-check"></i><b>9.3</b> Central tendencies</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:mean"><i class="fa fa-check"></i><b>9.3.1</b> mean</a></li>
+<li class="chapter" data-level="9.3.2" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:median"><i class="fa fa-check"></i><b>9.3.2</b> median</a></li>
+<li class="chapter" data-level="9.3.3" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#mode"><i class="fa fa-check"></i><b>9.3.3</b> mode</a></li>
+<li class="chapter" data-level="9.3.4" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:harmonicmean"><i class="fa fa-check"></i><b>9.3.4</b> Harmonic mean</a></li>
+<li class="chapter" data-level="9.3.5" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#winsorized-mean"><i class="fa fa-check"></i><b>9.3.5</b> winsorized mean</a></li>
+<li class="chapter" data-level="9.3.6" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#trimmed-mean"><i class="fa fa-check"></i><b>9.3.6</b> trimmed mean</a></li>
+<li class="chapter" data-level="9.3.7" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#comparison-of-central-tendencies"><i class="fa fa-check"></i><b>9.3.7</b> comparison of central tendencies</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:quartiles-and-boxplots"><i class="fa fa-check"></i><b>9.4</b> Quartiles and boxplots</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#quartiles"><i class="fa fa-check"></i><b>9.4.1</b> Quartiles</a></li>
+<li class="chapter" data-level="9.4.2" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:outliers"><i class="fa fa-check"></i><b>9.4.2</b> Outliers</a></li>
+<li class="chapter" data-level="9.4.3" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:boxplot"><i class="fa fa-check"></i><b>9.4.3</b> Boxplots</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:measures-of-dispersion"><i class="fa fa-check"></i><b>9.5</b> Measures of dispersion</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:variance"><i class="fa fa-check"></i><b>9.5.1</b> Variance</a></li>
+<li class="chapter" data-level="9.5.2" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:standarddeviation"><i class="fa fa-check"></i><b>9.5.2</b> standard deviation</a></li>
+<li class="chapter" data-level="9.5.3" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#mad"><i class="fa fa-check"></i><b>9.5.3</b> MAD</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:significantfigures"><i class="fa fa-check"></i><b>9.6</b> On significant figures</a>
+<ul>
+<li class="chapter" data-level="9.6.1" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:significantfigures-means"><i class="fa fa-check"></i><b>9.6.1</b> Mean and standard deviation</a></li>
+<li class="chapter" data-level="9.6.2" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#percentages"><i class="fa fa-check"></i><b>9.6.2</b> Percentages</a></li>
+</ul></li>
+<li class="chapter" data-level="9.7" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:robustefficient"><i class="fa fa-check"></i><b>9.7</b> Making choices</a></li>
+<li class="chapter" data-level="9.8" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:standardscores"><i class="fa fa-check"></i><b>9.8</b> Standard scores</a></li>
+<li class="chapter" data-level="9.9" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#spss-3"><i class="fa fa-check"></i><b>9.9</b> SPSS</a></li>
+<li class="chapter" data-level="9.10" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#r-3"><i class="fa fa-check"></i><b>9.10</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html"><i class="fa fa-check"></i><b>10</b> Probability distributions</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:probabilities"><i class="fa fa-check"></i><b>10.1</b> Probabilities</a></li>
+<li class="chapter" data-level="10.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:binomial-distribution"><i class="fa fa-check"></i><b>10.2</b> Binomial probability distribution</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#formulas"><i class="fa fa-check"></i><b>10.2.1</b> formulas</a></li>
+<li class="chapter" data-level="10.2.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-4"><i class="fa fa-check"></i><b>10.2.2</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:normaldistribution"><i class="fa fa-check"></i><b>10.3</b> Normal probability distribution</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#formulas-1"><i class="fa fa-check"></i><b>10.3.1</b> formulas</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:isvarnormaldistributed"><i class="fa fa-check"></i><b>10.4</b> Does my variable have a normal probability distribution?</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#spss-4"><i class="fa fa-check"></i><b>10.4.1</b> SPSS</a></li>
+<li class="chapter" data-level="10.4.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-5"><i class="fa fa-check"></i><b>10.4.2</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:whatifnotnormal"><i class="fa fa-check"></i><b>10.5</b> What if my variable is not normally distributed?</a></li>
+<li class="chapter" data-level="10.6" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:Centrallimittheorem"><i class="fa fa-check"></i><b>10.6</b> Probability distribution of average</a></li>
+<li class="chapter" data-level="10.7" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:confidenceinterval-mean"><i class="fa fa-check"></i><b>10.7</b> Confidence interval of the mean</a>
+<ul>
+<li class="chapter" data-level="10.7.1" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#formulas-2"><i class="fa fa-check"></i><b>10.7.1</b> formulas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html"><i class="fa fa-check"></i><b>11</b> Correlation and regression</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#introduction-5"><i class="fa fa-check"></i><b>11.1</b> Introduction</a></li>
+<li class="chapter" data-level="11.2" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:Pearson"><i class="fa fa-check"></i><b>11.2</b> Pearson product-moment correlation</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#formulas-3"><i class="fa fa-check"></i><b>11.2.1</b> Formulas</a></li>
+<li class="chapter" data-level="11.2.2" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#spss-5"><i class="fa fa-check"></i><b>11.2.2</b> SPSS</a></li>
+<li class="chapter" data-level="11.2.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-6"><i class="fa fa-check"></i><b>11.2.3</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:regression"><i class="fa fa-check"></i><b>11.3</b> Regression</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:regression-formulas"><i class="fa fa-check"></i><b>11.3.1</b> Formulas</a></li>
+<li class="chapter" data-level="11.3.2" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#spss-6"><i class="fa fa-check"></i><b>11.3.2</b> SPSS</a></li>
+<li class="chapter" data-level="11.3.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-7"><i class="fa fa-check"></i><b>11.3.3</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#influential-observations"><i class="fa fa-check"></i><b>11.4</b> Influential observations</a></li>
+<li class="chapter" data-level="11.5" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:Spearman"><i class="fa fa-check"></i><b>11.5</b> Spearman’s rank correlation coefficient</a>
+<ul>
+<li class="chapter" data-level="11.5.1" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#formulas-4"><i class="fa fa-check"></i><b>11.5.1</b> Formulas</a></li>
+<li class="chapter" data-level="11.5.2" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#spss-7"><i class="fa fa-check"></i><b>11.5.2</b> SPSS</a></li>
+<li class="chapter" data-level="11.5.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-8"><i class="fa fa-check"></i><b>11.5.3</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="11.6" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:Phi"><i class="fa fa-check"></i><b>11.6</b> Phi</a>
+<ul>
+<li class="chapter" data-level="11.6.1" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#formulas-5"><i class="fa fa-check"></i><b>11.6.1</b> Formulas</a></li>
+<li class="chapter" data-level="11.6.2" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#spss-8"><i class="fa fa-check"></i><b>11.6.2</b> SPSS</a></li>
+<li class="chapter" data-level="11.6.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-9"><i class="fa fa-check"></i><b>11.6.3</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="11.7" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:correlationcausation"><i class="fa fa-check"></i><b>11.7</b> Last but not least</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="ch-reliability.html"><a href="ch-reliability.html"><i class="fa fa-check"></i><b>12</b> Reliability</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="ch-reliability.html"><a href="ch-reliability.html#introduction-6"><i class="fa fa-check"></i><b>12.1</b> Introduction</a></li>
+<li class="chapter" data-level="12.2" data-path="ch-reliability.html"><a href="ch-reliability.html#what-is-reliability"><i class="fa fa-check"></i><b>12.2</b> What is reliability?</a></li>
+<li class="chapter" data-level="12.3" data-path="ch-reliability.html"><a href="ch-reliability.html#test-theory"><i class="fa fa-check"></i><b>12.3</b> Test theory</a></li>
+<li class="chapter" data-level="12.4" data-path="ch-reliability.html"><a href="ch-reliability.html#interpretations"><i class="fa fa-check"></i><b>12.4</b> Interpretations</a></li>
+<li class="chapter" data-level="12.5" data-path="ch-reliability.html"><a href="ch-reliability.html#methods-for-estimating-reliability"><i class="fa fa-check"></i><b>12.5</b> Methods for estimating reliability</a></li>
+<li class="chapter" data-level="12.6" data-path="ch-reliability.html"><a href="ch-reliability.html#reliability-between-assessors"><i class="fa fa-check"></i><b>12.6</b> Reliability between assessors</a></li>
+<li class="chapter" data-level="12.7" data-path="ch-reliability.html"><a href="ch-reliability.html#reliability-and-construct-validity"><i class="fa fa-check"></i><b>12.7</b> Reliability and construct validity</a></li>
+<li class="chapter" data-level="12.8" data-path="ch-reliability.html"><a href="ch-reliability.html#spss-9"><i class="fa fa-check"></i><b>12.8</b> SPSS</a></li>
+<li class="chapter" data-level="12.9" data-path="ch-reliability.html"><a href="ch-reliability.html#r-10"><i class="fa fa-check"></i><b>12.9</b> R</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendices</b></span></li>
+<li class="chapter" data-level="A" data-path="app-randomnumbers.html"><a href="app-randomnumbers.html"><i class="fa fa-check"></i><b>A</b> Random numbers</a></li>
+<li class="chapter" data-level="B" data-path="app-criticalZvalues.html"><a href="app-criticalZvalues.html"><i class="fa fa-check"></i><b>B</b> Standard normal probability distribution</a></li>
+<li class="chapter" data-level="C" data-path="app-criticaltvalues.html"><a href="app-criticaltvalues.html"><i class="fa fa-check"></i><b>C</b> Critical values for <span class="math inline">\(t\)</span>-distribution</a></li>
+<li class="chapter" data-level="D" data-path="app-criticalchi2values.html"><a href="app-criticalchi2values.html"><i class="fa fa-check"></i><b>D</b> Critical values for <span class="math inline">\(\chi^2\)</span>-distribution</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Created with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Quantitative Methods and Statistics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ch:reliability" class="section level1" number="12">
+<h1><span class="header-section-number">12</span> Reliability</h1>
+<div id="introduction-6" class="section level2" number="12.1">
+<h2><span class="header-section-number">12.1</span> Introduction</h2>
+<p>In Chapter <a href="ch-validity.html#ch:validity">5</a>, we talked about, amongst other matters,
+construct validity, the distance between the intended (theoretical)
+concept or construct on the one hand, and the independent or dependent variable
+on the other hand. In this Chapter, we will look at another very important
+aspect of the dependent variable, namely its <em>reliability</em>.
+This reliability can be estimated based on the
+association between observations of the same construct.
+We will also look at the relations between reliability and construct validity.</p>
+<p>Often validity and reliability are mentioned in the same breath, and discussed in consecutive
+chapters. There is something to be said for this, since both concepts are about how you define and
+operationalise your variables. Nevertheless, we have chosen a different ordering here. Reliability
+will only be discussed following our discussion of correlation (Chapter
+<a href="ch-correlation-regression.html#ch:correlation-regression">11</a>), since reliability is based on the relation or correlation
+between observations.</p>
+</div>
+<div id="what-is-reliability" class="section level2" number="12.2">
+<h2><span class="header-section-number">12.2</span> What is reliability?</h2>
+<p>A reliable person is stable and predictable: what he or she does
+today is consistent with what he or she did last week, you can trust
+this person — in contrast to an unreliable person, who
+is unstable and behaves unpredictably. According to Collins English Dictionary, someone or something is reliable when they/it “…can be trusted to work well or to behave in the way that you want them to.”<a href="#fn26" class="footnote-ref" id="fnref26"><sup>26</sup></a>
+Reliable measurements can form the basis for a
+“justified true belief” (see
+§<a href="ch-research.html#sec:falsification">2.4</a>); conversely, it is not worth
+giving credence to unreliable measurements.</p>
+<p>Measurements always show some degree of fluctuation or variation or
+inconsistency. This variability can partially be attributed to the
+variation in the behaviour which is being measured. After all, even if we
+measure the same construct for the same person, we still see variance
+as a result of the momentary mental or physical state of the participant,
+which simply fluctuates. Moreover, there is variation in the measuring device
+(thermometer, questionnaire, sensor), and there are probably inconsistencies in the manner
+of measurement or evaluation. With the quantification of such consistencies and
+inconsistencies, we enter the realms of reliability analysis.</p>
+<p>The term ‘reliability’ has two meanings in academic research, which we
+will treat separately. Firstly, reliability signifies the <em>precision</em>
+or <em>accuracy</em> of a measurement. This aspect concerns the question of the extent
+to which the measurement is influenced by chance factors (through which the
+measurement does not exclusively render the construct investigated).
+If we do <em>not</em> measure
+accurately then we also know what the measurements actually show —
+perhaps they show the construct investigated but perhaps they also do not. If we do
+measure accurately then we would expect, if we were to conduct the same measurement again,
+that we would then measure the same outcome. The less precise a measurement is, the more variation or inconsistency there is between the first measurement and the repeated measurement,
+and the measurements are thus less reliable.</p>
+<hr />
+<blockquote>
+<p><em>Example 12.1:</em> If we want to measure the reading ability
+of pupils in their final examinations, then we present them
+with a reading comprehension test with a number of accompanying questions.
+The degree to which the different questions measure <em>the same</em> construct, here the
+construct ‘reading ability’, is called reliability, precision or
+homogeneity.</p>
+</blockquote>
+<hr />
+<p>In what follows, to avoid confusion, we will refer to this form
+of reliability with the term <em>homogeneity</em> (vs. 
+heterogeneity). With a heterogenous (non-homogenous) test, the total score
+is difficult to interpret. With a perfectly homogenous test, people
+who have the same total score have also answered the same questions correctly.
+However, when we measure human (language) behaviour, such perfectly homogenous tests
+never occur: respondents who do achieve the same total score, have not
+always answered the same questions correctly (e.g. in the final examination
+reading ability test, Example 12.1). This implies that the questions have not
+measured exactly the same capacity. This is also the case: one question was about
+paraphrasing a paragraph, whilst another was related to a relationship between
+a referential expression and its antecedent.<br />
+As such, the questions or items were not perfectly homogenous!</p>
+<p>Secondly, reliability signifies a measurement’s <em>stability</em>.
+To measure your weight, you stand on a weighing scale. This
+measurement is stable: five minutes later, the same weighing scale with the same
+person under the same circumstances will also yield (almost)
+the same measurement. Stability is often expressed in a so-called
+correlation coefficient (a measurement for association, see Chapter
+<a href="ch-correlation-regression.html#ch:correlation-regression">11</a>). This correlation coefficient can assume all
+values between <span class="math inline">\(+1\)</span> and <span class="math inline">\(-1\)</span>. The more similar the first and second measurement,
+the higher the correlation is, and the higher the association between the first and second
+measurement. Conversely, the lower the association between the first and second
+measurement is, the lower too the correlation is.</p>
+<p>Stable measurements nevertheless rarely occur in research on
+(language) behaviour. If is a test is taken twice, then there is often
+a considerable difference in scores on the first measurement point
+and scores on the second measurement point.</p>
+<hr />
+<blockquote>
+<p><em>Example 12.2:</em>
+In the final examination for Dutch secondary school, pupils typically have to write an essay, which is
+assessed by two raters. The raters are stable if, after some time, they
+give the same judgements to the same essays. Thus: if rater A at first gave a grade
+8 to an essay, and for the second evaluation sometime later, he/she also gave the same
+essay an 8, then this rater is (very) stable. If, however, the same
+rater A gave this same essay a grade 4 on the second evaluation, then this
+rater is not stable in his/her judgements.</p>
+</blockquote>
+<blockquote>
+<p>Now, grading essays is a tricky task: criteria are not precisely described
+and there is a relatively large amount of room for
+interpretation differences. Accordingly, the stability of judgements is also
+low; previously, a stability coefficient of even <span class="math inline">\(0.40\)</span> has
+been reported.</p>
+</blockquote>
+<hr />
+<p>To calculate a test’s stability, the same test has to be
+taken twice; the degree of association between the first and
+second measurement is called the <em>test-retest-reliability</em>.
+In practice, repeatedly sitting a test like this rarely takes place due to
+the relatively high costs and relatively low benefits.</p>
+<hr />
+<blockquote>
+<p><em>Example 12.3:</em>
+<span class="citation">Lata-Caneda et al. (<a href="#ref-Lata09" role="doc-biblioref">2009</a>)</span> developed
+a Spanish-language questionnaire consisting of 39 questions, intended
+for aphasia patients to determine their quality of life. The quality of life
+is described as “the patient perception about, either the
+effects of a given disease, or the application of a certain treatment on
+different aspects of life, especially regarding its consequences on the
+physical, emotional and social welfare” <span class="citation">(Lata-Caneda et al. <a href="#ref-Lata09" role="doc-biblioref">2009</a>, 379)</span>. The new questionnaire
+was taken twice with a sample of 23
+Spanish-language patients with aphasia as a result of cerebral haemorrhage.
+The reported test-retest stability for this questionnaire was
+<span class="math inline">\(0.95\)</span>.</p>
+</blockquote>
+<hr />
+<p>Both homogeneity and stability are expressed as a
+coefficient with a value between <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span> (in practice, negative coefficients
+do not occur). How should we interpret the reported
+coefficients? Generally, it is of course the case that the higher the coefficient is,
+the higher (better) the reliability. But how large should the reliability minimally be
+before we can call a test “reliable”? There are no clear rules for this.
+However, when considerations have to be made about people, then the test has to
+have a reliability of at least <span class="math inline">\(0.90\)</span> according to the <em>Nederlands
+Instituut van Psychologen</em> ‘Dutch Institute for Psychologists’ (NIP).
+This is, for instance, the case for tests which are used to determine whether or not a child is eligible for a so-called dyslexia declaration.<br />
+For research purposes, such a strict requirement for the reliability of a
+test is not required. Often, <span class="math inline">\(0.70\)</span> is used as the lower limit of the
+reliability coefficient.</p>
+</div>
+<div id="test-theory" class="section level2" number="12.3">
+<h2><span class="header-section-number">12.3</span> Test theory</h2>
+<p>Classical test theory refers to the measurement of variable <span class="math inline">\(x\)</span>
+for the <span class="math inline">\(i\)</span>-th element of a sample consisting of random members of the
+population. Test theory posits that each measurement <span class="math inline">\(x_i\)</span> is composed
+of two components, namely a true score <span class="math inline">\(t_i\)</span> and an error score:<br />
+<span class="math display" id="eq:obs-true-error">\[\begin{equation}
+  x_i = t_i + e_i
+  \tag{12.1}
+\end{equation}\]</span>
+Imagine that you “actually” weigh <span class="math inline">\(t=72.0\)</span> kg, and imagine also
+that your measured weight is <span class="math inline">\(x=71.6\)</span> kg, then the error score
+is <span class="math inline">\(e=-0.4\)</span> kg.</p>
+<p>A first important assumption in classical test theory is that
+the deviations <span class="math inline">\(e_i\)</span> neutralise or cancel each other out (i.e. are zero when averaged
+out, and thus do not deviate systematically from the true score <span class="math inline">\(t\)</span>), and
+that larger deviations above or below occur less often than smaller
+deviations. This means that the deviations are normally distributed (see
+§<a href="ch-probability-distributions.html#sec:normaldistribution">10.3</a>), with <span class="math inline">\(\mu_e=0\)</span> as mean:
+<span class="math display" id="eq:normal-error">\[\begin{equation}
+  \tag{12.2}
+  e_i \sim \mathcal{N}(0,s^2_e)
+\end{equation}\]</span></p>
+<p>A second important assumption in classical test theory is that there
+is no relation between the true scores <span class="math inline">\(t_i\)</span> and the error scores <span class="math inline">\(e_i\)</span>.
+Since the component <span class="math inline">\(e_i\)</span> is completely determined by chance, and thus does not
+have any relation with <span class="math inline">\(x_i\)</span>, the correlation between the true score and
+the error score is null:
+<span class="math display" id="eq:r-true-error">\[\begin{equation}
+  \tag{12.3}
+  r_{(t,e)} = 0
+\end{equation}\]</span></p>
+<p>The total variance of <span class="math inline">\(x\)</span> is thus<a href="#fn27" class="footnote-ref" id="fnref27"><sup>27</sup></a> equal to the sum of the variance
+of the true scores and the variance of the error scores:
+<span class="math display" id="eq:var-true-error">\[\begin{equation}
+  \tag{12.4}
+  s^2_x = s^2_t + s^2_e
+\end{equation}\]</span></p>
+<p>When the observed variance <span class="math inline">\(s^2_x\)</span> proportionately contains much
+error variance (i.e. variance of deviations), then the observed scores
+have been determined for the most part by chance deviations. That is of course
+undesirable. In a such instance, we say that the observed scores
+are not reliable; there is much “noise” in the observed scores.<br />
+When the error variance in contrast is relatively small, then
+the observed scores provide a good reflection of what the true scores are,
+and then the observed differences are indeed reliable, i.e. they
+are not much determined by chance differences.</p>
+<p>In that case, we can also define reliability (symbol <span class="math inline">\(\rho\)</span>) as the
+proportion between true score variance and total variance:<br />
+<span class="math display" id="eq:rho-reliability">\[\begin{equation}
+  \tag{12.5}
+  \rho_{xx} = \frac{s^2_t}{s^2_x}
+\end{equation}\]</span></p>
+<p>However, in practice, we cannot use this formula <a href="ch-reliability.html#eq:rho-reliability">(12.5)</a> to
+establish reliability, since we do not know <span class="math inline">\(s^2_t\)</span>. We must thus firstly
+estimate what the true score variance is — or what the error variance is, which, after all,
+is the complement of the true score variance (see
+formula <a href="ch-reliability.html#eq:var-true-error">(12.4)</a>)<a href="#fn28" class="footnote-ref" id="fnref28"><sup>28</sup></a>.</p>
+<p>The second assumption (in formula <a href="ch-reliability.html#eq:r-true-error">(12.3)</a>), that there is no relation between
+true score and error score, is, in practice, not always justified.
+To illustrate, let us look at the results of a test on<br />
+a scale from 1.0 to 10.0. Students with scores of 9 or 10 have a high
+true score too (they master the material very well) and thus usually have a low
+error score. The students with scores of 1 or 2 also have a low true score
+(they master the material very badly) and thus also usually have a low
+error score. For the students with scores of 5 or 6,
+the situation is different: perhaps they master the material fairly well
+but have just given a wrong answer, or perhaps they master the material poorly but have by chance given a good answer. For these students with an observed
+score in the middle of the scale, the error scores are relatively larger
+than for the students with a score at the ends of the scale. In other domains,
+e.g. for reaction times, we see other relations, e.g. that the error score increases
+more or less equally with the score itself; there is then a positive relationship
+between the true score and the error score (<span class="math inline">\(\rho_{(t,e)}&gt;0\)</span>). Nevertheless,
+the advantages of the classical test theory are so large that we use this
+theory as a starting point.</p>
+<p>From the formulas <a href="ch-reliability.html#eq:var-true-error">(12.4)</a> and <a href="ch-reliability.html#eq:rho-reliability">(12.5)</a>
+above, it also follows that the standard error of measurement is related to the
+standard deviation and to the reliability:
+<span class="math display" id="eq:standard-error-measurement">\[\begin{equation}
+   \tag{12.6}
+    s_e = s_x \sqrt{1-r_{xx}}
+\end{equation}\]</span><br />
+This standard error measurement can be understood
+as the standard deviation of the error scores <span class="math inline">\(e_i\)</span>, assuming still that
+the error scores are normally distributed (formula <a href="ch-reliability.html#eq:normal-error">(12.2)</a>).</p>
+<hr />
+<blockquote>
+<p><em>Example 12.4:</em>
+External inspectors doubt whether teachers mark their students’ final
+papers well. If a student got a 6, should the final paper have perhaps actually
+been judged as a fail?</p>
+</blockquote>
+<blockquote>
+<p>Let us assume that the given assessment shows a standard deviation
+of <span class="math inline">\(s_x=0.75\)</span>, and let us equally assume that an analysis of reliability
+had shown that <span class="math inline">\(r_{xx}=0.9\)</span>. The standard error measurement is then <span class="math inline">\(s_e = 0.24\)</span>
+points (rounded up). The probability that the true score <span class="math inline">\(t_i\)</span> is smaller than
+or equal to 5.4 (the minimum for a fail), with an observed
+score of <span class="math inline">\(x_i=6.0\)</span> and <span class="math inline">\(s_e=0.24\)</span>, is only <span class="math inline">\(p=0.006\)</span> (for explanation,
+see §<a href="#sec:t-confidenceinterval-mean"><strong>??</strong></a> below). The
+final paper’s assessment as a pass is with high probability correct.</p>
+</blockquote>
+<hr />
+</div>
+<div id="interpretations" class="section level2" number="12.4">
+<h2><span class="header-section-number">12.4</span> Interpretations</h2>
+<p>Before we look at the different ways of calculating
+reliability, it is a good idea to pause on the different
+interpretations of reliability estimations.</p>
+<p>First, reliability can be interpreted as the proportion of
+true score variance (see formula <a href="ch-reliability.html#eq:rho-reliability">(12.5)</a>), or
+as the proportion of variance which is “systematic”.
+This is different from the proportion of variance resulting from the concept-as-defined,
+the “valid” variance (see Chapter <a href="ch-validity.html#ch:validity">5</a>).
+The variance resulting from the concept-as-defined is part of the proportion of
+true score variance.
+However, many other factors may systematically influence
+respondents’ scores, such as differences in test experience. If two students <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>
+possess a concept (let us say: language proficiency) to the same degree, then one of the
+students can still score more highly because he or she has done (and practiced) language proficiency
+tests more often than the other student. Then, there is no difference
+in the concept-as-defined (language proficiency <span class="math inline">\(T_i = T_j\)</span>),<br />
+but there is in another factor (experience), and thus a difference arises
+between the students in their ‘true’ scores (<span class="math inline">\(t_i \neq t_j\)</span>) which
+we measure with a valid and reliable language proficiency measurement. When measuring,
+deviations and measurement errors appear (<span class="math inline">\(e_i\)</span> and <span class="math inline">\(e_j\)</span>), through which
+the observed differences between students (<span class="math inline">\(x_i-x_j\)</span>) can be larger or smaller than their
+differences in ‘true’ score (<span class="math inline">\(t_i-t_j\)</span>).
+This is the reason why a reliability estimate always forms the upper limit of
+the validity.</p>
+<p>A second interpretation of reliability (formula <a href="ch-reliability.html#eq:rho-reliability">(12.5)</a>)
+is that of the theoretically expected correlation (see
+§<a href="ch-correlation-regression.html#sec:Pearson">11.2</a>) between measurements, when measurements are replicated
+many times. For convenience, we assume that memory and fatigue
+effects have no effect at all on the second and later measurements. If we were to
+measure the same people with the same measurement
+three times, without memory or fatigue effects, then the scores from the first and
+second measurement, and from the first and third measurement, and from
+the second and third measurement would always show the same correlation
+<span class="math inline">\(\rho\)</span>. This correlation thus indicates the extent to which the repeated measurements
+are consistent, i.e. represent the same unknown true score.</p>
+<p>In this interpretation, reliability thus expresses the expected association
+between scores from the same test taken repeated times. We then interpret the reliability
+coefficient <span class="math inline">\(\rho\)</span> as the correlation between two measurements
+with the same instrument.</p>
+<p>Thirdly, reliability can be interpreted as the loss
+of efficiency in the estimation of the mean score <span class="math inline">\(\overline{X}\)</span>
+<span class="citation">(Ferguson and Takane <a href="#ref-Ferg89" role="doc-biblioref">1989</a>, 474)</span>. Imagine that we want to establish the mean score of a group of
+<span class="math inline">\(n=50\)</span> participants, and for this we use a measurement instrument
+with reliability <span class="math inline">\(\rho_{xx}=0.8\)</span>. In this case, there is uncertainty in the estimation,
+which come from the chance deviations <span class="math inline">\(e_i\)</span> in the measurements.
+If the measurement instrument were perfectly reliable (<span class="math inline">\(\rho=1\)</span>), we would only
+need <span class="math inline">\(\rho_{xx}\times n = 0.8\times50=40\)</span> participants for the same accuracy in
+the estimation of <span class="math inline">\(\overline{X}\)</span>
+<span class="citation">(Ferguson and Takane <a href="#ref-Ferg89" role="doc-biblioref">1989</a>, 474)</span>. As such, we have, as it were, played away 10 participants
+to compensate for the unreliability of the measurement instrument.</p>
+<p>Above, we spoke about measurements with the help of measurement instruments,
+and below we will talk about ratings done
+by raters. In these situations, the approach to the notion of ‘reliability’
+is always the same. Reliability plays a role in all situations where
+elements from a sample are measured or assessed by multiple assessors or instruments.
+Non-final exams and questionnaires can also be such measurement instruments: a non-final
+exam or questionnaire can be thought of as a composite instrument
+with which we try to measure an abstract property or condition of the participants.
+Each question can then be considered as a
+“measurement instrument” or “assessor” of the respondent’s property or condition.
+For this, all of the above mentioned insights and interpretations concerning
+test theory, measurement error and reliability are equally applicable.</p>
+</div>
+<div id="methods-for-estimating-reliability" class="section level2" number="12.5">
+<h2><span class="header-section-number">12.5</span> Methods for estimating reliability</h2>
+<p>A measurement’s reliability can be determined in different ways.
+The most important are:</p>
+<ul>
+<li><p>The <em>test-retest method</em><br />
+We conduct all measurements twice, and then calculate the correlation
+between the first and the second measurement. The fewer measurement errors
+and deviations the measurements contain, the higher the correlation
+and thus also the reliability is. This method is
+time consuming but can also be applied to a small portion of the
+measurements. In speech research, this method is indeed used to establish
+the reliability of phonetic transcriptions: part of the speech
+recordings are transcribed by a second assessor, and then both transcriptions
+are compared.</p></li>
+<li><p>The <em>parallel forms method</em><br />
+We have a large collection of measurements which are readily
+comparable and measure the same construct. We conduct all
+measurements repeatedly, the first time by combining the measurements
+of several measurement instruments chosen at random (let’s say A
+and B and C) and the second time by using other random
+instruments (let’s say D and E and F). Since the measurement instruments are
+‘parallel’ and the same measurement is considered to be measured, the correlation
+between the first and the second measurement is an indication of the
+measurement’s reliability.</p></li>
+<li><p>The <em>split-half method</em><br />
+This method is similar to the parallel forms method. The <span class="math inline">\(k\)</span> questions
+or instruments are divided into two halves, after which the score
+is determined within each half. From the correlation <span class="math inline">\(r_{hh}\)</span> between
+the scores from the two half tests, the reliability of the whole test can
+be deduced, <span class="math inline">\(r_{xx} = \frac{2r_{hh}}{1+r_{hh}}\)</span>.</p></li>
+</ul>
+</div>
+<div id="reliability-between-assessors" class="section level2" number="12.6">
+<h2><span class="header-section-number">12.6</span> Reliability between assessors</h2>
+<p>As an example, let us look at language proficiency measurements from students
+in a foreign language. This construct ‘language proficiency’
+is measured in this example by means of two assessors who each, independently
+of the other, award a grade between 1 and 100 to the student (higher is better).
+However, when assessing, measurement errors also arise, through which the judgements
+not only reflect the underlying true score but also a deviation if it, with
+all the aforementioned assumptions. Let us firstly look at the
+judgements by the first and second rater (see Table
+<a href="ch-reliability.html#tab:reliability">12.1</a>). For the time being, the final judgement of a student is
+the mean of the judgements from the first and second rater.</p>
+<table>
+<caption><span id="tab:reliability">Table 12.1: </span> Judgements about language proficiency
+from <span class="math inline">\(n = 10\)</span> students (rows) by <span class="math inline">\(k = 3\)</span> raters (columns).</caption>
+<thead>
+<tr class="header">
+<th align="center">Student</th>
+<th align="center">B1</th>
+<th align="center">B2</th>
+<th align="center">B3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">67</td>
+<td align="center">64</td>
+<td align="center">70</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="center">72</td>
+<td align="center">75</td>
+<td align="center">74</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="center">83</td>
+<td align="center">89</td>
+<td align="center">73</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="center">68</td>
+<td align="center">72</td>
+<td align="center">61</td>
+</tr>
+<tr class="odd">
+<td align="center">5</td>
+<td align="center">75</td>
+<td align="center">72</td>
+<td align="center">77</td>
+</tr>
+<tr class="even">
+<td align="center">6</td>
+<td align="center">73</td>
+<td align="center">73</td>
+<td align="center">78</td>
+</tr>
+<tr class="odd">
+<td align="center">7</td>
+<td align="center">73</td>
+<td align="center">76</td>
+<td align="center">72</td>
+</tr>
+<tr class="even">
+<td align="center">8</td>
+<td align="center">65</td>
+<td align="center">73</td>
+<td align="center">72</td>
+</tr>
+<tr class="odd">
+<td align="center">9</td>
+<td align="center">64</td>
+<td align="center">68</td>
+<td align="center">71</td>
+</tr>
+<tr class="even">
+<td align="center">10</td>
+<td align="center">70</td>
+<td align="center">82</td>
+<td align="center">69</td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\overline{x_i}\)</span></td>
+<td align="center">71.0</td>
+<td align="center">74.4</td>
+<td align="center">71.7</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(s_i\)</span></td>
+<td align="center">5.6</td>
+<td align="center">7.0</td>
+<td align="center">4.7</td>
+</tr>
+</tbody>
+</table>
+<p>The judgements of only the first and the second assessor show a
+correlation of <span class="math inline">\(r_{1,2}=.75\)</span>. This means (according to the formula
+<a href="ch-reliability.html#eq:rho-reliability">(12.5)</a>) that 75% of the total variance in the
+judgements of these two raters can be attributed to differences
+between the students rated, and thus 25% of measurement errors (after all,
+we have assumed that there are no systematic differences between
+raters). The proportion of measurement errors appears to be quite high.
+However, we can draw hope from one of our earlier observations, namely that
+the raters’ measurement errors are not correlated. The
+<em>combination</em> of these two raters — the mean score per student
+over the two raters — thus provides more reliable measurements
+than each of the two raters can do separately. After all, the
+measurement errors of the two raters tend to cancel each other out
+(see formula <a href="ch-reliability.html#eq:normal-error">(12.2)</a>).
+Reread the last two sentences carefully.</p>
+<p>Reliability is often expressed as <em>Cronbach’s Alpha</em>
+<span class="citation">(Cortina <a href="#ref-Cort93" role="doc-biblioref">1993</a>)</span>. This number is a measure for the consistency or homogeneity
+of the measurements, and thus also indicates the degree to which the two
+raters have rated the same construct. The simplest definition is
+based on <span class="math inline">\(\overline{r}\)</span>, the mean correlation between
+measurements of <span class="math inline">\(k\)</span> different raters<a href="#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a>.
+<span class="math display" id="eq:cronbach-corr">\[\begin{equation}
+  \tag{12.7}
+  \alpha = \frac{k \overline{r}} {1+(k-1)\overline{r}}
+\end{equation}\]</span></p>
+<p>Filling in <span class="math inline">\(k=2\)</span> raters and <span class="math inline">\(\overline{r}=0.75\)</span> provides <span class="math inline">\(\alpha=0.86\)</span> (SPSS and R
+use a somewhat more complex formula for this, and report
+<span class="math inline">\(\alpha=0.84\)</span>). This measurement for reliability is not only referred to
+as Cronbach’s Alpha but also as the Spearman-Brown formula
+or the Kuder-Richardson formula 20 (KR=20)<a href="#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a>.</p>
+<p>The value of Cronbach’s Alpha found is a bit tricky to evaluate
+since it is also dependent on the number of instruments or raters or
+questions in the test <span class="citation">(Cortina <a href="#ref-Cort93" role="doc-biblioref">1993</a>; Gliner, Morgan, and Harmon <a href="#ref-Glin01" role="doc-biblioref">2001</a>)</span>. For academic research,
+a lower limit of 0.75 or 0.80 is often used. If the result of the test or measurement
+is of great importance to the person concerned, as in the case of medical or
+psychological patient diagnosis, or when recruiting and selecting personnel, then
+an even higher reliability of <span class="math inline">\(\alpha=.9\)</span> is recommended <span class="citation">(Gliner, Morgan, and Harmon <a href="#ref-Glin01" role="doc-biblioref">2001</a>)</span>.</p>
+<p>If we want to increase reliability to <span class="math inline">\(\alpha=0.9\)</span> or higher, then
+we can achieve that in two ways. The first way is to expand the
+number of raters. If we combine more raters in the total score,
+then the measurement errors of these raters also better cancel out each other,
+and then the total score is thus more reliable. Using
+the formula <a href="ch-reliability.html#eq:cronbach-corr">(12.7)</a>, we can investigate how many raters
+are needed to improve the reliability to <span class="math inline">\(\alpha=0.90\)</span> or better. We fill in<br />
+<span class="math inline">\(\alpha=0.90\)</span> and again <span class="math inline">\(\overline{r}=0.75\)</span>, and then find an outcome of
+minimally <span class="math inline">\(k=3\)</span> raters. The <em>increase</em> in reliability levels off, the more
+raters there are already participating: if <span class="math inline">\(k=2\)</span> then <span class="math inline">\(\alpha=.84\)</span>, if <span class="math inline">\(k=3\)</span> then
+<span class="math inline">\(\alpha=.84+.06=.90\)</span>, if <span class="math inline">\(k=6\)</span> then <span class="math inline">\(\alpha=.90+.05=.95\)</span>, if <span class="math inline">\(k=9\)</span> then
+<span class="math inline">\(\alpha=.95+.01=.96\)</span>, etc. After all, if there are already 6 raters who are
+already readily cancelling out each other’s measurement errors, then 3 extra
+assessors add little to the reliability.</p>
+<p>The second way of increasing reliability is by reducing the measurement
+error. We can try to do this, for example, by instructing the raters as well as
+possible
+about how they should rate the students’ language proficiency. An assessment
+protocol and/or
+instruction can make the deviations between and within raters smaller.
+Smaller deviations mean smaller measurement errors, and that again means
+higher correlations between the raters. For an
+<span class="math inline">\(\overline{r}=0.8\)</span>, we already almost achieve the desired reliability, with
+only <span class="math inline">\(k=2\)</span> raters.</p>
+<p>A third way of increasing reliability requires a closer analysis of
+the separate raters. To explain this, we also now involve the third
+rater in our considerations (see Table
+<a href="ch-reliability.html#tab:reliability">12.1</a>). However, the judgements of the third rater show
+low correlations with those of the first and second
+assessor: <span class="math inline">\(r_{1,3}=0.41\)</span> and <span class="math inline">\(r_{2,3}=0.09\)</span>. As a consequence, the mean
+correlation between assessors is now lower,
+<span class="math inline">\(\overline{r}=0.42\)</span>. As a result of taking this third rater, the reliability
+has not risen but instead actually lowered to
+<span class="math inline">\(\alpha = \frac{3\times0.42}{1+2\times0.42} = 0.68\)</span>. We can thus
+perhaps better ignore the measurements of the third rater.
+Also if we investigate the reliability of a non-final exam or test or questionnaire
+it can seem that the reliability of a whole test <em>increases</em> if some
+“bad” questions are removed. Apparently, these “bad” questions measured
+a construct which differed from what the remaining questions measured.</p>
+</div>
+<div id="reliability-and-construct-validity" class="section level2" number="12.7">
+<h2><span class="header-section-number">12.7</span> Reliability and construct validity</h2>
+<p>When a measurement is reliable, then “something” has been measured reliably.
+But this still does not show <em>what</em> has been measured! There is a
+relation between reliability (how measurements are made) and construct
+validity (what is measured, see
+Chapter <a href="ch-validity.html#ch:validity">5</a>), but these two terms are not identical.
+Sufficient reliability is a requirement for validity, but
+is not a sufficient condition for it. Put otherwise: a test which
+is not reliable can also not be valid (since this test also measures noise),<br />
+but a test which is reliable does not have to be valid.
+Perhaps, the test used does measure another construct other than what
+was intended very reliably.</p>
+<p>An instrument is construct valid if the concept measured matches
+the intended concept or construct. In
+Example 12.3, the questionnaire is valid if the score from
+the questionnaire matches the quality of life (whatever that actually
+is) of the aphasia patients. Only once it has been shown that
+an instrument is reliable, is it meaningful to speak about a measurement’s
+construct validity. Reliability is a necessary but not a sufficient condition for
+construct validity. An unreliable
+instrument can thus not be valid but a reliable instrument does not necessarily
+have to be valid.</p>
+<p>To measure reading proficiency, we get the pupils to write
+an essay. We count the number of letters <em>e</em> in each essay. This is
+a very reliable measurement: different raters arrive at the same
+number of <em>e</em>’s (raters are homogenous) and the same rater always also
+delivers the same outcome (raters are stable). The great objection here is that
+the number of <em>e</em>’s in an essay does not or does not necessarily match the concept
+of reading proficiency. A pupil who has incorporated more <em>e</em>’s into his/her essay
+is not necessarily a better writer.</p>
+<p>Whilst researchers know that reliability is a necessary but not
+sufficient condition for validity, they do not always use these terms
+carefully. In many studies, it is tacitly
+assumed that if the reliability is sufficient, the validity
+is also then guaranteed. In Example 12.3 too, the difference is not
+made clear and
+the researchers do not discuss the construct validity of their new
+questionnaire explicitly.</p>
+</div>
+<div id="spss-9" class="section level2" number="12.8">
+<h2><span class="header-section-number">12.8</span> SPSS</h2>
+<p>For a reliability analysis of the <span class="math inline">\(k=3\)</span> judgements over
+language proficiency in
+Table <a href="ch-reliability.html#tab:reliability">12.1</a>:<br />
+</p>
+<pre><code>Analyze &gt; Scale &gt; Reliability Analysis...</code></pre>
+<p>Select the variables which are considered to measure the same construct;
+here that is three raters. We look at these <span class="math inline">\(k=3\)</span>
+assessors as “items” who measure the property “language proficiency” of 10
+students. Drag these variables to the Variable(s) panel.<br />
+As Scale label, fill in an indication of the construct, e.g.
+<code>language proficiency</code>.<br />
+As a method, choose <code>Alpha</code> for Cronbach’s Alpha (see formula
+<a href="ch-reliability.html#eq:cronbach-corr">(12.7)</a>)<br />
+Choose <code>Statistics…</code>, tick: Descriptives for
+<code>Item, Scale, Scale if item deleted</code>, Inter-Item <code>Correlations</code>,
+Summaries <code>Means, Variances</code>, and confirm with <code>Continue</code> and again
+with <code>OK</code>.</p>
+<p>The output includes Cronbach’s Alpha, the desired inter-item correlations
+(particularly high between raters 1 and 2), and (in Table
+Item-Total Statistics) the reliability if we remove a certain
+rater. This last output teaches us that
+raters 1 and 2 are more important than rater 3. If we
+were to replace raters 1 or 2, then the reliability would collapse
+but if we were to remove rater 3 then the reliability
+would even increase (from 0.68 to 0.84). Presumably, this rater
+has rated a different concept to the others.</p>
+</div>
+<div id="r-10" class="section level2" number="12.9">
+<h2><span class="header-section-number">12.9</span> R</h2>
+<p>For a reliability analysis of <span class="math inline">\(k=3\)</span> language proficiency
+judgements in Table <a href="ch-reliability.html#tab:reliability">12.1</a>:<br />
+</p>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="ch-reliability.html#cb78-1" aria-hidden="true"></a>raters &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="dt">file=</span><span class="st">&quot;data/beoordelaars.txt&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>)</span>
+<span id="cb78-2"><a href="ch-reliability.html#cb78-2" aria-hidden="true"></a><span class="cf">if</span> (<span class="kw">require</span>(psych)) { <span class="co"># for psych::alpha</span></span>
+<span id="cb78-3"><a href="ch-reliability.html#cb78-3" aria-hidden="true"></a>  <span class="kw">alpha</span>( raters[,<span class="dv">2</span><span class="op">:</span><span class="dv">4</span>] ) <span class="co"># columns 2 to 4</span></span>
+<span id="cb78-4"><a href="ch-reliability.html#cb78-4" aria-hidden="true"></a>}</span></code></pre></div>
+<pre><code>## Number of categories should be increased  in order to count frequencies.</code></pre>
+<pre><code>## 
+## Reliability analysis   
+## Call: alpha(x = raters[, 2:4])
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N  ase mean  sd median_r
+##       0.68      0.68    0.74      0.41 2.1 0.17   72 4.6     0.41
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.35 0.68 1.01 
+## 
+##  Reliability if an item is dropped:
+##    raw_alpha std.alpha G6(smc) average_r  S/N alpha se var.r med.r
+## B1      0.15      0.16   0.088     0.088 0.19    0.497    NA 0.088
+## B2      0.58      0.58   0.410     0.410 1.39    0.264    NA 0.410
+## B3      0.84      0.85   0.745     0.745 5.84    0.095    NA 0.745
+## 
+##  Item statistics 
+##     n raw.r std.r r.cor r.drop mean  sd
+## B1 10  0.93  0.92  0.91   0.81   71 5.6
+## B2 10  0.84  0.78  0.72   0.53   74 7.0
+## B3 10  0.56  0.64  0.38   0.25   72 4.7</code></pre>
+<p>This output includes Cronbach’s Alpha (<code>raw_alpha 0.68</code>), and the
+reliability if we were to remove a certain rater.
+If we were to replace rater 3, then the reliability would even
+increase (from 0.68 to 0.84). Over all three raters,
+<code>average_r=0.41</code>.</p>
+<p>Correlations between <span class="math inline">\(k\)</span> raters or items are not explicitly
+provided (even if they can be deduced from the above output),
+thus we still request these:</p>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="ch-reliability.html#cb81-1" aria-hidden="true"></a><span class="kw">cor</span>( raters[ ,<span class="kw">c</span>(<span class="st">&quot;B1&quot;</span>,<span class="st">&quot;B2&quot;</span>,<span class="st">&quot;B3&quot;</span>) ] ) <span class="co"># explicit column names</span></span></code></pre></div>
+<pre><code>##           B1         B2         B3
+## B1 1.0000000 0.74494845 0.40979738
+## B2 0.7449484 1.00000000 0.08845909
+## B3 0.4097974 0.08845909 1.00000000</code></pre>
+<hr />
+
+</div>
+</div>
+
+
+
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-Cort93">
+<p>Cortina, Jose M. 1993. “What Is Coefficient Alpha? An Examination of Theory and Applications.” <em>Journal of Applied Psychology</em> 78 (1): 98–104.</p>
+</div>
+<div id="ref-Ferg89">
+<p>Ferguson, George A., and Yoshio Takane. 1989. <em>Statistical Analysis in Psychology and Education</em>. 6e ed. New York: McGraw-Hill.</p>
+</div>
+<div id="ref-Glin01">
+<p>Gliner, Jeffrey A., George A. Morgan, and Robert J. Harmon. 2001. “Measurement Reliability.” <em>Journal of the American Academy of Child and Adolescent Psychiatry</em> 40 (4): 486–88.</p>
+</div>
+<div id="ref-Lata09">
+<p>Lata-Caneda, M. C., M. Piñeiro-Temprano, I. García-Fraga, I. García-Armesto, J. R. Barrueco-Egido, and R. Meijide-Failde. 2009. “Spanish Adaptation of the Stroke and Aphasia Quality of Life Scale-39 (SAQOL-39).” <em>European Journal of Physical and Rehabilitation Medicine</em> 45 (3): 379–84. <a href="https://www.ncbi.nlm.nih.gov/pubmed/19156021%5D">https://www.ncbi.nlm.nih.gov/pubmed/19156021]</a>.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="26">
+<li id="fn26"><p><a href="https://www.collinsdictionary.com/dictionary/english/reliable" class="uri">https://www.collinsdictionary.com/dictionary/english/reliable</a><a href="ch-reliability.html#fnref26" class="footnote-back">↩︎</a></p></li>
+<li id="fn27"><p><span class="math inline">\(s^2_{(t+e)} = s^2_t + s^2_e + 2 r_{(t,e)} s_t s_e\)</span>, with here <span class="math inline">\(r_{(t,e)}=0\)</span> according to the formula<a href="ch-reliability.html#eq:r-true-error">(12.3)</a>.<a href="ch-reliability.html#fnref27" class="footnote-back">↩︎</a></p></li>
+<li id="fn28"><p>An exception to this is a situation in which <span class="math inline">\(s^2_x=0\)</span>, and thus <span class="math inline">\(s^2_t=0\)</span>, thus reliability <span class="math inline">\(\rho=0\)</span>; the dependent variable <span class="math inline">\(x\)</span> has then not been
+operationalised well.<a href="ch-reliability.html#fnref28" class="footnote-back">↩︎</a></p></li>
+<li id="fn29"><p>In our example, there are only <span class="math inline">\(k=2\)</span> raters, thus there is only one
+correlation, and <span class="math inline">\(\overline{r} = r_{1,2} = 0.75\)</span>.<a href="ch-reliability.html#fnref29" class="footnote-back">↩︎</a></p></li>
+<li id="fn30"><p>The so-called ‘intra-class correlation coefficient’ (ICC) for <span class="math inline">\(k\)</span>
+is likewise identical to the Cronbach’s Alpha.<a href="ch-reliability.html#fnref30" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ch-correlation-regression.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="app-randomnumbers.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/ch12reliability.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["QMS-EN.pdf", "QMS-EN.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

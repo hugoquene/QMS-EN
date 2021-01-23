@@ -1,4 +1,4 @@
-# (PART\*) Part 2: Descriptive statistics {-}
+# (PART\*) Part II: Descriptive statistics {-}
 
 # Frequencies {#ch:frequencies}
 

@@ -1,0 +1,53 @@
+# Critical values for $t$-distribution {#app:criticaltvalues}
+
+```{r criticaltvalues-auxiliaryfigure, echo=FALSE, fig.height=2}
+# adapted from `kritieketwaarden_hulpfiguur.R`
+# HQ 20140320
+# everything with df=49
+op <- par(mar=c(3,1,1,1)+0.1)
+xx <- seq(1,4,by=.01)
+yy <- dt(xx,df=49)
+curve( dt(x,df=49), from=-4, to=4, xaxt="n", yaxt="n", xlab="", ylab="", bty="n", lwd=3 )
+polygon( x=c(1,xx), y=c(0,yy), col="lavender", border="lavender" )
+curve( dt(x,df=49), from=-4, to=4, xaxt="n", yaxt="n", xlab="", ylab="", bty="n", lwd=3, add=TRUE )
+text( 1.5, dt(1.5,df=49)*.4, "p", adj=.5, cex=1 )
+axis( side=1, at=c(0,1), labels=c("0","t*"), cex=1, tick=F, line=-1 ) # cex is ignored
+abline( h=0, lty=1, col="grey70" )
+segments( x0=0, x1=0, y0=0, y1=dt(0,df=49), col="grey70" )
+segments( x0=1, x1=1, y0=0, y1=yy[1], col="grey70" )
+curve( dt(x,df=49), from=-4, to=4, xaxt="n", yaxt="n", xlab="", ylab="", bty="n", lwd=3, add=TRUE )
+```
+
+The critical boundary value $t^*$ given below has a critical probability $p$
+under $H_0$, i.e. $P(t \geq t^*|H_0)=p$, and has probability $B$ of a 
+value between $(-t^*, +t^*)$. The $t$-distribution is symmetric around 
+$t=0$, thus $P(t < -t^*) = P(t > t^*)$.
+
+The table below provides the critical boundary values $t^*$ for much used critical probabilities $p$ and 
+confidence intervals $B$, for the degrees of freedom indicated in the first column. 
+
+
+```{r A3.1, echo=FALSE}
+pvals <- c(.2,.1,.05,.025,.01,.005,.0025,.001)
+df <- c( seq(1,25,by=1),30,40,50,100,200,400 ) 
+# add extra row for infinity d.f. (using normal distro)
+# add extra columns, one for d.f. values and one for spacing
+appendixt1 <- matrix("",nrow=length(df)+1,ncol=2+length(pvals)) # matrix of char strings
+for (i in 1:length(df)) 
+  for (j in 1:length(pvals))
+    appendixt1[i,j+2] <- format( qt( p=pvals[j], lower.tail=FALSE, df=df[i] ),
+                               digits=4, nsmall=3 )
+i <- length(df)+1 # last row of matrix: normal distrib values
+for (j in 1:length(pvals))
+  appendixt1[i,j+2] <- format( qnorm( p=pvals[j], lower.tail=FALSE ),
+                               digits=4, nsmall=3 )
+appendixt1[,1] <- c( format(df)," ∞ " ) # first column
+appendixt1 <- rbind(
+  c( "", "p", as.character(pvals) ),
+  c( "", "B", paste(as.character(100-200*pvals),"%",sep="" ) ),
+  appendixt1
+)
+# suppress first row, and use as column names
+knitr::kable(
+  appendixt1[-1,], booktabs=TRUE, col.names=appendixt1[1,], align="c" )
+```

@@ -119,7 +119,7 @@
 
 \title{Quantitative Methods and Statistics}
 \author{true}
-\date{Version compiled 11 Dec 2020}
+\date{Version compiled 23 Jan 2021}
 
 \begin{document}
 \maketitle
@@ -1637,9 +1637,9 @@ Returning to our primary school example, if we selected three primary schools ac
 
 After all these recommendations that are worth taking to heart, it is now time to discuss how we can describe and analyse research data to properly answer our research questions. This will be done in the next part of this book.
 
-\hypertarget{part-part-2-descriptive-statistics}{%
-\part*{Part 2: Descriptive statistics}\label{part-part-2-descriptive-statistics}}
-\addcontentsline{toc}{part}{Part 2: Descriptive statistics}
+\hypertarget{part-part-ii-descriptive-statistics}{%
+\part*{Part II: Descriptive statistics}\label{part-part-ii-descriptive-statistics}}
+\addcontentsline{toc}{part}{Part II: Descriptive statistics}
 
 \hypertarget{ch:frequencies}{%
 \chapter{Frequencies}\label{ch:frequencies}}
@@ -2323,15 +2323,15 @@ central value.
 To illustrate, we use the fictive reading test scores shown in Table
 \ref{tab:cito}.
 
-\begin{longtable}[]{@{}clcl@{}}
+\begin{longtable}[]{@{}cccc@{}}
 \caption{\label{tab:cito} The scores of N=10 pupils on three sections of the CITO test,
 taken in the final year of primary school in the Netherlands.}\tabularnewline
 \toprule
-Pupil & Reading & Arithmetic & World Orientation\tabularnewline
+Pupil & Reading & Arithmetic & Geography\tabularnewline
 \midrule
 \endfirsthead
 \toprule
-Pupil & Reading & Arithmetic & World Orientation\tabularnewline
+Pupil & Reading & Arithmetic & Geography\tabularnewline
 \midrule
 \endhead
 1 & 18 & 22 & 55\tabularnewline
@@ -2969,6 +2969,2353 @@ new variable, called here \texttt{zReading} (note the parentheses in the first l
 ## [1] -1.1575990  0.6776189  2.3716662 -0.3105753  0.1129365 -0.7340872
 \end{verbatim}
 
+\hypertarget{ch:probability-distributions}{%
+\chapter{Probability distributions}\label{ch:probability-distributions}}
+
+\hypertarget{sec:probabilities}{%
+\section{Probabilities}\label{sec:probabilities}}
+
+Calling behind the wheel increases the chance of an accident \citep{Bhar13}.
+The average chance of precipitation in the Netherlands is 7\%. My order has a
+10\% chance of being delivered a day later than promised. Chances and probabilities
+play an important role in our daily lives, and also in academic research. After all,
+many hypotheses are probabilistic in nature (see Chapter
+\ref{ch:research}): hypotheses make statements about a
+difference in the \emph{chances} of outcomes. To be able to draw conclusions with
+respect to these probabilistic hypotheses, we need to know something about
+probabilities and
+probability distributions. This is the subject of the present chapter.
+
+As an introduction, let us take a look at a Dutch \emph{Scrabble} game.
+The game contains a bag with 102 tiles inside, each of which has a letter on it
+\footnote{However, two of the tiles are blank (without any letter); later in this section we will remove these blank tiles from the bag.}. Of the 102 tiles, 6 have the letter A on them. If I take one tile from a
+full and well-mixed bag, what is the chance that I draw the letter A? The
+probability-of-the-outcome-A is referred to as \(P(\textrm{A})\), with the \(P\) of
+\emph{Probabilitas} (Lat. ``chance, probability''), and can be determined as
+\begin{equation}
+    P(\textrm{A})=
+    \frac{\textrm{number of A's}}{\textrm{total number of tiles}}= 
+    \frac{6}{102} = 0.0588
+  \label{eq:probability-scrabble-1-A}
+\end{equation}
+
+The probability of an event is expressed as a proportion, a number between
+\(0\) and \(1\), or as a percentage, i.e.~a proportion in units of \(1/100\).
+A probability can never be smaller than \(0\) and can never be larger than
+1: after all, the probability is the proportion between the number
+of specific outcomes (numerator) and the total number of possible outcomes
+(denominator) (see
+formula \eqref{eq:probability-scrabble-1-A}), where the numerator can never be larger
+than the denominator \citep{SK01}.
+
+When two outcomes mutually exclude each other, as is the case for
+the outcomes A or B in our Scrabble example, then we may \emph{sum up}
+these outcomes (rule of sum, or addition principle, or \emph{OR} rule).
+The probability of outcome A \emph{or}
+outcome B (where outcomes A and B exclude each other), is the \emph{sum}
+of \(P(\textrm{A})\) and \(P(\textrm{B})\):
+\begin{equation}
+    P(\textrm{A or B}) = P(\textrm{A}) + P(\textrm{B})
+  \label{eq:probability-sumrule}
+\end{equation}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{quote}
+\emph{Example 10.1:}
+In our Scrabble example, \(P(\textrm{A})=\frac{6}{102}\) and
+\(P(\textrm{B})=\frac{2}{102}\). As such, the probability of outcome A-or-B is
+\(P(\textrm{A or B})=P(\textrm{A})+P(\textrm{B})=6/102+2/102=8/102=.0784\).
+\end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+If I take one tile from a full and well-mixed bag, then two
+complementary outcomes are possible: Either I draw an A, or I do \emph{not}
+draw an A. The outcomes again mutually exclude each other so we may
+sum up the probabilities too. Moreover, the
+outcomes are complementary, i.e the outcome can only have one
+of these two possible outcomes. The respective probabilities of these
+complementary events are also complementary, i.e.~these
+respective probabilities sum up to precisely \(1\) =100\% (complement rule).
+After all, there is a 100\% probability that the outcome is one of
+the two possible outcomes of the draw. If we already know \(P(\textrm{A})\),
+we can easily calculate the probability of the complementary
+outcome:
+\begin{align}
+    P(\textrm{A}) + P(\textrm{not-A}) & = & 1\\
+    P(\textrm{A}) & = & 1 - P(\textrm{not-A})\\
+    P(\textrm{not-A}) & = & 1 - P(\textrm{A})
+    \label{eq:complementrule}
+\end{align}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{quote}
+\emph{Example 10.2:}
+In our Scrabble example, \(P(\textrm{A})=\frac{6}{102}\). As such, the probability
+of the not-A outcome is
+\(P(\textrm{not-A})= 1 - P(\textrm{A}) = 1 - \frac{6}{102} = \frac{96}{102} = .9412\).
+\end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+As a thought experiment, let us now take a second Scrabble game, and, from it, take
+a second tile bag which is equally full and well-mixed.
+Without looking, we will now take a letter tile from each bag. There are now two
+events or outcomes, namely the outcome of the first draw (from the first
+bag), and the outcome of the second draw (from the second bag).
+These two outcomes do not mutually exclude each other, since they
+have no mutual influence on each other. After all, the second
+bag's outcome is not influenced by the first bag's outcome, and vice versa. As
+such, we say that these outcomes are \emph{independent} of each other. When the outcomes
+are indeed independent of each other, we calculate the probability of a
+combination of the outcomes by \emph{multiplication} (multiplication
+principle, or product rule, or \emph{AND} rule).\\
+The probability of the combination of outcome A \emph{and} outcome B
+(where outcomes A and B are independent of each other), is the
+\emph{product} of \(P(\textrm{A})\) and \(P(\textrm{B})\):
+\begin{equation}
+    P(\textrm{A and B}) = P(\textrm{A}) \times P(\textrm{B})
+  \label{eq:probability-productrule}
+\end{equation}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{quote}
+\emph{Example 10.3:}
+In our Scrabble example, \(P(\textrm{A})=\frac{6}{102}\) and
+\(P(\textrm{B})=\frac{2}{102}\). The probability of outcome A with the first
+bag \emph{and} B with the second bag is
+\(P(\textrm{A and B})=P(\textrm{A}) \times P(\textrm{B})=\frac{6}{102} \times \frac{2}{102} = .0012\).
+\end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{quote}
+\emph{Example 10.4:}
+In our Scrabble game, \(P(\textrm{vowel})=\frac{38}{102}\). The probability
+of drawing a vowel (A, E, I, O, U, Y) from the first bag \emph{and} a
+vowel from the second bag is
+\(P(\textrm{vowel-and-vowel})=P(\textrm{first vowel}) \times P(\textrm{second vowel})=\frac{38}{102} \times \frac{38}{102} = (\frac{38}{102})^2 = .1388\).
+\end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{sec:binomial-distribution}{%
+\section{Binomial probability distribution}\label{sec:binomial-distribution}}
+
+For the remainder of this chapter, we will adopt two changes to the
+Scrabble game. Firstly, we will remove the 2 blank, letter-less titles
+from the bag. There are now precisely 100 tiles left, of which
+38 have a vowel (\(V\)) and 62 have a consonant (\(C\)). Accordingly, there are only
+two possible outcome categories left and these mutually exclude each other.
+We call such a variable of the nominal level of measurement,
+with precisely two categories, binomial (`two-named'). We regard the
+vowels as hits, and the consonants as
+misses. These two possible outcomes are complementary:
+\(P(V)=.38\) (abbreviated as \(p\)) and \(P(C)=.62\) (abbreviated as
+\(q=1-p\)).
+
+Secondly, from now on, we will put the drawn letter tile back into the bag,
+once we have noted down the drawn letter. We also mix the bag again.
+In this way, we do not require
+multiple complete letter bags, but only one letter bag which, after each
+draw with replacement, is once again complete and mixed.
+We consider the outcomes of consecutive draws to be
+independent.
+
+\textbf{An aside:} The outcome of a certain draw is thus independent of the outcome
+of previous draws. If a vowel has just been drawn \(100\times\) in a row,
+then that has no influence at all on (the outcome of)
+the next draw from the letter bag. After all, the
+letter bag, or the hand of the person drawing tiles does not have any memory. At
+\emph{each} draw, the probability of a hit is \(p=.38\), even if a vowel
+has just been drawn \(100\times\) or \$1000\times. The same is the case
+for consecutive outcomes with roulette: in \emph{each} round, the probability
+of a hit is \(1/37\), even if the ball has just landed on the same number \(100\times\)\footnote{Roulette players can gamble on 36 of the 37 possible outcomes, so in the long term the casino receives a \(1/37\) share of all bets.}.
+
+With the aforementioned changes, let us now conduct \(n=3\) draws
+(with replacement, see above), and for each possible outcome determine
+the probability of the outcome, see
+Table \ref{tab:vowelprobabilities}.
+
+\begin{longtable}[]{@{}lrc@{}}
+\caption{\label{tab:vowelprobabilities} Probabilities of possible outcomes of \(n=3\)
+vowel draws, \(p=.38\), with replacement (see text).}\tabularnewline
+\toprule
+Outcome & Number of vowels & Probabilitiy\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+Outcome & Number of vowels & Probabilitiy\tabularnewline
+\midrule
+\endhead
+CCC & 0 & \(qqq = q^3\)\tabularnewline
+VCC & 1 & \(pqq = pq^2\)\tabularnewline
+CVC & 1 & \(qpq = pq^2\)\tabularnewline
+CCV & 1 & \(qqp = pq^2\)\tabularnewline
+VVC & 2 & \(ppq = p^2q\)\tabularnewline
+VCV & 2 & \(pqp = p^2q\)\tabularnewline
+CVV & 2 & \(qpp = p^2q\)\tabularnewline
+VVV & 3 & \(ppp = p^3\)\tabularnewline
+\bottomrule
+\end{longtable}
+
+The number of hits (vowels) in the \(n=3\) draws has the
+\emph{probability distribution} summarised in
+Table \ref{tab:binomprobabilitydistribution3} (first and last column) and
+Figure \ref{fig:binomprobabilitydistribution3} (horizontal and vertical axes).
+In such a probability distribution, we can see, for each possible outcome of \(x\)
+(here: number of vowels), how high the probability of the outcome is.
+
+\begin{longtable}[]{@{}llc@{}}
+\caption{\label{tab:binomprobabilitydistribution3} Probability distribution of a
+binomial variable with \(n=3\) and \(p=.38\).}\tabularnewline
+\toprule
+Number of vowels & Probability & Probability\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+Number of vowels & Probability & Probability\tabularnewline
+\midrule
+\endhead
+0 & \(1 q^3\) & = .2383\tabularnewline
+1 & \(3 p q^2\) & = .4383\tabularnewline
+2 & \(3 p^2 q\) & = .2686\tabularnewline
+3 & \(1 p^3\) & = .0549\tabularnewline
+total & \((p+q)^3\) & = 1.0000\tabularnewline
+\bottomrule
+\end{longtable}
+
+\begin{figure}
+\centering
+\includegraphics{QMS-EN_files/figure-latex/binomprobabilitydistribution3-1.pdf}
+\caption{\label{fig:binomprobabilitydistribution3}Probability distribution of a binomial variable with \(n=3\) and \(p=.38\).}
+\end{figure}
+
+We call the probability distribution of a binomial variable the binomial
+probability distribution, also referred to as the binomial distribution.
+You can calculate the precise probabilities of the binomial
+probability distribution with the formula \eqref{eq:prob-binomial} below.
+
+\hypertarget{formulas}{%
+\subsection{formulas}\label{formulas}}
+
+The probability of an \(x\) number of hits in \(n\) draws is given as
+\begin{equation}
+  P(x\,\mbox{hits}) = {n \choose x} p^x (1-p)^{n-x}
+  \label{eq:prob-binomial}
+\end{equation}
+in which \(n\) is the number of draws or attempts, \(x\) is the number of hits
+(between 0 and \(n\)), and \(p\) is the probability of a hit.
+
+The coefficient \({n \choose x}\) indicates the number of different orderings
+in which we can choose a combination (syllable) of \(x\) elements from\\
+\(n\). With \(x=1\) vowel from \(n=3\) draws, there are three possibilities:
+one vowel might have been drawn in the first draw, or the second
+draw, or the third draw, see
+Table \ref{tab:vowelprobabilities}. The number of different possible
+orderings is indicated as\\
+\begin{equation}
+  {n \choose x} = \frac{n!}{x!(n-x)!}
+  \label{eq:choose}
+\end{equation}
+in which
+\(x! = x (x-1) (x-2) \dots \times 2 \times 1\), thus
+\(4!=4\times3\times2\times1=24\).
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{quote}
+\emph{Example 10.5:} There are 4 chairs for 2 persons. A maximum of 1 person is
+allowed to sit down on one chair. How many different orderings of \(x=2\) persons
+are possible over \(n=4\) chairs?
+\end{quote}
+
+\begin{quote}
+Answer: There are
+\({4 \choose 2} = \frac{4\times3\times2\times1}{2\times1\times2\times1} = \frac{24}{4} = 6\)
+possible orderings, namely 1100, 1010, 1001, 0110, 0101, and 0011.
+\end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+These binomial coefficients indicating the number of different
+possible orderings can quickly be retrieved from Pascal's so-called
+triangle, depicted in Table \ref{tab:pascaltriangle}.
+We can find the number of different
+orderings of \(x=2\) persons over \(n=4\) chairs in row \(n=4\).
+The uppermost row is that for \(n=0\). The fifth row is that for \(n=4\) and we
+can see the binomial coefficients for \(x= 0, 1, 2, 3, 4\) there one after another.
+For \({4 \choose 2}\), we find there the binomial coefficient \(6\).
+Every coefficient is the total of the two coefficients above\footnote{Thus, \({n \choose x} = {n-1 \choose x} + {n-1 \choose x-1}\) \citep{Weis15}.}, and
+every coefficient can be understood as the number of possible
+routes descending from the top of the triangle
+to the cell.
+
+\begin{longtable}[]{@{}llllllllclllllll@{}}
+\caption{\label{tab:pascaltriangle} Pascal's triangle: Binomial coefficients for the
+number of possible orderings for a combination of \(x\) elements from \(n\) (see text).}\tabularnewline
+\toprule
+\endhead
+\(n= 0\): & & & & & & & & 1 & & & & & & &\tabularnewline
+\(n= 1\): & & & & & & & 1 & & 1 & & & & & &\tabularnewline
+\(n= 2\): & & & & & & 1 & & 2 & & 1 & & & & &\tabularnewline
+\(n= 3\): & & & & & 1 & & 3 & & 3 & & 1 & & & &\tabularnewline
+\(n= 4\): & & & & 1 & & 4 & & 6 & & 4 & & 1 & & &\tabularnewline
+\(n= 5\): & & & 1 & & 5 & & 10 & & 10 & & 5 & & 1 & &\tabularnewline
+\(n= 6\): & & 1 & & 6 & & 15 & & 20 & & 15 & & 6 & & 1 &\tabularnewline
+\(n= 7\): & 1 & & 7 & & 21 & & 35 & & 35 & & 21 & & 7 & & 1\tabularnewline
+\bottomrule
+\end{longtable}
+
+The mean and the standard deviation of the binomial probability distribution
+are \[\begin{aligned}
+    \mu & = & np \\
+    \sigma & = & \sqrt{ np(1-p) }\end{aligned}\]
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{quote}
+\emph{Example 10.6:}
+The binomial probability distribution for \(x\) hits from \(n=3\) draws with
+\(p=.38\) probability of a hit is shown in
+Figure \ref{fig:binomprobabilitydistribution3}. This binomial probability
+distribution has an average \(\mu=n \times p = 3 \times .38 = 1.14\), and a
+standard deviation
+\(\sigma = \sqrt{n \times p \times (1-p)} = \sqrt{ 3 \times .38 \times .62} = 0.84\)\textgreater{}
+\end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{r-4}{%
+\subsection{R}\label{r-4}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{dbinom}\NormalTok{( }\DecValTok{0}\OperatorTok{:}\DecValTok{3}\NormalTok{, }\DataTypeTok{size=}\DecValTok{3}\NormalTok{, }\DataTypeTok{prob=}\NormalTok{.}\DecValTok{38}\NormalTok{ )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.238328 0.438216 0.268584 0.054872
+\end{verbatim}
+
+The output is shown in Table \ref{tab:binomprobabilitydistribution3} below.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{matrixcalc}\OperatorTok{::}\KeywordTok{pascal.matrix}\NormalTok{( }\DecValTok{10}\NormalTok{ ) }\CommentTok{\# left under diagonal is Pascal\textquotesingle{}s triangle}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
+##  [1,]    1    0    0    0    0    0    0    0    0     0
+##  [2,]    1    1    0    0    0    0    0    0    0     0
+##  [3,]    1    2    1    0    0    0    0    0    0     0
+##  [4,]    1    3    3    1    0    0    0    0    0     0
+##  [5,]    1    4    6    4    1    0    0    0    0     0
+##  [6,]    1    5   10   10    5    1    0    0    0     0
+##  [7,]    1    6   15   20   15    6    1    0    0     0
+##  [8,]    1    7   21   35   35   21    7    1    0     0
+##  [9,]    1    8   28   56   70   56   28    8    1     0
+## [10,]    1    9   36   84  126  126   84   36    9     1
+\end{verbatim}
+
+Pascal's triangle can be found on the left under the diagonal of this matrix.
+
+\hypertarget{sec:normaldistribution}{%
+\section{Normal probability distribution}\label{sec:normaldistribution}}
+
+The more the sample size \(n\) increases, the less gradually the binomial probability
+distribution will move up, and the more fluid the probability
+distribution will become, as is shown in
+Figure \ref{fig:binomprobabilitydistribution50n500}.
+
+\begin{figure}
+\centering
+\includegraphics{QMS-EN_files/figure-latex/binomprobabilitydistribution50n500-1.pdf}
+\caption{\label{fig:binomprobabilitydistribution50n500}Probability distribution of a binomial variable x with n=50 (left) and n=500 (right) and p=.38.}
+\end{figure}
+
+With an even larger sample, the probability distribution becomes a fluid line.
+This probability distribution occurs so often, that it is called the
+\emph{normal probability distribution} or `normal distribution'. The distribution
+is also referred to as the Gaussian distribution (named after the mathematician
+Carl Friedrich Gauss, 1777--1855), or the `bell curve' (after the shape). Many
+variables approximately follow this probability distribution:
+birth weight, body length, vocabulary size, IQ, contents of a 1 litre ℮ carton
+of milk, length of a telephone conversation, etc. etc. For all of these variables,
+observations close to the average have a high probability of occurring, and
+observations which deviate greatly from the average are relatively rare (low
+probability).
+
+\begin{figure}
+\centering
+\includegraphics{QMS-EN_files/figure-latex/normalprobabilitydistribution-1.pdf}
+\caption{\label{fig:normalprobabilitydistribution}Normal probability distribution of a variable x with average 0 and standard deviation 1.}
+\end{figure}
+
+The normal probability distribution of a variable \(X\) with average \(\mu\) and
+standard deviation \(\sigma\) has the following characteristics (see
+Figure \ref{fig:normalprobabilitydistribution}):
+
+\begin{itemize}
+\item
+  the distribution is symmetrical around the average \(\mu\),
+\item
+  the distribution is asymptotic, i.e.~the tails go on infinitely,
+\item
+  the average, the median and the mode coincide,
+\item
+  the total area under the curve, i.e.~the total probability of one of
+  the possible outcomes, is equal to 1,
+\item
+  the area under the curve indicates the probability of a value of \(X\) within a
+  certain interval,
+\item
+  the inflection points of the curve (from concave to convex and vice versa) are
+  at \(X=\mu-\sigma\) and \(X=\mu+\sigma\),
+\item
+  around 2/3's of the observations are
+  between \(X=\mu-\sigma\) and \(X=\mu+\sigma\) (dark grey area;
+  \(P(-1<x/\sigma<1)=.6827\) or 68\%) and around 95\% of the observations are
+  between \(-2\sigma\) and \(+2\sigma\) (dark grey plus light grey
+  areas; \(P(-2<x/\sigma<2)=.9546\)), this is known as the
+  Empirical Rule.
+\end{itemize}
+
+A normal probability distribution with \(\mu=0\) and \(\sigma=1\) is referred to as
+the standard normal probability distribution. Just as we saw earlier
+(§\ref{sec:standardscores}), we can standardise a normally distributed
+variable \(x\), i.e.~transform the observations to a standard score
+or \(z\)-score: \(z = (x-\overline{x})/s\).
+The probability distribution in
+Figure \ref{fig:normalprobabilitydistribution} is that of the standard normal
+probability distribution of \(Z\), or the probability distribution of \((X-\mu)/\sigma\).
+
+You could calculate the probability distribution of a normally distributed
+variable \(X\) yourself with the help of the formula
+\eqref{eq:prob-normal} below. However, it is more convenient to
+use a table for it; this can be found in
+Appendix \ref{app:criticalZvalues}.
+Explained in graphical form, the tables provide you, for
+different areas or probabilities \(p\) on the right-hand side under the curve,
+the positive value of \(Z^*\) which constitutes the left-hand limit of the area.
+This means that you have precisely probability \(p\) of finding
+a value \(Z\) which is as large as or larger than this lower limit \(Z^*\)
+(provided of course that the variable is indeed normally distributed).
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{quote}
+Example 10.7: On the right-hand side of Figure
+\ref{fig:normalprobabilitydistribution}, we can see a small white area
+under the curve. This area renders the probability that
+\(Z>2\). The area has a size of 0.0228. The probability of finding a value of \(Z>2\) is thus 0.0228 or a little less than 2.5\%. (Tip: relate this
+probability to the aforementioned Empirical Rule).
+\end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+In Appendix \ref{app:criticalZvalues}, you can find for convenience not one but two
+tables, each consisting of several column designations and
+and a row of cells. The first table provides you, for different `rounded'
+probabilities \(p\) (columns), the critical values \(Z^*\) (cells), for which the
+probability \(p\) of finding a value of \(Z\) which is as large as or larger
+than the critical value \(Z^*\), is precisely equal to the value \(p\)
+at the top of the column. The second table works the same, but in the case the
+`rounded' values of \(Z^*\) are in the cells, and precise probabilities \(p\) are in the
+column designations.
+
+What is the probability \(p\) that \(Z>1\)? In the second subtable, second column,
+we find \(p=0.1587\). Based on this, we also know that \(P(Z<1)\) must be
+\(1-0.1587=0.8413\). Moreover, we know that the distribution is symmetric
+(see above), so we know that \(P(Z< -1)\) must also be \(.1587\).
+What is the probability \(p\) that \(Z>3\)? In the second subtable, we find
+for boundary value \(Z^*=3\) the p-value
+\(p=0.0013\). Thus, for a normally distributed variable \(Z\)
+there is a p-value \(p=0.0013\) of finding a value of \(Z\)
+which is at least three standard variations above the average.
+
+We often want to know the opposite: when we choose a certain p-value,
+what should the boundary value \(Z^*\) be?
+Which boundary value distinguishes the highest 5\% of observations from the
+lowest 95\% (\(p=0.05\))? In the first subtable, we find for p-value
+\(p=0.05\) the boundary value \(Z^*=1.645\). This boundary value, calculated back
+to the original variable, is often referred to as the 95th percentile or
+`P95' of the distribution. Whoever has achieved at least this score,
+is part of the top 5\% and has thus performed better than
+95\% of the participants
+(provided again that the variable is indeed normally distributed).
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{quote}
+\emph{Example 10.8:}
+By definition, extreme values occur infrequently with a normally distributed
+variable. But what is the limit for an extreme value. Let us assume that
+we want to consider no more than 5\% of all observations as extreme.
+The normal probability distribution is symmetric, thus from this 5\% we can
+expect that one half (2.5\%) is at the left extremity of the distribution,
+and the other 2.5\% is on the right-hand side. Which boundary value \(Z^*\)
+corresponds with this p-value \(p=0.025\)?
+\end{quote}
+
+\begin{quote}
+In
+Appendix \ref{app:criticalZvalues}, we take the first subtable. In the column
+for p-value \(p=0.025\), we find boundary value
+\(Z^*=1.960\). If we find an observation with \(Z \ge 1.960\) or with
+\(Z \le -1.960\), then we consider that to be an extreme, rare
+observation.
+\end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{quote}
+\emph{Example 10.9:}
+Intelligence is expressed as an IQ score, a variable with a normal
+probability distribution with \(\mu=100\) and \(\sigma=15\). ``Membership of Mensa
+is open to persons who have achieved a score within the upper two
+percent of the general population on an approved intelligence test that
+has been properly administered and supervised''
+(\url{www.mensa.org}). What is the minimum IQ score you must
+achieve to become a member?
+\end{quote}
+
+\begin{quote}
+Answer: The 98th percentile from a standard normally distributed
+variable is at \(Z^*=+2.0537\), and thus with
+\(x=\overline{x}+2.0537 s = 100+30.8 = 130.8\). Rounded upwards, you thus
+have to achieve an IQ score of 131 points or higher.
+\end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{quote}
+\emph{Example 10.10:}
+Verify the aforementioned Empirical Rule with the help of
+Appendix \ref{app:criticalZvalues}.
+\end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{formulas-1}{%
+\subsection{formulas}\label{formulas-1}}
+
+If variable \(X\) has a normal probability distribution, with average \(\mu\)
+and standard deviation \(\sigma\), then this is shown as
+\begin{equation}
+  X \sim \mathcal{N}(\mu,\sigma)
+  \label{eq:normallydistributed}
+\end{equation}
+
+The normal probability distribution of variable \(X\) with average \(\mu\) and
+standard deviation \(\sigma\) is
+\begin{equation}
+  P(X) = \frac{1}{\sigma \sqrt{2\pi}} \mbox{e}^{ \frac{-(X-\mu)^2}{2\sigma^2} }.
+  \label{eq:prob-normal}
+\end{equation}
+
+The standard normal probability distribution of variable \(Z\) with average
+\(\mu=0\) and standard deviation \(\sigma=1\) is
+\begin{equation}
+    P(Z) = \frac{1}{\sqrt{2\pi}} \mbox{e}^{ \frac{-Z^2}{2} }
+  \label{eq:prob-standardnormal}
+\end{equation}
+
+\hypertarget{sec:isvarnormaldistributed}{%
+\section{Does my variable have a normal probability distribution?}\label{sec:isvarnormaldistributed}}
+
+The longest song in my digital music library lasts around 50
+minutes (it's a piece of classical Indian music, a `morning raga').
+A histogram of all music number lengths is shown in
+Figure \ref{fig:itunestimeshist}.
+
+\includegraphics{QMS-EN_files/figure-latex/itunestimeshist-1.pdf}
+This histogram shows that these lengths clearly
+do \emph{not} follow a normal probability distribution: the distribution is not
+symmetric, and the lowest tail does not go on infinitely (there are
+no music numbers with negative lengths).
+
+The average \(\bar{x} =\) 4.698 and
+standard deviation \(s =\) 5.11 also
+point to a non-normal probability distribution:
+with a normal distribution, we expect that only \((68/2)+50=84\)\% of the lengths
+last longer than
+\(\bar{x}-s\approx 0\) minutes, but in reality 100\% last longer
+than 0 minutes (thus a larger proportion than expected).
+
+A frequently used technique to inspect whether or not a variable \(X\) has a
+normal probability distribution, is to make a graph with the
+observed values along one of the axes (here the horizontal axis), and the
+corresponding
+\(z\)-scores
+along the other axis. A figure like this is called a quantile-quantile plot or
+Q-Q plot; the Q-Q plot for the lengths in my music library are shown in
+Figure \ref{fig:itunestimesqqplot}.
+
+\begin{figure}
+\centering
+\includegraphics{QMS-EN_files/figure-latex/itunestimesqqplot-1.pdf}
+\caption{\label{fig:itunestimesqqplot}Quantile-quantile plot of the lengths of music numbers in my digital library.}
+\end{figure}
+
+If the lengths had a normal probability distribution (were normally
+distributed), then the points would cluster around the purple straight line. And there would have to be a number of negative lengths\ldots{} The deviations from the purple straight line in
+Figure \ref{fig:itunestimesqqplot} thus indicate that the observed lengths
+do not follow a normal probability distribution, as we already saw in the
+histogram (Figure \ref{fig:itunestimeshist}).
+
+There are also different statistical tests to investigate whether or not a variable
+has a normal probability distribution. The two most used are the
+Shapiro-Wilk test (with test statistic \(W\))\\
+for normality, and the Kolmogorov--Smirnov test (with test statistic \(D\)) for
+normality. Both tests investigate the
+H0:\(X\sim\mathcal{N}(\bar{X},s)\) (see
+formula \eqref{eq:normallydistributed}).
+
+\hypertarget{spss-4}{%
+\subsection{SPSS}\label{spss-4}}
+
+\begin{verbatim}
+Analyze > Descriptive Statistics > Explore...
+\end{verbatim}
+
+Select the variable Time (drag to the Dependent List panel).\\
+Choose the button \texttt{Plots}, and tick \texttt{Normality\ plots\ with\ tests}, which
+means `if you make a QQ-plot or Normality plot, you should also then conduct
+tests on normality'.
+Confirm with \texttt{Continue} and afterwards with \texttt{OK}. The output contains
+firstly the results of the Shapiro-Wilks test and the
+Kolmogorov-Smirnov test. According to both tests, the probability of finding
+this distribution, if H0 is true, is almost null -- see however the
+warning in
+§@ref(\#sec:plargerthannull)! We thus reject H0 and conclude that
+the lengths of music numbers are not normally distributed. After these
+test results, there is, amongst others, a Q-Q plot.
+
+\hypertarget{r-5}{%
+\subsection{R}\label{r-5}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{itunes \textless{}{-}}\StringTok{ }\KeywordTok{read.table}\NormalTok{( }\DataTypeTok{file=}\StringTok{"data/itunestimes20120511.txt"}\NormalTok{, }\DataTypeTok{header=}\OtherTok{TRUE}\NormalTok{ )}
+\CommentTok{\# Size in bytes, Time in ms}
+\KeywordTok{qqnorm}\NormalTok{(itunes}\OperatorTok{$}\NormalTok{Time}\OperatorTok{/}\DecValTok{60000}\NormalTok{, }\DataTypeTok{datax=}\NormalTok{T, }\DataTypeTok{plot.it=}\OtherTok{FALSE}\NormalTok{) }\CommentTok{\# normally we\textquotesingle{}d use plot.it=TRUE  }
+\CommentTok{\# qqline(itunes$Time/60000, datax=T, col="purple", lwd=T) \# see QQ{-}plot above}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{shapiro.test}\NormalTok{(itunes}\OperatorTok{$}\NormalTok{Time}\OperatorTok{/}\DecValTok{60000}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  Shapiro-Wilk normality test
+## 
+## data:  itunes$Time/60000
+## W = 0.50711, p-value < 2.2e-16
+\end{verbatim}
+
+According to this test, the probability of finding a distribution, if H0 is
+zero, is almost null, namely smaller than \(2.2 \times 10^{-16}\) (i.e.~smaller than
+the smallest number that the analysis packet can render). We therefore
+reject H0 and conclude that the length of music numbers is not normally
+distributed.
+
+\hypertarget{sec:whatifnotnormal}{%
+\section{What if my variable is not normally distributed?}\label{sec:whatifnotnormal}}
+
+In Part III, we will discuss various statistical tests.
+The tests which we discuss in Chapters \ref{ch:testing} and \ref{ch:power} and
+\ref{ch:anova} however require that the independent
+variable has a normal probability distribution. If a variable does \emph{not} have
+a (approximately) normal probability distribution, then the variable cannot
+simply be used for statistical testing with the statistical tests
+there, or to be more precise, the conclusions from such a statistical testing
+are not valid then. What can be done? There are then two
+possibilities.
+
+Firstly, it is possible to transform the dependent variable \(y\),
+i.e.~to apply an arithmetic operation to it. If all is well, that results
+in a variable \(y'\) which is actually normally distributed. Much used transformations are: to take the logarithm (\(y'=\log{y}\)), take the square root, or
+invert (\(y'=1/y\)). Then, the transformed dependent variable \(y'\) is used for
+the statistical testing. Of course, it is imperative to check whether the
+new dependent variable \(y'\) is indeed (approximately) normally distributed. When
+interpreting the results of the analysis, you should also take into account
+the transformation performed!
+
+Secondly, it is sometimes possible to use another statistical test which does
+not require that the dependent variable is normally distributed. Those are called
+nonparametric tests. We will look at these in more detail in the chapters
+\ref{ch:chi-square-tests} and
+\ref{ch:other-nonpar-tests}.
+A disadvantage of those tests is nevertheless that they have less
+statistical power (for a discussion of power,
+see Chapter \ref{ch:power}): they are less sensitive, and thus require larger
+samples to establish an effect.
+
+\hypertarget{sec:Centrallimittheorem}{%
+\section{Probability distribution of average}\label{sec:Centrallimittheorem}}
+
+In this section, we consider the music numbers in my digital
+music library as a \emph{population}. We now take a random
+sample of \(n=\) 50 numbers, and determine the average length of these
+50 music numbers in the sample:
+let us say \(\bar{x} =\) 4.401 minutes. Surprisingly
+enough, the average of this sample is close to the average
+of the population (\(\mu =\) 4.615, see above).
+We repeat this operation
+\(250\times\): in this way, we get 250 sample averages. The
+frequency distribution of these 250 sample averages are shown in
+Figure \ref{fig:itunesmeanshist}.
+
+\begin{figure}
+\centering
+\includegraphics{QMS-EN_files/figure-latex/itunesmeanshist-1.pdf}
+\caption{\label{fig:itunesmeanshist}Frequency distribution of 250 averages, each over a random sample of \(n=50\) music numbers (the dependent variable is the length of a music number, in minutes). The matching normal distribution is shown as a fluid curve.}
+\end{figure}
+
+Surprisingly enough, these \emph{averages} from (the dependent variables
+\(X\) in) the samples \emph{do} show a more or less normal probability distribution,
+regardless of whether the variable \(X\) in the population is normally distributed or
+not. Put otherwise, the probability distribution of a sample average \emph{always}
+approximates the normal probability distribution, regardless of the probability
+distribution of the variable in question in the population, provided that the sample
+was sufficiently large. (This is known as the Central Limit Theorem). Reread the
+above sentences again carefully. As a rule of thumb, the size of the sample, \(n\),
+should be at least 30. The larger the sample is, the less the probability
+distribution of the sample averages deviates from the normal distribution.
+
+The normal probability distribution of the sample averages has its own average,
+\(\mu_{\bar{X}}\), and its own standard deviation,
+\(s_{\bar{X}}\). For this, the following applies:
+\begin{equation}
+    \mu_{\bar{X}} = \mu_X
+    \label{eq:meanofmean}
+\end{equation}
+and
+\begin{equation}
+    s_{\bar{X}} = \frac{s}{\sqrt{n}}
+    \label{eq:sem}
+\end{equation}
+The standard deviation of the
+mean, \(s_{\bar{X}}\), is also known as the `standard error of
+the mean'. The same averages \(\bar{X}\) have less dispersion than the separate
+observations \(X\), and the averages also vary less when taken over a larger
+sample, as seems to be the case from formula \eqref{eq:sem}. You can consider this
+standard error of the mean as the `margin of error' in the estimation
+of the population average out of the sample average.
+
+What is special now is that we do not have to draw and analyse 250 repeated
+random samples. After all, we know that the sample averages have a normal
+probability distribution with
+\(\mu_{\bar{X}} = \mu_X\) and \(s_{\bar{X}} = \frac{s}{\sqrt{n}}\). We can
+derive the probability distribution of the mean from only one sample of
+\(n\) observations, with a sample mean \(\bar{X}\) and one standard
+deviation \citep{Cumm12}. Reread this paragraph carefully.
+
+\hypertarget{sec:confidenceinterval-mean}{%
+\section{Confidence interval of the mean}\label{sec:confidenceinterval-mean}}
+
+As explained above, we can use the mean of the sample, \(\bar{X}\),
+as a good estimate of the unknown mean in the population, \(\mu\). On
+the basis of the Central Limit Theorem (§\ref{sec:CentralLimitTheorem}),
+we also know that the means of repeated samples (of \(n\) observations) follow a
+normal distribution: \(\mu_{\bar{X}} \sim \mathcal{N}(\mu_{X},\sigma/\sqrt{n})\),
+and thus that 95\% of these repeated sample means will lie between
+\(\mu_{X}-1.96\sigma/\sqrt{n}\) and \(\mu_{X}+1.96\sigma/\sqrt{n}\).
+This interval is called the 95\% confidence interval. We know with
+95\% confidence that the population mean \(\mu\) lies in this interval
+--- provided that \(n\) is sufficiently large, and provided that the standard
+deviation, \(\sigma\), is known in the population.
+
+In practice, this last condition is rarely or never satisfied. The
+standard deviation in the population is usually not known
+and this \(\sigma\) is thus also estimated from the sample. We use
+the sample of \(n\) observations not only to estimate \(\mu_X\) but also
+to estimate \(\sigma_X\). We can then no longer determine the confidence
+interval on the basis of the standard normal probability distribution. Instead,
+we use an adapted version of it, the so-called t-distribution
+(Figure \ref{fig:tprobabilitydistribution}). This probability distribution of
+\(t\) is somewhat broader, i.e.~with a somewhat lower peak and with somewhat
+thicker tails than the standard normal probability distribution of \(Z\) in
+Figure \ref{fig:normalprobabilitydistribution}. The thought behind this is that
+the estimation of \(\mu\) is a bit more uncertain (thus the probability distribution
+is wider) since not only \(\mu\) but also the standard error of the mean
+(\(s/\sqrt{n}\)) are estimated on the basis of the sample. In both estimations, there
+can be deviations which mean that there is somewhat more probability of
+finding a mean which deviates from the population mean.
+As we have already seen, the larger \(n\) is, the better the estimation of \(\mu\):
+the t-distribution then approximates the standard normal probability distribution.
+
+\begin{figure}
+\centering
+\includegraphics{QMS-EN_files/figure-latex/tprobabilitydistribution-1.pdf}
+\caption{\label{fig:tprobabilitydistribution}Probability distribution according to the t-distribution of a variable \(x\) with mean 0 and standard deviation 1, for n=600 and n=6.}
+\end{figure}
+
+For the t-distribution, we thus have to know how large the sample was;
+after all, this \(n\) determines the precise probability distribution of \(t\),
+and with it the critical value \(t*\). We will go into more detail on that
+in §\ref{sec:ttest-freedomdegrees}. Here, a detailed example will
+suffice.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{quote}
+\emph{Example 10.11:}
+Sometimes a researcher wants to know the speed or tempo with which Dutch is actually spoken,
+and how much variation in this speech rate or tempo there is between speakers.
+This variable, speech rate, is expressed as the number of seconds
+a syllable lasts (typically about \(0.2\) second or \(200\) milliseconds). Although \citet{Quene08}
+estimates that \(\mu=0.220\) s and \(\sigma=0.0225\) s, we act as if
+we do not know these population parameters --- just like real
+researchers who usually do not know
+the population parameters.
+\end{quote}
+
+\begin{quote}
+For a sample of \(n=30\) speakers, we find \(\overline{x}=0.215\)
+and
+\(s=0.0203\) seconds. From this, we estimate \footnote{Estimations of parameters are indicated with a ``circumflex'' or ``hat'' above them.}
+\(\hat{\mu}=0.215\) and
+\(\hat{\sigma}=0.0203\). Since \(\sigma\) is not known, we use
+the \emph{t}-distribution to determine the confidence interval. We
+use the \emph{t}-distribution for \(n=30\) and find a critical value
+\(t^*=2.05\) (see Appendix \ref{app:criticaltvalues}, for \(B=95\)\%).
+According to formula \eqref{eq:t-onesampleCI}, we know with 95\%
+confidence that the unknown population mean \(\mu\) lies
+between \(\overline{x}-2.05\times s_{\bar{x}}\) and \(\overline{x}+2.05\times s_{\bar{x}}\),
+or between \(0.215-2.05\times0.0037\) and
+\(0.215+2.05\times0.0037\),
+or between \(0.208\) and \(0.223\) seconds.
+If the true value in the population is within these limits, then the observed sample value has a probability of 95\% of occurring \citep[p.241]{Spie19}.
+\end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+In Figure \ref{fig:tempo95CIs}, you can see the results of a
+computer simulation to illustrate this. We have taken \(100\times\)
+imaginary samples of \(n=30\) native speakers of Standard Dutch, and established the
+speech tempo of these speakers. For each sample, we have drawn
+the 95\% confidence interval. For 95 of the 100 samples, the population
+mean \(\mu=0.220\) indeed falls within the interval.
+But for 5 out of 100 samples, from a population with \(\mu=0.220\), the sample's confidence interval does not contain the population mean (these are marked along the right hand side).
+
+\begin{figure}
+\centering
+\includegraphics{QMS-EN_files/figure-latex/tempo95CIs-1.pdf}
+\caption{\label{fig:tempo95CIs}95\% confidence intervals and sample means, over 100 simulated samples (n=30) out of a population with mean 0.220 and s.d. 0.0225; see text.}
+\end{figure}
+
+\hypertarget{formulas-2}{%
+\subsection{formulas}\label{formulas-2}}
+
+The two-sided \(B\)\% confidence interval for the population
+average is
+\begin{equation}
+  \bar{X} \pm t^*_{n-1} \times \frac{s}{\sqrt{n}}
+  \label{eq:t-onesampleCI}
+\end{equation}
+in which \(t^*\) with \(n-1\) degrees of freedom is found with the help of
+Appendix \ref{app:criticaltvalues}, see
+§\ref{sec:ttest-freedomdegrees} for more explanation about this.
+
+\hypertarget{ch:correlation-regression}{%
+\chapter{Correlation and regression}\label{ch:correlation-regression}}
+
+\hypertarget{introduction-5}{%
+\section{Introduction}\label{introduction-5}}
+
+Most empirical research is focused on establishing associations between
+variables. In experimental research, this primarily concerns associations
+between independent and dependent variables. In the coming section, we will
+look in more detail at the distinct ways of establishing whether a ``significant''
+(meaningful, non-accidental) relation exists between
+the independent and dependent variables. In addition, the researcher might be
+interested in the associations between several dependent variables,
+for example the associations between the judgements of several
+raters or judges (see also Chapter \ref{ch:reliability}).
+
+In quasi-experimental research, the difference between
+independent and dependent variables is usually less clear. Several
+variables are observed and the researcher is particularly interested
+in the associations between the observed
+variables. What, for instance, is the association between the scores for reading,
+arithmetic, and geography in the CITO study (see
+Table \ref{tab:cito})? In this chapter, we will look in more detail
+into the ways of expressing the association in a number:
+a correlation coefficient. There are different correlation coefficients depending on
+the variable's levels of measurement, which we will
+examine more in this chapter.
+
+It is advisable to always first make a graphic representation of
+an association between the variables, in the form of a so-called
+\emph{scatter plot},
+like in Figure \ref{fig:cito-scatter}. Each point in this scatter plot
+corresponds with a pupil (or more generally, with a unit from a
+sample). The position of each point (pupil) is determined by the observed
+values of two variables (here \(X\) is the score for the reading test,
+\(Y\) is the score for the arithmetic test). A scatter plot like this helps us to
+interpret a potential correlation, and to inspect whether the observations
+indeed satisfy the preconditions for calculating a correlation from the
+observations. In any case, look at (a) the presence of a potential correlation,
+(b) the form of that correlation (linear, exponential,\ldots),
+(c) potential outliers (extreme observations, see §\ref{sec:outliers}),
+and (d) the distribution of the two variables,
+see §\ref{sec:robustefficient}.
+
+\begin{figure}
+
+{\centering \includegraphics{QMS-EN_files/figure-latex/cito-scatter-1} 
+
+}
+
+\caption{Scatter plot of the scores of a reading test and an arithmetic test; see text.}\label{fig:cito-scatter}
+\end{figure}
+
+This scatter plot shows (a) that there is a relation between the scores
+for reading and arithmetic. The relation is (b) approximately linear, i.e.
+can be described as a straight line; we will return to this in
+§\ref{sec:regression}.
+The relation also helps us to explain the dispersion in the two
+variables. After all, the dispersion in the arithmetic scores can
+be partially understood or explained from the dispersion in the reading test:
+pupils who achieve a relatively good score in reading, also achieve this
+in arithmetic. The observations from the two variables thus not
+only provide information about the two variables themselves, but moreover
+about the association between the variables. In this scatter plot, we can moreover
+see (c) that the highest reading score is an outlier (see also
+Fig.\ref{fig:cito-boxplot}); such outliers can have a disproportionately
+large influence on the correlation found.
+
+\hypertarget{sec:Pearson}{%
+\section{Pearson product-moment correlation}\label{sec:Pearson}}
+
+The Pearson product-moment correlation coefficient is referred to with
+the symbol \(r\) (in the case of two variables). This coefficient can be
+used if both variables are observed on the interval level of measurement
+(§\ref{sec:interval}), and if both variables are approximately
+normally distributed
+(§\ref{sec:normaldistribution}). Nowadays, we do this calculation
+by computer.
+
+For the observations in the scatter plot in
+Fig.\ref{fig:cito-scatter}, we can find a correlation of \(r=+.79\). The
+correlation coefficient is a number that is by definition between \(-1\)
+and \(+1\). A positive correlation coefficient indicates a positive relation:
+a larger value of \(X\) corresponds with a larger value
+of \(Y\). A negative correlation indicates a negative relation:
+a larger value of \(X\) corresponds with a smaller value of
+\(Y\). A value of \(r\) which is close to zero indicates a weak
+or absent correlation: the dispersion in \(X\) is not related to the
+dispersion in \(Y\); there is no or only a weak correlation. We call a correlation of
+\(.4<r<.6\) (or \(-.6 < r < -.4\)) moderate. A correlation of
+\(r>.6\) (or \(r< -.6\)) indicates a strong association. If \(r=1\) (or
+\(r=-1\)), then all observations are precisely on a straight line.
+Figure \ref{fig:cor-scatter} shows several scatter plots with the
+accompanying correlation coefficients.
+
+\begin{figure}
+
+{\centering \includegraphics{QMS-EN_files/figure-latex/cor-scatter-1} 
+
+}
+
+\caption{Some scatter plots of observations with accompanying correlation coefficients.}\label{fig:cor-scatter}
+\end{figure}
+
+The correlation we see between the scores of the two variables (like
+\(r=.79\) between scores for the reading test and arithmetic test,
+Fig.\ref{fig:cito-scatter}) might also be the result of
+chance variations in the observations. After all, it is possible that
+the pupils who have a good score on the reading test achieve
+a good score on the arithmetic test purely by chance --- also when there is
+actually \emph{not} a correlation between the two variables in the population. We
+refer to the unknown correlation in the population with the Greek letter
+\(\rho\) (``rho''); as such, it is also possible that \(\rho=0\). Even if \(\rho=0\),
+it is possible to have \(n=10\) pupils in the sample who \emph{by chance} combine
+high scores on one part with high scores on the other part (and by chance not
+have pupils in the sample who combine high scores on one part with low scores
+on the other part). We can estimate what the probability \(p\) is
+of finding this correlation of \(r=0.79\) or stronger in a sample of
+\(n=10\) students, if the association in the population is actually
+nil (i.e.~if \(\rho=0\)). We call this probability \(p\) the
+\emph{significance} of the correlation coefficient; in Chapter \ref{ch:testing},
+we will look in more detail at this term `significance'.
+In anticipation of this: if this probability \(p\) is smaller than
+\(.05\), then we assume that the correlation found \(r\) is \emph{not by chance},
+i.e.~is \emph{significant}. We often see a small probability \(p\) with a strong
+correlation \(r\). The correlation coefficient \(r\) indicates the direction
+and strength of the relation, and the significance \(p\) indicates the probability
+of finding this relation by chance if \(\rho=0\) in the population. We report
+these findings as follows\footnote{When the correlation found \(r\) is \emph{not} significant, then this can thus be by chance,
+  and then we discount an interpretation of the correlation. We do then state in our report
+  the correlation coefficient found and the established significance for it.}:
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{quote}
+\emph{Example 11.1:}
+The scores of the \(n=10\) pupils on the CITO test subparts in
+Table \ref{tab:cito} show a strong correlation between the scores
+on the Reading and Arithmetic tests: Pearson \(r=0.79, p=.007\). Pupils
+with a relatively high score on one test generally also achieve
+a relatively high score on the other test.
+\end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+In many studies, we are interested in the correlations between more
+than two variables. These correlations between variables are often
+reported in a so-called pairwise
+correlation matrix like
+Table \ref{tab:cito-correlations}, which is a table where the correlations
+of all pairs of correlations are reported.
+
+\begin{longtable}[]{@{}lccc@{}}
+\caption{\label{tab:cito-correlations} Correlations between the three parts of the CITO
+test, as summarised in Table \ref{tab:cito}, with the accompanying significance level between brackets.}\tabularnewline
+\toprule
+& Reading & Arithmetic & Geography\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+& Reading & Arithmetic & Geography\tabularnewline
+\midrule
+\endhead
+Reading & 1.00 & &\tabularnewline
+Arithmetic & 0.79 (.007) & 1.00 &\tabularnewline
+Geography & -0.51 (.131) & -0.01 (.970) & 1.00\tabularnewline
+\bottomrule
+\end{longtable}
+
+In this matrix, only the lowest (left) half of the complete
+matrix is shown. This also suffices because the cells are mirrored
+along the diagonal: after all, the correlation between Reading (column 1) and Arithmetic
+(row 2) is the same as the correlation between Arithmetic (row 2) and
+Reading (row 1). In the cells on the diagonal, the pairwise correlation matrix
+always contains the value \(1.00\), since a variable always correlates perfectly with
+itself.
+We report these findings as follows:
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{quote}
+\emph{Examples 11.2:} The
+pairwise correlations between scores from the \(n=10\) pupils on the
+three subparts of the CITO test are summarised in
+Table \ref{tab:cito-correlations}. We can see a strong correlation between
+the scores for the Reading and Arithmetic tests: pupils with a relatively
+high score on the Reading test generally also achieve a relatively high
+score on the Arithmetic test. The remaining correlations were
+not significant.
+\end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{formulas-3}{%
+\subsection{Formulas}\label{formulas-3}}
+
+The simplest formula for the Pearson product-moment correlation coefficient
+\(r\) makes use of the standard normal scores we already used earlier
+(§\ref{sec:standardscores}):
+\begin{equation}
+    r_{XY} = \frac{\sum z_X z_Y}{n-1}
+  \label{eq:pearson}
+\end{equation}
+
+Just like when we calculate variance
+(formula \eqref{eq:variance}), we divide again by
+\((n-1)\) to make an estimate of the association in the population.
+
+\hypertarget{spss-5}{%
+\subsection{SPSS}\label{spss-5}}
+
+For Pearson's product-moment correlation coefficient:
+
+\begin{verbatim}
+Analyze > Correlate > Bivariate...
+\end{verbatim}
+
+Choose \texttt{Pearsons} correlation coefficient, tick:
+\texttt{Flag\ significant\ correlations}. Confirm \texttt{OK}. The resulting
+output (table) does not satisfy the style requirements; as such, you should
+take the data into or convert it into a table of your own which does satisfy these requirements.
+
+\hypertarget{r-6}{%
+\subsection{R}\label{r-6}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{cito \textless{}{-}}\StringTok{ }\KeywordTok{read.table}\NormalTok{(}\DataTypeTok{file=}\StringTok{"data/cito.txt"}\NormalTok{, }\DataTypeTok{header=}\OtherTok{TRUE}\NormalTok{)}
+\CommentTok{\# variable names are Lezen=Reading, Rekenen=Arithmetic, WO=Geography, ...}
+\KeywordTok{dimnames}\NormalTok{(cito)[[}\DecValTok{2}\NormalTok{]] \textless{}{-}}\StringTok{ }\KeywordTok{c}\NormalTok{( }\StringTok{"Pupil"}\NormalTok{, }\StringTok{"Reading"}\NormalTok{, }\StringTok{"Arithmetic"}\NormalTok{, }\StringTok{"Geography"}\NormalTok{,}
+                          \StringTok{"UrbanRural"}\NormalTok{, }\StringTok{"Arith.2cat"}\NormalTok{ )}
+\KeywordTok{cor}\NormalTok{( cito[,}\DecValTok{2}\OperatorTok{:}\DecValTok{4}\NormalTok{] ) }\CommentTok{\# correlation matrix of columns 2,3,4}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##               Reading Arithmetic   Geography
+## Reading     1.0000000 0.74921033 -0.50881738
+## Arithmetic  0.7492103 1.00000000  0.06351024
+## Geography  -0.5088174 0.06351024  1.00000000
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{with}\NormalTok{( cito, }\KeywordTok{cor.test}\NormalTok{( Reading, Arithmetic ) )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  Pearson's product-moment correlation
+## 
+## data:  Reading and Arithmetic
+## t = 3.1994, df = 8, p-value = 0.01262
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  0.2263659 0.9368863
+## sample estimates:
+##       cor 
+## 0.7492103
+\end{verbatim}
+
+\hypertarget{sec:regression}{%
+\section{Regression}\label{sec:regression}}
+
+The simplest relation that we can distinguish and describe is a linear
+relation, i.e.~a straight line in the scatter plot
+(see Fig.\ref{fig:cor-scatter}). This straight line indicates which value
+of \(Y_i\) is predicted, on the basis of the value of \(X_i\). This predicted value of
+\(Y_i\) is noted as \(\widehat{Y_i}\)
+(``Y-hat''). The best prediction \(\widehat{Y_i}\) is based on both the value
+of \(X_i\) and the linear relation between \(X\) and \(Y\):
+\begin{equation}
+    \widehat{Y_i} = a + b {X_i} 
+  \label{eq:linearmodel2}
+\end{equation}\\
+The straight line is described with
+two parameters, namely the intercept (or constant) \(a\) and the slope \(b\)
+\footnote{In school books, this comparison is described as \(Y = a X + b\), with \(a\) as the slope
+  and \(b\) as the intercept; however, we keep to the conventional international notation here.}. The straight line which describes the linear relation is often
+referred to as the ``regression line'';
+after all, we try to trace the observed values of \(Y\) back to this linear
+function of the values of \(X\).
+
+The difference between the observed value \(Y\) and the predicted value
+\(\widehat{Y}\) \((Y-\widehat{Y})\) is called the \emph{residual} (symbol
+\(e\)). In other words, the observed value is considered to be
+the sum of two components, namely the predicted value and the residual:
+\begin{align}
+    Y   &= \widehat{Y} + e \\
+        &= a + b X + e 
+  \label{eq:linearmodel3}
+\end{align}
+
+The above rationale is illustrated in the scatter plot in
+Figure \ref{fig:cito-linearmodel}. The dashed line indicates the linear relation
+between the two tests:
+\begin{equation}
+    \widehat{\textrm{Arithmetic}} = 12.97 + 0.52 \times \textrm{Reading}
+  \label{eq:cito-linearmodel}
+\end{equation}
+
+\begin{figure}
+
+{\centering \includegraphics{QMS-EN_files/figure-latex/cito-linearmodel-1} 
+
+}
+
+\caption{Scatter plot of the scores of a reading test and an arithmetic test. The diagram also indicates the regression line (dashed line), the predicted value (green) and residual (red) of the arithmetic test for pupil 2, the average (plus symbol), and markings for pupil 2 and 3; see text.}\label{fig:cito-linearmodel}
+\end{figure}
+
+This dashed line thus indicates what the value \(\widehat{Y}\) is for
+each value of \(X\). For the second pupil with \(X_2 = 32\),
+we thus predict \(\widehat{Y_2} = 12.97 + (0.52) (32) = 29.61\)
+(predicted vowel, green line fragment). For all observations which are not
+precisely on the regression line (dashed line),
+there is a deviation between the predicted
+score \(\widehat{Y}\) and the observed score \(Y\) (residual, red line
+fragment). For the second pupil, this deviation is
+\(e_2 = (Y_2 - \widehat{Y_2}) = (36-29.61) = 6.49\) (residual, red
+line fragment).
+
+As stated, the observed values of \(Y\) are considered to be the
+sum of two components, the predicted value \(\widehat{Y}\)
+(green) and the residual \(e\) (red). In the same way, the total \emph{variance}
+of \(Y\) can be considered to be the sum of the two \emph{variances} of these
+components:
+\begin{equation}
+    s^2_{Y} = s^2_{\widehat{Y}} + s^2_e
+  \label{eq:variance-pred-res}
+\end{equation}
+Of the total variance
+\(s^2_Y\) of Y, one part (\(s^2_{\widehat{Y}}\)) can be traced back to and/or
+explained from the variance of \(X\), via the linear relation described
+with parameters \(a\) and \(b\) (see
+formula \eqref{eq:linearmodel2}), and the other part (\(s^2_e\)) cannot be retraced
+or explained. The second part, the non-predicted variance of the residuals is also called
+the residual variance or unexplained variance.
+
+When we are able to make a good prediction \(Y\) from \(X\), i.e.~when the Pearson
+product-moment correlation coefficient \(r\) is high
+(Fig. \ref{fig:cor-scatter}, left), then the residuals \(e\) are thus relatively
+small, the observations are close around the regression line in the scatter
+plot, and then the residual variance \(s^2_e\) is also relatively small.
+Conversely, when we are \emph{not} able to predict \(Y\) well from \(X\), i.e.
+when the correlation coefficient is relatively low (Fig. \ref{fig:cor-scatter}, right),
+then the residuals \(e\) are thus relatively large, the observations are widely dispersed
+around the regression line in the scatter plot, and then the residual variance \(s^2_e\) is thus
+also relatively large. The square of the Pearson
+product-moment correlation coefficient \(r\) indicates what the relative size of the
+two variance components is, with respect to the total
+variance:
+\begin{align}
+    r^2 & = \frac{s^2_{\widehat{Y}}}{s^2_Y} \\
+        & = 1 - \frac{s^2_e}{s^2_Y}
+  \label{eq:r2}
+\end{align}
+This statistic \(r^2\) is referred to as the ``proportion of explained
+variance'' or as the ``coefficient of determination''.
+
+The values of the linear parameters \(a\) and \(b\) in
+formula \eqref{eq:linearmodel2} are so chosen that the collective
+residuals are as small as possible, i.e.~that the residual variance
+\(s^2_e\) is as small as possible (``least squares fit''), and thus \(r^2\)
+is as large as possible (see
+§\ref{sec:regression-formulas}). In this way, we can find a straight line
+which best fits the observations for \(X\) and \(Y\).
+
+A linear regression can also be reported as follows:
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{quote}
+\emph{Example 11.3:}
+Based on a linear regression analysis, it appears that the score
+for Arithmetic is related to that for Reading: \(b=0.51, r=.79, p_r=.007\), over \(n=10\)
+pupils. This linear regression model explains \(r^2=.51\) of the
+total variance in the arithmetic scores (the residual standard deviation is
+\(s_e= \sqrt{82.803/(n-1-1)} = 3.217\)).
+\end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{sec:regression-formulas}{%
+\subsection{Formulas}\label{sec:regression-formulas}}
+
+For linear regression of \(y\) on \(x\), we try to estimate the coefficients \(a\)
+and \(b\) such that (the square of) the deviation between the predicted value \(\hat{y}\)
+and the observed value \(y\) is as small as possible, in other words that the
+square of the residuals \((y-\hat{y})\) is as small as possible. This is called the
+``least squares'' method (see
+\url{http://www.itl.nist.gov/div898/handbook/pmd/section4/pmd431.htm}).
+
+The best estimation for \(b\) is
+\[b = \frac{ \sum_{i=1}^n (x_i-\overline{x})(y_i-\overline{y}) } { \sum_{i=1}^n (x_i-\overline{x})^2 }\]
+
+The best estimation for \(a\) is \[a = \overline{y} - b \overline{x}\]
+
+\hypertarget{spss-6}{%
+\subsection{SPSS}\label{spss-6}}
+
+For linear regression:
+
+\begin{verbatim}
+Analyze > Regression > Linear...
+\end{verbatim}
+
+Choose \texttt{Dependent\ variable:\ Arithmetic} and choose
+\texttt{Independent\ variable:\ Reading}. Under the button \texttt{Statistics}, tick
+\texttt{Model\ fit}, tick \texttt{R\ squared\ change}, choose \texttt{Estimates}, and afterwards
+\texttt{Continue}.\\
+Under the button \texttt{Plot}, tick \texttt{Histogram} and tick also
+\texttt{Normal\ probability\ plot}; these options are required to a get a
+numerical (!) summary over the residuals.~
+(already check once)
+Under the button \texttt{Options}, choose \texttt{Include\ constant} to also have
+the constant coefficient \(a\) calculated. Confirm all choices with \texttt{OK}.
+
+The resulting output includes several tables and figures; you cannot
+transfer these directly into your report. The table titled \emph{Model
+Summary} contains the correlation coefficient, indicated here with capital
+letter \(R=.749\).\\
+The table titled \emph{Coefficients} contains the regression coefficients. The
+line which has the designation \texttt{(Constant)} states coefficient \(a=13.25\);
+the line titled \texttt{Reading} states coefficient \(b=0.51\).\\
+The table titled \emph{Residual Statistics} provides information about both
+the predicted values and the residuals. Check whether the mean of the residual
+is indeed null. In this table, we can also see (line 2, column 4) that
+the standard variation of the residuals is \(3.212\).
+
+\hypertarget{r-7}{%
+\subsection{R}\label{r-7}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{summary}\NormalTok{( m1 \textless{}{-}}\StringTok{ }\KeywordTok{lm}\NormalTok{( Arithmetic}\OperatorTok{\textasciitilde{}}\NormalTok{Reading, }\DataTypeTok{data=}\NormalTok{cito ) )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = Arithmetic ~ Reading, data = cito)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -5.5332 -1.1167 -0.5332  1.7168  6.3384 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(>|t|)  
+## (Intercept)  13.2507     4.4910   2.950   0.0184 *
+## Reading       0.5128     0.1603   3.199   0.0126 *
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 3.406 on 8 degrees of freedom
+## Multiple R-squared:  0.5613, Adjusted R-squared:  0.5065 
+## F-statistic: 10.24 on 1 and 8 DF,  p-value: 0.01262
+\end{verbatim}
+
+The command \texttt{lm} specifies a linear regression model, with \texttt{Arithmetic}
+as the dependent variable and \texttt{Reading} as the predictor. This model is
+saved as an object called \texttt{m1}, and that is used again directly as an argument
+(input) for reporting. In the reporting of model \texttt{m1} the constant coefficient
+\(a\) is referred to as the \texttt{Intercept}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{sd}\NormalTok{( }\KeywordTok{resid}\NormalTok{( m1 ) ) }\CommentTok{\# s.d. of residuals according to \textasciigrave{}m1\textasciigrave{}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3.211533
+\end{verbatim}
+
+\hypertarget{influential-observations}{%
+\section{Influential observations}\label{influential-observations}}
+
+In the previous section, we saw that the aim in a correlation analysis
+or regression analysis is for a minimal residual variance.
+Earlier we also already saw that outliers or extreme observations, by definition,
+make a relatively large contribution to variance. Together, this means that
+outliers or extreme observations can have a large influence on the size of
+the correlation or on the regression found (the linear relation found). Pupil 3 has an
+extremely high score for Reading (see also
+Fig.\ref{fig:cito-boxplot}). If we discount pupil 3, then this would not greatly
+change the correlation (\(r_{-3}=.79\)) but it would change the slope of the regression line
+(\(b=0.84\), more than one and a half times as large as if pupil 3 were in fact included).
+This observation thus ``pulls'' hard on the regression line, precisely because
+this observation has an extreme value for \(X\) and therefore has much influence.
+
+Non-extreme observations can, however, also have a large influence on the
+correlation and regression, if they are far away from the regression line
+and thus make a large contribution to the residual variance. This too can be seen in
+Fig.\ref{fig:cito-linearmodel}.
+Pupil 2 has no extreme scores
+but does have the largest residual. If we discounted this pupil 2 then the
+correlation would be considerably higher
+(\(r_{-2}=.86\)) but the slope of the regression line would only
+change a little (\(b=0.45\)).
+
+As such, for a correlation analysis or regression analysis you always have
+to make and study a scatter plot in order to see to what extent the results
+have been influenced by one or a small number of observations. When doing so, pay
+particular attention to observations which are far away from the mean, to each
+of the two variables, and to observations which are far away from
+the regression line.
+
+\hypertarget{sec:Spearman}{%
+\section{Spearman's rank correlation coefficient}\label{sec:Spearman}}
+
+The variables whose correlation we want to investigate
+are not always both expressed on the interval level of measurement
+(§\ref{sec:interval}), regardless whether or not the researchers
+want to and are able to assume that both variables are
+approximately normally distributed
+(§\ref{sec:normaldistribution}).
+In that case, the product-moment correlation is less suitable for
+quantifying the association. If the data is indeed expressed on an
+ordinal level of measurement, then we can use other correlation coefficients
+to express the association: Spearman's rank correlation coefficient
+(\(r_s\)) and Kendall's \(\tau\) (the Greek letter ``tau''). Both of these coefficients
+are based on the ranking of the observations; we can thus always compute these correlations
+when we are able to order the observations. Nowadays, we also perform this calculation
+by computer. In this chapter, we only discuss the Spearman's rank correlation
+coefficient.
+
+The Spearman's rank correlation coefficient is equal to the Pearson
+product-moment correlation coefficient applied to the ranks of
+the observations. We convert every observation from a variable to
+a rank number, from the smallest observed value (rank 1)
+to the largest observed value (rank \(n\)). If two or more observations
+have the same value, then they also receive the same
+(mean) rank. In
+Table \ref{tab:cito-ranks}, you can see the ranks of the scores for Reading
+and Arithmetic, ordered here according to the ranks for Reading.
+
+\begin{longtable}[]{@{}lccrccrcccc@{}}
+\caption{\label{tab:cito-ranks} Ranks for the scores of 10 pupils on parts of a test, as summarised in
+Table \ref{tab:cito}, with difference \(v_i\) between the two ranks per pupil.}\tabularnewline
+\toprule
+Pupil & 1 & 9 & 6 & 4 & 10 & 8 & 5 & 7 & 2 & 3\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+Pupil & 1 & 9 & 6 & 4 & 10 & 8 & 5 & 7 & 2 & 3\tabularnewline
+\midrule
+\endhead
+Reading & 1 & 2 & 3 & 4.5 & 4.5 & 6 & 7 & 8 & 9 & 10\tabularnewline
+Arithmetic & 2 & 4 & 1 & 4 & 6.5 & 4 & 8 & 6.5 & 10 & 9\tabularnewline
+Difference \(v_i\) & -1 & -2 & 1 & 0.5 & -2 & 2 & -1 & 1.5 & -1 & 1\tabularnewline
+\bottomrule
+\end{longtable}
+
+The ranking in Table \ref{tab:cito-ranks} makes it clear at a glance that
+the three pupils with the lowest score for Reading (nos. 1, 9, 6) also almost achieved
+the lowest scores for Arithmetic. That indicates a positive
+relation. The two best readers (nos. 2 and 3) are also the two best
+arithmeticians. That also indicates a positive relation. However, there is
+also no question of a perfect positive relation (thus here \(r_s<1\)), because
+then the two rankings would match perfectly.
+
+Think how Table \ref{tab:cito-ranks} would look if there were a perfect
+negative relation (\(r_s=-1\)) between the scores for Reading and
+Arithmetic, and how the table would look if there were no correlation whatsoever
+(\(r_s=0\)) between these scores.
+
+\hypertarget{formulas-4}{%
+\subsection{Formulas}\label{formulas-4}}
+
+The association between the rankings of the two variables is expressed
+in the Spearman's rank correlation coefficient:
+\begin{equation}
+    r_s = 1 - \frac{6 \sum v_i^2}{n(n^2-1)}
+  \label{eq:spearman}
+\end{equation}
+in which \(v_i\) stands for
+the difference in rankings on both variables for respondent \(i\). The fraction
+in this formula gets larger and \(r_s\) thus gets smaller, the larger the
+differences between the ranks are.
+However, this formula can only be used if there are no ``ties'' (shared rankings) in the
+variables; for the dataset in Table \ref{tab:cito-ranks} with ``ties'' in both variables
+we have to use another formula.
+
+As can be seen, the Spearman's rank correlation \(r_s\) is not equal to the
+Pearson product-moment correlation \(r\) for the scores observed.
+If the preconditions of the Pearson coefficient are satisfied, then this
+Pearson product-moment correlation coefficient provides a better estimation of the
+association than the Spearman's rank correlation coefficient. However, if the preconditions
+are \emph{not} satisfied, then the Spearman's coefficient should be preferred again. The
+Spearman's coefficient is, amongst others, less sensitive for influential extreme
+observations --- after all, such outliers have less weighting once the
+raw scores have been replaced by the ranks.
+
+\hypertarget{spss-7}{%
+\subsection{SPSS}\label{spss-7}}
+
+For Spearman's rank correlation coefficient:
+
+\begin{verbatim}
+Analyze > Correlate > Bivariate...
+\end{verbatim}
+
+Choose \texttt{Spearman} rank correlation coefficient, tick:
+\texttt{Flag\ significant\ correlations}. Confirm with \texttt{OK}. The resulting
+output (table) does not satisfy the style requirements; you thus have to take
+the data into or convert it into a table of your own which does satisfy these requirements,
+and report according to the usual conventions for correlation analysis.
+
+\hypertarget{r-8}{%
+\subsection{R}\label{r-8}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{with}\NormalTok{(cito, }\KeywordTok{cor.test}\NormalTok{( Reading,Arithmetic, }\DataTypeTok{method=}\StringTok{"spearman"}\NormalTok{ ) )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning in cor.test.default(Reading, Arithmetic, method = "spearman"): Cannot
+## compute exact p-value with ties
+\end{verbatim}
+
+\begin{verbatim}
+## 
+##  Spearman's rank correlation rho
+## 
+## data:  Reading and Arithmetic
+## S = 25.229, p-value = 0.00198
+## alternative hypothesis: true rho is not equal to 0
+## sample estimates:
+##       rho 
+## 0.8470988
+\end{verbatim}
+
+\hypertarget{sec:Phi}{%
+\section{Phi}\label{sec:Phi}}
+
+The two variables for which we want to investigate the association are themselves
+not always expressed on an ordinal level of measurement (Chapter \ref{ch:levelsofmeasurement}).
+Even if both of the variables are measured only on a nominal level of measurement,
+then a correlation can still be calculated, namely the phi correlation coefficient
+(symbol \(r_\Phi\), with Greek letter ``Phi''). This correlation coefficient can also be used
+if one of the two variables is measured on a nominal level of measurement,
+and the other one is measured on an ordinal level of measurement.
+
+With our CITO test example, let us assume that the first five
+pupils come from a large city (urban), and the last five from the
+countryside (rural). The pupil's place of origin is a nominal variable,
+with 2 categories, here randomly referred to as \texttt{1} resp. \texttt{0} (see
+§\ref{sec:nominal}; a nominal variable with precisely 2
+categories is also called a binomial or dichotomous variable).
+We now ask ourselves whether there is some association between a
+pupil's place of origin and their score for the Arithmetic part of the CITO test.
+The second variable is of interval level of measurement. We convert this to a
+nominal level of measurement. That can be done in many ways, and it is the
+researcher's role to make a wise choice when doing so. Here, we
+choose the often used `mean split': one of the categories (low, code \texttt{0})
+consists of scores smaller than or equal to the mean
+(§\ref{sec:mean}), and the other category consists of scores larger
+than the mean (high, code \texttt{1}). We summarise the number of pupils in each of the
+\(2\times 2\) categories in a contingency table
+(Tabel \ref{tab:cito-contingency-table}).
+
+\begin{longtable}[]{@{}lccc@{}}
+\caption{\label{tab:cito-contingency-table} Contingency table of \(n=10\) pupils, subdivided according
+to origin (urban=1, rural=0) and according to category of score for the Arithmetic part of
+the CITO test (`mean split', low=0, high=1), with letter designations for the number
+of observations; see text.}\tabularnewline
+\toprule
+Origin & Low (0) & High (1) & Total\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+Origin & Low (0) & High (1) & Total\tabularnewline
+\midrule
+\endhead
+Rural (0) & 5 (A) & 0 (B) & 5 (A+B)\tabularnewline
+Urban (1) & 2 (C) & 3 (D) & 5 (C+D)\tabularnewline
+Total & 7 (A+C) & 3 (B+D) & 10 (A+B+C+D)\tabularnewline
+\bottomrule
+\end{longtable}
+
+The nominal correlation coefficient \(r_\Phi\) is equal to the Pearson
+product-moment correlation coefficient applied to the binomial codes
+(\texttt{0} and \texttt{1}) of the observations. All 5 pupils from the rural countryside
+have an Arithmetic score which is equal to or lower than average
+(\(\overline{y}=\) 27.2); out of the pupils from the urban city, 2 have a
+score which is (equal to or) lower than average. There is thus an association\\
+between the binomial codes of the rows (origin) and those of the columns
+(score categories) in Table \ref{tab:cito-contingency-table}.
+This association is quantified in the
+correlation coefficient \(r_\Phi=0.65\) for this data.
+
+\hypertarget{formulas-5}{%
+\subsection{Formulas}\label{formulas-5}}
+
+The nominal correlation coefficient \(r_\Phi\) is calculated as follows,
+where the letters refer to the numbers in the cells of a contingency table
+(see Table \ref{tab:cito-contingency-table}):
+\begin{equation}
+    r_\Phi = \frac{(AD-BC)}{\sqrt{(A+B)(C+D)(A+C)(B+D)}}
+  \label{eq:phi}
+\end{equation}
+
+For the example discussed above we then find
+\[
+    r_\Phi = \frac{(15-0)}{\sqrt{(5)(5)(7)(3)}} = \frac{15}{22.91} = 0.65
+\]
+
+\hypertarget{spss-8}{%
+\subsection{SPSS}\label{spss-8}}
+
+The dataset \texttt{cito} already contains the variable \texttt{UrbanRural} which indicates the
+origin of the pupils. However, for completeness, we will still show how you can
+construct a variable like this for yourself.
+
+\begin{verbatim}
+Transform > Recode into different variables...
+\end{verbatim}
+
+Choose \texttt{Pupil} as the old variable and fill in as the new name for the new variable
+\texttt{UrbanRural2}. Indicate that the old values in \texttt{Range} from
+1 to 5 (old) have to be transformed to the new value 1, and likewise that
+pupils 6 to 10 have to get the new value 0 for the new variable
+\texttt{UrbanRural2}.
+
+For \texttt{Arithmetic} it is a bit more complex. You firstly have to delete
+your transformation rules (which relate to \texttt{UrbanRural}). Then, make a new variable
+again in the same way as before, named \texttt{Arithmetic2}.
+All values from the lowest value to the mean (\(27.2\)) are transformed to the
+new value 0 for this new variable. All values
+from the mean (\(27.2\)) to the highest value are transformed to the new value 1.
+
+After this preparatory work, we can finally calculate \(r_\Phi\).
+
+\begin{verbatim}
+Analyze > Descriptives > Crosstabs...
+\end{verbatim}
+
+Select the variables \texttt{UrbanRural2} (in the ``Rows'' panel) and \texttt{Arithmetic2}
+(in the ``Columns'' panel) for
+contingency table @ref(tab: cito-contingency-table).\\
+Choose \texttt{Statistics\ldots{}} and tick the option \texttt{Phi\ and\ Cramer’s\ V}!\\
+Confirm firstly with \texttt{Continue} and then again with \texttt{OK}.
+
+\hypertarget{r-9}{%
+\subsection{R}\label{r-9}}
+
+The dataset \texttt{cito} already contains a variable \texttt{UrbanRural} which indicates the pupils' origins.
+However, for completeness, let us still see how you can construct such a variable for yourself.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{UrbanRural2 \textless{}{-}}\StringTok{ }\KeywordTok{ifelse}\NormalTok{( cito}\OperatorTok{$}\NormalTok{Pupil}\OperatorTok{\textless{}}\DecValTok{6}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{) }\CommentTok{\# 1=urban, 0=rural}
+\NormalTok{Arithmetic2 \textless{}{-}}\StringTok{ }\KeywordTok{ifelse}\NormalTok{( cito}\OperatorTok{$}\NormalTok{Arithmetic}\OperatorTok{\textgreater{}}\KeywordTok{mean}\NormalTok{(cito}\OperatorTok{$}\NormalTok{Arithmetic), }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{ ) }\CommentTok{\# 1=high, 0=low}
+\end{Highlighting}
+\end{Shaded}
+
+Here we build a new variable \texttt{Arithmetic2}, which has the value \texttt{1} if the score for
+Arithmetic is higher than the average, and otherwise has the value \texttt{0}.
+
+In R, we also start by making a contingency table (Table \ref{tab:cito-contingency-table} and we then calculate the \(r_\Phi\) over the contingency table.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{( }\KeywordTok{table}\NormalTok{(UrbanRural2,Arithmetic2) {-}\textgreater{}}\StringTok{ }\NormalTok{citocontingencytable ) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##            Arithmetic2
+## UrbanRural2 0 1
+##           0 5 0
+##           1 2 3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# make and store a contingency table}
+\ControlFlowTok{if}\NormalTok{ (}\KeywordTok{require}\NormalTok{(psych)) \{ }\CommentTok{\# for psych::phi}
+  \KeywordTok{phi}\NormalTok{(citocontingencytable) }\CommentTok{\# contingency table made earlier is input here!}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: psych
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'psych'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from '.hqenv':
+## 
+##     harmonic.mean, logit
+\end{verbatim}
+
+\begin{verbatim}
+## [1] 0.65
+\end{verbatim}
+
+\hypertarget{sec:correlationcausation}{%
+\section{Last but not least}\label{sec:correlationcausation}}
+
+At the end of this chapter, we want to emphasise again that an association or correlation
+between two variables does not necessarily mean
+that there is a causal relation between the variables, in other words
+a correlation does not mean that one variable (e.g.~treatment) is the consequence of
+the other variable (e.g.~cure).
+The common saying for this is ``correlation does not imply
+causation,'' see also Example 6.1 (Chapter \ref{ch:design})
+and accompanying Figure \ref{fig:xkcd552}.
+
+\textbackslash begin\{figure\}
+
+\{\centering \includegraphics{figures/correlation}
+
+\}
+
+\textbackslash caption\{\emph{Correlation does not imply causation}, borrowed with permission from \url{http://xkcd.com/552}.\}\label{fig:xkcd552}
+\textbackslash end\{figure\}
+
+\hypertarget{ch:reliability}{%
+\chapter{Reliability}\label{ch:reliability}}
+
+\hypertarget{introduction-6}{%
+\section{Introduction}\label{introduction-6}}
+
+In Chapter \ref{ch:validity}, we talked about, amongst other matters,
+construct validity, the distance between the intended (theoretical)
+concept or construct on the one hand, and the independent or dependent variable
+on the other hand. In this Chapter, we will look at another very important
+aspect of the dependent variable, namely its \emph{reliability}.
+This reliability can be estimated based on the
+association between observations of the same construct.
+We will also look at the relations between reliability and construct validity.
+
+Often validity and reliability are mentioned in the same breath, and discussed in consecutive
+chapters. There is something to be said for this, since both concepts are about how you define and
+operationalise your variables. Nevertheless, we have chosen a different ordering here. Reliability
+will only be discussed following our discussion of correlation (Chapter
+\ref{ch:correlation-regression}), since reliability is based on the relation or correlation
+between observations.
+
+\hypertarget{what-is-reliability}{%
+\section{What is reliability?}\label{what-is-reliability}}
+
+A reliable person is stable and predictable: what he or she does
+today is consistent with what he or she did last week, you can trust
+this person --- in contrast to an unreliable person, who
+is unstable and behaves unpredictably. According to Collins English Dictionary, someone or something is reliable when they/it ``\ldots can be trusted to work well or to behave in the way that you want them to''.\footnote{\url{https://www.collinsdictionary.com/dictionary/english/reliable}}
+Reliable measurements can form the basis for a
+``justified true belief'' (see
+§\ref{sec:falsification}); conversely, it is not worth
+giving credence to unreliable measurements.
+
+Measurements always show some degree of fluctuation or variation or
+inconsistency. This variability can partially be attributed to the
+variation in the behaviour which is being measured. After all, even if we
+measure the same construct for the same person, we still see variance
+as a result of the momentary mental or physical state of the participant,
+which simply fluctuates. Moreover, there is variation in the measuring device
+(thermometer, questionnaire, sensor), and there are probably inconsistencies in the manner
+of measurement or evaluation. With the quantification of such consistencies and
+inconsistencies, we enter the realms of reliability analysis.
+
+The term `reliability' has two meanings in academic research, which we
+will treat separately. Firstly, reliability signifies the \emph{precision}
+or \emph{accuracy} of a measurement. This aspect concerns the question of the extent
+to which the measurement is influenced by chance factors (through which the
+measurement does not exclusively render the construct investigated).
+If we do \emph{not} measure
+accurately then we also know what the measurements actually show ---
+perhaps they show the construct investigated but perhaps they also do not. If we do
+measure accurately then we would expect, if we were to conduct the same measurement again,
+that we would then measure the same outcome. The less precise a measurement is, the more variation or inconsistency there is between the first measurement and the repeated measurement,
+and the measurements are thus less reliable.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{quote}
+\emph{Example 12.1:} If we want to measure the reading ability
+of pupils in their final examinations, then we present them
+with a reading comprehension test with a number of accompanying questions.
+The degree to which the different questions measure \emph{the same} construct, here the
+construct `reading ability', is called reliability, precision or
+homogeneity.
+\end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+In what follows, to avoid confusion, we will refer to this form
+of reliability with the term \emph{homogeneity} (vs.~
+heterogeneity). With a heterogenous (non-homogenous) test, the total score
+is difficult to interpret. With a perfectly homogenous test, people
+who have the same total score have also answered the same questions correctly.
+However, when we measure human (language) behaviour, such perfectly homogenous tests
+never occur: respondents who do achieve the same total score, have not
+always answered the same questions correctly (e.g.~in the final examination
+reading ability test, Example 12.1). This implies that the questions have not
+measured exactly the same capacity. This is also the case: one question was about
+paraphrasing a paragraph, whilst another was related to a relationship between
+a referential expression and its antecedent.\\
+As such, the questions or items were not perfectly homogenous!
+
+Secondly, reliability signifies a measurement's \emph{stability}.
+To measure your weight, you stand on a weighing scale. This
+measurement is stable: five minutes later, the same weighing scale with the same
+person under the same circumstances will also yield (almost)
+the same measurement. Stability is often expressed in a so-called
+correlation coefficient (a measurement for association, see Chapter
+\ref{ch:correlation-regression}). This correlation coefficient can assume all
+values between \(+1\) and \(-1\). The more similar the first and second measurement,
+the higher the correlation is, and the higher the association between the first and second
+measurement. Conversely, the lower the association between the first and second
+measurement is, the lower too the correlation is.
+
+Stable measurements nevertheless rarely occur in research on
+(language) behaviour. If is a test is taken twice, then there is often
+a considerable difference in scores on the first measurement point
+and scores on the second measurement point.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{quote}
+\emph{Example 12.2:}
+In the final examination for Dutch secondary school, pupils typically have to write an essay, which is
+assessed by two raters. The raters are stable if, after some time, they
+give the same judgements to the same essays. Thus: if rater A at first gave a grade
+8 to an essay, and for the second evaluation sometime later, he/she also gave the same
+essay an 8, then this rater is (very) stable. If, however, the same
+rater A gave this same essay a grade 4 on the second evaluation, then this
+rater is not stable in his/her judgements.
+\end{quote}
+
+\begin{quote}
+Now, grading essays is a tricky task: criteria are not precisely described
+and there is a relatively large amount of room for
+interpretation differences. Accordingly, the stability of judgements is also
+low; previously, a stability coefficient of even \(0.40\) has
+been reported.
+\end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+To calculate a test's stability, the same test has to be
+taken twice; the degree of association between the first and
+second measurement is called the \emph{test-retest-reliability}.
+In practice, repeatedly sitting a test like this rarely takes place due to
+the relatively high costs and relatively low benefits.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{quote}
+\emph{Example 12.3:}
+\citet{Lata09} developed
+a Spanish-language questionnaire consisting of 39 questions, intended
+for aphasia patients to determine their quality of life. The quality of life
+is described as ``the patient perception about, either the
+effects of a given disease, or the application of a certain treatment on
+different aspects of life, especially regarding its consequences on the
+physical, emotional and social welfare'' \citep[p.379]{Lata09}. The new questionnaire
+was taken twice with a sample of 23
+Spanish-language patients with aphasia as a result of cerebral haemorrhage.
+The reported test-retest stability for this questionnaire was
+\(0.95\).
+\end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+Both homogeneity and stability are expressed as a
+coefficient with a value between \(0\) and \(1\) (in practice, negative coefficients
+do not occur). How should we interpret the reported
+coefficients? Generally, it is of course the case that the higher the coefficient is,
+the higher (better) the reliability. But how large should the reliability minimally be
+before we can call a test ``reliable''? There are no clear rules for this.
+However, when considerations have to be made about people, then the test has to
+have a reliability of at least \(0.90\) according to the \emph{Nederlands
+Instituut van Psychologen} `Dutch Institute for Psychologists' (NIP).
+This is, for instance, the case for tests which are used to determine whether or not a child is eligible for a so-called dyslexia declaration.\\
+For research purposes, such a strict requirement for the reliability of a
+test is not required. Often, \(0.70\) is used as the lower limit of the
+reliability coefficient.
+
+\hypertarget{test-theory}{%
+\section{Test theory}\label{test-theory}}
+
+Classical test theory refers to the measurement of variable \(x\)
+for the \(i\)-th element of a sample consisting of random members of the
+population. Test theory posits that each measurement \(x_i\) is composed
+of two components, namely a true score \(t_i\) and an error score:\\
+\begin{equation}
+  x_i = t_i + e_i
+  \label{eq:obs-true-error}
+\end{equation}
+Imagine that you ``actually'' weigh \(t=72.0\) kg, and imagine also
+that your measured weight is \(x=71.6\) kg, then the error score
+is \(e=-0.4\) kg.
+
+A first important assumption in classical test theory is that
+the deviations \(e_i\) neutralise or cancel each other out (i.e.~are zero when averaged
+out, and thus do not deviate systematically from the true score \(t\)), and
+that larger deviations above or below occur less often than smaller
+deviations. This means that the deviations are normally distributed (see
+§\ref{sec:normaldistribution}), with \(\mu_e=0\) as mean:
+\begin{equation}
+  \label{eq:normal-error}
+  e_i \sim \mathcal{N}(0,s^2_e)
+\end{equation}
+
+A second important assumption in classical test theory is that there
+is no relation between the true scores \(t_i\) and the error scores \(e_i\).
+Since the component \(e_i\) is completely determined by chance, and thus does not
+have any relation with \(x_i\), the correlation between the true score and
+the error score is null:
+\begin{equation}
+  \label{eq:r-true-error}
+  r_{(t,e)} = 0
+\end{equation}
+
+The total variance of \(x\) is thus\footnote{\(s^2_{(t+e)} = s^2_t + s^2_e + 2 r_{(t,e)} s_t s_e\), with here \(r_{(t,e)}=0\) according to the formula\eqref{eq:r-true-error}.} equal to the sum of the variance
+of the true scores and the variance of the error scores:
+\begin{equation}
+  \label{eq:var-true-error}
+  s^2_x = s^2_t + s^2_e
+\end{equation}
+
+When the observed variance \(s^2_x\) proportionately contains much
+error variance (i.e.~variance of deviations), then the observed scores
+have been determined for the most part by chance deviations. That is of course
+undesirable. In a such instance, we say that the observed scores
+are not reliable; there is much ``noise'' in the observed scores.\\
+When the error variance in contrast is relatively small, then
+the observed scores provide a good reflection of what the true scores are,
+and then the observed differences are indeed reliable, i.e.~they
+are not much determined by chance differences.
+
+In that case, we can also define reliability (symbol \(\rho\)) as the
+proportion between true score variance and total variance:\\
+\begin{equation}
+  \label{eq:rho-reliability}
+  \rho_{xx} = \frac{s^2_t}{s^2_x}
+\end{equation}
+
+However, in practice, we cannot use this formula \eqref{eq:rho-reliability} to
+establish reliability, since we do not know \(s^2_t\). We must thus firstly
+estimate what the true score variance is --- or what the error variance is, which, after all,
+is the complement of the true score variance (see
+formula \eqref{eq:var-true-error})\footnote{An exception to this is a situation in which \(s^2_x=0\), and thus \(s^2_t=0\), thus reliability \(\rho=0\); the dependent variable \(x\) has then not been
+  operationalised well.}.
+
+The second assumption (in formula \eqref{eq:r-true-error}), that there is no relation between
+true score and error score, is, in practice, not always justified.
+To illustrate, let us look at the results of a test on\\
+a scale from 1.0 to 10.0. Students with scores of 9 or 10 have a high
+true score too (they master the material very well) and thus usually have a low
+error score. The students with scores of 1 or 2 also have a low true score
+(they master the material very badly) and thus also usually have a low
+error score. For the students with scores of 5 or 6,
+the situation is different: perhaps they master the material fairly well
+but have just given a wrong answer, or perhaps they master the material poorly but have by chance given a good answer. For these students with an observed
+score in the middle of the scale, the error scores are relatively larger
+than for the students with a score at the ends of the scale. In other domains,
+e.g.~for reaction times, we see other relations, e.g.~that the error score increases
+more or less equally with the score itself; there is then a positive relationship
+between the true score and the error score (\(\rho_{(t,e)}>0\)). Nevertheless,
+the advantages of the classical test theory are so large that we use this
+theory as a starting point.
+
+From the formulas \eqref{eq:var-true-error} and \eqref{eq:rho-reliability}
+above, it also follows that the standard error of measurement is related to the
+standard deviation and to the reliability:
+\begin{equation}
+   \label{eq:standard-error-measurement}
+    s_e = s_x \sqrt{1-r_{xx}}
+\end{equation}\\
+This standard error measurement can be understood
+as the standard deviation of the error scores \(e_i\), assuming still that
+the error scores are normally distributed (formula \eqref{eq:normal-error}).
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{quote}
+\emph{Example 12.4:}
+External inspectors doubt whether teachers mark their students' final
+papers well. If a student got a 6, should the final paper have perhaps actually
+been judged as a fail?
+\end{quote}
+
+\begin{quote}
+Let us assume that the given assessment shows a standard deviation
+of \(s_x=0.75\), and let us equally assume that an analysis of reliability
+had shown that \(r_{xx}=0.9\). The standard error measurement is then \(s_e = 0.24\)
+points (rounded up). The probability that the true score \(t_i\) is smaller than
+or equal to 5.4 (the minimum for a fail), with an observed
+score of \(x_i=6.0\) and \(s_e=0.24\), is only \(p=0.006\) (for explanation,
+see §\ref{sec:t-confidenceinterval-mean} below). The
+final paper's assessment as a pass is with high probability correct.
+\end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{interpretations}{%
+\section{Interpretations}\label{interpretations}}
+
+Before we look at the different ways of calculating
+reliability, it is a good idea to pause on the different
+interpretations of reliability estimations.
+
+First, reliability can be interpreted as the proportion of
+true score variance (see formula \eqref{eq:rho-reliability}), or
+as the proportion of variance which is ``systematic''.
+This is different from the proportion of variance resulting from the concept-as-defined,
+the ``valid'' variance (see Chapter \ref{ch:validity}).
+The variance resulting from the concept-as-defined is part of the proportion of
+true score variance.
+However, many other factors may systematically influence
+respondents' scores, such as differences in test experience. If two students \(i\) and \(j\)
+possess a concept (let us say: language proficiency) to the same degree, then one of the
+students can still score more highly because he or she has done (and practiced) language proficiency
+tests more often than the other student. Then, there is no difference
+in the concept-as-defined (language proficiency \(T_i = T_j\)),\\
+but there is in another factor (experience), and thus a difference arises
+between the students in their `true' scores (\(t_i \neq t_j\)) which
+we measure with a valid and reliable language proficiency measurement. When measuring,
+deviations and measurement errors appear (\(e_i\) and \(e_j\)), through which
+the observed differences between students (\(x_i-x_j\)) can be larger or smaller than their
+differences in `true' score (\(t_i-t_j\)).
+This is the reason why a reliability estimate always forms the upper limit of
+the validity.
+
+A second interpretation of reliability (formula \eqref{eq:rho-reliability})
+is that of the theoretically expected correlation (see
+§\ref{sec:Pearson}) between measurements, when measurements are replicated
+many times. For convenience, we assume that memory and fatigue
+effects have no effect at all on the second and later measurements. If we were to
+measure the same people with the same measurement
+three times, without memory or fatigue effects, then the scores from the first and
+second measurement, and from the first and third measurement, and from
+the second and third measurement would always show the same correlation
+\(\rho\). This correlation thus indicates the extent to which the repeated measurements
+are consistent, i.e.~represent the same unknown true score.
+
+In this interpretation, reliability thus expresses the expected association
+between scores from the same test taken repeated times. We then interpret the reliability
+coefficient \(\rho\) as the correlation between two measurements
+with the same instrument.
+
+Thirdly, reliability can be interpreted as the loss
+of efficiency in the estimation of the mean score \(\overline{X}\)
+\citep[ p.474]{Ferg89}. Imagine that we want to establish the mean score of a group of
+\(n=50\) participants, and for this we use a measurement instrument
+with reliability \(\rho_{xx}=0.8\). In this case, there is uncertainty in the estimation,
+which come from the chance deviations \(e_i\) in the measurements.
+If the measurement instrument were perfectly reliable (\(\rho=1\)), we would only
+need \(\rho_{xx}\times n = 0.8\times50=40\) participants for the same accuracy in
+the estimation of \(\overline{X}\)
+\citep[ p.474]{Ferg89}. As such, we have, as it were, played away 10 participants
+to compensate for the unreliability of the measurement instrument.
+
+Above, we spoke about measurements with the help of measurement instruments,
+and below we will talk about ratings done
+by raters. In these situations, the approach to the notion of `reliability'
+is always the same. Reliability plays a role in all situations where
+elements from a sample are measured or assessed by multiple assessors or instruments.
+Non-final exams and questionnaires can also be such measurement instruments: a non-final
+exam or questionnaire can be thought of as a composite instrument
+with which we try to measure an abstract property or condition of the participants.
+Each question can then be considered as a
+``measurement instrument'' or ``assessor'' of the respondent's property or condition.
+For this, all of the above mentioned insights and interpretations concerning
+test theory, measurement error and reliability are equally applicable.
+
+\hypertarget{methods-for-estimating-reliability}{%
+\section{Methods for estimating reliability}\label{methods-for-estimating-reliability}}
+
+A measurement's reliability can be determined in different ways.
+The most important are:
+
+\begin{itemize}
+\item
+  The \emph{test-retest method}\\
+  We conduct all measurements twice, and then calculate the correlation
+  between the first and the second measurement. The fewer measurement errors
+  and deviations the measurements contain, the higher the correlation
+  and thus also the reliability is. This method is
+  time consuming but can also be applied to a small portion of the
+  measurements. In speech research, this method is indeed used to establish
+  the reliability of phonetic transcriptions: part of the speech
+  recordings are transcribed by a second assessor, and then both transcriptions
+  are compared.
+\item
+  The \emph{parallel forms method}\\
+  We have a large collection of measurements which are readily
+  comparable and measure the same construct. We conduct all
+  measurements repeatedly, the first time by combining the measurements
+  of several measurement instruments chosen at random (let's say A
+  and B and C) and the second time by using other random
+  instruments (let's say D and E and F). Since the measurement instruments are
+  `parallel' and the same measurement is considered to be measured, the correlation
+  between the first and the second measurement is an indication of the
+  measurement's reliability.
+\item
+  The \emph{split-half method}\\
+  This method is similar to the parallel forms method. The \(k\) questions
+  or instruments are divided into two halves, after which the score
+  is determined within each half. From the correlation \(r_{hh}\) between
+  the scores from the two half tests, the reliability of the whole test can
+  be deduced, \(r_{xx} = \frac{2r_{hh}}{1+r_{hh}}\).
+\end{itemize}
+
+\hypertarget{reliability-between-assessors}{%
+\section{Reliability between assessors}\label{reliability-between-assessors}}
+
+As an example, let us look at language proficiency measurements from students
+in a foreign language. This construct `language proficiency'
+is measured in this example by means of two assessors who each, independently
+of the other, award a grade between 1 and 100 to the student (higher is better).
+However, when assessing, measurement errors also arise, through which the judgements
+not only reflect the underlying true score but also a deviation if it, with
+all the aforementioned assumptions. Let us firstly look at the
+judgements by the first and second rater (see Table
+\ref{tab:reliability}). For the time being, the final judgement of a student is
+the mean of the judgements from the first and second rater.
+
+\begin{longtable}[]{@{}cccc@{}}
+\caption{\label{tab:reliability} Judgements about language proficiency
+from \(n = 10\) students (rows) by \(k = 3\) raters (columns).}\tabularnewline
+\toprule
+Student & B1 & B2 & B3\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+Student & B1 & B2 & B3\tabularnewline
+\midrule
+\endhead
+1 & 67 & 64 & 70\tabularnewline
+2 & 72 & 75 & 74\tabularnewline
+3 & 83 & 89 & 73\tabularnewline
+4 & 68 & 72 & 61\tabularnewline
+5 & 75 & 72 & 77\tabularnewline
+6 & 73 & 73 & 78\tabularnewline
+7 & 73 & 76 & 72\tabularnewline
+8 & 65 & 73 & 72\tabularnewline
+9 & 64 & 68 & 71\tabularnewline
+10 & 70 & 82 & 69\tabularnewline
+\(\overline{x_i}\) & 71.0 & 74.4 & 71.7\tabularnewline
+\(s_i\) & 5.6 & 7.0 & 4.7\tabularnewline
+\bottomrule
+\end{longtable}
+
+The judgements of only the first and the second assessor show a
+correlation of \(r_{1,2}=.75\). This means (according to the formula
+\eqref{eq:rho-reliability}) that 75\% of the total variance in the
+judgements of these two raters can be attributed to differences
+between the students rated, and thus 25\% of measurement errors (after all,
+we have assumed that there are no systematic differences between
+raters). The proportion of measurement errors appears to be quite high.
+However, we can draw hope from one of our earlier observations, namely that
+the raters' measurement errors are not correlated. The
+\emph{combination} of these two raters --- the mean score per student
+over the two raters --- thus provides more reliable measurements
+than each of the two raters can do separately. After all, the
+measurement errors of the two raters tend to cancel each other out
+(see formula \eqref{eq:normal-error}).
+Reread the last two sentences carefully.
+
+Reliability is often expressed as \emph{Cronbach's Alpha}
+\citep{Cort93}. This number is a measure for the consistency or homogeneity
+of the measurements, and thus also indicates the degree to which the two
+raters have rated the same construct. The simplest definition is
+based on \(\overline{r}\), the mean correlation between
+measurements of \(k\) different raters\footnote{In our example, there are only \(k=2\) raters, thus there is only one
+  correlation, and \(\overline{r} = r_{1,2} = 0.75\).}.
+\begin{equation}
+  \label{eq:cronbach-corr}
+  \alpha = \frac{k \overline{r}} {1+(k-1)\overline{r}}
+\end{equation}
+
+Filling in \(k=2\) raters and \(\overline{r}=0.75\) provides \(\alpha=0.86\) (SPSS and R
+use a somewhat more complex formula for this, and report
+\(\alpha=0.84\)). This measurement for reliability is not only referred to
+as Cronbach's Alpha but also as the Spearman-Brown formula
+or the Kuder-Richardson formula 20 (KR=20)\footnote{The so-called `intra-class correlation coefficient' (ICC) for \(k\)
+  is likewise identical to the Cronbach's Alpha.}.
+
+The value of Cronbach's Alpha found is a bit tricky to evaluate
+since it is also dependent on the number of instruments or raters or
+questions in the test \citep{Cort93, Glin01}. For academic research,
+a lower limit of 0.75 or 0.80 is often used. If the result of the test or measurement
+is of great importance to the person concerned, as in the case of medical or
+psychological patient diagnosis, or when recruiting and selecting personnel, then
+an even higher reliability of \(\alpha=.9\) is recommended \citep{Glin01}.
+
+If we want to increase reliability to \(\alpha=0.9\) or higher, then
+we can achieve that in two ways. The first way is to expand the
+number of raters. If we combine more raters in the total score,
+then the measurement errors of these raters also better cancel out each other,
+and then the total score is thus more reliable. Using
+the formula \eqref{eq:cronbach-corr}, we can investigate how many raters
+are needed to improve the reliability to \(\alpha=0.90\) or better. We fill in\\
+\(\alpha=0.90\) and again \(\overline{r}=0.75\), and then find an outcome of
+minimally \(k=3\) raters. The \emph{increase} in reliability levels off, the more
+raters there are already participating: if \(k=2\) then \(\alpha=.84\), if \(k=3\) then
+\(\alpha=.84+.06=.90\), if \(k=6\) then \(\alpha=.90+.05=.95\), if \(k=9\) then
+\(\alpha=.95+.01=.96\), etc. After all, if there are already 6 raters who are
+already readily cancelling out each other's measurement errors, then 3 extra
+assessors add little to the reliability.
+
+The second way of increasing reliability is by reducing the measurement
+error. We can try to do this, for example, by instructing the raters as well as
+possible
+about how they should rate the students' language proficiency. An assessment
+protocol and/or
+instruction can make the deviations between and within raters smaller.
+Smaller deviations mean smaller measurement errors, and that again means
+higher correlations between the raters. For an
+\(\overline{r}=0.8\), we already almost achieve the desired reliability, with
+only \(k=2\) raters.
+
+A third way of increasing reliability requires a closer analysis of
+the separate raters. To explain this, we also now involve the third
+rater in our considerations (see Table
+\ref{tab:reliability}). However, the judgements of the third rater show
+low correlations with those of the first and second
+assessor: \(r_{1,3}=0.41\) and \(r_{2,3}=0.09\). As a consequence, the mean
+correlation between assessors is now lower,
+\(\overline{r}=0.42\). As a result of taking this third rater, the reliability
+has not risen but instead actually lowered to
+\(\alpha = \frac{3\times0.42}{1+2\times0.42} = 0.68\). We can thus
+perhaps better ignore the measurements of the third rater.
+Also if we investigate the reliability of a non-final exam or test or questionnaire
+it can seem that the reliability of a whole test \emph{increases} if some
+``bad'' questions are removed. Apparently, these ``bad'' questions measured
+a construct which differed from what the remaining questions measured.
+
+\hypertarget{reliability-and-construct-validity}{%
+\section{Reliability and construct validity}\label{reliability-and-construct-validity}}
+
+When a measurement is reliable, then ``something'' has been measured reliably.
+But this still does not show \emph{what} has been measured! There is a
+relation between reliability (how measurements are made) and construct
+validity (what is measured, see
+Chapter \ref{ch:validity}), but these two terms are not identical.
+Sufficient reliability is a requirement for validity, but
+is not a sufficient condition for it. Put otherwise: a test which
+is not reliable can also not be valid (since this test also measures noise),\\
+but a test which is reliable does not have to be valid.
+Perhaps, the test used does measure another construct other than what
+was intended very reliably.
+
+An instrument is construct valid if the concept measured matches
+the intended concept or construct. In
+Example 12.3, the questionnaire is valid if the score from
+the questionnaire matches the quality of life (whatever that actually
+is) of the aphasia patients. Only once it has been shown that
+an instrument is reliable, is it meaningful to speak about a measurement's
+construct validity. Reliability is a necessary but not a sufficient condition for
+construct validity. An unreliable
+instrument can thus not be valid but a reliable instrument does not necessarily
+have to be valid.
+
+To measure reading proficiency, we get the pupils to write
+an essay. We count the number of letters \emph{e} in each essay. This is
+a very reliable measurement: different raters arrive at the same
+number of \emph{e}'s (raters are homogenous) and the same rater always also
+delivers the same outcome (raters are stable). The great objection here is that
+the number of \emph{e}'s in an essay does not or does not necessarily match the concept
+of reading proficiency. A pupil who has incorporated more \emph{e}'s into his/her essay
+is not necessarily a better writer.
+
+Whilst researchers know that reliability is a necessary but not
+sufficient condition for validity, they do not always use these terms
+carefully. In many studies, it is tacitly
+assumed that if the reliability is sufficient, the validity
+is also then guaranteed. In Example 12.3 too, the difference is not
+made clear and
+the researchers do not discuss the construct validity of their new
+questionnaire explicitly.
+
+\hypertarget{spss-9}{%
+\section{SPSS}\label{spss-9}}
+
+For a reliability analysis of the \(k=3\) judgements over
+language proficiency in
+Table~\ref{tab:reliability}:\\
+
+\begin{verbatim}
+Analyze > Scale > Reliability Analysis...
+\end{verbatim}
+
+Select the variables which are considered to measure the same construct;
+here that is three raters. We look at these \(k=3\)
+assessors as ``items'' who measure the property ``language proficiency'' of 10
+students. Drag these variables to the Variable(s) panel.\\
+As Scale label, fill in an indication of the construct, e.g.
+\texttt{language\ proficiency}.\\
+As a method, choose \texttt{Alpha} for Cronbach's Alpha (see formula
+\eqref{eq:cronbach-corr})\\
+Choose \texttt{Statistics\ldots{}}, tick: Descriptives for
+\texttt{Item,\ Scale,\ Scale\ if\ item\ deleted}, Inter-Item \texttt{Correlations},
+Summaries \texttt{Means,\ Variances}, and confirm with \texttt{Continue} and again
+with \texttt{OK}.
+
+The output includes Cronbach's Alpha, the desired inter-item correlations
+(particularly high between raters 1 and 2), and (in Table
+Item-Total Statistics) the reliability if we remove a certain
+rater. This last output teaches us that
+raters 1 and 2 are more important than rater 3. If we
+were to replace raters 1 or 2, then the reliability would collapse
+but if we were to remove rater 3 then the reliability
+would even increase (from 0.68 to 0.84). Presumably, this rater
+has rated a different concept to the others.
+
+\hypertarget{r-10}{%
+\section{R}\label{r-10}}
+
+For a reliability analysis of \(k=3\) language proficiency
+judgements in Table \ref{tab:reliability}:\\
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{raters \textless{}{-}}\StringTok{ }\KeywordTok{read.table}\NormalTok{(}\DataTypeTok{file=}\StringTok{"data/beoordelaars.txt"}\NormalTok{, }\DataTypeTok{header=}\OtherTok{TRUE}\NormalTok{)}
+\ControlFlowTok{if}\NormalTok{ (}\KeywordTok{require}\NormalTok{(psych)) \{ }\CommentTok{\# for psych::alpha}
+  \KeywordTok{alpha}\NormalTok{( raters[,}\DecValTok{2}\OperatorTok{:}\DecValTok{4}\NormalTok{] ) }\CommentTok{\# columns 2 to 4}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Number of categories should be increased  in order to count frequencies.
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Reliability analysis   
+## Call: alpha(x = raters[, 2:4])
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N  ase mean  sd median_r
+##       0.68      0.68    0.74      0.41 2.1 0.17   72 4.6     0.41
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.35 0.68 1.01 
+## 
+##  Reliability if an item is dropped:
+##    raw_alpha std.alpha G6(smc) average_r  S/N alpha se var.r med.r
+## B1      0.15      0.16   0.088     0.088 0.19    0.497    NA 0.088
+## B2      0.58      0.58   0.410     0.410 1.39    0.264    NA 0.410
+## B3      0.84      0.85   0.745     0.745 5.84    0.095    NA 0.745
+## 
+##  Item statistics 
+##     n raw.r std.r r.cor r.drop mean  sd
+## B1 10  0.93  0.92  0.91   0.81   71 5.6
+## B2 10  0.84  0.78  0.72   0.53   74 7.0
+## B3 10  0.56  0.64  0.38   0.25   72 4.7
+\end{verbatim}
+
+This output includes Cronbach's Alpha (\texttt{raw\_alpha\ 0.68}), and the
+reliability if we were to remove a certain rater.
+If we were to replace rater 3, then the reliability would even
+increase (from 0.68 to 0.84). Over all three raters,
+\texttt{average\_r=0.41}.
+
+Correlations between \(k\) raters or items are not explicitly
+provided (even if they can be deduced from the above output),
+thus we still request these:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{cor}\NormalTok{( raters[ ,}\KeywordTok{c}\NormalTok{(}\StringTok{"B1"}\NormalTok{,}\StringTok{"B2"}\NormalTok{,}\StringTok{"B3"}\NormalTok{) ] ) }\CommentTok{\# explicit column names}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##           B1         B2         B3
+## B1 1.0000000 0.74494845 0.40979738
+## B2 0.7449484 1.00000000 0.08845909
+## B3 0.4097974 0.08845909 1.00000000
+\end{verbatim}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
 \hypertarget{appendix-appendices}{%
 \appendix}
 
@@ -3036,7 +5383,7 @@ Z* & 0.8416 & 1.282 & 1.645 & 1.960 & 2.326 & 2.576 & 2.807 & 3.090\\
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-The second table reports the probabilities \(p\) and confidence intervals \(B\) voor some frequently used critical values of \(Z^*\):
+The second table reports the probabilities \(p\) and confidence intervals \(B\) for some frequently used critical values of \(Z^*\):
 
 \begin{tabular}{cccccccc}
 \toprule
@@ -3044,6 +5391,119 @@ p & 0.3085 & 0.1587 & 0.0668 & 0.0228 & 0.0062 & 0.0013 & 0.0002\\
 \midrule
 B & 38.29\% & 68.27\% & 86.64\% & 95.45\% & 98.76\% & 99.73\% & 99.95\%\\
 Z* & 0.5 & 1 & 1.5 & 2 & 2.5 & 3 & 3.5\\
+\bottomrule
+\end{tabular}
+
+\hypertarget{app:criticaltvalues}{%
+\chapter{\texorpdfstring{Critical values for \(t\)-distribution}{Critical values for t-distribution}}\label{app:criticaltvalues}}
+
+\includegraphics{QMS-EN_files/figure-latex/criticaltvalues-auxiliaryfigure-1.pdf}
+
+The critical boundary value \(t^*\) given below has a critical probability \(p\)
+under \(H_0\), i.e.~\(P(t \geq t^*|H_0)=p\), and has probability \(B\) of a
+value between \((-t^*, +t^*)\). The \(t\)-distribution is symmetric around
+\(t=0\), thus \(P(t < -t^*) = P(t > t^*)\).
+
+The table below provides the critical boundary values \(t^*\) for much used critical probabilities \(p\) and
+confidence intervals \(B\), for the degrees of freedom indicated in the first column.
+
+\begin{tabular}{cccccccccc}
+\toprule
+ & p & 0.2 & 0.1 & 0.05 & 0.025 & 0.01 & 0.005 & 0.0025 & 0.001\\
+\midrule
+ & B & 60\% & 80\% & 90\% & 95\% & 98\% & 99\% & 99.5\% & 99.8\%\\
+1 &  & 1.376 & 3.078 & 6.314 & 12.706 & 31.821 & 63.657 & 127.321 & 318.309\\
+2 &  & 1.061 & 1.886 & 2.920 & 4.303 & 6.965 & 9.925 & 14.089 & 22.327\\
+3 &  & 0.9785 & 1.638 & 2.353 & 3.182 & 4.541 & 5.841 & 7.453 & 10.215\\
+4 &  & 0.941 & 1.533 & 2.132 & 2.776 & 3.747 & 4.604 & 5.598 & 7.173\\
+\addlinespace
+5 &  & 0.9195 & 1.476 & 2.015 & 2.571 & 3.365 & 4.032 & 4.773 & 5.893\\
+6 &  & 0.9057 & 1.440 & 1.943 & 2.447 & 3.143 & 3.707 & 4.317 & 5.208\\
+7 &  & 0.896 & 1.415 & 1.895 & 2.365 & 2.998 & 3.499 & 4.029 & 4.785\\
+8 &  & 0.8889 & 1.397 & 1.860 & 2.306 & 2.896 & 3.355 & 3.833 & 4.501\\
+9 &  & 0.8834 & 1.383 & 1.833 & 2.262 & 2.821 & 3.250 & 3.690 & 4.297\\
+\addlinespace
+10 &  & 0.8791 & 1.372 & 1.812 & 2.228 & 2.764 & 3.169 & 3.581 & 4.144\\
+11 &  & 0.8755 & 1.363 & 1.796 & 2.201 & 2.718 & 3.106 & 3.497 & 4.025\\
+12 &  & 0.8726 & 1.356 & 1.782 & 2.179 & 2.681 & 3.055 & 3.428 & 3.930\\
+13 &  & 0.8702 & 1.350 & 1.771 & 2.160 & 2.650 & 3.012 & 3.372 & 3.852\\
+14 &  & 0.8681 & 1.345 & 1.761 & 2.145 & 2.624 & 2.977 & 3.326 & 3.787\\
+\addlinespace
+15 &  & 0.8662 & 1.341 & 1.753 & 2.131 & 2.602 & 2.947 & 3.286 & 3.733\\
+16 &  & 0.8647 & 1.337 & 1.746 & 2.120 & 2.583 & 2.921 & 3.252 & 3.686\\
+17 &  & 0.8633 & 1.333 & 1.740 & 2.110 & 2.567 & 2.898 & 3.222 & 3.646\\
+18 &  & 0.862 & 1.330 & 1.734 & 2.101 & 2.552 & 2.878 & 3.197 & 3.610\\
+19 &  & 0.861 & 1.328 & 1.729 & 2.093 & 2.539 & 2.861 & 3.174 & 3.579\\
+\addlinespace
+20 &  & 0.860 & 1.325 & 1.725 & 2.086 & 2.528 & 2.845 & 3.153 & 3.552\\
+21 &  & 0.8591 & 1.323 & 1.721 & 2.080 & 2.518 & 2.831 & 3.135 & 3.527\\
+22 &  & 0.8583 & 1.321 & 1.717 & 2.074 & 2.508 & 2.819 & 3.119 & 3.505\\
+23 &  & 0.8575 & 1.319 & 1.714 & 2.069 & 2.500 & 2.807 & 3.104 & 3.485\\
+24 &  & 0.8569 & 1.318 & 1.711 & 2.064 & 2.492 & 2.797 & 3.091 & 3.467\\
+\addlinespace
+25 &  & 0.8562 & 1.316 & 1.708 & 2.060 & 2.485 & 2.787 & 3.078 & 3.450\\
+30 &  & 0.8538 & 1.310 & 1.697 & 2.042 & 2.457 & 2.750 & 3.030 & 3.385\\
+40 &  & 0.8507 & 1.303 & 1.684 & 2.021 & 2.423 & 2.704 & 2.971 & 3.307\\
+50 &  & 0.8489 & 1.299 & 1.676 & 2.009 & 2.403 & 2.678 & 2.937 & 3.261\\
+100 &  & 0.8452 & 1.290 & 1.660 & 1.984 & 2.364 & 2.626 & 2.871 & 3.174\\
+\addlinespace
+200 &  & 0.8434 & 1.286 & 1.653 & 1.972 & 2.345 & 2.601 & 2.839 & 3.131\\
+400 &  & 0.8425 & 1.284 & 1.649 & 1.966 & 2.336 & 2.588 & 2.823 & 3.111\\
+∞ &  & 0.8416 & 1.282 & 1.645 & 1.960 & 2.326 & 2.576 & 2.807 & 3.090\\
+\bottomrule
+\end{tabular}
+
+\hypertarget{app:criticalchi2values}{%
+\chapter{\texorpdfstring{Critical values for \(\chi^2\)-distribution}{Critical values for \textbackslash chi\^{}2-distribution}}\label{app:criticalchi2values}}
+
+\includegraphics{QMS-EN_files/figure-latex/criticalchi2values-auxiliaryfigure-1.pdf}
+
+The critical value \((\chi^2)^*\) given below has a critical probability \(p\) under
+\(H_0\), i.e.~\(P(\chi^2 \geq (\chi^2)^*|H_0)=p\).
+
+The table below provides the critical boundary values \((\chi^2)^*\) for much used critical probabilities \(p\), for the degrees of freedom indicated in the first column.
+
+\begin{tabular}{cccccccccc}
+\toprule
+ & p & 0.2 & 0.1 & 0.05 & 0.025 & 0.01 & 0.005 & 0.0025 & 0.001\\
+\midrule
+1 &  & 1.64 & 2.71 & 3.84 & 5.02 & 6.63 & 7.88 & 9.14 & 10.83\\
+2 &  & 3.22 & 4.61 & 5.99 & 7.38 & 9.21 & 10.60 & 11.98 & 13.82\\
+3 &  & 4.64 & 6.25 & 7.81 & 9.35 & 11.34 & 12.84 & 14.32 & 16.27\\
+4 &  & 5.99 & 7.78 & 9.49 & 11.14 & 13.28 & 14.86 & 16.42 & 18.47\\
+5 &  & 7.29 & 9.24 & 11.07 & 12.83 & 15.09 & 16.75 & 18.39 & 20.52\\
+\addlinespace
+6 &  & 8.56 & 10.64 & 12.59 & 14.45 & 16.81 & 18.55 & 20.25 & 22.46\\
+7 &  & 9.80 & 12.02 & 14.07 & 16.01 & 18.48 & 20.28 & 22.04 & 24.32\\
+8 &  & 11.03 & 13.36 & 15.51 & 17.53 & 20.09 & 21.95 & 23.77 & 26.12\\
+9 &  & 12.24 & 14.68 & 16.92 & 19.02 & 21.67 & 23.59 & 25.46 & 27.88\\
+10 &  & 13.44 & 15.99 & 18.31 & 20.48 & 23.21 & 25.19 & 27.11 & 29.59\\
+\addlinespace
+11 &  & 14.63 & 17.28 & 19.68 & 21.92 & 24.72 & 26.76 & 28.73 & 31.26\\
+12 &  & 15.81 & 18.55 & 21.03 & 23.34 & 26.22 & 28.30 & 30.32 & 32.91\\
+13 &  & 16.98 & 19.81 & 22.36 & 24.74 & 27.69 & 29.82 & 31.88 & 34.53\\
+14 &  & 18.15 & 21.06 & 23.68 & 26.12 & 29.14 & 31.32 & 33.43 & 36.12\\
+15 &  & 19.31 & 22.31 & 25.00 & 27.49 & 30.58 & 32.80 & 34.95 & 37.70\\
+\addlinespace
+16 &  & 20.47 & 23.54 & 26.30 & 28.85 & 32.00 & 34.27 & 36.46 & 39.25\\
+17 &  & 21.61 & 24.77 & 27.59 & 30.19 & 33.41 & 35.72 & 37.95 & 40.79\\
+18 &  & 22.76 & 25.99 & 28.87 & 31.53 & 34.81 & 37.16 & 39.42 & 42.31\\
+19 &  & 23.90 & 27.20 & 30.14 & 32.85 & 36.19 & 38.58 & 40.88 & 43.82\\
+20 &  & 25.04 & 28.41 & 31.41 & 34.17 & 37.57 & 40.00 & 42.34 & 45.31\\
+\addlinespace
+21 &  & 26.17 & 29.62 & 32.67 & 35.48 & 38.93 & 41.40 & 43.78 & 46.80\\
+22 &  & 27.30 & 30.81 & 33.92 & 36.78 & 40.29 & 42.80 & 45.20 & 48.27\\
+23 &  & 28.43 & 32.01 & 35.17 & 38.08 & 41.64 & 44.18 & 46.62 & 49.73\\
+24 &  & 29.55 & 33.20 & 36.42 & 39.36 & 42.98 & 45.56 & 48.03 & 51.18\\
+25 &  & 30.68 & 34.38 & 37.65 & 40.65 & 44.31 & 46.93 & 49.44 & 52.62\\
+\addlinespace
+30 &  & 36.25 & 40.26 & 43.77 & 46.98 & 50.89 & 53.67 & 56.33 & 59.70\\
+40 &  & 47.27 & 51.81 & 55.76 & 59.34 & 63.69 & 66.77 & 69.70 & 73.40\\
+50 &  & 58.16 & 63.17 & 67.50 & 71.42 & 76.15 & 79.49 & 82.66 & 86.66\\
+100 &  & 111.67 & 118.50 & 124.34 & 129.56 & 135.81 & 140.17 & 144.29 & 149.45\\
+200 &  & 216.61 & 226.02 & 233.99 & 241.06 & 249.45 & 255.26 & 260.74 & 267.54\\
+\addlinespace
+400 &  & 423.59 & 436.65 & 447.63 & 457.31 & 468.72 & 476.61 & 483.99 & 493.13\\
 \bottomrule
 \end{tabular}
 

@@ -346,20 +346,20 @@ To illustrate, we use the fictive reading test scores shown in Table
 Table: (#tab:cito) The scores of N=10 pupils on three sections of the CITO test,
 taken in the final year of primary school in the Netherlands.
 
-      Pupil        Reading  Arithmetic   World Orientation
-  ---------------- ------- ------------- ------------------
-         1           18       22               55
-         2           32       36               55
-         3           45       34               38
-         4           25       25               40
-         5           27       29               48
-         6           23       20               44
-         7           29       27               49
-         8           26       25               42
-         9           20       25               57
-         10          25       27               47
-      $\sum x$       270      270              475
-   $\overline{x}$   27.0     27.0              47.5
+      Pupil         Reading   Arithmetic    Geography
+  ---------------- --------- ------------- ------------------
+         1            18       22               55
+         2            32       36               55
+         3            45       34               38
+         4            25       25               40
+         5            27       29               48
+         6            23       20               44
+         7            29       27               49
+         8            26       25               42
+         9            20       25               57
+         10           25       27               47
+      $\sum x$      270       270              475
+   $\overline{x}$    27.0      27.0             47.5
 
 ---
 

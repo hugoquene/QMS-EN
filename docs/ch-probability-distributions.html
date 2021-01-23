@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>10 Probability distributions | Quantitative Methods and Statistics</title>
+  <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="10 Probability distributions | Quantitative Methods and Statistics" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
+  <meta name="github-repo" content="rstudio/QMS-EN" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="10 Probability distributions | Quantitative Methods and Statistics" />
+  
+  <meta name="twitter:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="ch-centre-and-dispersion.html"/>
+<link rel="next" href="ch-correlation-regression.html"/>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Quantitative Methods and Statistics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#notation"><i class="fa fa-check"></i>Notation</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#citation"><i class="fa fa-check"></i>Citation</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#technical-details"><i class="fa fa-check"></i>Technical details</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-authors"><i class="fa fa-check"></i>About the authors</a></li>
+</ul></li>
+<li class="part"><span><b>Part I: Methodology</b></span></li>
+<li class="chapter" data-level="1" data-path="ch-introduction.html"><a href="ch-introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="ch-introduction.html"><a href="ch-introduction.html#sec:scientific-research"><i class="fa fa-check"></i><b>1.1</b> Scientific research</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="ch-introduction.html"><a href="ch-introduction.html#sec:theory"><i class="fa fa-check"></i><b>1.1.1</b> Theory</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="ch-introduction.html"><a href="ch-introduction.html#sec:paradigms"><i class="fa fa-check"></i><b>1.2</b> Paradigms</a></li>
+<li class="chapter" data-level="1.3" data-path="ch-introduction.html"><a href="ch-introduction.html#sec:instrument-validation"><i class="fa fa-check"></i><b>1.3</b> Instrument validation</a></li>
+<li class="chapter" data-level="1.4" data-path="ch-introduction.html"><a href="ch-introduction.html#sec:descriptive-research"><i class="fa fa-check"></i><b>1.4</b> Descriptive research</a></li>
+<li class="chapter" data-level="1.5" data-path="ch-introduction.html"><a href="ch-introduction.html#sec:experimental-research"><i class="fa fa-check"></i><b>1.5</b> Experimental research</a></li>
+<li class="chapter" data-level="1.6" data-path="ch-introduction.html"><a href="ch-introduction.html#outline-of-this-textbook"><i class="fa fa-check"></i><b>1.6</b> Outline of this textbook</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="ch-research.html"><a href="ch-research.html"><i class="fa fa-check"></i><b>2</b> Hypothesis testing research</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="ch-research.html"><a href="ch-research.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.2" data-path="ch-research.html"><a href="ch-research.html#sec:variables"><i class="fa fa-check"></i><b>2.2</b> Variables</a></li>
+<li class="chapter" data-level="2.3" data-path="ch-research.html"><a href="ch-research.html#sec:independendependentvariables"><i class="fa fa-check"></i><b>2.3</b> Independent and dependent variables</a></li>
+<li class="chapter" data-level="2.4" data-path="ch-research.html"><a href="ch-research.html#sec:falsification"><i class="fa fa-check"></i><b>2.4</b> Falsification and null hypothesis</a></li>
+<li class="chapter" data-level="2.5" data-path="ch-research.html"><a href="ch-research.html#sec:empiricalcycle"><i class="fa fa-check"></i><b>2.5</b> The empirical cycle</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="ch-research.html"><a href="ch-research.html#observation"><i class="fa fa-check"></i><b>2.5.1</b> observation</a></li>
+<li class="chapter" data-level="2.5.2" data-path="ch-research.html"><a href="ch-research.html#induction"><i class="fa fa-check"></i><b>2.5.2</b> induction</a></li>
+<li class="chapter" data-level="2.5.3" data-path="ch-research.html"><a href="ch-research.html#deduction"><i class="fa fa-check"></i><b>2.5.3</b> deduction</a></li>
+<li class="chapter" data-level="2.5.4" data-path="ch-research.html"><a href="ch-research.html#testing"><i class="fa fa-check"></i><b>2.5.4</b> testing</a></li>
+<li class="chapter" data-level="2.5.5" data-path="ch-research.html"><a href="ch-research.html#evaluation"><i class="fa fa-check"></i><b>2.5.5</b> evaluation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="ch-research.html"><a href="ch-research.html#sec:makingchoices"><i class="fa fa-check"></i><b>2.6</b> Making choices</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="ch-integrity.html"><a href="ch-integrity.html"><i class="fa fa-check"></i><b>3</b> Integrity</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="ch-integrity.html"><a href="ch-integrity.html#sec:integrity-introduction"><i class="fa fa-check"></i><b>3.1</b> Introduction</a></li>
+<li class="chapter" data-level="3.2" data-path="ch-integrity.html"><a href="ch-integrity.html#sec:design"><i class="fa fa-check"></i><b>3.2</b> Design</a></li>
+<li class="chapter" data-level="3.3" data-path="ch-integrity.html"><a href="ch-integrity.html#participants-and-informants"><i class="fa fa-check"></i><b>3.3</b> Participants and informants</a></li>
+<li class="chapter" data-level="3.4" data-path="ch-integrity.html"><a href="ch-integrity.html#data"><i class="fa fa-check"></i><b>3.4</b> Data</a></li>
+<li class="chapter" data-level="3.5" data-path="ch-integrity.html"><a href="ch-integrity.html#writing"><i class="fa fa-check"></i><b>3.5</b> Writing</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ch-levelsofmeasurement.html"><a href="ch-levelsofmeasurement.html"><i class="fa fa-check"></i><b>4</b> Levels of measurement</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="ch-levelsofmeasurement.html"><a href="ch-levelsofmeasurement.html#introduction-1"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.2" data-path="ch-levelsofmeasurement.html"><a href="ch-levelsofmeasurement.html#sec:nominal"><i class="fa fa-check"></i><b>4.2</b> Nominal</a></li>
+<li class="chapter" data-level="4.3" data-path="ch-levelsofmeasurement.html"><a href="ch-levelsofmeasurement.html#sec:ordinal"><i class="fa fa-check"></i><b>4.3</b> Ordinal</a></li>
+<li class="chapter" data-level="4.4" data-path="ch-levelsofmeasurement.html"><a href="ch-levelsofmeasurement.html#sec:interval"><i class="fa fa-check"></i><b>4.4</b> Interval</a></li>
+<li class="chapter" data-level="4.5" data-path="ch-levelsofmeasurement.html"><a href="ch-levelsofmeasurement.html#sec:ratio"><i class="fa fa-check"></i><b>4.5</b> Ratio</a></li>
+<li class="chapter" data-level="4.6" data-path="ch-levelsofmeasurement.html"><a href="ch-levelsofmeasurement.html#sec:orderinglevelsofmeasurement"><i class="fa fa-check"></i><b>4.6</b> Ordering of levels of measurement</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ch-validity.html"><a href="ch-validity.html"><i class="fa fa-check"></i><b>5</b> Validity</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="ch-validity.html"><a href="ch-validity.html#introduction-2"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="ch-validity.html"><a href="ch-validity.html#sec:causality"><i class="fa fa-check"></i><b>5.2</b> Causality</a></li>
+<li class="chapter" data-level="5.3" data-path="ch-validity.html"><a href="ch-validity.html#sec:validity"><i class="fa fa-check"></i><b>5.3</b> Validity</a></li>
+<li class="chapter" data-level="5.4" data-path="ch-validity.html"><a href="ch-validity.html#sec:internalvalidity"><i class="fa fa-check"></i><b>5.4</b> Internal validity</a></li>
+<li class="chapter" data-level="5.5" data-path="ch-validity.html"><a href="ch-validity.html#sec:constructvalidity"><i class="fa fa-check"></i><b>5.5</b> Construct validity</a></li>
+<li class="chapter" data-level="5.6" data-path="ch-validity.html"><a href="ch-validity.html#sec:externalvalidity"><i class="fa fa-check"></i><b>5.6</b> External validity</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="ch-design.html"><a href="ch-design.html"><i class="fa fa-check"></i><b>6</b> Design</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="ch-design.html"><a href="ch-design.html#sec:design-introduction"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="ch-design.html"><a href="ch-design.html#sec:betweenwithinparticipants"><i class="fa fa-check"></i><b>6.2</b> Between or within ?</a></li>
+<li class="chapter" data-level="6.3" data-path="ch-design.html"><a href="ch-design.html#sec:one-shot-single-case-design"><i class="fa fa-check"></i><b>6.3</b> The one-shot single-case design</a></li>
+<li class="chapter" data-level="6.4" data-path="ch-design.html"><a href="ch-design.html#sec:one-group-pretest-posttest-design"><i class="fa fa-check"></i><b>6.4</b> The one-group pretest-posttest design</a></li>
+<li class="chapter" data-level="6.5" data-path="ch-design.html"><a href="ch-design.html#sec:pretest-posttest-control-group-design"><i class="fa fa-check"></i><b>6.5</b> The pretest-posttest-control group design</a></li>
+<li class="chapter" data-level="6.6" data-path="ch-design.html"><a href="ch-design.html#sec:solomon-four-groups-design"><i class="fa fa-check"></i><b>6.6</b> The Solomon-four-groups design</a></li>
+<li class="chapter" data-level="6.7" data-path="ch-design.html"><a href="ch-design.html#the-posttest-only-control-group-design"><i class="fa fa-check"></i><b>6.7</b> The posttest-only control group design</a></li>
+<li class="chapter" data-level="6.8" data-path="ch-design.html"><a href="ch-design.html#sec:factorial-designs"><i class="fa fa-check"></i><b>6.8</b> Factorial designs</a></li>
+<li class="chapter" data-level="6.9" data-path="ch-design.html"><a href="ch-design.html#sec:within-subject-designs"><i class="fa fa-check"></i><b>6.9</b> Within-subject designs</a></li>
+<li class="chapter" data-level="6.10" data-path="ch-design.html"><a href="ch-design.html#designing-a-study"><i class="fa fa-check"></i><b>6.10</b> Designing a study</a></li>
+<li class="chapter" data-level="6.11" data-path="ch-design.html"><a href="ch-design.html#in-conclusion"><i class="fa fa-check"></i><b>6.11</b> In conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="ch-samples.html"><a href="ch-samples.html"><i class="fa fa-check"></i><b>7</b> Samples</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="ch-samples.html"><a href="ch-samples.html#sec:convenience-samples"><i class="fa fa-check"></i><b>7.1</b> Convenience samples</a></li>
+<li class="chapter" data-level="7.2" data-path="ch-samples.html"><a href="ch-samples.html#sec:systematic-samples"><i class="fa fa-check"></i><b>7.2</b> Systematic samples</a></li>
+<li class="chapter" data-level="7.3" data-path="ch-samples.html"><a href="ch-samples.html#sec:random-samples"><i class="fa fa-check"></i><b>7.3</b> Random samples</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="ch-samples.html"><a href="ch-samples.html#spss"><i class="fa fa-check"></i><b>7.3.1</b> SPSS</a></li>
+<li class="chapter" data-level="7.3.2" data-path="ch-samples.html"><a href="ch-samples.html#r"><i class="fa fa-check"></i><b>7.3.2</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="ch-samples.html"><a href="ch-samples.html#sec:sample-size"><i class="fa fa-check"></i><b>7.4</b> Sample size</a></li>
+</ul></li>
+<li class="part"><span><b>Part II: Descriptive statistics</b></span></li>
+<li class="chapter" data-level="8" data-path="ch-frequencies.html"><a href="ch-frequencies.html"><i class="fa fa-check"></i><b>8</b> Frequencies</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="ch-frequencies.html"><a href="ch-frequencies.html#introduction-3"><i class="fa fa-check"></i><b>8.1</b> Introduction</a></li>
+<li class="chapter" data-level="8.2" data-path="ch-frequencies.html"><a href="ch-frequencies.html#sec:frequencies"><i class="fa fa-check"></i><b>8.2</b> Frequencies</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="ch-frequencies.html"><a href="ch-frequencies.html#sec:intervals"><i class="fa fa-check"></i><b>8.2.1</b> Intervals</a></li>
+<li class="chapter" data-level="8.2.2" data-path="ch-frequencies.html"><a href="ch-frequencies.html#spss-1"><i class="fa fa-check"></i><b>8.2.2</b> SPSS</a></li>
+<li class="chapter" data-level="8.2.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#r-1"><i class="fa fa-check"></i><b>8.2.3</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#sec:barcharts"><i class="fa fa-check"></i><b>8.3</b> Bar charts</a></li>
+<li class="chapter" data-level="8.4" data-path="ch-frequencies.html"><a href="ch-frequencies.html#sec:histograms"><i class="fa fa-check"></i><b>8.4</b> Histograms</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="ch-frequencies.html"><a href="ch-frequencies.html#spss-2"><i class="fa fa-check"></i><b>8.4.1</b> SPSS</a></li>
+<li class="chapter" data-level="8.4.2" data-path="ch-frequencies.html"><a href="ch-frequencies.html#r-2"><i class="fa fa-check"></i><b>8.4.2</b> R</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html"><i class="fa fa-check"></i><b>9</b> Centre and dispersion</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#introduction-4"><i class="fa fa-check"></i><b>9.1</b> Introduction</a></li>
+<li class="chapter" data-level="9.2" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#symbols"><i class="fa fa-check"></i><b>9.2</b> Symbols</a></li>
+<li class="chapter" data-level="9.3" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#central-tendencies"><i class="fa fa-check"></i><b>9.3</b> Central tendencies</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:mean"><i class="fa fa-check"></i><b>9.3.1</b> mean</a></li>
+<li class="chapter" data-level="9.3.2" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:median"><i class="fa fa-check"></i><b>9.3.2</b> median</a></li>
+<li class="chapter" data-level="9.3.3" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#mode"><i class="fa fa-check"></i><b>9.3.3</b> mode</a></li>
+<li class="chapter" data-level="9.3.4" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:harmonicmean"><i class="fa fa-check"></i><b>9.3.4</b> Harmonic mean</a></li>
+<li class="chapter" data-level="9.3.5" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#winsorized-mean"><i class="fa fa-check"></i><b>9.3.5</b> winsorized mean</a></li>
+<li class="chapter" data-level="9.3.6" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#trimmed-mean"><i class="fa fa-check"></i><b>9.3.6</b> trimmed mean</a></li>
+<li class="chapter" data-level="9.3.7" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#comparison-of-central-tendencies"><i class="fa fa-check"></i><b>9.3.7</b> comparison of central tendencies</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:quartiles-and-boxplots"><i class="fa fa-check"></i><b>9.4</b> Quartiles and boxplots</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#quartiles"><i class="fa fa-check"></i><b>9.4.1</b> Quartiles</a></li>
+<li class="chapter" data-level="9.4.2" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:outliers"><i class="fa fa-check"></i><b>9.4.2</b> Outliers</a></li>
+<li class="chapter" data-level="9.4.3" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:boxplot"><i class="fa fa-check"></i><b>9.4.3</b> Boxplots</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:measures-of-dispersion"><i class="fa fa-check"></i><b>9.5</b> Measures of dispersion</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:variance"><i class="fa fa-check"></i><b>9.5.1</b> Variance</a></li>
+<li class="chapter" data-level="9.5.2" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:standarddeviation"><i class="fa fa-check"></i><b>9.5.2</b> standard deviation</a></li>
+<li class="chapter" data-level="9.5.3" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#mad"><i class="fa fa-check"></i><b>9.5.3</b> MAD</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:significantfigures"><i class="fa fa-check"></i><b>9.6</b> On significant figures</a>
+<ul>
+<li class="chapter" data-level="9.6.1" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:significantfigures-means"><i class="fa fa-check"></i><b>9.6.1</b> Mean and standard deviation</a></li>
+<li class="chapter" data-level="9.6.2" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#percentages"><i class="fa fa-check"></i><b>9.6.2</b> Percentages</a></li>
+</ul></li>
+<li class="chapter" data-level="9.7" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:robustefficient"><i class="fa fa-check"></i><b>9.7</b> Making choices</a></li>
+<li class="chapter" data-level="9.8" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:standardscores"><i class="fa fa-check"></i><b>9.8</b> Standard scores</a></li>
+<li class="chapter" data-level="9.9" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#spss-3"><i class="fa fa-check"></i><b>9.9</b> SPSS</a></li>
+<li class="chapter" data-level="9.10" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#r-3"><i class="fa fa-check"></i><b>9.10</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html"><i class="fa fa-check"></i><b>10</b> Probability distributions</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:probabilities"><i class="fa fa-check"></i><b>10.1</b> Probabilities</a></li>
+<li class="chapter" data-level="10.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:binomial-distribution"><i class="fa fa-check"></i><b>10.2</b> Binomial probability distribution</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#formulas"><i class="fa fa-check"></i><b>10.2.1</b> formulas</a></li>
+<li class="chapter" data-level="10.2.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-4"><i class="fa fa-check"></i><b>10.2.2</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:normaldistribution"><i class="fa fa-check"></i><b>10.3</b> Normal probability distribution</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#formulas-1"><i class="fa fa-check"></i><b>10.3.1</b> formulas</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:isvarnormaldistributed"><i class="fa fa-check"></i><b>10.4</b> Does my variable have a normal probability distribution?</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#spss-4"><i class="fa fa-check"></i><b>10.4.1</b> SPSS</a></li>
+<li class="chapter" data-level="10.4.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-5"><i class="fa fa-check"></i><b>10.4.2</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:whatifnotnormal"><i class="fa fa-check"></i><b>10.5</b> What if my variable is not normally distributed?</a></li>
+<li class="chapter" data-level="10.6" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:Centrallimittheorem"><i class="fa fa-check"></i><b>10.6</b> Probability distribution of average</a></li>
+<li class="chapter" data-level="10.7" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:confidenceinterval-mean"><i class="fa fa-check"></i><b>10.7</b> Confidence interval of the mean</a>
+<ul>
+<li class="chapter" data-level="10.7.1" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#formulas-2"><i class="fa fa-check"></i><b>10.7.1</b> formulas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html"><i class="fa fa-check"></i><b>11</b> Correlation and regression</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#introduction-5"><i class="fa fa-check"></i><b>11.1</b> Introduction</a></li>
+<li class="chapter" data-level="11.2" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:Pearson"><i class="fa fa-check"></i><b>11.2</b> Pearson product-moment correlation</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#formulas-3"><i class="fa fa-check"></i><b>11.2.1</b> Formulas</a></li>
+<li class="chapter" data-level="11.2.2" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#spss-5"><i class="fa fa-check"></i><b>11.2.2</b> SPSS</a></li>
+<li class="chapter" data-level="11.2.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-6"><i class="fa fa-check"></i><b>11.2.3</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:regression"><i class="fa fa-check"></i><b>11.3</b> Regression</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:regression-formulas"><i class="fa fa-check"></i><b>11.3.1</b> Formulas</a></li>
+<li class="chapter" data-level="11.3.2" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#spss-6"><i class="fa fa-check"></i><b>11.3.2</b> SPSS</a></li>
+<li class="chapter" data-level="11.3.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-7"><i class="fa fa-check"></i><b>11.3.3</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#influential-observations"><i class="fa fa-check"></i><b>11.4</b> Influential observations</a></li>
+<li class="chapter" data-level="11.5" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:Spearman"><i class="fa fa-check"></i><b>11.5</b> Spearman’s rank correlation coefficient</a>
+<ul>
+<li class="chapter" data-level="11.5.1" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#formulas-4"><i class="fa fa-check"></i><b>11.5.1</b> Formulas</a></li>
+<li class="chapter" data-level="11.5.2" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#spss-7"><i class="fa fa-check"></i><b>11.5.2</b> SPSS</a></li>
+<li class="chapter" data-level="11.5.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-8"><i class="fa fa-check"></i><b>11.5.3</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="11.6" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:Phi"><i class="fa fa-check"></i><b>11.6</b> Phi</a>
+<ul>
+<li class="chapter" data-level="11.6.1" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#formulas-5"><i class="fa fa-check"></i><b>11.6.1</b> Formulas</a></li>
+<li class="chapter" data-level="11.6.2" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#spss-8"><i class="fa fa-check"></i><b>11.6.2</b> SPSS</a></li>
+<li class="chapter" data-level="11.6.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-9"><i class="fa fa-check"></i><b>11.6.3</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="11.7" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:correlationcausation"><i class="fa fa-check"></i><b>11.7</b> Last but not least</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="ch-reliability.html"><a href="ch-reliability.html"><i class="fa fa-check"></i><b>12</b> Reliability</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="ch-reliability.html"><a href="ch-reliability.html#introduction-6"><i class="fa fa-check"></i><b>12.1</b> Introduction</a></li>
+<li class="chapter" data-level="12.2" data-path="ch-reliability.html"><a href="ch-reliability.html#what-is-reliability"><i class="fa fa-check"></i><b>12.2</b> What is reliability?</a></li>
+<li class="chapter" data-level="12.3" data-path="ch-reliability.html"><a href="ch-reliability.html#test-theory"><i class="fa fa-check"></i><b>12.3</b> Test theory</a></li>
+<li class="chapter" data-level="12.4" data-path="ch-reliability.html"><a href="ch-reliability.html#interpretations"><i class="fa fa-check"></i><b>12.4</b> Interpretations</a></li>
+<li class="chapter" data-level="12.5" data-path="ch-reliability.html"><a href="ch-reliability.html#methods-for-estimating-reliability"><i class="fa fa-check"></i><b>12.5</b> Methods for estimating reliability</a></li>
+<li class="chapter" data-level="12.6" data-path="ch-reliability.html"><a href="ch-reliability.html#reliability-between-assessors"><i class="fa fa-check"></i><b>12.6</b> Reliability between assessors</a></li>
+<li class="chapter" data-level="12.7" data-path="ch-reliability.html"><a href="ch-reliability.html#reliability-and-construct-validity"><i class="fa fa-check"></i><b>12.7</b> Reliability and construct validity</a></li>
+<li class="chapter" data-level="12.8" data-path="ch-reliability.html"><a href="ch-reliability.html#spss-9"><i class="fa fa-check"></i><b>12.8</b> SPSS</a></li>
+<li class="chapter" data-level="12.9" data-path="ch-reliability.html"><a href="ch-reliability.html#r-10"><i class="fa fa-check"></i><b>12.9</b> R</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendices</b></span></li>
+<li class="chapter" data-level="A" data-path="app-randomnumbers.html"><a href="app-randomnumbers.html"><i class="fa fa-check"></i><b>A</b> Random numbers</a></li>
+<li class="chapter" data-level="B" data-path="app-criticalZvalues.html"><a href="app-criticalZvalues.html"><i class="fa fa-check"></i><b>B</b> Standard normal probability distribution</a></li>
+<li class="chapter" data-level="C" data-path="app-criticaltvalues.html"><a href="app-criticaltvalues.html"><i class="fa fa-check"></i><b>C</b> Critical values for <span class="math inline">\(t\)</span>-distribution</a></li>
+<li class="chapter" data-level="D" data-path="app-criticalchi2values.html"><a href="app-criticalchi2values.html"><i class="fa fa-check"></i><b>D</b> Critical values for <span class="math inline">\(\chi^2\)</span>-distribution</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Created with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Quantitative Methods and Statistics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ch:probability-distributions" class="section level1" number="10">
+<h1><span class="header-section-number">10</span> Probability distributions</h1>
+<div id="sec:probabilities" class="section level2" number="10.1">
+<h2><span class="header-section-number">10.1</span> Probabilities</h2>
+<p>Calling behind the wheel increases the chance of an accident <span class="citation">(Bhargava and Pathania <a href="#ref-Bhar13" role="doc-biblioref">2013</a>)</span>.
+The average chance of precipitation in the Netherlands is 7%. My order has a
+10% chance of being delivered a day later than promised. Chances and probabilities
+play an important role in our daily lives, and also in academic research. After all,
+many hypotheses are probabilistic in nature (see Chapter
+<a href="ch-research.html#ch:research">2</a>): hypotheses make statements about a
+difference in the <em>chances</em> of outcomes. To be able to draw conclusions with
+respect to these probabilistic hypotheses, we need to know something about
+probabilities and
+probability distributions. This is the subject of the present chapter.</p>
+<p>As an introduction, let us take a look at a Dutch <em>Scrabble</em> game.
+The game contains a bag with 102 tiles inside, each of which has a letter on it.<a href="#fn20" class="footnote-ref" id="fnref20"><sup>20</sup></a> Of the 102 tiles, 6 have the letter A on them. If I take one tile from a
+full and well-mixed bag, what is the chance that I draw the letter A? The
+probability-of-the-outcome-A is referred to as <span class="math inline">\(P(\textrm{A})\)</span>, with the <span class="math inline">\(P\)</span> of
+<em>Probabilitas</em> (Lat. “chance, probability”), and can be determined as
+<span class="math display" id="eq:probability-scrabble-1-A">\[\begin{equation}
+    P(\textrm{A})=
+    \frac{\textrm{number of A&#39;s}}{\textrm{total number of tiles}}= 
+    \frac{6}{102} = 0.0588
+  \tag{10.1}
+\end{equation}\]</span></p>
+<p>The probability of an event is expressed as a proportion, a number between
+<span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span>, or as a percentage, i.e. a proportion in units of <span class="math inline">\(1/100\)</span>.
+A probability can never be smaller than <span class="math inline">\(0\)</span> and can never be larger than
+1: after all, the probability is the proportion between the number
+of specific outcomes (numerator) and the total number of possible outcomes
+(denominator) (see
+formula <a href="ch-probability-distributions.html#eq:probability-scrabble-1-A">(10.1)</a>), where the numerator can never be larger
+than the denominator <span class="citation">(Schuurman and De Kluiver <a href="#ref-SK01" role="doc-biblioref">2001</a>)</span>.</p>
+<p>When two outcomes mutually exclude each other, as is the case for
+the outcomes A or B in our Scrabble example, then we may <em>sum up</em>
+these outcomes (rule of sum, or addition principle, or <em>OR</em> rule).
+The probability of outcome A <em>or</em>
+outcome B (where outcomes A and B exclude each other), is the <em>sum</em>
+of <span class="math inline">\(P(\textrm{A})\)</span> and <span class="math inline">\(P(\textrm{B})\)</span>:
+<span class="math display" id="eq:probability-sumrule">\[\begin{equation}
+    P(\textrm{A or B}) = P(\textrm{A}) + P(\textrm{B})
+  \tag{10.2}
+\end{equation}\]</span></p>
+<hr />
+<blockquote>
+<p><em>Example 10.1:</em>
+In our Scrabble example, <span class="math inline">\(P(\textrm{A})=\frac{6}{102}\)</span> and
+<span class="math inline">\(P(\textrm{B})=\frac{2}{102}\)</span>. As such, the probability of outcome A-or-B is
+<span class="math inline">\(P(\textrm{A or B})=P(\textrm{A})+P(\textrm{B})=6/102+2/102=8/102=.0784\)</span>.</p>
+</blockquote>
+<hr />
+<p>If I take one tile from a full and well-mixed bag, then two
+complementary outcomes are possible: Either I draw an A, or I do <em>not</em>
+draw an A. The outcomes again mutually exclude each other so we may
+sum up the probabilities too. Moreover, the
+outcomes are complementary, i.e the outcome can only have one
+of these two possible outcomes. The respective probabilities of these
+complementary events are also complementary, i.e. these
+respective probabilities sum up to precisely <span class="math inline">\(1\)</span> =100% (complement rule).
+After all, there is a 100% probability that the outcome is one of
+the two possible outcomes of the draw. If we already know <span class="math inline">\(P(\textrm{A})\)</span>,
+we can easily calculate the probability of the complementary
+outcome:
+<span class="math display" id="eq:complementrule">\[\begin{align}
+    P(\textrm{A}) + P(\textrm{not-A}) &amp; = &amp; 1\\
+    P(\textrm{A}) &amp; = &amp; 1 - P(\textrm{not-A})\\
+    P(\textrm{not-A}) &amp; = &amp; 1 - P(\textrm{A})
+    \tag{10.3}
+\end{align}\]</span></p>
+<hr />
+<blockquote>
+<p><em>Example 10.2:</em>
+In our Scrabble example, <span class="math inline">\(P(\textrm{A})=\frac{6}{102}\)</span>. As such, the probability
+of the not-A outcome is
+<span class="math inline">\(P(\textrm{not-A})= 1 - P(\textrm{A}) = 1 - \frac{6}{102} = \frac{96}{102} = .9412\)</span>.</p>
+</blockquote>
+<hr />
+<p>As a thought experiment, let us now take a second Scrabble game, and, from it, take
+a second tile bag which is equally full and well-mixed.
+Without looking, we will now take a letter tile from each bag. There are now two
+events or outcomes, namely the outcome of the first draw (from the first
+bag), and the outcome of the second draw (from the second bag).
+These two outcomes do not mutually exclude each other, since they
+have no mutual influence on each other. After all, the second
+bag’s outcome is not influenced by the first bag’s outcome, and vice versa. As
+such, we say that these outcomes are <em>independent</em> of each other. When the outcomes
+are indeed independent of each other, we calculate the probability of a
+combination of the outcomes by <em>multiplication</em> (multiplication
+principle, or product rule, or <em>AND</em> rule).<br />
+The probability of the combination of outcome A <em>and</em> outcome B
+(where outcomes A and B are independent of each other), is the
+<em>product</em> of <span class="math inline">\(P(\textrm{A})\)</span> and <span class="math inline">\(P(\textrm{B})\)</span>:
+<span class="math display" id="eq:probability-productrule">\[\begin{equation}
+    P(\textrm{A and B}) = P(\textrm{A}) \times P(\textrm{B})
+  \tag{10.4}
+\end{equation}\]</span></p>
+<hr />
+<blockquote>
+<p><em>Example 10.3:</em>
+In our Scrabble example, <span class="math inline">\(P(\textrm{A})=\frac{6}{102}\)</span> and
+<span class="math inline">\(P(\textrm{B})=\frac{2}{102}\)</span>. The probability of outcome A with the first
+bag <em>and</em> B with the second bag is
+<span class="math inline">\(P(\textrm{A and B})=P(\textrm{A}) \times P(\textrm{B})=\frac{6}{102} \times \frac{2}{102} = .0012\)</span>.</p>
+</blockquote>
+<hr />
+<blockquote>
+<p><em>Example 10.4:</em>
+In our Scrabble game, <span class="math inline">\(P(\textrm{vowel})=\frac{38}{102}\)</span>. The probability
+of drawing a vowel (A, E, I, O, U, Y) from the first bag <em>and</em> a
+vowel from the second bag is
+<span class="math inline">\(P(\textrm{vowel-and-vowel})=P(\textrm{first vowel}) \times P(\textrm{second vowel})=\frac{38}{102} \times \frac{38}{102} = (\frac{38}{102})^2 = .1388\)</span>.</p>
+</blockquote>
+<hr />
+</div>
+<div id="sec:binomial-distribution" class="section level2" number="10.2">
+<h2><span class="header-section-number">10.2</span> Binomial probability distribution</h2>
+<p>For the remainder of this chapter, we will adopt two changes to the
+Scrabble game. Firstly, we will remove the 2 blank, letter-less titles
+from the bag. There are now precisely 100 tiles left, of which
+38 have a vowel (<span class="math inline">\(V\)</span>) and 62 have a consonant (<span class="math inline">\(C\)</span>). Accordingly, there are only
+two possible outcome categories left and these mutually exclude each other.
+We call such a variable of the nominal level of measurement,
+with precisely two categories, binomial (‘two-named’). We regard the
+vowels as hits, and the consonants as
+misses. These two possible outcomes are complementary:
+<span class="math inline">\(P(V)=.38\)</span> (abbreviated as <span class="math inline">\(p\)</span>) and <span class="math inline">\(P(C)=.62\)</span> (abbreviated as
+<span class="math inline">\(q=1-p\)</span>).</p>
+<p>Secondly, from now on, we will put the drawn letter tile back into the bag,
+once we have noted down the drawn letter. We also mix the bag again.
+In this way, we do not require
+multiple complete letter bags, but only one letter bag which, after each
+draw with replacement, is once again complete and mixed.
+We consider the outcomes of consecutive draws to be
+independent.</p>
+<p><strong>An aside:</strong> The outcome of a certain draw is thus independent of the outcome
+of previous draws. If a vowel has just been drawn <span class="math inline">\(100\times\)</span> in a row,
+then that has no influence at all on (the outcome of)
+the next draw from the letter bag. After all, the
+letter bag, or the hand of the person drawing tiles does not have any memory. At
+<em>each</em> draw, the probability of a hit is <span class="math inline">\(p=.38\)</span>, even if a vowel
+has just been drawn <span class="math inline">\(100\times\)</span> or $1000. The same is the case
+for consecutive outcomes with roulette: in <em>each</em> round, the probability
+of a hit is <span class="math inline">\(1/37\)</span>, even if the ball has just landed on the same number <span class="math inline">\(100\times\)</span><a href="#fn21" class="footnote-ref" id="fnref21"><sup>21</sup></a>.</p>
+<p>With the aforementioned changes, let us now conduct <span class="math inline">\(n=3\)</span> draws
+(with replacement, see above), and for each possible outcome determine
+the probability of the outcome, see
+Table <a href="ch-probability-distributions.html#tab:vowelprobabilities">10.1</a>.</p>
+<table>
+<caption><span id="tab:vowelprobabilities">Table 10.1: </span> Probabilities of possible outcomes of <span class="math inline">\(n=3\)</span>
+vowel draws, <span class="math inline">\(p=.38\)</span>, with replacement (see text).</caption>
+<thead>
+<tr class="header">
+<th align="left">Outcome</th>
+<th align="right">Number of vowels</th>
+<th align="center">Probabilitiy</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">CCC</td>
+<td align="right">0</td>
+<td align="center"><span class="math inline">\(qqq = q^3\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">VCC</td>
+<td align="right">1</td>
+<td align="center"><span class="math inline">\(pqq = pq^2\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">CVC</td>
+<td align="right">1</td>
+<td align="center"><span class="math inline">\(qpq = pq^2\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">CCV</td>
+<td align="right">1</td>
+<td align="center"><span class="math inline">\(qqp = pq^2\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">VVC</td>
+<td align="right">2</td>
+<td align="center"><span class="math inline">\(ppq = p^2q\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">VCV</td>
+<td align="right">2</td>
+<td align="center"><span class="math inline">\(pqp = p^2q\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">CVV</td>
+<td align="right">2</td>
+<td align="center"><span class="math inline">\(qpp = p^2q\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">VVV</td>
+<td align="right">3</td>
+<td align="center"><span class="math inline">\(ppp = p^3\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>The number of hits (vowels) in the <span class="math inline">\(n=3\)</span> draws has the
+<em>probability distribution</em> summarised in
+Table <a href="ch-probability-distributions.html#tab:binomprobabilitydistribution3">10.2</a> (first and last column) and
+Figure <a href="ch-probability-distributions.html#fig:binomprobabilitydistribution3">10.1</a> (horizontal and vertical axes).
+In such a probability distribution, we can see, for each possible outcome of <span class="math inline">\(x\)</span>
+(here: number of vowels), how high the probability of the outcome is.</p>
+<table>
+<caption><span id="tab:binomprobabilitydistribution3">Table 10.2: </span> Probability distribution of a
+binomial variable with <span class="math inline">\(n=3\)</span> and <span class="math inline">\(p=.38\)</span>.</caption>
+<thead>
+<tr class="header">
+<th align="left">Number of vowels</th>
+<th>Probability</th>
+<th align="center">Probability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">0</td>
+<td><span class="math inline">\(1 q^3\)</span></td>
+<td align="center">= .2383</td>
+</tr>
+<tr class="even">
+<td align="left">1</td>
+<td><span class="math inline">\(3 p q^2\)</span></td>
+<td align="center">= .4383</td>
+</tr>
+<tr class="odd">
+<td align="left">2</td>
+<td><span class="math inline">\(3 p^2 q\)</span></td>
+<td align="center">= .2686</td>
+</tr>
+<tr class="even">
+<td align="left">3</td>
+<td><span class="math inline">\(1 p^3\)</span></td>
+<td align="center">= .0549</td>
+</tr>
+<tr class="odd">
+<td align="left">total</td>
+<td><span class="math inline">\((p+q)^3\)</span></td>
+<td align="center">= 1.0000</td>
+</tr>
+</tbody>
+</table>
+<div class="figure"><span id="fig:binomprobabilitydistribution3"></span>
+<img src="QMS-EN_files/figure-html/binomprobabilitydistribution3-1.png" alt="Probability distribution of a binomial variable with $n=3$ and $p=.38$." width="384" />
+<p class="caption">
+Figure 10.1: Probability distribution of a binomial variable with <span class="math inline">\(n=3\)</span> and <span class="math inline">\(p=.38\)</span>.
+</p>
+</div>
+<p>We call the probability distribution of a binomial variable the binomial
+probability distribution, also referred to as the binomial distribution.
+You can calculate the precise probabilities of the binomial
+probability distribution with the formula <a href="ch-probability-distributions.html#eq:prob-binomial">(10.5)</a> below.</p>
+<div id="formulas" class="section level3" number="10.2.1">
+<h3><span class="header-section-number">10.2.1</span> formulas</h3>
+<p>The probability of an <span class="math inline">\(x\)</span> number of hits in <span class="math inline">\(n\)</span> draws is given as
+<span class="math display" id="eq:prob-binomial">\[\begin{equation}
+  P(x\,\mbox{hits}) = {n \choose x} p^x (1-p)^{n-x}
+  \tag{10.5}
+\end{equation}\]</span>
+in which <span class="math inline">\(n\)</span> is the number of draws or attempts, <span class="math inline">\(x\)</span> is the number of hits
+(between 0 and <span class="math inline">\(n\)</span>), and <span class="math inline">\(p\)</span> is the probability of a hit.</p>
+<p>The coefficient <span class="math inline">\({n \choose x}\)</span> indicates the number of different orderings
+in which we can choose a combination (syllable) of <span class="math inline">\(x\)</span> elements from<br />
+<span class="math inline">\(n\)</span>. With <span class="math inline">\(x=1\)</span> vowel from <span class="math inline">\(n=3\)</span> draws, there are three possibilities:
+one vowel might have been drawn in the first draw, or the second
+draw, or the third draw, see
+Table <a href="ch-probability-distributions.html#tab:vowelprobabilities">10.1</a>. The number of different possible
+orderings is indicated as<br />
+<span class="math display" id="eq:choose">\[\begin{equation}
+  {n \choose x} = \frac{n!}{x!(n-x)!}
+  \tag{10.6}
+\end{equation}\]</span>
+in which
+<span class="math inline">\(x! = x (x-1) (x-2) \dots \times 2 \times 1\)</span>, thus
+<span class="math inline">\(4!=4\times3\times2\times1=24\)</span>.</p>
+<hr />
+<blockquote>
+<p><em>Example 10.5:</em> There are 4 chairs for 2 persons. A maximum of 1 person is
+allowed to sit down on one chair. How many different orderings of <span class="math inline">\(x=2\)</span> persons
+are possible over <span class="math inline">\(n=4\)</span> chairs?</p>
+</blockquote>
+<blockquote>
+<p>Answer: There are
+<span class="math inline">\({4 \choose 2} = \frac{4\times3\times2\times1}{2\times1\times2\times1} = \frac{24}{4} = 6\)</span>
+possible orderings, namely 1100, 1010, 1001, 0110, 0101, and 0011.</p>
+</blockquote>
+<hr />
+<p>These binomial coefficients indicating the number of different
+possible orderings can quickly be retrieved from Pascal’s so-called
+triangle, depicted in Table <a href="ch-probability-distributions.html#tab:pascaltriangle">10.3</a>.
+We can find the number of different
+orderings of <span class="math inline">\(x=2\)</span> persons over <span class="math inline">\(n=4\)</span> chairs in row <span class="math inline">\(n=4\)</span>.
+The uppermost row is that for <span class="math inline">\(n=0\)</span>. The fifth row is that for <span class="math inline">\(n=4\)</span> and we
+can see the binomial coefficients for <span class="math inline">\(x= 0, 1, 2, 3, 4\)</span> there one after another.
+For <span class="math inline">\({4 \choose 2}\)</span>, we find there the binomial coefficient <span class="math inline">\(6\)</span>.
+Every coefficient is the total of the two coefficients above<a href="#fn22" class="footnote-ref" id="fnref22"><sup>22</sup></a>, and
+every coefficient can be understood as the number of possible
+routes descending from the top of the triangle
+to the cell.</p>
+<table>
+<caption><span id="tab:pascaltriangle">Table 10.3: </span> Pascal’s triangle: Binomial coefficients for the
+number of possible orderings for a combination of <span class="math inline">\(x\)</span> elements from <span class="math inline">\(n\)</span> (see text).</caption>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(n= 0\)</span>:</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td align="center">1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(n= 1\)</span>:</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>1</td>
+<td align="center"></td>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(n= 2\)</span>:</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>1</td>
+<td></td>
+<td align="center">2</td>
+<td></td>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(n= 3\)</span>:</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>1</td>
+<td></td>
+<td>3</td>
+<td align="center"></td>
+<td>3</td>
+<td></td>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(n= 4\)</span>:</td>
+<td></td>
+<td></td>
+<td></td>
+<td>1</td>
+<td></td>
+<td>4</td>
+<td></td>
+<td align="center">6</td>
+<td></td>
+<td>4</td>
+<td></td>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(n= 5\)</span>:</td>
+<td></td>
+<td></td>
+<td>1</td>
+<td></td>
+<td>5</td>
+<td></td>
+<td>10</td>
+<td align="center"></td>
+<td>10</td>
+<td></td>
+<td>5</td>
+<td></td>
+<td>1</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(n= 6\)</span>:</td>
+<td></td>
+<td>1</td>
+<td></td>
+<td>6</td>
+<td></td>
+<td>15</td>
+<td></td>
+<td align="center">20</td>
+<td></td>
+<td>15</td>
+<td></td>
+<td>6</td>
+<td></td>
+<td>1</td>
+<td></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(n= 7\)</span>:</td>
+<td>1</td>
+<td></td>
+<td>7</td>
+<td></td>
+<td>21</td>
+<td></td>
+<td>35</td>
+<td align="center"></td>
+<td>35</td>
+<td></td>
+<td>21</td>
+<td></td>
+<td>7</td>
+<td></td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>The mean and the standard deviation of the binomial probability distribution
+are <span class="math display">\[\begin{aligned}
+    \mu &amp; = &amp; np \\
+    \sigma &amp; = &amp; \sqrt{ np(1-p) }\end{aligned}\]</span></p>
+<hr />
+<blockquote>
+<p><em>Example 10.6:</em>
+The binomial probability distribution for <span class="math inline">\(x\)</span> hits from <span class="math inline">\(n=3\)</span> draws with
+<span class="math inline">\(p=.38\)</span> probability of a hit is shown in
+Figure <a href="ch-probability-distributions.html#fig:binomprobabilitydistribution3">10.1</a>. This binomial probability
+distribution has an average <span class="math inline">\(\mu=n \times p = 3 \times .38 = 1.14\)</span>, and a
+standard deviation
+<span class="math inline">\(\sigma = \sqrt{n \times p \times (1-p)} = \sqrt{ 3 \times .38 \times .62} = 0.84\)</span>&gt;</p>
+</blockquote>
+<hr />
+</div>
+<div id="r-4" class="section level3" number="10.2.2">
+<h3><span class="header-section-number">10.2.2</span> R</h3>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="ch-probability-distributions.html#cb45-1" aria-hidden="true"></a><span class="kw">dbinom</span>( <span class="dv">0</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">size=</span><span class="dv">3</span>, <span class="dt">prob=</span>.<span class="dv">38</span> )</span></code></pre></div>
+<pre><code>## [1] 0.238328 0.438216 0.268584 0.054872</code></pre>
+<p>The output is shown in Table <a href="ch-probability-distributions.html#tab:binomprobabilitydistribution3">10.2</a> below.</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="ch-probability-distributions.html#cb47-1" aria-hidden="true"></a>matrixcalc<span class="op">::</span><span class="kw">pascal.matrix</span>( <span class="dv">10</span> ) <span class="co"># left under diagonal is Pascal&#39;s triangle</span></span></code></pre></div>
+<pre><code>##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
+##  [1,]    1    0    0    0    0    0    0    0    0     0
+##  [2,]    1    1    0    0    0    0    0    0    0     0
+##  [3,]    1    2    1    0    0    0    0    0    0     0
+##  [4,]    1    3    3    1    0    0    0    0    0     0
+##  [5,]    1    4    6    4    1    0    0    0    0     0
+##  [6,]    1    5   10   10    5    1    0    0    0     0
+##  [7,]    1    6   15   20   15    6    1    0    0     0
+##  [8,]    1    7   21   35   35   21    7    1    0     0
+##  [9,]    1    8   28   56   70   56   28    8    1     0
+## [10,]    1    9   36   84  126  126   84   36    9     1</code></pre>
+<p>Pascal’s triangle can be found on the left under the diagonal of this matrix.</p>
+</div>
+</div>
+<div id="sec:normaldistribution" class="section level2" number="10.3">
+<h2><span class="header-section-number">10.3</span> Normal probability distribution</h2>
+<p>The more the sample size <span class="math inline">\(n\)</span> increases, the less gradually the binomial probability
+distribution will move up, and the more fluid the probability
+distribution will become, as is shown in
+Figure <a href="ch-probability-distributions.html#fig:binomprobabilitydistribution50n500">10.2</a>.</p>
+<div class="figure"><span id="fig:binomprobabilitydistribution50n500"></span>
+<img src="QMS-EN_files/figure-html/binomprobabilitydistribution50n500-1.png" alt="Probability distribution of a binomial variable x with n=50 (left) and n=500 (right) and p=.38." width="672" />
+<p class="caption">
+Figure 10.2: Probability distribution of a binomial variable x with n=50 (left) and n=500 (right) and p=.38.
+</p>
+</div>
+<p>With an even larger sample, the probability distribution becomes a fluid line.
+This probability distribution occurs so often, that it is called the
+<em>normal probability distribution</em> or ‘normal distribution’. The distribution
+is also referred to as the Gaussian distribution (named after the mathematician
+Carl Friedrich Gauss, 1777–1855), or the ‘bell curve’ (after the shape). Many
+variables approximately follow this probability distribution:
+birth weight, body length, vocabulary size, IQ, contents of a 1 litre ℮ carton
+of milk, length of a telephone conversation, etc. etc. For all of these variables,
+observations close to the average have a high probability of occurring, and
+observations which deviate greatly from the average are relatively rare (low
+probability).</p>
+<div class="figure"><span id="fig:normalprobabilitydistribution"></span>
+<img src="QMS-EN_files/figure-html/normalprobabilitydistribution-1.png" alt="Normal probability distribution of a variable x with average 0 and standard deviation 1." width="672" />
+<p class="caption">
+Figure 10.3: Normal probability distribution of a variable x with average 0 and standard deviation 1.
+</p>
+</div>
+<p>The normal probability distribution of a variable <span class="math inline">\(X\)</span> with average <span class="math inline">\(\mu\)</span> and
+standard deviation <span class="math inline">\(\sigma\)</span> has the following characteristics (see
+Figure <a href="ch-probability-distributions.html#fig:normalprobabilitydistribution">10.3</a>):</p>
+<ul>
+<li><p>the distribution is symmetrical around the average <span class="math inline">\(\mu\)</span>,</p></li>
+<li><p>the distribution is asymptotic, i.e. the tails go on infinitely,</p></li>
+<li><p>the average, the median and the mode coincide,</p></li>
+<li><p>the total area under the curve, i.e. the total probability of one of
+the possible outcomes, is equal to 1,</p></li>
+<li><p>the area under the curve indicates the probability of a value of <span class="math inline">\(X\)</span> within a
+certain interval,</p></li>
+<li><p>the inflection points of the curve (from concave to convex and vice versa) are
+at <span class="math inline">\(X=\mu-\sigma\)</span> and <span class="math inline">\(X=\mu+\sigma\)</span>,</p></li>
+<li><p>around 2/3’s of the observations are
+between <span class="math inline">\(X=\mu-\sigma\)</span> and <span class="math inline">\(X=\mu+\sigma\)</span> (dark grey area;
+<span class="math inline">\(P(-1&lt;x/\sigma&lt;1)=.6827\)</span> or 68%) and around 95% of the observations are
+between <span class="math inline">\(-2\sigma\)</span> and <span class="math inline">\(+2\sigma\)</span> (dark grey plus light grey
+areas; <span class="math inline">\(P(-2&lt;x/\sigma&lt;2)=.9546\)</span>), this is known as the
+Empirical Rule.</p></li>
+</ul>
+<p>A normal probability distribution with <span class="math inline">\(\mu=0\)</span> and <span class="math inline">\(\sigma=1\)</span> is referred to as
+the standard normal probability distribution. Just as we saw earlier
+(§<a href="ch-centre-and-dispersion.html#sec:standardscores">9.8</a>), we can standardise a normally distributed
+variable <span class="math inline">\(x\)</span>, i.e. transform the observations to a standard score
+or <span class="math inline">\(z\)</span>-score: <span class="math inline">\(z = (x-\overline{x})/s\)</span>.
+The probability distribution in
+Figure <a href="ch-probability-distributions.html#fig:normalprobabilitydistribution">10.3</a> is that of the standard normal
+probability distribution of <span class="math inline">\(Z\)</span>, or the probability distribution of <span class="math inline">\((X-\mu)/\sigma\)</span>.</p>
+<p>You could calculate the probability distribution of a normally distributed
+variable <span class="math inline">\(X\)</span> yourself with the help of the formula
+<a href="ch-probability-distributions.html#eq:prob-normal">(10.8)</a> below. However, it is more convenient to
+use a table for it; this can be found in
+Appendix <a href="app-criticalZvalues.html#app:criticalZvalues">B</a>.
+Explained in graphical form, the tables provide you, for
+different areas or probabilities <span class="math inline">\(p\)</span> on the right-hand side under the curve,
+the positive value of <span class="math inline">\(Z^*\)</span> which constitutes the left-hand limit of the area.
+This means that you have precisely probability <span class="math inline">\(p\)</span> of finding
+a value <span class="math inline">\(Z\)</span> which is as large as or larger than this lower limit <span class="math inline">\(Z^*\)</span>
+(provided of course that the variable is indeed normally distributed).</p>
+<hr />
+<blockquote>
+<p>Example 10.7: On the right-hand side of Figure
+<a href="ch-probability-distributions.html#fig:normalprobabilitydistribution">10.3</a>, we can see a small white area
+under the curve. This area renders the probability that
+<span class="math inline">\(Z&gt;2\)</span>. The area has a size of 0.0228. The probability of finding a value of <span class="math inline">\(Z&gt;2\)</span> is thus 0.0228 or a little less than 2.5%. (Tip: relate this
+probability to the aforementioned Empirical Rule).</p>
+</blockquote>
+<hr />
+<p>In Appendix <a href="app-criticalZvalues.html#app:criticalZvalues">B</a>, you can find for convenience not one but two
+tables, each consisting of several column designations and
+and a row of cells. The first table provides you, for different ‘rounded’
+probabilities <span class="math inline">\(p\)</span> (columns), the critical values <span class="math inline">\(Z^*\)</span> (cells), for which the
+probability <span class="math inline">\(p\)</span> of finding a value of <span class="math inline">\(Z\)</span> which is as large as or larger
+than the critical value <span class="math inline">\(Z^*\)</span>, is precisely equal to the value <span class="math inline">\(p\)</span>
+at the top of the column. The second table works the same, but in the case the
+‘rounded’ values of <span class="math inline">\(Z^*\)</span> are in the cells, and precise probabilities <span class="math inline">\(p\)</span> are in the
+column designations.</p>
+<p>What is the probability <span class="math inline">\(p\)</span> that <span class="math inline">\(Z&gt;1\)</span>? In the second subtable, second column,
+we find <span class="math inline">\(p=0.1587\)</span>. Based on this, we also know that <span class="math inline">\(P(Z&lt;1)\)</span> must be
+<span class="math inline">\(1-0.1587=0.8413\)</span>. Moreover, we know that the distribution is symmetric
+(see above), so we know that <span class="math inline">\(P(Z&lt; -1)\)</span> must also be <span class="math inline">\(.1587\)</span>.
+What is the probability <span class="math inline">\(p\)</span> that <span class="math inline">\(Z&gt;3\)</span>? In the second subtable, we find
+for boundary value <span class="math inline">\(Z^*=3\)</span> the p-value
+<span class="math inline">\(p=0.0013\)</span>. Thus, for a normally distributed variable <span class="math inline">\(Z\)</span>
+there is a p-value <span class="math inline">\(p=0.0013\)</span> of finding a value of <span class="math inline">\(Z\)</span>
+which is at least three standard variations above the average.</p>
+<p>We often want to know the opposite: when we choose a certain p-value,
+what should the boundary value <span class="math inline">\(Z^*\)</span> be?
+Which boundary value distinguishes the highest 5% of observations from the
+lowest 95% (<span class="math inline">\(p=0.05\)</span>)? In the first subtable, we find for p-value
+<span class="math inline">\(p=0.05\)</span> the boundary value <span class="math inline">\(Z^*=1.645\)</span>. This boundary value, calculated back
+to the original variable, is often referred to as the 95th percentile or
+‘P95’ of the distribution. Whoever has achieved at least this score,
+is part of the top 5% and has thus performed better than
+95% of the participants
+(provided again that the variable is indeed normally distributed).</p>
+<hr />
+<blockquote>
+<p><em>Example 10.8:</em>
+By definition, extreme values occur infrequently with a normally distributed
+variable. But what is the limit for an extreme value. Let us assume that
+we want to consider no more than 5% of all observations as extreme.
+The normal probability distribution is symmetric, thus from this 5% we can
+expect that one half (2.5%) is at the left extremity of the distribution,
+and the other 2.5% is on the right-hand side. Which boundary value <span class="math inline">\(Z^*\)</span>
+corresponds with this p-value <span class="math inline">\(p=0.025\)</span>?</p>
+</blockquote>
+<blockquote>
+<p>In
+Appendix <a href="app-criticalZvalues.html#app:criticalZvalues">B</a>, we take the first subtable. In the column
+for p-value <span class="math inline">\(p=0.025\)</span>, we find boundary value
+<span class="math inline">\(Z^*=1.960\)</span>. If we find an observation with <span class="math inline">\(Z \ge 1.960\)</span> or with
+<span class="math inline">\(Z \le -1.960\)</span>, then we consider that to be an extreme, rare
+observation.</p>
+</blockquote>
+<hr />
+<blockquote>
+<p><em>Example 10.9:</em>
+Intelligence is expressed as an IQ score, a variable with a normal
+probability distribution with <span class="math inline">\(\mu=100\)</span> and <span class="math inline">\(\sigma=15\)</span>. “Membership of Mensa
+is open to persons who have achieved a score within the upper two
+percent of the general population on an approved intelligence test that
+has been properly administered and supervised”
+(<a href="www.mensa.org">www.mensa.org</a>). What is the minimum IQ score you must
+achieve to become a member?</p>
+</blockquote>
+<blockquote>
+<p>Answer: The 98th percentile from a standard normally distributed
+variable is at <span class="math inline">\(Z^*=+2.0537\)</span>, and thus with
+<span class="math inline">\(x=\overline{x}+2.0537 s = 100+30.8 = 130.8\)</span>. Rounded upwards, you thus
+have to achieve an IQ score of 131 points or higher.</p>
+</blockquote>
+<hr />
+<blockquote>
+<p><em>Example 10.10:</em>
+Verify the aforementioned Empirical Rule with the help of
+Appendix <a href="app-criticalZvalues.html#app:criticalZvalues">B</a>.</p>
+</blockquote>
+<hr />
+<!-- 
+The second table in Appendix \@ref{app:criticalZvalues} provides you also
+with different positive values from that 
+lower boundary $Z^*$, the precise probability $p$ of finding a value of $Z$
+which is equally large as or larger than this lower boundary $Z^*$. We call
+this precise probability $p$, the *p-value* which belongs 
+to the value of $Z$ according to the probability distribution.
+-->
+<div id="formulas-1" class="section level3" number="10.3.1">
+<h3><span class="header-section-number">10.3.1</span> formulas</h3>
+<p>If variable <span class="math inline">\(X\)</span> has a normal probability distribution, with average <span class="math inline">\(\mu\)</span>
+and standard deviation <span class="math inline">\(\sigma\)</span>, then this is shown as
+<span class="math display" id="eq:normallydistributed">\[\begin{equation}
+  X \sim \mathcal{N}(\mu,\sigma)
+  \tag{10.7}
+\end{equation}\]</span></p>
+<p>The normal probability distribution of variable <span class="math inline">\(X\)</span> with average <span class="math inline">\(\mu\)</span> and
+standard deviation <span class="math inline">\(\sigma\)</span> is
+<span class="math display" id="eq:prob-normal">\[\begin{equation}
+  P(X) = \frac{1}{\sigma \sqrt{2\pi}} \mbox{e}^{ \frac{-(X-\mu)^2}{2\sigma^2} }.
+  \tag{10.8}
+\end{equation}\]</span></p>
+<p>The standard normal probability distribution of variable <span class="math inline">\(Z\)</span> with average
+<span class="math inline">\(\mu=0\)</span> and standard deviation <span class="math inline">\(\sigma=1\)</span> is
+<span class="math display" id="eq:prob-standardnormal">\[\begin{equation}
+    P(Z) = \frac{1}{\sqrt{2\pi}} \mbox{e}^{ \frac{-Z^2}{2} }
+  \tag{10.9}
+\end{equation}\]</span></p>
+</div>
+</div>
+<div id="sec:isvarnormaldistributed" class="section level2" number="10.4">
+<h2><span class="header-section-number">10.4</span> Does my variable have a normal probability distribution?</h2>
+<p>The longest song in my digital music library lasts around 50
+minutes (it’s a piece of classical Indian music, a ‘morning raga’).
+A histogram of all music number lengths is shown in
+Figure <a href="ch-probability-distributions.html#fig:itunestimeshist">10.4</a>.</p>
+<div class="figure"><span id="fig:itunestimeshist"></span>
+<img src="QMS-EN_files/figure-html/itunestimeshist-1.png" alt="Histogram of the lengths of music numbers in my digital music library." width="672" />
+<p class="caption">
+Figure 10.4: Histogram of the lengths of music numbers in my digital music library.
+</p>
+</div>
+<p>This histogram shows that these lengths clearly
+do <em>not</em> follow a normal probability distribution: the distribution is not
+symmetric, and the lowest tail does not go on infinitely (there are
+no music numbers with negative lengths).</p>
+<p>The average <span class="math inline">\(\bar{x} =\)</span> 4.698 and
+standard deviation <span class="math inline">\(s =\)</span> 5.11 also
+point to a non-normal probability distribution:
+with a normal distribution, we expect that only <span class="math inline">\((68/2)+50=84\)</span>% of the lengths
+last longer than
+<span class="math inline">\(\bar{x}-s\approx 0\)</span> minutes, but in reality 100% last longer
+than 0 minutes (thus a larger proportion than expected).</p>
+<p>A frequently used technique to inspect whether or not a variable <span class="math inline">\(X\)</span> has a
+normal probability distribution, is to make a graph with the
+observed values along one of the axes (here the horizontal axis), and the
+corresponding
+<span class="math inline">\(z\)</span>-scores
+along the other axis. A figure like this is called a quantile-quantile plot or
+Q-Q plot; the Q-Q plot for the lengths in my music library are shown in
+Figure <a href="ch-probability-distributions.html#fig:itunestimesqqplot">10.5</a>.</p>
+<div class="figure"><span id="fig:itunestimesqqplot"></span>
+<img src="QMS-EN_files/figure-html/itunestimesqqplot-1.png" alt="Quantile-quantile plot of the lengths of music numbers in my digital library." width="672" />
+<p class="caption">
+Figure 10.5: Quantile-quantile plot of the lengths of music numbers in my digital library.
+</p>
+</div>
+<p>If the lengths had a normal probability distribution (were normally
+distributed), then the points would cluster around the purple straight line. And there would have to be a number of negative lengths… The deviations from the purple straight line in
+Figure <a href="ch-probability-distributions.html#fig:itunestimesqqplot">10.5</a> thus indicate that the observed lengths
+do not follow a normal probability distribution, as we already saw in the
+histogram (Figure <a href="ch-probability-distributions.html#fig:itunestimeshist">10.4</a>).</p>
+<p>There are also different statistical tests to investigate whether or not a variable
+has a normal probability distribution. The two most used are the
+Shapiro-Wilk test (with test statistic <span class="math inline">\(W\)</span>)<br />
+for normality, and the Kolmogorov–Smirnov test (with test statistic <span class="math inline">\(D\)</span>) for
+normality. Both tests investigate the
+H0:<span class="math inline">\(X\sim\mathcal{N}(\bar{X},s)\)</span> (see
+formula <a href="ch-probability-distributions.html#eq:normallydistributed">(10.7)</a>).</p>
+<div id="spss-4" class="section level3" number="10.4.1">
+<h3><span class="header-section-number">10.4.1</span> SPSS</h3>
+<pre><code>Analyze &gt; Descriptive Statistics &gt; Explore...</code></pre>
+<p>Select the variable Time (drag to the Dependent List panel).<br />
+Choose the button <code>Plots</code>, and tick <code>Normality plots with tests</code>, which
+means ‘if you make a QQ-plot or Normality plot, you should also then conduct
+tests on normality’.
+Confirm with <code>Continue</code> and afterwards with <code>OK</code>. The output contains
+firstly the results of the Shapiro-Wilks test and the
+Kolmogorov-Smirnov test. According to both tests, the probability of finding
+this distribution, if H0 is true, is almost null – see however the
+warning in
+§@ref(#sec:plargerthannull)! We thus reject H0 and conclude that
+the lengths of music numbers are not normally distributed. After these
+test results, there is, amongst others, a Q-Q plot.</p>
+</div>
+<div id="r-5" class="section level3" number="10.4.2">
+<h3><span class="header-section-number">10.4.2</span> R</h3>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="ch-probability-distributions.html#cb50-1" aria-hidden="true"></a>itunes &lt;-<span class="st"> </span><span class="kw">read.table</span>( <span class="dt">file=</span><span class="st">&quot;data/itunestimes20120511.txt&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span> )</span>
+<span id="cb50-2"><a href="ch-probability-distributions.html#cb50-2" aria-hidden="true"></a><span class="co"># Size in bytes, Time in ms</span></span>
+<span id="cb50-3"><a href="ch-probability-distributions.html#cb50-3" aria-hidden="true"></a><span class="kw">qqnorm</span>(itunes<span class="op">$</span>Time<span class="op">/</span><span class="dv">60000</span>, <span class="dt">datax=</span>T, <span class="dt">plot.it=</span><span class="ot">FALSE</span>) <span class="co"># normally we&#39;d use plot.it=TRUE  </span></span>
+<span id="cb50-4"><a href="ch-probability-distributions.html#cb50-4" aria-hidden="true"></a><span class="co"># qqline(itunes$Time/60000, datax=T, col=&quot;purple&quot;, lwd=T) # see QQ-plot above</span></span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="ch-probability-distributions.html#cb51-1" aria-hidden="true"></a><span class="kw">shapiro.test</span>(itunes<span class="op">$</span>Time<span class="op">/</span><span class="dv">60000</span>)</span></code></pre></div>
+<pre><code>## 
+##  Shapiro-Wilk normality test
+## 
+## data:  itunes$Time/60000
+## W = 0.50711, p-value &lt; 2.2e-16</code></pre>
+<p>According to this test, the probability of finding a distribution, if H0 is
+zero, is almost null, namely smaller than <span class="math inline">\(2.2 \times 10^{-16}\)</span> (i.e. smaller than
+the smallest number that the analysis packet can render). We therefore
+reject H0 and conclude that the length of music numbers is not normally
+distributed.</p>
+</div>
+</div>
+<div id="sec:whatifnotnormal" class="section level2" number="10.5">
+<h2><span class="header-section-number">10.5</span> What if my variable is not normally distributed?</h2>
+<p>In Part III, we will discuss various statistical tests.
+The tests which we discuss in Chapters <a href="#ch:testing"><strong>??</strong></a> and <a href="#ch:power"><strong>??</strong></a> and
+<a href="#ch:anova"><strong>??</strong></a> however require that the independent
+variable has a normal probability distribution. If a variable does <em>not</em> have
+a (approximately) normal probability distribution, then the variable cannot
+simply be used for statistical testing with the statistical tests
+there, or to be more precise, the conclusions from such a statistical testing
+are not valid then. What can be done? There are then two
+possibilities.</p>
+<p>Firstly, it is possible to transform the dependent variable <span class="math inline">\(y\)</span>,
+i.e. to apply an arithmetic operation to it. If all is well, that results
+in a variable <span class="math inline">\(y&#39;\)</span> which is actually normally distributed. Much used transformations are: to take the logarithm (<span class="math inline">\(y&#39;=\log{y}\)</span>), take the square root, or
+invert (<span class="math inline">\(y&#39;=1/y\)</span>). Then, the transformed dependent variable <span class="math inline">\(y&#39;\)</span> is used for
+the statistical testing. Of course, it is imperative to check whether the
+new dependent variable <span class="math inline">\(y&#39;\)</span> is indeed (approximately) normally distributed. When
+interpreting the results of the analysis, you should also take into account
+the transformation performed!</p>
+<p>Secondly, it is sometimes possible to use another statistical test which does
+not require that the dependent variable is normally distributed. Those are called
+nonparametric tests. We will look at these in more detail in the chapters
+<a href="#ch:chi-square-tests"><strong>??</strong></a> and
+<a href="#ch:other-nonpar-tests"><strong>??</strong></a>.
+A disadvantage of those tests is nevertheless that they have less
+statistical power (for a discussion of power,
+see Chapter <a href="#ch:power"><strong>??</strong></a>): they are less sensitive, and thus require larger
+samples to establish an effect.</p>
+</div>
+<div id="sec:Centrallimittheorem" class="section level2" number="10.6">
+<h2><span class="header-section-number">10.6</span> Probability distribution of average</h2>
+<p>In this section, we consider the music numbers in my digital
+music library as a <em>population</em>. We now take a random
+sample of <span class="math inline">\(n=\)</span> 50 numbers, and determine the average length of these
+50 music numbers in the sample:
+let us say <span class="math inline">\(\bar{x} =\)</span> 4.401 minutes. Surprisingly
+enough, the average of this sample is close to the average
+of the population (<span class="math inline">\(\mu =\)</span> 4.615, see above).
+We repeat this operation
+<span class="math inline">\(250\times\)</span>: in this way, we get 250 sample averages. The
+frequency distribution of these 250 sample averages are shown in
+Figure <a href="ch-probability-distributions.html#fig:itunesmeanshist">10.6</a>.</p>
+<div class="figure"><span id="fig:itunesmeanshist"></span>
+<img src="QMS-EN_files/figure-html/itunesmeanshist-1.png" alt="Frequency distribution of 250 averages, each over a random sample of $n=50$ music numbers (the dependent variable is the length of a music number, in minutes). The matching normal distribution is shown as a fluid curve." width="672" />
+<p class="caption">
+Figure 10.6: Frequency distribution of 250 averages, each over a random sample of <span class="math inline">\(n=50\)</span> music numbers (the dependent variable is the length of a music number, in minutes). The matching normal distribution is shown as a fluid curve.
+</p>
+</div>
+<p>Surprisingly enough, these <em>averages</em> from (the dependent variables
+<span class="math inline">\(X\)</span> in) the samples <em>do</em> show a more or less normal probability distribution,
+regardless of whether the variable <span class="math inline">\(X\)</span> in the population is normally distributed or
+not. Put otherwise, the probability distribution of a sample average <em>always</em>
+approximates the normal probability distribution, regardless of the probability
+distribution of the variable in question in the population, provided that the sample
+was sufficiently large. (This is known as the Central Limit Theorem). Reread the
+above sentences again carefully. As a rule of thumb, the size of the sample, <span class="math inline">\(n\)</span>,
+should be at least 30. The larger the sample is, the less the probability
+distribution of the sample averages deviates from the normal distribution.</p>
+<p>The normal probability distribution of the sample averages has its own average,
+<span class="math inline">\(\mu_{\bar{X}}\)</span>, and its own standard deviation,
+<span class="math inline">\(s_{\bar{X}}\)</span>. For this, the following applies:
+<span class="math display" id="eq:meanofmean">\[\begin{equation}
+    \mu_{\bar{X}} = \mu_X
+    \tag{10.10}
+\end{equation}\]</span>
+and
+<span class="math display" id="eq:sem">\[\begin{equation}
+    s_{\bar{X}} = \frac{s}{\sqrt{n}}
+    \tag{10.11}
+\end{equation}\]</span>
+The standard deviation of the
+mean, <span class="math inline">\(s_{\bar{X}}\)</span>, is also known as the ‘standard error of
+the mean’. The same averages <span class="math inline">\(\bar{X}\)</span> have less dispersion than the separate
+observations <span class="math inline">\(X\)</span>, and the averages also vary less when taken over a larger
+sample, as seems to be the case from formula <a href="ch-probability-distributions.html#eq:sem">(10.11)</a>. You can consider this
+standard error of the mean as the ‘margin of error’ in the estimation
+of the population average out of the sample average.</p>
+<p>What is special now is that we do not have to draw and analyse 250 repeated
+random samples. After all, we know that the sample averages have a normal
+probability distribution with
+<span class="math inline">\(\mu_{\bar{X}} = \mu_X\)</span> and <span class="math inline">\(s_{\bar{X}} = \frac{s}{\sqrt{n}}\)</span>. We can
+derive the probability distribution of the mean from only one sample of
+<span class="math inline">\(n\)</span> observations, with a sample mean <span class="math inline">\(\bar{X}\)</span> and one standard
+deviation <span class="citation">(Cumming <a href="#ref-Cumm12" role="doc-biblioref">2012</a>)</span>. Reread this paragraph carefully.</p>
+</div>
+<div id="sec:confidenceinterval-mean" class="section level2" number="10.7">
+<h2><span class="header-section-number">10.7</span> Confidence interval of the mean</h2>
+<p>As explained above, we can use the mean of the sample, <span class="math inline">\(\bar{X}\)</span>,
+as a good estimate of the unknown mean in the population, <span class="math inline">\(\mu\)</span>. On
+the basis of the Central Limit Theorem (§<a href="#sec:CentralLimitTheorem"><strong>??</strong></a>),
+we also know that the means of repeated samples (of <span class="math inline">\(n\)</span> observations) follow a
+normal distribution: <span class="math inline">\(\mu_{\bar{X}} \sim \mathcal{N}(\mu_{X},\sigma/\sqrt{n})\)</span>,
+and thus that 95% of these repeated sample means will lie between
+<span class="math inline">\(\mu_{X}-1.96\sigma/\sqrt{n}\)</span> and <span class="math inline">\(\mu_{X}+1.96\sigma/\sqrt{n}\)</span>.
+This interval is called the 95% confidence interval. We know with
+95% confidence that the population mean <span class="math inline">\(\mu\)</span> lies in this interval
+— provided that <span class="math inline">\(n\)</span> is sufficiently large, and provided that the standard
+deviation, <span class="math inline">\(\sigma\)</span>, is known in the population.</p>
+<p>In practice, this last condition is rarely or never satisfied. The
+standard deviation in the population is usually not known
+and this <span class="math inline">\(\sigma\)</span> is thus also estimated from the sample. We use
+the sample of <span class="math inline">\(n\)</span> observations not only to estimate <span class="math inline">\(\mu_X\)</span> but also
+to estimate <span class="math inline">\(\sigma_X\)</span>. We can then no longer determine the confidence
+interval on the basis of the standard normal probability distribution. Instead,
+we use an adapted version of it, the so-called t-distribution
+(Figure <a href="ch-probability-distributions.html#fig:tprobabilitydistribution">10.7</a>). This probability distribution of
+<span class="math inline">\(t\)</span> is somewhat broader, i.e. with a somewhat lower peak and with somewhat
+thicker tails than the standard normal probability distribution of <span class="math inline">\(Z\)</span> in
+Figure <a href="ch-probability-distributions.html#fig:normalprobabilitydistribution">10.3</a>. The thought behind this is that
+the estimation of <span class="math inline">\(\mu\)</span> is a bit more uncertain (thus the probability distribution
+is wider) since not only <span class="math inline">\(\mu\)</span> but also the standard error of the mean
+(<span class="math inline">\(s/\sqrt{n}\)</span>) are estimated on the basis of the sample. In both estimations, there
+can be deviations which mean that there is somewhat more probability of
+finding a mean which deviates from the population mean.
+As we have already seen, the larger <span class="math inline">\(n\)</span> is, the better the estimation of <span class="math inline">\(\mu\)</span>:
+the t-distribution then approximates the standard normal probability distribution.</p>
+<div class="figure"><span id="fig:tprobabilitydistribution"></span>
+<img src="QMS-EN_files/figure-html/tprobabilitydistribution-1.png" alt="Probability distribution according to the t-distribution of a variable $x$ with mean 0 and standard deviation 1, for n=600 and n=6." width="672" />
+<p class="caption">
+Figure 10.7: Probability distribution according to the t-distribution of a variable <span class="math inline">\(x\)</span> with mean 0 and standard deviation 1, for n=600 and n=6.
+</p>
+</div>
+<p>For the t-distribution, we thus have to know how large the sample was;
+after all, this <span class="math inline">\(n\)</span> determines the precise probability distribution of <span class="math inline">\(t\)</span>,
+and with it the critical value <span class="math inline">\(t*\)</span>. We will go into more detail on that
+in §<a href="#sec:ttest-freedomdegrees"><strong>??</strong></a>. Here, a detailed example will
+suffice.</p>
+<hr />
+<blockquote>
+<p><em>Example 10.11:</em>
+Sometimes a researcher wants to know the speed or tempo with which Dutch is actually spoken,
+and how much variation in this speech rate or tempo there is between speakers.
+This variable, speech rate, is expressed as the number of seconds
+a syllable lasts (typically about <span class="math inline">\(0.2\)</span> second or <span class="math inline">\(200\)</span> milliseconds). Although <span class="citation">Quené (<a href="#ref-Quene08" role="doc-biblioref">2008</a>)</span>
+estimates that <span class="math inline">\(\mu=0.220\)</span> s and <span class="math inline">\(\sigma=0.0225\)</span> s, we act as if
+we do not know these population parameters — just like real
+researchers who usually do not know
+the population parameters.</p>
+</blockquote>
+<blockquote>
+<p>For a sample of <span class="math inline">\(n=30\)</span> speakers, we find <span class="math inline">\(\overline{x}=0.215\)</span>
+and
+<span class="math inline">\(s=0.0203\)</span> seconds. From this, we estimate<a href="#fn23" class="footnote-ref" id="fnref23"><sup>23</sup></a>
+<span class="math inline">\(\hat{\mu}=0.215\)</span> and
+<span class="math inline">\(\hat{\sigma}=0.0203\)</span>. Since <span class="math inline">\(\sigma\)</span> is not known, we use
+the <em>t</em>-distribution to determine the confidence interval. We
+use the <em>t</em>-distribution for <span class="math inline">\(n=30\)</span> and find a critical value
+<span class="math inline">\(t^*=2.05\)</span> (see Appendix <a href="app-criticaltvalues.html#app:criticaltvalues">C</a>, for <span class="math inline">\(B=95\)</span>%).
+According to formula <a href="ch-probability-distributions.html#eq:t-onesampleCI">(10.12)</a>, we know with 95%
+confidence that the unknown population mean <span class="math inline">\(\mu\)</span> lies
+between <span class="math inline">\(\overline{x}-2.05\times s_{\bar{x}}\)</span> and <span class="math inline">\(\overline{x}+2.05\times s_{\bar{x}}\)</span>,
+or between <span class="math inline">\(0.215-2.05\times0.0037\)</span> and
+<span class="math inline">\(0.215+2.05\times0.0037\)</span>,
+or between <span class="math inline">\(0.208\)</span> and <span class="math inline">\(0.223\)</span> seconds.
+If the true value in the population is within these limits, then the observed sample value has a probability of 95% of occurring <span class="citation">(Spiegelhalter <a href="#ref-Spie19" role="doc-biblioref">2019</a>, 241)</span>.</p>
+</blockquote>
+<hr />
+<p>In Figure <a href="ch-probability-distributions.html#fig:tempo95CIs">10.8</a>, you can see the results of a
+computer simulation to illustrate this. We have taken <span class="math inline">\(100\times\)</span>
+imaginary samples of <span class="math inline">\(n=30\)</span> native speakers of Standard Dutch, and established the
+speech tempo of these speakers. For each sample, we have drawn
+the 95% confidence interval. For 95 of the 100 samples, the population
+mean <span class="math inline">\(\mu=0.220\)</span> indeed falls within the interval.
+But for 5 out of 100 samples, from a population with <span class="math inline">\(\mu=0.220\)</span>, the sample’s confidence interval does not contain the population mean (these are marked along the right hand side).</p>
+<div class="figure"><span id="fig:tempo95CIs"></span>
+<img src="QMS-EN_files/figure-html/tempo95CIs-1.png" alt="95% confidence intervals and sample means, over 100 simulated samples (n=30) out of a population with mean 0.220 and s.d. 0.0225; see text." width="672" />
+<p class="caption">
+Figure 10.8: 95% confidence intervals and sample means, over 100 simulated samples (n=30) out of a population with mean 0.220 and s.d. 0.0225; see text.
+</p>
+</div>
+<div id="formulas-2" class="section level3" number="10.7.1">
+<h3><span class="header-section-number">10.7.1</span> formulas</h3>
+<p>The two-sided <span class="math inline">\(B\)</span>% confidence interval for the population
+average is
+<span class="math display" id="eq:t-onesampleCI">\[\begin{equation}
+  \bar{X} \pm t^*_{n-1} \times \frac{s}{\sqrt{n}}
+  \tag{10.12}
+\end{equation}\]</span>
+in which <span class="math inline">\(t^*\)</span> with <span class="math inline">\(n-1\)</span> degrees of freedom is found with the help of
+Appendix <a href="app-criticaltvalues.html#app:criticaltvalues">C</a>, see
+§<a href="#sec:ttest-freedomdegrees"><strong>??</strong></a> for more explanation about this.</p>
+
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-Bhar13">
+<p>Bhargava, Saurabh, and Vikram Pathania. 2013. “Driving Under the (Cellular) Influence.” <em>American Economic Journal: Economic Policy</em> 5 (3): 92–125.</p>
+</div>
+<div id="ref-Cumm12">
+<p>Cumming, Geoff. 2012. <em>Understanding the New Statistics</em>. New York: Routledge.</p>
+</div>
+<div id="ref-Quene08">
+<p>Quené, H. 2008. “Multilevel Modeling of Between-Speaker and Within-Speaker Variation in Spontaneous Speech Tempo.” <em>Journal of the Acoustical Society of America</em> 123 (2): 1104–13.</p>
+</div>
+<div id="ref-SK01">
+<p>Schuurman, Wouter, and Hans De Kluiver. 2001. <em>Kop of Munt: Kansrekening in Het Dagelijks Leven</em>. Amsterdam: Bert Bakker.</p>
+</div>
+<div id="ref-Spie19">
+<p>Spiegelhalter, David. 2019. <em>The Art of Statistics: Learning from Data</em>. Pelican.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="20">
+<li id="fn20"><p>However, two of the tiles are blank (without any letter); later in this section we will remove these blank tiles from the bag.<a href="ch-probability-distributions.html#fnref20" class="footnote-back">↩︎</a></p></li>
+<li id="fn21"><p>Roulette players can gamble on 36 of the 37 possible outcomes, so in the long term the casino receives a <span class="math inline">\(1/37\)</span> share of all bets.<a href="ch-probability-distributions.html#fnref21" class="footnote-back">↩︎</a></p></li>
+<li id="fn22"><p>Thus, <span class="math inline">\({n \choose x} = {n-1 \choose x} + {n-1 \choose x-1}\)</span> <span class="citation">(Weisstein <a href="#ref-Weis15" role="doc-biblioref">2015</a>)</span>.<a href="ch-probability-distributions.html#fnref22" class="footnote-back">↩︎</a></p></li>
+<li id="fn23"><p>Estimations of parameters are indicated with a “circumflex” or “hat” above them.<a href="ch-probability-distributions.html#fnref23" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ch-centre-and-dispersion.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ch-correlation-regression.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/ch10probability.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["QMS-EN.pdf", "QMS-EN.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

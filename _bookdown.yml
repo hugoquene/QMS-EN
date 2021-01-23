@@ -9,8 +9,13 @@ rmd_files: ["index.Rmd",
             "ch07samples.Rmd",
             "ch08frequencies.Rmd",
             "ch09centreanddispersion.Rmd",
+            "ch10probability.Rmd",
+            "ch11correlation-regression.Rmd",
+            "ch12reliability.Rmd",
             "a1randomnumbers.Rmd",
             "a2criticalZvalues.Rmd",
+            "a3criticaltvalues.Rmd",
+            "a4criticalchi2values.Rmd",
             "references.Rmd"]
 output_dir: "docs"
 delete_merged_file: true

@@ -1,0 +1,598 @@
+# Reliability {#ch:reliability}
+
+## Introduction
+
+In Chapter \@ref(ch:validity), we talked about, amongst other matters, 
+construct validity, the distance between the intended (theoretical)
+concept or construct on the one hand, and the independent or dependent variable
+on the other hand. In this Chapter, we will look at another very important
+aspect of the dependent variable, namely its *reliability*.
+This reliability can be estimated based on the
+association between observations of the same construct.
+We will also look at the relations between reliability and construct validity.
+
+Often validity and reliability are mentioned in the same breath, and discussed in consecutive
+chapters. There is something to be said for this, since both concepts are about how you define and 
+operationalise your variables. Nevertheless, we have chosen a different ordering here. Reliability
+will only be discussed following our discussion of correlation (Chapter 
+\@ref(ch:correlation-regression)), since reliability is based on the relation or correlation 
+between observations.
+
+## What is reliability?
+
+A reliable person is stable and predictable: what he or she does
+today is consistent with what he or she did last week, you can trust 
+this person --- in contrast to an unreliable person, who
+is unstable and behaves unpredictably. According to Collins English Dictionary, someone or something is reliable when they/it "...can be trusted to work well or to behave in the way that you want them to".[^fn12-5] 
+Reliable measurements can form the basis for a 
+"justified true belief" (see 
+§\@ref(sec:falsification)); conversely, it is not worth
+giving credence to unreliable measurements.
+
+Measurements always show some degree of fluctuation or variation or
+inconsistency. This variability can partially be attributed to the
+variation in the behaviour which is being measured. After all, even if we
+measure the same construct for the same person, we still see variance
+as a result of the momentary mental or physical state of the participant,
+which simply fluctuates. Moreover, there is variation in the measuring device
+(thermometer, questionnaire, sensor), and there are probably inconsistencies in the manner 
+of measurement or evaluation. With the quantification of such consistencies and
+inconsistencies, we enter the realms of reliability analysis.
+
+The term 'reliability' has two meanings in academic research, which we 
+will treat separately. Firstly, reliability signifies the *precision*
+or *accuracy* of a measurement. This aspect concerns the question of the extent
+to which the measurement is influenced by chance factors (through which the 
+measurement does not exclusively render the construct investigated). 
+If we do *not* measure
+accurately then we also know what the measurements actually show ---
+perhaps they show the construct investigated but perhaps they also do not. If we do 
+measure accurately then we would expect, if we were to conduct the same measurement again, 
+that we would then measure the same outcome. The less precise a measurement is, the more variation or inconsistency there is between the first measurement and the repeated measurement,
+and the measurements are thus less reliable. 
+
+---
+
+> *Example 12.1:* If we want to measure the reading ability
+of pupils in their final examinations, then we present them
+with a reading comprehension test with a number of accompanying questions. 
+The degree to which the different questions measure *the same* construct, here the 
+construct 'reading ability', is called reliability, precision or
+homogeneity. 
+
+---
+
+
+In what follows, to avoid confusion, we will refer to this form
+of reliability with the term *homogeneity* (vs. 
+heterogeneity). With a heterogenous (non-homogenous) test, the total score
+is difficult to interpret. With a perfectly homogenous test, people
+who have the same total score have also answered the same questions correctly.
+However, when we measure human (language) behaviour, such perfectly homogenous tests 
+never occur: respondents who do achieve the same total score, have not
+always answered the same questions correctly (e.g. in the final examination
+reading ability test, Example 12.1). This implies that the questions have not 
+measured exactly the same capacity. This is also the case: one question was about
+paraphrasing a paragraph, whilst another was related to a relationship between
+a referential expression and its antecedent.             
+As such, the questions or items were not perfectly homogenous!
+
+Secondly, reliability signifies a measurement's *stability*.
+To measure your weight, you stand on a weighing scale. This 
+measurement is stable: five minutes later, the same weighing scale with the same
+person under the same circumstances will also yield (almost)
+the same measurement. Stability is often expressed in a so-called
+correlation coefficient (a measurement for association, see Chapter
+\@ref(ch:correlation-regression)). This correlation coefficient can assume all
+values between $+1$ and $-1$. The more similar the first and second measurement,
+the higher the correlation is, and the higher the association between the first and second
+measurement. Conversely, the lower the association between the first and second
+measurement is, the lower too the correlation is. 
+
+Stable measurements nevertheless rarely occur in research on
+(language) behaviour. If is a test is taken twice, then there is often 
+a considerable difference in scores on the first measurement point 
+and scores on the second measurement point. 
+
+---
+
+> *Example 12.2:* 
+In the final examination for Dutch secondary school, pupils typically have to write an essay, which is
+assessed by two raters. The raters are stable if, after some time, they
+give the same judgements to the same essays. Thus: if rater A at first gave a grade
+8 to an essay, and for the second evaluation sometime later, he/she also gave the same
+essay an 8, then this rater is (very) stable. If, however, the same
+rater A gave this same essay a grade 4 on the second evaluation, then this
+rater is not stable in his/her judgements. 
+
+> Now, grading essays is a tricky task: criteria are not precisely described
+and there is a relatively large amount of room for
+interpretation differences. Accordingly, the stability of judgements is also
+low; previously, a stability coefficient of even $0.40$ has 
+been reported. 
+
+---
+
+To calculate a test's stability, the same test has to be
+taken twice; the degree of association between the first and 
+second measurement is called the *test-retest-reliability*.
+In practice, repeatedly sitting a test like this rarely takes place due to
+the relatively high costs and relatively low benefits.
+
+---
+
+> *Example 12.3:* 
+@Lata09 developed
+a Spanish-language questionnaire consisting of 39 questions, intended
+for aphasia patients to determine their quality of life. The quality of life 
+is described as "the patient perception about, either the
+effects of a given disease, or the application of a certain treatment on
+different aspects of life, especially regarding its consequences on the
+physical, emotional and social welfare" [@Lata09, p.379]. The new questionnaire
+was taken twice with a sample of 23 
+Spanish-language patients with aphasia as a result of cerebral haemorrhage.
+The reported test-retest stability for this questionnaire was
+$0.95$.
+
+---
+
+Both homogeneity and stability are expressed as a
+coefficient with a value between $0$ and $1$ (in practice, negative coefficients
+do not occur). How should we interpret the reported
+coefficients? Generally, it is of course the case that the higher the coefficient is,
+the higher (better) the reliability. But how large should the reliability minimally be
+before we can call a test "reliable"? There are no clear rules for this.
+However, when considerations have to be made about people, then the test has to
+have a reliability of at least $0.90$ according to the *Nederlands
+Instituut van Psychologen* 'Dutch Institute for Psychologists' (NIP).
+This is, for instance, the case for tests which are used to determine whether or not a child is eligible for a so-called dyslexia declaration.       
+For research purposes, such a strict requirement for the reliability of a 
+test is not required. Often, $0.70$ is used as the lower limit of the 
+reliability coefficient.
+
+## Test theory
+
+Classical test theory refers to the measurement of variable $x$
+for the $i$-th element of a sample consisting of random members of the
+population. Test theory posits that each measurement $x_i$ is composed
+of two components, namely a true score $t_i$ and an error score:     
+\begin{equation}
+  x_i = t_i + e_i
+  (\#eq:obs-true-error)
+\end{equation}
+Imagine that you "actually" weigh $t=72.0$ kg, and imagine also
+that your measured weight is $x=71.6$ kg, then the error score 
+is $e=-0.4$ kg.
+
+A first important assumption in classical test theory is that 
+the deviations $e_i$ neutralise or cancel each other out (i.e. are zero when averaged
+out, and thus do not deviate systematically from the true score $t$), and
+that larger deviations above or below occur less often than smaller
+deviations. This means that the deviations are normally distributed  (see
+§\@ref(sec:normaldistribution)), with $\mu_e=0$ as mean:
+\begin{equation}
+  (\#eq:normal-error)
+  e_i \sim \mathcal{N}(0,s^2_e)
+\end{equation}
+
+A second important assumption in classical test theory is that there
+is no relation between the true scores $t_i$ and the error scores $e_i$.
+Since the component $e_i$ is completely determined by chance, and thus does not
+have any relation with $x_i$, the correlation between the true score and 
+the error score is null:
+\begin{equation}
+  (\#eq:r-true-error)
+  r_{(t,e)} = 0
+\end{equation}
+
+The total variance of $x$ is thus[^fn12-1] equal to the sum of the variance
+of the true scores and the variance of the error scores:
+\begin{equation}
+  (\#eq:var-true-error)
+  s^2_x = s^2_t + s^2_e
+\end{equation}
+
+When the observed variance $s^2_x$ proportionately contains much
+error variance (i.e. variance of deviations), then the observed scores
+have been determined for the most part by chance deviations. That is of course
+undesirable. In a such instance, we say that the observed scores
+are not reliable; there is much "noise" in the observed scores.          
+When the error variance in contrast is relatively small, then
+the observed scores provide a good reflection of what the true scores are,
+and then the observed differences are indeed reliable, i.e. they
+are not much determined by chance differences. 
+
+In that case, we can also define reliability (symbol $\rho$) as the 
+proportion between true score variance and total variance:         
+\begin{equation}
+  (\#eq:rho-reliability)
+  \rho_{xx} = \frac{s^2_t}{s^2_x}
+\end{equation}
+
+However, in practice, we cannot use this formula \@ref(eq:rho-reliability) to
+establish reliability, since we do not know $s^2_t$. We must thus firstly
+estimate what the true score variance is --- or what the error variance is, which, after all,
+is the complement of the true score variance (see
+formula \@ref(eq:var-true-error))[^fn12-2].
+
+The second assumption (in formula \@ref(eq:r-true-error)), that there is no relation between
+true score and error score, is, in practice, not always justified.
+To illustrate, let us look at the results of a test on  
+a scale from 1.0 to 10.0. Students with scores of 9 or 10 have a high
+true score too (they master the material very well) and thus usually have a low
+error score. The students with scores of 1 or 2 also have a low true score
+(they master the material very badly) and thus also usually have a low
+error score. For the students with scores of 5 or 6,
+the situation is different: perhaps they master the material fairly well
+but have just given a wrong answer, or perhaps they master the material poorly but have by chance given a good answer. For these students with an observed
+score in the middle of the scale, the error scores are relatively larger
+than for the students with a score at the ends of the scale. In other domains,
+e.g. for reaction times, we see other relations, e.g. that the error score increases
+more or less equally with the score itself; there is then a positive relationship
+between the true score and the error score ($\rho_{(t,e)}>0$). Nevertheless,
+the advantages of the classical test theory are so large that we use this 
+theory as a starting point.
+
+From the formulas \@ref(eq:var-true-error) and \@ref(eq:rho-reliability) 
+above, it also follows that the standard error of measurement is related to the
+standard deviation and to the reliability:
+\begin{equation}
+   (\#eq:standard-error-measurement)
+    s_e = s_x \sqrt{1-r_{xx}}
+\end{equation}   
+This standard error measurement can be understood
+as the standard deviation of the error scores $e_i$, assuming still that
+the error scores are normally distributed (formula \@ref(eq:normal-error)).
+
+---
+
+> *Example 12.4:* 
+External inspectors doubt whether teachers mark their students' final 
+papers well. If a student got a 6, should the final paper have perhaps actually 
+been judged as a fail?
+
+>  Let us assume that the given assessment shows a standard deviation
+of $s_x=0.75$, and let us equally assume that an analysis of reliability
+had shown that $r_{xx}=0.9$. The standard error measurement is then $s_e = 0.24$
+points (rounded up). The probability that the true score $t_i$ is smaller than
+or equal to 5.4 (the minimum for a fail), with an observed
+score of $x_i=6.0$ and $s_e=0.24$, is only $p=0.006$ (for explanation,
+see §\@ref(sec:t-confidenceinterval-mean) below). The
+final paper's assessment as a pass is with high probability correct. 
+
+---
+
+## Interpretations
+
+Before we look at the different ways of calculating 
+reliability, it is a good idea to pause on the different
+interpretations of reliability estimations. 
+
+First, reliability can be interpreted as the proportion of
+true score variance (see formula \@ref(eq:rho-reliability)), or
+as the proportion of variance which is "systematic". 
+This is different from the proportion of variance resulting from the concept-as-defined,
+the "valid" variance (see Chapter \@ref(ch:validity)). 
+The variance resulting from the concept-as-defined is part of the proportion of 
+true score variance. 
+However, many other factors may systematically influence
+respondents' scores, such as differences in test experience. If two students $i$ and $j$
+possess a concept (let us say: language proficiency) to the same degree, then one of the
+students can still score more highly because he or she has done (and practiced) language proficiency
+tests more often than the other student. Then, there is no difference
+in the concept-as-defined (language proficiency $T_i = T_j$),   
+but there is in another factor (experience), and thus a difference arises
+between the students in their 'true' scores ($t_i \neq t_j$) which 
+we measure with a valid and reliable language proficiency measurement. When measuring,
+deviations and measurement errors appear ($e_i$ and $e_j$), through which
+the observed differences between students ($x_i-x_j$) can be larger or smaller than their 
+differences in 'true' score ($t_i-t_j$).
+This is the reason why a reliability estimate always forms the upper limit of 
+the validity. 
+
+A second interpretation of reliability (formula \@ref(eq:rho-reliability))
+is that of the theoretically expected correlation (see 
+§\@ref(sec:Pearson)) between  measurements, when measurements are replicated
+many times. For convenience, we assume that memory and fatigue
+effects have no effect at all on the second and later measurements. If we were to
+measure the same people with the same measurement
+three times, without memory or fatigue effects, then the scores from the first and 
+second measurement, and from the first and third measurement, and from
+the second and third measurement would always show the same correlation
+$\rho$. This correlation thus indicates the extent to which the repeated measurements
+are consistent, i.e. represent the same unknown true score. 
+
+In this interpretation, reliability thus expresses the expected association
+between scores from the same test taken repeated times. We then interpret the reliability
+coefficient $\rho$ as the correlation between two measurements
+with the same instrument.
+
+Thirdly, reliability can be interpreted as the loss
+of efficiency in the estimation of the mean score $\overline{X}$
+[@Ferg89 p.474]. Imagine that we want to establish the mean score of a group of 
+$n=50$ participants, and for this we use a measurement instrument
+with reliability $\rho_{xx}=0.8$. In this case, there is uncertainty in the estimation,
+which come from the chance deviations $e_i$ in the measurements.
+If the measurement instrument were perfectly reliable ($\rho=1$), we would only
+need $\rho_{xx}\times n = 0.8\times50=40$ participants for the same accuracy in 
+the estimation of $\overline{X}$
+[@Ferg89 p.474]. As such, we have, as it were, played away 10 participants 
+to compensate for the unreliability of the measurement instrument. 
+
+Above, we spoke about measurements with the help of measurement instruments, 
+and below we will talk about ratings done
+by raters. In these situations, the approach to the notion of 'reliability'
+is always the same. Reliability plays a role in all situations where
+elements from a sample are measured or assessed by multiple assessors or instruments.
+Non-final exams and questionnaires can also be such measurement instruments: a non-final
+exam or questionnaire can be thought of as a composite instrument
+with which we try to measure an abstract property or condition of the participants.
+Each question can then be considered as a 
+"measurement instrument" or "assessor" of the respondent's property or condition. 
+For this, all of the above mentioned insights and interpretations concerning
+test theory, measurement error and reliability are equally applicable. 
+
+## Methods for estimating reliability
+
+A measurement's reliability can be determined in different ways.
+The most important are:
+
+-   The *test-retest method*\
+    We conduct all measurements twice, and then calculate the correlation
+    between the first and the second measurement. The fewer measurement errors
+    and deviations the measurements contain, the higher the correlation
+    and thus also the reliability is. This method is
+    time consuming but can also be applied to a small portion of the 
+    measurements. In speech research, this method is indeed used to establish
+    the reliability of phonetic transcriptions: part of the speech
+    recordings are transcribed by a second assessor, and then both transcriptions
+    are compared. 
+
+-   The *parallel forms method*\
+    We have a large collection of measurements which are readily 
+    comparable and measure the same construct. We conduct all
+    measurements repeatedly, the first time by combining the measurements
+    of several measurement instruments chosen at random (let's say A 
+    and B and C) and the second time by using other random 
+    instruments (let's say D and E and F). Since the measurement instruments are
+    'parallel' and the same measurement is considered to be measured, the correlation
+    between the first and the second measurement is an indication of the
+    measurement's reliability. 
+
+-   The *split-half method*\
+    This method is similar to the parallel forms method. The $k$ questions
+    or instruments are divided into two halves, after which the score
+    is determined within each half. From the correlation $r_{hh}$ between
+    the scores from the two half tests, the reliability of the whole test can
+    be deduced, $r_{xx} = \frac{2r_{hh}}{1+r_{hh}}$.
+
+## Reliability between assessors
+
+As an example, let us look at language proficiency measurements from students
+in a foreign language. This construct 'language proficiency' 
+is measured in this example by means of two assessors who each, independently
+of the other, award a grade between 1 and 100 to the student (higher is better).
+However, when assessing, measurement errors also arise, through which the judgements
+not only reflect the underlying true score but also a deviation if it, with
+all the aforementioned assumptions. Let us firstly look at the 
+judgements by the first and second rater (see Table
+\@ref(tab:reliability)). For the time being, the final judgement of a student is
+the mean of the judgements from the first and second rater. 
+
+Table: (#tab:reliability) Judgements about language proficiency 
+from $n = 10$ students (rows) by $k = 3$ raters (columns).
+
+ Student           B1    B2    B3
+---------------   ----- ----- -----
+    1              67    64    70 
+    2              72    75    74 
+    3              83    89    73
+    4              68    72    61 
+    5              75    72    77 
+    6              73    73    78 
+    7              73    76    72 
+    8              65    73    72   
+    9              64    68    71   
+   10              70    82    69 
+$\overline{x_i}$  71.0   74.4  71.7
+$s_i$              5.6    7.0   4.7
+
+The judgements of only the first and the second assessor show a 
+correlation of $r_{1,2}=.75$. This means (according to the formula
+\@ref(eq:rho-reliability)) that 75% of the total variance in the
+judgements of these two raters can be attributed to differences
+between the students rated, and thus 25% of measurement errors (after all,
+we have assumed that there are no systematic differences between
+raters). The proportion of measurement errors appears to be quite high.
+However, we can draw hope from one of our earlier observations, namely that
+the raters' measurement errors are not correlated. The
+*combination* of these two raters --- the mean score per student
+over the two raters --- thus provides more reliable measurements
+than each of the two raters can do separately. After all, the 
+measurement errors of the two raters tend to cancel each other out
+(see formula \@ref(eq:normal-error)).
+Reread the last two sentences carefully.
+
+Reliability is often expressed as *Cronbach's Alpha*
+[@Cort93]. This number is a measure for the consistency or homogeneity 
+of the measurements, and thus also indicates the degree to which the two
+raters have rated the same construct. The simplest definition is
+based on $\overline{r}$, the mean correlation between
+measurements of $k$ different raters[^fn12-3]. 
+\begin{equation}
+  (\#eq:cronbach-corr)
+  \alpha = \frac{k \overline{r}} {1+(k-1)\overline{r}}
+\end{equation}
+
+Filling in $k=2$ raters and $\overline{r}=0.75$ provides $\alpha=0.86$ (SPSS and R
+use a somewhat more complex formula for this, and report
+$\alpha=0.84$). This measurement for reliability is not only referred to 
+as Cronbach's Alpha but also as the Spearman-Brown formula
+or the Kuder-Richardson formula 20 (KR=20)[^fn12-4].
+
+The value of Cronbach's Alpha found is a bit tricky to evaluate
+since it is also dependent on the number of instruments or raters or
+questions in the test [@Cort93; @Glin01]. For academic research,
+a lower limit of 0.75 or 0.80 is often used. If the result of the test or measurement
+is of great importance to the person concerned, as in the case of medical or
+psychological patient diagnosis, or when recruiting and selecting personnel, then
+an even higher reliability of $\alpha=.9$ is recommended [@Glin01].
+
+If we want to increase reliability to $\alpha=0.9$  or higher, then
+we can achieve that in two ways. The first way is to expand the
+number of raters. If we combine more raters in the total score,
+then the measurement errors of these raters also better cancel out each other,
+and then the total score is thus more reliable. Using
+the formula \@ref(eq:cronbach-corr), we can investigate how many raters
+are needed to improve the reliability to $\alpha=0.90$ or better. We fill in  
+$\alpha=0.90$ and again $\overline{r}=0.75$, and then find an outcome of
+minimally $k=3$ raters. The *increase* in reliability levels off, the more
+raters there are already participating: if $k=2$ then $\alpha=.84$, if $k=3$ then
+$\alpha=.84+.06=.90$, if $k=6$ then $\alpha=.90+.05=.95$, if $k=9$ then
+$\alpha=.95+.01=.96$, etc. After all, if there are already 6 raters who are 
+already readily cancelling out each other's measurement errors, then 3 extra 
+assessors add little to the reliability.
+
+The second way of increasing reliability is by reducing the measurement
+error. We can try to do this, for example, by instructing the raters as well as 
+possible
+about how they should rate the students' language proficiency. An assessment 
+protocol and/or
+instruction can make the deviations between and within raters smaller.
+Smaller deviations mean smaller measurement errors, and that again means
+higher correlations between the raters. For an
+$\overline{r}=0.8$, we already almost achieve the desired reliability, with
+only $k=2$ raters.
+
+A third way of increasing reliability requires a closer analysis of
+the separate raters. To explain this, we also now involve the third
+rater in our considerations (see Table
+\@ref(tab:reliability)). However, the judgements of the third rater show
+low correlations with those of the first and second 
+assessor: $r_{1,3}=0.41$ and $r_{2,3}=0.09$. As a consequence, the mean
+correlation between assessors is now lower, 
+$\overline{r}=0.42$. As a result of taking this third rater, the reliability
+has not risen but instead actually lowered to
+$\alpha = \frac{3\times0.42}{1+2\times0.42} = 0.68$. We can thus
+perhaps better ignore the measurements of the third rater.
+Also if we investigate the reliability of a non-final exam or test or questionnaire
+it can seem that the reliability of a whole test *increases* if some
+"bad" questions are removed. Apparently, these "bad" questions measured
+a construct which differed from what the remaining questions measured. 
+
+## Reliability and construct validity
+
+When a measurement is reliable, then "something" has been measured reliably. 
+But this still does not show *what* has been measured! There is a 
+relation between reliability (how measurements are made) and construct
+validity (what is measured, see
+Chapter \@ref(ch:validity)), but these two terms are not identical.
+Sufficient reliability is a requirement for validity, but
+is not a sufficient condition for it. Put otherwise: a test which
+is not reliable can also not be valid (since this test also measures noise),    
+but a test which is reliable does not have to be valid.
+Perhaps, the test used does measure another construct other than what
+was intended very reliably. 
+
+An instrument is construct valid if the concept measured matches
+the intended concept or construct. In
+Example 12.3, the questionnaire is valid if the score from
+the questionnaire matches the quality of life (whatever that actually
+is) of the aphasia patients. Only once it has been shown that
+an instrument is reliable, is it meaningful to speak about a measurement's
+construct validity. Reliability is a necessary but not a sufficient condition for
+construct validity. An unreliable
+instrument can thus not be valid but a reliable instrument does not necessarily
+have to be valid. 
+
+To measure reading proficiency, we get the pupils to write
+an essay. We count the number of letters *e* in each essay. This is
+a very reliable measurement: different raters arrive at the same
+number of *e*'s (raters are homogenous) and the same rater always also
+delivers the same outcome (raters are stable). The great objection here is that
+the number of *e*'s in an essay does not or does not necessarily match the concept
+of reading proficiency. A pupil who has incorporated more *e*'s into his/her essay 
+is not necessarily a better writer.
+
+Whilst researchers know that reliability is a necessary but not
+sufficient condition for validity, they do not always use these terms
+carefully. In many studies, it is tacitly
+assumed that if the reliability is sufficient, the validity
+is also then guaranteed. In Example 12.3 too, the difference is not
+made clear and
+the researchers do not discuss the construct validity of their new 
+questionnaire explicitly.
+
+## SPSS
+
+For a reliability analysis of the $k=3$ judgements over
+language proficiency in
+Table \@ref(tab:reliability):\
+
+```
+Analyze > Scale > Reliability Analysis...
+```
+
+Select the variables which are considered to measure the same construct;
+here that is three raters. We look at these $k=3$
+assessors as "items" who measure the property "language proficiency" of 10
+students. Drag these variables to the Variable(s) panel.\
+As Scale label, fill in an indication of the construct, e.g.
+`language proficiency`.\
+As a method, choose `Alpha` for Cronbach's Alpha (see formula
+\@ref(eq:cronbach-corr))\
+Choose `Statistics…`, tick: Descriptives for
+`Item, Scale, Scale if item deleted`, Inter-Item `Correlations`,
+Summaries `Means, Variances`, and confirm with `Continue` and again
+with `OK`.
+
+The output includes Cronbach's Alpha, the desired inter-item correlations
+(particularly high between raters 1 and 2), and (in Table
+Item-Total Statistics) the reliability if we remove a certain
+rater. This last output teaches us that
+raters 1 and 2 are more important than rater 3. If we
+were to replace raters 1 or 2, then the reliability would collapse
+but if we were to remove rater 3 then the reliability
+would even increase (from 0.68 to 0.84). Presumably, this rater
+has rated a different concept to the others. 
+
+## R
+
+For a reliability analysis of $k=3$ language proficiency 
+judgements in Table \@ref(tab:reliability):\
+
+```{r}
+raters <- read.table(file="data/beoordelaars.txt", header=TRUE)
+if (require(psych)) { # for psych::alpha
+  alpha( raters[,2:4] ) # columns 2 to 4
+}
+```
+
+This output includes Cronbach's Alpha (`raw_alpha 0.68`), and the 
+reliability if we were to remove a certain rater.
+If we were to replace rater 3, then the reliability would even
+increase (from 0.68 to 0.84). Over all three raters, 
+`average_r=0.41`.
+
+Correlations between $k$ raters or items are not explicitly
+provided (even if they can be deduced from the above output),
+thus we still request these:
+
+```{r}
+cor( raters[ ,c("B1","B2","B3") ] ) # explicit column names
+```
+
+---
+
+[^fn12-1]: $s^2_{(t+e)} = s^2_t + s^2_e + 2  r_{(t,e)} s_t s_e$, with here $r_{(t,e)}=0$ according to the formula\@ref(eq:r-true-error).
+
+[^fn12-2]: An exception to this is a situation in which $s^2_x=0$, and thus $s^2_t=0$, thus reliability $\rho=0$; the dependent variable $x$ has then not been
+operationalised well.
+
+[^fn12-3]: In our example, there are only $k=2$ raters, thus there is only one
+correlation, and $\overline{r} = r_{1,2} = 0.75$. 
+
+[^fn12-4]: The so-called 'intra-class correlation coefficient' (ICC) for $k$ 
+is likewise identical to the Cronbach's Alpha.
+
+[^fn12-5]: https://www.collinsdictionary.com/dictionary/english/reliable

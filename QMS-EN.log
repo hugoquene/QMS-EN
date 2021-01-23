@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.10.22)  23 JAN 2021 17:45
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.10.22)  23 JAN 2021 21:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -416,7 +416,7 @@ LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count300
 ) (./QMS-EN.aux
 
-LaTeX Warning: Label `tab:pascaltriangle' multiply defined.
+LaTeX Warning: Label `eq:t-onesampleCI' multiply defined.
 
 )
 \openout1 = `QMS-EN.aux'.
@@ -846,11 +846,7 @@ LaTeX Warning: Reference `ch:sampling' on page 28 undefined on input line 410.
 
 LaTeX Warning: Reference `ch:toetsing' on page 31 undefined on input line 461.
 
-[31] [32]
-
-LaTeX Warning: Reference `ch:testing' on page 33 undefined on input line 493.
-
-[33] [34]
+[31] [32] [33] [34]
 
 LaTeX Warning: Reference `ch:power' on page 35 undefined on input line 555.
 
@@ -885,10 +881,6 @@ LaTeX Warning: Reference `ch:power' on page 43 undefined on input line 640.
 
 
 LaTeX Warning: Reference `ch:ontwerp' on page 43 undefined on input line 649.
-
-
-LaTeX Warning: Reference `sec:ttest-effectsize' on page 43 undefined on input l
-ine 649.
 
 
 LaTeX Warning: Reference `sec:validiteit' on page 43 undefined on input line 64
@@ -1019,10 +1011,6 @@ ne 1602.
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
 (Font)              Font shape `TU/lmtt/b/n' tried instead on input line 1608.
 
-LaTeX Warning: Reference `sec:ttest-effectsize' on page 100 undefined on input 
-line 1622.
-
-
 LaTeX Warning: Reference `sec:effectsize-power' on page 100 undefined on input 
 line 1622.
 
@@ -1075,10 +1063,6 @@ File: QMS-EN_files/figure-latex/cito-boxplot-1.pdf Graphic file (type pdf)
 
 LaTeX Warning: Reference `sec:ttest-degreesoffreedom' on page 123 undefined on 
 input line 2447.
-
-
-LaTeX Warning: Reference `sec:ttest-onesample' on page 123 undefined on input l
-ine 2495.
 
 [123]
 Underfull \hbox (badness 1009) in paragraph at lines 2521--2532
@@ -1175,10 +1159,6 @@ Overfull \hbox (42.53233pt too wide) has occurred while \output is active
 
 [145]
 
-LaTeX Warning: Reference `ch:testing' on page 146 undefined on input line 3637.
-
-
-
 LaTeX Warning: Reference `ch:power' on page 146 undefined on input line 3637.
 
 
@@ -1207,17 +1187,9 @@ ut line 3730.
 File: QMS-EN_files/figure-latex/tprobabilitydistribution-1.pdf Graphic file (ty
 pe pdf)
 <use QMS-EN_files/figure-latex/tprobabilitydistribution-1.pdf>
-
-LaTeX Warning: Reference `sec:ttest-freedomdegrees' on page 149 undefined on in
-put line 3768.
-
 [149]
 File: QMS-EN_files/figure-latex/tempo95CIs-1.pdf Graphic file (type pdf)
 <use QMS-EN_files/figure-latex/tempo95CIs-1.pdf>
-
-LaTeX Warning: Reference `sec:ttest-freedomdegrees' on page 150 undefined on in
-put line 3830.
-
 [150] [151] [152
 
 ]
@@ -1228,10 +1200,6 @@ File: QMS-EN_files/figure-latex/cito-scatter-1.pdf Graphic file (type pdf)
 [154]
 File: QMS-EN_files/figure-latex/cor-scatter-1.pdf Graphic file (type pdf)
 <use QMS-EN_files/figure-latex/cor-scatter-1.pdf>
-
-LaTeX Warning: Reference `ch:testing' on page 155 undefined on input line 3952.
-
-
 [155] [156]
 Overfull \hbox (8.17702pt too wide) in paragraph at lines 4049--4053
 []\TU/lmr/m/n/10 Choose \TU/lmtt/m/n/10 Pearsons \TU/lmr/m/n/10 correlation coe
@@ -1281,12 +1249,7 @@ Chapter 12.
 Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;!
-[174] [175]
-
-LaTeX Warning: Reference `sec:t-confidenceinterval-mean' on page 176 undefined 
-on input line 4933.
-
-[176] [177] [178] [179] [180] [181]
+[174] [175] [176] [177] [178] [179] [180] [181]
 Overfull \hbox (48.75pt too wide) in paragraph at lines 5268--5268
 []\TU/lmtt/m/n/10 ## Number of categories should be increased  in order to coun
 t frequencies.[] 
@@ -1330,68 +1293,129 @@ NA 0.745[]
 
 [183] [184
 
+] [185] [186]
+Chapter 13.
+
+LaTeX Warning: Reference `ch:power' on page 187 undefined on input line 5348.
+
+[187
+
 ]
+File: QMS-EN_files/figure-latex/gramm2013onesample-1.pdf Graphic file (type pdf
+)
+<use QMS-EN_files/figure-latex/gramm2013onesample-1.pdf>
+[188]
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 14.4pt on input line 5450.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 14.4013pt on input line 5450.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 14.39845pt on input line 5450.
+
+Underfull \vbox (badness 2065) has occurred while \output is active []
+
+[189] [190] [191] [192] [193] [194]
+File: QMS-EN_files/figure-latex/gramm2013CIs-1.pdf Graphic file (type pdf)
+<use QMS-EN_files/figure-latex/gramm2013CIs-1.pdf>
+
+Underfull \vbox (badness 1924) has occurred while \output is active []
+
+[195] [196]
+
+LaTeX Warning: Reference `ch:anova' on page 197 undefined on input line 5850.
+
+Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;!
+[197] [198] [199]
+Overfull \hbox (17.25pt too wide) in paragraph at lines 6030--6030
+[]\TU/lmtt/m/n/10 ## alternative hypothesis: true difference in means is not eq
+ual to 0[] 
+ []
+
+[200] [201] [202]
+Overfull \hbox (17.25pt too wide) in paragraph at lines 6188--6188
+[]\TU/lmtt/m/n/10 ## alternative hypothesis: true difference in means is not eq
+ual to 0[] 
+ []
+
+[203]
+Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;!
+[204]
+Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;!
+File: QMS-EN_files/figure-latex/smallestsignifdifference-1.pdf Graphic file (ty
+pe pdf)
+<use QMS-EN_files/figure-latex/smallestsignifdifference-1.pdf>
+[205] [206] [207]
+
+LaTeX Warning: Reference `sec:power-introduction' on page 208 undefined on inpu
+t line 6467.
+
+[208] [209] [210]
 Appendix A.
-[185] [186]
+[211
+
+] [212]
 Appendix B.
 File: QMS-EN_files/figure-latex/kritiekeZwaarden-hulpfiguur-1.pdf Graphic file 
 (type pdf)
 <use QMS-EN_files/figure-latex/kritiekeZwaarden-hulpfiguur-1.pdf>
-[187
+[213
 
-] [188]
+] [214]
 Appendix C.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 24.88pt on input line 5398.
+(Font)              scaled to size 24.88pt on input line 6659.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 20.74pt on input line 5398.
+(Font)              scaled to size 20.74pt on input line 6659.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 17.28pt on input line 5398.
+(Font)              scaled to size 17.28pt on input line 6659.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 24.88228pt on input line 5398.
+(Font)              scaled to size 24.88228pt on input line 6659.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 20.7419pt on input line 5398.
+(Font)              scaled to size 20.7419pt on input line 6659.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 17.28157pt on input line 5398.
+(Font)              scaled to size 17.28157pt on input line 6659.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 24.87733pt on input line 5398.
+(Font)              scaled to size 24.87733pt on input line 6659.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 20.73778pt on input line 5398.
+(Font)              scaled to size 20.73778pt on input line 6659.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 17.27815pt on input line 5398.
+(Font)              scaled to size 17.27815pt on input line 6659.
 File: QMS-EN_files/figure-latex/criticaltvalues-auxiliaryfigure-1.pdf Graphic f
 ile (type pdf)
 <use QMS-EN_files/figure-latex/criticaltvalues-auxiliaryfigure-1.pdf>
 
-Overfull \hbox (19.32014pt too wide) in paragraph at lines 5410--5455
+Overfull \hbox (19.32014pt too wide) in paragraph at lines 6671--6716
  [][] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[189
+[215
 
-] [190]
+] [216]
 Appendix D.
 File: QMS-EN_files/figure-latex/criticalchi2values-auxiliaryfigure-1.pdf Graphi
 c file (type pdf)
 <use QMS-EN_files/figure-latex/criticalchi2values-auxiliaryfigure-1.pdf>
 
-Overfull \hbox (17.80014pt too wide) in paragraph at lines 5466--5509
+Overfull \hbox (17.80014pt too wide) in paragraph at lines 6727--6770
  [][] 
  []
 
 (./QMS-EN.bbl
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[191
+[217
 
-] [192] [193
+] [218] [219
 
-] [194] [195] [196]) [197] (./QMS-EN.aux)
+] [220] [221] [222]) [223] (./QMS-EN.aux)
 Package rerunfilecheck Info: File `QMS-EN.out' has not changed.
-(rerunfilecheck)             Checksum: 6E568BE4CBDDF7B90023A9923D712F50;15818.
+(rerunfilecheck)             Checksum: 171345B436FA2B30D4D42C121C6CD279;17659.
 
 LaTeX Warning: There were undefined references.
 
@@ -1400,12 +1424,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 17722 strings out of 479441
- 312244 string characters out of 5880450
- 787699 words of memory out of 5000000
- 36770 multiletter control sequences out of 15000+600000
- 544486 words of font info for 108 fonts, out of 8000000 for 9000
+ 17821 strings out of 479441
+ 314675 string characters out of 5880450
+ 794290 words of memory out of 5000000
+ 36863 multiletter control sequences out of 15000+600000
+ 545447 words of font info for 114 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  84i,10n,118p,1871b,551s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on QMS-EN.pdf (197 pages).
+Output written on QMS-EN.pdf (223 pages).

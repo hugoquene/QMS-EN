@@ -5316,6 +5316,1267 @@ thus we still request these:
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
+\hypertarget{part-part-iii-inferential-statistics}{%
+\part*{Part III: Inferential statistics}\label{part-part-iii-inferential-statistics}}
+\addcontentsline{toc}{part}{Part III: Inferential statistics}
+
+\hypertarget{ch:testing}{%
+\chapter{Testing hypotheses}\label{ch:testing}}
+
+\hypertarget{sec:testing-introduction}{%
+\section{Introduction}\label{sec:testing-introduction}}
+
+From this chapter onwards, we will be concerned with the testing of
+research hypotheses and, in particular, with null hypothesis significance testing (NHST),
+as explained in Chapter \ref{ch:research}.
+
+Over the course of the years, a large number of techniques have been developed
+for tests like this. The tests with which we will concern ourselves
+are the most used and can be divided into parametric
+and non-parametric tests. Parametric tests assume that the dependent
+variable is (at least) measured on an interval level of measurement (see
+Chapter~\ref{ch:levelsofmeasurement}), and that the measured outcomes or
+scores are normally distributed (see
+§\ref{sec:normaldistribution} and §\ref{sec:whatifnotnormal}).
+For non-parametric tests, dependent on the technique,
+fewer assumptions are made over the level of measurement or over
+the distribution of the observed scores; these are so-called
+distribution free tests. The consequence is that the testing
+is a little less `sensitive' under otherwise equal circumstances, i.e.
+that the null hypothesis can be rejected less often in
+otherwise equal circumstances. These tests therefore have less power (see
+Chapter \ref{ch:power}). Researchers thus usually prefer parametric
+tests.
+
+We already discussed the general principle of testing briefly in
+§\ref{sec:falsification} and §\ref{sec:empiricalcycle}.
+We will illustrate this again here
+with an example. We investigate the statement H1:\\
+`Linguistics students master traditional
+grammar \emph{better} than the average language student'. As a measurement instrument,
+we use the so-called ``grammar test''\footnote{We would like to thank Els Rose for making these data available.} which is required for most students
+in language programs at Utrecht University. On the basis of previous year groups,
+we expect a mean score of 73 on this test; this is the mean number of good answers
+from 100 questions. We thus operationalise this first as \(\mu > 73\), and from this deduce
+the accompanying null hypothesis which is actually tested:
+\(\mu = 73\).
+(In §\ref{sec:ttest-onesidedtwosided} below, we will go into more detail
+about whether or not to name the \emph{direction} of the difference in H1).
+
+For the first year Linguistics students (\(n=34\)) from a certain year group,
+we find an average score of 84.4. That is indeed far above the reference value\\
+of 73 but that might also be a coincidence.
+Perhaps, H0 is true, and, wholly by chance, there are many grammar experts
+in our sample (from the population of possible first year students
+in Linguistics). We can calculate the probability \(P\) of the situation
+i.e.~the probability \(P\) of finding a mean score of \(\overline{x}=84.4\),
+given a random sample of \(n=34\) people and given that
+H0 is in fact true (i.e.~\(\mu=73\)): then it appears that
+\(P=.000000001913\). This probability \(P\) represents the probability of finding this
+data, whilst H0 is true:
+\(P(\overline{x}=84.4|\textrm{H0},n=34)\). In this case, the probability \(P\)
+is very small.
+
+For the argumentation, it is essential that the data is valid and
+reliable --- this is precisely the reason why we discussed validity
+(Chapter \ref{ch:validity}) and reliability
+(Chapter~\ref{ch:reliability}). If we have done everything properly,
+we can, after all, trust the data obtained.
+We are then \emph{not} reasonably able to attribute the low probability of the data according
+to H0 to errors in operationalisation, or measurement errors, or other deviations in the data.
+The logical conclusion then is that the improbable outcome shows that the
+premise (H0) is probably \emph{not} true: we reject H0; H0 has thus been
+falsified. Thereby, our knowledge has increased because we can now
+assume on legitimate grounds that H0 is untrue (and thus that H1
+is true).
+
+If we reject H0 on the basis of the reasoning above which in turn is
+based on probability, then we do have to take into account the small
+probability \(P\) that rejecting H0 is an unjustified decision (Type I error; see
+§\ref{sec:empiricalcycle}). After all, there is the probability \(P\) that
+we find these data when H0 is in fact true (in this example: when the linguists
+on average do not score differently than \(\mu=73\)).
+
+\begin{figure}
+\centering
+\includegraphics{QMS-EN_files/figure-latex/gramm2013onesample-1.pdf}
+\caption{\label{fig:gramm2013onesample}Probability distribution of the mean score from a sample (n=34) with a population mean 73 and population s.d. 14. The coloured area covers 5\% of the total area under the curve; outcomes along the X-axis of this area thus have a probability of at most 5\% of occurring if H0 is true.}
+\end{figure}
+
+Figure \ref{fig:gramm2013onesample} shows the probability of the
+sample mean (\(n=34\)) if H0 is true. We see that the value 73 can have
+the highest probability, but also 72 or 74 are probable mean scores
+according to H0. However, a mean of 84.4 is very improbable, the probability
+\(P\) of this mean score (height of the curve) is almost null according to
+H0.
+
+The boundary value for \(P\), at which we reject H0 is called the significance
+level, often referred to with the symbol \(\alpha\) (see
+§\ref{sec:empiricalcycle}). Researchers often use \(\alpha=.05\),
+but sometimes other boundary values are also used. In Figure
+\ref{fig:gramm2013onesample}, you see that the probability of a mean score
+of 77.7 or more has a probability of \(P=.05\) or smaller, according to
+H0. This can be seen from the area under the curve. The coloured part has
+precisely an area of 0.05 of the total area under
+the curve.
+
+The decision about whether or not to reject H0 is based on the probability
+\(P\) of the outcomes, given H0. The decision might also be
+incorrect. The finding that \(P < \alpha\) is thus not an
+\emph{irrefutable} proof that H0 is untrue (and \emph{has to} be
+rejected); it is also true that H0 is in fact true but that the
+effect found was a fluke (Type 1 error). Conversely, the finding
+that \(P > \alpha\) is not conclusive evidence that H0 is true. There can
+be all kinds of other, plausible reasons why an effect which exists (H0 is untrue)
+can still not be observed. If I do not hear any birds singing, that does not necessarily
+mean that there are genuinely no birds singing. More generally: ``absence of evidence is not
+evidence of absence'' (; ). It is thus good to always report the size
+of the effect found (this is explained in more detail in
+§@ref(\#sec:ttest-effectsize) below).
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{quote}
+\emph{Example 13.1:}
+Assume H0: `birds do not sing'. Write
+down at least 4 reasons why I do not hear birds singing, even
+if there are in fact birds singing (H0 is untrue). If I do not reject H0,
+what type of error will I be making?
+\end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{sec:ttest-onesample}{%
+\section{\texorpdfstring{One-sample \(t\)-test}{One-sample t-test}}\label{sec:ttest-onesample}}
+
+The Student's \(t\)-test is used to investigate a difference
+between the mean score of a sample, and an a priori assumed value
+of the mean. We use this test when the standard deviation
+\(\sigma\) in the population is unknown, and thus has to be estimated from
+the sample. The line of thought is as follows.
+
+We determine the test statistic \(t\) on the basis of the mean and the
+standard deviation in the sample, and of the assumed mean (according to H0).
+If H0 is true, then the value \(t=0\) is the most\\
+probable. The larger the difference between the observed sample mean and the
+assumed sample mean, the more \(t\) increases. If the test statistic \(t\) is larger than
+a certain boundary value \(t*\), and thus \(t>t*\), then the probability of this test statistic,
+if H0 is true, is very small: \(P(t|\textrm{H0}) < \alpha\). The probability of finding this result
+if H0 is true is then so small that we decide to reject H0
+(see §\ref{sec:empiricalcycle}). We speak then of a \emph{significant} difference:
+the deviation between the observed and the expected mean is probably not a
+coincidence.
+
+In the earlier example of the grammar test with Linguistics students
+(§\ref{sec:testing-introduction}), we already became acquainted with
+this form of \(t\)-test.
+If \(\overline{x}=84.4, s=8.4, n=34\), then the test statistic
+is \(t=7.9\) according to formula \eqref{eq:t-onesample} below.
+
+The probability distribution of test statistic \(t\) under H0 is known;
+you can find the boundary value \(t^*\) in
+Appendix \ref{app:criticaltvalues}. Put otherwise, if the test statistic \(t\)
+is larger than the boundary value \(t^*\) which is stated in the table then
+\(P(t|\textrm{H0})<\alpha\). To be able to use the table in Appendix
+\ref{app:criticaltvalues}, we still have to introduce a new term,
+namely the number of degrees of freedom. That term is
+explained in
+§\ref{sec:ttest-freedomdegrees} below.
+
+With the number of degrees of freedom, you can look in Appendix
+\ref{app:criticaltvalues} to see which boundary value \(t^*\) is needed
+to achieve a certain p-value for the established test statistic
+\(t=7.9\). Let us see what the p-value is for the established
+test statistic \(t=7.9\). We firstly look for the degrees of freedom (`d.f.') in the left column.
+If the number of degrees of freedom does not occur in the table, then, to err
+on the side of caution, we should round down, here to 30 d.f. This determines the row
+which is applicable for us. In the third column, we find \(t^*=1.697\). Our
+established test statistic \(t=7.9\) is larger than this \(t^*=1.697\), thus the p-value
+is smaller than the \(p=.05\) from the third column. If we go further right on
+the same line, we see that the stated \(t^*\) increases further.\\
+Our established test statistic \(t\) is even larger than \(t^*=3.385\) in the last column.
+The p-value is thus even smaller than \(p=.001\) from the title of that last
+column. (The statistical analysis program usually also calculates the p-value.)
+We report
+the result as follows:
+
+\begin{quote}
+The mean score of Linguistics students (class of 2013) is
+84.4 (\(s=8.4\)); this is significantly better than the assumed
+population mean of 73 (\(t(33)=7.9, p<.001\)).
+\end{quote}
+
+\hypertarget{sec:ttest-freedomdegrees}{%
+\subsection{Degrees of freedom}\label{sec:ttest-freedomdegrees}}
+
+To explain the concept of degrees of freedom, we begin with an
+analogy. Imagine that there are three possible routes for getting
+from A to B: a coast path, a mountain path, and a motorway. It is true that a walker
+who wants to travel from A to B has three options but there are only
+two degrees of freedom for the walker: he or she only has to make
+two choices to choose from the three options. Firstly, the motorway drops out
+(first choice), and then the mountain path (second choice),
+and then the chosen route along the coast is the only one left over. There are thus two
+choices `free' in order to choose one of the three possible routes in the end.
+If we know the two choices, then we can deduce from them which
+route must have been chosen.
+
+Now, we will look at a student who on average has achieved a \(\overline{x}=7.0\)
+over the \(N=4\) courses from the first introductory track of his or her
+degree programme. The mean of \(7.0\) can be arrived at in many ways,
+e.g.~\((8,7,7,6)\) or \((5,6,8,9)\). But if we know the result of three of the courses,
+and we also know that the mean is a 7.0 then we also know what the value
+of the fourth observation must be. This last observation is thus no longer
+`free' but is now fixed by the first three observations, in combination
+with the mean over \(N=4\) observations. We then say that you have \(N-1\)
+degrees of freedom to determine this characteristic of the sample, like the sample mean here, or like the test statistic \(t\).
+The degrees of freedom is often abbreviated to `d.f.' (symbol \(\nu\), Greek letter ``nu'').
+
+In practice, the number of degrees of freedom is not difficult to determine.
+We namely indicate for every test how the degrees of freedom are established
+--- and the number of d.f. is usually also calculated by the
+statistical analysis program which we use.
+
+For the \(t\)-test of a single sample, the number of degrees of freedom is the
+number of observations \(N-1\). In the above discussed example, we thus have
+\(N-1 = 34-1 = 33\) degrees of freedom.
+
+\hypertarget{sec:formulas13-1}{%
+\subsection{formulas}\label{sec:formulas13-1}}
+
+\begin{equation}
+  t = \frac{ \overline{y}-\mu} { s } \times \sqrt{N}
+  \label{eq:t-onesample}
+\end{equation}
+
+\hypertarget{sec:ttest-assumptions}{%
+\subsection{assumptions}\label{sec:ttest-assumptions}}
+
+The \(t\)-test for a single sample requires three assumptions which
+must be satisfied in order to be able to use the test.
+
+\begin{itemize}
+\item
+  The data must have been measured on an interval level of measurement (see
+  Chapter \ref{ch:levelsofmeasurement}).
+\item
+  All the observations have to be independent of each other.
+\item
+  The scores must be normally distributed (see
+  §\ref{sec:normaldistribution}).
+\end{itemize}
+
+\hypertarget{spss-10}{%
+\subsection{SPSS}\label{spss-10}}
+
+The above discussed data can be found in the file \texttt{data/grammaticatoets2013.csv}.
+
+To test our earlier hypothesis, in SPSS, we firstly have
+to select the observations of the Linguistics students.
+
+\begin{verbatim}
+Data > Select cases...
+\end{verbatim}
+
+Choose \texttt{If\ condition\ is\ satisfied} and click on the button \texttt{If...} to indicate
+the conditions for selection (inclusion).~\\
+Select the variable \texttt{progr} (drag to the panel on the right-hand side), pick
+button \texttt{=}, and then type \emph{\texttt{TW}} (the Dutch label for ``Linguistics''), so that the whole condition is
+\texttt{progr\ =\ TW}.
+
+Afterwards, we can test our earlier hypothesis as follows:
+
+\begin{verbatim}
+Analyze > Compare Means > One-Sample T Test...
+\end{verbatim}
+
+Select variable (drag to the Test variable(s) panel).\\
+Indicate which value of \(\mu\) has to be tested: set it as
+Test Value \texttt{73}. Confirm \texttt{OK}.
+
+The output contains both descriptive statistics and the results
+of a \emph{two-sample} \(t\)-test.
+
+When transferring this output, take good note of the warning in
+§\ref{sec:plargerthannull} below: SPSS reports as if \texttt{p=.000} but that is untrue.
+
+\hypertarget{r-11}{%
+\subsection{R}\label{r-11}}
+
+Our hypothesis discussed above can be tested with the following exercises:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{gramm2013 \textless{}{-}}\StringTok{ }\KeywordTok{read.csv}\NormalTok{( }\DataTypeTok{file=}\StringTok{"data/grammaticatoets2013.csv"}\NormalTok{,}\DataTypeTok{header=}\NormalTok{F)}
+\KeywordTok{dimnames}\NormalTok{(gramm2013)[[}\DecValTok{2}\NormalTok{]] \textless{}{-}}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"score"}\NormalTok{,}\StringTok{"progr"}\NormalTok{)}
+\CommentTok{\# program levels have Dutch labels: TW=Linguistics}
+\KeywordTok{with}\NormalTok{( gramm2013,}
+      \KeywordTok{t.test}\NormalTok{( score[progr}\OperatorTok{==}\StringTok{"TW"}\NormalTok{], }\DataTypeTok{mu=}\DecValTok{73}\NormalTok{, }\DataTypeTok{alt=}\StringTok{"greater"}\NormalTok{ ) )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  One Sample t-test
+## 
+## data:  score[progr == "TW"]
+## t = 7.9288, df = 33, p-value = 1.913e-09
+## alternative hypothesis: true mean is greater than 73
+## 95 percent confidence interval:
+##  81.97599      Inf
+## sample estimates:
+## mean of x 
+##  84.41176
+\end{verbatim}
+
+The notation \texttt{1.913e-09} must be read as the number
+\((1.913 \times 10^{-9})\).
+
+\hypertarget{sec:plargerthannull}{%
+\section{\texorpdfstring{\(p\)-value is always larger than zero}{p-value is always larger than zero}}\label{sec:plargerthannull}}
+
+The p-value \(p\) can be very small but it is always larger than zero!
+In the grammar test example above,
+we found \(P=.000000001913\), a very small probability but one that is larger
+than zero. This can also be seen from the tails of the corresponding
+probability distribution which approach zero asymptotically (see
+Fig.\ref{fig:gramm2013onesample}) but never become completely equal
+to zero. There is always a minimally small probability of finding
+an extreme value (or an even more extreme value) from you test statistic
+in a sample --- after all, we are investigating the sample precisely
+because the outcome of the test statistic cannot be established a priori.
+
+In SPSS, however, the p-value is rounded off, and can then appear as
+\texttt{‘Sig.\ .000’} or \(p=.000\). This is incorrect.
+The p-value or significance is not equal to zero, but has
+been \emph{rounded off} to zero, and that is not the same.
+Always report the p-value or significance with the correct
+accuracy, in this example as \(p<.001\) or even \(p<.0005\)
+(taking into account the rounding off by SPSS to three decimal
+places).
+
+\hypertarget{sec:ttest-onesidedtwosided}{%
+\section{One-sided and two-sided tests}\label{sec:ttest-onesidedtwosided}}
+
+The procedure which we discussed above is valid for one-sided
+tests. This is to say that the alternative hypothesis does not only put forward
+that the means will differ but also in which direction that will be:
+H1: \(\mu >73\), the Linguistics students score \emph{better} than the population
+mean. If we were to find a difference in the opposite direction,
+say \(\overline{x}=68\), then we would not even conceive of statistical testing:
+the H0 simply still stands. It is only when we find a difference
+in the hypothesised direction that it is meaningful to inspect whether
+this difference is significant. When you look now at the figure in
+Appendix \ref{app:criticaltvalues}, then this is also the case. The \(p\)-value
+corresponds with the area of the coloured region.
+
+If the alternative hypothesis H1 does \emph{not} specify the direction of the
+difference, then a complication arises. Differences in any of the two possible directions
+are relevant. We speak then of two-sided tests or two-tailed tests.\\
+To calculate the two-sided p-value, we multiply the \(p\)-value from
+Appendix \ref{app:criticaltvalues} by \(2\) (because we are now looking at two
+coloured regions, on the lower and upper sides of the probability distribution).
+
+In the grammar test example, let us now use a two-sided test. We
+then operationalise the alternative hypothesis as H1: \(\mu \ne 73\).
+Again, there is \(\overline{x}=73, t=7.9\) with 33 d.f. (rounded off to 30 d.f.).
+With the one-sample p-value \(p=.025\) (fourth column), we find
+the critical value \(t^*=2.042\). The two-sided p-value\\
+for this critical value is \(2 \times .025 = .05\). The test statistic we found
+\(t=7.9\) is larger than this \(t^*=2.042\), thus the two-sided
+p-value is smaller than \(p=2\times.025=.05\). The test statistic we found
+is larger even than \(t^*=3.385\) in the last column,
+thus the two-sided p-value is even smaller than
+\(2\times.001\). We can report our two-sided testing as
+follows:
+
+\begin{quote}
+The mean score of Linguistics students (class of 2013) is
+84.4 (\(s=8.4\)); the differs significantly from the hypothesised
+population mean of 73 (\(t(33)=7.9, p<.002\)).
+\end{quote}
+
+In the majority of studies two-sided tests are used; if the direction
+of the test is not stated then you may assume that two-sided or two-tailed tests
+have been used.
+
+\hypertarget{sec:t-confidenceinterval-mean}{%
+\section{Confidence interval of the mean}\label{sec:t-confidenceinterval-mean}}
+
+This section looks more deeply into a subject that was already discussed in
+§\ref{sec:confidenceinterval-mean}, and illustrates the confidence interval
+of the mean with the grammar test scores.
+
+We can consider the sample's mean, \(\overline{x}\), as a good estimation
+of an unknown mean in the population,
+\(\mu\). For this, we can also use the value found for \(t^*\) to indicate how
+reliable the estimation is: the confidence interval. With this, we express
+with what (un)certainty we know that the sample mean, \(\overline{x}\), matches
+the population mean \citep{Cumm12}. We are also familiar with such error margins
+from election results, where they indicate with what certainty the result
+of the sample (of respondents) matches the actual election result for the whole
+population (of voters). An
+error margin of 2\% means that it is 95\% certain that \(x\), the percentage voting
+for a certain party, will lie between \((x-2)\)\% and \((x+2)\)\%.
+
+In our example with 30 d.f., we find \(t^*=2.042\) for 95\%
+reliability. Via formula
+\eqref{eq:t-onesampleCI}, we arrive at the 95\%
+confidence interval \((81.5, 87.3)\). We know with 95\% certainty
+that the unknown average score on the grammar test, from the population
+of all possible Linguistics students is larger than 81.5 and
+smaller than 87.3. We thus also know, with 95\% certainty, that the
+\emph{unknown} population mean \(\mu\) deviates from the hypothesised
+value 73 \citep{Cumm12}. We report this as follows:
+
+\begin{quote}
+The mean score of Linguistics students (class of 2013) is
+84.4, with 95\% confidence interval (81.5, 87.3), 33 d.f.
+\end{quote}
+
+In Figure \ref{fig:gramm2013CIs}, you can see the results of
+a computer simulation to illustrate this. This figure is made in the same way as Figure
+\ref{fig:tempo95CIs} in Chapter \ref{ch:probability-distributions} and
+illustrates the same point. We have drawn \(100\times\) samples from Linguistics students,
+with \(\mu=84.4\) and \(\sigma=8.4\) (see §\ref{sec:standarddeviation}) and \(N=34\).
+For each sample, we have drawn the 95\%
+confidence interval. For 95 of the 100 samples, the population mean \(\mu=84.4\)
+is indeed within the interval, but for 5 of the 100 samples the confidence interval does not contain the population mean (these are marked along the right hand side).
+
+\begin{figure}
+\centering
+\includegraphics{QMS-EN_files/figure-latex/gramm2013CIs-1.pdf}
+\caption{\label{fig:gramm2013CIs}95\% confidence interval and sample means, over 100 simulated samples (n=34) from a population with population mean 84.4, population-s.d. 8.4.}
+\end{figure}
+
+\hypertarget{sec:formulas13-2}{%
+\subsection{formulas}\label{sec:formulas13-2}}
+
+The two-sample confidence interval for \(B\)\% reliability for\\
+a population mean \(\overline{y}\) is
+\begin{equation}
+    \overline{y} \pm t^*_{N-1} \times \frac{s}{\sqrt{N}}
+  \label{eq:t-onesampleCI}
+\end{equation}
+
+\hypertarget{spss-11}{%
+\subsection{SPSS}\label{spss-11}}
+
+\begin{verbatim}
+Analyze > Descriptive Statistics > Explore...
+\end{verbatim}
+
+Select dependent variables (drag to Dependent List panel).\\
+Click on button \texttt{Statistics} and tick \texttt{Descriptives} with Confidence Interval
+95\%.\\
+Confirm with \texttt{Continue} and with \texttt{OK}.\\
+The output contains several descriptive statistic measures, now also
+including the 95\% confidence interval of the mean.
+
+\hypertarget{r-12}{%
+\subsection{R}\label{r-12}}
+
+R states the confidence interval of the mean (with self-specifiable
+confidence level) for a \(t\)-test. We thus again conduct a \(t\)-test
+and find the confidence interval of the mean in the
+output.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{with}\NormalTok{( gramm2013, }\KeywordTok{t.test}\NormalTok{( score[progr}\OperatorTok{==}\StringTok{"TW"}\NormalTok{] ) )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  One Sample t-test
+## 
+## data:  score[progr == "TW"]
+## t = 58.649, df = 33, p-value < 2.2e-16
+## alternative hypothesis: true mean is not equal to 0
+## 95 percent confidence interval:
+##  81.48354 87.33999
+## sample estimates:
+## mean of x 
+##  84.41176
+\end{verbatim}
+
+\hypertarget{sec:ttest-indep}{%
+\section{\texorpdfstring{Independent samples \(t\)-tests}{Independent samples t-tests}}\label{sec:ttest-indep}}
+
+The Student's \(t\)-test is used to allow the investigation of a difference
+between the mean scores of two independent samples, e.g of
+comparable boys and girls. On the basis of the mean and the standard
+deviations of the two samples, we determine the test statistic \(t\).
+If H0 is true, then the value \(t=0\) is the most probable. The larger the difference
+between the two means, the larger \(t\) is too. We again reject H0 if \(t>t^*\)
+for the chosen significance level \(\alpha\).
+
+As a first example, we will take a study of the productive vocabulary size
+of 18-month old Swedish girls and boys \citep{Ande11}. We investigate the hypothesis
+that the vocabulary of girls differs from that of boys, i.e.~
+H1: \(\mu_m \ne \mu_j\).
+We cannot a priori assume that a potential difference can only go in one direction;
+we thus use a two-sided test, as already appears to be the case from H1.
+The corresponding null hypothesis which we test is H0: \(\mu_m = \mu_j\).
+In this study, the vocabulary is estimated on the basis of questionnaires
+from the parents of the children in the sample. Participants were
+(parents of) \(n_1=123\) girls and \(n_2=129\) boys, who were all 18 months
+old. Based on the results, it seems that the girls have a mean vocabulary
+of \(\overline{x_1}=95\) words (\(s_1=82\)), and for the boys it is
+\(\overline{x_2}=85\) words (\(s_2=98\)). With these data, we determine the
+test statistic \(t\) according to the formula
+\eqref{eq:t-homoskedastic}, resulting in \(t=0.88\) with 122 d.f. We look for the
+accompanying critical value \(t^*\) again in Appendix
+\ref{app:criticaltvalues}. In the row for 100 d.f. (after rounding down),
+we find \(t^*=1.984\) in the fourth column. For two-sample testing
+we have to double the p-value which belongs to this column
+(see §\ref{sec:ttest-onesidedtwosided}), resulting in \(p=.05\). The
+test statistic \(t < t^*\), thus \(p>.05\). We decide \emph{not} to reject
+H0, and report that as follows:
+
+\begin{quote}
+The mean productive vocabulary of Swedish 18-month old Swedish children
+barely differs between girls and boys
+(\(t(122)=0.88, p>.4\)). Girls produce on average 95 different
+words (\(s=82\)), and boys on average 85 different words
+(\(s=98\)).
+\end{quote}
+
+As a second example, we take a study of the speech tempo of two groups
+of speakers, namely originating from the West (first group) and
+from the North (second group) of the Netherlands. The speech tempo
+is expressed here as the mean duration of a spoken syllable, in seconds,
+over an interview of ca. 15 minutes (see Example \ref{ch:anova}.1).
+We investigate H0: \(\mu_W = \mu_N\) with
+two-sample testing. From the results, it appears that those from the West
+(\(n=20\)) have a mean syllable duration of
+\(\overline{x_W}=0.235\) s (\(s=0.028\)), and that for those from the North (also
+\(n=20\)) that is \(\overline{x_N}=0.269\) s (\(s=0.029\)). With these data,
+we again determine the test statistic \(t\) according to the formula
+\eqref{eq:t-homoskedastic}, resulting in \(t=-3.76\) with 38 d.f. We look for
+the accompanying critical value again in Appendix
+\ref{app:criticaltvalues}. The correct d.f. are not stated in the table
+so we round them down (i.e.~in the conservative direction) to
+30 d.f. In the row, we find \(t^*=2.042\) in the fourth column.
+For two-sample testing, we have to double the p-value corresponding to
+these columns (see
+§\ref{sec:ttest-onesidedtwosided}), resulting in \(p=.05\). The
+test statistic is \(t < t^*\), thus \(p<.05\). We thus decide
+to \emph{indeed} reject H0, and report that as follows:
+
+\begin{quote}
+The mean duration of a syllable spoken by a speaker from the West
+of the Netherlands is \(0.235\) seconds (\(s=0.028\)). This is
+significantly shorter than from speakers from the North of the Netherlands
+(\(\overline{x}=0.269\) s, \(s=0.029\)) (\(t(38)=-3.76, p<.05\)). In the
+investigated recordings from 1999, the speakers from the West thus
+speak more quickly than those from the North of the Netherlands.
+\end{quote}
+
+\hypertarget{assumptions}{%
+\subsection{assumptions}\label{assumptions}}
+
+The Student's \(t\)-test for two independent samples requires four assumptions
+which must be satisfied in order to use the test.
+
+\begin{itemize}
+\item
+  The data has to be measured on an interval level of measurement (see
+  §\ref{sec:interval}).
+\item
+  All the observations must be independent of each other.
+\item
+  Both groups' scores must be normally distributed (see
+  §\ref{sec:isvarnormaldistributed}).
+\end{itemize}
+
+The variance of the scores has to be equal in both
+samples. The more the two samples differ in size, the more
+serious the violation of this assumption is. It is thus prudent
+to work with equally large, and preferably not too small samples. If the
+samples are equally large, then the violation of this assumption of equal
+variances is not so serious.
+
+\hypertarget{sec:ttest-formulas}{%
+\subsection{formulas}\label{sec:ttest-formulas}}
+
+\hypertarget{test-statistic}{%
+\subsubsection{test statistic}\label{test-statistic}}
+
+To calculate test statistic \(t\), various formulas are used.
+
+If the samples have about equal variance, then we firstly use
+the ``pooled standard deviation'' \(s_p\) as an intermediate step. In this, both
+standard deviations from the two samples are weighted according
+to their sample size.
+\begin{equation}
+    s_p = \sqrt{ \frac{(n_1-1) s^2_1 + (n_2-1) s^2_2} {n_1+n_2-2} }
+    \label{eq:sd-pooled}
+\end{equation}
+Then
+\begin{equation}
+  \label{eq:t-homoskedastic}
+  t = \frac{ \overline{x_1}-\overline{x_2} } { s_p \sqrt{\frac{1}{n_1}+\frac{1}{n_2}} }
+\end{equation}
+
+If the samples do \emph{not} have equal variance, and the fourth assumed
+sample above is thus violated, then Welch's t-test is
+used:
+\begin{equation}
+  \label{eq:sd-WS}
+  s_{\textrm{WS}} = \sqrt{\frac{s^2_1}{n_1}+\frac{s^2_2}{n_2} }
+\end{equation}
+Then
+\begin{equation}
+  \label{eq:t-WS}
+  t = \frac{ \overline{x_1}-\overline{x_2} } { s_{\textrm{WS}} }
+\end{equation}
+
+\hypertarget{freedomdegrees}{%
+\subsubsection{degrees of freedom}\label{freedomdegrees}}
+
+The t-test is usually conducted by a computer program. There,
+the following approximation of degrees of freedom is usually used
+(\(\nu\), see §\ref{sec:ttest-freedomdegrees}).
+Firstly, \(g_1=s^2_1/n_1\)
+and \(g_2=s^2_2/n_2\) are calculated. The number of degrees of freedom of \(t\) is then
+\begin{equation}
+  \label{eq:df-WS}
+  \nu_\textrm{WS} = 
+        \frac {(g_1+g_2)^2} {g^2_1/(n_1-1) + g^2_2/(n_2-1)}
+\end{equation}
+
+According to this approximation, the number of degrees of freedom has as its liberal
+upper limit \((n_1+n_2-2)\), and as its conservative lower limit the smallest
+of \((n_1-1)\) or \((n_2-1)\). You can thus always use this conservative
+lower limit. If the two groups have around the same variance
+(i.e.~\(s_1 \approx s_2\)), then you can also use the liberal lower
+limit.
+
+For the second example above, the approximation of formula
+\eqref{eq:df-WS} gives
+an estimation of \(37.99 \approx 38\) d.f. The conservative lower limit is
+\(n_1-1 = n_2-1 = 19\). The liberal lower limit is \(n_1+n_2 -2 = 38\). (In
+the table with critical values \(t*\), in
+Appendix \ref{app:criticaltvalues}, it is usually advisable to use the row
+with the first-following smaller value for the number of
+degrees of freedom.)
+
+\hypertarget{sec:SPSS-ttest-unpaired}{%
+\subsection{SPSS}\label{sec:SPSS-ttest-unpaired}}
+
+Here, the second example above is worked out.
+
+\begin{verbatim}
+Analyze > Compare Means > Independent-Samples T Test
+\end{verbatim}
+
+Drag the dependent variable \texttt{syldur} to the Test Variable(s) panel.
+Drag the independent variable \texttt{region} to the Grouping
+Variable panel. Define the two groups: value \texttt{W} for region group 1 and\\
+value \texttt{N} for region group 2. Confirm with \texttt{Continue} and \texttt{OK}.
+
+As you could see above the calculation of the \(t\)-test is dependent on the
+answer to the question whether the standard deviations of the two groups
+are around equal. SPSS solves this rather clumsily: you get to see all the
+relevant outputs, and have to make a choice from them yourself.
+
+\hypertarget{test-for-equality-of-variances}{%
+\subsubsection{Test for equality of variances}\label{test-for-equality-of-variances}}
+
+With Levene's test, you can investigate H0: \(s^2_1 = s^2_2\), i.e.~whether
+the variances (and with them the standard deviations) of the two groups
+are equal. If you find a small value for the test statistic \(F\),
+and a \(p>.05\), then you do not have to reject this H0. You can then assume
+that the variances are equal. If you find a large value for \(F\),
+with \(p<.05\), then you should indeed reject this H0, and you cannot
+assume that the variances of these two groups are equal.
+
+\hypertarget{test-for-equality-of-means}{%
+\subsubsection{Test for equality of means}\label{test-for-equality-of-means}}
+
+Depending on this outcome from Levene's test, you have to use the first
+or the second row of the output of the Independent Samples Test
+(a test which investigates whether the means from the two groups are equal).
+In this example, the variances are around equal, as the
+Levene's test also indicates. We thus use the first line of the output,
+and report \(t(38)=-3.765, p=.001\).
+
+\hypertarget{sec:R-ttest-unpaired}{%
+\subsection{R}\label{sec:R-ttest-unpaired}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{require}\NormalTok{(hqmisc)}
+\KeywordTok{data}\NormalTok{(talkers)}
+\KeywordTok{with}\NormalTok{(talkers, }\KeywordTok{t.test}\NormalTok{( syldur[region}\OperatorTok{==}\StringTok{"W"}\NormalTok{], syldur[region}\OperatorTok{==}\StringTok{"N"}\NormalTok{], }
+            \DataTypeTok{paired=}\NormalTok{F, }\DataTypeTok{var.equal=}\NormalTok{T ) )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  Two Sample t-test
+## 
+## data:  syldur[region == "W"] and syldur[region == "N"]
+## t = -3.7649, df = 38, p-value = 0.0005634
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -0.0519895 -0.0156305
+## sample estimates:
+## mean of x mean of y 
+##   0.23490   0.26871
+\end{verbatim}
+
+\hypertarget{sec:ttest-paired}{%
+\section{\texorpdfstring{\(t\)-test for paired observations}{t-test for paired observations}}\label{sec:ttest-paired}}
+
+The Student's \(t\)-test is also used to investigate a difference between the
+means of two dependent or paired observations. This is the case if we only draw
+one sample (see Chapter
+\ref{ch:samples}), and then collect two observations from the members of this
+sample,
+namely one observation under each of the conditions. The two
+observations are then paired, i.e.~related to each other,
+and these observations are thus not independent (since they come
+from the same member of the sample). With this, one of the assumptions of
+the \(t\)-test is violated.
+
+As an example, we take an imaginary investigation of the use of the
+Dutch second person pronouns \emph{U} (you \emph{formal}) and \emph{je} (you \emph{informal}) as forms
+of address on a website. The researcher makes two versions
+of a website, one with \emph{U} and the other with \emph{je}. Each
+respondent has to judge both versions on a scale from 1 to 10. (For validity
+reasons, the order of the two versions is varied between respondents;
+the order in which the pages are judged can thus
+have no influence on the total score per condition.) In Table
+\ref{tab:data-uje-paired}, the judgements of \(N=10\)
+respondents are summarised.
+
+\begin{longtable}[]{@{}cllc@{}}
+\caption{\label{tab:data-uje-paired} Fictional judgements of a webpage
+with \emph{U} or \emph{je} as the forms of addressed, by \(N=10\) respondents.}\tabularnewline
+\toprule
+ID & \emph{U} Condition & \emph{je} Condition & \(D\)\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+ID & \emph{U} Condition & \emph{je} Condition & \(D\)\tabularnewline
+\midrule
+\endhead
+1 & 8 & 9 & -1\tabularnewline
+2 & 5 & 6 & -1\tabularnewline
+3 & 6 & 9 & -3\tabularnewline
+4 & 6 & 8 & -2\tabularnewline
+5 & 5 & 8 & -3\tabularnewline
+6 & 4 & 6 & -2\tabularnewline
+7 & 4 & 8 & -4\tabularnewline
+8 & 7 & 10 & -3\tabularnewline
+9 & 7 & 9 & -2\tabularnewline
+10 & 6 & 7 & -1\tabularnewline
+& & & \(\overline{D}\)=-2.2\tabularnewline
+\bottomrule
+\end{longtable}
+
+The pair of observations for the \(i\)-th member of the sample has a
+difference score which we can write as:\\
+\(D_i = x_{1i} - x_{2i}\) where \(x_{1i}\) is the dependent
+variable score of the \(i\)-th member for condition 2. This
+difference score is also stated in
+Table~\ref{tab:data-uje-paired}.
+
+This difference score \(D\) is then actually analysed with the earlier discussed \(t\)-test for a single sample (see
+§\ref{sec:ttest-onesample}), where H0: \(\mu_D=0\), i.e.~according to H0, there is no
+difference between conditions. We calculate the mean of the difference score,
+\(\overline{D}\), and the standard variance of the difference score, \(s_{D}\),
+in the usual manner (see
+§\ref{sec:standarddeviation}). We use this mean and this
+standard deviation to calculate the test statistic \(t\) via formula
+\eqref{eq:t-pairedsamples}, with \((N-1)\) degrees of freedom. Finally,
+we again use
+Appendix \ref{app:criticaltvalues} to determine the critical value.
+and with it, the p-value \(p\) for the value of the sample size
+\(t\) under H0.
+
+For the above example with \emph{U} or \emph{je} as forms of address,
+we thus find \(\overline{D}=-2.2\) and \(s_D=1.0\). If we put this into
+formula \eqref{eq:t-pairedsamples}, we find \(t=-6.74\) with \(N-1=9\) d.f.
+We again look for the corresponding critical value \(t^*\)
+in Appendix \ref{app:criticaltvalues}. Thereby, we ignore the sign of \(t\),
+because, after all, the probability distribution of \(t\) is symmetric.
+In the row for 9 d.f., we find \(t^*=4.297\) in the last column.
+For two-sided testing, we have to double the p-value corresponding to this
+column (see
+§\ref{sec:ttest-onesidedtwosided}), resulting in \(p=.002\).
+The test statistic is \(t > t^*\), thus \(p<.002\). We decide to
+\emph{indeed} reject H0, and report that as follows:
+
+\begin{quote}
+The judgement of \(N=10\) respondents on the page with \emph{U} as the
+form of address is on average 2.2 points lower than their judgement
+over the comparable page with \emph{je} as the form of address; this is
+a significant difference (\(t(9)=-6.74, p<.002\)).
+\end{quote}
+
+\hypertarget{assumptions-1}{%
+\subsection{assumptions}\label{assumptions-1}}
+
+The \(t\)-test for paired observations within a single sample requires three
+assumptions which must be satisfied, in order to be able to use these
+tests.
+
+\begin{itemize}
+\item
+  The data must be measured on an interval level of measurement (see
+  §\ref{sec:interval}).
+\item
+  All \emph{pairs} of observations have to be independent of
+  each other.
+\item
+  The \emph{difference scores} \(D\) have to be normally distributed (see\\
+  §\ref{sec:isvarnormaldistributed}); however, if the number of pairs of
+  observations in the sample is larger than ca. 30 then the t-test is
+  usually useable.
+\end{itemize}
+
+\hypertarget{sec:formulas13-4}{%
+\subsection{formulas}\label{sec:formulas13-4}}
+
+\begin{equation}
+  \label{eq:t-pairedsamples}
+  t = \frac{ \overline{D}-\mu_D} { s_D } \times \sqrt{N}
+\end{equation}
+
+\hypertarget{sec:SPSS-ttest-paired}{%
+\subsection{SPSS}\label{sec:SPSS-ttest-paired}}
+
+The data for the above example can be found in the file \texttt{data/ujedata.csv}.
+
+\begin{verbatim}
+Analyze > Compare Means > Paired-Samples T Test
+\end{verbatim}
+
+Drag the first dependent variable \texttt{cond.u} to the Paired
+Variables panel under Variable1, and drag the second variable \texttt{cond.je} to
+the same panel under Variable2. Confirm with \texttt{OK}.
+
+\hypertarget{sec:R-ttest-paired}{%
+\subsection{}\label{sec:R-ttest-paired}}
+
+The data from the above example can be found in the file \texttt{data/ujedata.csv}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ujedata \textless{}{-}}\StringTok{ }\KeywordTok{read.table}\NormalTok{( }\DataTypeTok{file=}\StringTok{"data/ujedata.csv"}\NormalTok{, }\DataTypeTok{header=}\OtherTok{TRUE}\NormalTok{, }\DataTypeTok{sep=}\StringTok{";"}\NormalTok{ )}
+\KeywordTok{with}\NormalTok{(ujedata, }\KeywordTok{t.test}\NormalTok{( cond.u, cond.je, }\DataTypeTok{paired=}\OtherTok{TRUE}\NormalTok{ ) )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  Paired t-test
+## 
+## data:  cond.u and cond.je
+## t = -6.7361, df = 9, p-value = 0.00008498
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -2.938817 -1.461183
+## sample estimates:
+## mean of the differences 
+##                    -2.2
+\end{verbatim}
+
+\hypertarget{sec:ttest-effectsize}{%
+\section{Effect size}\label{sec:ttest-effectsize}}
+
+Until now, we have mainly dealt with testing as a binary
+decision with regards to whether or not to reject H0, in the light
+of the observations. However, in addition to this, it is also of great importance
+to know how large the observed effect actually is: the \emph{effect size} (`ES')
+\citep{Cohen88, Thom02, Naka07}.
+
+In the formulas \eqref{eq:t-onesample} and \eqref{eq:t-pairedsamples}, it is expressed that the larger the effect gets, the larger \(t\) gets,
+i.e.~for a larger difference
+\((\overline{x}-\mu)\) or \((\overline{x_1}-\overline{x_2})\) or
+\((\overline{D}-\mu_D)\){]}, \emph{and.or} the larger the sample gets.
+Put briefly \citep[ p.338, formula 11.10]{Rose08}:
+\begin{equation}
+  \label{eq:Rose08}
+    \textrm{significance test} = 
+    \textrm{size of effect} \times \textrm{size of study}
+\end{equation}
+
+This means
+that a small, and possibly trivial effect can also be
+statistically significant if only the sample is large enough.
+Conversely, a very large effect can be firmly established on the basis of
+a very small sample.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{quote}
+\emph{Example 13.2:}
+In an investigation of the life times of inhabitants from Austria
+and Denmark \citep{Dobl99}, it appears that life times differ according to
+the week of birth. This is presumably because babies from ``summer pregnancies''
+are (or were) on average somewhat healthier than those
+from ``winter pregnancies''. In this investigation, the differences
+in life times were very small \(\pm 0.30\) year in Austria, \(\pm 0.15\) year
+in Denmark), but the number of observations (deceased persons) was very large.
+\end{quote}
+
+\begin{quote}
+Meanwhile, the difference in body length between dwarfs (shorter than
+1.5 m) and giants (taller than 2.0 m) is so large that the difference can be firmly
+empirically established on the basis of only \(n=2\) in each group.
+\end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+In our investigation, we are especially interested in important
+differences, i.e.~usually large differences. We have to appreciate
+that studies also entail costs in terms of money, time,
+effort, privacy, and loss of naïveté for other studies
+(see Chapter
+\ref{ch:integrity}). We thus do not what to want to perform studies
+on trivial effects needlessly. A researcher should thus determine in advance
+what the smallest effect is that he/she wants to be able to detect, e.g.
+1 point difference in the score of the grammar test. Differences smaller than
+1 point are then considered to be trivial, and differences larger than 1 point to be potentially
+interesting.
+
+It is also important to state the effect size found with the results
+of the study, to be of service for readers and later
+researchers. In some academic journals, it is even
+required to report the effect size. It should be said that this
+can also be in the form of a confidence interval of the mean
+(see~\ref{sec:t-confidenceinterval-mean}), because we can
+convert these confidence intervals and effect sizes into
+each other.
+
+The raw effect size is straightforwardly the difference \(D\) in means
+between the two groups, or between two conditions, expressed in units
+of the raw score. In §\ref{sec:ttest-indep}, we found such a difference
+in vocabulary of \(D=95-85=10\) between boys and girls.
+
+However, we mainly use the standardised effect size (see
+the formulas below), where we take into account the distribution in
+the observations, e.g.~in the form of ``pooled standard deviation'' \(s_p\) \footnote{In this case, we use \(s_p = \sqrt{ \frac{122\times82^2+128\times98^2} {122+128} } = 90.5\), see formulas
+  \eqref{eq:sd-pooled} and \eqref{eq:d-homoskedastic}.}.
+In this way, we find a standardised effect size of
+\begin{equation}
+  \label{eq:d-standardized}
+    d = \frac{ \overline{x_1}-\overline{x_2} } {s_p} = \frac{10}{90.5} = 0.11
+\end{equation}
+In the first example below, the standardised effect size of the difference in
+vocabulary between girls and boys is thus 0.11. In this case, the difference
+between the groups is small with respect to the distribution
+within the groups --- the probability that a randomly selected girl
+has a larger vocabulary than a randomly selected boy, is only 0.53 \citep{McGraw92},
+and that is barely better than the probability of 0.50 which we expect according to H0.
+It is then no surprise that this very small effect is not significant
+(see §\ref{sec:ttest-indep}). We could
+report the effect size and significance as follows:
+
+\begin{quote}
+The mean productive vocabulary of Swedish 18-month old children
+barely differs between girls and boys. Girls
+produce on average 95 different words (\(s=82\)), and boys
+on average 85 different words (\(s=98\)). The difference is very
+small (\(d=0.11)\) and not significant (\(t(122)=0.88, p>.4\)).
+\end{quote}
+
+In the second example above, the standardised effect size of the difference
+in syllable length is about
+\((0.235-0.269)/0.029 \approx 1.15\). We can report this relatively large
+effect as follows:
+
+\begin{quote}
+The average length of a syllable spoken by a speaker from
+the West of the Netherlands is \(0.235\) seconds (\(s=0.028\)). This is
+considerably shorter than for speakers from the North of the Netherlands
+(\(\overline{x}=0.269\) s, \(s=0.029\)). The difference is ca. 10\%; this
+difference is very large (\(d=-1.15\)) and significant
+(\(t(38)=-3.76, p<.05\)). In the investigated recordings from 1999, the
+speakers from the West thus speak considerably more quickly than those from
+the North of the Netherlands.
+\end{quote}
+
+If \(d\) is around 0.2, we speak of a small effect. We call an effect size
+\(d\) of around 0.5 a medium effect, and we call one
+of around 0.8 or larger a large effect \citep{Cohen88, Rose08}.
+
+\begin{figure}
+\centering
+\includegraphics{QMS-EN_files/figure-latex/smallestsignifdifference-1.pdf}
+\caption{\label{fig:smallestsignifdifference}Relation between the sample size and the smallest effect (d) that is significant according to a \emph{t}-test for unpaired, independent observations, with errors probabilities alpha=.05 and beta=.10.}
+\end{figure}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{quote}
+\emph{Example 13.3:}
+Look again at the formula \eqref{eq:Rose08}
+and at the Figure \ref{fig:smallestsignifdifference} which illustrate
+the relation between sample size and effect size. With an
+effect size of \(n_1=122\), we can only detect an effect of \(d=0.42\)
+or more, with sufficiently low probabilities of Type I and II errors again
+(\(\alpha=.05\), \(\beta=.10\)). To detect the very small effect of \(d=0.11\),
+with the same small error probabilities \(\alpha\) and \(\beta\), samples
+of at least 1738 girls and 1738 boys would be needed.
+\end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+We can also express the effect size as the probability that
+the difference occurs in the predicted direction, for a randomly
+chosen element from the population
+(formulas~\eqref{eq:d-onesample} and \eqref{eq:d-paired}),
+or (if applicable) for two
+randomly and independently chosen elements from the two populations
+(formula~\eqref{eq:d-homoskedastic}) \citep{McGraw92}. Let us again return to
+the grammar test from the Linguistics students
+(§\ref{sec:ttest-onesample}). The effect which we found is
+not only significant but also large. Expressed in terms of probability:
+the probability that a random Linguistics student achieves a score
+larger than \(\mu_0=73\) is 0.91. (And a randomly chosen
+Linguistics student thus still has 9\% probability of achieving a lower score than
+the hypothesised population mean of 73.)
+
+For the fictional judgements about the webpages with \emph{U} or \emph{je} (see
+Table~\ref{tab:data-uje-paired}), we find a standardised
+effect size of
+\[d = \frac{ \overline{D}-\mu_D} {s_D} = \frac{ -2.20-0 } {1.03} = -2.13\]
+It is then not surprising that this extremely large effect is indeed
+significant. We can report this as follows:
+
+\begin{quote}
+The judgements of \(N=10\) respondents about the pages with \emph{U} or \emph{je}
+as forms of address differ significantly, with on average \(-2.2\) points
+difference. This difference has a 95\% confidence interval of
+\(-2.9\) to \(-1.5\) and an estimated standardised effect size
+\(d=-2.13\); the probability that a randomly chosen respondent
+judges the \emph{je}-version more highly than the \emph{U}-version is \(p=.98\).
+\end{quote}
+
+\hypertarget{sec:formulas13-5}{%
+\subsection{formulas}\label{sec:formulas13-5}}
+
+For a single sample:
+\begin{equation}
+   \label{eq:d-onesample}
+  d = \frac{\overline{x}-\mu}{s}
+\end{equation}
+where \(s\) stands for the standard variation \(s\)
+of the score \(x\).
+
+For two independent samples (see
+formula~\eqref{eq:sd-pooled}):
+\begin{equation}
+  \label{eq:d-homoskedastic}
+  d = \frac{ \overline{x_1}-\overline{x_2} } { s_p }
+\end{equation}
+
+For paired observations:
+\begin{equation}
+  \label{eq:d-paired}
+  d = \frac{ \overline{x_1}-\overline{x_2} } { s_D }
+\end{equation}
+where \(s_D\) is the
+standard deviation from the difference \(D\) according
+to the formula \eqref{eq:d-paired}.
+
+\hypertarget{spss-13-2}{%
+\subsection{SPSS}\label{spss-13-2}}
+
+In SPSS, it is usually easiest to calculate the effect size
+by hand.
+
+For a simple sample
+(formula~\eqref{eq:d-onesample}), we can simply calculate the
+effect size from the mean and the standard deviation, taking into account
+the value \(\mu\) which we are testing against.
+
+\begin{verbatim}
+Analyze > Descriptive Statistics > Descriptives...
+\end{verbatim}
+
+Choose the button \texttt{Options} and ensure that \texttt{Mean} and \texttt{Std.deviation} are
+ticked. As a result there is the required data in the output:\\
+\(d = (84.41 - 73) / 8.392 = 1.36\), a very large effect.
+
+For unpaired, independent observations, it is likewise the easiest
+to calculate the effect size by hand on the basis of the
+means, standard deviations, and size of the two samples, making use
+of the formulas
+\eqref{eq:sd-pooled} and
+\eqref{eq:d-homoskedastic} above.
+
+For a single sample with two paired observations
+(formula~\eqref{eq:d-paired}), we can again calculate the effect
+size more simply from the mean and the standard deviation of the difference.
+The data are in the output of the pairwise \(t\)-test\\
+(§\ref{sec:SPSS-ttest-paired}), respectively as \texttt{Mean} and
+\texttt{Std.Deviation}:\\
+\(d = -2.200 / 1.033 = 2.130\), a super large effect.
+
+\hypertarget{r-13}{%
+\subsection{R}\label{r-13}}
+
+In R, it is easier to have the effect size calculated.
+
+For a single sample
+(formula~\eqref{eq:d-onesample}):\\
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{gramm2013 \textless{}{-}}\StringTok{ }\KeywordTok{read.csv}\NormalTok{( }\DataTypeTok{file=}\StringTok{"data/grammaticatoets2013.csv"}\NormalTok{,}\DataTypeTok{header=}\NormalTok{F)}
+\KeywordTok{dimnames}\NormalTok{(gramm2013)[[}\DecValTok{2}\NormalTok{]] \textless{}{-}}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"score"}\NormalTok{,}\StringTok{"progr"}\NormalTok{)}
+\CommentTok{\# programs have Dutch labels, TW=Linguistics}
+\KeywordTok{with}\NormalTok{(gramm2013, score[progr}\OperatorTok{==}\StringTok{"TW"}\NormalTok{]) {-}\textgreater{}}\StringTok{ }\NormalTok{score.ling}
+\CommentTok{\# auxiliary variable}
+\NormalTok{( }\KeywordTok{mean}\NormalTok{(score.ling)}\OperatorTok{{-}}\DecValTok{73}\NormalTok{ ) }\OperatorTok{/}\StringTok{ }\KeywordTok{sd}\NormalTok{(score.ling) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1.359783
+\end{verbatim}
+
+The probability of a score larger than the population mean (the test value) \texttt{73} for a random Linguistics
+student (of which we assume that \(\mu=84.4\) and \(s=8.4\)):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1} \OperatorTok{{-}}\StringTok{ }\KeywordTok{pnorm}\NormalTok{( }\DecValTok{73}\NormalTok{, }\DataTypeTok{mean=}\FloatTok{84.4}\NormalTok{, }\DataTypeTok{sd=}\FloatTok{8.4}\NormalTok{ ) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.9126321
+\end{verbatim}
+
+For unpaired, independent observations, we can calculate the smallest
+significant effect (see also
+Fig.~\ref{fig:smallestsignifdifference}); for which we use the function
+\texttt{power.t.test}. (This function is
+also used to construct Fig.\ref{fig:smallestsignifdifference}.)
+With this function, you have to set the desired \texttt{power} as
+an argument (power = \(1-\beta\); see
+§\ref{sec:power-introduction}).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{power.t.test}\NormalTok{( }\DataTypeTok{n=}\DecValTok{122}\NormalTok{, }\DataTypeTok{sig=}\NormalTok{.}\DecValTok{05}\NormalTok{, }\DataTypeTok{power=}\NormalTok{.}\DecValTok{90}\NormalTok{, }\DataTypeTok{type=}\StringTok{"two.sample"}\NormalTok{ )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##      Two-sample t test power calculation 
+## 
+##               n = 122
+##           delta = 0.4166921
+##              sd = 1
+##       sig.level = 0.05
+##           power = 0.9
+##     alternative = two.sided
+## 
+## NOTE: n is number in *each* group
+\end{verbatim}
+
+In the output, the smallest significant effect is indicated by \texttt{delta}; see also
+Example 13.3 above.
+
+For a single sample with two paired observations
+(formula\eqref{eq:d-paired}):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ujedata \textless{}{-}}\StringTok{ }\KeywordTok{read.table}\NormalTok{( }\DataTypeTok{file=}\StringTok{"data/ujedata.csv"}\NormalTok{, }\DataTypeTok{header=}\OtherTok{TRUE}\NormalTok{, }\DataTypeTok{sep=}\StringTok{";"}\NormalTok{ )}
+\KeywordTok{with}\NormalTok{( ujedata, }\KeywordTok{mean}\NormalTok{(cond.u}\OperatorTok{{-}}\NormalTok{cond.je) }\OperatorTok{/}\StringTok{ }\KeywordTok{sd}\NormalTok{(cond.u}\OperatorTok{{-}}\NormalTok{cond.je) )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] -2.130141
+\end{verbatim}
+
+\hypertarget{confidence-interval-of-the-effect-size}{%
+\subsection{Confidence interval of the effect size}\label{confidence-interval-of-the-effect-size}}
+
+Earlier, we already saw
+(§\ref{sec:confidenceinterval-mean} and
+§\ref{sec:t-confidenceinterval-mean})
+that we can estimate a characteristic
+or parameter of the population on the basis of a characteristic
+from a sample. This is how we estimated the unknown population mean \(\mu\)
+on the basis of the observed sample mean
+\(\overline{x}\). The estimation does have a certain degree of
+uncertainty or reliability: perhaps the unknown parameter differs
+in the population somewhat from the sample characteristic,
+which we use as an estimator, as a result of chance variations in the
+sample. The (un)certainty and (un)reliability is expressed as
+a confidence interval of the estimated characteristic. We then know
+with a certain reliability (mainly 95\%) that the unknown parameter
+will lie within that interval
+(§\ref{sec:confidenceinterval-mean} and §\ref{sec:t-confidenceinterval-mean}).
+
+This reasoning is now valid not only for the mean score, or for the mean or for the
+variance, but equally for the effect size. After all, the effect size
+is also an unknown parameter from the population, which we are trying to estimate
+based on a limited sample. For the fictional judgements
+about the webpages with the formal \emph{U} or informal \emph{je} pronouns (see
+Table~\ref{tab:data-uje-paired}), we found a standardised effect size
+of \(d=-2.13\). This is an estimation of the unknown
+effect size (i.e.~of the strength of the preference for the \emph{je}-variant)
+in the population of assessors, on the basis of a sample of \(n=10\)
+assessors. We can also indicate the reliability of this estimation
+here, in the form of a \emph{confidence interval} around the
+observed sample \(d=-2.13\).
+
+The confidence interval of the effect size is tricky to establish though
+\citep{Naka07, Chen15}. We illustrate it here in a simple manner for
+the simplest case, namely that of the \(t\)-test for a single sample,
+or for two paired observations. For this, we need two elements:
+firstly, the effect size expressed as a correlation \citep[ p.359, formula 12.1]{Rose08}, \[r = \sqrt{ \frac{t^2}{t^2+\textrm{df}} }\] and secondly
+the standard error of the effect size \(d\) \citep[ p.600,
+formula 18]{Naka07}:\\
+\begin{equation}
+  \label{eq:d-paired-se}
+    \textrm{se}_d = \sqrt{ \frac{2(1-r)}{n} + \frac{d^2}{2(n-1)} }
+\end{equation}
+
+In
+our earlier example of the \(n=10\) paired judgements about a webpage
+with \emph{U} or \emph{je} as forms of address we found \(d=-2.13\). We also find
+that \(r=.9135\). With these data, we find \(\textrm{se}_d = 0.519\) via
+formula~\eqref{eq:d-paired-se}.
+
+With this, we then determine the confidence interval for the
+effect size:
+\begin{equation}
+   \label{eq:d-paired-CI}
+    d \pm t^*_{n-1} \times \textrm{se}_d 
+\end{equation}
+(see the correspond
+formula \eqref{eq:t-onesampleCI}).
+
+After filling in \(t^*_9=2.262\) (see
+Appendix~\ref{app:criticaltvalues}) and
+\(\textrm{se}_d = 0.519\), we eventually find
+a 95\% confidence interval of \((-3.30,-0.96)\). We thus
+know with 95\% confidence that the unknown effect size in the population
+is somewhere within this interval, and thus also that it is smaller than
+zero. On the basis of this last consideration, we can reject H0.
+But: we now know not only \emph{that} the preference deviates from zero, but
+also \emph{to what extent} the (standardised) preference deviates from zero,
+i.e.~how strong the preference for the \emph{je}-version is. This new knowledge
+about the extent or size of the effect is often more useful and more interesting
+than the binary decision of whether there is an effect or not (whether or not
+to reject H0) \citep{Cumm12}.
+
 \hypertarget{appendix-appendices}{%
 \appendix}
 

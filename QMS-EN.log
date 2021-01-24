@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.10.22)  23 JAN 2021 21:40
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.10.22)  24 JAN 2021 10:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -846,11 +846,7 @@ LaTeX Warning: Reference `ch:sampling' on page 28 undefined on input line 410.
 
 LaTeX Warning: Reference `ch:toetsing' on page 31 undefined on input line 461.
 
-[31] [32] [33] [34]
-
-LaTeX Warning: Reference `ch:power' on page 35 undefined on input line 555.
-
-[35] [36]
+[31] [32] [33] [34] [35] [36]
 
 LaTeX Warning: Reference `sec:instrumentation-research' on page 37 undefined on
  input line 578.
@@ -875,9 +871,6 @@ ne 636.
 
 LaTeX Warning: Reference `sec:ttoets-effectgrootte' on page 43 undefined on inp
 ut line 636.
-
-
-LaTeX Warning: Reference `ch:power' on page 43 undefined on input line 640.
 
 
 LaTeX Warning: Reference `ch:ontwerp' on page 43 undefined on input line 649.
@@ -1010,10 +1003,6 @@ ne 1602.
 
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
 (Font)              Font shape `TU/lmtt/b/n' tried instead on input line 1608.
-
-LaTeX Warning: Reference `sec:effectsize-power' on page 100 undefined on input 
-line 1622.
-
 [100] [101] [102] [103
 
 ] [104]
@@ -1159,9 +1148,6 @@ Overfull \hbox (42.53233pt too wide) has occurred while \output is active
 
 [145]
 
-LaTeX Warning: Reference `ch:power' on page 146 undefined on input line 3637.
-
-
 LaTeX Warning: Reference `ch:anova' on page 146 undefined on input line 3638.
 
 [146]
@@ -1172,9 +1158,6 @@ ine 3658.
 
 LaTeX Warning: Reference `ch:other-nonpar-tests' on page 147 undefined on input
  line 3659.
-
-
-LaTeX Warning: Reference `ch:power' on page 147 undefined on input line 3662.
 
 File: QMS-EN_files/figure-latex/itunesmeanshist-1.pdf Graphic file (type pdf)
 <use QMS-EN_files/figure-latex/itunesmeanshist-1.pdf>
@@ -1295,9 +1278,6 @@ NA 0.745[]
 
 ] [185] [186]
 Chapter 13.
-
-LaTeX Warning: Reference `ch:power' on page 187 undefined on input line 5348.
-
 [187
 
 ]
@@ -1347,75 +1327,98 @@ Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;
 File: QMS-EN_files/figure-latex/smallestsignifdifference-1.pdf Graphic file (ty
 pe pdf)
 <use QMS-EN_files/figure-latex/smallestsignifdifference-1.pdf>
-[205] [206] [207]
+[205] [206] [207] [208] [209] [210]
+Chapter 14.
 
-LaTeX Warning: Reference `sec:power-introduction' on page 208 undefined on inpu
-t line 6467.
+LaTeX Warning: Reference `sec:empiricalcylce' on page 211 undefined on input li
+ne 6590.
 
-[208] [209] [210]
-Appendix A.
 [211
 
-] [212]
+]
+File: QMS-EN_files/figure-latex/powercontours-alpha01-1.pdf Graphic file (type 
+pdf)
+<use QMS-EN_files/figure-latex/powercontours-alpha01-1.pdf>
+File: QMS-EN_files/figure-latex/powercontours-alpha05-1.pdf Graphic file (type 
+pdf)
+<use QMS-EN_files/figure-latex/powercontours-alpha05-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[212] [213]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[214] [215]
+File: QMS-EN_files/figure-latex/underpoweredeffectsizes-1.pdf Graphic file (typ
+e pdf)
+<use QMS-EN_files/figure-latex/underpoweredeffectsizes-1.pdf>
+
+Overfull \vbox (0.71379pt too high) has occurred while \output is active []
+
+[216] [217] [218]
+Appendix A.
+[219
+
+] [220]
 Appendix B.
 File: QMS-EN_files/figure-latex/kritiekeZwaarden-hulpfiguur-1.pdf Graphic file 
 (type pdf)
 <use QMS-EN_files/figure-latex/kritiekeZwaarden-hulpfiguur-1.pdf>
-[213
+[221
 
-] [214]
+] [222]
 Appendix C.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 24.88pt on input line 6659.
+(Font)              scaled to size 24.88pt on input line 6930.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 20.74pt on input line 6659.
+(Font)              scaled to size 20.74pt on input line 6930.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 17.28pt on input line 6659.
+(Font)              scaled to size 17.28pt on input line 6930.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 24.88228pt on input line 6659.
+(Font)              scaled to size 24.88228pt on input line 6930.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 20.7419pt on input line 6659.
+(Font)              scaled to size 20.7419pt on input line 6930.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 17.28157pt on input line 6659.
+(Font)              scaled to size 17.28157pt on input line 6930.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 24.87733pt on input line 6659.
+(Font)              scaled to size 24.87733pt on input line 6930.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 20.73778pt on input line 6659.
+(Font)              scaled to size 20.73778pt on input line 6930.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 17.27815pt on input line 6659.
+(Font)              scaled to size 17.27815pt on input line 6930.
 File: QMS-EN_files/figure-latex/criticaltvalues-auxiliaryfigure-1.pdf Graphic f
 ile (type pdf)
 <use QMS-EN_files/figure-latex/criticaltvalues-auxiliaryfigure-1.pdf>
 
-Overfull \hbox (19.32014pt too wide) in paragraph at lines 6671--6716
+Overfull \hbox (19.32014pt too wide) in paragraph at lines 6942--6987
  [][] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[215
+[223
 
-] [216]
+] [224]
 Appendix D.
 File: QMS-EN_files/figure-latex/criticalchi2values-auxiliaryfigure-1.pdf Graphi
 c file (type pdf)
 <use QMS-EN_files/figure-latex/criticalchi2values-auxiliaryfigure-1.pdf>
 
-Overfull \hbox (17.80014pt too wide) in paragraph at lines 6727--6770
+Overfull \hbox (17.80014pt too wide) in paragraph at lines 6998--7041
  [][] 
  []
 
 (./QMS-EN.bbl
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[217
+[225
 
-] [218] [219
+] [226] [227
 
-] [220] [221] [222]) [223] (./QMS-EN.aux)
+] [228] [229] [230]) [231] (./QMS-EN.aux)
 Package rerunfilecheck Info: File `QMS-EN.out' has not changed.
-(rerunfilecheck)             Checksum: 171345B436FA2B30D4D42C121C6CD279;17659.
+(rerunfilecheck)             Checksum: C3F1006DC3DA7FE9EE1D56C43FDC8423;18922.
 
 LaTeX Warning: There were undefined references.
 
@@ -1424,12 +1427,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 17821 strings out of 479441
- 314675 string characters out of 5880450
- 794290 words of memory out of 5000000
- 36863 multiletter control sequences out of 15000+600000
+ 17859 strings out of 479441
+ 316009 string characters out of 5880450
+ 797187 words of memory out of 5000000
+ 36898 multiletter control sequences out of 15000+600000
  545447 words of font info for 114 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  84i,10n,118p,1871b,551s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on QMS-EN.pdf (223 pages).
+Output written on QMS-EN.pdf (231 pages).

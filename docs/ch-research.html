@@ -380,6 +380,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.8.4" data-path="ch-testing.html"><a href="ch-testing.html#confidence-interval-of-the-effect-size"><i class="fa fa-check"></i><b>13.8.4</b> Confidence interval of the effect size</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="14" data-path="ch-power.html"><a href="ch-power.html"><i class="fa fa-check"></i><b>14</b> Power</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="ch-power.html"><a href="ch-power.html#sec:power-introduction"><i class="fa fa-check"></i><b>14.1</b> Introduction</a></li>
+<li class="chapter" data-level="14.2" data-path="ch-power.html"><a href="ch-power.html#sec:effectsize-power"><i class="fa fa-check"></i><b>14.2</b> Relation between effect size and power</a></li>
+<li class="chapter" data-level="14.3" data-path="ch-power.html"><a href="ch-power.html#sec:samplesize-power"><i class="fa fa-check"></i><b>14.3</b> Relation between sample size and power</a></li>
+<li class="chapter" data-level="14.4" data-path="ch-power.html"><a href="ch-power.html#sec:significancelevel-power"><i class="fa fa-check"></i><b>14.4</b> Relation between significance level and power</a></li>
+<li class="chapter" data-level="14.5" data-path="ch-power.html"><a href="ch-power.html#disadvantages-of-insufficient-power"><i class="fa fa-check"></i><b>14.5</b> Disadvantages of insufficient power</a></li>
+</ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
 <li class="chapter" data-level="A" data-path="app-randomnumbers.html"><a href="app-randomnumbers.html"><i class="fa fa-check"></i><b>A</b> Random numbers</a></li>
 <li class="chapter" data-level="B" data-path="app-criticalZvalues.html"><a href="app-criticalZvalues.html"><i class="fa fa-check"></i><b>B</b> Standard normal probability distribution</a></li>
@@ -625,7 +633,7 @@ Most importantly, significance is <em>not</em> the probability of H0 being true 
 </tr>
 </tbody>
 </table>
-<p>If we set the level of significance to a higher value, e.g., <span class="math inline">\(\alpha = .20\)</span>, this also means that the chance of rejecting H0 is much higher. In the testing phase, we would reject H0 if the probability of observing these data (or any more extreme data) were smaller than 20%. This would mean that 8 times heads within 10 coin tosses would be enough to reject H0 (i.e., judging the coin as unfair). Thus, more outcomes are possible that lead to rejecting H0. Consequently, this higher level of significance entails a greater risk of a Type 1 error, and, at the same time, a smaller risk of a Type II error. The balance between the two type of error depends on the exact circumstances under which the study is conducted, and on the consequences that each of the two types of error might have. Which type of error is worse: throwing away an innocent email, or letting a spam message through? The probability of making a Type I error (the level of significance) is controlled by the researcher themselves. The probability of a Type II error depends on three factors and is difficult to gauge. Chapter <a href="#ch:power"><strong>??</strong></a> will discuss this in more detail.</p>
+<p>If we set the level of significance to a higher value, e.g., <span class="math inline">\(\alpha = .20\)</span>, this also means that the chance of rejecting H0 is much higher. In the testing phase, we would reject H0 if the probability of observing these data (or any more extreme data) were smaller than 20%. This would mean that 8 times heads within 10 coin tosses would be enough to reject H0 (i.e., judging the coin as unfair). Thus, more outcomes are possible that lead to rejecting H0. Consequently, this higher level of significance entails a greater risk of a Type 1 error, and, at the same time, a smaller risk of a Type II error. The balance between the two type of error depends on the exact circumstances under which the study is conducted, and on the consequences that each of the two types of error might have. Which type of error is worse: throwing away an innocent email, or letting a spam message through? The probability of making a Type I error (the level of significance) is controlled by the researcher themselves. The probability of a Type II error depends on three factors and is difficult to gauge. Chapter <a href="ch-power.html#ch:power">14</a> will discuss this in more detail.</p>
 </div>
 <div id="evaluation" class="section level3" number="2.5.5">
 <h3><span class="header-section-number">2.5.5</span> evaluation</h3>

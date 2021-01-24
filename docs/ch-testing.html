@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="ch-reliability.html"/>
-<link rel="next" href="app-randomnumbers.html"/>
+<link rel="next" href="ch-power.html"/>
 <script src="libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -380,6 +380,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.8.4" data-path="ch-testing.html"><a href="ch-testing.html#confidence-interval-of-the-effect-size"><i class="fa fa-check"></i><b>13.8.4</b> Confidence interval of the effect size</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="14" data-path="ch-power.html"><a href="ch-power.html"><i class="fa fa-check"></i><b>14</b> Power</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="ch-power.html"><a href="ch-power.html#sec:power-introduction"><i class="fa fa-check"></i><b>14.1</b> Introduction</a></li>
+<li class="chapter" data-level="14.2" data-path="ch-power.html"><a href="ch-power.html#sec:effectsize-power"><i class="fa fa-check"></i><b>14.2</b> Relation between effect size and power</a></li>
+<li class="chapter" data-level="14.3" data-path="ch-power.html"><a href="ch-power.html#sec:samplesize-power"><i class="fa fa-check"></i><b>14.3</b> Relation between sample size and power</a></li>
+<li class="chapter" data-level="14.4" data-path="ch-power.html"><a href="ch-power.html#sec:significancelevel-power"><i class="fa fa-check"></i><b>14.4</b> Relation between significance level and power</a></li>
+<li class="chapter" data-level="14.5" data-path="ch-power.html"><a href="ch-power.html#disadvantages-of-insufficient-power"><i class="fa fa-check"></i><b>14.5</b> Disadvantages of insufficient power</a></li>
+</ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
 <li class="chapter" data-level="A" data-path="app-randomnumbers.html"><a href="app-randomnumbers.html"><i class="fa fa-check"></i><b>A</b> Random numbers</a></li>
 <li class="chapter" data-level="B" data-path="app-criticalZvalues.html"><a href="app-criticalZvalues.html"><i class="fa fa-check"></i><b>B</b> Standard normal probability distribution</a></li>
@@ -428,7 +436,7 @@ distribution free tests. The consequence is that the testing
 is a little less ‘sensitive’ under otherwise equal circumstances, i.e.
 that the null hypothesis can be rejected less often in
 otherwise equal circumstances. These tests therefore have less power (see
-Chapter <a href="#ch:power"><strong>??</strong></a>). Researchers thus usually prefer parametric
+Chapter <a href="ch-power.html#ch:power">14</a>). Researchers thus usually prefer parametric
 tests.</p>
 <p>We already discussed the general principle of testing briefly in
 §<a href="ch-research.html#sec:falsification">2.4</a> and §<a href="ch-research.html#sec:empiricalcycle">2.5</a>.
@@ -1415,7 +1423,7 @@ Fig. <a href="ch-testing.html#fig:smallestsignifdifference">13.3</a>); for whic
 also used to construct Fig.<a href="ch-testing.html#fig:smallestsignifdifference">13.3</a>.)
 With this function, you have to set the desired <code>power</code> as
 an argument (power = <span class="math inline">\(1-\beta\)</span>; see
-§<a href="#sec:power-introduction"><strong>??</strong></a>).</p>
+§<a href="ch-power.html#sec:power-introduction">14.1</a>).</p>
 <div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="ch-testing.html#cb101-1" aria-hidden="true"></a><span class="kw">power.t.test</span>( <span class="dt">n=</span><span class="dv">122</span>, <span class="dt">sig=</span>.<span class="dv">05</span>, <span class="dt">power=</span>.<span class="dv">90</span>, <span class="dt">type=</span><span class="st">&quot;two.sample&quot;</span> )</span></code></pre></div>
 <pre><code>## 
 ##      Two-sample t test power calculation 
@@ -1507,9 +1515,6 @@ to reject H0) <span class="citation">(Cumming <a href="#ref-Cumm12" role="doc-bi
 </div>
 </div>
 </div>
-
-
-
 <h3>References</h3>
 <div id="refs" class="references">
 <div id="ref-Ande11">
@@ -1554,7 +1559,7 @@ to reject H0) <span class="citation">(Cumming <a href="#ref-Cumm12" role="doc-bi
         </div>
       </div>
 <a href="ch-reliability.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="app-randomnumbers.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="ch-power.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3 Integrity | Quantitative Methods and Statistics</title>
+  <title>14 Power | Quantitative Methods and Statistics</title>
   <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3 Integrity | Quantitative Methods and Statistics" />
+  <meta property="og:title" content="14 Power | Quantitative Methods and Statistics" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rstudio/QMS-EN" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3 Integrity | Quantitative Methods and Statistics" />
+  <meta name="twitter:title" content="14 Power | Quantitative Methods and Statistics" />
   
   <meta name="twitter:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="ch-research.html"/>
-<link rel="next" href="ch-levelsofmeasurement.html"/>
+<link rel="prev" href="ch-testing.html"/>
+<link rel="next" href="app-randomnumbers.html"/>
 <script src="libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -414,157 +414,285 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ch:integrity" class="section level1" number="3">
-<h1><span class="header-section-number">3</span> Integrity</h1>
-<div id="sec:integrity-introduction" class="section level2" number="3.1">
-<h2><span class="header-section-number">3.1</span> Introduction</h2>
-<p>Scientific research has brought humanity immeasurably great benefits, such as reliable computing technology, high-quality medical care, and an understanding of languages and cultures that are not our own. All these assets are based on scientifically motivated knowledge. Researchers produce knowledge, whose progress and growth comes about because researchers build upon their predecessors’ experience and insights.</p>
-<hr />
-<blockquote>
-<p>Example 3.1*: Sir Isaac Newton wrote of his scientific work: “If I have seen further it is by standing on [the] shoulders of Giants” (in a letter addressed to Robert Hooke, dated 5 Feb 1675)<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>. This metaphor can be traced back to the medieval scholar, Bernard de Chartres: “nos esse quasi nanos gigantum umeris insidentes” [that we are like dwarfs sat on giants’ shoulders] compared to scholars from the times of Antiquity. The aforementioned quote by Newton has also become Google Scholar’s motto (<a href="scholar.google.com">scholar.google.com</a>).</p>
-</blockquote>
-<hr />
-<p>In this chapter, we will discuss the ethical and moral aspects of scientific research. Science is done by human beings, and requires a well-developed sense of judgment on the part of the researchers. The <em>Netherlands Code of Conduct for Research Integrity</em> <span class="citation">(VSNU <a href="#ref-VSNU18" role="doc-biblioref">2018</a>)</span>
-(<a href="https://www.vsnu.nl/en_GB/research-integrity" class="uri">https://www.vsnu.nl/en_GB/research-integrity</a>) describes how researchers (and students) are to behave. According to this code of conduct, scientific research and teaching should be based on the following principles:</p>
-<ul>
-<li><p>honesty,</p></li>
-<li><p>diligence,</p></li>
-<li><p>transparency,</p></li>
-<li><p>independence, and</p></li>
-<li><p>responsibility.</p></li>
-</ul>
-<p>The following sections will go over how these principles are to be implemented in our actions during the various phases of scientific research. How are we to set up a study, collect and process data, and report on our study in a way that is honest, diligent, transparent, independent, and responsible? This is something we have to think about even before we start working on our project, which is why these topics are discussed at the beginning of this reader, even though we will also refer to terms and concepts that will be worked out in more detail in subsequent chapters.</p>
+<div id="ch:power" class="section level1" number="14">
+<h1><span class="header-section-number">14</span> Power</h1>
+<div id="sec:power-introduction" class="section level2" number="14.1">
+<h2><span class="header-section-number">14.1</span> Introduction</h2>
+<p>With statistical testing of H0, we determine the probability <span class="math inline">\(P\)</span> of the
+observed differences or effects (or of even larger differences or effects
+than observed) if H0 were true, and thus if
+the observed difference had to be attributed solely to chance
+(see §<a href="#sec:empiricalcylce"><strong>??</strong></a> and
+Chapter <a href="ch-testing.html#ch:testing">13</a>). If the probability <span class="math inline">\(P\)</span> is very small, then
+we have thus found results which are very improbable if H0 were true.
+We then conclude that H0 is presumably <em>not true</em> and we thus reject
+H0. We then call the difference or effect found, the “significant”
+(Latin: ‘meaning making’). However, there is in fact a probability,
+<span class="math inline">\(P\)</span>, that the difference found is actually a fluke, and that, by rejecting
+H0, we are making a Type I error (i.e. wrongly rejecting H0,
+see
+§<a href="ch-testing.html#sec:testing-introduction">13.1</a>). As we use a certain
+significance level, with which to compare <span class="math inline">\(P\)</span>, this <span class="math inline">\(\alpha\)</span>
+is thus also the probability that we are making a Type I error.</p>
+<p>At least as important, however, is the opposite error of <em>not</em> wrongly<br />
+rejecting H0, a Type II error. Examples of such errors are:
+not convicting a suspect even if he is guilty, letting a ‘spam’
+email message through into my mailbox, examining a patient and nevertheless
+not noticing their illness, concluding that birds are silent when
+they are in fact singing
+(Example 13.1), or wrongly concluding that two
+groups do not differ when an important difference does in fact exist
+between the two groups. The probability of a Type II error is referred to
+with the symbol <span class="math inline">\(\beta\)</span>.</p>
+<p>If H0 is in fact not true (there is a difference, the message is ‘spam’,
+birds are singing, etc.), then H0 should be rejected, and
+<span class="math inline">\(\beta\)</span> should thus be as small as possible. The probability of <em>rightly</em>
+rejecting H0 is then <span class="math inline">\((1-\beta)\)</span> (see complement rule <a href="ch-probability-distributions.html#eq:complementrule">(10.3)</a>);
+this probability <span class="math inline">\((1-\beta)\)</span> is called the <em>power</em>.
+Power can be interpreted as <strong>the probability of the researcher
+being right</strong> (H0 is rejected) <strong>when she is indeed right</strong> (H0 is untrue).</p>
+<p>The probabilities of Type I and Type II errors have to be weighed up
+carefully against each other. In many studies, the p-values
+<span class="math inline">\(\alpha=.05\)</span> (significance level) and <span class="math inline">\(\beta=.20\)</span>
+(power=<span class="math inline">\(.80\)</span>) are used. With these, an implicit weighting is made
+that a Type I error is 4× more grave than a Type II error.
+For some studies that might be justified but it is also easily
+conceivable that, under certain circumstances, a Type II error is
+actually more grave or serious than a Type I error. If we find both types of
+error more or less equally grave, then we should strive for
+a smaller <span class="math inline">\(\beta\)</span> and larger power <span class="citation">(Rosenthal and Rosnow <a href="#ref-Rose08" role="doc-biblioref">2008</a>)</span>.</p>
+<p>The power of a study depends on three factors: (i) the effect
+size <span class="math inline">\(d\)</span>, which itself is in turn dependent on the measured difference
+<span class="math inline">\(D\)</span> and the variation <span class="math inline">\(s\)</span> in the observations
+(formula <a href="ch-testing.html#eq:d-standardized">(13.9)</a>), (ii) the sample size <span class="math inline">\(N\)</span>, and (iii)
+the significance level <span class="math inline">\(\alpha\)</span>. In the following sections, we will
+discuss each of these factors separately, and, when doing so, keep the other
+two factors as constant as possible. For this discussion, we will use the
+depictions of calculated power
+(Figures <a href="ch-power.html#fig:powercontours-alpha01">14.1</a> and
+<a href="ch-power.html#fig:powercontours-alpha05">14.2</a>). The depicted power contours are specifically
+for a <em>t</em>-test for independent samples
+(§<a href="ch-testing.html#sec:ttest-indep">13.6</a>) with two-sided testing.
+The relations discussed below also apply to other statistical
+tests.</p>
+<div class="figure"><span id="fig:powercontours-alpha01"></span>
+<img src="QMS-EN_files/figure-html/powercontours-alpha01-1.png" alt="Power expressed in contours (see shading), dependent on the standardised effect size (d) and sample size according to a two-sided t-test for unpaired, independent observations, with two-sided significance level alpha=.01." width="672" />
+<p class="caption">
+Figure 14.1: Power expressed in contours (see shading), dependent on the standardised effect size (d) and sample size according to a two-sided t-test for unpaired, independent observations, with two-sided significance level alpha=.01.
+</p>
 </div>
-<div id="sec:design" class="section level2" number="3.2">
-<h2><span class="header-section-number">3.2</span> Design</h2>
-<p>To be sure, scientific research does bring us immeasurably great benefits, but this is balanced by considerable cost. This includes direct expenses, such as setting up and maintaining laboratories, equipment, and technical support, but also researchers’ salaries, financial compensation for informants and test subjects, travel expenses for access to libraries, archives, informants, and test subject, etc. These direct expenses are usually subsidized by public funds held by universities and other academic institutions. In addition, there is an indirect cost, which is partially borne by informants and test subjects: time and effort that can no longer be spent on something else, loss of privacy, and possibly other risks we are not yet aware of. One often forgotten type of cost is loss of naïveté: a test subject who has participated in an experiment learns from it, and, because of this, will possibly respond differently in a subsequent experiment (see §<a href="ch-validity.html#sec:internalvalidity">5.4</a>, under History). This means that any results obtained in this subsequent experiment will generalize less well to other subjects who have a different history, and have not yet participated in a study.</p>
-<p>Given its great cost, research has to be thought through and designed in such a way that its expected benefits are reasonably balanced by its expected cost <span class="citation">(Rosenthal and Rosnow <a href="#ref-Rose08" role="doc-biblioref">2008</a>, Ch.3)</span>. If the chance that a study will yield valid conclusions is very low, it is better <em>not</em> to go ahead with this study, which will save on both direct expenses and indirect cost.</p>
-<hr />
-<blockquote>
-<p><em>Example 3.2</em>: Suppose that we would like to examine whether 4-year-old bilingual children might have a cognitive advantage over monolingual children of the same age. Based on earlier research, we expect a different of at least 2 points (on a 10 point scale) between both groups (with a “pooled standard deviation” <span class="math inline">\(s_p=4\)</span>, hence <span class="math inline">\(d=0.5\)</span>, §<a href="#sec:ttoets-formules"><strong>??</strong></a> and §<a href="#sec:ttoets-effectgrootte"><strong>??</strong></a>).</p>
-</blockquote>
-<blockquote>
-<p>We then compare two group of <span class="math inline">\(n = 4\)</span> children each. Even if there were actually a difference of 2 points between both groups (meaning, if the hypothesis were true), this study would still have a mere 51% chance of yielding a significant difference: the power of the experiment is only .51 (Chapter <a href="ch-power.html#ch:power">14</a>), because the two groups contain so few test subjects. It would be better for the four-year-olds and their parents to do engage in other activities (at school, at home, or at work) instead of participating in this study.</p>
-</blockquote>
-<blockquote>
-<p>However, if <span class="math inline">\(n = 30\)</span> children would participate in each of the two groups, and if there were indeed a 2 point difference between both groups (meaning, if the research hypothesis were true), then the power of the experiment would be .90. This means that bigger groups lead to a much better chance of confirming our study’s hypothesis. This elaborate research design will cost more (for the researchers and the children and their parents), but presumably it will also yield much more: a valid conclusion with great impact on society.</p>
-</blockquote>
-<hr />
-<p>A study’s design (see Chapter <a href="#ch:ontwerp"><strong>??</strong></a>) has to be as efficient as possible, and the researcher has to start thinking about it at an early stage. First of all, efficiency depends on choices regarding how the independent variables are manipulated. Is there a separate group of test subjects for each condition of the independent variable (meaning we have “between-subjects” conditions, like in example 3.2 above)? In a between-subjects design that involves two groups, we need about <span class="math inline">\(n = (5.6/d)^2\)</span> subjects in each group (for further explanation of this, see <span class="citation">Gelman and Hill (<a href="#ref-Gelm07" role="doc-biblioref">2007</a>)</span>, and see §<a href="ch-testing.html#sec:ttest-effectsize">13.8</a>). Or are all test subjects involved in all conditions (meaning we have “within-subjects” conditions)? A within-subjects design with two conditions requires only <span class="math inline">\(n = (2.8/d)^2\)</span> subjects in each condition, and the study will therefore also have lower expenses and indirect cost for a much smaller number of test subjects. In general, this means that, if possible, it is much better to manipulate independent variables within subjects than it is between subjects. However, this is not always possible, firstly because individual characteristics only differ between subjects by definition (for example: female/male sex, multilingual/monolingual youth, aphasia/no aphasia, etc.). Secondly, we must take proper care to recognize effects of so-called transfer between conditions, which threaten our study’s validity (for example: experience, learning, fatigue, maturation). We will return to this in §<a href="#sec:validiteit"><strong>??</strong></a>.</p>
-<p>Being multilingual or being female are characteristics that may only vary between individuals. But other conditions may also vary within individuals, for instance, the day on which a cognitive measurement is taken. Suppose that we expect a difference of <span class="math inline">\(D = 2\)</span> points between cognitive measurements taken on Monday and on Friday, respectively (with <span class="math inline">\(s = 4\)</span> and <span class="math inline">\(d = 0.5\)</span>, see example 3.2). If we manipulate the day of measurement between subjects, meaning we make separate groups for children tested on Monday and those tested on Friday, this entails that we need <span class="math inline">\(n = (5.6/0.5)^2 = 126\)</span> children in each group, yielding a total of <span class="math inline">\(N = 252\)</span>. However, if we manipulate the day of measurement within subjects, meaning that we observe each test subject on Monday and also on Friday, this entails that we need a total of just <span class="math inline">\(N = (2.8/0.5)^2 = 32\)</span> children. The within-subjects design means that far fewer children’s routines will need to be disturbed for our cognitive measurements. However, we must be properly aware of learning effects between the first and second measurement, and take appropriate precautionary measures. For instance, we can no longer use the same questionnaires in both conditions.</p>
-<p>A study’s efficiency also depends on the dependent variable, in particular, on the observations’ level of measurement (Chapter <a href="#ch:levelofmeasurement"><strong>??</strong></a>), accuracy, and reliability (Chapter <a href="ch-reliability.html#ch:reliability">12</a>). The lower the level of measurement, the lower also the study’s efficiency. As accuracy goes down, the study’s efficiency also goes down, and more subjects and observations will be needed to be able to draw valid conclusions.</p>
-<hr />
-<blockquote>
-<p><em>Example 3.3</em>: Suppose that we would like to examine a difference between two within-subjects conditions, and suppose that the actual difference between them is 2 points (which yields <span class="math inline">\(s_D = 4\)</span> and <span class="math inline">\(d = 0.5\)</span>, see example 3.2). However, suppose that we decide to look only at the <em>direction</em> and not at the size of the difference between the two observations for each subject: does the subject have a positive or negative difference between the first and second condition? This binomial dependent variable contains less information than the original point score (it contains just the direction and not the size of the difference), making the study less efficient. For this specific example, this means we would need 59 instead of 34 test subjects.</p>
-</blockquote>
-<hr />
-<p>Thus, researchers are responsible for diligently and honestly considering and balancing their study’s cost and benefits, and they need to have a sufficient methodological background to be able to choose a proper research design, taking in account time constraints, the available test subjects and instruments of measurement, etc.</p>
+<div class="figure"><span id="fig:powercontours-alpha05"></span>
+<img src="QMS-EN_files/figure-html/powercontours-alpha05-1.png" alt="Power expressed in contours (see graduation), dependent on the standardised effect size (d) and the sample size (n), according to a two-sided t-test for unpaired, independent observations with significance level alpha=.05." width="672" />
+<p class="caption">
+Figure 14.2: Power expressed in contours (see graduation), dependent on the standardised effect size (d) and the sample size (n), according to a two-sided t-test for unpaired, independent observations with significance level alpha=.05.
+</p>
 </div>
-<div id="participants-and-informants" class="section level2" number="3.3">
-<h2><span class="header-section-number">3.3</span> Participants and informants</h2>
-<p>Scientific research is done by human beings: researchers are but human. In the realm of humanities, these researchers themselves study (other) human beings’ behaviour and intellectual products. These activities are governed by laws, rules, guidelines, and codes of conduct that researchers (and students!) must follow, stemming from the aforementioned principles of diligence and responsibility. A study and the data collected for it may not lead to any kind of harm or significant loss of privacy for the parties involved.</p>
-<p>For research in the humanities in the Netherlands, two laws are relevant:</p>
-<ul>
-<li><p>The General Data Protection Regulation (GDPR), see <a href="https://autoriteitpersoonsgegevens.nl/nl/onderwerpen/avg-europese-privacywetgeving" class="uri">https://autoriteitpersoonsgegevens.nl/nl/onderwerpen/avg-europese-privacywetgeving</a> (in Dutch) or <a href="https://ec.europa.eu/info/law/law-topic/data-protection/data-protection-eu_en" class="uri">https://ec.europa.eu/info/law/law-topic/data-protection/data-protection-eu_en</a>,</p></li>
-<li><p>Wet Medisch-wetenschappelijk Onderzoek met mensen (WMO; English: Medical Research Involving Human Subjects Act), see <a href="https://wetten.overheid.nl/BWBR0009408/2019-04-02" class="uri">https://wetten.overheid.nl/BWBR0009408/2019-04-02</a> (in Dutch) or <a href="https://english.ccmo.nl/investigators/legal-framework-for-medical-scientific-research/laws/medical-research-involving-human-subjects-act-wmo" class="uri">https://english.ccmo.nl/investigators/legal-framework-for-medical-scientific-research/laws/medical-research-involving-human-subjects-act-wmo</a></p></li>
-</ul>
-<p>It is compulsory to ask participants (or their legal guardians) for their explicit informed consent. This means that participants are fairly informed about the study, about its cost and benefits, and about their remuneration, and that, after this, they explicitly consent to participate. For researchers and students at Utrecht University, helpful examples of informed consent (information letters and consent statements) can be found on the website of the Faculty Ethics Review Committee for the Humanities (FETC-GW, discussed in more detail below), via <a href="https://fetc-gw.wp.hum.uu.nl" class="uri">https://fetc-gw.wp.hum.uu.nl</a>.</p>
-<p>All data that may be used to identify an individual are considered to be <em>personal data</em>, which may only be collected and processed according to the GDPR. It is advisable to separate one’s research data from any personal data as early as possible, which means anonymizing the data. Any information that links personal data and research data (e.g., a list with test subjects’ names and their corresponding anonymous personal code) is, itself, confidential and must be saved and stored with care. Do not keep personal data any longer than necessary. Research data may only be used for the (scientific) goal for which they were collected. Make sure that participants and informants are not recognizable in reports and publications on the study (i.e., use anonymous codes).</p>
-<p>Photos and recordings of individuals (including audio, video, physiological data, and EEG) are subject to what we call <em>portrait rights</em>. This means that photos and other identifying recordings are considered on a par with portraits. When such a photo or recording is published, the person shown or represented may appeal to their portrait rights and claim damages for the harm done to them by this publication. This means that, if you might be interested in publishing a recording from which someone could be recognized, you must ask the individual who was recorded or their legal guardian for explicit consent beforehand (see above for the notion of informed consent). This also applies if you intend to demonstrate or show a fragment of such a recording at a conference presentation or on a website.</p>
-<p>The Dutch WMO law (see above) states that any research involving human subjects must first be approved by a special committee; for the Faculty of Humanities at Utrecht University, this is the Medical Ethics Assessment Committee (Medisch-Ethische Toetsingscommissie or METC), which is administered by the University Medical Centre (UMC). This committee assesses whether the possible benefits of a study are reasonably balanced against the costs and possible harm done to test subjects.</p>
-<p>Most research in languages and communication at Utrecht University is exempt from review by the METC, which would otherwise be time-consuming, but it must be submitted to the Faculty Ethics Review Committee for the Humanities (Facultaire Ethische Toetscommissie - Geesteswetenschappen or FETC-GW, see <a href="https://fetc-gw.wp.hum.uu.nl/en/" class="uri">https://fetc-gw.wp.hum.uu.nl/en/</a>).
-However, this does not apply to research done by students, provided that some conditions apply.
-You can find more information on the FETC-GW website. When in doubt, always consult with your supervisor or teacher.
-This ethics assessment is also compulsory for students and researchers in other fields (literature, history, media &amp; culture) who plan to do research with human subjects.</p>
 </div>
-<div id="data" class="section level2" number="3.4">
-<h2><span class="header-section-number">3.4</span> Data</h2>
-<p>The data collected form the motivation and empirical basis for the conclusion drawn from scientific research. These data therefore have an essential importance: no data means no valid conclusions. Moreover, as we saw above (§<a href="#sec:ontwerp"><strong>??</strong></a>), these data are very costly (in terms of time, money, privacy, etc.). This means that we should treat them very diligently. We must be able to convince others of our conclusions’ validity based on these data, and we must be able to share the underlying data with other researchers, if asked.</p>
-<p>Thus, diligence requires, at the very least, making a sufficient number of backup copies as soon as possible. Think of what might happen if a fire or flood would completely destroy the place where you work or live, or if your laptop would be stolen during your thesis project (this actually happened to one of our students!). If so, would proper and recent copies of the data be stored in other locations? For storing backup copies, a sufficiently secured cloud service<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> is a good option.</p>
-<p>Diligence also requires a proper record of what the data stand for, and how they were collected. Data without a matching description are practically useless for scientific research. Charles Darwin carefully noted down which bird found on which of the Galapagos Islands had which beak shape, and these observations later formed (a part of) the motivation for his theory of evolution. In the same way, we strongly encourage you to keep a log (on paper or digitally) of all steps of your research study, including motivations for these steps, if needed. Also note the brand, type, and settings used for any equipment you use, and note the version and settings for any software used. Keep a record of which processing steps were applied to the data, and why, and which file contains which data.</p>
-<p>If you are working with digitized data (e.g., in Excel, or SPSS, or R), make sure to carefully keep track of which variable is stored in which column, using which unit of measurement and which coding scheme.</p>
-<hr />
-<blockquote>
-<p><em>Example 3.4</em>: The file found at &lt;<a href="http://tinyurl.com/nj4pjaq" class="uri">http://tinyurl.com/nj4pjaq</a>. contains data from 80 speakers of Dutch, partially taken from the Corpus of Spoken Dutch (Corpus Gesproken Nederlands or CGN). The first line contains the variable names. Each subsequent line corresponds to one speaker. The pieces of data on each line are separated by spaces. The first column contains the anonymized speaker ID code, as used in the CGN. In the fifth column, the speaker’s region of origin is coded with a single letter:
-<code>W</code> for Western region (Randstad), <code>M</code> Central (Mid), <code>N</code> North, <code>S</code> South) <span class="citation">(Quené <a href="#ref-Quene08" role="doc-biblioref">2008</a>)</span>. Because of the careful annotation, these data may still be used with no problem, even if they were collected over 20 years ago by fellow researchers.</p>
-</blockquote>
-<hr />
-<p>Data remain the intellectual property of those who collected them. Use of other researchers’ data with no citation may be seen as theft or plagiarism.</p>
-<p>Data fraud (fabricating data, meaning, coming up with data out of thin air, instead of observing them) is obviously at odds with multiple principles in the code of conduct mentioned above <span class="citation">(VSNU <a href="#ref-VSNU18" role="doc-biblioref">2018</a>)</span>. Fraud harms the mutual trust on which science is based. It misleads other researchers who might be building on the fictional results, and any research funds allotted to a fraudulent line of research are taken away from other, non-fraudulent research – in other words, it is a mortal sin of academia. If you would like to discuss any questions or dilemmas around this topic, please contact
-prof.dr. Christoph Baumgartner, confidential advisor on academic integrity for the Humanities at Utrecht University (<code>c.baumgartner@uu.nl</code>).</p>
+<div id="sec:effectsize-power" class="section level2" number="14.2">
+<h2><span class="header-section-number">14.2</span> Relation between effect size and power</h2>
+<p>The two figures <a href="ch-power.html#fig:powercontours-alpha01">14.1</a> and
+<a href="ch-power.html#fig:powercontours-alpha05">14.2</a> show that, in general, the larger the effect to be
+tested is (more to the right in each figure), the larger the power.
+This is also not surprising: a larger effect has
+a higher probability of being detected in a statistical test, under
+the same circumstances. A moderately large effect of
+<span class="math inline">\(d=.5\)</span>, with <span class="math inline">\(n=30\)</span> observations in each group, only has a probability
+of <span class="math inline">\(.48\)</span> of being detected (if <span class="math inline">\(\alpha=.05\)</span>, Figure <a href="ch-power.html#fig:powercontours-alpha05">14.2</a>). On the basis
+of a study
+with <span class="math inline">\(n=30\)</span> observations per group is thus actually a gamble
+whether a researcher will actually detect such an effect, and
+will reject H0. Put otherwise, the probability of a Type I error is
+admittedly safely low (<span class="math inline">\(\alpha=.05\)</span>) but the probability of a Type II error is
+more than <span class="math inline">\(10\times\)</span> as large, and thus dangerously high (<span class="math inline">\(\beta=.52\)</span>) <span class="citation">(Rosenthal and Rosnow <a href="#ref-Rose08" role="doc-biblioref">2008</a>, Ch.12)</span>.</p>
+<p>A larger effect has a higher probability of being detected. A larger
+effect of <span class="math inline">\(d=.8\)</span>, for example, results in a power of
+<span class="math inline">\(.86\)</span> with this testing. The probability of a Type II error <span class="math inline">\(\beta=.14\)</span> here is
+admittedly also larger than the probability of a Type I error, but the
+proportion <span class="math inline">\(\beta/\alpha\)</span> is considerably less skewed.</p>
+<p>As researchers, we only have an indirect influence on effect size.
+We of course have no influence on the true raw difference <span class="math inline">\(D\)</span> in the
+population. For the power, however, the raw difference <span class="math inline">\(D\)</span> is not
+important, but rather the standardised difference <span class="math inline">\(d=D/s\)</span>
+(§<a href="ch-testing.html#sec:ttest-effectsize">13.8</a>). Thus, if we ensure that the standard
+deviation <span class="math inline">\(s\)</span> decreases, then <span class="math inline">\(d\)</span> will increase,
+and then the power will also increase
+(figures <a href="ch-power.html#fig:powercontours-alpha01">14.1</a> and <a href="ch-power.html#fig:powercontours-alpha05">14.2</a>),
+and we thus have a higher probability
+of actually detecting an effect!
+With this goal in mind, researchers always strive to neutralise
+disrupting influences from all kinds of other factors as much as possible.
+After all, the disrupting influences produce extra variability in the observations, and,
+with this, a lower power with the statistical testing.</p>
+<p>In a well-designed study, we want to determine in advance what
+the power will be, and how large the sample should be (see below).
+For this we need an estimation of the smallest effect size <span class="math inline">\(d\)</span>
+which we still want to detect
+(§<a href="ch-testing.html#sec:ttest-effectsize">13.8</a>) <span class="citation">(Quené <a href="#ref-Quene10" role="doc-biblioref">2010</a>)</span>. To estimate the effect size, firstly,
+an estimate of the raw difference <span class="math inline">\(D\)</span> between the groups or conditions is needed.
+Secondly, an estimation is needed of the variability <span class="math inline">\(s\)</span>
+in the observations. These estimations can be largely deduced from
+earlier publications, in which the standard deviation
+<span class="math inline">\(s\)</span> is usually reported. If no earlier research reports are available,
+then <span class="math inline">\(s\)</span> can be roughly estimated from some informal
+‘pilot’ observations. Take the difference between the highest and the lowest
+(range) of these, divide this range by 4, and use the outcome of this as
+a rough estimation for <span class="math inline">\(s\)</span> <span class="citation">(Peck and Devore <a href="#ref-PD08" role="doc-biblioref">2008</a>)</span>.</p>
 </div>
-<div id="writing" class="section level2" number="3.5">
-<h2><span class="header-section-number">3.5</span> Writing</h2>
-<p>Scientific research only really reaches its purpose once its results are being divulged. Research that is not reported on could as well <em>not</em> have been conducted at all, and the cost associated with this research was, basically, spent in vain. For this reason, reporting research results is an important part of academic work. Publications (as well as patents) form a very important part of the “output” of scientific research. Researchers are measured by the number of their publications and these publications’ “impact” (the number of times these publications are cited by others who build upon them). This great importance is one of the reasons we ought to be diligent in treating others’ writings, as well as our own.</p>
-<p>The researchers involved in a study must discuss amongst each other who will be listed as authors of a report or publication, and in which order. Those listed as co-authors of a research report have to satisfy three conditions <span class="citation">(Office of Research Integrity <a href="#ref-ORI12" role="doc-biblioref">2012</a>, Ch.10)</span>. Firstly, the must have made a substantial academic contribution to one or more phases of the study: think of the original idea, setting up and designing the study, collecting the data, or analysing and interpreting the data. Secondly, they must have been a part of writing up the report, either by doing part of the writing or by providing comments on it. Thirdly, they must have approved the final version of the report (most often implicitly, sometimes explicitly), and they must also have consented to being a co-author. It is best practice for the researchers to come to a mutual agreement on the order in which their names are listed. Usually, names are ordered by decreasing importance and extent of each author’s contribution. If the lead researcher is the main investigator and also a co-author, this person is often listed last.</p>
+<div id="sec:samplesize-power" class="section level2" number="14.3">
+<h2><span class="header-section-number">14.3</span> Relation between sample size and power</h2>
+<p>The relation between the sample size <span class="math inline">\(N\)</span> and the power of a study
+is illustrated in
+Figure <a href="ch-power.html#fig:powercontours-alpha01">14.1</a> for a strict significance
+level <span class="math inline">\(\alpha=.01\)</span>, and in
+Figure <a href="ch-power.html#fig:powercontours-alpha05">14.2</a> for the most used
+significance level <span class="math inline">\(\alpha=.05\)</span>. The figures show that, in general, the larger the
+sample gets (further upwards), the larger the power is.
+The increase is steeper (power increases more quickly) with larger
+effects (right-hand side) than with smaller effects (left-hand side). Put differently:
+with small effects, the sample is actually always too small to detect
+these small effects with sufficient power. We already saw that in
+Example 13.3 (Chapter <a href="ch-testing.html#ch:testing">13</a>).</p>
+<p>The two figures <a href="ch-power.html#fig:powercontours-alpha01">14.1</a> and
+<a href="ch-power.html#fig:powercontours-alpha05">14.2</a> are based on the comparison between two groups which are equally large, each with
+precisely half of the observations (<span class="math inline">\(n_1=n_2=N/2\)</span>). That is also most efficient.
+The power is based on the <em>harmonic mean</em> of <span class="math inline">\(n_1\)</span> and <span class="math inline">\(n_2\)</span> (see §<a href="ch-centre-and-dispersion.html#sec:harmonicmean">9.3.4</a>), and
+that harmonic mean is always smaller than the arithmetic mean of those two numbers. It is thus
+advisable to ensure that the groups or samples which you compare are approximately equally large.</p>
 <hr />
 <blockquote>
-<p><em>Example 3.5</em>: A, a student research assistant, helped collect data, but has made no other contributions, and is not entirely sure what the research is about. This means that A need not be listed as a co-author on the report, but the authors do have to describe and acknowledge A’s contribution in their report.</p>
-</blockquote>
-<blockquote>
-<p>B, another student, conducted one of the parts of the research project supervised by researcher C. Supervisor C thought of the entire project, but B has collected literature, set up and conducted one part of the study, collected, analysed, and interpreted data, and reported on this all in a paper. Because of this, B and C are both co-authors of a publication on B’s part of the research project. They come to an agreement on the order in which authors are listed. Because student B was the most prominent person in the work, while C was the main investigator, they agree that B will be first author and C will be second (and last) author.</p>
+<p><em>Example 14.1</em>: In a study, two groups of participants are compared, with <span class="math inline">\(n_1=10\)</span> and <span class="math inline">\(n_2=50\)</span><br />
+(<span class="math inline">\(N=n_1+n_2=10+50=60\)</span>). The harmonic mean of <span class="math inline">\(n_1=10\)</span> and <span class="math inline">\(n_2=50\)</span> is <span class="math inline">\(H=17\)</span>. This study thus has the same
+power as a smaller study with two groups, each of 17 participants, thus 34 participants in total. For this
+study, thus, 26 participants more have been investigated (and bothered)
+than necessary (see also §<a href="ch-integrity.html#sec:design">3.2</a>) <span class="citation">(Aron, Coups, and Aron <a href="#ref-ACA11" role="doc-biblioref">2011</a>, 295)</span>.</p>
 </blockquote>
 <hr />
-<p>Researchers build upon their predecessors’ work (see example 3.1). This may also involve building upon their arguments and even their writing, but these cases do require that we always correctly refer to the appropriate source, i.e., to these predecessors’ work. After all, if we did not do this, we could no longer distinguish who is responsible for which thought or which fragment of writing. Plagiarism is “copying others’ documents, thoughts, arguments, and passing them off as one’s own work” (Van Dale, 12th edition [our translation]). This form of fraud is also a mortal sin of academia that may lead to substantial sanctions. The Faculty of Humanities at UU has the following to say about it:</p>
-<blockquote>
-<p>Plagiarism is the appropriation of another author’s works, thoughts, or ideas and the representation of such as one’s own work. The following are some examples of what may be considered plagiarism:</p>
-</blockquote>
-<blockquote>
-<ul>
-<li>Copying and pasting text from digital sources, such as encyclopaedias or digital periodicals, without using quotation marks and referring to the source;</li>
-<li>Copying and pasting text from the Internet without using quotation marks and referring to the source;</li>
-<li>Copying information from printed materials, such as books, periodicals or encyclopaedias, without using quotation marks and referring to the source;</li>
-<li>Using a translation of the texts listed above in one’s own work, without using quotation marks and referring to the source;</li>
-<li>Paraphrasing from the texts listed above without a (clear) reference: paraphrasing must be marked as such (by explicitly linking the text with the original author, either in text or a footnote), ensuring that the impression is not created that the ideas expressed are those of the student;</li>
-<li>Using another person’s imagery, video, audio or test materials without reference and in so doing representing them as one’s own work;</li>
-<li>Resubmission of the student’s own earlier work without source references, and allowing this to pass for work originally produced for the purpose of the course, unless this is expressly permitted in the course or by the lecturer;</li>
-<li>Using other students’ work and representing it as one’s own work. If this occurs with the other student’s permission, then he or she may be considered an accomplice to the plagiarism;</li>
-<li>When one author of a joint paper commits plagiarism, then all authors involved in that work are accomplices to the plagiarism if they could have known or should have known that the other was committing plagiarism;</li>
-<li>Submitting papers provided by a commercial institution, such as an internet site with summaries or papers, or which have been written by others, regardless of whether the text was provided in exchange for payment.</li>
-</ul>
-</blockquote>
-<blockquote>
-<p><a href="https://students.uu.nl/en/practical-information/policies-and-procedures/fraud-and-plagiarism" class="uri">https://students.uu.nl/en/practical-information/policies-and-procedures/fraud-and-plagiarism</a></p>
-</blockquote>
-<p>In the case of self-plagiarism, the fragments or writing or thoughts in question are not taken from others, but from one of the authors. There are various schools of thought on self-plagiarism; however, it is advisable to be sure to cite the relevant source if one is to take ideas from one’s own work, building on the principles of diligence, reliability, transparency, and responsibility.</p>
-<p>A reference or citation is a shortened mention of a source in the body of the text; you might have seen these quite a few times in this syllabus already. At the end of the report or text, a full list of sources follows, which is usually given the heading, “Sources”, “Sources consulted”, “References”, “Literature”, or “Bibliography”. A mistake in the references may be seen as a form of plagiarism <span class="citation">(Universiteitsbibliotheek, Vrije Universiteit Amsterdam <a href="#ref-UBVU15" role="doc-biblioref">2015</a>)</span> because the reader is directed towards an incorrect source. For this reason, it is imperative that researchers cite their sources correctly. Various conventions, depending on the area of study, have been developed for this. Usually, instructors will indicate which style or convention is to be used for citing one’s sources. In this textbook, we have intended to follow the style described by the <span class="citation">American Psychological Association (<a href="#ref-APA10" role="doc-biblioref">2010</a>)</span>, a style commonly used in the social sciences and some disciplines within the humanities.
-(For technical reasons, references may deviate slightly from the APA style.)</p>
-<p>The rules for citing sources may sometimes be complex. In addition, authors must make sure that the citations in the body of the text correspond to the list of full references at the end. These tasks are best performed by a so-called “reference manager”, a program that collects references or citations, and correctly inserts them into the body of the text. An overview of such programs can be found at
-<a href="https://en.wikipedia.org/wiki/Comparison_of_reference_management_software" class="uri">https://en.wikipedia.org/wiki/Comparison_of_reference_management_software</a>.
-In writing this textbook we have used Zotero (<a href="https://www.zotero.org" class="uri">https://www.zotero.org</a>),
-combined with BibTeX (<a href="https://www.bibtex.org" class="uri">https://www.bibtex.org</a>).</p>
+</div>
+<div id="sec:significancelevel-power" class="section level2" number="14.4">
+<h2><span class="header-section-number">14.4</span> Relation between significance level and power</h2>
+<p>The relation between the significance level <span class="math inline">\(\alpha\)</span> and the power is
+illustrated by the difference between the two figures
+<a href="ch-power.html#fig:powercontours-alpha01">14.1</a> and
+<a href="ch-power.html#fig:powercontours-alpha05">14.2</a>. For each combination of effect size
+and sample size, the power is lower in
+Figure <a href="ch-power.html#fig:powercontours-alpha01">14.1</a> for <span class="math inline">\(\alpha=.01\)</span> than in
+Figure <a href="ch-power.html#fig:powercontours-alpha05">14.2</a> for <span class="math inline">\(\alpha=.05\)</span>. If we choose a higher
+significance level <span class="math inline">\(\alpha\)</span>, then the probability of rejecting H0
+increases, and thus also the power of correctly rejecting H0 when H0
+is untrue (see Table <a href="ch-research.html#tab:H0H1outcomes">2.2</a>).
+However, unfortunately, with a high significance
+level <span class="math inline">\(\alpha\)</span>, the probability of wrongly rejecting H0 (i.e. of making a
+Type I error) also increases. The investigator
+must make a well-considered decision between Type I errors (with
+probability <span class="math inline">\(\alpha\)</span>) and Type II errors (with probability <span class="math inline">\(\beta\)</span>); as said earlier,
+this decision has to depend on the seriousness of (the consequences of) these
+two types of errors.</p>
+</div>
+<div id="disadvantages-of-insufficient-power" class="section level2" number="14.5">
+<h2><span class="header-section-number">14.5</span> Disadvantages of insufficient power</h2>
+<p>Unfortunately, many examples can be found of ‘underpowered’ research
+in the domain of language and communication. This research has a too small
+probability of rejecting H0 when the investigated effect indeed
+exists (H0 is not true). Why is that bad <span class="citation">(Quené <a href="#ref-Quene10" role="doc-biblioref">2010</a>)</span>?</p>
+<p>Firstly, the Type II error which occurs here can have serious consequences:
+a treatment method which is actually better is not recognised as such,
+a patient is not or wrongly diagnosed, a useful innovation is wrongly pushed
+aside. This error hinders the growth of our knowledge and our insight, and hinders
+scientific progress (see also
+Example 3.2 in Chapter <a href="ch-integrity.html#ch:integrity">3</a>).</p>
+<div class="figure"><span id="fig:underpoweredeffectsizes"></span>
+<img src="QMS-EN_files/figure-html/underpoweredeffectsizes-1.png" alt="Effect sizes (along the horizontal axis) found in simulated experiments (two-sided t-test for independent observations, alpha=.05), broken down according to sample size (left $n=20$, right $n=80$) and according to testing result (dark symbols: significant; light symbols: not significant). The true effect size between groups is always $d=0.5$, indicated by the grey dashed line. The mean effect size found from the significant outcomes is referred to with the black dashed line. For each sample size, 100 simulations have been carried out (long vertical axis)." width="672" />
+<p class="caption">
+Figure 14.3: Effect sizes (along the horizontal axis) found in simulated experiments (two-sided t-test for independent observations, alpha=.05), broken down according to sample size (left <span class="math inline">\(n=20\)</span>, right <span class="math inline">\(n=80\)</span>) and according to testing result (dark symbols: significant; light symbols: not significant). The true effect size between groups is always <span class="math inline">\(d=0.5\)</span>, indicated by the grey dashed line. The mean effect size found from the significant outcomes is referred to with the black dashed line. For each sample size, 100 simulations have been carried out (long vertical axis).
+</p>
+</div>
+<p>The outcomes of simulated experiments with different
+sample size, and thus with different power, are summarised
+in Figure <a href="ch-power.html#fig:underpoweredeffectsizes">14.3</a>. We explain the second disadvantage on the basis of
+the somewhat complex figure. In the left panel of Figure
+<a href="ch-power.html#fig:underpoweredeffectsizes">14.3</a>, we can see that the different
+(simulations of) ‘underpowered’ studies show a mixed
+picture. Some of these studies do show a significant effect (dark symbols),
+and many other studies do not (light symbols).
+The mixed picture then usually leads to follow up research, in which
+people try to find out <em>why</em> the effect does occur in some studies,
+and not in others. Might the difference in results be attributable
+to differences in stimuli? participants? tasks?
+instruments? All that follow up research is <em>superfluous</em> though: the mixed
+picture from these studies can be explained by the small
+power of each study. The needless and superfluous follow up research
+costs much time and money (and indirect costs,
+see Chapter <a href="ch-integrity.html#ch:integrity">3</a>), and comes at the cost of other, more useful
+research <span class="citation">(Schmidt <a href="#ref-Schm96" role="doc-biblioref">1996</a>, 118)</span>. Put otherwise: one well designed study
+with power which is more than sufficient can avoid many needless follow up studies.</p>
+<p>The third disadvantage is based on the experience that studies in which
+a significant effect is found (dark symbols) have a higher probability
+of being reported; this phenomenon is called
+‘publication bias’ or the ‘file drawer problem’. After all, a positive result
+often does get published, whilst a negative result often disappears
+into a file drawer. With small power, that leads to the third disadvantage,
+namely an overestimation or ‘bias’ of the reported effect size.
+In an underpowered study, after all, an effect
+must be quite large to be found. In the leftmost panel, we can see that
+a significant effect has only been found <span class="math inline">\(31\times\)</span>. The average effect size of these
+31 significant outcomes is <span class="math inline">\(\overline{d_{\textrm{signif}}}=0.90\)</span> (black dashed line), i.e.
+a distortion or ‘bias’ of <span class="math inline">\(0.40\)</span> relative to the actual
+<span class="math inline">\(d=0.50\)</span> (grey dashed line)<a href="#fn33" class="footnote-ref" id="fnref33"><sup>33</sup></a>. In the rightmost panel, we can see that
+a significant effect has been found <span class="math inline">\(91\times\)</span> (thus the power here is sufficient).
+The mean effect size of these 91 significant outcomes hardly deviates
+from the actual <span class="math inline">\(d\)</span>. Moreover, the standard deviation of the reported
+effect size is smaller, and that is again important for later research, meta-studies,
+and systematic reviews.</p>
+<p>Fourthly, the mixed picture from the different studies, sometimes with significant
+outcomes and sometimes without, and with great variation in the reported
+effect size, carries the danger that these
+outcomes are taken less seriously than ‘consumers’ of
+scientific knowledge (practitioners, health insurers, developers,
+policy makers, etc.). In this way, these consumers get the impression
+that the scientific evidence for this investigated effect is not strong,
+and/or that the researchers are in disagreement about whether the effect exists
+and if it does, how large it then is <span class="citation">(Van Kolfschooten <a href="#ref-Kolf93" role="doc-biblioref">1993</a>)</span> (Figure <a href="ch-power.html#fig:underpoweredeffectsizes">14.3</a>).
+This, also hinders scientific progress, and it hinders the use
+of scientific insights in societal applications.</p>
+<p>To avoid all these objections, researchers have to take into account
+the desired power of a study in an early stage. Designing and conducting
+a study with insufficient power is after all in opposition with the earlier discussed
+ethical and moral principles of diligence and responsibility
+(§<a href="ch-integrity.html#sec:integrity-introduction">3.1</a>).</p>
 
 </div>
 </div>
+
+
+
 <h3>References</h3>
 <div id="refs" class="references">
-<div id="ref-APA10">
-<p>American Psychological Association. 2010. <em>Publication Manual of the American Psychological Association</em>. 6th ed. Washington, D.C.: American Psychological Association.</p>
+<div id="ref-ACA11">
+<p>Aron, Arthur, Eliot J. Coups, and Elaine N. Aron. 2011. <em>Statistics for the Behavioral and Social Sciences: A Brief Course</em>. 5th ed. Boston: Pearson.</p>
 </div>
-<div id="ref-Gelm07">
-<p>Gelman, Andrew, and Jennifer Hill. 2007. <em>Data Analysis Using Regression and Multilevel/Hierarchical Models</em>. Cambridge: Cambridge University Press.</p>
+<div id="ref-PD08">
+<p>Peck, Roxy, and Jay Devore. 2008. <em>Statistics: The Exploration and Analysis of Data</em>. 6e ed. Belmont, CA: Thomsom/Cole.</p>
 </div>
-<div id="ref-ORI12">
-<p>Office of Research Integrity. 2012. “Responsible Conduct of Research Training.” <a href="http://ori.hhs.gov/education/products/wsu/rcr_training.html">http://ori.hhs.gov/education/products/wsu/rcr_training.html</a>.</p>
-</div>
-<div id="ref-Quene08">
-<p>Quené, H. 2008. “Multilevel Modeling of Between-Speaker and Within-Speaker Variation in Spontaneous Speech Tempo.” <em>Journal of the Acoustical Society of America</em> 123 (2): 1104–13.</p>
+<div id="ref-Quene10">
+<p>Quené, Hugo. 2010. “How to Design and Analyze Language Acquisition Studies.” In <em>Experimental Methods in Language Acquisition Research</em>, edited by Elma Blom and Sharon Unsworth, 269–87. Amsterdam: Benjamins.</p>
 </div>
 <div id="ref-Rose08">
 <p>Rosenthal, Robert, and Ralph L. Rosnow. 2008. <em>Essentials of Behavioral Research: Methods and Data Analysis</em>. 3e ed. Boston: McGraw Hill.</p>
 </div>
-<div id="ref-UBVU15">
-<p>Universiteitsbibliotheek, Vrije Universiteit Amsterdam. 2015. “Webcursus Informatievaardigheden - Algemeen - Niveau B.” <a href="http://webcursus.ubvu.vu.nl/cursus/default.asp?lettergr=klein&amp;cursus_id=131">http://webcursus.ubvu.vu.nl/cursus/default.asp?lettergr=klein&amp;cursus_id=131</a>.</p>
+<div id="ref-Schm96">
+<p>Schmidt, Frank L. 1996. “Statistical Significance Testing and Cumulative Knowledge in Psychology: Implications for Training of Researchers.” <em>Psychological Methods</em> 1 (2): 115–29.</p>
 </div>
-<div id="ref-VSNU18">
-<p>VSNU. 2018. “Nederlandse Gedragscode Wetenschappelijke Integriteit.” VSNU. <a href="https://www.vsnu.nl/wetenschappelijke_integriteit.html">https://www.vsnu.nl/wetenschappelijke_integriteit.html</a>.</p>
+<div id="ref-Kolf93">
+<p>Van Kolfschooten, Frank. 1993. <em>Valse Vooruitgang: Bedrog in de Nederlandse Wetenschap</em>. Amsterdam: L.J. Veen.</p>
 </div>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="4">
-<li id="fn4"><p>A copy of this letter may be found at <a href="https://digitallibrary.hsp.org/index.php/Detail/objects/9792" class="uri">https://digitallibrary.hsp.org/index.php/Detail/objects/9792</a>; for some background information, see <a href="http://www.bbc.co.uk/worldservice/learningenglish/movingwords/shortlist/newton.shtml" class="uri">http://www.bbc.co.uk/worldservice/learningenglish/movingwords/shortlist/newton.shtml</a>.<a href="ch-integrity.html#fnref4" class="footnote-back">↩︎</a></p></li>
-<li id="fn5"><p>Students and employees of most Dutch educational institutions can use SurfDrive (<a href="https://www.surfdrive.nl" class="uri">https://www.surfdrive.nl</a>) for easy data storage on secured servers.<a href="ch-integrity.html#fnref5" class="footnote-back">↩︎</a></p></li>
+<ol start="33">
+<li id="fn33"><p>A replication study which does have sufficient power, thus typically finds a smaller effect than the
+original ‘underpowered’ study. The smaller effect found in the replication study is then typically also not
+significant. We then say that the replication study “fails to replicate” the effect that was significant in
+the original study - but that was actually a spurious finding.<a href="ch-power.html#fnref33" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -572,8 +700,8 @@ combined with BibTeX (<a href="https://www.bibtex.org" class="uri">https://www.b
           </div>
         </div>
       </div>
-<a href="ch-research.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="ch-levelsofmeasurement.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="ch-testing.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="app-randomnumbers.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -604,7 +732,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/ch03integrity.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/ch14power.Rmd",
 "text": "Edit"
 },
 "history": {

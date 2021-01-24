@@ -47,6 +47,9 @@ tab:data-uje-paired
 eq:t-pairedsamples
 fig:smallestsignifdifference
 eq:d-paired-se
+fig:powercontours-alpha01
+fig:powercontours-alpha05
+fig:underpoweredeffectsizes
 tab:A1
 ch:introduction
 sec:scientific-research
@@ -222,6 +225,12 @@ sec:formulas13-5
 spss-13-2
 r-13
 confidence-interval-of-the-effect-size
+ch:power
+sec:power-introduction
+sec:effectsize-power
+sec:samplesize-power
+sec:significancelevel-power
+disadvantages-of-insufficient-power
 app:randomnumbers
 app:criticalZvalues
 app:criticaltvalues

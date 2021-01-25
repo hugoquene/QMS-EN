@@ -29,7 +29,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="ch-anova.html"/>
+<link rel="prev" href="ch-chi-square-tests.html"/>
 <link rel="next" href="app-criticalZvalues.html"/>
 <script src="libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
@@ -413,6 +413,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.4.4" data-path="ch-anova.html"><a href="ch-anova.html#r-15"><i class="fa fa-check"></i><b>15.4.4</b> R</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="16" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html"><i class="fa fa-check"></i><b>16</b> Chi-square-tests</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#sec:ch16introduction"><i class="fa fa-check"></i><b>16.1</b> Introduction</a></li>
+<li class="chapter" data-level="16.2" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#sec:chi2gof"><i class="fa fa-check"></i><b>16.2</b> <span class="math inline">\(\chi^2\)</span>-test for “goodness of fit” in single sample</a></li>
+<li class="chapter" data-level="16.3" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#chi2-test-for-homogeneity-of-a-variable-in-multiple-samples"><i class="fa fa-check"></i><b>16.3</b> <span class="math inline">\(\chi^2\)</span>-test for homogeneity of a variable in multiple samples</a></li>
+<li class="chapter" data-level="16.4" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#chi2-test-for-association-between-two-variables-in-single-sample"><i class="fa fa-check"></i><b>16.4</b> <span class="math inline">\(\chi^2\)</span>-test for association between two variables in single sample</a></li>
+<li class="chapter" data-level="16.5" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#sec:chi2test-assumptions"><i class="fa fa-check"></i><b>16.5</b> assumptions</a></li>
+<li class="chapter" data-level="16.6" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#formula"><i class="fa fa-check"></i><b>16.6</b> formula</a></li>
+<li class="chapter" data-level="16.7" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#spss-14"><i class="fa fa-check"></i><b>16.7</b> SPSS</a>
+<ul>
+<li class="chapter" data-level="16.7.1" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#goodness-of-fit-preparation"><i class="fa fa-check"></i><b>16.7.1</b> goodness of fit: preparation</a></li>
+<li class="chapter" data-level="16.7.2" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#goodness-of-fit-testing"><i class="fa fa-check"></i><b>16.7.2</b> goodness of fit: testing</a></li>
+<li class="chapter" data-level="16.7.3" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#contingency-tables-preparation"><i class="fa fa-check"></i><b>16.7.3</b> contingency tables: preparation</a></li>
+<li class="chapter" data-level="16.7.4" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#contingency-tables-testing"><i class="fa fa-check"></i><b>16.7.4</b> contingency tables: testing</a></li>
+</ul></li>
+<li class="chapter" data-level="16.8" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#r-16"><i class="fa fa-check"></i><b>16.8</b> R</a>
+<ul>
+<li class="chapter" data-level="16.8.1" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#goodness-of-fit-testing-1"><i class="fa fa-check"></i><b>16.8.1</b> goodness of fit: testing</a></li>
+<li class="chapter" data-level="16.8.2" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#contingency-table-preparation-and-testing"><i class="fa fa-check"></i><b>16.8.2</b> contingency table: preparation and testing</a></li>
+</ul></li>
+<li class="chapter" data-level="16.9" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#effect-size-odds-ratio"><i class="fa fa-check"></i><b>16.9</b> Effect size: odds ratio</a></li>
+</ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
 <li class="chapter" data-level="A" data-path="app-randomnumbers.html"><a href="app-randomnumbers.html"><i class="fa fa-check"></i><b>A</b> Random numbers</a></li>
 <li class="chapter" data-level="B" data-path="app-criticalZvalues.html"><a href="app-criticalZvalues.html"><i class="fa fa-check"></i><b>B</b> Standard normal probability distribution</a></li>
@@ -439,7 +461,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="app:randomnumbers" class="section level1" number="16">
+<div id="app:randomnumbers" class="section level1" number="17">
 <h1><span class="header-section-number">A</span> Random numbers</h1>
 <table>
 <caption><span id="tab:A1">Table A.1: </span>The table below contains 200 random numbers between 0 and 9999.</caption>
@@ -693,7 +715,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="ch-anova.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ch-chi-square-tests.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="app-criticalZvalues.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

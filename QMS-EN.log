@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.10.22)  25 JAN 2021 12:31
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.10.22)  25 JAN 2021 21:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -781,13 +781,13 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 6.99925pt on input line 2.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 4.99947pt on input line 2.
-[3] [4] [5] [6])
+[3] [4] [5] [6] [7])
 \tf@toc=\write5
 \openout5 = `QMS-EN.toc'.
 
-[7] [8
+[8] [9
 
-] [9] [10] [11] [12
+] [10] [11] [12
 
 ] [13] [14]
 Chapter 1.
@@ -1145,10 +1145,6 @@ Overfull \hbox (42.53233pt too wide) has occurred while \output is active
 
 [145] [146]
 
-LaTeX Warning: Reference `ch:chi-square-tests' on page 147 undefined on input l
-ine 3658.
-
-
 LaTeX Warning: Reference `ch:other-nonpar-tests' on page 147 undefined on input
  line 3659.
 
@@ -1421,69 +1417,97 @@ subset = ok)[]
  []
 
 [239] [240]
-Appendix A.
+Chapter 16.
 [241
 
 ] [242]
+Overfull \hbox (73.24423pt too wide) has occurred while \output is active
+\TU/lmr/m/sl/10 16.4.  $[][]$-TEST FOR ASSOCIATION BETWEEN TWO VARIABLES IN SIN
+GLE SAMPLE \TU/lmr/m/n/10 243
+ []
+
+[243]
+Overfull \vbox (0.62584pt too high) has occurred while \output is active []
+
+[244] [245] [246] [247]
+Overfull \hbox (29.9901pt too wide) in alignment at lines 8435--8444
+ [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (29.9901pt too wide) in alignment at lines 8444--8448
+ [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (29.9901pt too wide) in alignment at lines 8448--8453
+ [] [] [] [] [] [] [] 
+ []
+
+[248] [249] [250
+
+]
+Appendix A.
+[251] [252]
 Appendix B.
 File: QMS-EN_files/figure-latex/kritiekeZwaarden-hulpfiguur-1.pdf Graphic file 
 (type pdf)
 <use QMS-EN_files/figure-latex/kritiekeZwaarden-hulpfiguur-1.pdf>
-[243
+[253
 
-] [244]
+] [254]
 Appendix C.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 24.88pt on input line 8106.
+(Font)              scaled to size 24.88pt on input line 8563.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 20.74pt on input line 8106.
+(Font)              scaled to size 20.74pt on input line 8563.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 17.28pt on input line 8106.
+(Font)              scaled to size 17.28pt on input line 8563.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 24.88228pt on input line 8106.
+(Font)              scaled to size 24.88228pt on input line 8563.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 20.7419pt on input line 8106.
+(Font)              scaled to size 20.7419pt on input line 8563.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 17.28157pt on input line 8106.
+(Font)              scaled to size 17.28157pt on input line 8563.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 24.87733pt on input line 8106.
+(Font)              scaled to size 24.87733pt on input line 8563.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 20.73778pt on input line 8106.
+(Font)              scaled to size 20.73778pt on input line 8563.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 17.27815pt on input line 8106.
+(Font)              scaled to size 17.27815pt on input line 8563.
 File: QMS-EN_files/figure-latex/criticaltvalues-auxiliaryfigure-1.pdf Graphic f
 ile (type pdf)
 <use QMS-EN_files/figure-latex/criticaltvalues-auxiliaryfigure-1.pdf>
 
-Overfull \hbox (19.32014pt too wide) in paragraph at lines 8118--8163
+Overfull \hbox (19.32014pt too wide) in paragraph at lines 8575--8620
  [][] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[245
+[255
 
-] [246]
+] [256]
 Appendix D.
 File: QMS-EN_files/figure-latex/criticalchi2values-auxiliaryfigure-1.pdf Graphi
 c file (type pdf)
 <use QMS-EN_files/figure-latex/criticalchi2values-auxiliaryfigure-1.pdf>
 
-Overfull \hbox (17.80014pt too wide) in paragraph at lines 8174--8217
+Overfull \hbox (17.80014pt too wide) in paragraph at lines 8631--8674
  [][] 
  []
 
 (./QMS-EN.bbl
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[247
+[257
 
-] [248] [249
+] [258] [259
 
-] [250] [251] [252] [253]) [254] (./QMS-EN.aux)
+] [260] [261] [262] [263]) [264] (./QMS-EN.aux)
 Package rerunfilecheck Info: File `QMS-EN.out' has not changed.
-(rerunfilecheck)             Checksum: 5BD98685AA317D09248A75C0DD70B7E2;19740.
+(rerunfilecheck)             Checksum: 23E308A21AB01FD1C02DB74D92125BA0;21677.
 
 LaTeX Warning: There were undefined references.
 
@@ -1492,12 +1516,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 17935 strings out of 479441
- 317597 string characters out of 5880450
- 803333 words of memory out of 5000000
- 36972 multiletter control sequences out of 15000+600000
+ 17959 strings out of 479441
+ 318144 string characters out of 5880450
+ 806998 words of memory out of 5000000
+ 36996 multiletter control sequences out of 15000+600000
  545447 words of font info for 114 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 84i,10n,118p,1871b,581s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 84i,10n,118p,1871b,579s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on QMS-EN.pdf (254 pages).
+Output written on QMS-EN.pdf (264 pages).

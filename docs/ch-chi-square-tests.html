@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>14 Power | Quantitative Methods and Statistics</title>
+  <title>16 Chi-square-tests | Quantitative Methods and Statistics</title>
   <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="14 Power | Quantitative Methods and Statistics" />
+  <meta property="og:title" content="16 Chi-square-tests | Quantitative Methods and Statistics" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rstudio/QMS-EN" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="14 Power | Quantitative Methods and Statistics" />
+  <meta name="twitter:title" content="16 Chi-square-tests | Quantitative Methods and Statistics" />
   
   <meta name="twitter:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="ch-testing.html"/>
-<link rel="next" href="ch-anova.html"/>
+<link rel="prev" href="ch-anova.html"/>
+<link rel="next" href="app-randomnumbers.html"/>
 <script src="libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -461,282 +461,449 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ch:power" class="section level1" number="14">
-<h1><span class="header-section-number">14</span> Power</h1>
-<div id="sec:power-introduction" class="section level2" number="14.1">
-<h2><span class="header-section-number">14.1</span> Introduction</h2>
-<p>With statistical testing of H0, we determine the probability <span class="math inline">\(P\)</span> of the
-observed differences or effects (or of even larger differences or effects
-than observed) if H0 were true, and thus if
-the observed difference had to be attributed solely to chance
-(see §<a href="ch-research.html#sec:empiricalcycle">2.5</a> and
-Chapter <a href="ch-testing.html#ch:testing">13</a>). If the probability <span class="math inline">\(P\)</span> is very small, then
-we have thus found results which are very improbable if H0 were true.
-We then conclude that H0 is presumably <em>not true</em> and we thus reject
-H0. We then call the difference or effect found, the “significant”
-(Latin: ‘meaning making’). However, there is in fact a probability,
-<span class="math inline">\(P\)</span>, that the difference found is actually a fluke, and that, by rejecting
-H0, we are making a Type I error (i.e. wrongly rejecting H0,
-see
-§<a href="ch-testing.html#sec:testing-introduction">13.1</a>). As we use a certain
-significance level, with which to compare <span class="math inline">\(P\)</span>, this <span class="math inline">\(\alpha\)</span>
-is thus also the probability that we are making a Type I error.</p>
-<p>At least as important, however, is the opposite error of <em>not</em> wrongly<br />
-rejecting H0, a Type II error. Examples of such errors are:
-not convicting a suspect even if he is guilty, letting a ‘spam’
-email message through into my mailbox, examining a patient and nevertheless
-not noticing their illness, concluding that birds are silent when
-they are in fact singing
-(Example 13.1), or wrongly concluding that two
-groups do not differ when an important difference does in fact exist
-between the two groups. The probability of a Type II error is referred to
-with the symbol <span class="math inline">\(\beta\)</span>.</p>
-<p>If H0 is in fact not true (there is a difference, the message is ‘spam’,
-birds are singing, etc.), then H0 should be rejected, and
-<span class="math inline">\(\beta\)</span> should thus be as small as possible. The probability of <em>rightly</em>
-rejecting H0 is then <span class="math inline">\((1-\beta)\)</span> (see complement rule <a href="ch-probability-distributions.html#eq:complementrule">(10.3)</a>);
-this probability <span class="math inline">\((1-\beta)\)</span> is called the <em>power</em>.
-Power can be interpreted as <strong>the probability of the researcher
-being right</strong> (H0 is rejected) <strong>when she is indeed right</strong> (H0 is untrue).</p>
-<p>The probabilities of Type I and Type II errors have to be weighed up
-carefully against each other. In many studies, the p-values
-<span class="math inline">\(\alpha=.05\)</span> (significance level) and <span class="math inline">\(\beta=.20\)</span>
-(power=<span class="math inline">\(.80\)</span>) are used. With these, an implicit weighting is made
-that a Type I error is 4× more grave than a Type II error.
-For some studies that might be justified but it is also easily
-conceivable that, under certain circumstances, a Type II error is
-actually more grave or serious than a Type I error. If we find both types of
-error more or less equally grave, then we should strive for
-a smaller <span class="math inline">\(\beta\)</span> and larger power <span class="citation">(Rosenthal and Rosnow <a href="#ref-Rose08" role="doc-biblioref">2008</a>)</span>.</p>
-<p>The power of a study depends on three factors: (i) the effect
-size <span class="math inline">\(d\)</span>, which itself is in turn dependent on the measured difference
-<span class="math inline">\(D\)</span> and the variation <span class="math inline">\(s\)</span> in the observations
-(formula <a href="ch-testing.html#eq:d-standardized">(13.9)</a>), (ii) the sample size <span class="math inline">\(N\)</span>, and (iii)
-the significance level <span class="math inline">\(\alpha\)</span>. In the following sections, we will
-discuss each of these factors separately, and, when doing so, keep the other
-two factors as constant as possible. For this discussion, we will use the
-depictions of calculated power
-(Figures <a href="ch-power.html#fig:powercontours-alpha01">14.1</a> and
-<a href="ch-power.html#fig:powercontours-alpha05">14.2</a>). The depicted power contours are specifically
-for a <em>t</em>-test for independent samples
-(§<a href="ch-testing.html#sec:ttest-indep">13.6</a>) with two-sided testing.
-The relations discussed below also apply to other statistical
-tests.</p>
-<div class="figure"><span id="fig:powercontours-alpha01"></span>
-<img src="QMS-EN_files/figure-html/powercontours-alpha01-1.png" alt="Power expressed in contours (see shading), dependent on the standardised effect size (d) and sample size according to a two-sided t-test for unpaired, independent observations, with two-sided significance level alpha=.01." width="672" />
-<p class="caption">
-Figure 14.1: Power expressed in contours (see shading), dependent on the standardised effect size (d) and sample size according to a two-sided t-test for unpaired, independent observations, with two-sided significance level alpha=.01.
-</p>
+<div id="ch:chi-square-tests" class="section level1" number="16">
+<h1><span class="header-section-number">16</span> Chi-square-tests</h1>
+<div id="sec:ch16introduction" class="section level2" number="16.1">
+<h2><span class="header-section-number">16.1</span> Introduction</h2>
+<p>Earlier, we already saw that we cannot always make use of a
+parametric test like the <em>t</em>-test or analysis of variance, because
+the collected data does not satisfy the assumptions. If the collected data
+has been measured on an interval level of measurement (see Chapter
+<a href="ch-levelsofmeasurement.html#ch:levelsofmeasurement">4</a>), or if the probability distribution
+of the data is far from normal (see
+§<a href="ch-probability-distributions.html#sec:whatifnotnormal">10.5</a>), then a non-parametric test should be
+preferred over such a parametric test. If the collected data
+does satisfy the assumptions for a parametric test, then a non-parametric
+test is less sensitive (more conservative) than a parametric test, i.e. the
+non-parametric test requires a larger effect and/or a larger sample, and generally
+has less power than a parametric test when seeking out an effect
+(see Chapter <a href="ch-power.html#ch:power">14</a>).</p>
+<p>In this Chapter, we discuss the most used non-parametric
+test: the so-called <span class="math inline">\(\chi^2\)</span>-test, pronounced as “chi-square-test” (with the greek letter “chi”).</p>
 </div>
-<div class="figure"><span id="fig:powercontours-alpha05"></span>
-<img src="QMS-EN_files/figure-html/powercontours-alpha05-1.png" alt="Power expressed in contours (see graduation), dependent on the standardised effect size (d) and the sample size (n), according to a two-sided t-test for unpaired, independent observations with significance level alpha=.05." width="672" />
-<p class="caption">
-Figure 14.2: Power expressed in contours (see graduation), dependent on the standardised effect size (d) and the sample size (n), according to a two-sided t-test for unpaired, independent observations with significance level alpha=.05.
-</p>
+<div id="sec:chi2gof" class="section level2" number="16.2">
+<h2><span class="header-section-number">16.2</span> <span class="math inline">\(\chi^2\)</span>-test for “goodness of fit” in single sample</h2>
+<p>Data of nominal level of measurement are often analysed with the
+<span class="math inline">\(\chi^2\)</span>-test. The number of dots on a dice
+is an example of a dependent variable of nominal level of measurement:
+there is no ordering between the six sides, and each side of a die has
+an equally high probability of appearing on the top. Imagine we throw
+a die <span class="math inline">\(60\times\)</span>, and find the following frequencies
+of the six possible outcomes: <span class="math inline">\(14, 9, 11, 10, 15, 1\)</span>. This can be
+considered to be a sample of <span class="math inline">\(n=60\)</span> throws from an infinite
+population of possible throws, and the outcome frequencies reported here should
+be seen as a contingency table of 1 row and 6
+columns (i.e. 6 cells). How high is the probability of this distribution
+of outcomes? Is the die indeed honest?</p>
+<p>The <span class="math inline">\(\chi^2\)</span>-test is based on the differences between the expected
+and observed frequencies. According to the null hypothesis (the die is honest),
+we expect 10 outcomes in each cell (<span class="math inline">\(60/6=10\)</span>), i.e. the
+expected frequency is identical for each cell (this is called
+a <em>uniform</em> distribution).
+The observed outcomes deviate from the expected frequencies of outcomes,
+in particular because the outcome “six” barely occurs in this sample. This
+might of course also be chance. The <span class="math inline">\(\chi^2\)</span>-test indicates how high the probability
+is of this “skewed” distribution of outcomes (or an even more skewed distribution),
+if H0 is true.
+The expected outcomes are thus deduced from a distribution of the outcomes
+according to H0, and we investigate how well the observed outcomes
+fit the expected outcomes. This form of the <span class="math inline">\(\chi^2\)</span>-test is thus also
+referred to as a test of the ‘goodness of fit’.</p>
+<p>For this example, we find the outcome of the testing <span class="math inline">\(\chi^2=12.44\)</span>
+with 5 degrees of freedom (see
+§<a href="ch-testing.html#sec:ttest-freedomdegrees">13.2.1</a> for explanation about
+degrees of freedom), with <span class="math inline">\(p=.0297\)</span>. We usually get the computer to
+calculate this probability value, but we can also estimate this probability
+via a table with critical
+<span class="math inline">\(\chi^2\)</span>-values, see Appendix <a href="app-criticalchi2values.html#app:criticalchi2values">D</a>, and footnote<a href="#fn36" class="footnote-ref" id="fnref36"><sup>36</sup></a>).
+If H0 is true, then we have only 3% probability
+of finding this outcome (or an even extremer distribution of outcomes).
+The significance <span class="math inline">\(p\)</span> found is smaller than <span class="math inline">\(\alpha=.05\)</span>, and we thus
+reject H0. We conclude that this die is not honest: the distribution
+of outcomes found deviates significantly from the expected
+distribution according to H0.</p>
 </div>
+<div id="chi2-test-for-homogeneity-of-a-variable-in-multiple-samples" class="section level2" number="16.3">
+<h2><span class="header-section-number">16.3</span> <span class="math inline">\(\chi^2\)</span>-test for homogeneity of a variable in multiple samples</h2>
+<p>The <span class="math inline">\(\chi^2\)</span>-test can also be used for a research design with <em>one</em> nominal
+variable which we have observed in two or more samples. The
+question is then whether the distribution of the observations over the
+categories is equal for the different samples. This test is comparable with
+<em>t</em>-tests for two independent samples
+(§<a href="ch-testing.html#sec:ttest-indep">13.6</a>). We usually then summarise the numbers of observations
+with a contingency table with multiple rows for the different samples,
+and multiple columns for the categories of the
+nominal dependent variable (see also
+Table <a href="ch-correlation-regression.html#tab:cito-contingency-table">11.3</a>).</p>
+<p>The <span class="math inline">\(\chi^2\)</span>-test is again based on the differences between the expected and
+observed frequencies. According to the null hypothesis (there is no difference
+in distribution between the two samples), the distribution of observations
+across the columns should be approximately equal for all rows
+(and vice versa).</p>
 </div>
-<div id="sec:effectsize-power" class="section level2" number="14.2">
-<h2><span class="header-section-number">14.2</span> Relation between effect size and power</h2>
-<p>The two figures <a href="ch-power.html#fig:powercontours-alpha01">14.1</a> and
-<a href="ch-power.html#fig:powercontours-alpha05">14.2</a> show that, in general, the larger the effect to be
-tested is (more to the right in each figure), the larger the power.
-This is also not surprising: a larger effect has
-a higher probability of being detected in a statistical test, under
-the same circumstances. A moderately large effect of
-<span class="math inline">\(d=.5\)</span>, with <span class="math inline">\(n=30\)</span> observations in each group, only has a probability
-of <span class="math inline">\(.48\)</span> of being detected (if <span class="math inline">\(\alpha=.05\)</span>, Figure <a href="ch-power.html#fig:powercontours-alpha05">14.2</a>). On the basis
-of a study
-with <span class="math inline">\(n=30\)</span> observations per group is thus actually a gamble
-whether a researcher will actually detect such an effect, and
-will reject H0. Put otherwise, the probability of a Type I error is
-admittedly safely low (<span class="math inline">\(\alpha=.05\)</span>) but the probability of a Type II error is
-more than <span class="math inline">\(10\times\)</span> as large, and thus dangerously high (<span class="math inline">\(\beta=.52\)</span>) <span class="citation">(Rosenthal and Rosnow <a href="#ref-Rose08" role="doc-biblioref">2008</a>, Ch.12)</span>.</p>
-<p>A larger effect has a higher probability of being detected. A larger
-effect of <span class="math inline">\(d=.8\)</span>, for example, results in a power of
-<span class="math inline">\(.86\)</span> with this testing. The probability of a Type II error <span class="math inline">\(\beta=.14\)</span> here is
-admittedly also larger than the probability of a Type I error, but the
-proportion <span class="math inline">\(\beta/\alpha\)</span> is considerably less skewed.</p>
-<p>As researchers, we only have an indirect influence on effect size.
-We of course have no influence on the true raw difference <span class="math inline">\(D\)</span> in the
-population. For the power, however, the raw difference <span class="math inline">\(D\)</span> is not
-important, but rather the standardised difference <span class="math inline">\(d=D/s\)</span>
-(§<a href="ch-testing.html#sec:ttest-effectsize">13.8</a>). Thus, if we ensure that the standard
-deviation <span class="math inline">\(s\)</span> decreases, then <span class="math inline">\(d\)</span> will increase,
-and then the power will also increase
-(figures <a href="ch-power.html#fig:powercontours-alpha01">14.1</a> and <a href="ch-power.html#fig:powercontours-alpha05">14.2</a>),
-and we thus have a higher probability
-of actually detecting an effect!
-With this goal in mind, researchers always strive to neutralise
-disrupting influences from all kinds of other factors as much as possible.
-After all, the disrupting influences produce extra variability in the observations, and,
-with this, a lower power with the statistical testing.</p>
-<p>In a well-designed study, we want to determine in advance what
-the power will be, and how large the sample should be (see below).
-For this we need an estimation of the smallest effect size <span class="math inline">\(d\)</span>
-which we still want to detect
-(§<a href="ch-testing.html#sec:ttest-effectsize">13.8</a>) <span class="citation">(Quené <a href="#ref-Quene10" role="doc-biblioref">2010</a>)</span>. To estimate the effect size, firstly,
-an estimate of the raw difference <span class="math inline">\(D\)</span> between the groups or conditions is needed.
-Secondly, an estimation is needed of the variability <span class="math inline">\(s\)</span>
-in the observations. These estimations can be largely deduced from
-earlier publications, in which the standard deviation
-<span class="math inline">\(s\)</span> is usually reported. If no earlier research reports are available,
-then <span class="math inline">\(s\)</span> can be roughly estimated from some informal
-‘pilot’ observations. Take the difference between the highest and the lowest
-(range) of these, divide this range by 4, and use the outcome of this as
-a rough estimation for <span class="math inline">\(s\)</span> <span class="citation">(Peck and Devore <a href="#ref-PD08" role="doc-biblioref">2008</a>)</span>.</p>
-</div>
-<div id="sec:samplesize-power" class="section level2" number="14.3">
-<h2><span class="header-section-number">14.3</span> Relation between sample size and power</h2>
-<p>The relation between the sample size <span class="math inline">\(N\)</span> and the power of a study
-is illustrated in
-Figure <a href="ch-power.html#fig:powercontours-alpha01">14.1</a> for a strict significance
-level <span class="math inline">\(\alpha=.01\)</span>, and in
-Figure <a href="ch-power.html#fig:powercontours-alpha05">14.2</a> for the most used
-significance level <span class="math inline">\(\alpha=.05\)</span>. The figures show that, in general, the larger the
-sample gets (further upwards), the larger the power is.
-The increase is steeper (power increases more quickly) with larger
-effects (right-hand side) than with smaller effects (left-hand side). Put differently:
-with small effects, the sample is actually always too small to detect
-these small effects with sufficient power. We already saw that in
-Example 13.3 (Chapter <a href="ch-testing.html#ch:testing">13</a>).</p>
-<p>The two figures <a href="ch-power.html#fig:powercontours-alpha01">14.1</a> and
-<a href="ch-power.html#fig:powercontours-alpha05">14.2</a> are based on the comparison between two groups which are equally large, each with
-precisely half of the observations (<span class="math inline">\(n_1=n_2=N/2\)</span>). That is also most efficient.
-The power is based on the <em>harmonic mean</em> of <span class="math inline">\(n_1\)</span> and <span class="math inline">\(n_2\)</span> (see §<a href="ch-centre-and-dispersion.html#sec:harmonicmean">9.3.4</a>), and
-that harmonic mean is always smaller than the arithmetic mean of those two numbers. It is thus
-advisable to ensure that the groups or samples which you compare are approximately equally large.</p>
+<div id="chi2-test-for-association-between-two-variables-in-single-sample" class="section level2" number="16.4">
+<h2><span class="header-section-number">16.4</span> <span class="math inline">\(\chi^2\)</span>-test for association between two variables in single sample</h2>
+<p>Finally, the <span class="math inline">\(\chi^2\)</span>-test can equally well be used for a research design
+with <em>two</em> nominal variables, which we have observed in a single
+sample. The question then is whether the distribution of observations
+over the second variable’s categories is equal for the different
+categories of the first variable (and vice versa). We again summarise
+the numbers of observations in a contingency table with multiple rows for
+the categories of the first nominal variable, and multiple columns
+for the categories of the second nominal variable.</p>
+<p>Here too, the <span class="math inline">\(\chi^2\)</span>-test is based on the differences between the expected and
+observed frequencies. According to the null hypothesis (that there is no association
+between the two nominal variables), the distribution of observations across
+rows should be approximately equal for all columns, and vice versa. However, this
+does <em>not</em> mean that we expect the same frequency for all cells.
+This is illustrated in the following example.</p>
 <hr />
 <blockquote>
-<p><em>Example 14.1</em>: In a study, two groups of participants are compared, with <span class="math inline">\(n_1=10\)</span> and <span class="math inline">\(n_2=50\)</span><br />
-(<span class="math inline">\(N=n_1+n_2=10+50=60\)</span>). The harmonic mean of <span class="math inline">\(n_1=10\)</span> and <span class="math inline">\(n_2=50\)</span> is <span class="math inline">\(H=17\)</span>. This study thus has the same
-power as a smaller study with two groups, each of 17 participants, thus 34 participants in total. For this
-study, thus, 26 participants more have been investigated (and bothered)
-than necessary (see also §<a href="ch-integrity.html#sec:design">3.2</a>) <span class="citation">(Aron, Coups, and Aron <a href="#ref-ACA11" role="doc-biblioref">2011</a>, 295)</span>.</p>
+<p><em>Example 16.1</em>: In the early morning of 15th April 1912, the <em>Titanic</em>
+sunk in the Atlantic Ocean. Many of those on board lost their lives.
+Those on board could be divided into four classes (1st/2nd/3rd class passengers, and crew). Was the outcome of the disaster (whether the individual survived the
+disaster or not) approximately equal for persons of these four classes?
+The contingency table <a href="ch-chi-square-tests.html#tab:titanic">16.1</a> provides the distributions of
+outcomes.</p>
+</blockquote>
+<table>
+<caption><span id="tab:titanic">Table 16.1: </span> Distribution of those on board the <em>Titanic</em> (<span class="math inline">\(N=2201\)</span>),
+according to passage
+and status (survived or not). Data taken from the dataset
+<code>Titanic</code> in R.</caption>
+<thead>
+<tr class="header">
+<th align="left">Class</th>
+<th align="center">Died</th>
+<th align="center">Survived</th>
+<th align="center">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1st</td>
+<td align="center">122</td>
+<td align="center">203</td>
+<td align="center">325</td>
+</tr>
+<tr class="even">
+<td align="left">2nd</td>
+<td align="center">167</td>
+<td align="center">118</td>
+<td align="center">285</td>
+</tr>
+<tr class="odd">
+<td align="left">3rd</td>
+<td align="center">528</td>
+<td align="center">178</td>
+<td align="center">706</td>
+</tr>
+<tr class="even">
+<td align="left">Crew</td>
+<td align="center">673</td>
+<td align="center">212</td>
+<td align="center">885</td>
+</tr>
+<tr class="odd">
+<td align="left">Total</td>
+<td align="center">1490</td>
+<td align="center">711</td>
+<td align="center">2201</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>For the expected frequencies, we have to take into account
+the different numbers of those on board in the different classes,
+and the unequal distribution of outcomes (1490 non-survivors and 711
+survivors). If there were no association between the class and the survival
+status, we would expect there to be 22 non-survivors amongst the first class
+passengers [<span class="math inline">\((1490/2201) \times 325 = (325 \times 1490) / 2201\)</span> = 220]
+and 105 non-survivors [<span class="math inline">\((711/2201) \times 325 = (325 \times 711) / 2201\)</span> =
+105]. In this way, we can determine the expected frequencies for each cell,
+taking into account the marginal totals. With the help of these
+expected frequencies, we then calculate <span class="math inline">\(\chi^2=190.4\)</span>, here with 3 d.f.,
+<span class="math inline">\(p&lt;.001\)</span>. The significance <span class="math inline">\(p\)</span> found is smaller than <span class="math inline">\(\alpha=.001\)</span>, and
+we thus reject H0. We conclude that the outcome of the ship disaster
+((non-)survivors) was <em>unevenly</em> distributed for the four classes of those
+on board the <em>Titanic</em>.</p>
 </blockquote>
 <hr />
+<p>For the analysis of contingency tables which consist of precisely
+<span class="math inline">\(2\times2\)</span> cells, the Phi coefficient is an effective alternative
+(see §<a href="ch-correlation-regression.html#sec:Phi">11.6</a>).</p>
+<p>Reread and remember the warnings about correlation and causality
+(§<a href="ch-correlation-regression.html#sec:correlationcausation">11.7</a>)
+— these are also applicable here.</p>
 </div>
-<div id="sec:significancelevel-power" class="section level2" number="14.4">
-<h2><span class="header-section-number">14.4</span> Relation between significance level and power</h2>
-<p>The relation between the significance level <span class="math inline">\(\alpha\)</span> and the power is
-illustrated by the difference between the two figures
-<a href="ch-power.html#fig:powercontours-alpha01">14.1</a> and
-<a href="ch-power.html#fig:powercontours-alpha05">14.2</a>. For each combination of effect size
-and sample size, the power is lower in
-Figure <a href="ch-power.html#fig:powercontours-alpha01">14.1</a> for <span class="math inline">\(\alpha=.01\)</span> than in
-Figure <a href="ch-power.html#fig:powercontours-alpha05">14.2</a> for <span class="math inline">\(\alpha=.05\)</span>. If we choose a higher
-significance level <span class="math inline">\(\alpha\)</span>, then the probability of rejecting H0
-increases, and thus also the power of correctly rejecting H0 when H0
-is untrue (see Table <a href="ch-research.html#tab:H0H1outcomes">2.2</a>).
-However, unfortunately, with a high significance
-level <span class="math inline">\(\alpha\)</span>, the probability of wrongly rejecting H0 (i.e. of making a
-Type I error) also increases. The investigator
-must make a well-considered decision between Type I errors (with
-probability <span class="math inline">\(\alpha\)</span>) and Type II errors (with probability <span class="math inline">\(\beta\)</span>); as said earlier,
-this decision has to depend on the seriousness of (the consequences of) these
-two types of errors.</p>
+<div id="sec:chi2test-assumptions" class="section level2" number="16.5">
+<h2><span class="header-section-number">16.5</span> assumptions</h2>
+<p>The <span class="math inline">\(\chi^2\)</span>-test requires three assumptions which must be satisfied
+in order to use the test.</p>
+<ul>
+<li><p>The data have to be measured on a nominal level of measurement, or have
+to be simplified to nominal level (see Chapter <a href="ch-levelsofmeasurement.html#ch:levelsofmeasurement">4</a>).</p></li>
+<li><p>All observations have to be independent of each other, and based
+on (a) random sample(s) of the population(s) (see
+§<a href="ch-samples.html#sec:random-samples">7.3</a>), or on random assignment of the elements
+from the sample to experimental conditions (randomisation, see
+§<a href="ch-validity.html#sec:internalvalidity">5.4</a>, point 5). Each element for the sample can thus only
+contribute one observation to one cell<a href="#fn37" class="footnote-ref" id="fnref37"><sup>37</sup></a>.</p></li>
+<li><p>The sample has to be large enough so that the expected frequency
+(<span class="math inline">\(E\)</span>) for each cell is at least 5. If the expected frequency or frequencies
+in one or more cells is/are less than 5, then reduce the number
+of cells by merging bordering cells, and determine the expected
+frequencies again.</p></li>
+</ul>
 </div>
-<div id="disadvantages-of-insufficient-power" class="section level2" number="14.5">
-<h2><span class="header-section-number">14.5</span> Disadvantages of insufficient power</h2>
-<p>Unfortunately, many examples can be found of ‘underpowered’ research
-in the domain of language and communication. This research has a too small
-probability of rejecting H0 when the investigated effect indeed
-exists (H0 is not true). Why is that bad <span class="citation">(Quené <a href="#ref-Quene10" role="doc-biblioref">2010</a>)</span>?</p>
-<p>Firstly, the Type II error which occurs here can have serious consequences:
-a treatment method which is actually better is not recognised as such,
-a patient is not or wrongly diagnosed, a useful innovation is wrongly pushed
-aside. This error hinders the growth of our knowledge and our insight, and hinders
-scientific progress (see also
-Example 3.2 in Chapter <a href="ch-integrity.html#ch:integrity">3</a>).</p>
-<div class="figure"><span id="fig:underpoweredeffectsizes"></span>
-<img src="QMS-EN_files/figure-html/underpoweredeffectsizes-1.png" alt="Effect sizes (along the horizontal axis) found in simulated experiments (two-sided t-test for independent observations, alpha=.05), broken down according to sample size (left $n=20$, right $n=80$) and according to testing result (dark symbols: significant; light symbols: not significant). The true effect size between groups is always $d=0.5$, indicated by the grey dashed line. The mean effect size found from the significant outcomes is referred to with the black dashed line. For each sample size, 100 simulations have been carried out (long vertical axis)." width="672" />
-<p class="caption">
-Figure 14.3: Effect sizes (along the horizontal axis) found in simulated experiments (two-sided t-test for independent observations, alpha=.05), broken down according to sample size (left <span class="math inline">\(n=20\)</span>, right <span class="math inline">\(n=80\)</span>) and according to testing result (dark symbols: significant; light symbols: not significant). The true effect size between groups is always <span class="math inline">\(d=0.5\)</span>, indicated by the grey dashed line. The mean effect size found from the significant outcomes is referred to with the black dashed line. For each sample size, 100 simulations have been carried out (long vertical axis).
-</p>
+<div id="formula" class="section level2" number="16.6">
+<h2><span class="header-section-number">16.6</span> formula</h2>
+<p>The test statistic <span class="math inline">\(\chi^2\)</span> is defined as
+<span class="math display" id="eq:chisquared">\[\begin{equation}
+  \tag{16.1}
+    \chi^2 = \sum \frac{(O-E)^2}{E}
+\end{equation}\]</span>
+in which <span class="math inline">\(O\)</span> and <span class="math inline">\(E\)</span> the
+indicate the observed and expected numbers of observations for each
+cell of the frequency table <span class="citation">(Ferguson and Takane <a href="#ref-Ferg89" role="doc-biblioref">1989</a>)</span>. The expected
+numbers might also be rational numbers (e.g. <span class="math inline">\(45/6\)</span> for the 6 possible
+outcomes of an honest die, if we throw
+<span class="math inline">\(45\times\)</span>). The larger the difference <span class="math inline">\((O-E)\)</span> in one or several cells,
+the larger also <span class="math inline">\(\chi^2\)</span> will be. Due to squaring, the test
+statistic <span class="math inline">\(\chi^2\)</span> is always null or positive, and never negative
+<span class="citation">(Ferguson and Takane <a href="#ref-Ferg89" role="doc-biblioref">1989</a>)</span>.</p>
+<p>The probability distribution of the test statistic <span class="math inline">\(\chi^2\)</span> is determined by
+the number of degrees of freedom (see
+§<a href="ch-testing.html#sec:ttest-freedomdegrees">13.2.1</a> for explanation of this concept).
+For a <span class="math inline">\(\chi^2\)</span>-test with one nominal variable (“goodness of fit”), the number
+of degrees of freedom must be equal to the number of cells minus 1. For a
+<span class="math inline">\(\chi^2\)</span>-test with multiple samples (homogeneity) and/or with two variables
+(correlations), with respectively <span class="math inline">\(k\)</span> and <span class="math inline">\(m\)</span> categories, the number of
+degrees of freedom is equal to <span class="math inline">\((k-1)\times(m-1)\)</span>.</p>
 </div>
-<p>The outcomes of simulated experiments with different
-sample size, and thus with different power, are summarised
-in Figure <a href="ch-power.html#fig:underpoweredeffectsizes">14.3</a>. We explain the second disadvantage on the basis of
-the somewhat complex figure. In the left panel of Figure
-<a href="ch-power.html#fig:underpoweredeffectsizes">14.3</a>, we can see that the different
-(simulations of) ‘underpowered’ studies show a mixed
-picture. Some of these studies do show a significant effect (dark symbols),
-and many other studies do not (light symbols).
-The mixed picture then usually leads to follow up research, in which
-people try to find out <em>why</em> the effect does occur in some studies,
-and not in others. Might the difference in results be attributable
-to differences in stimuli? participants? tasks?
-instruments? All that follow up research is <em>superfluous</em> though: the mixed
-picture from these studies can be explained by the small
-power of each study. The needless and superfluous follow up research
-costs much time and money (and indirect costs,
-see Chapter <a href="ch-integrity.html#ch:integrity">3</a>), and comes at the cost of other, more useful
-research <span class="citation">(Schmidt <a href="#ref-Schm96" role="doc-biblioref">1996</a>, 118)</span>. Put otherwise: one well designed study
-with power which is more than sufficient can avoid many needless follow up studies.</p>
-<p>The third disadvantage is based on the experience that studies in which
-a significant effect is found (dark symbols) have a higher probability
-of being reported; this phenomenon is called
-‘publication bias’ or the ‘file drawer problem’. After all, a positive result
-often does get published, whilst a negative result often disappears
-into a file drawer. With small power, that leads to the third disadvantage,
-namely an overestimation or ‘bias’ of the reported effect size.
-In an underpowered study, after all, an effect
-must be quite large to be found. In the leftmost panel, we can see that
-a significant effect has only been found <span class="math inline">\(31\times\)</span>. The average effect size of these
-31 significant outcomes is <span class="math inline">\(\overline{d_{\textrm{signif}}}=0.90\)</span> (black dashed line), i.e.
-a distortion or ‘bias’ of <span class="math inline">\(0.40\)</span> relative to the actual
-<span class="math inline">\(d=0.50\)</span> (grey dashed line)<a href="#fn33" class="footnote-ref" id="fnref33"><sup>33</sup></a>. In the rightmost panel, we can see that
-a significant effect has been found <span class="math inline">\(91\times\)</span> (thus the power here is sufficient).
-The mean effect size of these 91 significant outcomes hardly deviates
-from the actual <span class="math inline">\(d\)</span>. Moreover, the standard deviation of the reported
-effect size is smaller, and that is again important for later research, meta-studies,
-and systematic reviews.</p>
-<p>Fourthly, the mixed picture from the different studies, sometimes with significant
-outcomes and sometimes without, and with great variation in the reported
-effect size, carries the danger that these
-outcomes are taken less seriously than ‘consumers’ of
-scientific knowledge (practitioners, health insurers, developers,
-policy makers, etc.). In this way, these consumers get the impression
-that the scientific evidence for this investigated effect is not strong,
-and/or that the researchers are in disagreement about whether the effect exists
-and if it does, how large it then is <span class="citation">(Van Kolfschooten <a href="#ref-Kolf93" role="doc-biblioref">1993</a>)</span> (Figure <a href="ch-power.html#fig:underpoweredeffectsizes">14.3</a>).
-This, also hinders scientific progress, and it hinders the use
-of scientific insights in societal applications.</p>
-<p>To avoid all these objections, researchers have to take into account
-the desired power of a study in an early stage. Designing and conducting
-a study with insufficient power is after all in opposition with the earlier discussed
-ethical and moral principles of diligence and responsibility
-(§<a href="ch-integrity.html#sec:integrity-introduction">3.1</a>).</p>
+<div id="spss-14" class="section level2" number="16.7">
+<h2><span class="header-section-number">16.7</span> SPSS</h2>
+<div id="goodness-of-fit-preparation" class="section level3" number="16.7.1">
+<h3><span class="header-section-number">16.7.1</span> goodness of fit: preparation</h3>
+<p>If we want to investigate a nominal variable, then it must of course
+be marked as a column in the SPSS data file. Every observation
+forms a separate row in the data file, and the nominal independent
+variable is a column in the data file.</p>
+<p>Sometimes, we do not have the separate observations (rows) but
+do have the table of numbers of observations per category of the nominal
+variable. We can work further with these. Let us say that we have two columns,
+named <code>outcome</code> and <code>number</code>, as follows
+(see §<a href="ch-chi-square-tests.html#sec:chi2gof">16.2</a>):</p>
+<pre><code>Outcome Number
+ 1        14
+ 2         9
+ 3        11
+ 4        10
+ 5        15
+ 6         1</code></pre>
+<p>Next, each cell (row) has to get a weight that is as large as the
+<code>number</code> of observations, which is named here in the second column: the
+first cell (row) weighs <span class="math inline">\(14\times\)</span>, the second cell (row) weighs
+<span class="math inline">\(9\times\)</span> etc. Thanks to this trick, we do not have to fill in <span class="math inline">\(N=60\)</span> rows
+(a row for each observation), but only 6 rows (a row for each cell).</p>
+<pre><code>Data &gt; Weigh Cases... </code></pre>
+<p>Choose <code>Weigh cases by...</code> and select the variable <code>number</code> in
+entry field. Confirm with <code>OK</code>.</p>
+<p>Choose and select the variable <code>number</code> in
+input field. Confirm with <code>OK</code>.</p>
+</div>
+<div id="goodness-of-fit-testing" class="section level3" number="16.7.2">
+<h3><span class="header-section-number">16.7.2</span> goodness of fit: testing</h3>
+<pre><code>Analyze &gt; Nonparametric tests &gt; Legacy Dialogs &gt; Chi-square...</code></pre>
+<p>Select the variables <code>outcome</code> (in “Test variable list” panel) and
+indicate that we expect <em>equal</em> numbers of observations in each cell.
+(It is also possible to enter other expected frequencies here,
+if other, unequal frequencies are expected according to H0.)
+Confirm with <code>OK</code>.</p>
+</div>
+<div id="contingency-tables-preparation" class="section level3" number="16.7.3">
+<h3><span class="header-section-number">16.7.3</span> contingency tables: preparation</h3>
+<p>If we want to investigate two nominal variables, then they must
+both be marked as columns in the SPSS data file. Each observation
+forms a separate row in the data file, and the nominal variables
+are columns in the data file. For Example 16.1 above, we then use a “long”
+data file, consisting of <span class="math inline">\(N=2201\)</span> rows, with a separate row for each person
+on board, with at least two columns, for <code>class</code> and
+<code>survivor</code>.</p>
+<p>Sometimes, we do not have the separate observations (rows) but
+do have the contingency table of numbers of observations for each
+combination of categories of the nominal variables. We can also
+work further with these. Let us say that we have three columns, named
+<code>class</code>, <code>survivor</code> and <code>number</code>, as follows:</p>
+<pre><code>Class  Survivor   Number
+1st     no         122
+1st     yes        203
+2nd     no         167
+2nd     yes        118
+3rd     no         528
+3rd     yes        178
+crew    no         673
+crew    yes        212</code></pre>
+<p>Next, each cell (row) has to get a weight which is as large as
+the <code>number</code> of observations, which is named in the third column: the
+first cell (row) weighs <span class="math inline">\(122\times\)</span>, the second cell (row) weighs
+<span class="math inline">\(203\times\)</span>, etc. With this trick, we do not have to enter <span class="math inline">\(N=2201\)</span> rows
+(a row for each observation), but only 8 rows (a row
+for each cell).</p>
+<pre><code>Data &gt; Weigh Cases... </code></pre>
+<p>Choose <code>Weigh cases by...</code> and select the variable <code>number</code> in
+entry field. Confirm with <code>OK</code>.</p>
+</div>
+<div id="contingency-tables-testing" class="section level3" number="16.7.4">
+<h3><span class="header-section-number">16.7.4</span> contingency tables: testing</h3>
+<p>The testing proceeds in the same way as described in
+§<a href="ch-correlation-regression.html#sec:Phi">11.6</a> for
+the association between two nominal variables.</p>
+<pre><code>Analyze &gt; Descriptives &gt; Crosstabs...</code></pre>
+<p>Select the variables <code>class</code> (in “Rows” panel) and <code>survivor</code> (in
+“Columns” panel) for
+contingency table <a href="ch-chi-square-tests.html#tab:titanic">16.1</a>.<br />
+Choose <code>Statistics…</code> and tick the option <code>Chi-square</code>. Confirm firstly with
+<code>Continue</code> and afterwards again with <code>OK</code>.</p>
+</div>
+</div>
+<div id="r-16" class="section level2" number="16.8">
+<h2><span class="header-section-number">16.8</span> R</h2>
+<div id="goodness-of-fit-testing-1" class="section level3" number="16.8.1">
+<h3><span class="header-section-number">16.8.1</span> goodness of fit: testing</h3>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="ch-chi-square-tests.html#cb147-1" aria-hidden="true"></a><span class="kw">chisq.test</span>( <span class="kw">c</span>( <span class="dv">14</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">1</span> ) ) <span class="co"># die §16.1</span></span></code></pre></div>
+<pre><code>## 
+##  Chi-squared test for given probabilities
+## 
+## data:  c(14, 9, 11, 10, 15, 1)
+## X-squared = 12.4, df = 5, p-value = 0.0297</code></pre>
+</div>
+<div id="contingency-table-preparation-and-testing" class="section level3" number="16.8.2">
+<h3><span class="header-section-number">16.8.2</span> contingency table: preparation and testing</h3>
+<p>In R, the dataset <code>Titanic</code> is provided as a multidimensional matrix. We sum
+the observations and make a contingency table of the first dimension (class) and
+the fourth dimension (outcome).</p>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="ch-chi-square-tests.html#cb149-1" aria-hidden="true"></a><span class="kw">apply</span>( Titanic, <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">4</span>), sum ) -&gt;<span class="st"> </span>Titanic.classoutcome</span></code></pre></div>
+<p>Next, we use the contingency table as the input for a <code>chisq.test</code>.</p>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="ch-chi-square-tests.html#cb150-1" aria-hidden="true"></a><span class="kw">chisq.test</span>( Titanic.classoutcome )  <span class="co"># p&lt;.0001</span></span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test
+## 
+## data:  Titanic.classoutcome
+## X-squared = 190.4, df = 3, p-value &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<div id="effect-size-odds-ratio" class="section level2" number="16.9">
+<h2><span class="header-section-number">16.9</span> Effect size: odds ratio</h2>
+<p>When using the <span class="math inline">\(\chi^2\)</span>-test, the effect size can be reported in the form
+of the so-called “odds ratio”. The ‘odds ratio’ is derived from the contingency
+table with frequencies per cell. We will explain all these matters
+using the following example.</p>
+<hr />
+<blockquote>
+<p><em>Example 16.2</em>:
+<span class="citation">Doll and Hill (<a href="#ref-DollHill1956" role="doc-biblioref">1956</a>)</span> investigated the relation between smoking
+and lung cancer. They first surveyed all British doctors about
+their age and smoking behaviour. Next, the researchers kept up over the years with
+the death notices and cause of death of all those surveyed. The first
+outcomes, after more than four years, are summarised in
+Table <a href="ch-chi-square-tests.html#tab:dollhill">16.2</a>.</p>
+</blockquote>
+<table>
+<caption><span id="tab:dollhill">Table 16.2: </span> Contingency table of <span class="math inline">\(N=24354\)</span> British doctors of 35 years
+and older for the first survey, divided according to smoking behaviour (rows: (non-)
+smoker currently or previously) and according to death by lung cancer in the last
+4 years (columns), with letter indication for the numbers
+of observations.</caption>
+<thead>
+<tr class="header">
+<th align="left">Smoking</th>
+<th align="center">No lung cancer</th>
+<th></th>
+<th align="center">Lung cancer</th>
+<th></th>
+<th align="center">Total</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">No (0)</td>
+<td align="center">3092</td>
+<td>(A)</td>
+<td align="center">1</td>
+<td>(B)</td>
+<td align="center">3093</td>
+<td>(A+B)</td>
+</tr>
+<tr class="even">
+<td align="left">Yes (1)</td>
+<td align="center">21178</td>
+<td>(C)</td>
+<td align="center">83</td>
+<td>(D)</td>
+<td align="center">21261</td>
+<td>(C+D)</td>
+</tr>
+<tr class="odd">
+<td align="left">Total</td>
+<td align="center">24270</td>
+<td>(A+C)</td>
+<td align="center">84</td>
+<td>(B+D)</td>
+<td align="center">24354</td>
+<td>(A+B+C+D)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>In the usual manner, we find <span class="math inline">\(\chi^2=10.35\)</span>, df=1, <span class="math inline">\(p&lt;.01\)</span>. We conclude that
+there is an association between smoking behaviour and death from lung cancer.</p>
+</blockquote>
+<hr />
+<p>For the effect size, we firstly calculate the ‘odds’ of death from
+lung cancer for the smokers: D/C= <span class="math inline">\(83/21178 =0.00392\)</span>. Amongst the smokers,
+there are 83 deaths from lung cancer, compared with 21178
+deaths not from lung cancer (the ‘odds’ of dying from
+lung cancer are 1 in 0.00392). For the non-smokers:
+B/A=<span class="math inline">\(1/3092 =0.00032\)</span> (the ‘odds’ are 1 in 0.00032).</p>
+<p>We call the <em>ratio</em> of these two ‘odds’ for the two groups the
+‘odds ratio’ (abbreviated OR). In this example, we find (D/C) / (B/A) =
+AD/BC =
+<span class="math inline">\((3092 \times 83) / (1 \times 2178) = (0.00392)/(0.00032) = 12.1\)</span>. The
+‘odds’ of dying from lung cancer are thus more than <span class="math inline">\(12\times\)</span>
+as great for the smokers as for the non-smokers. We report this as follows:</p>
+<blockquote>
+<p><span class="citation">Doll and Hill (<a href="#ref-DollHill1956" role="doc-biblioref">1956</a>)</span> found a significant relation between
+smoking behaviour and death from lung cancer,
+<span class="math inline">\(\chi^2(1)=10.35, p&lt;.01, \textrm{OR}=12.1\)</span>. The ‘odds’ of dying from
+lung cancer seemed to be more than <span class="math inline">\(12\times\)</span> as great for smokers as for
+non-smokers.</p>
+</blockquote>
 
 </div>
 </div>
+
+
+
 <h3>References</h3>
 <div id="refs" class="references">
-<div id="ref-ACA11">
-<p>Aron, Arthur, Eliot J. Coups, and Elaine N. Aron. 2011. <em>Statistics for the Behavioral and Social Sciences: A Brief Course</em>. 5th ed. Boston: Pearson.</p>
+<div id="ref-DollHill1956">
+<p>Doll, Richard, and A. Bradford Hill. 1956. “Lung Cancer and Other Causes of Death in Relation to Smoking: A Second Report on the Mortality of British Doctors.” <em>British Medical Journal</em>, 1071–81. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2035864/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2035864/</a>.</p>
 </div>
-<div id="ref-PD08">
-<p>Peck, Roxy, and Jay Devore. 2008. <em>Statistics: The Exploration and Analysis of Data</em>. 6e ed. Belmont, CA: Thomsom/Cole.</p>
-</div>
-<div id="ref-Quene10">
-<p>Quené, Hugo. 2010. “How to Design and Analyze Language Acquisition Studies.” In <em>Experimental Methods in Language Acquisition Research</em>, edited by Elma Blom and Sharon Unsworth, 269–87. Amsterdam: Benjamins.</p>
-</div>
-<div id="ref-Rose08">
-<p>Rosenthal, Robert, and Ralph L. Rosnow. 2008. <em>Essentials of Behavioral Research: Methods and Data Analysis</em>. 3e ed. Boston: McGraw Hill.</p>
-</div>
-<div id="ref-Schm96">
-<p>Schmidt, Frank L. 1996. “Statistical Significance Testing and Cumulative Knowledge in Psychology: Implications for Training of Researchers.” <em>Psychological Methods</em> 1 (2): 115–29.</p>
-</div>
-<div id="ref-Kolf93">
-<p>Van Kolfschooten, Frank. 1993. <em>Valse Vooruitgang: Bedrog in de Nederlandse Wetenschap</em>. Amsterdam: L.J. Veen.</p>
+<div id="ref-Ferg89">
+<p>Ferguson, George A., and Yoshio Takane. 1989. <em>Statistical Analysis in Psychology and Education</em>. 6e ed. New York: McGraw-Hill.</p>
 </div>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="33">
-<li id="fn33"><p>A replication study which does have sufficient power, thus typically finds a smaller effect than the
-original ‘underpowered’ study. The smaller effect found in the replication study is then typically also not
-significant. We then say that the replication study “fails to replicate” the effect that was significant in
-the original study - but that was actually a spurious finding.<a href="ch-power.html#fnref33" class="footnote-back">↩︎</a></p></li>
+<ol start="36">
+<li id="fn36"><p>The value found <span class="math inline">\(\chi^2=12.44\)</span> is slightly under the critical value for
+5 d.f. and <span class="math inline">\(p=.025\)</span>, (there <span class="math inline">\((\chi^2)^*=12.83\)</span>), thus the corresponding probability
+of this value or a larger value is slightly greater than <span class="math inline">\(0.025\)</span>.<a href="ch-chi-square-tests.html#fnref36" class="footnote-back">↩︎</a></p></li>
+<li id="fn37"><p>If one variable’s observations are paired rather than independent (e.g.
+before/after treatment, passed/failed, etc.), then the McNemar test is a useful
+alternative.<a href="ch-chi-square-tests.html#fnref37" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -744,8 +911,8 @@ the original study - but that was actually a spurious finding.<a href="ch-power.
           </div>
         </div>
       </div>
-<a href="ch-testing.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="ch-anova.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="ch-anova.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="app-randomnumbers.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -776,7 +943,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/ch14power.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/ch16chi-square-tests.Rmd",
 "text": "Edit"
 },
 "history": {

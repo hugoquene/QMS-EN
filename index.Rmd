@@ -41,7 +41,7 @@ for their advice, data, comments and suggestions.
 
 We thank Aleksei Nazarov and Joanna Wall for translating this book from Dutch to English. 
 
-Utrecht, October 2020
+Utrecht, October 2020 - January 2021
 
 Hugo Quené, <https://www.hugoquene.nl>
 
@@ -62,8 +62,8 @@ https://www.gnu.org/licenses/gpl-3.0.en.html).
 
 Please cite this work as follows (in APA style):
 
-Quené, H. \& Van den Bergh, H. (2020). *Quantitative Methods and Statistics*. 
-Retrieved 21 Oct 2020 from https://hugoquene.github.io/QMS-EN/ .
+Quené, H. \& Van den Bergh, H. (2021). *Quantitative Methods and Statistics*. 
+Retrieved 25 January 2021 from <https://hugoquene.github.io/QMS-EN/> .
 
 ## Technical details {-}
 

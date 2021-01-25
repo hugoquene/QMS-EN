@@ -388,6 +388,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.4" data-path="ch-power.html"><a href="ch-power.html#sec:significancelevel-power"><i class="fa fa-check"></i><b>14.4</b> Relation between significance level and power</a></li>
 <li class="chapter" data-level="14.5" data-path="ch-power.html"><a href="ch-power.html#disadvantages-of-insufficient-power"><i class="fa fa-check"></i><b>14.5</b> Disadvantages of insufficient power</a></li>
 </ul></li>
+<li class="chapter" data-level="15" data-path="ch-anova.html"><a href="ch-anova.html"><i class="fa fa-check"></i><b>15</b> Analysis of variance</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="ch-anova.html"><a href="ch-anova.html#sec:introduction"><i class="fa fa-check"></i><b>15.1</b> Introduction</a></li>
+<li class="chapter" data-level="15.2" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-examples"><i class="fa fa-check"></i><b>15.2</b> Some examples</a>
+<ul>
+<li class="chapter" data-level="15.2.1" data-path="ch-anova.html"><a href="ch-anova.html#assumptions-2"><i class="fa fa-check"></i><b>15.2.1</b> assumptions</a></li>
+</ul></li>
+<li class="chapter" data-level="15.3" data-path="ch-anova.html"><a href="ch-anova.html#one-way-analysis-of-variance"><i class="fa fa-check"></i><b>15.3</b> One-way analysis of variance</a>
+<ul>
+<li class="chapter" data-level="15.3.1" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-explanation"><i class="fa fa-check"></i><b>15.3.1</b> An intuitive explanation</a></li>
+<li class="chapter" data-level="15.3.2" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-formal"><i class="fa fa-check"></i><b>15.3.2</b> A formal explanation</a></li>
+<li class="chapter" data-level="15.3.3" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-effectsize"><i class="fa fa-check"></i><b>15.3.3</b> Effect size</a></li>
+<li class="chapter" data-level="15.3.4" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-planned"><i class="fa fa-check"></i><b>15.3.4</b> Planned comparisons</a></li>
+<li class="chapter" data-level="15.3.5" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-posthoc"><i class="fa fa-check"></i><b>15.3.5</b> Post-hoc comparisons</a></li>
+<li class="chapter" data-level="15.3.6" data-path="ch-anova.html"><a href="ch-anova.html#spss-12"><i class="fa fa-check"></i><b>15.3.6</b> SPSS</a></li>
+<li class="chapter" data-level="15.3.7" data-path="ch-anova.html"><a href="ch-anova.html#r-14"><i class="fa fa-check"></i><b>15.3.7</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="15.4" data-path="ch-anova.html"><a href="ch-anova.html#two-way-analysis-of-variance"><i class="fa fa-check"></i><b>15.4</b> Two-way analysis of variance</a>
+<ul>
+<li class="chapter" data-level="15.4.1" data-path="ch-anova.html"><a href="ch-anova.html#an-intuitive-explanation"><i class="fa fa-check"></i><b>15.4.1</b> An intuitive explanation</a></li>
+<li class="chapter" data-level="15.4.2" data-path="ch-anova.html"><a href="ch-anova.html#a-formal-explanation"><i class="fa fa-check"></i><b>15.4.2</b> A formal explanation</a></li>
+<li class="chapter" data-level="15.4.3" data-path="ch-anova.html"><a href="ch-anova.html#spss-13"><i class="fa fa-check"></i><b>15.4.3</b> SPSS</a></li>
+<li class="chapter" data-level="15.4.4" data-path="ch-anova.html"><a href="ch-anova.html#r-15"><i class="fa fa-check"></i><b>15.4.4</b> R</a></li>
+</ul></li>
+</ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
 <li class="chapter" data-level="A" data-path="app-randomnumbers.html"><a href="app-randomnumbers.html"><i class="fa fa-check"></i><b>A</b> Random numbers</a></li>
 <li class="chapter" data-level="B" data-path="app-criticalZvalues.html"><a href="app-criticalZvalues.html"><i class="fa fa-check"></i><b>B</b> Standard normal probability distribution</a></li>
@@ -533,7 +558,7 @@ Figure 6.1: Average time interval between taps (IOI, in ms) for two groups of li
   R    X_{2,1}   O3
   R    X_{2,2}   O4</code></pre>
 <p>Combining many factors into one big factorial design may often seem seductive: why not investigate how all these factors interact with one another? However, the most sensible option is not to do this, and, instead, limit the number of factors. Firstly, as we will see later, the number of observation has to keep up with the number of possible combinations of factors. Adding more factors means that many more participants (or other units) are needed. Secondly, it is more difficult to guarantee that all combinations of factors are perfectly comparable <span class="citation">(Shadish, Cook, and Campbell <a href="#ref-SCC02" role="doc-biblioref">2002</a>, 266)</span>: may we reasonably compare Tunisian participants listening to Tunisian music in Tunisian with French participants listening to French music in France? The more combinations of factors are featured in the study, the trickier it becomes to ensure that these combinations are comparable. Thirdly, interactions are notoriously difficult to interpret, which also becomes trickier as interactions become more complex and span a greater number of factors. For all of these reasons, it is better to study the effects of multiple factors in separate individual studies <span class="citation">(Quené <a href="#ref-Quene10" role="doc-biblioref">2010</a>)</span>.</p>
-<p>We will come back later to the analysis and interpretation of data from factorial experimental designs (Chapter <a href="#ch:anova"><strong>??</strong></a>).
+<p>We will come back later to the analysis and interpretation of data from factorial experimental designs (Chapter <a href="ch-anova.html#ch:anova">15</a>).
 In the meantime, we will concentrate on designs that have just one independent variable.</p>
 </div>
 <div id="sec:within-subject-designs" class="section level2" number="6.9">

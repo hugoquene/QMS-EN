@@ -1,0 +1,1652 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>15 Analysis of variance | Quantitative Methods and Statistics</title>
+  <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="15 Analysis of variance | Quantitative Methods and Statistics" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
+  <meta name="github-repo" content="rstudio/QMS-EN" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="15 Analysis of variance | Quantitative Methods and Statistics" />
+  
+  <meta name="twitter:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="ch-power.html"/>
+<link rel="next" href="app-randomnumbers.html"/>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Quantitative Methods and Statistics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#notation"><i class="fa fa-check"></i>Notation</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#citation"><i class="fa fa-check"></i>Citation</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#technical-details"><i class="fa fa-check"></i>Technical details</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-authors"><i class="fa fa-check"></i>About the authors</a></li>
+</ul></li>
+<li class="part"><span><b>Part I: Methodology</b></span></li>
+<li class="chapter" data-level="1" data-path="ch-introduction.html"><a href="ch-introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="ch-introduction.html"><a href="ch-introduction.html#sec:scientific-research"><i class="fa fa-check"></i><b>1.1</b> Scientific research</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="ch-introduction.html"><a href="ch-introduction.html#sec:theory"><i class="fa fa-check"></i><b>1.1.1</b> Theory</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="ch-introduction.html"><a href="ch-introduction.html#sec:paradigms"><i class="fa fa-check"></i><b>1.2</b> Paradigms</a></li>
+<li class="chapter" data-level="1.3" data-path="ch-introduction.html"><a href="ch-introduction.html#sec:instrument-validation"><i class="fa fa-check"></i><b>1.3</b> Instrument validation</a></li>
+<li class="chapter" data-level="1.4" data-path="ch-introduction.html"><a href="ch-introduction.html#sec:descriptive-research"><i class="fa fa-check"></i><b>1.4</b> Descriptive research</a></li>
+<li class="chapter" data-level="1.5" data-path="ch-introduction.html"><a href="ch-introduction.html#sec:experimental-research"><i class="fa fa-check"></i><b>1.5</b> Experimental research</a></li>
+<li class="chapter" data-level="1.6" data-path="ch-introduction.html"><a href="ch-introduction.html#outline-of-this-textbook"><i class="fa fa-check"></i><b>1.6</b> Outline of this textbook</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="ch-research.html"><a href="ch-research.html"><i class="fa fa-check"></i><b>2</b> Hypothesis testing research</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="ch-research.html"><a href="ch-research.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.2" data-path="ch-research.html"><a href="ch-research.html#sec:variables"><i class="fa fa-check"></i><b>2.2</b> Variables</a></li>
+<li class="chapter" data-level="2.3" data-path="ch-research.html"><a href="ch-research.html#sec:independendependentvariables"><i class="fa fa-check"></i><b>2.3</b> Independent and dependent variables</a></li>
+<li class="chapter" data-level="2.4" data-path="ch-research.html"><a href="ch-research.html#sec:falsification"><i class="fa fa-check"></i><b>2.4</b> Falsification and null hypothesis</a></li>
+<li class="chapter" data-level="2.5" data-path="ch-research.html"><a href="ch-research.html#sec:empiricalcycle"><i class="fa fa-check"></i><b>2.5</b> The empirical cycle</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="ch-research.html"><a href="ch-research.html#observation"><i class="fa fa-check"></i><b>2.5.1</b> observation</a></li>
+<li class="chapter" data-level="2.5.2" data-path="ch-research.html"><a href="ch-research.html#induction"><i class="fa fa-check"></i><b>2.5.2</b> induction</a></li>
+<li class="chapter" data-level="2.5.3" data-path="ch-research.html"><a href="ch-research.html#deduction"><i class="fa fa-check"></i><b>2.5.3</b> deduction</a></li>
+<li class="chapter" data-level="2.5.4" data-path="ch-research.html"><a href="ch-research.html#testing"><i class="fa fa-check"></i><b>2.5.4</b> testing</a></li>
+<li class="chapter" data-level="2.5.5" data-path="ch-research.html"><a href="ch-research.html#evaluation"><i class="fa fa-check"></i><b>2.5.5</b> evaluation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="ch-research.html"><a href="ch-research.html#sec:makingchoices"><i class="fa fa-check"></i><b>2.6</b> Making choices</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="ch-integrity.html"><a href="ch-integrity.html"><i class="fa fa-check"></i><b>3</b> Integrity</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="ch-integrity.html"><a href="ch-integrity.html#sec:integrity-introduction"><i class="fa fa-check"></i><b>3.1</b> Introduction</a></li>
+<li class="chapter" data-level="3.2" data-path="ch-integrity.html"><a href="ch-integrity.html#sec:design"><i class="fa fa-check"></i><b>3.2</b> Design</a></li>
+<li class="chapter" data-level="3.3" data-path="ch-integrity.html"><a href="ch-integrity.html#participants-and-informants"><i class="fa fa-check"></i><b>3.3</b> Participants and informants</a></li>
+<li class="chapter" data-level="3.4" data-path="ch-integrity.html"><a href="ch-integrity.html#data"><i class="fa fa-check"></i><b>3.4</b> Data</a></li>
+<li class="chapter" data-level="3.5" data-path="ch-integrity.html"><a href="ch-integrity.html#writing"><i class="fa fa-check"></i><b>3.5</b> Writing</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ch-levelsofmeasurement.html"><a href="ch-levelsofmeasurement.html"><i class="fa fa-check"></i><b>4</b> Levels of measurement</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="ch-levelsofmeasurement.html"><a href="ch-levelsofmeasurement.html#introduction-1"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.2" data-path="ch-levelsofmeasurement.html"><a href="ch-levelsofmeasurement.html#sec:nominal"><i class="fa fa-check"></i><b>4.2</b> Nominal</a></li>
+<li class="chapter" data-level="4.3" data-path="ch-levelsofmeasurement.html"><a href="ch-levelsofmeasurement.html#sec:ordinal"><i class="fa fa-check"></i><b>4.3</b> Ordinal</a></li>
+<li class="chapter" data-level="4.4" data-path="ch-levelsofmeasurement.html"><a href="ch-levelsofmeasurement.html#sec:interval"><i class="fa fa-check"></i><b>4.4</b> Interval</a></li>
+<li class="chapter" data-level="4.5" data-path="ch-levelsofmeasurement.html"><a href="ch-levelsofmeasurement.html#sec:ratio"><i class="fa fa-check"></i><b>4.5</b> Ratio</a></li>
+<li class="chapter" data-level="4.6" data-path="ch-levelsofmeasurement.html"><a href="ch-levelsofmeasurement.html#sec:orderinglevelsofmeasurement"><i class="fa fa-check"></i><b>4.6</b> Ordering of levels of measurement</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ch-validity.html"><a href="ch-validity.html"><i class="fa fa-check"></i><b>5</b> Validity</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="ch-validity.html"><a href="ch-validity.html#introduction-2"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="ch-validity.html"><a href="ch-validity.html#sec:causality"><i class="fa fa-check"></i><b>5.2</b> Causality</a></li>
+<li class="chapter" data-level="5.3" data-path="ch-validity.html"><a href="ch-validity.html#sec:validity"><i class="fa fa-check"></i><b>5.3</b> Validity</a></li>
+<li class="chapter" data-level="5.4" data-path="ch-validity.html"><a href="ch-validity.html#sec:internalvalidity"><i class="fa fa-check"></i><b>5.4</b> Internal validity</a></li>
+<li class="chapter" data-level="5.5" data-path="ch-validity.html"><a href="ch-validity.html#sec:constructvalidity"><i class="fa fa-check"></i><b>5.5</b> Construct validity</a></li>
+<li class="chapter" data-level="5.6" data-path="ch-validity.html"><a href="ch-validity.html#sec:externalvalidity"><i class="fa fa-check"></i><b>5.6</b> External validity</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="ch-design.html"><a href="ch-design.html"><i class="fa fa-check"></i><b>6</b> Design</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="ch-design.html"><a href="ch-design.html#sec:design-introduction"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="ch-design.html"><a href="ch-design.html#sec:betweenwithinparticipants"><i class="fa fa-check"></i><b>6.2</b> Between or within ?</a></li>
+<li class="chapter" data-level="6.3" data-path="ch-design.html"><a href="ch-design.html#sec:one-shot-single-case-design"><i class="fa fa-check"></i><b>6.3</b> The one-shot single-case design</a></li>
+<li class="chapter" data-level="6.4" data-path="ch-design.html"><a href="ch-design.html#sec:one-group-pretest-posttest-design"><i class="fa fa-check"></i><b>6.4</b> The one-group pretest-posttest design</a></li>
+<li class="chapter" data-level="6.5" data-path="ch-design.html"><a href="ch-design.html#sec:pretest-posttest-control-group-design"><i class="fa fa-check"></i><b>6.5</b> The pretest-posttest-control group design</a></li>
+<li class="chapter" data-level="6.6" data-path="ch-design.html"><a href="ch-design.html#sec:solomon-four-groups-design"><i class="fa fa-check"></i><b>6.6</b> The Solomon-four-groups design</a></li>
+<li class="chapter" data-level="6.7" data-path="ch-design.html"><a href="ch-design.html#the-posttest-only-control-group-design"><i class="fa fa-check"></i><b>6.7</b> The posttest-only control group design</a></li>
+<li class="chapter" data-level="6.8" data-path="ch-design.html"><a href="ch-design.html#sec:factorial-designs"><i class="fa fa-check"></i><b>6.8</b> Factorial designs</a></li>
+<li class="chapter" data-level="6.9" data-path="ch-design.html"><a href="ch-design.html#sec:within-subject-designs"><i class="fa fa-check"></i><b>6.9</b> Within-subject designs</a></li>
+<li class="chapter" data-level="6.10" data-path="ch-design.html"><a href="ch-design.html#designing-a-study"><i class="fa fa-check"></i><b>6.10</b> Designing a study</a></li>
+<li class="chapter" data-level="6.11" data-path="ch-design.html"><a href="ch-design.html#in-conclusion"><i class="fa fa-check"></i><b>6.11</b> In conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="ch-samples.html"><a href="ch-samples.html"><i class="fa fa-check"></i><b>7</b> Samples</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="ch-samples.html"><a href="ch-samples.html#sec:convenience-samples"><i class="fa fa-check"></i><b>7.1</b> Convenience samples</a></li>
+<li class="chapter" data-level="7.2" data-path="ch-samples.html"><a href="ch-samples.html#sec:systematic-samples"><i class="fa fa-check"></i><b>7.2</b> Systematic samples</a></li>
+<li class="chapter" data-level="7.3" data-path="ch-samples.html"><a href="ch-samples.html#sec:random-samples"><i class="fa fa-check"></i><b>7.3</b> Random samples</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="ch-samples.html"><a href="ch-samples.html#spss"><i class="fa fa-check"></i><b>7.3.1</b> SPSS</a></li>
+<li class="chapter" data-level="7.3.2" data-path="ch-samples.html"><a href="ch-samples.html#r"><i class="fa fa-check"></i><b>7.3.2</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="ch-samples.html"><a href="ch-samples.html#sec:sample-size"><i class="fa fa-check"></i><b>7.4</b> Sample size</a></li>
+</ul></li>
+<li class="part"><span><b>Part II: Descriptive statistics</b></span></li>
+<li class="chapter" data-level="8" data-path="ch-frequencies.html"><a href="ch-frequencies.html"><i class="fa fa-check"></i><b>8</b> Frequencies</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="ch-frequencies.html"><a href="ch-frequencies.html#introduction-3"><i class="fa fa-check"></i><b>8.1</b> Introduction</a></li>
+<li class="chapter" data-level="8.2" data-path="ch-frequencies.html"><a href="ch-frequencies.html#sec:frequencies"><i class="fa fa-check"></i><b>8.2</b> Frequencies</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="ch-frequencies.html"><a href="ch-frequencies.html#sec:intervals"><i class="fa fa-check"></i><b>8.2.1</b> Intervals</a></li>
+<li class="chapter" data-level="8.2.2" data-path="ch-frequencies.html"><a href="ch-frequencies.html#spss-1"><i class="fa fa-check"></i><b>8.2.2</b> SPSS</a></li>
+<li class="chapter" data-level="8.2.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#r-1"><i class="fa fa-check"></i><b>8.2.3</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#sec:barcharts"><i class="fa fa-check"></i><b>8.3</b> Bar charts</a></li>
+<li class="chapter" data-level="8.4" data-path="ch-frequencies.html"><a href="ch-frequencies.html#sec:histograms"><i class="fa fa-check"></i><b>8.4</b> Histograms</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="ch-frequencies.html"><a href="ch-frequencies.html#spss-2"><i class="fa fa-check"></i><b>8.4.1</b> SPSS</a></li>
+<li class="chapter" data-level="8.4.2" data-path="ch-frequencies.html"><a href="ch-frequencies.html#r-2"><i class="fa fa-check"></i><b>8.4.2</b> R</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html"><i class="fa fa-check"></i><b>9</b> Centre and dispersion</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#introduction-4"><i class="fa fa-check"></i><b>9.1</b> Introduction</a></li>
+<li class="chapter" data-level="9.2" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#symbols"><i class="fa fa-check"></i><b>9.2</b> Symbols</a></li>
+<li class="chapter" data-level="9.3" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#central-tendencies"><i class="fa fa-check"></i><b>9.3</b> Central tendencies</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:mean"><i class="fa fa-check"></i><b>9.3.1</b> mean</a></li>
+<li class="chapter" data-level="9.3.2" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:median"><i class="fa fa-check"></i><b>9.3.2</b> median</a></li>
+<li class="chapter" data-level="9.3.3" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#mode"><i class="fa fa-check"></i><b>9.3.3</b> mode</a></li>
+<li class="chapter" data-level="9.3.4" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:harmonicmean"><i class="fa fa-check"></i><b>9.3.4</b> Harmonic mean</a></li>
+<li class="chapter" data-level="9.3.5" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#winsorized-mean"><i class="fa fa-check"></i><b>9.3.5</b> winsorized mean</a></li>
+<li class="chapter" data-level="9.3.6" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#trimmed-mean"><i class="fa fa-check"></i><b>9.3.6</b> trimmed mean</a></li>
+<li class="chapter" data-level="9.3.7" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#comparison-of-central-tendencies"><i class="fa fa-check"></i><b>9.3.7</b> comparison of central tendencies</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:quartiles-and-boxplots"><i class="fa fa-check"></i><b>9.4</b> Quartiles and boxplots</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#quartiles"><i class="fa fa-check"></i><b>9.4.1</b> Quartiles</a></li>
+<li class="chapter" data-level="9.4.2" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:outliers"><i class="fa fa-check"></i><b>9.4.2</b> Outliers</a></li>
+<li class="chapter" data-level="9.4.3" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:boxplot"><i class="fa fa-check"></i><b>9.4.3</b> Boxplots</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:measures-of-dispersion"><i class="fa fa-check"></i><b>9.5</b> Measures of dispersion</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:variance"><i class="fa fa-check"></i><b>9.5.1</b> Variance</a></li>
+<li class="chapter" data-level="9.5.2" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:standarddeviation"><i class="fa fa-check"></i><b>9.5.2</b> standard deviation</a></li>
+<li class="chapter" data-level="9.5.3" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#mad"><i class="fa fa-check"></i><b>9.5.3</b> MAD</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:significantfigures"><i class="fa fa-check"></i><b>9.6</b> On significant figures</a>
+<ul>
+<li class="chapter" data-level="9.6.1" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:significantfigures-means"><i class="fa fa-check"></i><b>9.6.1</b> Mean and standard deviation</a></li>
+<li class="chapter" data-level="9.6.2" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#percentages"><i class="fa fa-check"></i><b>9.6.2</b> Percentages</a></li>
+</ul></li>
+<li class="chapter" data-level="9.7" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:robustefficient"><i class="fa fa-check"></i><b>9.7</b> Making choices</a></li>
+<li class="chapter" data-level="9.8" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:standardscores"><i class="fa fa-check"></i><b>9.8</b> Standard scores</a></li>
+<li class="chapter" data-level="9.9" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#spss-3"><i class="fa fa-check"></i><b>9.9</b> SPSS</a></li>
+<li class="chapter" data-level="9.10" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#r-3"><i class="fa fa-check"></i><b>9.10</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html"><i class="fa fa-check"></i><b>10</b> Probability distributions</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:probabilities"><i class="fa fa-check"></i><b>10.1</b> Probabilities</a></li>
+<li class="chapter" data-level="10.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:binomial-distribution"><i class="fa fa-check"></i><b>10.2</b> Binomial probability distribution</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#formulas"><i class="fa fa-check"></i><b>10.2.1</b> formulas</a></li>
+<li class="chapter" data-level="10.2.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-4"><i class="fa fa-check"></i><b>10.2.2</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:normaldistribution"><i class="fa fa-check"></i><b>10.3</b> Normal probability distribution</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#formulas-1"><i class="fa fa-check"></i><b>10.3.1</b> formulas</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:isvarnormaldistributed"><i class="fa fa-check"></i><b>10.4</b> Does my variable have a normal probability distribution?</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#spss-4"><i class="fa fa-check"></i><b>10.4.1</b> SPSS</a></li>
+<li class="chapter" data-level="10.4.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-5"><i class="fa fa-check"></i><b>10.4.2</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:whatifnotnormal"><i class="fa fa-check"></i><b>10.5</b> What if my variable is not normally distributed?</a></li>
+<li class="chapter" data-level="10.6" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:Centrallimittheorem"><i class="fa fa-check"></i><b>10.6</b> Probability distribution of average</a></li>
+<li class="chapter" data-level="10.7" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:confidenceinterval-mean"><i class="fa fa-check"></i><b>10.7</b> Confidence interval of the mean</a>
+<ul>
+<li class="chapter" data-level="10.7.1" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#formulas-2"><i class="fa fa-check"></i><b>10.7.1</b> formulas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html"><i class="fa fa-check"></i><b>11</b> Correlation and regression</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#introduction-5"><i class="fa fa-check"></i><b>11.1</b> Introduction</a></li>
+<li class="chapter" data-level="11.2" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:Pearson"><i class="fa fa-check"></i><b>11.2</b> Pearson product-moment correlation</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#formulas-3"><i class="fa fa-check"></i><b>11.2.1</b> Formulas</a></li>
+<li class="chapter" data-level="11.2.2" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#spss-5"><i class="fa fa-check"></i><b>11.2.2</b> SPSS</a></li>
+<li class="chapter" data-level="11.2.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-6"><i class="fa fa-check"></i><b>11.2.3</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:regression"><i class="fa fa-check"></i><b>11.3</b> Regression</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:regression-formulas"><i class="fa fa-check"></i><b>11.3.1</b> Formulas</a></li>
+<li class="chapter" data-level="11.3.2" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#spss-6"><i class="fa fa-check"></i><b>11.3.2</b> SPSS</a></li>
+<li class="chapter" data-level="11.3.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-7"><i class="fa fa-check"></i><b>11.3.3</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#influential-observations"><i class="fa fa-check"></i><b>11.4</b> Influential observations</a></li>
+<li class="chapter" data-level="11.5" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:Spearman"><i class="fa fa-check"></i><b>11.5</b> Spearman’s rank correlation coefficient</a>
+<ul>
+<li class="chapter" data-level="11.5.1" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#formulas-4"><i class="fa fa-check"></i><b>11.5.1</b> Formulas</a></li>
+<li class="chapter" data-level="11.5.2" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#spss-7"><i class="fa fa-check"></i><b>11.5.2</b> SPSS</a></li>
+<li class="chapter" data-level="11.5.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-8"><i class="fa fa-check"></i><b>11.5.3</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="11.6" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:Phi"><i class="fa fa-check"></i><b>11.6</b> Phi</a>
+<ul>
+<li class="chapter" data-level="11.6.1" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#formulas-5"><i class="fa fa-check"></i><b>11.6.1</b> Formulas</a></li>
+<li class="chapter" data-level="11.6.2" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#spss-8"><i class="fa fa-check"></i><b>11.6.2</b> SPSS</a></li>
+<li class="chapter" data-level="11.6.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-9"><i class="fa fa-check"></i><b>11.6.3</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="11.7" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:correlationcausation"><i class="fa fa-check"></i><b>11.7</b> Last but not least</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="ch-reliability.html"><a href="ch-reliability.html"><i class="fa fa-check"></i><b>12</b> Reliability</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="ch-reliability.html"><a href="ch-reliability.html#introduction-6"><i class="fa fa-check"></i><b>12.1</b> Introduction</a></li>
+<li class="chapter" data-level="12.2" data-path="ch-reliability.html"><a href="ch-reliability.html#what-is-reliability"><i class="fa fa-check"></i><b>12.2</b> What is reliability?</a></li>
+<li class="chapter" data-level="12.3" data-path="ch-reliability.html"><a href="ch-reliability.html#test-theory"><i class="fa fa-check"></i><b>12.3</b> Test theory</a></li>
+<li class="chapter" data-level="12.4" data-path="ch-reliability.html"><a href="ch-reliability.html#interpretations"><i class="fa fa-check"></i><b>12.4</b> Interpretations</a></li>
+<li class="chapter" data-level="12.5" data-path="ch-reliability.html"><a href="ch-reliability.html#methods-for-estimating-reliability"><i class="fa fa-check"></i><b>12.5</b> Methods for estimating reliability</a></li>
+<li class="chapter" data-level="12.6" data-path="ch-reliability.html"><a href="ch-reliability.html#reliability-between-assessors"><i class="fa fa-check"></i><b>12.6</b> Reliability between assessors</a></li>
+<li class="chapter" data-level="12.7" data-path="ch-reliability.html"><a href="ch-reliability.html#reliability-and-construct-validity"><i class="fa fa-check"></i><b>12.7</b> Reliability and construct validity</a></li>
+<li class="chapter" data-level="12.8" data-path="ch-reliability.html"><a href="ch-reliability.html#spss-9"><i class="fa fa-check"></i><b>12.8</b> SPSS</a></li>
+<li class="chapter" data-level="12.9" data-path="ch-reliability.html"><a href="ch-reliability.html#r-10"><i class="fa fa-check"></i><b>12.9</b> R</a></li>
+</ul></li>
+<li class="part"><span><b>Part III: Inferential statistics</b></span></li>
+<li class="chapter" data-level="13" data-path="ch-testing.html"><a href="ch-testing.html"><i class="fa fa-check"></i><b>13</b> Testing hypotheses</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="ch-testing.html"><a href="ch-testing.html#sec:testing-introduction"><i class="fa fa-check"></i><b>13.1</b> Introduction</a></li>
+<li class="chapter" data-level="13.2" data-path="ch-testing.html"><a href="ch-testing.html#sec:ttest-onesample"><i class="fa fa-check"></i><b>13.2</b> One-sample <span class="math inline">\(t\)</span>-test</a>
+<ul>
+<li class="chapter" data-level="13.2.1" data-path="ch-testing.html"><a href="ch-testing.html#sec:ttest-freedomdegrees"><i class="fa fa-check"></i><b>13.2.1</b> Degrees of freedom</a></li>
+<li class="chapter" data-level="13.2.2" data-path="ch-testing.html"><a href="ch-testing.html#sec:formulas13-1"><i class="fa fa-check"></i><b>13.2.2</b> formulas</a></li>
+<li class="chapter" data-level="13.2.3" data-path="ch-testing.html"><a href="ch-testing.html#sec:ttest-assumptions"><i class="fa fa-check"></i><b>13.2.3</b> assumptions</a></li>
+<li class="chapter" data-level="13.2.4" data-path="ch-testing.html"><a href="ch-testing.html#spss-10"><i class="fa fa-check"></i><b>13.2.4</b> SPSS</a></li>
+<li class="chapter" data-level="13.2.5" data-path="ch-testing.html"><a href="ch-testing.html#r-11"><i class="fa fa-check"></i><b>13.2.5</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="13.3" data-path="ch-testing.html"><a href="ch-testing.html#sec:plargerthannull"><i class="fa fa-check"></i><b>13.3</b> <span class="math inline">\(p\)</span>-value is always larger than zero</a></li>
+<li class="chapter" data-level="13.4" data-path="ch-testing.html"><a href="ch-testing.html#sec:ttest-onesidedtwosided"><i class="fa fa-check"></i><b>13.4</b> One-sided and two-sided tests</a></li>
+<li class="chapter" data-level="13.5" data-path="ch-testing.html"><a href="ch-testing.html#sec:t-confidenceinterval-mean"><i class="fa fa-check"></i><b>13.5</b> Confidence interval of the mean</a>
+<ul>
+<li class="chapter" data-level="13.5.1" data-path="ch-testing.html"><a href="ch-testing.html#sec:formulas13-2"><i class="fa fa-check"></i><b>13.5.1</b> formulas</a></li>
+<li class="chapter" data-level="13.5.2" data-path="ch-testing.html"><a href="ch-testing.html#spss-11"><i class="fa fa-check"></i><b>13.5.2</b> SPSS</a></li>
+<li class="chapter" data-level="13.5.3" data-path="ch-testing.html"><a href="ch-testing.html#r-12"><i class="fa fa-check"></i><b>13.5.3</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="13.6" data-path="ch-testing.html"><a href="ch-testing.html#sec:ttest-indep"><i class="fa fa-check"></i><b>13.6</b> Independent samples <span class="math inline">\(t\)</span>-tests</a>
+<ul>
+<li class="chapter" data-level="13.6.1" data-path="ch-testing.html"><a href="ch-testing.html#assumptions"><i class="fa fa-check"></i><b>13.6.1</b> assumptions</a></li>
+<li class="chapter" data-level="13.6.2" data-path="ch-testing.html"><a href="ch-testing.html#sec:ttest-formulas"><i class="fa fa-check"></i><b>13.6.2</b> formulas</a></li>
+<li class="chapter" data-level="13.6.3" data-path="ch-testing.html"><a href="ch-testing.html#sec:SPSS-ttest-unpaired"><i class="fa fa-check"></i><b>13.6.3</b> SPSS</a></li>
+<li class="chapter" data-level="13.6.4" data-path="ch-testing.html"><a href="ch-testing.html#sec:R-ttest-unpaired"><i class="fa fa-check"></i><b>13.6.4</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="13.7" data-path="ch-testing.html"><a href="ch-testing.html#sec:ttest-paired"><i class="fa fa-check"></i><b>13.7</b> <span class="math inline">\(t\)</span>-test for paired observations</a>
+<ul>
+<li class="chapter" data-level="13.7.1" data-path="ch-testing.html"><a href="ch-testing.html#assumptions-1"><i class="fa fa-check"></i><b>13.7.1</b> assumptions</a></li>
+<li class="chapter" data-level="13.7.2" data-path="ch-testing.html"><a href="ch-testing.html#sec:formulas13-4"><i class="fa fa-check"></i><b>13.7.2</b> formulas</a></li>
+<li class="chapter" data-level="13.7.3" data-path="ch-testing.html"><a href="ch-testing.html#sec:SPSS-ttest-paired"><i class="fa fa-check"></i><b>13.7.3</b> SPSS</a></li>
+<li class="chapter" data-level="13.7.4" data-path="ch-testing.html"><a href="ch-testing.html#sec:R-ttest-paired"><i class="fa fa-check"></i><b>13.7.4</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="13.8" data-path="ch-testing.html"><a href="ch-testing.html#sec:ttest-effectsize"><i class="fa fa-check"></i><b>13.8</b> Effect size</a>
+<ul>
+<li class="chapter" data-level="13.8.1" data-path="ch-testing.html"><a href="ch-testing.html#sec:formulas13-5"><i class="fa fa-check"></i><b>13.8.1</b> formulas</a></li>
+<li class="chapter" data-level="13.8.2" data-path="ch-testing.html"><a href="ch-testing.html#spss-13-2"><i class="fa fa-check"></i><b>13.8.2</b> SPSS</a></li>
+<li class="chapter" data-level="13.8.3" data-path="ch-testing.html"><a href="ch-testing.html#r-13"><i class="fa fa-check"></i><b>13.8.3</b> R</a></li>
+<li class="chapter" data-level="13.8.4" data-path="ch-testing.html"><a href="ch-testing.html#confidence-interval-of-the-effect-size"><i class="fa fa-check"></i><b>13.8.4</b> Confidence interval of the effect size</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="ch-power.html"><a href="ch-power.html"><i class="fa fa-check"></i><b>14</b> Power</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="ch-power.html"><a href="ch-power.html#sec:power-introduction"><i class="fa fa-check"></i><b>14.1</b> Introduction</a></li>
+<li class="chapter" data-level="14.2" data-path="ch-power.html"><a href="ch-power.html#sec:effectsize-power"><i class="fa fa-check"></i><b>14.2</b> Relation between effect size and power</a></li>
+<li class="chapter" data-level="14.3" data-path="ch-power.html"><a href="ch-power.html#sec:samplesize-power"><i class="fa fa-check"></i><b>14.3</b> Relation between sample size and power</a></li>
+<li class="chapter" data-level="14.4" data-path="ch-power.html"><a href="ch-power.html#sec:significancelevel-power"><i class="fa fa-check"></i><b>14.4</b> Relation between significance level and power</a></li>
+<li class="chapter" data-level="14.5" data-path="ch-power.html"><a href="ch-power.html#disadvantages-of-insufficient-power"><i class="fa fa-check"></i><b>14.5</b> Disadvantages of insufficient power</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="ch-anova.html"><a href="ch-anova.html"><i class="fa fa-check"></i><b>15</b> Analysis of variance</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="ch-anova.html"><a href="ch-anova.html#sec:introduction"><i class="fa fa-check"></i><b>15.1</b> Introduction</a></li>
+<li class="chapter" data-level="15.2" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-examples"><i class="fa fa-check"></i><b>15.2</b> Some examples</a>
+<ul>
+<li class="chapter" data-level="15.2.1" data-path="ch-anova.html"><a href="ch-anova.html#assumptions-2"><i class="fa fa-check"></i><b>15.2.1</b> assumptions</a></li>
+</ul></li>
+<li class="chapter" data-level="15.3" data-path="ch-anova.html"><a href="ch-anova.html#one-way-analysis-of-variance"><i class="fa fa-check"></i><b>15.3</b> One-way analysis of variance</a>
+<ul>
+<li class="chapter" data-level="15.3.1" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-explanation"><i class="fa fa-check"></i><b>15.3.1</b> An intuitive explanation</a></li>
+<li class="chapter" data-level="15.3.2" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-formal"><i class="fa fa-check"></i><b>15.3.2</b> A formal explanation</a></li>
+<li class="chapter" data-level="15.3.3" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-effectsize"><i class="fa fa-check"></i><b>15.3.3</b> Effect size</a></li>
+<li class="chapter" data-level="15.3.4" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-planned"><i class="fa fa-check"></i><b>15.3.4</b> Planned comparisons</a></li>
+<li class="chapter" data-level="15.3.5" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-posthoc"><i class="fa fa-check"></i><b>15.3.5</b> Post-hoc comparisons</a></li>
+<li class="chapter" data-level="15.3.6" data-path="ch-anova.html"><a href="ch-anova.html#spss-12"><i class="fa fa-check"></i><b>15.3.6</b> SPSS</a></li>
+<li class="chapter" data-level="15.3.7" data-path="ch-anova.html"><a href="ch-anova.html#r-14"><i class="fa fa-check"></i><b>15.3.7</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="15.4" data-path="ch-anova.html"><a href="ch-anova.html#two-way-analysis-of-variance"><i class="fa fa-check"></i><b>15.4</b> Two-way analysis of variance</a>
+<ul>
+<li class="chapter" data-level="15.4.1" data-path="ch-anova.html"><a href="ch-anova.html#an-intuitive-explanation"><i class="fa fa-check"></i><b>15.4.1</b> An intuitive explanation</a></li>
+<li class="chapter" data-level="15.4.2" data-path="ch-anova.html"><a href="ch-anova.html#a-formal-explanation"><i class="fa fa-check"></i><b>15.4.2</b> A formal explanation</a></li>
+<li class="chapter" data-level="15.4.3" data-path="ch-anova.html"><a href="ch-anova.html#spss-13"><i class="fa fa-check"></i><b>15.4.3</b> SPSS</a></li>
+<li class="chapter" data-level="15.4.4" data-path="ch-anova.html"><a href="ch-anova.html#r-15"><i class="fa fa-check"></i><b>15.4.4</b> R</a></li>
+</ul></li>
+</ul></li>
+<li class="appendix"><span><b>Appendices</b></span></li>
+<li class="chapter" data-level="A" data-path="app-randomnumbers.html"><a href="app-randomnumbers.html"><i class="fa fa-check"></i><b>A</b> Random numbers</a></li>
+<li class="chapter" data-level="B" data-path="app-criticalZvalues.html"><a href="app-criticalZvalues.html"><i class="fa fa-check"></i><b>B</b> Standard normal probability distribution</a></li>
+<li class="chapter" data-level="C" data-path="app-criticaltvalues.html"><a href="app-criticaltvalues.html"><i class="fa fa-check"></i><b>C</b> Critical values for <span class="math inline">\(t\)</span>-distribution</a></li>
+<li class="chapter" data-level="D" data-path="app-criticalchi2values.html"><a href="app-criticalchi2values.html"><i class="fa fa-check"></i><b>D</b> Critical values for <span class="math inline">\(\chi^2\)</span>-distribution</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Created with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Quantitative Methods and Statistics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ch:anova" class="section level1" number="15">
+<h1><span class="header-section-number">15</span> Analysis of variance</h1>
+<div id="sec:introduction" class="section level2" number="15.1">
+<h2><span class="header-section-number">15.1</span> Introduction</h2>
+<p>This chapter is about an often used statistical analysis, called
+analysis of variance (often abbreviated to ANOVA).</p>
+<p>The structure of this chapter is as follows. We will begin in §<a href="ch-anova.html#sec:anova-examples">15.2</a>
+with some examples of research studies whose outcomes
+can be tested with analysis of variance. The purpose of this section
+is to familiarise you with the technique,
+with the new terminology, and with the conditions under which this technique
+can be used. In §<a href="ch-anova.html#sec:anova-oneway-explanation">15.3.1</a>, we will introduce this technique
+in an intuitive manner by looking at the thinking behind the test. In
+§<a href="ch-anova.html#sec:anova-oneway-formal">15.3.2</a> we derive a formal form for the most important
+test statistic, the <span class="math inline">\(F\)</span>-ratio.</p>
+</div>
+<div id="sec:anova-examples" class="section level2" number="15.2">
+<h2><span class="header-section-number">15.2</span> Some examples</h2>
+<p>Just like the <em>t</em>-test, analysis of variance is a statistical generalisation
+technique, which is to say: an instrument that can be used
+when formulating statements about the population characteristics,
+on the basis of data taken from samples from these populations.
+In the case of the <em>t</em>-test and ANOVA, the statements are about
+whether or not the means of (two or more) populations are equal.
+In this sense, analysis of variance can also be understood as an
+expanded version of the <em>t</em>-test: we can analyse data
+of more than two samples with ANOVA. Moreover, it is possible to include the effects
+of multiple independent variables simultaneously in the analysis. This is useful
+when we want to analyse data from a factorial design
+(§<a href="ch-design.html#sec:factorial-designs">6.8</a>).</p>
+<hr />
+<blockquote>
+<p><em>Examples 15.1</em>: In this example, we investigate the speech tempo or
+speed of four groups of speakers, namely originating from the Middle, North,
+South and West of the Netherlands. The speech tempo is expressed as the mean
+duration of a syllable (in seconds), with the mean taken over an interview of approximately
+15 minutes with each speaker <span class="citation">(Quené <a href="#ref-Quene08" role="doc-biblioref">2008</a>)</span> <span class="citation">(Quené <a href="#ref-R-hqmisc" role="doc-biblioref">2014</a>)</span>.
+A shorter mean syllable duration thus corresponds to a faster speaker (cf. skating, where a faster skater has shorter lap durations). There were 20
+speakers per group, but 1 speaker (from the South), who had an extremely high value,
+was removed from the sample.</p>
+</blockquote>
+<hr />
+<p>The observed speech tempos per speaker from the above Example 15.1 are summarised
+in Table <a href="ch-anova.html#tab:sylduration">15.1</a> and Figure <a href="ch-anova.html#fig:sylduration-boxplot">15.1</a>.</p>
+<p>Here, the region of origin is an independent categorial variable or ‘factor’.
+The values of this factor are also referred to as ‘levels’, or in many studies
+as ‘groups’ or ‘conditions’. Each level or each group or condition forms
+a ‘cell’ of the design, and the observations from that cell are also
+called ‘replications’ (consider why they are called this).
+The speech tempo is the dependent variable. The null hypothesis is that the
+dependent variable means are equal for all groups, thus
+H0: <span class="math inline">\(\mu_M = \mu_N = \mu_Z = \mu_W\)</span>. If we reject H0, then that means
+<em>only</em> that not all means are equal, but it does <em>not</em> mean that each group
+mean deviates from each other group mean. For this, a further (post-hoc)
+study is necessary; we will return to this later.</p>
+<table>
+<caption><span id="tab:sylduration">Table 15.1: </span> Mean speech tempos, with standard deviation and numbers
+of speakers, divided according to region of origin of the speaker (see Example
+15.1).</caption>
+<thead>
+<tr class="header">
+<th align="left">Region</th>
+<th align="center">Mean</th>
+<th align="center">s.d.</th>
+<th align="center">n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Middle</td>
+<td align="center">0.253</td>
+<td align="center">0.028</td>
+<td align="center">20</td>
+</tr>
+<tr class="even">
+<td align="left">North</td>
+<td align="center">0.269</td>
+<td align="center">0.029</td>
+<td align="center">20</td>
+</tr>
+<tr class="odd">
+<td align="left">South</td>
+<td align="center">0.260</td>
+<td align="center">0.030</td>
+<td align="center">19</td>
+</tr>
+<tr class="even">
+<td align="left">West</td>
+<td align="center">0.235</td>
+<td align="center">0.028</td>
+<td align="center">20</td>
+</tr>
+</tbody>
+</table>
+<div class="figure"><span id="fig:sylduration-boxplot"></span>
+<img src="QMS-EN_files/figure-html/sylduration-boxplot-1.png" alt="Boxplot of the mean length of syllable, split up according to region of origin of the speaker." width="672" />
+<p class="caption">
+Figure 15.1: Boxplot of the mean length of syllable, split up according to region of origin of the speaker.
+</p>
+</div>
+<p>In order to investigate whether the four populations differ in their average
+speech tempo, we could in the first instance conduct <em>t</em>-tests for all pairs
+of levels. (With 4 levels, that would require 6 tests, see
+equation <a href="ch-probability-distributions.html#eq:choose">(10.6)</a> with <span class="math inline">\(n=4\)</span> and <span class="math inline">\(x=2\)</span>). There are however various
+objections to this approach. We will discuss one of these here. For
+each test, we use a p-value of <span class="math inline">\(\alpha=.05\)</span>.
+We thus have a probability of .95 of a correct decision without a Type I error.
+The probability that we will make a correct decision for all 6 tests is
+<span class="math inline">\(.95^6 = .731\)</span> (according to the multiplication principle,
+equation <a href="ch-probability-distributions.html#eq:probability-productrule">(10.4)</a>).
+The joint probability of one or more
+Type I error(s) in the 6 tests is thus no longer <span class="math inline">\(.05\)</span>, but has now
+increased to <span class="math inline">\(1-.731 = .265\)</span>, more than a quarter!</p>
+<p>Analysis of variance now offers the possibility of investigating the
+aforementioned null hypothesis on the basis of
+a single testing (thus not 6 tests). Analysis of variance can thus be best
+characterised as a global testing technique, which is most suitable
+if a priori you are not able or do not want to make any specific predictions
+about the differences between the populations.</p>
+<p>An analysis of variance applied to the scores summarised in
+Table <a href="ch-anova.html#tab:sylduration">15.1</a>
+will lead to the rejection of the null hypothesis: the 4 regional
+means are not equal. The differences found are, in all probability, not due to
+chance sample fluctuations, but instead to systematic differences between
+the groups (<span class="math inline">\(\alpha=.05\)</span>). Can it now be concluded that the differences
+found in speech tempo are <em>caused</em> by differences in the origin of the
+speaker? Here, restraint is required (see
+§<a href="ch-validity.html#sec:causality">5.2</a>). After all, it cannot be excluded that
+the four populations not only differ systematically from each other in speech
+tempo, but also in other relevant factors which were not included in the study,
+such as health, wealth, or education. We would only be able to exclude these other
+factors if we allocated the participants randomly to the selected levels of the
+independent variable. However, this is not possible when we are concerned with the
+region of origin of the speaker: we can usually assign a speaker (randomly)
+to a form of treatment or condition, but not to a region of origin. In fact,
+the study in Example 15.1 is thus quasi-experimental.</p>
+<p>For our second example, we involve a second factor in the same study
+on speech tempo, namely also the speaker’s gender.
+ANOVA enables us, in one single analysis, to test whether (i) the four
+regions differ from each other (H0: <span class="math inline">\(\mu_M = \mu_N = \mu_Z = \mu_W\)</span>), and
+(ii) whether the two genders differ from each other (H0:
+<span class="math inline">\(\mu_\textrm{woman} = \mu_\textrm{man}\)</span>), and (iii) whether the differences
+between the regions are the same for both genders (or, put differently, whether
+the differences between the genders are the same for all
+regions). We call the latter differences the ‘interaction’ between the two factors.</p>
+<table>
+<caption><span id="tab:sylduration2way">Table 15.2: </span> Mean speech tempos, with standard deviation and
+numbers of speakers, divided according to gender and the speaker’s region of origin
+(see Example 15.1).</caption>
+<thead>
+<tr class="header">
+<th align="center">Gender</th>
+<th align="center">Region</th>
+<th align="center">Mean</th>
+<th align="center">s.d.</th>
+<th align="center">n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Woman</td>
+<td align="center">Middle</td>
+<td align="center">0.271</td>
+<td align="center">0.021</td>
+<td align="center">10</td>
+</tr>
+<tr class="even">
+<td align="center">Woman</td>
+<td align="center">North</td>
+<td align="center">0.285</td>
+<td align="center">0.025</td>
+<td align="center">10</td>
+</tr>
+<tr class="odd">
+<td align="center">Woman</td>
+<td align="center">South</td>
+<td align="center">0.269</td>
+<td align="center">0.028</td>
+<td align="center">9</td>
+</tr>
+<tr class="even">
+<td align="center">Woman</td>
+<td align="center">West</td>
+<td align="center">0.238</td>
+<td align="center">0.028</td>
+<td align="center">10</td>
+</tr>
+<tr class="odd">
+<td align="center">Man</td>
+<td align="center">Middle</td>
+<td align="center">0.235</td>
+<td align="center">0.022</td>
+<td align="center">10</td>
+</tr>
+<tr class="even">
+<td align="center">Man</td>
+<td align="center">North</td>
+<td align="center">0.253</td>
+<td align="center">0.025</td>
+<td align="center">10</td>
+</tr>
+<tr class="odd">
+<td align="center">Man</td>
+<td align="center">South</td>
+<td align="center">0.252</td>
+<td align="center">0.030</td>
+<td align="center">10</td>
+</tr>
+<tr class="even">
+<td align="center">Man</td>
+<td align="center">West</td>
+<td align="center">0.232</td>
+<td align="center">0.028</td>
+<td align="center">10</td>
+</tr>
+</tbody>
+</table>
+<p>The results in Table <a href="ch-anova.html#tab:sylduration2way">15.2</a> suggest that (i) speakers from the
+West speak more quickly than the others, and that (ii) men speak more quickly than
+women (!). And (iii) the difference between men and women appears to be smaller
+for speakers from the West than for speakers from other regions.</p>
+<div id="assumptions-2" class="section level3" number="15.2.1">
+<h3><span class="header-section-number">15.2.1</span> assumptions</h3>
+<p>The analysis of variance requires four assumptions which
+must be satisfied to use this test; these assumptions match those of the
+<em>t</em>-test
+(§<a href="ch-testing.html#sec:ttest-assumptions">13.2.3</a>).</p>
+<ul>
+<li><p>The data has to be measured on an interval level of measurement (see
+§<a href="ch-levelsofmeasurement.html#sec:interval">4.4</a>).</p></li>
+<li><p>All observations have to be independent of each other.</p></li>
+<li><p>The scores have to be normally distributed (see
+§<a href="ch-probability-distributions.html#sec:isvarnormaldistributed">10.4</a>).</p></li>
+<li><p>The variance of the scores has to be (approximately) equal in
+the scores of the respective groups or conditions (see
+§<a href="ch-centre-and-dispersion.html#sec:variance">9.5.1</a>).
+The more the samples differ in size, the more serious
+violating this assumption is. It is thus sensible to work with
+equally large, and preferably not too small samples.</p></li>
+</ul>
+<p>Summarising: analysis of variance can be used to compare multiple
+population means, and to determine the effects of multiple
+factors and combinations of factors (interactions).
+Analysis of variance does require that data satisfy multiple
+conditions.</p>
+</div>
+</div>
+<div id="one-way-analysis-of-variance" class="section level2" number="15.3">
+<h2><span class="header-section-number">15.3</span> One-way analysis of variance</h2>
+<div id="sec:anova-oneway-explanation" class="section level3" number="15.3.1">
+<h3><span class="header-section-number">15.3.1</span> An intuitive explanation</h3>
+<p>As stated, we use analysis of variance to investigate whether the
+scores of different groups, or those collected under different conditions,
+differ from each other. However — scores <em>always</em> differ
+from each other, through chance fluctuations between the replications within
+each sample. In the preceding chapters, we already encountered
+many examples of chance fluctuations within the same sample and within
+the same condition. The question then is whether the scores
+<em>between</em> the different groups (or gathered under different
+conditions) differ more from each other than you would expect on the
+basis of chance fluctuations <em>within</em> each group or cell.</p>
+<p>The aforementioned “differences between scores” taken together form the
+variance of those scores
+(§<a href="ch-centre-and-dispersion.html#sec:variance">9.5.1</a>). For analysis of variance, we divide the total
+variance into two parts: firstly, the variance caused by (systematic)
+differences <em>between</em> groups, and secondly, the variance caused
+by (chance) differences <em>within</em> groups. If H0 is true,
+and if there are thus no differences (in the populations) between the
+groups, then we nevertheless expect (in the samples of the groups)
+some differences between the mean scores of the groups, be it that
+the last mentioned differences will not be greater than
+the chance differences within the groups, if H0 is true.
+Read this paragraph again carefully.</p>
+<p>This approach is illustrated in
+Figure <a href="ch-anova.html#fig:colours-obs">15.2</a>, in which the scores from three experimental
+groups (with random assignment of participants to the groups) are shown:
+the red, grey and blue group. The scores differ from each other, at least
+through chance fluctuations of the scores within
+each group. There are probably also systematic differences between (the
+mean scores of) the three groups. However, are these systematic
+differences now comparatively larger than the chance differences within each
+group? If so, then we reject H0.</p>
+<div class="figure"><span id="fig:colours-obs"></span>
+<img src="QMS-EN_files/figure-html/colours-obs-1.png" alt="Simulated observations of three experimental groups: red (downwards triangle), grey (diamond), and blue (upwards triangle) (n=15 per group), with the mean per group (in dashed lines), and with the mean over all observations (dotted line)." width="672" />
+<p class="caption">
+Figure 15.2: Simulated observations of three experimental groups: red (downwards triangle), grey (diamond), and blue (upwards triangle) (n=15 per group), with the mean per group (in dashed lines), and with the mean over all observations (dotted line).
+</p>
+</div>
+<p>The systematic differences <em>between</em> the groups correspond with the
+differences from the red, grey and blue group means
+(dashed lines in Figure <a href="ch-anova.html#fig:colours-obs">15.2</a>) relative to the mean over
+all observations (dotted line). For the first observation, that is a
+negative deviation since the score is below the general mean
+(dotted line). The chance differences <em>within</em> the groups
+correspond to the deviation of each observation relative to the
+group mean (for the first observation that is thus a positive
+deviation, since the score is above the group average of the red
+group).</p>
+<p>Let us now make the switch from ‘differences’ to ‘variance’. We then split
+the deviation of each observation relative to the general
+mean into to two deviations: first, the deviation of the group
+mean relative the general mean, and, second, the deviation of
+each replication relative to the group mean. These are two pieces of variance
+which together form the total variance. Vice versa, we can thus divide
+the total variance into two components, which is where the name
+‘analysis of variance’ comes from. (In the next section, we will explain
+how these components are calculated, taking into account the number of
+observations and the number of groups.)</p>
+<p>Dividing the total variance into two variance components is
+useful because we can determine the <em>ratio</em> between these two parts.
+The ratio between the variances is called the <span class="math inline">\(F\)</span>-ratio, and we use
+this ratio to test H0.</p>
+<p><span class="math display">\[\textrm{H0}: \textrm{variance between groups} = \textrm{variance within groups}\]</span></p>
+<p><span class="math display">\[\textrm{H0}: F = \frac{\textrm{variance between groups}}{\textrm{variance within groups}} = 1\]</span></p>
+<p>As such, the <span class="math inline">\(F\)</span>-ratio is a test statistic whose probability distribution
+is known if H0 is true. In the example of Figure
+<a href="ch-anova.html#fig:colours-obs">15.2</a>, we find <span class="math inline">\(F=3.22\)</span>, with 3 groups and 45
+observations, <span class="math inline">\(p=.0004\)</span>. We thus find a relatively large systematic
+variance <em>between</em> groups here, compared to the relatively
+small chance variance <em>within</em> groups: the former variance
+(the fraction <span class="math inline">\(F\)</span>’s numerator) is more than <span class="math inline">\(3\times\)</span> as large as the
+latter variance (the fraction <span class="math inline">\(F\)</span>’s denominator). The probability
+<span class="math inline">\(p\)</span> of finding this fraction if H0 is true, is exceptionally small,
+and we thus reject H0. (In the following section, we will explain how
+this probability is determined, again taking into account the number of
+observations and the number of groups.) We then speak of a significant effect
+of the factor on the dependent variable.</p>
+<p>At the end of this section, we repeat the core essence of<br />
+analysis of variance. We divide the total variance into two parts: the
+possible systematic variance between groups or conditions, and the
+variance within groups or conditions (i.e. ever present, chance
+fluctuation between replications). The test statistic <span class="math inline">\(F\)</span> consists of the
+proportion between these two variances. We do a one-sided test to see
+whether <span class="math inline">\(F=1\)</span>, and reject H0 if <span class="math inline">\(F&gt;1\)</span> such that the probability
+<span class="math inline">\(P(F|\textrm{H0}) &lt; \alpha\)</span>. The mean scores of the groups or conditions
+are then in all probability not equal. With this, we do not yet know
+which groups differ from each other - for this another further
+(post-hoc) analysis is needed
+(§<a href="ch-anova.html#sec:anova-oneway-posthoc">15.3.5</a> below).</p>
+</div>
+<div id="sec:anova-oneway-formal" class="section level3" number="15.3.2">
+<h3><span class="header-section-number">15.3.2</span> A formal explanation</h3>
+<p>For our explanation, we begin with the observed scores. We assume that
+the scores are constructed according to a certain statistical model, namely
+as the sum of the population mean (<span class="math inline">\(\mu\)</span>), a systematic
+effect (<span class="math inline">\(\alpha_j\)</span>) of the <span class="math inline">\(j\)</span>’the condition or group (over <span class="math inline">\(k\)</span> conditions
+or groups), and a chance effect (<span class="math inline">\(e_{ij}\)</span>) for the <span class="math inline">\(i\)</span>’the replication within
+the <span class="math inline">\(j\)</span>’the condition or group (over <span class="math inline">\(N\)</span> replications in
+total). In formula:
+<span class="math display">\[x_{ij} = \mu + \alpha_{j} + e_{ij}\]</span>
+Here too, we thus again analyse each score in a systematic part and
+a chance part. This is the case not only for the scores themselves, but also
+for the deviations of each score relative to the total mean
+(see §<a href="ch-anova.html#sec:anova-oneway-explanation">15.3.1</a>).</p>
+<p>Thus, three variances are of interest. Firstly, the total
+variance (see equation
+<a href="ch-centre-and-dispersion.html#eq:variance">(9.3)</a>, abbreviated to <code>t</code>) over all <span class="math inline">\(N\)</span>
+observations from all groups or conditions together:
+<span class="math display" id="eq:MStotal">\[\begin{equation}
+  \tag{15.1}
+    s^2_t = \frac{ \sum (x_{ij} - \overline{x})^2 } {N-1}
+\end{equation}\]</span>
+Secondly the variance ‘between’ (abbreviated to <code>b</code>) the groups
+or conditions:
+<span class="math display" id="eq:MSbetween">\[\begin{equation}
+  \tag{15.2}
+    s^2_b = \frac{ \sum_{j=1}^{j=k} n_j (\overline{x_j} - \overline{x})^2 } {k-1}
+\end{equation}\]</span>
+and, thirdly, the variance ‘within’ (shortened to <code>w</code>) the groups or
+conditions:
+<span class="math display" id="eq:MSwithin">\[\begin{equation}
+  \tag{15.3}
+    s^2_w = \frac{ \sum_{j=1}^{j=k} \sum_i (x_{ij} - \overline{x_j})^2 } {N-k}
+\end{equation}\]</span></p>
+<p>In these comparisons, the <em>numerators</em> are formed from the sum of
+the squared deviations (‘sums of squares’, shortened to <code>SS</code>). In the
+previous section, we indicated that the deviations add up to each other,
+and that then is also the case for the summed and squared
+deviations:
+<span class="math display" id="eq:SStotal">\[\begin{align}
+  \tag{15.4}
+    { \sum (x_{ij} - \overline{x})^2 } &amp;= 
+    { \sum_{j=1}^{j=k} n_j (\overline{x_j} - \overline{x})^2 } + 
+    { \sum_{j=1}^{j=k} \sum_i (x_{ij} - \overline{x_j})^2 } \\
+    \textrm{SS}_t &amp;= \textrm{SS}_b + \textrm{SS}_w
+\end{align}\]</span></p>
+<p>The
+<em>numerators</em> of the variances are formed from the degrees of freedom
+(abbreviated <code>df</code>, see
+§<a href="ch-testing.html#sec:ttest-freedomdegrees">13.2.1</a>). For the variance between
+groups <span class="math inline">\(s^2_b\)</span>, that is the number of groups or conditions, minus 1 (<span class="math inline">\(k-1\)</span>).
+For the variance within groups <span class="math inline">\(s^2_w\)</span>, that is the number of observations,
+minus the number of groups (<span class="math inline">\(N-k\)</span>). For the total variance, that is the
+number of observations minus 1 (<span class="math inline">\(N-1\)</span>). The degrees of freedom of the
+deviations also add up to each other:
+<span class="math display" id="eq:dftotal1">\[\begin{align}
+  \tag{15.5}
+    { (N-1) } &amp;= { (k-1) } + { (N-k) } \\
+    \textrm{df}_t &amp;= \textrm{df}_b + \textrm{df}_w
+\end{align}\]</span></p>
+<p>The above fractions which describe the variances <span class="math inline">\(s^2_t\)</span>, <span class="math inline">\(s^2_b\)</span> and <span class="math inline">\(s^2_w\)</span>,
+are also referred to as the ‘mean squares’ (shortened to <code>MS</code>).
+<span class="math inline">\(\textrm{MS}_{t}\)</span> is by definition equal to the ‘normal’ variance
+<span class="math inline">\(s^2_x\)</span> (see the identical equations
+<a href="ch-centre-and-dispersion.html#eq:variance">(9.3)</a> and
+<a href="ch-anova.html#eq:MStotal">(15.1)</a>).</p>
+<p>The test statistic <span class="math inline">\(F\)</span> is defined as the ratio of the two
+variance components defined above:
+<span class="math display" id="eq:Fratio">\[\begin{equation}
+  \tag{15.6}
+    F = \frac{ s^2_b } { s^2_w }
+\end{equation}\]</span>
+with not one but two
+degrees of freedom, resp. <span class="math inline">\((k-1)\)</span> for the numerator and <span class="math inline">\((N-k)\)</span> for the denominator.</p>
+<p>You can determine the p-value <span class="math inline">\(p\)</span> which belongs with the
+<span class="math inline">\(F\)</span> found using a table, but we usually conduct an
+analysis of variance using a computer, and it then also calculates the
+p-value.</p>
+<p>The results of an analysis of variance are summarised in a fixed format
+in a so-called ANOVA table, like
+Table <a href="ch-anova.html#tab:colours-anova">15.3</a>. This contains the most important
+information summarised. However, the whole table can also be summarised in
+one sentence, see Example 15.2.</p>
+<table>
+<caption><span id="tab:colours-anova">Table 15.3: </span> Summary of analysis of variance of the observations in Figure <a href="ch-anova.html#fig:colours-obs">15.2</a>.</caption>
+<thead>
+<tr class="header">
+<th align="left">Variance Source</th>
+<th align="center">df</th>
+<th align="center">SS</th>
+<th align="center">MS</th>
+<th align="center"><span class="math inline">\(F\)</span></th>
+<th align="center"><span class="math inline">\(p\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Group</td>
+<td align="center">2</td>
+<td align="center">14.50</td>
+<td align="center">7.248</td>
+<td align="center">9.356</td>
+<td align="center">0.0004</td>
+</tr>
+<tr class="even">
+<td align="left">(within)</td>
+<td align="center">42</td>
+<td align="center">32.54</td>
+<td align="center">0.775</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<blockquote>
+<p><em>Example 15.2</em>:
+The mean scores are not equal for the red, grey and blue group
+[<span class="math inline">\(F(2,42) = 9.35\)</span>, <span class="math inline">\(p = .0004\)</span>, <span class="math inline">\(\omega^2 = 0.28\)</span>].</p>
+</blockquote>
+<hr />
+</div>
+<div id="sec:anova-oneway-effectsize" class="section level3" number="15.3.3">
+<h3><span class="header-section-number">15.3.3</span> Effect size</h3>
+<p>Just like with the <span class="math inline">\(t\)</span>-test, it is not only important to make a binary decision
+about H0, but it is at least equally important to know how large
+the observed effect is (see also
+§<a href="ch-testing.html#sec:ttest-effectsize">13.8</a>). This effect size for
+analysis of variance can be expressed in different measures, of which we will
+discuss two (this section is based on <span class="citation">Kerlinger and Lee (<a href="#ref-KL00" role="doc-biblioref">2000</a>)</span>; see also <span class="citation">Olejnik and Algina (<a href="#ref-Olej03" role="doc-biblioref">2003</a>)</span>).</p>
+<p>The simplest measure is the so-called <span class="math inline">\(\eta^2\)</span> (“eta
+squared”), the proportion of the total SS which can be attributed to the
+differences between the groups or conditions: <span class="math display">\[\label{eq:etasq}
+    \eta^2 = \frac{ \textrm{SS}_b } { \textrm{SS}_t }\]</span> The effect size
+<span class="math inline">\(\eta^2\)</span> is a proportion between 0 and 1, which indicates how much of the
+variance in the <em>sample</em> can be assigned to the independent
+variable.</p>
+<p>The second measure for effect size with analysis of variance is the so-called
+<span class="math inline">\(\omega^2\)</span> (“omega squared”):
+<span class="math display" id="eq:omegasq">\[\begin{equation}
+  \tag{15.7}
+    \omega^2 = \frac{ \textrm{SS}_b - (k-1) \textrm{MS}_w} { \textrm{SS}_t + \textrm{MS}_w }
+\end{equation}\]</span>
+The effect size <span class="math inline">\(\omega^2\)</span> is also a proportion; this is an estimation
+of the proportion of the variance in the <em>population</em> which can be attributed
+to the independent variable, where the estimation is of course based
+on the investigated sample. As we are generally more interested in
+generalisation to the population than to the sample, we prefer <span class="math inline">\(\omega^2\)</span>
+as the measure for the effect size.</p>
+<p>We should not only report the <span class="math inline">\(F\)</span>-ratio, degrees of freedom,
+and p-values, but also the effect size (see
+Example 15.2 above).</p>
+<blockquote>
+<p>“It is not enough to report
+<span class="math inline">\(F\)</span>-ratios and whether they are statistically significant. We must know
+how strong relations are. After all, with large enough <span class="math inline">\(N\)</span>s, <span class="math inline">\(F\)</span>- and
+<span class="math inline">\(t\)</span>-ratios can almost always be statistically significant. While often
+sobering in their effect, especially when they are low, coefficients of
+association of independent and dependent variables [i.e., effect size
+coefficients] are <em>indispensable</em> parts of research results” <span class="citation">(Kerlinger and Lee <a href="#ref-KL00" role="doc-biblioref">2000</a>, 327, emphasis added)</span>.</p>
+</blockquote>
+</div>
+<div id="sec:anova-oneway-planned" class="section level3" number="15.3.4">
+<h3><span class="header-section-number">15.3.4</span> Planned comparisons</h3>
+<p>In Example 15.2 (see
+Figure <a href="ch-anova.html#fig:colours-obs">15.2</a>), we investigated the differences between
+scores from the red, grey and blue groups. The null hypothesis which was tested
+was H0:
+<span class="math inline">\(\mu_\textrm{red} = \mu_\textrm{grey} = \mu_\textrm{blue}\)</span>.
+However, it is also quite possible that a researcher already has
+certain ideas about the differences between groups, and is looking in a
+<em>focused</em> manner for certain differences, and wants to actually ignore other
+differences. The planned comparisons are also called ‘contrasts’.</p>
+<p>Let us assume for the same example that the researcher already expects,
+from previous research, that the red and blue group scores will differ from
+each other. The H0 above is then no longer interesting to investigate, since
+we expect in advance that we will reject H0. The researcher now wants to know
+in a planned way (1) whether the red group scores lower than the other two groups,
+(H0: <span class="math inline">\(\mu_\textrm{red} = (\mu_\textrm{grey}+\mu_\textrm{blue})/2\)</span>),
+and (2)
+whether the grey and blue groups differ from each other (H0:
+<span class="math inline">\(\mu_\textrm{grey} = \mu_\textrm{blue}\)</span>).<a href="#fn34" class="footnote-ref" id="fnref34"><sup>34</sup></a></p>
+<p>The factor ‘group’ or ‘colour’ has 2 degrees of freedom, and that means that we
+can make precisely 2 of such planned comparisons or ‘contrasts’ which are
+independent of each other. Such independent contrasts
+are called ‘orthogonal’.</p>
+<p>In an analysis of variance with planned comparisons, the variance between
+groups or conditions is divided even further, namely into the planned
+contrasts such as the two above (see
+Table <a href="ch-anova.html#tab:colours-anova-contrast">15.4</a>). We omit further explanation
+about planned comparisons but our advice is to make
+smart use of these planned comparisons when possible. Planned comparisons are advised whenever
+you can formulate a more
+specific null hypothesis than H0: “the mean scores are equal
+in all groups or conditions”. We can make planned statements
+about the differences between the groups in our example:</p>
+<hr />
+<blockquote>
+<p><em>Example 15.3</em>:
+The mean score of the red
+group is significantly lower than that from the two other groups combined
+[<span class="math inline">\(F(1,42)=18.47, p=.0001, \omega^2=0.28\)</span>]. The mean score is
+almost the same for the grey and blue group
+[<span class="math inline">\(F(1,42)&lt;1, \textrm{n.s.}, \omega^2=0.00\)</span>].
+This implies that the red group achieves significantly lower scores than the
+grey group and than the blue group.</p>
+</blockquote>
+<hr />
+<table>
+<caption><span id="tab:colours-anova-contrast">Table 15.4: </span> Summary of analysis of variance of the observations in Figure <a href="ch-anova.html#fig:colours-obs">15.2</a>, with planned contrasts between groups.</caption>
+<thead>
+<tr class="header">
+<th align="left">Variance source</th>
+<th align="center">df</th>
+<th align="center">SS</th>
+<th align="center">MS</th>
+<th align="center"><span class="math inline">\(F\)</span></th>
+<th align="center"><span class="math inline">\(p\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Group</td>
+<td align="center">2</td>
+<td align="center">14.50</td>
+<td align="center">7.248</td>
+<td align="center">9.356</td>
+<td align="center">0.0004</td>
+</tr>
+<tr class="even">
+<td align="left">  Group, contrast 1</td>
+<td align="center">1</td>
+<td align="center">14.31</td>
+<td align="center">14.308</td>
+<td align="center">18.470</td>
+<td align="center">0.0001</td>
+</tr>
+<tr class="odd">
+<td align="left">  Group, contrast 2</td>
+<td align="center">1</td>
+<td align="center">0.19</td>
+<td align="center">0.188</td>
+<td align="center">0.243</td>
+<td align="center">0.6248</td>
+</tr>
+<tr class="even">
+<td align="left">(within)</td>
+<td align="center">42</td>
+<td align="center">32.54</td>
+<td align="center">0.775</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>The analysis of variance with planned comparisons can thus be used
+if you already have planned (a priori) hypotheses over differences between
+certain (combinations of) groups or conditions. “A priori” means that these
+hypotheses (contrasts) are formulated before the observations have been made.
+These hypotheses can be based on theoretical considerations, or on
+previous research results.</p>
+<div id="orthogonal-contrasts" class="section level4" number="15.3.4.1">
+<h4><span class="header-section-number">15.3.4.1</span> Orthogonal contrasts</h4>
+<p>Each contrast can be expressed in the form of weights for each
+condition. For the contrasts discussed above, that can be done
+in the form of the following weights:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Condition</th>
+<th align="center">Contrast 1</th>
+<th align="center">Contrast 2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">  Red</td>
+<td align="center">-1</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="center">  Grey</td>
+<td align="center">+0.5</td>
+<td align="center">-1</td>
+</tr>
+<tr class="odd">
+<td align="center">  Blue</td>
+<td align="center">+0.5</td>
+<td align="center">+1</td>
+</tr>
+</tbody>
+</table>
+<p>The H0 for contrast 2 (<span class="math inline">\(\mu_\textrm{grey} = \mu_\textrm{blue}\)</span>) can be
+expressed in weights as follows:
+<span class="math inline">\(\textrm{C2} = 0\times \mu_\textrm{red} -1 \times \mu_\textrm{grey} +1 \times \mu_\textrm{blue} = 0\)</span>.</p>
+<p>To determine whether two contrasts are orthogonal, we multiply
+their respective weights for each condition (row):<br />
+<span class="math inline">\(( (-1)(0), (+0.5)(-1), (+0.5)(+1) )= (0, -0.5, +0.5)\)</span>.<br />
+We then sum all these products:
+<span class="math inline">\(0 -0.5 + 0.5 = 0\)</span>.<br />
+If the sum of these products is null, then the two
+contrasts are orthogonal.</p>
+</div>
+</div>
+<div id="sec:anova-oneway-posthoc" class="section level3" number="15.3.5">
+<h3><span class="header-section-number">15.3.5</span> Post-hoc comparisons</h3>
+<p>In many studies, a researcher has no idea about the expected differences
+between the groups or conditions. Only after the analysis of variance,
+<em>after</em> a significant effect has been found, does the researcher decide
+to inspect more closely which conditions differ from each other. We speak
+then of <em>post hoc</em> comparisons, “suggested by the data” <span class="citation">(Maxwell and Delaney <a href="#ref-MD04" role="doc-biblioref">2004</a>, 200)</span>.
+When doing so, we have to work conservatively, precisely because
+after the analysis of variance we might already suspect that some
+comparisons will yield a significant result,
+i.e., the null hypotheses are not neutral.</p>
+<p>There are many dozens of statistical tests for post hoc
+comparisons. The most important difference is their degree of conservatism
+(tendency not to reject H0) vs. liberalism (tendency to indeed reject H0).
+Additionally, some tests are better equipped
+for pairwise comparisons between conditions (like contrast 2 above) and
+others better equipped for complex comparisons
+(like contrast 1 below). And the tests differ in the assumptions
+which they make about the variances in the cells.</p>
+<p>Here, we will mention one test
+for post hoc comparisons between pairs of conditions: <em>Tukey’s
+Honestly Significant Difference</em>, abbreviated to Tukey’s HSD. This test
+occupies a good middle ground between being too conservative and too liberal. An
+important characteristic of the Tukey HSD test is that the family-wise
+error (the <em>collective</em> p-value) over all pairwise comparisons together
+is equal to the indicated p-value
+<span class="math inline">\(\alpha\)</span> (see §<a href="ch-anova.html#sec:anova-examples">15.2</a>). The Tukey HSD test results in
+a 95% confidence interval for the difference between two conditions,
+and/or in a <span class="math inline">\(p\)</span>-value for the difference between two conditions.</p>
+</div>
+<div id="spss-12" class="section level3" number="15.3.6">
+<h3><span class="header-section-number">15.3.6</span> SPSS</h3>
+<div id="preparation" class="section level4" number="15.3.6.1">
+<h4><span class="header-section-number">15.3.6.1</span> preparation</h4>
+<p>We will use the data in the file <code>data/kleurgroepen.txt</code>; this data is also shown in Figure <a href="ch-anova.html#fig:colours-obs">15.2</a>.
+Read first the required data, and check this:</p>
+<pre><code>File &gt; Import Data &gt; Text Data...</code></pre>
+<p>Select <code>Files of type: Text</code> and select the file
+<code>data/kleurgroepen.txt</code>. Confirm with <code>Open</code>.<br />
+The names of variables can be found in line 1. The decimal symbol is
+the full stop (period). The data starts on line 2. Each line is an observation.
+The delimiter used between the variables is a space. The text is between
+double quotation marks. You do not need to define the variables further,
+the standard options of SPSS work well here.<br />
+Confirm the last selection screen with <code>Done</code>. The data will
+then be read in.</p>
+<p>Examine whether the responses are normally distributed, using the
+techniques from Part II of this textbook (especially
+§<a href="ch-probability-distributions.html#sec:isvarnormaldistributed">10.4</a>).</p>
+<p>We cannot test in advance in SPSS whether the variances in the three groups
+are equal, as required for the analysis of variance. We will do that at the same
+time as the analysis of variance itself.</p>
+</div>
+<div id="anova" class="section level4" number="15.3.6.2">
+<h4><span class="header-section-number">15.3.6.2</span> ANOVA</h4>
+<p>In SPSS, you can conduct an analysis of variance in several
+different ways. We
+will use a generally applicable approach here, where we indicate that there
+is one dependent variable in play.<br />
+</p>
+<pre><code>Analyze &gt; General Linear Model &gt; Univariate...</code></pre>
+<p>Select <code>score</code> as dependent variable (drag to the panel
+“Dependent variable”).<br />
+Select <code>kleur</code> (the Dutch variable name for colour of the group) as independent variable (drag to the panel “Fixed
+Factor(s)”).<br />
+Select <code class="console">Model...</code> and then <code>Full factorial</code> model, <code>Type I</code> Sum
+of squares, and tick: <code>Include intercept in model</code>, and confirm with
+<code class="console">Continue</code>.<br />
+Select <code class="console">Options...</code> and ask for means for the conditions
+of the factor <code>colour</code> (drag to the Panel “Display Means for”). Cross:
+<code>Estimates of effect size</code> and <code>Homogeneity tests</code>, and confirm again with
+<code class="console">Continue</code>.<br />
+Confirm all options with <code class="console">OK</code>.</p>
+<p>In the output, we find first the outcome of Levene’s test on equal
+variances (homogeneity of variance) which gives no reason to reject
+H0. We can thus conduct an analysis of variance.</p>
+<p>Then, the analysis of variance is summarised in a table like Table
+<a href="ch-anova.html#tab:colours-anova">15.3</a>, where the effect size is also stated in
+the form of <code> Partial eta square</code>.
+As explained above, it would be better, however, to report
+<span class="math inline">\(\omega^2\)</span>, but you do have to calculate that yourself!</p>
+</div>
+<div id="planned-comparison" class="section level4" number="15.3.6.3">
+<h4><span class="header-section-number">15.3.6.3</span> planned comparison</h4>
+<p>For an analysis of variance with planned comparisons, we have to
+indicate the desired contrasts for the factor <code>kleur</code> (the Dutch variable name for colour of the group).
+However, the method
+is different to the above. We cannot set the planned contrasts in SPSS
+via the menu system which we used until now. Here, we instead have
+to get to work “under the bonnet”!<br />
+First repeat the instructions above but, instead of confirming everything,
+you should now select the button <code>Paste</code>. Then, a so-called Syntax window
+will be opened (or activated, if it was already open). Within it, you
+will see the SPSS command that you built via the menu.<br />
+We are going to edit this command in order to indicate our own, special
+contrasts. When specifying the contrasts, we do have to take into
+account the <em>alphabetic</em> order of the conditions: blue, grey,
+red.<br />
+The command in the Syntax window should eventually look like the one
+below, after you have added the line <code>/CONTRAST</code>. The command
+must be terminated with a full stop.<br />
+</p>
+<pre class="console"><code>UNIANOVA score BY colour
+  /METHOD=SSTYPE(1)
+  /INTERCEPT=INCLUDE
+  /EMMEANS=TABLES(colour) 
+  /PRINT=ETASQ HOMOGENEITY
+  /CRITERIA=ALPHA(.05)
+  /DESIGN=colour
+  /CONTRAST(colour)=special(0.5 0.5 -1, 1 -1 0).</code></pre>
+<p>Place the cursor somewhere between the word <code>UNIANOVA</code> and the terminating
+full stop, and then click on the large green arrow to the right (<code>Run Selection</code>)
+in the Syntax window’s menu.</p>
+<p>The output provides the significance and the confidence interval
+of the tested contrast for each contrast. The first contrast
+is indeed significant (<code>Sig. .000</code>, report as <span class="math inline">\(p&lt;.001\)</span>, see
+§<a href="ch-testing.html#sec:plargerthannull">13.3</a>), and the second is not, see
+Table <a href="ch-anova.html#tab:colours-anova-contrast">15.4</a>.</p>
+</div>
+<div id="post-hoc-comparison" class="section level4" number="15.3.6.4">
+<h4><span class="header-section-number">15.3.6.4</span> post hoc comparison</h4>
+<p>First repeat the instructions above.<br />
+Select the button <code>Post Hoc...</code>, and select the factor <code>kleur</code>
+(the Dutch variable name for colour of the group) (move this term to the window “Post Hoc Tests for:”).
+Tick: <code>Tukey</code>, and then <code>Continue</code>. Confirm all options with <code>OK</code>.</p>
+<p>For each pairwise comparison, we see the difference, the
+standard error, and the Lower Bound and Upper Bound of the 95%
+confidence interval of that difference. If that interval does <em>not</em>
+include null then the difference between the two groups or conditions is
+thus probably not equal to null. The corrected p-value according to Tukey’s
+HSD test is also provided in the third column. We can see that red
+differs from blue, that red differs from grey, and that the scores of the
+grey and blue groups do not differ.</p>
+</div>
+</div>
+<div id="r-14" class="section level3" number="15.3.7">
+<h3><span class="header-section-number">15.3.7</span> R</h3>
+<div id="preparation-1" class="section level4" number="15.3.7.1">
+<h4><span class="header-section-number">15.3.7.1</span> preparation</h4>
+<p>Read firstly the necessary data, and check this:</p>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="ch-anova.html#cb108-1" aria-hidden="true"></a><span class="co"># same data as used in Fig.15.2</span></span>
+<span id="cb108-2"><a href="ch-anova.html#cb108-2" aria-hidden="true"></a>colourgroups &lt;-<span class="st"> </span><span class="kw">read.table</span>( <span class="st">&quot;data/kleurgroepen.txt&quot;</span>, </span>
+<span id="cb108-3"><a href="ch-anova.html#cb108-3" aria-hidden="true"></a>                            <span class="dt">header=</span><span class="ot">TRUE</span>, <span class="dt">stringsAsFactors=</span><span class="ot">TRUE</span> )</span></code></pre></div>
+<p>Examine whether the responses are normally distributed, using
+the techniques from Part II of this textbook (especially
+§<a href="ch-probability-distributions.html#sec:isvarnormaldistributed">10.4</a>).</p>
+<p>Investigate whether the variances in the three groups are equal, as required
+for analysis of variance. The H0 which we are testing is:
+<span class="math inline">\(s^2_\textrm{red} = s^2_\textrm{grey} = s^2_\textrm{blue}\)</span>. We
+test this H0 using Bartlett’s test.</p>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="ch-anova.html#cb109-1" aria-hidden="true"></a><span class="kw">bartlett.test</span>( <span class="dt">x=</span>colourgroups<span class="op">$</span>score, <span class="dt">g=</span>colourgroups<span class="op">$</span>kleur )</span></code></pre></div>
+<pre><code>## 
+##  Bartlett test of homogeneity of variances
+## 
+## data:  colourgroups$score and colourgroups$kleur
+## Bartlett&#39;s K-squared = 3.0941, df = 2, p-value = 0.2129</code></pre>
+</div>
+<div id="anova-1" class="section level4" number="15.3.7.2">
+<h4><span class="header-section-number">15.3.7.2</span> ANOVA</h4>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="ch-anova.html#cb111-1" aria-hidden="true"></a><span class="kw">summary</span>( <span class="kw">aov</span>( score<span class="op">~</span>kleur, <span class="dt">data=</span>colourgroups) -&gt;<span class="st"> </span>m01 ) <span class="co"># see Table 15.3</span></span></code></pre></div>
+<pre><code>##             Df Sum Sq Mean Sq F value   Pr(&gt;F)    
+## kleur        2  14.50   7.248   9.356 0.000436 ***
+## Residuals   42  32.54   0.775                     
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+</div>
+<div id="R:omega-square" class="section level4" number="15.3.7.3">
+<h4><span class="header-section-number">15.3.7.3</span> effect size</h4>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="ch-anova.html#cb113-1" aria-hidden="true"></a><span class="co"># own function to calculate omega2, see comparison (15.7) in the main text,</span></span>
+<span id="cb113-2"><a href="ch-anova.html#cb113-2" aria-hidden="true"></a><span class="co"># for effect called `term` in summary(`model`)</span></span>
+<span id="cb113-3"><a href="ch-anova.html#cb113-3" aria-hidden="true"></a>omegasq &lt;-<span class="st"> </span><span class="cf">function</span> ( model, term ) {   </span>
+<span id="cb113-4"><a href="ch-anova.html#cb113-4" aria-hidden="true"></a>     mtab &lt;-<span class="st"> </span><span class="kw">anova</span>(model)</span>
+<span id="cb113-5"><a href="ch-anova.html#cb113-5" aria-hidden="true"></a>     rterm &lt;-<span class="st"> </span><span class="kw">dim</span>(mtab)[<span class="dv">1</span>] <span class="co"># resid term</span></span>
+<span id="cb113-6"><a href="ch-anova.html#cb113-6" aria-hidden="true"></a>     <span class="kw">return</span>( (mtab[term,<span class="dv">2</span>]<span class="op">-</span>mtab[term,<span class="dv">1</span>]<span class="op">*</span>mtab[rterm,<span class="dv">3</span>]) <span class="op">/</span><span class="st"> </span></span>
+<span id="cb113-7"><a href="ch-anova.html#cb113-7" aria-hidden="true"></a><span class="st">             </span>(mtab[rterm,<span class="dv">3</span>]<span class="op">+</span><span class="kw">sum</span>(mtab[,<span class="dv">2</span>])) )</span>
+<span id="cb113-8"><a href="ch-anova.html#cb113-8" aria-hidden="true"></a>}</span>
+<span id="cb113-9"><a href="ch-anova.html#cb113-9" aria-hidden="true"></a><span class="co"># variable kleur=colour is the term to inspect</span></span>
+<span id="cb113-10"><a href="ch-anova.html#cb113-10" aria-hidden="true"></a><span class="kw">omegasq</span>( m01, <span class="st">&quot;kleur&quot;</span> ) <span class="co"># call function with 2 arguments</span></span></code></pre></div>
+<pre><code>## [1] 0.2708136</code></pre>
+</div>
+<div id="planned-comparison-1" class="section level4" number="15.3.7.4">
+<h4><span class="header-section-number">15.3.7.4</span> planned comparison</h4>
+<p>When specifying the contrasts, we have to take into account the
+<em>alphabetic</em> ordering of the conditions: <em>blue, grey, red</em>.
+Note that the predictor is named <code>kleur</code> which is the Dutch term for colour of the group).</p>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="ch-anova.html#cb115-1" aria-hidden="true"></a><span class="co"># make matrix of two orthogonal contrasts (per column, not per row) </span></span>
+<span id="cb115-2"><a href="ch-anova.html#cb115-2" aria-hidden="true"></a>conmat &lt;-<span class="st"> </span><span class="kw">matrix</span>( <span class="kw">c</span>(.<span class="dv">5</span>,.<span class="dv">5</span>,<span class="op">-</span><span class="dv">1</span>, <span class="op">+</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">0</span>), <span class="dt">byrow=</span>F, <span class="dt">nrow=</span><span class="dv">3</span> )</span>
+<span id="cb115-3"><a href="ch-anova.html#cb115-3" aria-hidden="true"></a><span class="kw">dimnames</span>(conmat)[[<span class="dv">2</span>]] &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;.R.GB&quot;</span>,<span class="st">&quot;.0G.B&quot;</span>) <span class="co"># (1) R vs G+B, (2) G vs B </span></span>
+<span id="cb115-4"><a href="ch-anova.html#cb115-4" aria-hidden="true"></a><span class="kw">contrasts</span>(colourgroups<span class="op">$</span>kleur) &lt;-<span class="st"> </span>conmat <span class="co"># assign contrasts to factor</span></span>
+<span id="cb115-5"><a href="ch-anova.html#cb115-5" aria-hidden="true"></a><span class="kw">summary</span>( <span class="kw">aov</span>( score<span class="op">~</span>kleur, <span class="dt">data=</span>colourgroups) -&gt;<span class="st"> </span>m02 ) </span></code></pre></div>
+<pre><code>##             Df Sum Sq Mean Sq F value   Pr(&gt;F)    
+## kleur        2  14.50   7.248   9.356 0.000436 ***
+## Residuals   42  32.54   0.775                     
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="ch-anova.html#cb117-1" aria-hidden="true"></a><span class="co"># output is necessary for omega2</span></span>
+<span id="cb117-2"><a href="ch-anova.html#cb117-2" aria-hidden="true"></a><span class="co"># see https://blogs.uoregon.edu/rclub/2015/11/03/anova-contrasts-in-r/</span></span>
+<span id="cb117-3"><a href="ch-anova.html#cb117-3" aria-hidden="true"></a><span class="kw">summary.aov</span>( m02, <span class="dt">split=</span><span class="kw">list</span>(<span class="dt">kleur=</span><span class="kw">list</span>(<span class="dv">1</span>,<span class="dv">2</span>)) )</span></code></pre></div>
+<pre><code>##             Df Sum Sq Mean Sq F value   Pr(&gt;F)    
+## kleur        2  14.50   7.248   9.356 0.000436 ***
+##   kleur: C1  1  14.31  14.308  18.470 0.000100 ***
+##   kleur: C2  1   0.19   0.188   0.243 0.624782    
+## Residuals   42  32.54   0.775                     
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>When we have planned contrasts, the previously constructed function <code>omegasq</code> can no longer be used (and neither can the previously provided formula). We now have to calculate the <span class="math inline">\(\omega^2\)</span> by hand using the output from the summary of model <code>m02</code>:</p>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="ch-anova.html#cb119-1" aria-hidden="true"></a>(<span class="fl">14.308</span><span class="dv">-1</span><span class="op">*</span><span class="fl">0.775</span>)<span class="op">/</span>(<span class="fl">0.775+14.308+0.19+32.54</span>) <span class="co"># 0.2830402</span></span></code></pre></div>
+<pre><code>## [1] 0.2830402</code></pre>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="ch-anova.html#cb121-1" aria-hidden="true"></a>(<span class="fl">0.188</span><span class="dv">-1</span><span class="op">*</span><span class="fl">0.775</span>)<span class="op">/</span>(<span class="fl">0.775+14.308+0.19+32.54</span>) <span class="co"># rounded off 0.00</span></span></code></pre></div>
+<pre><code>## [1] -0.012277</code></pre>
+</div>
+<div id="post-hoc-comparisons" class="section level4" number="15.3.7.5">
+<h4><span class="header-section-number">15.3.7.5</span> post hoc comparisons</h4>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="ch-anova.html#cb123-1" aria-hidden="true"></a><span class="kw">TukeyHSD</span>(m02)</span></code></pre></div>
+<pre><code>##   Tukey multiple comparisons of means
+##     95% family-wise confidence level
+## 
+## Fit: aov(formula = score ~ kleur, data = colourgroups)
+## 
+## $kleur
+##                  diff        lwr        upr     p adj
+## grey50-blue -0.158353 -0.9391681  0.6224622 0.8751603
+## red-blue    -1.275352 -2.0561668 -0.4945365 0.0007950
+## red-grey50  -1.116999 -1.8978139 -0.3361835 0.0033646</code></pre>
+<p>For each pair, we see the difference, and the Lower Bound (<code>lwr</code>) and
+the Upper Bound (<code>upr</code>) of the 95% confidence interval
+of the difference. If that interval does <em>not</em> include null, then
+the difference between the two groups or conditions is thus probably not
+equal to null. The corrected p-value according to
+Tukey’s HSD test is also given in the last column.
+Again, we see that red differs from grey, that red differs from
+blue, and that the grey and blue scores do not differ.</p>
+</div>
+</div>
+</div>
+<div id="two-way-analysis-of-variance" class="section level2" number="15.4">
+<h2><span class="header-section-number">15.4</span> Two-way analysis of variance</h2>
+<p>In §<a href="ch-anova.html#sec:anova-examples">15.2</a>, we already gave an example
+of a research study with two factors which were investigated in one analysis
+of variance. In this way, we can investigate (i) whether there is a
+main effect from the first factor (e.g. the speaker’s region of origin),
+(ii) whether there is a main effect from the second factor (e.g. 
+speaker gender), and (iii) whether there is an interaction effect.
+A such interaction implies that the differences between conditions of
+one factor are not the same
+for the conditions of the other factor, or put otherwise, that a cell’s mean
+score deviates from the predicted value based on the two main effects.</p>
+<div id="an-intuitive-explanation" class="section level3" number="15.4.1">
+<h3><span class="header-section-number">15.4.1</span> An intuitive explanation</h3>
+<p>In many studies, we are interested in the <em>combined</em> effects
+of two or more factors. In
+Table <a href="ch-anova.html#tab:sylduration2way">15.2</a>, we already saw mean speech tempos,
+split up according to the speaker’s region of origin and sex.
+If the differences between the regions are different for men compared with
+women, or put differently, if the differences between men and women are
+different for the different regions then we speak of an interaction. By adding
+a second factor into the study, we thus have to deal with a third factor,
+namely the interaction between
+the first and second factor.<a href="#fn35" class="footnote-ref" id="fnref35"><sup>35</sup></a></p>
+<p>If a significant interaction is present then we can no longer make
+general statements about the main effect we are concerned with. After all, the
+impact of a main effect is also dependent on the interaction with
+(an) other main effect(s), as can be seen in
+Figure <a href="ch-design.html#fig:drakebenelheni2003fig2">6.1</a> (§<a href="ch-design.html#sec:factorial-designs">6.8</a>).
+The listener group’s scores are <em>on average</em>
+not higher compared with those of the other groups,
+and the scores are also <em>on average</em> not higher in one condition than in the other.
+The main effects are thus not significant — but their interaction
+on the other hand is indeed significant. In general, interaction occurs when the effect of one factor varies depending on the different levels of another factor.
+In this example of two-way interaction, the effect of one factor is in opposite directions for the two levels of the other factor.</p>
+</div>
+<div id="a-formal-explanation" class="section level3" number="15.4.2">
+<h3><span class="header-section-number">15.4.2</span> A formal explanation</h3>
+<p>We again assume that the scores have been built up according to
+a statistical model, namely as the sum of the population mean
+<span class="math inline">\(\mu\)</span>, a systematic effect <span class="math inline">\(\beta_k\)</span> of the <span class="math inline">\(k\)</span>’the condition of
+factor B, a systematic effect <span class="math inline">\((\alpha\beta)_{jk}\)</span> of the combination
+of conditions <span class="math inline">\((j,k)\)</span> of factors A and B, and a chance effect
+<span class="math inline">\(e_{ijk}\)</span> for the <span class="math inline">\(i\)</span>’the replication within the <span class="math inline">\(jk\)</span>’the cell. In formula:</p>
+<p><span class="math display">\[x_{ijk} = \mu + \alpha_{j} + \beta_{k} + (\alpha\beta)_{jk} + e_{ijk}\]</span></p>
+<p>In the one-way analysis of variance the total ‘sums of squares’ is split up
+into two components, namely between and within conditions (see
+equation <a href="ch-anova.html#eq:SStotal">(15.4)</a>).
+With the two-way analysis of variance, there are now however
+<em>four</em> components:
+<span class="math display" id="eq:SStotal2way">\[\begin{align}
+  \tag{15.8}
+    { \sum (x_{ijk} - \overline{x})^2 } = &amp;  { \sum_j n_j (\bar{x}_j - \bar{x})^2 } + \\ 
+    &amp; { \sum_k n_k (\bar{x}_k - \bar{x})^2 } +  \\
+    &amp; { \sum_j \sum_k n_{jk} (\bar{x}_{jk} - \bar{x}_j - \bar{x}_k + \bar{x})^2 } + \\
+    &amp; { \sum_i \sum_j \sum_k (x_{ijk} - \bar{x}_{jk})^2 } 
+\end{align}\]</span></p>
+<p>The degrees of freedom of these sums of squares also add up to each other
+again:
+<span class="math display" id="eq:dftotal2">\[\begin{align}
+  \tag{15.9}
+    { (N-1) } &amp;= (A-1) &amp;+ (B-1) &amp;+ (A-1)(B-1) &amp;+ (N-AB) \\
+    \textrm{df}_t &amp;= \textrm{df}_A &amp;+ \textrm{df}_B &amp;+ \textrm{df}_{AB} &amp;+ \textrm{df}_w
+\end{align}\]</span></p>
+<p>Just like with the one-way analysis of variance, we again calculate the
+‘mean squares’ by dividing the sums of squares by their degrees of freedom.</p>
+<p>We now test <em>three</em> null hypotheses, namely for the two main effects and their
+interactions. For each test, we determine the corresponding
+<span class="math inline">\(F\)</span>-ratio. The numerator is formed from the observed variance,
+as formulated above; the denominator is formed from <span class="math inline">\(s^2_w\)</span>, the
+chance variance between the replications <em>within</em> the cells. All
+the necessary calculations for analysis of variance, including determining
+the degrees of freedom and p-values, are carried out by computer
+nowadays.</p>
+<p>The results are summarised again in an ANOVA table, which has now been somewhat
+extended in Table <a href="ch-anova.html#tab:syldur2way-anova">15.5</a>. We now test and report three
+hypotheses. If the interaction is significant, then you should first report
+the interaction, and only then the main effects. After all, the interaction present
+has an influence on how we should interpret the main effects. If the interaction
+is not significant, like in our current example with speech tempos from
+Table <a href="ch-anova.html#tab:sylduration2way">15.2</a>, then it is usual to first report the main
+effects, and then the non-significant interaction effect.</p>
+<blockquote>
+<p>The observed speech tempos differ significantly between the four
+regions of origin of the speakers
+[<span class="math inline">\(F(3,71)=6.0, p=.0010\)</span>, <span class="math inline">\(\omega^2=.14\)</span>], and men speak significantly faster
+than women [<span class="math inline">\(F(1,71)=15.1, p=.0002\)</span>, <span class="math inline">\(\omega^2=.13\)</span>].
+The two factors show no interaction
+[<span class="math inline">\(F(3,71)=1.4, \textrm{n.s.}\)</span>, <span class="math inline">\(\omega^2=.01\)</span>].
+A post hoc comparison between the regions showed that speakers from
+the West speak significantly more quickly than those from the North (Tukey’s
+HSD test, <span class="math inline">\(p=.0006\)</span>) and from those from the South (<span class="math inline">\(p=.0190\)</span>); other
+pairwise differences between regions were not significant.</p>
+</blockquote>
+<table>
+<caption><span id="tab:syldur2way-anova">Table 15.5: </span> Summary of two-way analysis of variance of the speech
+tempos in Table <a href="ch-anova.html#tab:sylduration2way">15.2</a>.</caption>
+<thead>
+<tr class="header">
+<th align="left">Source of variance</th>
+<th align="center">df</th>
+<th align="center">SS</th>
+<th align="center">MS</th>
+<th align="center"><span class="math inline">\(F\)</span></th>
+<th align="center"><span class="math inline">\(p\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">(i) Region</td>
+<td align="center">3</td>
+<td align="center">0.01234</td>
+<td align="center">0.004114</td>
+<td align="center">6.039</td>
+<td align="center">0.0010</td>
+</tr>
+<tr class="even">
+<td align="left">(ii) Sex</td>
+<td align="center">1</td>
+<td align="center">0.01031</td>
+<td align="center">0.010310</td>
+<td align="center">15.135</td>
+<td align="center">0.0002</td>
+</tr>
+<tr class="odd">
+<td align="left">(iii) Region <span class="math inline">\(\times\)</span> Sex</td>
+<td align="center">3</td>
+<td align="center">0.00287</td>
+<td align="center">0.000958</td>
+<td align="center">1.406</td>
+<td align="center">0.2482</td>
+</tr>
+<tr class="even">
+<td align="left">within</td>
+<td align="center">71</td>
+<td align="center">0.04837</td>
+<td align="center">0.000681</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="spss-13" class="section level3" number="15.4.3">
+<h3><span class="header-section-number">15.4.3</span> SPSS</h3>
+<div id="preparation-2" class="section level4" number="15.4.3.1">
+<h4><span class="header-section-number">15.4.3.1</span> Preparation</h4>
+<p>One speaker has a very long mean syllable length; we will ignore this
+observation from now on.</p>
+<pre><code>Data &gt; Select cases...</code></pre>
+<p>Specify that we are only using observations which satisfy a condition,
+and specify the condition as <code>syldur &lt; 0.4</code>.</p>
+</div>
+<div id="anova-and-post-hoc-tests" class="section level4" number="15.4.3.2">
+<h4><span class="header-section-number">15.4.3.2</span> ANOVA and post hoc tests</h4>
+<pre><code>Analyze &gt; General Linear Model &gt; Univariate...</code></pre>
+<p>Drag the dependent variable (<code>syldur</code>) to the box Dependent
+variable. Drag the two independent variables (<code>sex</code>, <code>region</code>) to the
+Fixed factor(s) box.<br />
+For the post hoc test, select the button <code>Post Hoc...</code>. Select the
+<code>region</code> factor and select <code>Tukey</code>. Confirm with <code>Continue</code> and then again
+with <code>OK</code>.</p>
+</div>
+</div>
+<div id="r-15" class="section level3" number="15.4.4">
+<h3><span class="header-section-number">15.4.4</span> R</h3>
+<div id="preparation-3" class="section level4" number="15.4.4.1">
+<h4><span class="header-section-number">15.4.4.1</span> preparation</h4>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="ch-anova.html#cb127-1" aria-hidden="true"></a><span class="kw">require</span>(hqmisc) <span class="co"># for hqmisc::talkers data set</span></span>
+<span id="cb127-2"><a href="ch-anova.html#cb127-2" aria-hidden="true"></a><span class="kw">data</span>(talkers)</span>
+<span id="cb127-3"><a href="ch-anova.html#cb127-3" aria-hidden="true"></a>ok &lt;-<span class="st"> </span>talkers<span class="op">$</span>syldur<span class="op">&lt;</span><span class="fl">0.4</span> <span class="co"># TRUE for 79 of 80 talkers</span></span>
+<span id="cb127-4"><a href="ch-anova.html#cb127-4" aria-hidden="true"></a><span class="co"># table of means, see Table 15.2 in main text</span></span>
+<span id="cb127-5"><a href="ch-anova.html#cb127-5" aria-hidden="true"></a><span class="kw">with</span>(talkers, <span class="kw">tapply</span>( syldur[ok], <span class="kw">list</span>(region[ok],sex[ok]), mean ))</span></code></pre></div>
+<pre><code>##           0       1
+## M 0.2707400 0.23460
+## N 0.2846000 0.25282
+## S 0.2691444 0.25175
+## W 0.2378100 0.23199</code></pre>
+</div>
+<div id="anova-2" class="section level4" number="15.4.4.2">
+<h4><span class="header-section-number">15.4.4.2</span> ANOVA</h4>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="ch-anova.html#cb129-1" aria-hidden="true"></a><span class="co"># see Table 15.5 in main text</span></span>
+<span id="cb129-2"><a href="ch-anova.html#cb129-2" aria-hidden="true"></a><span class="kw">summary</span>( <span class="kw">aov</span>(syldur<span class="op">~</span>region<span class="op">*</span>sex, <span class="dt">data=</span>talkers, <span class="dt">subset=</span>ok) -&gt;<span class="st"> </span>m03 )</span></code></pre></div>
+<pre><code>##             Df  Sum Sq  Mean Sq F value   Pr(&gt;F)    
+## region       3 0.01234 0.004114   6.039 0.001009 ** 
+## sex          1 0.01031 0.010310  15.135 0.000223 ***
+## region:sex   3 0.00287 0.000958   1.406 0.248231    
+## Residuals   71 0.04837 0.000681                     
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+</div>
+<div id="effectsize" class="section level4" number="15.4.4.3">
+<h4><span class="header-section-number">15.4.4.3</span> Effect size</h4>
+<p>In order to assess effect size, we will use the previously programmed function <code>omegasq</code>
+(§<a href="ch-anova.html#R:omega-square">15.3.7.3</a>):</p>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="ch-anova.html#cb131-1" aria-hidden="true"></a><span class="kw">omegasq</span>(m03, <span class="st">&quot;region&quot;</span>)      <span class="co"># [1] 0.1380875</span></span></code></pre></div>
+<pre><code>## [1] 0.1380875</code></pre>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="ch-anova.html#cb133-1" aria-hidden="true"></a><span class="kw">omegasq</span>(m03, <span class="st">&quot;sex&quot;</span>)         <span class="co"># [1] 0.1291232</span></span></code></pre></div>
+<pre><code>## [1] 0.1291232</code></pre>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="ch-anova.html#cb135-1" aria-hidden="true"></a><span class="kw">omegasq</span>(m03, <span class="st">&quot;region:sex&quot;</span>)  <span class="co"># [1] 0.01112131</span></span></code></pre></div>
+<pre><code>## [1] 0.01112131</code></pre>
+</div>
+<div id="post-hoc-tests" class="section level4" number="15.4.4.4">
+<h4><span class="header-section-number">15.4.4.4</span> post-hoc tests</h4>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="ch-anova.html#cb137-1" aria-hidden="true"></a><span class="kw">TukeyHSD</span>(<span class="dt">x=</span>m03, <span class="dt">which=</span><span class="st">&quot;region&quot;</span>)</span></code></pre></div>
+<pre><code>## Warning in replications(paste(&quot;~&quot;, xx), data = mf): non-factors ignored: sex</code></pre>
+<pre><code>## Warning in replications(paste(&quot;~&quot;, xx), data = mf): non-factors ignored: region,
+## sex</code></pre>
+<pre><code>##   Tukey multiple comparisons of means
+##     95% family-wise confidence level
+## 
+## Fit: aov(formula = syldur ~ region * sex, data = talkers, subset = ok)
+## 
+## $region
+##             diff          lwr          upr     p adj
+## N-M  0.016040000 -0.005674448  0.037754448 0.2195083
+## S-M  0.007319474 -0.014678836  0.029317783 0.8175548
+## W-M -0.017770000 -0.039484448  0.003944448 0.1466280
+## S-N -0.008720526 -0.030718836  0.013277783 0.7248801
+## W-N -0.033810000 -0.055524448 -0.012095552 0.0006238
+## W-S -0.025089474 -0.047087783 -0.003091164 0.0190285</code></pre>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-KL00">
+<p>Kerlinger, Fred N., and Howard B. Lee. 2000. <em>Foundations of Behavioral Research</em>. 4th ed. Fort Worth: Harcourt College Publishers.</p>
+</div>
+<div id="ref-MD04">
+<p>Maxwell, Scott E., and Harold D. Delaney. 2004. <em>Designing Experiments and Analyzing Data: A Model Comparison Perspective</em>. Book. 2nd ed. Mahwah, NJ: Lawrence Erlbaum Associates.</p>
+</div>
+<div id="ref-Olej03">
+<p>Olejnik, Stephen, and James Algina. 2003. “Generalized Eta and Omega Squared Statistics: Measures of Effect Size for Some Common Research Designs.” <em>Psychological Methods</em> 8 (4): 434–47.</p>
+</div>
+<div id="ref-Quene08">
+<p>Quené, H. 2008. “Multilevel Modeling of Between-Speaker and Within-Speaker Variation in Spontaneous Speech Tempo.” <em>Journal of the Acoustical Society of America</em> 123 (2): 1104–13.</p>
+</div>
+<div id="ref-R-hqmisc">
+<p>Quené, Hugo. 2014. <em>Hqmisc: Miscellaneous Convenience Functions and Dataset</em>. <a href="https://CRAN.R-project.org/package=hqmisc">https://CRAN.R-project.org/package=hqmisc</a>.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="34">
+<li id="fn34"><p>If (1) red does differ from grey and blue, and if (2) grey and blue
+also differ from each other, then this implies that red differs from grey (a new
+finding) and that red differs from blue (we already knew that).<a href="ch-anova.html#fnref34" class="footnote-back">↩︎</a></p></li>
+<li id="fn35"><p>If we add more factors then the situation quickly becomes confusing.
+With three main effects, there are already 3 two-way interactions plus 1 three-way
+interaction. With four main effects, there are already 6 two-way interactions, plus
+4 three-way interactions, plus 1 four-way interaction.<a href="ch-anova.html#fnref35" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ch-power.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="app-randomnumbers.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/ch15anova.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["QMS-EN.pdf", "QMS-EN.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

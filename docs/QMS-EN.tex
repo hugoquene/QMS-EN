@@ -119,7 +119,7 @@
 
 \title{Quantitative Methods and Statistics}
 \author{true}
-\date{Version compiled 24 Jan 2021}
+\date{Version compiled 25 Jan 2021}
 
 \begin{document}
 \maketitle
@@ -6587,7 +6587,7 @@ With statistical testing of H0, we determine the probability \(P\) of the
 observed differences or effects (or of even larger differences or effects
 than observed) if H0 were true, and thus if
 the observed difference had to be attributed solely to chance
-(see §\ref{sec:empiricalcylce} and
+(see §\ref{sec:empiricalcycle} and
 Chapter~\ref{ch:testing}). If the probability \(P\) is very small, then
 we have thus found results which are very improbable if H0 were true.
 We then conclude that H0 is presumably \emph{not true} and we thus reject
@@ -6847,6 +6847,1182 @@ the desired power of a study in an early stage. Designing and conducting
 a study with insufficient power is after all in opposition with the earlier discussed
 ethical and moral principles of diligence and responsibility
 (§\ref{sec:integrity-introduction}).
+
+\hypertarget{ch:anova}{%
+\chapter{Analysis of variance}\label{ch:anova}}
+
+\hypertarget{sec:introduction}{%
+\section{Introduction}\label{sec:introduction}}
+
+This chapter is about an often used statistical analysis, called
+analysis of variance (often abbreviated to ANOVA).
+
+The structure of this chapter is as follows. We will begin in §\ref{sec:anova-examples}
+with some examples of research studies whose outcomes
+can be tested with analysis of variance. The purpose of this section
+is to familiarise you with the technique,
+with the new terminology, and with the conditions under which this technique
+can be used. In §\ref{sec:anova-oneway-explanation}, we will introduce this technique
+in an intuitive manner by looking at the thinking behind the test. In
+§\ref{sec:anova-oneway-formal} we derive a formal form for the most important
+test statistic, the \(F\)-ratio.
+
+\hypertarget{sec:anova-examples}{%
+\section{Some examples}\label{sec:anova-examples}}
+
+Just like the \emph{t}-test, analysis of variance is a statistical generalisation
+technique, which is to say: an instrument that can be used
+when formulating statements about the population characteristics,
+on the basis of data taken from samples from these populations.
+In the case of the \emph{t}-test and ANOVA, the statements are about
+whether or not the means of (two or more) populations are equal.
+In this sense, analysis of variance can also be understood as an
+expanded version of the \emph{t}-test: we can analyse data
+of more than two samples with ANOVA. Moreover, it is possible to include the effects
+of multiple independent variables simultaneously in the analysis. This is useful
+when we want to analyse data from a factorial design
+(§\ref{sec:factorial-designs}).
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{quote}
+\emph{Examples 15.1}: In this example, we investigate the speech tempo or
+speed of four groups of speakers, namely originating from the Middle, North,
+South and West of the Netherlands. The speech tempo is expressed as the mean
+duration of a syllable (in seconds), with the mean taken over an interview of approximately
+15 minutes with each speaker \citep{Quene08} \citep{R-hqmisc}.
+A shorter mean syllable duration thus corresponds to a faster speaker (cf.~skating, where a faster skater has shorter lap durations). There were 20
+speakers per group, but 1 speaker (from the South), who had an extremely high value,
+was removed from the sample.
+\end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+The observed speech tempos per speaker from the above Example 15.1 are summarised
+in Table \ref{tab:sylduration} and Figure~\ref{fig:sylduration-boxplot}.
+
+Here, the region of origin is an independent categorial variable or `factor'.
+The values of this factor are also referred to as `levels', or in many studies
+as `groups' or `conditions'. Each level or each group or condition forms
+a `cell' of the design, and the observations from that cell are also
+called `replications' (consider why they are called this).
+The speech tempo is the dependent variable. The null hypothesis is that the
+dependent variable means are equal for all groups, thus
+H0: \(\mu_M = \mu_N = \mu_Z = \mu_W\). If we reject H0, then that means
+\emph{only} that not all means are equal, but it does \emph{not} mean that each group
+mean deviates from each other group mean. For this, a further (post-hoc)
+study is necessary; we will return to this later.
+
+\begin{longtable}[]{@{}lccc@{}}
+\caption{\label{tab:sylduration} Mean speech tempos, with standard deviation and numbers
+of speakers, divided according to region of origin of the speaker (see Example
+15.1).}\tabularnewline
+\toprule
+Region & Mean & s.d. & n\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+Region & Mean & s.d. & n\tabularnewline
+\midrule
+\endhead
+Middle & 0.253 & 0.028 & 20\tabularnewline
+North & 0.269 & 0.029 & 20\tabularnewline
+South & 0.260 & 0.030 & 19\tabularnewline
+West & 0.235 & 0.028 & 20\tabularnewline
+\bottomrule
+\end{longtable}
+
+\begin{figure}
+\centering
+\includegraphics{QMS-EN_files/figure-latex/sylduration-boxplot-1.pdf}
+\caption{\label{fig:sylduration-boxplot}Boxplot of the mean length of syllable, split up according to region of origin of the speaker.}
+\end{figure}
+
+In order to investigate whether the four populations differ in their average
+speech tempo, we could in the first instance conduct \emph{t}-tests for all pairs
+of levels. (With 4 levels, that would require 6 tests, see
+equation \eqref{eq:choose} with \(n=4\) and \(x=2\)). There are however various
+objections to this approach. We will discuss one of these here. For
+each test, we use a p-value of \(\alpha=.05\).
+We thus have a probability of .95 of a correct decision without a Type I error.
+The probability that we will make a correct decision for all 6 tests is
+\(.95^6 = .731\) (according to the multiplication principle,
+equation \eqref{eq:probability-productrule}).
+The joint probability of one or more
+Type I error(s) in the 6 tests is thus no longer \(.05\), but has now
+increased to \(1-.731 = .265\), more than a quarter!
+
+Analysis of variance now offers the possibility of investigating the
+aforementioned null hypothesis on the basis of
+a single testing (thus not 6 tests). Analysis of variance can thus be best
+characterised as a global testing technique, which is most suitable
+if a priori you are not able or do not want to make any specific predictions
+about the differences between the populations.
+
+An analysis of variance applied to the scores summarised in
+Table~\ref{tab:sylduration}
+will lead to the rejection of the null hypothesis: the 4 regional
+means are not equal. The differences found are, in all probability, not due to
+chance sample fluctuations, but instead to systematic differences between
+the groups (\(\alpha=.05\)). Can it now be concluded that the differences
+found in speech tempo are \emph{caused} by differences in the origin of the
+speaker? Here, restraint is required (see
+§\ref{sec:causality}). After all, it cannot be excluded that
+the four populations not only differ systematically from each other in speech
+tempo, but also in other relevant factors which were not included in the study,
+such as health, wealth, or education. We would only be able to exclude these other
+factors if we allocated the participants randomly to the selected levels of the
+independent variable. However, this is not possible when we are concerned with the
+region of origin of the speaker: we can usually assign a speaker (randomly)
+to a form of treatment or condition, but not to a region of origin. In fact,
+the study in Example 15.1 is thus quasi-experimental.
+
+For our second example, we involve a second factor in the same study
+on speech tempo, namely also the speaker's gender.
+ANOVA enables us, in one single analysis, to test whether (i) the four
+regions differ from each other (H0: \(\mu_M = \mu_N = \mu_Z = \mu_W\)), and
+(ii) whether the two genders differ from each other (H0:
+\(\mu_\textrm{woman} = \mu_\textrm{man}\)), and (iii) whether the differences
+between the regions are the same for both genders (or, put differently, whether
+the differences between the genders are the same for all
+regions). We call the latter differences the `interaction' between the two factors.
+
+\begin{longtable}[]{@{}ccccc@{}}
+\caption{\label{tab:sylduration2way} Mean speech tempos, with standard deviation and
+numbers of speakers, divided according to gender and the speaker's region of origin
+(see Example 15.1).}\tabularnewline
+\toprule
+Gender & Region & Mean & s.d. & n\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+Gender & Region & Mean & s.d. & n\tabularnewline
+\midrule
+\endhead
+Woman & Middle & 0.271 & 0.021 & 10\tabularnewline
+Woman & North & 0.285 & 0.025 & 10\tabularnewline
+Woman & South & 0.269 & 0.028 & 9\tabularnewline
+Woman & West & 0.238 & 0.028 & 10\tabularnewline
+Man & Middle & 0.235 & 0.022 & 10\tabularnewline
+Man & North & 0.253 & 0.025 & 10\tabularnewline
+Man & South & 0.252 & 0.030 & 10\tabularnewline
+Man & West & 0.232 & 0.028 & 10\tabularnewline
+\bottomrule
+\end{longtable}
+
+The results in Table \ref{tab:sylduration2way} suggest that (i) speakers from the
+West speak more quickly than the others, and that (ii) men speak more quickly than
+women (!). And (iii) the difference between men and women appears to be smaller
+for speakers from the West than for speakers from other regions.
+
+\hypertarget{assumptions-2}{%
+\subsection{assumptions}\label{assumptions-2}}
+
+The analysis of variance requires four assumptions which
+must be satisfied to use this test; these assumptions match those of the
+\emph{t}-test
+(§\ref{sec:ttest-assumptions}).
+
+\begin{itemize}
+\item
+  The data has to be measured on an interval level of measurement (see
+  §\ref{sec:interval}).
+\item
+  All observations have to be independent of each other.
+\item
+  The scores have to be normally distributed (see
+  §\ref{sec:isvarnormaldistributed}).
+\item
+  The variance of the scores has to be (approximately) equal in
+  the scores of the respective groups or conditions (see
+  §\ref{sec:variance}).
+  The more the samples differ in size, the more serious
+  violating this assumption is. It is thus sensible to work with
+  equally large, and preferably not too small samples.
+\end{itemize}
+
+Summarising: analysis of variance can be used to compare multiple
+population means, and to determine the effects of multiple
+factors and combinations of factors (interactions).
+Analysis of variance does require that data satisfy multiple
+conditions.
+
+\hypertarget{one-way-analysis-of-variance}{%
+\section{One-way analysis of variance}\label{one-way-analysis-of-variance}}
+
+\hypertarget{sec:anova-oneway-explanation}{%
+\subsection{An intuitive explanation}\label{sec:anova-oneway-explanation}}
+
+As stated, we use analysis of variance to investigate whether the
+scores of different groups, or those collected under different conditions,
+differ from each other. However --- scores \emph{always} differ
+from each other, through chance fluctuations between the replications within
+each sample. In the preceding chapters, we already encountered
+many examples of chance fluctuations within the same sample and within
+the same condition. The question then is whether the scores
+\emph{between} the different groups (or gathered under different
+conditions) differ more from each other than you would expect on the
+basis of chance fluctuations \emph{within} each group or cell.
+
+The aforementioned ``differences between scores'' taken together form the
+variance of those scores
+(§\ref{sec:variance}). For analysis of variance, we divide the total
+variance into two parts: firstly, the variance caused by (systematic)
+differences \emph{between} groups, and secondly, the variance caused
+by (chance) differences \emph{within} groups. If H0 is true,
+and if there are thus no differences (in the populations) between the
+groups, then we nevertheless expect (in the samples of the groups)
+some differences between the mean scores of the groups, be it that
+the last mentioned differences will not be greater than
+the chance differences within the groups, if H0 is true.
+Read this paragraph again carefully.
+
+This approach is illustrated in
+Figure \ref{fig:colours-obs}, in which the scores from three experimental
+groups (with random assignment of participants to the groups) are shown:
+the red, grey and blue group. The scores differ from each other, at least
+through chance fluctuations of the scores within
+each group. There are probably also systematic differences between (the
+mean scores of) the three groups. However, are these systematic
+differences now comparatively larger than the chance differences within each
+group? If so, then we reject H0.
+
+\includegraphics{QMS-EN_files/figure-latex/colours-obs-1.pdf}
+The systematic differences \emph{between} the groups correspond with the
+differences from the red, grey and blue group means
+(dashed lines in Figure \ref{fig:colours-obs}) relative to the mean over
+all observations (dotted line). For the first observation, that is a
+negative deviation since the score is below the general mean
+(dotted line). The chance differences \emph{within} the groups
+correspond to the deviation of each observation relative to the
+group mean (for the first observation that is thus a positive
+deviation, since the score is above the group average of the red
+group).
+
+Let us now make the switch from `differences' to `variance'. We then split
+the deviation of each observation relative to the general
+mean into to two deviations: first, the deviation of the group
+mean relative the general mean, and, second, the deviation of
+each replication relative to the group mean. These are two pieces of variance
+which together form the total variance. Vice versa, we can thus divide
+the total variance into two components, which is where the name
+`analysis of variance' comes from. (In the next section, we will explain
+how these components are calculated, taking into account the number of
+observations and the number of groups.)
+
+Dividing the total variance into two variance components is
+useful because we can determine the \emph{ratio} between these two parts.
+The ratio between the variances is called the \(F\)-ratio, and we use
+this ratio to test H0.
+
+\[\textrm{H0}: \textrm{variance between groups} = \textrm{variance within groups}\]
+
+\[\textrm{H0}: F = \frac{\textrm{variance between groups}}{\textrm{variance within groups}} = 1\]
+
+As such, the \(F\)-ratio is a test statistic whose probability distribution
+is known if H0 is true. In the example of Figure
+\ref{fig:colours-obs}, we find \(F=3.22\), with 3 groups and 45
+observations, \(p=.0004\). We thus find a relatively large systematic
+variance \emph{between} groups here, compared to the relatively
+small chance variance \emph{within} groups: the former variance
+(the fraction \(F\)'s numerator) is more than \(3\times\) as large as the
+latter variance (the fraction \(F\)'s denominator). The probability
+\(p\) of finding this fraction if H0 is true, is exceptionally small,
+and we thus reject H0. (In the following section, we will explain how
+this probability is determined, again taking into account the number of
+observations and the number of groups.) We then speak of a significant effect
+of the factor on the dependent variable.
+
+At the end of this section, we repeat the core essence of\\
+analysis of variance. We divide the total variance into two parts: the
+possible systematic variance between groups or conditions, and the
+variance within groups or conditions (i.e.~ever present, chance
+fluctuation between replications). The test statistic \(F\) consists of the
+proportion between these two variances. We do a one-sided test to see
+whether \(F=1\), and reject H0 if \(F>1\) such that the probability
+\(P(F|\textrm{H0}) < \alpha\). The mean scores of the groups or conditions
+are then in all probability not equal. With this, we do not yet know
+which groups differ from each other - for this another further
+(post-hoc) analysis is needed
+(§\ref{sec:anova-oneway-posthoc} below).
+
+\hypertarget{sec:anova-oneway-formal}{%
+\subsection{A formal explanation}\label{sec:anova-oneway-formal}}
+
+For our explanation, we begin with the observed scores. We assume that
+the scores are constructed according to a certain statistical model, namely
+as the sum of the population mean (\(\mu\)), a systematic
+effect (\(\alpha_j\)) of the \(j\)'the condition or group (over \(k\) conditions
+or groups), and a chance effect (\(e_{ij}\)) for the \(i\)'the replication within
+the \(j\)'the condition or group (over \(N\) replications in
+total). In formula:
+\[x_{ij} = \mu + \alpha_{j} + e_{ij}\]
+Here too, we thus again analyse each score in a systematic part and
+a chance part. This is the case not only for the scores themselves, but also
+for the deviations of each score relative to the total mean
+(see §\ref{sec:anova-oneway-explanation}).
+
+Thus, three variances are of interest. Firstly, the total
+variance (see equation
+\eqref{eq:variance}, abbreviated to \texttt{t}) over all \(N\)
+observations from all groups or conditions together:
+\begin{equation}
+  \label{eq:MStotal}
+    s^2_t = \frac{ \sum (x_{ij} - \overline{x})^2 } {N-1}
+\end{equation}
+Secondly the variance `between' (abbreviated to \texttt{b}) the groups
+or conditions:
+\begin{equation}
+  \label{eq:MSbetween}
+    s^2_b = \frac{ \sum_{j=1}^{j=k} n_j (\overline{x_j} - \overline{x})^2 } {k-1}
+\end{equation}
+and, thirdly, the variance `within' (shortened to \texttt{w}) the groups or
+conditions:
+\begin{equation}
+  \label{eq:MSwithin}
+    s^2_w = \frac{ \sum_{j=1}^{j=k} \sum_i (x_{ij} - \overline{x_j})^2 } {N-k}
+\end{equation}
+
+In these comparisons, the \emph{numerators} are formed from the sum of
+the squared deviations (`sums of squares', shortened to \texttt{SS}). In the
+previous section, we indicated that the deviations add up to each other,
+and that then is also the case for the summed and squared
+deviations:
+\begin{align}
+  \label{eq:SStotal}
+    { \sum (x_{ij} - \overline{x})^2 } &= 
+    { \sum_{j=1}^{j=k} n_j (\overline{x_j} - \overline{x})^2 } + 
+    { \sum_{j=1}^{j=k} \sum_i (x_{ij} - \overline{x_j})^2 } \\
+    \textrm{SS}_t &= \textrm{SS}_b + \textrm{SS}_w
+\end{align}
+
+The
+\emph{numerators} of the variances are formed from the degrees of freedom
+(abbreviated \texttt{df}, see
+§\ref{sec:ttest-freedomdegrees}). For the variance between
+groups \(s^2_b\), that is the number of groups or conditions, minus 1 (\(k-1\)).
+For the variance within groups \(s^2_w\), that is the number of observations,
+minus the number of groups (\(N-k\)). For the total variance, that is the
+number of observations minus 1 (\(N-1\)). The degrees of freedom of the
+deviations also add up to each other:
+\begin{align}
+  \label{eq:dftotal1}
+    { (N-1) } &= { (k-1) } + { (N-k) } \\
+    \textrm{df}_t &= \textrm{df}_b + \textrm{df}_w
+\end{align}
+
+The above fractions which describe the variances \(s^2_t\), \(s^2_b\) and \(s^2_w\),
+are also referred to as the `mean squares' (shortened to \texttt{MS}).
+\(\textrm{MS}_{t}\) is by definition equal to the `normal' variance
+\(s^2_x\) (see the identical equations
+\eqref{eq:variance} and
+\eqref{eq:MStotal}).
+
+The test statistic \(F\) is defined as the ratio of the two
+variance components defined above:
+\begin{equation}
+  \label{eq:Fratio}
+    F = \frac{ s^2_b } { s^2_w }
+\end{equation}
+with not one but two
+degrees of freedom, resp. \((k-1)\) for the numerator and \((N-k)\) for the denominator.
+
+You can determine the p-value \(p\) which belongs with the
+\(F\) found using a table, but we usually conduct an
+analysis of variance using a computer, and it then also calculates the
+p-value.
+
+The results of an analysis of variance are summarised in a fixed format
+in a so-called ANOVA table, like
+Table \ref{tab:colours-anova}. This contains the most important
+information summarised. However, the whole table can also be summarised in
+one sentence, see Example 15.2.
+
+\begin{longtable}[]{@{}lccccc@{}}
+\caption{\label{tab:colours-anova} Summary of analysis of variance of the observations in Figure \ref{fig:colours-obs}.}\tabularnewline
+\toprule
+Variance Source & df & SS & MS & \(F\) & \(p\)\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+Variance Source & df & SS & MS & \(F\) & \(p\)\tabularnewline
+\midrule
+\endhead
+Group & 2 & 14.50 & 7.248 & 9.356 & 0.0004\tabularnewline
+(within) & 42 & 32.54 & 0.775 & &\tabularnewline
+\bottomrule
+\end{longtable}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{quote}
+\emph{Example 15.2}:
+The mean scores are not equal for the red, grey and blue group
+{[}\(F(2,42) = 9.35\), \(p = .0004\), \(\omega^2 = 0.28\){]}.
+\end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{sec:anova-oneway-effectsize}{%
+\subsection{Effect size}\label{sec:anova-oneway-effectsize}}
+
+Just like with the \(t\)-test, it is not only important to make a binary decision
+about H0, but it is at least equally important to know how large
+the observed effect is (see also
+§\ref{sec:ttest-effectsize}). This effect size for
+analysis of variance can be expressed in different measures, of which we will
+discuss two (this section is based on \citet{KL00}; see also \citet{Olej03}).
+
+The simplest measure is the so-called \(\eta^2\) (``eta
+squared''), the proportion of the total SS which can be attributed to the
+differences between the groups or conditions: \[\label{eq:etasq}
+    \eta^2 = \frac{ \textrm{SS}_b } { \textrm{SS}_t }\] The effect size
+\(\eta^2\) is a proportion between 0 and 1, which indicates how much of the
+variance in the \emph{sample} can be assigned to the independent
+variable.
+
+The second measure for effect size with analysis of variance is the so-called
+\(\omega^2\) (``omega squared''):
+\begin{equation}
+  \label{eq:omegasq}
+    \omega^2 = \frac{ \textrm{SS}_b - (k-1) \textrm{MS}_w} { \textrm{SS}_t + \textrm{MS}_w }
+\end{equation}
+The effect size \(\omega^2\) is also a proportion; this is an estimation
+of the proportion of the variance in the \emph{population} which can be attributed
+to the independent variable, where the estimation is of course based
+on the investigated sample. As we are generally more interested in
+generalisation to the population than to the sample, we prefer \(\omega^2\)
+as the measure for the effect size.
+
+We should not only report the \(F\)-ratio, degrees of freedom,
+and p-values, but also the effect size (see
+Example 15.2 above).
+
+\begin{quote}
+``It is not enough to report
+\(F\)-ratios and whether they are statistically significant. We must know
+how strong relations are. After all, with large enough \(N\)s, \(F\)- and
+\(t\)-ratios can almost always be statistically significant. While often
+sobering in their effect, especially when they are low, coefficients of
+association of independent and dependent variables {[}i.e., effect size
+coefficients{]} are \emph{indispensable} parts of research results'' \citep[ p.327, emphasis added]{KL00}.
+\end{quote}
+
+\hypertarget{sec:anova-oneway-planned}{%
+\subsection{Planned comparisons}\label{sec:anova-oneway-planned}}
+
+In Example 15.2 (see
+Figure \ref{fig:colours-obs}), we investigated the differences between
+scores from the red, grey and blue groups. The null hypothesis which was tested
+was H0:
+\(\mu_\textrm{red} = \mu_\textrm{grey} = \mu_\textrm{blue}\).
+However, it is also quite possible that a researcher already has
+certain ideas about the differences between groups, and is looking in a
+\emph{focused} manner for certain differences, and wants to actually ignore other
+differences. The planned comparisons are also called `contrasts'.
+
+Let us assume for the same example that the researcher already expects,
+from previous research, that the red and blue group scores will differ from
+each other. The H0 above is then no longer interesting to investigate, since
+we expect in advance that we will reject H0. The researcher now wants to know
+in a planned way (1) whether the red group scores lower than the other two groups,
+(H0: \(\mu_\textrm{red} = (\mu_\textrm{grey}+\mu_\textrm{blue})/2\)),
+and (2)
+whether the grey and blue groups differ from each other (H0:
+\(\mu_\textrm{grey} = \mu_\textrm{blue}\))
+\footnote{If (1) red does differ from grey and blue, and if (2) grey and blue
+  also differ from each other, then this implies that red differs from grey (a new
+  finding) and that red differs from blue (we already knew that).}.
+
+The factor `group' or `colour' has 2 degrees of freedom, and that means that we
+can make precisely 2 of such planned comparisons or `contrasts' which are
+independent of each other. Such independent contrasts
+are called `orthogonal'.
+
+In an analysis of variance with planned comparisons, the variance between
+groups or conditions is divided even further, namely into the planned
+contrasts such as the two above (see
+Table~\ref{tab:colours-anova-contrast}). We omit further explanation
+about planned comparisons but our advice is to make
+smart use of these planned comparisons when possible. Planned comparisons are advised whenever
+you can formulate a more
+specific null hypothesis than H0: ``the mean scores are equal
+in all groups or conditions''. We can make planned statements
+about the differences between the groups in our example:
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{quote}
+\emph{Example 15.3}:
+The mean score of the red
+group is significantly lower than that from the two other groups combined
+{[}\(F(1,42)=18.47, p=.0001, \omega^2=0.28\){]}. The mean score is
+almost the same for the grey and blue group
+{[}\(F(1,42)<1, \textrm{n.s.}, \omega^2=0.00\){]}.
+This implies that the red group achieves significantly lower scores than the
+grey group and than the blue group.
+\end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{longtable}[]{@{}lccccc@{}}
+\caption{\label{tab:colours-anova-contrast} Summary of analysis of variance of the observations in Figure \ref{fig:colours-obs}, with planned contrasts between groups.}\tabularnewline
+\toprule
+Variance source & df & SS & MS & \(F\) & \(p\)\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+Variance source & df & SS & MS & \(F\) & \(p\)\tabularnewline
+\midrule
+\endhead
+Group & 2 & 14.50 & 7.248 & 9.356 & 0.0004\tabularnewline
+~~Group, contrast 1 & 1 & 14.31 & 14.308 & 18.470 & 0.0001\tabularnewline
+~~Group, contrast 2 & 1 & 0.19 & 0.188 & 0.243 & 0.6248\tabularnewline
+(within) & 42 & 32.54 & 0.775 & &\tabularnewline
+\bottomrule
+\end{longtable}
+
+The analysis of variance with planned comparisons can thus be used
+if you already have planned (a priori) hypotheses over differences between
+certain (combinations of) groups or conditions. ``A priori'' means that these
+hypotheses (contrasts) are formulated before the observations have been made.
+These hypotheses can be based on theoretical considerations, or on
+previous research results.
+
+\hypertarget{orthogonal-contrasts}{%
+\subsubsection{Orthogonal contrasts}\label{orthogonal-contrasts}}
+
+Each contrast can be expressed in the form of weights for each
+condition. For the contrasts discussed above, that can be done
+in the form of the following weights:
+
+\begin{longtable}[]{@{}ccc@{}}
+\toprule
+Condition & Contrast 1 & Contrast 2\tabularnewline
+\midrule
+\endhead
+~~Red & -1 & 0\tabularnewline
+~~Grey & +0.5 & -1\tabularnewline
+~~Blue & +0.5 & +1\tabularnewline
+\bottomrule
+\end{longtable}
+
+The H0 for contrast 2 (\(\mu_\textrm{grey} = \mu_\textrm{blue}\)) can be
+expressed in weights as follows:
+\(\textrm{C2} = 0\times \mu_\textrm{red} -1 \times \mu_\textrm{grey} +1 \times \mu_\textrm{blue} = 0\).
+
+To determine whether two contrasts are orthogonal, we multiply
+their respective weights for each condition (row):\\
+\(( (-1)(0), (+0.5)(-1), (+0.5)(+1) )= (0, -0.5, +0.5)\).\\
+We then sum all these products:
+\(0 -0.5 + 0.5 = 0\).\\
+If the sum of these products is null, then the two
+contrasts are orthogonal.
+
+\hypertarget{sec:anova-oneway-posthoc}{%
+\subsection{Post-hoc comparisons}\label{sec:anova-oneway-posthoc}}
+
+In many studies, a researcher has no idea about the expected differences
+between the groups or conditions. Only after the analysis of variance,
+\emph{after} a significant effect has been found, does the researcher decide
+to inspect more closely which conditions differ from each other. We speak
+then of \emph{post hoc} comparisons, ``suggested by the data'' \citep[ p.200]{MD04}.
+When doing so, we have to work conservatively, precisely because
+after the analysis of variance we might already suspect that some
+comparisons will yield a significant result,
+i.e., the null hypotheses are not neutral.
+
+There are many dozens of statistical tests for post hoc
+comparisons. The most important difference is their degree of conservatism
+(tendency not to reject H0) vs.~liberalism (tendency to indeed reject H0).
+Additionally, some tests are better equipped
+for pairwise comparisons between conditions (like contrast 2 above) and
+others better equipped for complex comparisons
+(like contrast 1 below). And the tests differ in the assumptions
+which they make about the variances in the cells.
+
+Here, we will mention one test
+for post hoc comparisons between pairs of conditions: \emph{Tukey's
+Honestly Significant Difference}, abbreviated to Tukey's HSD. This test
+occupies a good middle ground between being too conservative and too liberal. An
+important characteristic of the Tukey HSD test is that the family-wise
+error (the \emph{collective} p-value) over all pairwise comparisons together
+is equal to the indicated p-value
+\(\alpha\) (see §\ref{sec:anova-examples}). The Tukey HSD test results in
+a 95\% confidence interval for the difference between two conditions,
+and/or in a \(p\)-value for the difference between two conditions.
+
+\hypertarget{spss-12}{%
+\subsection{SPSS}\label{spss-12}}
+
+\hypertarget{preparation}{%
+\subsubsection{preparation}\label{preparation}}
+
+We will use the data in the file \texttt{data/kleurgroepen.txt}; this data is also shown in Figure \ref{fig:colours-obs}.
+Read first the required data, and check this:
+
+\begin{verbatim}
+File > Import Data > Text Data...
+\end{verbatim}
+
+Select \texttt{Files\ of\ type:\ Text} and select the file
+\texttt{data/kleurgroepen.txt}. Confirm with \texttt{Open}.\\
+The names of variables can be found in line 1. The decimal symbol is
+the full stop (period). The data starts on line 2. Each line is an observation.
+The delimiter used between the variables is a space. The text is between
+double quotation marks. You do not need to define the variables further,
+the standard options of SPSS work well here.\\
+Confirm the last selection screen with \texttt{Done}. The data will
+then be read in.
+
+Examine whether the responses are normally distributed, using the
+techniques from Part II of this textbook (especially
+§\ref{sec:isvarnormaldistributed}).
+
+We cannot test in advance in SPSS whether the variances in the three groups
+are equal, as required for the analysis of variance. We will do that at the same
+time as the analysis of variance itself.
+
+\hypertarget{anova}{%
+\subsubsection{ANOVA}\label{anova}}
+
+In SPSS, you can conduct an analysis of variance in several
+different ways. We
+will use a generally applicable approach here, where we indicate that there
+is one dependent variable in play.\\
+
+\begin{verbatim}
+Analyze > General Linear Model > Univariate...
+\end{verbatim}
+
+Select \texttt{score} as dependent variable (drag to the panel
+``Dependent variable'').\\
+Select \texttt{kleur} (the Dutch variable name for colour of the group) as independent variable (drag to the panel ``Fixed
+Factor(s)'').\\
+Select \texttt{Model...} and then \texttt{Full\ factorial} model, \texttt{Type\ I} Sum
+of squares, and tick: \texttt{Include\ intercept\ in\ model}, and confirm with
+\texttt{Continue}.\\
+Select \texttt{Options...} and ask for means for the conditions
+of the factor \texttt{colour} (drag to the Panel ``Display Means for''). Cross:
+\texttt{Estimates\ of\ effect\ size} and \texttt{Homogeneity\ tests}, and confirm again with
+\texttt{Continue}.\\
+Confirm all options with \texttt{OK}.
+
+In the output, we find first the outcome of Levene's test on equal
+variances (homogeneity of variance) which gives no reason to reject
+H0. We can thus conduct an analysis of variance.
+
+Then, the analysis of variance is summarised in a table like Table
+\ref{tab:colours-anova}, where the effect size is also stated in
+the form of \texttt{~Partial\ eta\ square}.
+As explained above, it would be better, however, to report
+\(\omega^2\), but you do have to calculate that yourself!
+
+\hypertarget{planned-comparison}{%
+\subsubsection{planned comparison}\label{planned-comparison}}
+
+For an analysis of variance with planned comparisons, we have to
+indicate the desired contrasts for the factor \texttt{kleur} (the Dutch variable name for colour of the group).
+However, the method
+is different to the above. We cannot set the planned contrasts in SPSS
+via the menu system which we used until now. Here, we instead have
+to get to work ``under the bonnet''!\\
+First repeat the instructions above but, instead of confirming everything,
+you should now select the button \texttt{Paste}. Then, a so-called Syntax window
+will be opened (or activated, if it was already open). Within it, you
+will see the SPSS command that you built via the menu.\\
+We are going to edit this command in order to indicate our own, special
+contrasts. When specifying the contrasts, we do have to take into
+account the \emph{alphabetic} order of the conditions: blue, grey,
+red.\\
+The command in the Syntax window should eventually look like the one
+below, after you have added the line \texttt{/CONTRAST}. The command
+must be terminated with a full stop.\\
+
+\begin{verbatim}
+UNIANOVA score BY colour
+  /METHOD=SSTYPE(1)
+  /INTERCEPT=INCLUDE
+  /EMMEANS=TABLES(colour) 
+  /PRINT=ETASQ HOMOGENEITY
+  /CRITERIA=ALPHA(.05)
+  /DESIGN=colour
+  /CONTRAST(colour)=special(0.5 0.5 -1, 1 -1 0).
+\end{verbatim}
+
+Place the cursor somewhere between the word \texttt{UNIANOVA} and the terminating
+full stop, and then click on the large green arrow to the right (\texttt{Run\ Selection})
+in the Syntax window's menu.
+
+The output provides the significance and the confidence interval
+of the tested contrast for each contrast. The first contrast
+is indeed significant (\texttt{Sig.\ .000}, report as \(p<.001\), see
+§\ref{sec:plargerthannull}), and the second is not, see
+Table \ref{tab:colours-anova-contrast}.
+
+\hypertarget{post-hoc-comparison}{%
+\subsubsection{post hoc comparison}\label{post-hoc-comparison}}
+
+First repeat the instructions above.\\
+Select the button \texttt{Post\ Hoc...}, and select the factor \texttt{kleur}
+(the Dutch variable name for colour of the group) (move this term to the window ``Post Hoc Tests for:'').
+Tick: \texttt{Tukey}, and then \texttt{Continue}. Confirm all options with \texttt{OK}.
+
+For each pairwise comparison, we see the difference, the
+standard error, and the Lower Bound and Upper Bound of the 95\%
+confidence interval of that difference. If that interval does \emph{not}
+include null then the difference between the two groups or conditions is
+thus probably not equal to null. The corrected p-value according to Tukey's
+HSD test is also provided in the third column. We can see that red
+differs from blue, that red differs from grey, and that the scores of the
+grey and blue groups do not differ.
+
+\hypertarget{r-14}{%
+\subsection{R}\label{r-14}}
+
+\hypertarget{preparation-1}{%
+\subsubsection{preparation}\label{preparation-1}}
+
+Read firstly the necessary data, and check this:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# same data as used in Fig.15.2}
+\NormalTok{colourgroups \textless{}{-}}\StringTok{ }\KeywordTok{read.table}\NormalTok{( }\StringTok{"data/kleurgroepen.txt"}\NormalTok{, }
+                            \DataTypeTok{header=}\OtherTok{TRUE}\NormalTok{, }\DataTypeTok{stringsAsFactors=}\OtherTok{TRUE}\NormalTok{ )}
+\end{Highlighting}
+\end{Shaded}
+
+Examine whether the responses are normally distributed, using
+the techniques from Part II of this textbook (especially
+§\ref{sec:isvarnormaldistributed}).
+
+Investigate whether the variances in the three groups are equal, as required
+for analysis of variance. The H0 which we are testing is:
+\(s^2_\textrm{red} = s^2_\textrm{grey} = s^2_\textrm{blue}\). We
+test this H0 using Bartlett's test.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{bartlett.test}\NormalTok{( }\DataTypeTok{x=}\NormalTok{colourgroups}\OperatorTok{$}\NormalTok{score, }\DataTypeTok{g=}\NormalTok{colourgroups}\OperatorTok{$}\NormalTok{kleur )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  Bartlett test of homogeneity of variances
+## 
+## data:  colourgroups$score and colourgroups$kleur
+## Bartlett's K-squared = 3.0941, df = 2, p-value = 0.2129
+\end{verbatim}
+
+\hypertarget{anova-1}{%
+\subsubsection{ANOVA}\label{anova-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{summary}\NormalTok{( }\KeywordTok{aov}\NormalTok{( score}\OperatorTok{\textasciitilde{}}\NormalTok{kleur, }\DataTypeTok{data=}\NormalTok{colourgroups) {-}\textgreater{}}\StringTok{ }\NormalTok{m01 ) }\CommentTok{\# see Table 15.3}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##             Df Sum Sq Mean Sq F value   Pr(>F)    
+## kleur        2  14.50   7.248   9.356 0.000436 ***
+## Residuals   42  32.54   0.775                     
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{verbatim}
+
+\hypertarget{R:omega-square}{%
+\subsubsection{effect size}\label{R:omega-square}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# own function to calculate omega2, see comparison (15.7) in the main text,}
+\CommentTok{\# for effect called \textasciigrave{}term\textasciigrave{} in summary(\textasciigrave{}model\textasciigrave{})}
+\NormalTok{omegasq \textless{}{-}}\StringTok{ }\ControlFlowTok{function}\NormalTok{ ( model, term ) \{   }
+\NormalTok{     mtab \textless{}{-}}\StringTok{ }\KeywordTok{anova}\NormalTok{(model)}
+\NormalTok{     rterm \textless{}{-}}\StringTok{ }\KeywordTok{dim}\NormalTok{(mtab)[}\DecValTok{1}\NormalTok{] }\CommentTok{\# resid term}
+     \KeywordTok{return}\NormalTok{( (mtab[term,}\DecValTok{2}\NormalTok{]}\OperatorTok{{-}}\NormalTok{mtab[term,}\DecValTok{1}\NormalTok{]}\OperatorTok{*}\NormalTok{mtab[rterm,}\DecValTok{3}\NormalTok{]) }\OperatorTok{/}\StringTok{ }
+\StringTok{             }\NormalTok{(mtab[rterm,}\DecValTok{3}\NormalTok{]}\OperatorTok{+}\KeywordTok{sum}\NormalTok{(mtab[,}\DecValTok{2}\NormalTok{])) )}
+\NormalTok{\}}
+\CommentTok{\# variable kleur=colour is the term to inspect}
+\KeywordTok{omegasq}\NormalTok{( m01, }\StringTok{"kleur"}\NormalTok{ ) }\CommentTok{\# call function with 2 arguments}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.2708136
+\end{verbatim}
+
+\hypertarget{planned-comparison-1}{%
+\subsubsection{planned comparison}\label{planned-comparison-1}}
+
+When specifying the contrasts, we have to take into account the
+\emph{alphabetic} ordering of the conditions: \emph{blue, grey, red}.
+Note that the predictor is named \texttt{kleur} which is the Dutch term for colour of the group).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# make matrix of two orthogonal contrasts (per column, not per row) }
+\NormalTok{conmat \textless{}{-}}\StringTok{ }\KeywordTok{matrix}\NormalTok{( }\KeywordTok{c}\NormalTok{(.}\DecValTok{5}\NormalTok{,.}\DecValTok{5}\NormalTok{,}\OperatorTok{{-}}\DecValTok{1}\NormalTok{, }\OperatorTok{+}\DecValTok{1}\NormalTok{,}\OperatorTok{{-}}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{), }\DataTypeTok{byrow=}\NormalTok{F, }\DataTypeTok{nrow=}\DecValTok{3}\NormalTok{ )}
+\KeywordTok{dimnames}\NormalTok{(conmat)[[}\DecValTok{2}\NormalTok{]] \textless{}{-}}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{".R.GB"}\NormalTok{,}\StringTok{".0G.B"}\NormalTok{) }\CommentTok{\# (1) R vs G+B, (2) G vs B }
+\KeywordTok{contrasts}\NormalTok{(colourgroups}\OperatorTok{$}\NormalTok{kleur) \textless{}{-}}\StringTok{ }\NormalTok{conmat }\CommentTok{\# assign contrasts to factor}
+\KeywordTok{summary}\NormalTok{( }\KeywordTok{aov}\NormalTok{( score}\OperatorTok{\textasciitilde{}}\NormalTok{kleur, }\DataTypeTok{data=}\NormalTok{colourgroups) {-}\textgreater{}}\StringTok{ }\NormalTok{m02 ) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##             Df Sum Sq Mean Sq F value   Pr(>F)    
+## kleur        2  14.50   7.248   9.356 0.000436 ***
+## Residuals   42  32.54   0.775                     
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# output is necessary for omega2}
+\CommentTok{\# see https://blogs.uoregon.edu/rclub/2015/11/03/anova{-}contrasts{-}in{-}r/}
+\KeywordTok{summary.aov}\NormalTok{( m02, }\DataTypeTok{split=}\KeywordTok{list}\NormalTok{(}\DataTypeTok{kleur=}\KeywordTok{list}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{)) )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##             Df Sum Sq Mean Sq F value   Pr(>F)    
+## kleur        2  14.50   7.248   9.356 0.000436 ***
+##   kleur: C1  1  14.31  14.308  18.470 0.000100 ***
+##   kleur: C2  1   0.19   0.188   0.243 0.624782    
+## Residuals   42  32.54   0.775                     
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{verbatim}
+
+When we have planned contrasts, the previously constructed function \texttt{omegasq} can no longer be used (and neither can the previously provided formula). We now have to calculate the \(\omega^2\) by hand using the output from the summary of model \texttt{m02}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(}\FloatTok{14.308}\DecValTok{{-}1}\OperatorTok{*}\FloatTok{0.775}\NormalTok{)}\OperatorTok{/}\NormalTok{(}\FloatTok{0.775+14.308+0.19+32.54}\NormalTok{) }\CommentTok{\# 0.2830402}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.2830402
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(}\FloatTok{0.188}\DecValTok{{-}1}\OperatorTok{*}\FloatTok{0.775}\NormalTok{)}\OperatorTok{/}\NormalTok{(}\FloatTok{0.775+14.308+0.19+32.54}\NormalTok{) }\CommentTok{\# rounded off 0.00}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] -0.012277
+\end{verbatim}
+
+\hypertarget{post-hoc-comparisons}{%
+\subsubsection{post hoc comparisons}\label{post-hoc-comparisons}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{TukeyHSD}\NormalTok{(m02)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   Tukey multiple comparisons of means
+##     95% family-wise confidence level
+## 
+## Fit: aov(formula = score ~ kleur, data = colourgroups)
+## 
+## $kleur
+##                  diff        lwr        upr     p adj
+## grey50-blue -0.158353 -0.9391681  0.6224622 0.8751603
+## red-blue    -1.275352 -2.0561668 -0.4945365 0.0007950
+## red-grey50  -1.116999 -1.8978139 -0.3361835 0.0033646
+\end{verbatim}
+
+For each pair, we see the difference, and the Lower Bound (\texttt{lwr}) and
+the Upper Bound (\texttt{upr}) of the 95\% confidence interval
+of the difference. If that interval does \emph{not} include null, then
+the difference between the two groups or conditions is thus probably not
+equal to null. The corrected p-value according to
+Tukey's HSD test is also given in the last column.
+Again, we see that red differs from grey, that red differs from
+blue, and that the grey and blue scores do not differ.
+
+\hypertarget{two-way-analysis-of-variance}{%
+\section{Two-way analysis of variance}\label{two-way-analysis-of-variance}}
+
+In §\ref{sec:anova-examples}, we already gave an example
+of a research study with two factors which were investigated in one analysis
+of variance. In this way, we can investigate (i) whether there is a
+main effect from the first factor (e.g.~the speaker's region of origin),
+(ii) whether there is a main effect from the second factor (e.g.~
+speaker gender), and (iii) whether there is an interaction effect.
+A such interaction implies that the differences between conditions of
+one factor are not the same
+for the conditions of the other factor, or put otherwise, that a cell's mean
+score deviates from the predicted value based on the two main effects.
+
+\hypertarget{an-intuitive-explanation}{%
+\subsection{An intuitive explanation}\label{an-intuitive-explanation}}
+
+In many studies, we are interested in the \emph{combined} effects
+of two or more factors. In
+Table~\ref{tab:sylduration2way}, we already saw mean speech tempos,
+split up according to the speaker's region of origin and sex.
+If the differences between the regions are different for men compared with
+women, or put differently, if the differences between men and women are
+different for the different regions then we speak of an interaction. By adding
+a second factor into the study, we thus have to deal with a third factor,
+namely the interaction between
+the first and second factor
+\footnote{If we add more factors then the situation quickly becomes confusing.
+  With three main effects, there are already 3 two-way interactions plus 1 three-way
+  interaction. With four main effects, there are already 6 two-way interactions, plus
+  4 three-way interactions, plus 1 four-way interaction.}.
+
+If a significant interaction is present then we can no longer make
+general statements about the main effect we are concerned with. After all, the
+impact of a main effect is also dependent on the interaction with
+(an) other main effect(s), as can be seen in
+Figure~\ref{fig:drakebenelheni2003fig2} (§\ref{sec:factorial-designs}).
+The listener group's scores are \emph{on average}
+not higher compared with those of the other groups,
+and the scores are also \emph{on average} not higher in one condition than in the other.
+The main effects are thus not significant --- but their interaction
+on the other hand is indeed significant. In general, interaction occurs when the effect of one factor varies depending on the different levels of another factor.
+In this example of two-way interaction, the effect of one factor is in opposite directions for the two levels of the other factor.
+
+\hypertarget{a-formal-explanation}{%
+\subsection{A formal explanation}\label{a-formal-explanation}}
+
+We again assume that the scores have been built up according to
+a statistical model, namely as the sum of the population mean
+\(\mu\), a systematic effect \(\beta_k\) of the \(k\)'the condition of
+factor B, a systematic effect \((\alpha\beta)_{jk}\) of the combination
+of conditions \((j,k)\) of factors A and B, and a chance effect
+\(e_{ijk}\) for the \(i\)'the replication within the \(jk\)'the cell. In formula:
+
+\[x_{ijk} = \mu + \alpha_{j} + \beta_{k} + (\alpha\beta)_{jk} + e_{ijk}\]
+
+In the one-way analysis of variance the total `sums of squares' is split up
+into two components, namely between and within conditions (see
+equation \eqref{eq:SStotal}).
+With the two-way analysis of variance, there are now however
+\emph{four} components:
+\begin{align}
+  \label{eq:SStotal2way}
+    { \sum (x_{ijk} - \overline{x})^2 } = &  { \sum_j n_j (\bar{x}_j - \bar{x})^2 } + \\ 
+    & { \sum_k n_k (\bar{x}_k - \bar{x})^2 } +  \\
+    & { \sum_j \sum_k n_{jk} (\bar{x}_{jk} - \bar{x}_j - \bar{x}_k + \bar{x})^2 } + \\
+    & { \sum_i \sum_j \sum_k (x_{ijk} - \bar{x}_{jk})^2 } 
+\end{align}
+
+The degrees of freedom of these sums of squares also add up to each other
+again:
+\begin{align}
+  \label{eq:dftotal2}
+    { (N-1) } &= (A-1) &+ (B-1) &+ (A-1)(B-1) &+ (N-AB) \\
+    \textrm{df}_t &= \textrm{df}_A &+ \textrm{df}_B &+ \textrm{df}_{AB} &+ \textrm{df}_w
+\end{align}
+
+Just like with the one-way analysis of variance, we again calculate the
+`mean squares' by dividing the sums of squares by their degrees of freedom.
+
+We now test \emph{three} null hypotheses, namely for the two main effects and their
+interactions. For each test, we determine the corresponding
+\(F\)-ratio. The numerator is formed from the observed variance,
+as formulated above; the denominator is formed from \(s^2_w\), the
+chance variance between the replications \emph{within} the cells. All
+the necessary calculations for analysis of variance, including determining
+the degrees of freedom and p-values, are carried out by computer
+nowadays.
+
+The results are summarised again in an ANOVA table, which has now been somewhat
+extended in Table \ref{tab:syldur2way-anova}. We now test and report three
+hypotheses. If the interaction is significant, then you should first report
+the interaction, and only then the main effects. After all, the interaction present
+has an influence on how we should interpret the main effects. If the interaction
+is not significant, like in our current example with speech tempos from
+Table~\ref{tab:sylduration2way}, then it is usual to first report the main
+effects, and then the non-significant interaction effect.
+
+\begin{quote}
+The observed speech tempos differ significantly between the four
+regions of origin of the speakers
+{[}\(F(3,71)=6.0, p=.0010\), \(\omega^2=.14\){]}, and men speak significantly faster
+than women {[}\(F(1,71)=15.1, p=.0002\), \(\omega^2=.13\){]}.
+The two factors show no interaction
+{[}\(F(3,71)=1.4, \textrm{n.s.}\), \(\omega^2=.01\){]}.
+A post hoc comparison between the regions showed that speakers from
+the West speak significantly more quickly than those from the North (Tukey's
+HSD test, \(p=.0006\)) and from those from the South (\(p=.0190\)); other
+pairwise differences between regions were not significant.
+\end{quote}
+
+\begin{longtable}[]{@{}lccccc@{}}
+\caption{\label{tab:syldur2way-anova} Summary of two-way analysis of variance of the speech
+tempos in Table~\ref{tab:sylduration2way}.}\tabularnewline
+\toprule
+Source of variance & df & SS & MS & \(F\) & \(p\)\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+Source of variance & df & SS & MS & \(F\) & \(p\)\tabularnewline
+\midrule
+\endhead
+(i) Region & 3 & 0.01234 & 0.004114 & 6.039 & 0.0010\tabularnewline
+(ii) Sex & 1 & 0.01031 & 0.010310 & 15.135 & 0.0002\tabularnewline
+(iii) Region \(\times\) Sex & 3 & 0.00287 & 0.000958 & 1.406 & 0.2482\tabularnewline
+within & 71 & 0.04837 & 0.000681 & &\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{spss-13}{%
+\subsection{SPSS}\label{spss-13}}
+
+\hypertarget{preparation-2}{%
+\subsubsection{Preparation}\label{preparation-2}}
+
+One speaker has a very long mean syllable length; we will ignore this
+observation from now on.
+
+\begin{verbatim}
+Data > Select cases...
+\end{verbatim}
+
+Specify that we are only using observations which satisfy a condition,
+and specify the condition as \texttt{syldur\ \textless{}\ 0.4}.
+
+\hypertarget{anova-and-post-hoc-tests}{%
+\subsubsection{ANOVA and post hoc tests}\label{anova-and-post-hoc-tests}}
+
+\begin{verbatim}
+Analyze > General Linear Model > Univariate...
+\end{verbatim}
+
+Drag the dependent variable (\texttt{syldur}) to the box Dependent
+variable. Drag the two independent variables (\texttt{sex}, \texttt{region}) to the
+Fixed factor(s) box.\\
+For the post hoc test, select the button \texttt{Post\ Hoc...}. Select the
+\texttt{region} factor and select \texttt{Tukey}. Confirm with \texttt{Continue} and then again
+with \texttt{OK}.
+
+\hypertarget{r-15}{%
+\subsection{R}\label{r-15}}
+
+\hypertarget{preparation-3}{%
+\subsubsection{preparation}\label{preparation-3}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{require}\NormalTok{(hqmisc) }\CommentTok{\# for hqmisc::talkers data set}
+\KeywordTok{data}\NormalTok{(talkers)}
+\NormalTok{ok \textless{}{-}}\StringTok{ }\NormalTok{talkers}\OperatorTok{$}\NormalTok{syldur}\OperatorTok{\textless{}}\FloatTok{0.4} \CommentTok{\# TRUE for 79 of 80 talkers}
+\CommentTok{\# table of means, see Table 15.2 in main text}
+\KeywordTok{with}\NormalTok{(talkers, }\KeywordTok{tapply}\NormalTok{( syldur[ok], }\KeywordTok{list}\NormalTok{(region[ok],sex[ok]), mean ))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##           0       1
+## M 0.2707400 0.23460
+## N 0.2846000 0.25282
+## S 0.2691444 0.25175
+## W 0.2378100 0.23199
+\end{verbatim}
+
+\hypertarget{anova-2}{%
+\subsubsection{ANOVA}\label{anova-2}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# see Table 15.5 in main text}
+\KeywordTok{summary}\NormalTok{( }\KeywordTok{aov}\NormalTok{(syldur}\OperatorTok{\textasciitilde{}}\NormalTok{region}\OperatorTok{*}\NormalTok{sex, }\DataTypeTok{data=}\NormalTok{talkers, }\DataTypeTok{subset=}\NormalTok{ok) {-}\textgreater{}}\StringTok{ }\NormalTok{m03 )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##             Df  Sum Sq  Mean Sq F value   Pr(>F)    
+## region       3 0.01234 0.004114   6.039 0.001009 ** 
+## sex          1 0.01031 0.010310  15.135 0.000223 ***
+## region:sex   3 0.00287 0.000958   1.406 0.248231    
+## Residuals   71 0.04837 0.000681                     
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{verbatim}
+
+\hypertarget{effectsize}{%
+\subsubsection{Effect size}\label{effectsize}}
+
+In order to assess effect size, we will use the previously programmed function \texttt{omegasq}
+(§\ref{R:omega-square}):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{omegasq}\NormalTok{(m03, }\StringTok{"region"}\NormalTok{)      }\CommentTok{\# [1] 0.1380875}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.1380875
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{omegasq}\NormalTok{(m03, }\StringTok{"sex"}\NormalTok{)         }\CommentTok{\# [1] 0.1291232}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.1291232
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{omegasq}\NormalTok{(m03, }\StringTok{"region:sex"}\NormalTok{)  }\CommentTok{\# [1] 0.01112131}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.01112131
+\end{verbatim}
+
+\hypertarget{post-hoc-tests}{%
+\subsubsection{post-hoc tests}\label{post-hoc-tests}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{TukeyHSD}\NormalTok{(}\DataTypeTok{x=}\NormalTok{m03, }\DataTypeTok{which=}\StringTok{"region"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning in replications(paste("~", xx), data = mf): non-factors ignored: sex
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in replications(paste("~", xx), data = mf): non-factors ignored: region,
+## sex
+\end{verbatim}
+
+\begin{verbatim}
+##   Tukey multiple comparisons of means
+##     95% family-wise confidence level
+## 
+## Fit: aov(formula = syldur ~ region * sex, data = talkers, subset = ok)
+## 
+## $region
+##             diff          lwr          upr     p adj
+## N-M  0.016040000 -0.005674448  0.037754448 0.2195083
+## S-M  0.007319474 -0.014678836  0.029317783 0.8175548
+## W-M -0.017770000 -0.039484448  0.003944448 0.1466280
+## S-N -0.008720526 -0.030718836  0.013277783 0.7248801
+## W-N -0.033810000 -0.055524448 -0.012095552 0.0006238
+## W-S -0.025089474 -0.047087783 -0.003091164 0.0190285
+\end{verbatim}
 
 \hypertarget{appendix-appendices}{%
 \appendix}

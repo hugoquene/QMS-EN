@@ -6,7 +6,7 @@ With statistical testing of H0, we determine the probability $P$ of the
 observed differences or effects (or of even larger differences or effects
 than observed) if H0 were true, and thus if 
 the observed difference had to be attributed solely to chance
-(see §\@ref(sec:empiricalcylce) and
+(see §\@ref(sec:empiricalcycle) and
 Chapter \@ref(ch:testing)). If the probability $P$ is very small, then
 we have thus found results which are very improbable if H0 were true.
 We then conclude that H0 is presumably *not true* and we thus reject

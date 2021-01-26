@@ -37,7 +37,6 @@ tab:cito-ranks
 tab:cito-contingency-table
 fig:xkcd552
 eq:obs-true-error
-eq:normal-error
 eq:rho-reliability
 tab:reliability
 fig:gramm2013onesample
@@ -59,6 +58,8 @@ tab:colours-anova-contrast
 tab:syldur2way-anova
 tab:titanic
 tab:dollhill
+tab:data-originalrewritten
+eq:kruskall-wallis-H
 tab:A1
 ch:introduction
 sec:scientific-research
@@ -289,6 +290,18 @@ r-16
 goodness-of-fit-testing-1
 contingency-table-preparation-and-testing
 effect-size-odds-ratio
+ch:other-nonpar-tests
+sec:h17introduction
+paired-observations-single-sample
+sec:signtest
+sec:Wilcoxon-signed-rank
+formulas-6
+independent-observations-multiple-samples
+median-test
+sec:wilcoxon-rank-sum
+formulas-7
+kruskall-wallis-h-test
+formula-1
 app:randomnumbers
 app:criticalZvalues
 app:criticaltvalues

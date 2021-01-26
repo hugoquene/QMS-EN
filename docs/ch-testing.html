@@ -435,6 +435,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="16.9" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#effect-size-odds-ratio"><i class="fa fa-check"></i><b>16.9</b> Effect size: odds ratio</a></li>
 </ul></li>
+<li class="chapter" data-level="17" data-path="ch-other-nonpar-tests.html"><a href="ch-other-nonpar-tests.html"><i class="fa fa-check"></i><b>17</b> Other nonparametric tests</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="ch-other-nonpar-tests.html"><a href="ch-other-nonpar-tests.html#sec:h17introduction"><i class="fa fa-check"></i><b>17.1</b> Introduction</a></li>
+<li class="chapter" data-level="17.2" data-path="ch-other-nonpar-tests.html"><a href="ch-other-nonpar-tests.html#paired-observations-single-sample"><i class="fa fa-check"></i><b>17.2</b> Paired observations, single sample</a>
+<ul>
+<li class="chapter" data-level="17.2.1" data-path="ch-other-nonpar-tests.html"><a href="ch-other-nonpar-tests.html#sec:signtest"><i class="fa fa-check"></i><b>17.2.1</b> Sign test</a></li>
+<li class="chapter" data-level="17.2.2" data-path="ch-other-nonpar-tests.html"><a href="ch-other-nonpar-tests.html#sec:Wilcoxon-signed-rank"><i class="fa fa-check"></i><b>17.2.2</b> Wilcoxon signed-ranks test</a></li>
+</ul></li>
+<li class="chapter" data-level="17.3" data-path="ch-other-nonpar-tests.html"><a href="ch-other-nonpar-tests.html#independent-observations-multiple-samples"><i class="fa fa-check"></i><b>17.3</b> Independent observations, multiple samples</a>
+<ul>
+<li class="chapter" data-level="17.3.1" data-path="ch-other-nonpar-tests.html"><a href="ch-other-nonpar-tests.html#median-test"><i class="fa fa-check"></i><b>17.3.1</b> Median test</a></li>
+<li class="chapter" data-level="17.3.2" data-path="ch-other-nonpar-tests.html"><a href="ch-other-nonpar-tests.html#sec:wilcoxon-rank-sum"><i class="fa fa-check"></i><b>17.3.2</b> Wilcoxon rank sum test, or Mann-Whitney U test</a></li>
+<li class="chapter" data-level="17.3.3" data-path="ch-other-nonpar-tests.html"><a href="ch-other-nonpar-tests.html#kruskall-wallis-h-test"><i class="fa fa-check"></i><b>17.3.3</b> Kruskall-Wallis H test</a></li>
+</ul></li>
+</ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
 <li class="chapter" data-level="A" data-path="app-randomnumbers.html"><a href="app-randomnumbers.html"><i class="fa fa-check"></i><b>A</b> Random numbers</a></li>
 <li class="chapter" data-level="B" data-path="app-criticalZvalues.html"><a href="app-criticalZvalues.html"><i class="fa fa-check"></i><b>B</b> Standard normal probability distribution</a></li>
@@ -1072,8 +1087,7 @@ and these observations are thus not independent (since they come
 from the same member of the sample). With this, one of the assumptions of
 the <span class="math inline">\(t\)</span>-test is violated.</p>
 <p>As an example, we take an imaginary investigation of the use of the
-Dutch second person pronouns <em>U</em> (you <em>formal</em>) and <em>je</em> (you <em>informal</em>) as forms
-of address on a website. The researcher makes two versions
+Dutch second person pronouns <em>U</em> (formal “you”, like French “vous”) and <em>je</em> (informal “you”, like French “tu”) as forms of address on a website. The researcher makes two versions
 of a website, one with <em>U</em> and the other with <em>je</em>. Each
 respondent has to judge both versions on a scale from 1 to 10. (For validity
 reasons, the order of the two versions is varied between respondents;
@@ -1164,7 +1178,7 @@ with <em>U</em> or <em>je</em> as the forms of addressed, by <span class="math i
 <p>The pair of observations for the <span class="math inline">\(i\)</span>-th member of the sample has a
 difference score which we can write as:<br />
 <span class="math inline">\(D_i = x_{1i} - x_{2i}\)</span> where <span class="math inline">\(x_{1i}\)</span> is the dependent
-variable score of the <span class="math inline">\(i\)</span>-th member for condition 2. This
+variable score of the <span class="math inline">\(i\)</span>-th respondent for condition 1. This
 difference score is also stated in
 Table <a href="ch-testing.html#tab:data-uje-paired">13.1</a>.</p>
 <p>This difference score <span class="math inline">\(D\)</span> is then actually analysed with the earlier discussed <span class="math inline">\(t\)</span>-test for a single sample (see

@@ -695,8 +695,7 @@ from the same member of the sample). With this, one of the assumptions of
 the $t$-test is violated. 
 
 As an example, we take an imaginary investigation of the use of the 
-Dutch second person pronouns *U* (you *formal*) and *je* (you *informal*) as forms 
-of address on a website. The researcher makes two versions
+Dutch second person pronouns *U* (formal "you", like French "vous") and *je* (informal "you", like French "tu") as forms of address on a website. The researcher makes two versions
 of a website, one with *U* and the other with *je*. Each 
 respondent has to judge both versions on a scale from 1 to 10. (For validity
 reasons, the order of the two versions is varied between respondents;
@@ -726,7 +725,7 @@ with *U* or *je* as the forms of addressed, by $N=10$ respondents.
 The pair of observations for the $i$-th member of the sample has a 
 difference score which we can write as: 					
 $D_i = x_{1i} - x_{2i}$ where $x_{1i}$ is the dependent
-variable score of the $i$-th member for condition 2. This
+variable score of the $i$-th respondent for condition 1. This
 difference score is also stated in 
 Table \@ref(tab:data-uje-paired).
 

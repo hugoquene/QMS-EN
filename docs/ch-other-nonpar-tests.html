@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>C Critical values for \(t\)-distribution | Quantitative Methods and Statistics</title>
+  <title>17 Other nonparametric tests | Quantitative Methods and Statistics</title>
   <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="C Critical values for \(t\)-distribution | Quantitative Methods and Statistics" />
+  <meta property="og:title" content="17 Other nonparametric tests | Quantitative Methods and Statistics" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rstudio/QMS-EN" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="C Critical values for \(t\)-distribution | Quantitative Methods and Statistics" />
+  <meta name="twitter:title" content="17 Other nonparametric tests | Quantitative Methods and Statistics" />
   
   <meta name="twitter:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="app-criticalZvalues.html"/>
-<link rel="next" href="app-criticalchi2values.html"/>
+<link rel="prev" href="ch-chi-square-tests.html"/>
+<link rel="next" href="app-randomnumbers.html"/>
 <script src="libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -476,438 +476,334 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="app:criticaltvalues" class="section level1" number="20">
-<h1><span class="header-section-number">C</span> Critical values for <span class="math inline">\(t\)</span>-distribution</h1>
-<p><img src="QMS-EN_files/figure-html/criticaltvalues-auxiliaryfigure-1.png" width="672" /></p>
-<p>The critical boundary value <span class="math inline">\(t^*\)</span> given below has a critical probability <span class="math inline">\(p\)</span>
-under <span class="math inline">\(H_0\)</span>, i.e. <span class="math inline">\(P(t \geq t^*|H_0)=p\)</span>, and has probability <span class="math inline">\(B\)</span> of a
-value between <span class="math inline">\((-t^*, +t^*)\)</span>. The <span class="math inline">\(t\)</span>-distribution is symmetric around
-<span class="math inline">\(t=0\)</span>, thus <span class="math inline">\(P(t &lt; -t^*) = P(t &gt; t^*)\)</span>.</p>
-<p>The table below provides the critical boundary values <span class="math inline">\(t^*\)</span> for much used critical probabilities <span class="math inline">\(p\)</span> and
-confidence intervals <span class="math inline">\(B\)</span>, for the degrees of freedom indicated in the first column.</p>
+<div id="ch:other-nonpar-tests" class="section level1" number="17">
+<h1><span class="header-section-number">17</span> Other nonparametric tests</h1>
+<div id="sec:h17introduction" class="section level2" number="17.1">
+<h2><span class="header-section-number">17.1</span> Introduction</h2>
+<p>In this chapter, we discuss different nonparametric tests.
+These tests can be used when the data is not
+measured on an interval level of measurement (see Chapter
+<a href="ch-levelsofmeasurement.html#ch:levelsofmeasurement">4</a>), or if the probability distribution of the
+data deviates from the normal distribution (see
+§<a href="ch-probability-distributions.html#sec:whatifnotnormal">10.5</a>). The nonparametric tests do not make
+assumptions about the parameters of the probability distribution of the data.</p>
+<p>Earlier, we already saw that nonparametric correlation coefficients exist,
+namely the Spearman’s rank correlation coefficient (§<a href="ch-correlation-regression.html#sec:Spearman">11.5</a>)
+and the (nominal) Phi correlation coefficient
+(§<a href="ch-correlation-regression.html#sec:Phi">11.6</a>). In the previous chapter, we discussed
+a much used nonparametric test, the <span class="math inline">\(\chi^2\)</span>-test. Below, we will look at some other
+frequently used nonparametric tests. We discuss these in two groups:
+firstly for paired observations, and afterwards for unpaired observations from
+multiple samples. In each subsection, we will firstly discuss the tests
+which use information of the nominal level (sign tests and related) and
+then the tests which use information of the ordinal level, i.e. which are based on the
+rank order of the observed values.</p>
+</div>
+<div id="paired-observations-single-sample" class="section level2" number="17.2">
+<h2><span class="header-section-number">17.2</span> Paired observations, single sample</h2>
+<div id="sec:signtest" class="section level3" number="17.2.1">
+<h3><span class="header-section-number">17.2.1</span> Sign test</h3>
+<p>A handy test for paired observations is the so-called sign test.
+This test can be viewed as a nonparametric, nominal counterpart of
+the <em>t</em>-test for paired observations
+(§<a href="ch-testing.html#sec:ttest-paired">13.7</a>).</p>
+<p>In this test, we look only at the <em>sign</em> (positive or negative)
+of the <em>difference</em> <span class="math inline">\(D\)</span> between the two paired observations. Let us again
+take the example of an imaginary study on webpages with
+<em>U</em> (Dutch formal ‘you’) and <em>je</em> (Dutch informal ‘you’) as forms of address, with
+<span class="math inline">\(N=10\)</span> respondents. In Table <a href="ch-testing.html#tab:data-uje-paired">13.1</a>, we saw
+that all 10 respondents preferred <em>je</em>: the difference variable <span class="math inline">\(D\)</span> was
+<span class="math inline">\(10\times\)</span> negative and <span class="math inline">\(0\times\)</span> positive, or put differently, all the outcomes
+of <span class="math inline">\(D\)</span> were negative.</p>
+<p>With the sign test, we look at how probable this distribution of positive and
+negative values of <span class="math inline">\(D\)</span> would be, if H0 were correct. According to
+H0, we expect <span class="math inline">\(N/2\)</span> positive and <span class="math inline">\(N/2\)</span> negative differences; according to
+H0, the probability of a positive sign of <span class="math inline">\(D\)</span> (the probability of a hit) is thus
+<span class="math inline">\(p=1/2\)</span>. We now determine the probability of the observed outcome (0 hits)
+given H0, and we use the binomial probability distribution for this
+(§<a href="ch-probability-distributions.html#sec:binomial-distribution">10.2</a>):
+<span class="math display" id="eq:prob-binom-uje">\[\begin{equation}
+  \tag{17.1}
+    P(0\,\mbox{hits}) = {10 \choose 0} (0.5)^0 (1-0.5)^{10-0} = (1) (1) (0.000976) &lt; 0.001
+\end{equation}\]</span>
+The probability of this outcome according to H0 is so small that, in light of this
+observed (and presumably valid) outcome, we decide to reject H0, and we report this as
+follows:</p>
+<blockquote>
+<p>The <span class="math inline">\(N=10\)</span> respondents unanimously give a lower judgement to the
+webpage with <em>U</em> as the form of address than to the comparable page
+with <em>je</em> as the form of address; this is a significant difference
+(sign test, <span class="math inline">\(p&lt;.001\)</span>).</p>
+</blockquote>
+</div>
+<div id="sec:Wilcoxon-signed-rank" class="section level3" number="17.2.2">
+<h3><span class="header-section-number">17.2.2</span> Wilcoxon signed-ranks test</h3>
+<p>The Wilcoxon signed-ranks test can be viewed as a
+nonparametric, ordinal counterpart of the <em>t</em>-test for paired
+observations (§<a href="ch-testing.html#sec:ttest-paired">13.7</a>).</p>
+<p>This test makes use of the <em>rank order</em> of the difference <span class="math inline">\(D\)</span> between
+the two paired observations. We will again use the example of the imaginary
+study on webpages with <em>U</em> or <em>je</em> as forms of
+address
+(Table <a href="ch-testing.html#tab:data-uje-paired">13.1</a>), but will now look at the <em>rank order</em>
+of the differences <span class="math inline">\(D\)</span> (taking into account equal differences from several
+participants), and indicate the sign (positive or
+negative) of the difference <span class="math inline">\(D\)</span>:
+<span class="math display">\[-2, -2, -7.5, -5, -7.5, -5, -10, -7.5, -5, -2\]</span>
+The sum of the positive rankings is <span class="math inline">\(W_+=0\)</span> (there are no positive rankings)
+and the sum of the negative rankings <span class="math inline">\(W_-= -53.5\)</span>, and with that <span class="math inline">\(|W_-|=53.5\)</span>.
+The smallest of
+these two sums (<span class="math inline">\(W_+\)</span> or <span class="math inline">\(|W_-|\)</span>) forms the test statistic; here, we use
+<span class="math inline">\(|W_-|\)</span>.
+We will not discuss the probability distribution of the test statistic
+but instead have the significance calculated by computer: <span class="math inline">\(P(|W_-|)=.0055\)</span>. The
+probability of this outcome according to H0 is so small that, in light of this
+observed (and presumably valid)
+outcome, we again decide to reject H0.</p>
+<p>The (ordinal) Wilcoxon signed-ranks test makes use of more information
+than the (nominal) sign test. If an effect is significant according to the sign
+test, as is the case in this example, then it is also always significant
+according to the Wilcoxon signed-ranks test. If an effect is significant
+in the Wilcoxon signed-ranks test, then it is also always significant according
+to the <em>t</em>-test. This has to do with the level of measurement: the sign test
+considers only the (nominal) <em>sign</em> of the differences, the
+Wilcoxon signed-rank is based on the (ordinal) <em>ranking</em> of the
+differences, and the <em>t</em>-test is based on the (interval) <em>size</em> of the
+differences.</p>
+<div id="formulas-6" class="section level4" number="17.2.2.1">
+<h4><span class="header-section-number">17.2.2.1</span> formulas</h4>
+<p>We not only calculate <span class="math inline">\(W_+\)</span> (or <span class="math inline">\(|W_-|\)</span>) in the aforementioned manner, but also
+the corresponding value of <span class="math inline">\(z\)</span> <span class="citation">(Ferguson and Takane <a href="#ref-Ferg89" role="doc-biblioref">1989</a>)</span>:
+<span class="math display" id="eq:Wilcoxon-signedrank-z">\[\begin{equation}
+  \tag{17.2}
+  z = \frac{ W_+ - \frac{N(N+1)}{4} } { \sqrt{ \frac{N(N+1)(2N+1)}{24} } }
+\end{equation}\]</span>
+With this, we can calculate the effect size, in the form of
+a correlation <span class="citation">(Rosenthal <a href="#ref-Rose91" role="doc-biblioref">1991</a>, Eq.2.18)</span>:
+<span class="math display" id="eq:es-z2r">\[\begin{equation}
+  \tag{17.3}
+    r = \frac {z} {\sqrt{N}}
+\end{equation}\]</span>
+For the example above, we find
+<span class="math inline">\(z=-2.803\)</span>, and <span class="math inline">\(r=-.89\)</span>, which indicates an extremely large effect.</p>
+</div>
+</div>
+</div>
+<div id="independent-observations-multiple-samples" class="section level2" number="17.3">
+<h2><span class="header-section-number">17.3</span> Independent observations, multiple samples</h2>
+<div id="median-test" class="section level3" number="17.3.1">
+<h3><span class="header-section-number">17.3.1</span> Median test</h3>
+<p>The median test can be viewed as a nonparametric, nominal
+counterpart
+of the <em>t</em>-test for unpaired, independent observations. It is actually
+a sign test (see <a href="ch-other-nonpar-tests.html#sec:signtest">17.2.1</a>), in which we test whether the
+distribution of observations above/below their <em>joint</em> median
+(see §<a href="ch-centre-and-dispersion.html#sec:median">9.3.2</a> for explanation about the median) deviates from
+the expected distribution according to H0.
+The null hypothesis H0 is that the distributions of the two samples
+do not differ from each other, and that approximately half of the observations
+in both samples lie above the joint median, and the other half lies below
+it.</p>
+</div>
+<div id="sec:wilcoxon-rank-sum" class="section level3" number="17.3.2">
+<h3><span class="header-section-number">17.3.2</span> Wilcoxon rank sum test, or Mann-Whitney U test</h3>
+<p>The Wilcoxon rank sum test is equivalent to the Mann-Whitney U test.
+Both can be viewed as nonparametric, ordinal counterparts
+of the <em>t</em>-test for unpaired, independent observations
+(§<a href="ch-testing.html#sec:ttest-indep">13.6</a>).</p>
+<p>Let us say that we want to investigate whether certain text attributes
+have an influence on the subjective appreciation of the text. For this,
+a researcher selects a random sample of participants
+from the population (see
+§<a href="ch-samples.html#sec:random-samples">7.3</a>), and assigns these participants in a random
+manner to two experimental conditions (randomisation, see
+§<a href="ch-validity.html#sec:internalvalidity">5.4</a>, point 5).<br />
+In the first condition, the participant has to give a judgement about
+the original version of a text. In the second condition, the participants
+give a judgement about the rewritten version of the same text.
+The higher the given score, the higher the valuation for the text.
+One of the participants unfortunately had to leave the study
+prematurely. The judgements of the remaining 19 participants
+are in Table <a href="ch-other-nonpar-tests.html#tab:data-originalrewritten">17.1</a>. On the basis of the random
+sample and the random assignment of participants to conditions,
+the judgements can be seen as coming from two different
+random samples. The null hypothesis is that there is no difference
+in valuation between the two conditions.</p>
 <table>
+<caption><span id="tab:data-originalrewritten">Table 17.1: </span> Judgements of <span class="math inline">\(N=19\)</span> participants on
+the original and rewritten versions of a text.</caption>
 <thead>
 <tr class="header">
-<th align="center"></th>
-<th align="center">p</th>
-<th align="center">0.2</th>
-<th align="center">0.1</th>
-<th align="center">0.05</th>
-<th align="center">0.025</th>
-<th align="center">0.01</th>
-<th align="center">0.005</th>
-<th align="center">0.0025</th>
-<th align="center">0.001</th>
+<th align="left">Condition</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center"></td>
-<td align="center">B</td>
-<td align="center">60%</td>
-<td align="center">80%</td>
-<td align="center">90%</td>
-<td align="center">95%</td>
-<td align="center">98%</td>
-<td align="center">99%</td>
-<td align="center">99.5%</td>
-<td align="center">99.8%</td>
+<td align="left">Original</td>
+<td>10</td>
+<td>17</td>
+<td>35</td>
+<td>2</td>
+<td>19</td>
+<td>4</td>
+<td>18</td>
+<td>28</td>
+<td>24</td>
+<td>–</td>
 </tr>
 <tr class="even">
-<td align="center">1</td>
-<td align="center"></td>
-<td align="center">1.376</td>
-<td align="center">3.078</td>
-<td align="center">6.314</td>
-<td align="center">12.706</td>
-<td align="center">31.821</td>
-<td align="center">63.657</td>
-<td align="center">127.321</td>
-<td align="center">318.309</td>
-</tr>
-<tr class="odd">
-<td align="center">2</td>
-<td align="center"></td>
-<td align="center">1.061</td>
-<td align="center">1.886</td>
-<td align="center">2.920</td>
-<td align="center">4.303</td>
-<td align="center">6.965</td>
-<td align="center">9.925</td>
-<td align="center">14.089</td>
-<td align="center">22.327</td>
-</tr>
-<tr class="even">
-<td align="center">3</td>
-<td align="center"></td>
-<td align="center">0.9785</td>
-<td align="center">1.638</td>
-<td align="center">2.353</td>
-<td align="center">3.182</td>
-<td align="center">4.541</td>
-<td align="center">5.841</td>
-<td align="center">7.453</td>
-<td align="center">10.215</td>
-</tr>
-<tr class="odd">
-<td align="center">4</td>
-<td align="center"></td>
-<td align="center">0.941</td>
-<td align="center">1.533</td>
-<td align="center">2.132</td>
-<td align="center">2.776</td>
-<td align="center">3.747</td>
-<td align="center">4.604</td>
-<td align="center">5.598</td>
-<td align="center">7.173</td>
-</tr>
-<tr class="even">
-<td align="center">5</td>
-<td align="center"></td>
-<td align="center">0.9195</td>
-<td align="center">1.476</td>
-<td align="center">2.015</td>
-<td align="center">2.571</td>
-<td align="center">3.365</td>
-<td align="center">4.032</td>
-<td align="center">4.773</td>
-<td align="center">5.893</td>
-</tr>
-<tr class="odd">
-<td align="center">6</td>
-<td align="center"></td>
-<td align="center">0.9057</td>
-<td align="center">1.440</td>
-<td align="center">1.943</td>
-<td align="center">2.447</td>
-<td align="center">3.143</td>
-<td align="center">3.707</td>
-<td align="center">4.317</td>
-<td align="center">5.208</td>
-</tr>
-<tr class="even">
-<td align="center">7</td>
-<td align="center"></td>
-<td align="center">0.896</td>
-<td align="center">1.415</td>
-<td align="center">1.895</td>
-<td align="center">2.365</td>
-<td align="center">2.998</td>
-<td align="center">3.499</td>
-<td align="center">4.029</td>
-<td align="center">4.785</td>
-</tr>
-<tr class="odd">
-<td align="center">8</td>
-<td align="center"></td>
-<td align="center">0.8889</td>
-<td align="center">1.397</td>
-<td align="center">1.860</td>
-<td align="center">2.306</td>
-<td align="center">2.896</td>
-<td align="center">3.355</td>
-<td align="center">3.833</td>
-<td align="center">4.501</td>
-</tr>
-<tr class="even">
-<td align="center">9</td>
-<td align="center"></td>
-<td align="center">0.8834</td>
-<td align="center">1.383</td>
-<td align="center">1.833</td>
-<td align="center">2.262</td>
-<td align="center">2.821</td>
-<td align="center">3.250</td>
-<td align="center">3.690</td>
-<td align="center">4.297</td>
-</tr>
-<tr class="odd">
-<td align="center">10</td>
-<td align="center"></td>
-<td align="center">0.8791</td>
-<td align="center">1.372</td>
-<td align="center">1.812</td>
-<td align="center">2.228</td>
-<td align="center">2.764</td>
-<td align="center">3.169</td>
-<td align="center">3.581</td>
-<td align="center">4.144</td>
-</tr>
-<tr class="even">
-<td align="center">11</td>
-<td align="center"></td>
-<td align="center">0.8755</td>
-<td align="center">1.363</td>
-<td align="center">1.796</td>
-<td align="center">2.201</td>
-<td align="center">2.718</td>
-<td align="center">3.106</td>
-<td align="center">3.497</td>
-<td align="center">4.025</td>
-</tr>
-<tr class="odd">
-<td align="center">12</td>
-<td align="center"></td>
-<td align="center">0.8726</td>
-<td align="center">1.356</td>
-<td align="center">1.782</td>
-<td align="center">2.179</td>
-<td align="center">2.681</td>
-<td align="center">3.055</td>
-<td align="center">3.428</td>
-<td align="center">3.930</td>
-</tr>
-<tr class="even">
-<td align="center">13</td>
-<td align="center"></td>
-<td align="center">0.8702</td>
-<td align="center">1.350</td>
-<td align="center">1.771</td>
-<td align="center">2.160</td>
-<td align="center">2.650</td>
-<td align="center">3.012</td>
-<td align="center">3.372</td>
-<td align="center">3.852</td>
-</tr>
-<tr class="odd">
-<td align="center">14</td>
-<td align="center"></td>
-<td align="center">0.8681</td>
-<td align="center">1.345</td>
-<td align="center">1.761</td>
-<td align="center">2.145</td>
-<td align="center">2.624</td>
-<td align="center">2.977</td>
-<td align="center">3.326</td>
-<td align="center">3.787</td>
-</tr>
-<tr class="even">
-<td align="center">15</td>
-<td align="center"></td>
-<td align="center">0.8662</td>
-<td align="center">1.341</td>
-<td align="center">1.753</td>
-<td align="center">2.131</td>
-<td align="center">2.602</td>
-<td align="center">2.947</td>
-<td align="center">3.286</td>
-<td align="center">3.733</td>
-</tr>
-<tr class="odd">
-<td align="center">16</td>
-<td align="center"></td>
-<td align="center">0.8647</td>
-<td align="center">1.337</td>
-<td align="center">1.746</td>
-<td align="center">2.120</td>
-<td align="center">2.583</td>
-<td align="center">2.921</td>
-<td align="center">3.252</td>
-<td align="center">3.686</td>
-</tr>
-<tr class="even">
-<td align="center">17</td>
-<td align="center"></td>
-<td align="center">0.8633</td>
-<td align="center">1.333</td>
-<td align="center">1.740</td>
-<td align="center">2.110</td>
-<td align="center">2.567</td>
-<td align="center">2.898</td>
-<td align="center">3.222</td>
-<td align="center">3.646</td>
-</tr>
-<tr class="odd">
-<td align="center">18</td>
-<td align="center"></td>
-<td align="center">0.862</td>
-<td align="center">1.330</td>
-<td align="center">1.734</td>
-<td align="center">2.101</td>
-<td align="center">2.552</td>
-<td align="center">2.878</td>
-<td align="center">3.197</td>
-<td align="center">3.610</td>
-</tr>
-<tr class="even">
-<td align="center">19</td>
-<td align="center"></td>
-<td align="center">0.861</td>
-<td align="center">1.328</td>
-<td align="center">1.729</td>
-<td align="center">2.093</td>
-<td align="center">2.539</td>
-<td align="center">2.861</td>
-<td align="center">3.174</td>
-<td align="center">3.579</td>
-</tr>
-<tr class="odd">
-<td align="center">20</td>
-<td align="center"></td>
-<td align="center">0.860</td>
-<td align="center">1.325</td>
-<td align="center">1.725</td>
-<td align="center">2.086</td>
-<td align="center">2.528</td>
-<td align="center">2.845</td>
-<td align="center">3.153</td>
-<td align="center">3.552</td>
-</tr>
-<tr class="even">
-<td align="center">21</td>
-<td align="center"></td>
-<td align="center">0.8591</td>
-<td align="center">1.323</td>
-<td align="center">1.721</td>
-<td align="center">2.080</td>
-<td align="center">2.518</td>
-<td align="center">2.831</td>
-<td align="center">3.135</td>
-<td align="center">3.527</td>
-</tr>
-<tr class="odd">
-<td align="center">22</td>
-<td align="center"></td>
-<td align="center">0.8583</td>
-<td align="center">1.321</td>
-<td align="center">1.717</td>
-<td align="center">2.074</td>
-<td align="center">2.508</td>
-<td align="center">2.819</td>
-<td align="center">3.119</td>
-<td align="center">3.505</td>
-</tr>
-<tr class="even">
-<td align="center">23</td>
-<td align="center"></td>
-<td align="center">0.8575</td>
-<td align="center">1.319</td>
-<td align="center">1.714</td>
-<td align="center">2.069</td>
-<td align="center">2.500</td>
-<td align="center">2.807</td>
-<td align="center">3.104</td>
-<td align="center">3.485</td>
-</tr>
-<tr class="odd">
-<td align="center">24</td>
-<td align="center"></td>
-<td align="center">0.8569</td>
-<td align="center">1.318</td>
-<td align="center">1.711</td>
-<td align="center">2.064</td>
-<td align="center">2.492</td>
-<td align="center">2.797</td>
-<td align="center">3.091</td>
-<td align="center">3.467</td>
-</tr>
-<tr class="even">
-<td align="center">25</td>
-<td align="center"></td>
-<td align="center">0.8562</td>
-<td align="center">1.316</td>
-<td align="center">1.708</td>
-<td align="center">2.060</td>
-<td align="center">2.485</td>
-<td align="center">2.787</td>
-<td align="center">3.078</td>
-<td align="center">3.450</td>
-</tr>
-<tr class="odd">
-<td align="center">30</td>
-<td align="center"></td>
-<td align="center">0.8538</td>
-<td align="center">1.310</td>
-<td align="center">1.697</td>
-<td align="center">2.042</td>
-<td align="center">2.457</td>
-<td align="center">2.750</td>
-<td align="center">3.030</td>
-<td align="center">3.385</td>
-</tr>
-<tr class="even">
-<td align="center">40</td>
-<td align="center"></td>
-<td align="center">0.8507</td>
-<td align="center">1.303</td>
-<td align="center">1.684</td>
-<td align="center">2.021</td>
-<td align="center">2.423</td>
-<td align="center">2.704</td>
-<td align="center">2.971</td>
-<td align="center">3.307</td>
-</tr>
-<tr class="odd">
-<td align="center">50</td>
-<td align="center"></td>
-<td align="center">0.8489</td>
-<td align="center">1.299</td>
-<td align="center">1.676</td>
-<td align="center">2.009</td>
-<td align="center">2.403</td>
-<td align="center">2.678</td>
-<td align="center">2.937</td>
-<td align="center">3.261</td>
-</tr>
-<tr class="even">
-<td align="center">100</td>
-<td align="center"></td>
-<td align="center">0.8452</td>
-<td align="center">1.290</td>
-<td align="center">1.660</td>
-<td align="center">1.984</td>
-<td align="center">2.364</td>
-<td align="center">2.626</td>
-<td align="center">2.871</td>
-<td align="center">3.174</td>
-</tr>
-<tr class="odd">
-<td align="center">200</td>
-<td align="center"></td>
-<td align="center">0.8434</td>
-<td align="center">1.286</td>
-<td align="center">1.653</td>
-<td align="center">1.972</td>
-<td align="center">2.345</td>
-<td align="center">2.601</td>
-<td align="center">2.839</td>
-<td align="center">3.131</td>
-</tr>
-<tr class="even">
-<td align="center">400</td>
-<td align="center"></td>
-<td align="center">0.8425</td>
-<td align="center">1.284</td>
-<td align="center">1.649</td>
-<td align="center">1.966</td>
-<td align="center">2.336</td>
-<td align="center">2.588</td>
-<td align="center">2.823</td>
-<td align="center">3.111</td>
-</tr>
-<tr class="odd">
-<td align="center">∞</td>
-<td align="center"></td>
-<td align="center">0.8416</td>
-<td align="center">1.282</td>
-<td align="center">1.645</td>
-<td align="center">1.960</td>
-<td align="center">2.326</td>
-<td align="center">2.576</td>
-<td align="center">2.807</td>
-<td align="center">3.090</td>
+<td align="left">Rewritten</td>
+<td>15</td>
+<td>22</td>
+<td>8</td>
+<td>48</td>
+<td>29</td>
+<td>25</td>
+<td>27</td>
+<td>39</td>
+<td>31</td>
+<td>36</td>
 </tr>
 </tbody>
 </table>
+<p>The Wilcoxon rank sum test is based on the <em>ranking</em> of the
+observations. Each observation is replaced by the ranking of
+that observation, taken over the two conditions together. The lowest or
+smallest value gets ranking 1. We indicate the sum of the rankings of the
+smallest group (here: of the original condition) with
+<span class="math inline">\(W_1\)</span>. The probability distribution of <span class="math inline">\(W\)</span> under H0 is known (exactly for small
+<span class="math inline">\(n_1\)</span> and <span class="math inline">\(n_2\)</span>, and approximately for larger samples). With this, we can
+determine the probability of encountering the value found of <span class="math inline">\(W_1\)</span>,
+or a more extreme value, if H0 is true.</p>
+<p>Earlier, we saw that the <em>t</em>-test for unpaired observations
+(§<a href="ch-testing.html#sec:ttest-indep">13.6</a>) investigates whether the <em>means</em>
+are different for two samples. Analogously, the Wilcoxon
+rank sum test (and the Mann-Whitney <span class="math inline">\(U\)</span> test) investigates whether the
+<em>medians</em> are different for the two samples. The test is thus more
+robust for outliers — if we were to replace the highest judgement (48)
+with a much higher judgement (say 480), then that would have no influence
+on the median of that group, nor on the test statistic or its
+significance.</p>
+<p>For our example, we find that the lower rankings occur relatively frequently
+in the first condition (original version), i.e. that the text in this condition
+received lower judgements. The sum of the rankings for this
+smallest condition is the test statistic <span class="math inline">\(W_1=67\)</span>. In some versions of the
+test<a href="#fn38" class="footnote-ref" id="fnref38"><sup>38</sup></a>, this raw sum is used to calculate the significance.
+In other test versions<a href="#fn39" class="footnote-ref" id="fnref39"><sup>39</sup></a>, this raw sum is firstly corrected for the
+minimal value of <span class="math inline">\(W_1\)</span> (see the formulas below): the test statistic
+is then <span class="math inline">\(U=W_1 - \textrm{min}(W_1) = 67-45=22\)</span>. Afterwards, the significance
+of <span class="math inline">\(W_1=67\)</span> or of <span class="math inline">\(U=22\)</span> is calculated. We find that <span class="math inline">\(p=.0653\)</span>. If we do a
+two-sided test (H0: judgements in conditions 2 are no higher and no lower
+than those in condition 1) with <span class="math inline">\(\alpha=.05\)</span>, then there is no reason to
+reject H0<a href="#fn40" class="footnote-ref" id="fnref40"><sup>40</sup></a>.</p>
+<div id="formulas-7" class="section level4" number="17.3.2.1">
+<h4><span class="header-section-number">17.3.2.1</span> formulas</h4>
+<p>For the sums of the rankings, it is the case that
+<span class="math inline">\(W_1 + W_2 = (n_1+n_2) (n_1+n_2+1) / 2\)</span>.</p>
+<p>If all the lowest rankings (i.e. all lowest judgements) are in the smallest (first) condition,
+then <span class="math inline">\(W_1\)</span> has the minimal value of
+<span class="math inline">\(n_1 (n_1+1) /2\)</span>.
+If all the highest rankings (i.e. all the highest judgements) are in this condition,
+then <span class="math inline">\(W_1\)</span> has the maximum value of
+<span class="math inline">\(n_1 (n_1+n_2+1) / 2\)</span>.
+<span class="math inline">\(W_1\)</span> (and the minimum and maximum of it) can only be integer numbers.</p>
+<p>It is useful to not only calculate <span class="math inline">\(W_1\)</span> or <span class="math inline">\(U\)</span>, but also the
+corresponding value of <span class="math inline">\(z\)</span> <span class="citation">(Ferguson and Takane <a href="#ref-Ferg89" role="doc-biblioref">1989</a>)</span>:
+<span class="math display" id="eq:Wilcoxon-ranksum">\[\begin{equation}
+  \tag{17.4}
+\bar{W_1} = \frac{ n_1 (n_1+n_2+1) }{ 2 }
+\end{equation}\]</span>
+<span class="math display" id="eq:Wilcoxon-ranksum-z">\[\begin{equation}
+   \tag{17.5}
+  z = \frac{ |W_1-\bar{W_1}|-\frac{1}{2} }{ \sqrt{ \frac{n_1 n_2 (n_1+n_2+1)}{12} } }
+\end{equation}\]</span></p>
+<p>With this, we again determine the effect size, using equation <a href="ch-other-nonpar-tests.html#eq:es-z2r">(17.3)</a>.
+For the above example, we find
+<span class="math inline">\(\bar{W_1}=22.5\)</span>, <span class="math inline">\(z=1.837\)</span>, and <span class="math inline">\(r=.42\)</span>, which indicates a
+‘medium’ effect. That this considerable effect still does
+not lead to a significant difference (with two-sided testing) is presumably
+a consequence of the (too) small size of the two groups.</p>
+</div>
+</div>
+<div id="kruskall-wallis-h-test" class="section level3" number="17.3.3">
+<h3><span class="header-section-number">17.3.3</span> Kruskall-Wallis H test</h3>
+<p>The Kruskall-Wallis H test can be viewed as an expansion of the
+Wilcoxon rank sum test (see
+§<a href="ch-other-nonpar-tests.html#sec:wilcoxon-rank-sum">17.3.2</a> above), for <span class="math inline">\(k \ge 2\)</span> independent samples
+or groups. The test can also be used to compare <span class="math inline">\(k=2\)</span> groups;
+in this case, the test is completely equivalent to the Wilcoxon rank sum
+test above. The Kruskall-Wallis H test can be viewed as the
+nonparametric, ordinal counterpart of a one-way analysis of variance
+(see §<a href="ch-anova.html#sec:anova-oneway-explanation">15.3.1</a>). Put loosely: we carry out a kind of
+variance analysis, not on the observations themselves but on the rankings of the
+observations. We calculate <span class="math inline">\(H\)</span> as the test statistic based on the rankings
+of the observations in the <span class="math inline">\(k\)</span> different
+groups.</p>
+<div id="formula-1" class="section level4" number="17.3.3.1">
+<h4><span class="header-section-number">17.3.3.1</span> formula</h4>
+<p><span class="math display" id="eq:kruskall-wallis-H">\[\begin{equation}
+  \tag{17.6}
+    H = \frac{12}{N(N+1)} \sum^{k} (\frac{R^2_j}{n_j}) - 3(N+1)
+\end{equation}\]</span>
+where <span class="math inline">\(R_j\)</span> refers to the <em>sum</em> of the rankings of the observations
+in group <span class="math inline">\(j\)</span>, and <span class="math inline">\(n_j\)</span> refers to the size of the group <span class="math inline">\(j\)</span>.
+(For convenience, we disregard ‘ties’
+which are instances in which the same value and ranking occurs in
+multiple groups.)</p>
+<p>The test statistic <span class="math inline">\(H\)</span> has a probability distribution which resembles that of
+<span class="math inline">\(\chi^2\)</span>, with <span class="math inline">\(k-1\)</span> degrees of freedom. The significance of the
+test statistic <span class="math inline">\(H\)</span> is thus determined via the probability distribution of
+<span class="math inline">\(\chi^2\)</span> (see Appendix <a href="app-criticalchi2values.html#app:criticalchi2values">D</a>).
+This approximation via <span class="math inline">\(\chi^2\)</span> however only works if <span class="math inline">\(k\ge3\)</span>
+and <span class="math inline">\(n_j\ge5\)</span> for the smallest group <span class="citation">(Ferguson and Takane <a href="#ref-Ferg89" role="doc-biblioref">1989</a>)</span>.
+If <span class="math inline">\(k=2\)</span> or <span class="math inline">\(n_j&lt;5\)</span> then the probability <span class="math inline">\(P(H)\)</span> is calculated exactly.</p>
 
+</div>
+</div>
+</div>
+</div>
+
+
+
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-Ferg89">
+<p>Ferguson, George A., and Yoshio Takane. 1989. <em>Statistical Analysis in Psychology and Education</em>. 6e ed. New York: McGraw-Hill.</p>
+</div>
+<div id="ref-Rose91">
+<p>Rosenthal, Robert. 1991. <em>Meta-Analytic Procedures for Social Research</em>. 2nd ed. Newbury Park, CA: Sage.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="38">
+<li id="fn38"><p>Wilcoxon rank sum test in SPSS.<a href="ch-other-nonpar-tests.html#fnref38" class="footnote-back">↩︎</a></p></li>
+<li id="fn39"><p>Mann-Whitney test in SPSS and in R, and Wilcoxon rank sum test in R.<a href="ch-other-nonpar-tests.html#fnref39" class="footnote-back">↩︎</a></p></li>
+<li id="fn40"><p>If we do a two-sided test with <span class="math inline">\(\alpha=.10\)</span>, then we could indeed
+reject H0. If we do a one-sided test (H0: judgements in condition 2 are not higher
+than in condition 1), then we may halve the calculated <span class="math inline">\(p\)</span>, since the calculated
+<span class="math inline">\(p\)</span> assumes two-sided testing. We would then find <span class="math inline">\(p=.0653/2=.0326\)</span>, and,
+as this probability is smaller than <span class="math inline">\(\alpha=.05\)</span>, we would then indeed
+be able to reject H0.<a href="ch-other-nonpar-tests.html#fnref40" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="app-criticalZvalues.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="app-criticalchi2values.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="ch-chi-square-tests.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="app-randomnumbers.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -938,7 +834,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/a3criticaltvalues.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/ch17other-nonpar-tests.Rmd",
 "text": "Edit"
 },
 "history": {

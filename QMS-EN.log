@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.10.22)  25 JAN 2021 21:41
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.10.22)  27 JAN 2021 00:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1144,10 +1144,6 @@ Overfull \hbox (42.53233pt too wide) has occurred while \output is active
  []
 
 [145] [146]
-
-LaTeX Warning: Reference `ch:other-nonpar-tests' on page 147 undefined on input
- line 3659.
-
 File: QMS-EN_files/figure-latex/itunesmeanshist-1.pdf Graphic file (type pdf)
 <use QMS-EN_files/figure-latex/itunesmeanshist-1.pdf>
 [147]
@@ -1300,7 +1296,7 @@ ual to 0[]
  []
 
 [200] [201] [202]
-Overfull \hbox (17.25pt too wide) in paragraph at lines 6188--6188
+Overfull \hbox (17.25pt too wide) in paragraph at lines 6187--6187
 []\TU/lmtt/m/n/10 ## alternative hypothesis: true difference in means is not eq
 ual to 0[] 
  []
@@ -1348,13 +1344,13 @@ f)
 [220] [221] [222]
 
 LaTeX Warning: Reference `fig:colours-obs' on page 223 undefined on input line 
-7081.
+7080.
 
 File: QMS-EN_files/figure-latex/colours-obs-1.pdf Graphic file (type pdf)
 <use QMS-EN_files/figure-latex/colours-obs-1.pdf>
 
 LaTeX Warning: Reference `fig:colours-obs' on page 223 undefined on input line 
-7093.
+7092.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1365,53 +1361,53 @@ Underfull \vbox (badness 6725) has occurred while \output is active []
 [224]
 
 LaTeX Warning: Reference `fig:colours-obs' on page 225 undefined on input line 
-7124.
+7123.
 
 [225]
 
 LaTeX Warning: Reference `fig:colours-obs' on page 226 undefined on input line 
-7242.
+7241.
 
 
 LaTeX Warning: Reference `fig:colours-obs' on page 226 undefined on input line 
-7242.
+7241.
 
 [226] [227]
 
 LaTeX Warning: Reference `fig:colours-obs' on page 228 undefined on input line 
-7315.
+7314.
 
 [228]
 
 LaTeX Warning: Reference `fig:colours-obs' on page 229 undefined on input line 
-7369.
+7368.
 
 
 LaTeX Warning: Reference `fig:colours-obs' on page 229 undefined on input line 
-7369.
+7368.
 
 [229]
 
 LaTeX Warning: Reference `fig:colours-obs' on page 230 undefined on input line 
-7461.
+7460.
 
 [230] [231] [232] [233] [234] [235] [236]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [237] [238]
-Overfull \hbox (69.75pt too wide) in paragraph at lines 8004--8004
+Overfull \hbox (69.75pt too wide) in paragraph at lines 8003--8003
 []\TU/lmtt/m/n/10 ## Warning in replications(paste("~", xx), data = mf): non-fa
 ctors ignored: sex[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 8009--8009
+Overfull \hbox (90.75pt too wide) in paragraph at lines 8008--8008
 []\TU/lmtt/m/n/10 ## Warning in replications(paste("~", xx), data = mf): non-fa
 ctors ignored: region,[] 
  []
 
 
-Overfull \hbox (38.25pt too wide) in paragraph at lines 8025--8025
+Overfull \hbox (38.25pt too wide) in paragraph at lines 8024--8024
 []\TU/lmtt/m/n/10 ## Fit: aov(formula = syldur ~ region * sex, data = talkers, 
 subset = ok)[] 
  []
@@ -1430,84 +1426,88 @@ GLE SAMPLE \TU/lmr/m/n/10 243
 Overfull \vbox (0.62584pt too high) has occurred while \output is active []
 
 [244] [245] [246] [247]
-Overfull \hbox (29.9901pt too wide) in alignment at lines 8435--8444
+Overfull \hbox (29.9901pt too wide) in alignment at lines 8434--8443
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (29.9901pt too wide) in alignment at lines 8444--8448
+Overfull \hbox (29.9901pt too wide) in alignment at lines 8443--8447
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (29.9901pt too wide) in alignment at lines 8448--8453
+Overfull \hbox (29.9901pt too wide) in alignment at lines 8447--8452
  [] [] [] [] [] [] [] 
  []
 
 [248] [249] [250
 
 ]
+Chapter 17.
+[251] [252] [253] [254] [255] [256]
 Appendix A.
-[251] [252]
+[257
+
+] [258]
 Appendix B.
 File: QMS-EN_files/figure-latex/kritiekeZwaarden-hulpfiguur-1.pdf Graphic file 
 (type pdf)
 <use QMS-EN_files/figure-latex/kritiekeZwaarden-hulpfiguur-1.pdf>
-[253
+[259
 
-] [254]
+] [260]
 Appendix C.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 24.88pt on input line 8563.
+(Font)              scaled to size 24.88pt on input line 8854.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 20.74pt on input line 8563.
+(Font)              scaled to size 20.74pt on input line 8854.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 17.28pt on input line 8563.
+(Font)              scaled to size 17.28pt on input line 8854.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 24.88228pt on input line 8563.
+(Font)              scaled to size 24.88228pt on input line 8854.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 20.7419pt on input line 8563.
+(Font)              scaled to size 20.7419pt on input line 8854.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 17.28157pt on input line 8563.
+(Font)              scaled to size 17.28157pt on input line 8854.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 24.87733pt on input line 8563.
+(Font)              scaled to size 24.87733pt on input line 8854.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 20.73778pt on input line 8563.
+(Font)              scaled to size 20.73778pt on input line 8854.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 17.27815pt on input line 8563.
+(Font)              scaled to size 17.27815pt on input line 8854.
 File: QMS-EN_files/figure-latex/criticaltvalues-auxiliaryfigure-1.pdf Graphic f
 ile (type pdf)
 <use QMS-EN_files/figure-latex/criticaltvalues-auxiliaryfigure-1.pdf>
 
-Overfull \hbox (19.32014pt too wide) in paragraph at lines 8575--8620
+Overfull \hbox (19.32014pt too wide) in paragraph at lines 8866--8911
  [][] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[255
+[261
 
-] [256]
+] [262]
 Appendix D.
 File: QMS-EN_files/figure-latex/criticalchi2values-auxiliaryfigure-1.pdf Graphi
 c file (type pdf)
 <use QMS-EN_files/figure-latex/criticalchi2values-auxiliaryfigure-1.pdf>
 
-Overfull \hbox (17.80014pt too wide) in paragraph at lines 8631--8674
+Overfull \hbox (17.80014pt too wide) in paragraph at lines 8922--8965
  [][] 
  []
 
 (./QMS-EN.bbl
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[257
+[263
 
-] [258] [259
+] [264] [265
 
-] [260] [261] [262] [263]) [264] (./QMS-EN.aux)
+] [266] [267] [268] [269]) [270] (./QMS-EN.aux)
 Package rerunfilecheck Info: File `QMS-EN.out' has not changed.
-(rerunfilecheck)             Checksum: 23E308A21AB01FD1C02DB74D92125BA0;21677.
+(rerunfilecheck)             Checksum: 6EC95C0FFB77278B0028F0073B0ABBF3;22494.
 
 LaTeX Warning: There were undefined references.
 
@@ -1516,12 +1516,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 17959 strings out of 479441
- 318144 string characters out of 5880450
- 806998 words of memory out of 5000000
- 36996 multiletter control sequences out of 15000+600000
+ 17982 strings out of 479441
+ 318589 string characters out of 5880450
+ 810085 words of memory out of 5000000
+ 37019 multiletter control sequences out of 15000+600000
  545447 words of font info for 114 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 84i,10n,118p,1871b,579s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 84i,10n,118p,1871b,581s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on QMS-EN.pdf (264 pages).
+Output written on QMS-EN.pdf (270 pages).

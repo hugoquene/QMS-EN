@@ -1,0 +1,277 @@
+#  Other nonparametric tests {#ch:other-nonpar-tests}
+
+## Introduction {#sec:h17introduction}
+
+In this chapter, we discuss different nonparametric tests.
+These tests can be used when the data is not
+measured on an interval level of measurement (see Chapter
+\@ref(ch:levelsofmeasurement)), or if the probability distribution of the
+data deviates from the normal distribution (see 
+§\@ref(sec:whatifnotnormal)). The nonparametric tests do not make
+assumptions about the parameters of the probability distribution of the data. 
+
+Earlier, we already saw that nonparametric correlation coefficients exist,
+namely the Spearman's rank correlation coefficient (§\@ref(sec:Spearman))
+and the (nominal) Phi correlation coefficient
+(§\@ref(sec:Phi)). In the previous chapter, we discussed
+a much used nonparametric test, the $\chi^2$-test. Below, we will look at some other 
+frequently used nonparametric tests. We discuss these in two groups:
+firstly for paired observations, and afterwards for unpaired observations from
+multiple samples. In each subsection, we will firstly discuss the tests
+which use information of the nominal level (sign tests and related) and
+then the tests which use information of the ordinal level, i.e. which are based on the
+rank order of the observed values.  
+
+## Paired observations, single sample
+
+### Sign test {#sec:signtest}
+
+A handy test for paired observations is the so-called sign test.
+This test can be viewed as a nonparametric, nominal counterpart of
+the *t*-test for paired observations
+(§\@ref(sec:ttest-paired)).
+
+In this test, we look only at the *sign* (positive or negative)
+of the *difference* $D$ between the two paired observations. Let us again
+take the example of an imaginary study on webpages with
+*U* (Dutch formal 'you') and *je* (Dutch informal 'you') as forms of address, with
+$N=10$ respondents. In Table \@ref(tab:data-uje-paired), we saw
+that all 10 respondents preferred *je*: the difference variable $D$ was
+$10\times$ negative and $0\times$ positive, or put differently, all the outcomes
+of $D$ were negative. 
+
+With the sign test, we look at how probable this distribution of positive and 
+negative values of $D$ would be, if H0 were correct. According to 
+H0, we expect $N/2$ positive and $N/2$ negative differences; according to
+H0, the probability of a positive sign of $D$ (the probability of a hit) is thus
+$p=1/2$. We now determine the probability of the observed outcome (0 hits)
+given H0, and we use the binomial probability distribution for this
+(§\@ref(sec:binomial-distribution)):
+\begin{equation}
+  (\#eq:prob-binom-uje)
+    P(0\,\mbox{hits}) = {10 \choose 0} (0.5)^0 (1-0.5)^{10-0} = (1) (1) (0.000976) < 0.001
+\end{equation}
+The probability of this outcome according to H0 is so small that, in light of this
+observed (and presumably valid) outcome, we decide to reject H0, and we report this as 
+follows: 
+
+> The $N=10$ respondents unanimously give a lower judgement to the
+> webpage with *U* as the form of address than to the comparable page
+> with *je* as the form of address; this is a significant difference
+> (sign test, $p<.001$).
+
+### Wilcoxon signed-ranks test {#sec:Wilcoxon-signed-rank}
+
+The Wilcoxon signed-ranks test can be viewed as a 
+nonparametric, ordinal counterpart of the *t*-test for paired
+observations (§\@ref(sec:ttest-paired)).
+
+This test makes use of the *rank order* of the difference $D$ between
+the two paired observations. We will again use the example of the imaginary
+study on webpages with *U* or *je* as forms of
+address
+(Table \@ref(tab:data-uje-paired)), but will now look at the *rank order* 
+of the differences $D$ (taking into account equal differences from several
+participants), and indicate the sign (positive or 
+negative) of the difference $D$:
+$$-2, -2, -7.5, -5, -7.5, -5, -10, -7.5, -5, -2$$
+The sum of the positive rankings is $W_+=0$ (there are no positive rankings)
+and the sum of the negative rankings $W_-= -53.5$, and with that $|W_-|=53.5$.
+The smallest of 
+these two sums ($W_+$ or $|W_-|$) forms the test statistic; here, we use
+$|W_-|$. 
+We will not discuss the probability distribution of the test statistic
+but instead have the significance calculated by computer: $P(|W_-|)=.0055$. The
+probability of this outcome according to H0 is so small that, in light of this 
+observed (and presumably valid)
+outcome, we again decide to reject H0. 
+
+The (ordinal) Wilcoxon signed-ranks test makes use of more information 
+than the (nominal) sign test. If an effect is significant according to the sign 
+test, as is the case in this example, then it is also always significant
+according to the Wilcoxon signed-ranks test. If an effect is significant 
+in the Wilcoxon signed-ranks test, then it is also always significant according
+to the *t*-test. This has to do with the level of measurement: the sign test
+considers only the (nominal) *sign* of the differences, the
+Wilcoxon signed-rank is based on the (ordinal) *ranking* of the 
+differences, and the *t*-test is based on the (interval) *size* of the 
+differences.
+
+#### formulas
+
+We not only calculate $W_+$ (or $|W_-|$) in the aforementioned manner, but also
+the corresponding value of $z$ [@Ferg89]:
+\begin{equation}
+  (\#eq:Wilcoxon-signedrank-z)
+  z = \frac{ W_+ - \frac{N(N+1)}{4} } { \sqrt{ \frac{N(N+1)(2N+1)}{24} } }
+\end{equation}
+With this, we can calculate the effect size, in the form of
+a correlation [@Rose91 Eq.2.18]: 
+\begin{equation}
+  (\#eq:es-z2r)
+    r = \frac {z} {\sqrt{N}}
+\end{equation}
+For the example above, we find 
+$z=-2.803$, and $r=-.89$, which indicates an extremely large effect.
+
+
+## Independent observations, multiple samples
+
+### Median test
+
+The median test can be viewed as a nonparametric, nominal 
+counterpart
+of the *t*-test for unpaired, independent observations. It is actually
+a sign test (see \@ref(sec:signtest)), in which we test whether the
+distribution of observations above/below their *joint* median
+(see §\@ref(sec:median) for explanation about the median) deviates from
+the expected distribution according to H0.
+The null hypothesis H0 is that the distributions of the two samples
+do not differ from each other, and that approximately half of the observations
+in both samples lie above the joint median, and the other half lies below
+it.
+
+### Wilcoxon rank sum test, or Mann-Whitney U test {#sec:wilcoxon-rank-sum}
+
+The Wilcoxon rank sum test is equivalent to the Mann-Whitney U test.
+Both can be viewed as nonparametric, ordinal counterparts
+of the *t*-test for unpaired, independent observations
+(§\@ref(sec:ttest-indep)).
+
+Let us say that we want to investigate whether certain text attributes
+have an influence on the subjective appreciation of the text. For this, 
+a researcher selects a random sample of participants 
+from the population (see
+§\@ref(sec:random-samples)), and assigns these participants in a random
+manner to two experimental conditions (randomisation, see
+§\@ref(sec:internalvalidity), point 5).\
+In the first condition, the participant has to give a judgement about
+the original version of a text. In the second condition, the participants
+give a judgement about the rewritten version of the same text. 
+The higher the given score, the higher the valuation for the text.
+One of the participants unfortunately had to leave the study
+prematurely. The judgements of the remaining 19 participants
+are in Table \@ref(tab:data-originalrewritten). On the basis of the random
+sample and the random assignment of participants to conditions,
+the judgements can be seen as coming from two different
+random samples. The null hypothesis is that there is no difference
+in valuation between the two conditions. 
+
+Table: (#tab:data-originalrewritten) Judgements of $N=19$ participants on
+the original and rewritten versions of a text.
+
+  Condition                                                   
+  ------------- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+  Original       10   17   35   2    19   4    18   28   24   --
+  Rewritten      15   22   8    48   29   25   27   39   31   36
+
+The Wilcoxon rank sum test is based on the *ranking* of the
+observations. Each observation is replaced by the ranking of
+that observation, taken over the two conditions together. The lowest or
+smallest value gets ranking 1. We indicate the sum of the rankings of the
+smallest group (here: of the original condition) with 
+$W_1$. The probability distribution of $W$ under H0 is known (exactly for small
+$n_1$ and $n_2$, and approximately for larger samples). With this, we can
+determine the probability of encountering the value found of  $W_1$,
+or a more extreme value, if H0 is true. 
+
+Earlier, we saw that the *t*-test for unpaired observations
+(§\@ref(sec:ttest-indep)) investigates whether the *means*
+are different for two samples. Analogously, the Wilcoxon
+rank sum test (and the Mann-Whitney $U$ test) investigates whether the
+*medians* are different for the two samples. The test is thus more
+robust for outliers --- if we were to replace the highest judgement (48) 
+with a much higher judgement (say 480), then that would have no influence
+on the median of that group, nor on the test statistic or its
+significance.
+
+For our example, we find that the lower rankings occur relatively frequently
+in the first condition (original version), i.e. that the text in this condition 
+received lower judgements. The sum of the rankings for this
+smallest condition is the test statistic $W_1=67$. In some versions of the
+test[^fn17-1], this raw sum is used to calculate the significance. 
+In other test versions[^fn17-2], this raw sum is firstly corrected for the 
+minimal value of $W_1$ (see the formulas below): the test statistic
+is then $U=W_1 - \textrm{min}(W_1) = 67-45=22$. Afterwards, the significance
+of $W_1=67$ or of $U=22$ is calculated. We find that $p=.0653$. If we do a 
+two-sided test (H0: judgements in conditions 2 are no higher and no lower
+than those in condition 1) with $\alpha=.05$, then there is no reason to
+reject H0[^fn17-3].
+
+#### formulas
+
+For the sums of the rankings, it is the case that
+$W_1 + W_2 = (n_1+n_2) (n_1+n_2+1) / 2$.
+
+If all the lowest rankings (i.e. all lowest judgements) are in the smallest (first) condition, 
+then $W_1$ has the minimal value of
+$n_1 (n_1+1) /2$. 
+If all the highest rankings (i.e. all the highest judgements) are in this condition,
+then $W_1$ has the maximum value of
+$n_1 (n_1+n_2+1) / 2$. 
+$W_1$ (and the minimum and maximum of it) can only be integer numbers. 
+
+It is useful to not only calculate $W_1$ or $U$, but also the
+corresponding value of $z$ [@Ferg89]:
+\begin{equation}
+  (\#eq:Wilcoxon-ranksum)
+\bar{W_1} = \frac{ n_1 (n_1+n_2+1) }{ 2 }
+\end{equation}
+\begin{equation}
+   (\#eq:Wilcoxon-ranksum-z)
+  z = \frac{ |W_1-\bar{W_1}|-\frac{1}{2} }{ \sqrt{ \frac{n_1 n_2 (n_1+n_2+1)}{12} } }
+\end{equation}
+
+With this, we again determine the effect size, using equation \@ref(eq:es-z2r). 
+For the above example, we find 
+$\bar{W_1}=22.5$, $z=1.837$, and $r=.42$, which indicates a
+'medium' effect. That this considerable effect still does
+not lead to a significant difference (with two-sided testing) is presumably
+a consequence of the (too) small size of the two groups.  
+
+
+### Kruskall-Wallis H test
+
+The Kruskall-Wallis H test can be viewed as an expansion of the
+Wilcoxon rank sum test (see
+§\@ref(sec:wilcoxon-rank-sum) above), for $k \ge 2$ independent samples
+or groups. The test can also be used to compare $k=2$ groups;
+in this case, the test is completely equivalent to the Wilcoxon rank sum
+test above. The Kruskall-Wallis H test can be viewed as the 
+nonparametric, ordinal counterpart of a one-way analysis of variance
+(see §\@ref(sec:anova-oneway-explanation)). Put loosely: we carry out a kind of 
+variance analysis, not on the observations themselves but on the rankings of the 
+observations. We calculate $H$ as the test statistic based on the rankings
+of the observations in the $k$ different 
+groups. 
+
+#### formula
+
+\begin{equation}
+  (\#eq:kruskall-wallis-H)
+    H = \frac{12}{N(N+1)} \sum^{k} (\frac{R^2_j}{n_j}) - 3(N+1)
+\end{equation}
+where $R_j$ refers to the *sum* of the rankings of the observations
+in group $j$, and $n_j$ refers to the size of the group $j$.
+(For convenience, we disregard 'ties' 
+which are instances in which the same value and ranking occurs in
+multiple groups.)
+
+The test statistic $H$ has a probability distribution which resembles that of
+$\chi^2$, with $k-1$ degrees of freedom. The significance of the
+test statistic $H$ is thus determined via the probability distribution of
+$\chi^2$ (see Appendix \@ref(app:criticalchi2values)).
+This approximation via $\chi^2$ however only works if $k\ge3$ 
+and $n_j\ge5$ for the smallest group [@Ferg89]. 
+If $k=2$ or $n_j<5$ then the probability $P(H)$ is calculated exactly.
+
+[^fn17-1]: Wilcoxon rank sum test in SPSS.
+
+[^fn17-2]: Mann-Whitney test in SPSS and in R, and Wilcoxon rank sum test in R.
+
+[^fn17-3]: If we do a two-sided test with $\alpha=.10$, then we could indeed
+reject H0. If we do a one-sided test (H0: judgements in condition 2 are not higher
+than in condition 1), then we may halve the calculated $p$, since the calculated
+$p$ assumes two-sided testing. We would then find $p=.0653/2=.0326$, and,
+as this probability is smaller than $\alpha=.05$, we would then indeed
+be able to reject H0. 

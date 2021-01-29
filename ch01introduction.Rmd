@@ -88,7 +88,7 @@ Within the type of experimental research, we can also make a further division: t
 Both laboratory research and field research have advantages and disadvantages. The great advantage of laboratory research is, of course, the degree to which the researcher can keep all kinds of external matters under control. In a laboratory, the experiment is not likely to be disturbed by a starting engine or a downpour. However, this advantage of laboratory research also forms an important disadvantage, namely: the research takes place in a more or less artificial environment. It is not at all clear to what extent results obtained under artificial circumstances will also be true of everyday life outside the laboratory. Because of this, the latter forms a point to the advantage of field researcher: the research is conducted under circumstances that are natural. However, the disadvantage of field research is that many things can happen in the field that may influence the research results, but remain outside of the researcher’s control (see example 1.2). The choice between both types of experimental research that a researcher has to make is obviously strongly guided by their research question. Some questions are better suited to being investigated in laboratory situations, while others are better suited to being investigated field situations (as is illustrated by the examples above).
 
 
-## Outline of this textbook 
+## Outline of this textbook {#sec:intro-outline}
 
 This textbook consists of three parts. Part I (Chapter 1 to 7) covers research methods and explains various terms and concepts that are important in designing and setting up a good scientific research study.
 
@@ -99,11 +99,22 @@ Secondly, we would like for you to have the knowledge and insight necessary for 
 
 These three goals are ordered by importance. We believe that an adequate and critical interpretation of statistical results and the conclusions that may be connected to these is of great importance to all students. For this reason, part I of this textbook devotes considerable attention to the 'philosophy' or methodology behind the statistical techniques and analyses we will discuss later. 
 	
-We will also give you instructions on how you can perform these statistical analyses yourself in SPSS (a popular software package for statistical analysis) and in R (a slightly more challenging, but also much more powerful and versatile software package that has been gaining popularity).
-For students and employees at Utrecht University, both packages are pre-installed in `MyWorkSpace`. SPSS is available at <https://SurfSpot.nl> for a small fee. 
+In separate subsections, we will also provide instructions on how you can perform these statistical analyses yourself, in two different statistical packages:
+
+* **SPSS** (version 22.0 and later): a popular software package for statistical analysis. 
+SPSS is available at <https://SurfSpot.nl> for a small fee. 
+
+<!--
+* **JASP** (version 0.11 and later): an attractive open-source package, very user-friendly, and offering attractive output of its results.    
+JASP is freely available at <https://jasp-stats.org>. The JASP website also offers further instruction documents and videos. 
+-->
+
+* **R** (version 3.0 and later): a somewhat more challenging, but also much more powerful and versatile software package that is gaining popularity among researchers.    
 R is freely available at <https://www.R-project.org>. 
 A brief introduction to R can be found at <https://hugoquene.github.io/emlar2020/>.
-Longer introductions are available in the excellent free web books listed on  <https://statisticalhorizons.com/resources/free-web-books-for-learning-r>, as well as in @Dalg02. 
+Longer introductions are available in @Dalg02 and in excellent web books; a list of recommended books is available at <https://statisticalhorizons.com/resources/free-web-books-for-learning-r>. 
+
+For students and employees at Utrecht University, these packages are pre-installed in `MyWorkPlace`. 
 
 
 [^fn01-1]: It is even possible that the nutrition habits under study cause people to live *shorter*, but that this negative effect is masked by the stronger positive effects of education and wealth. 

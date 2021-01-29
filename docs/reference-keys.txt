@@ -68,7 +68,7 @@ sec:paradigms
 sec:instrument-validation
 sec:descriptive-research
 sec:experimental-research
-outline-of-this-textbook
+sec:intro-outline
 ch:research
 introduction
 sec:variables

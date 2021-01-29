@@ -119,7 +119,7 @@
 
 \title{Quantitative Methods and Statistics}
 \author{true}
-\date{Version compiled 27 Jan 2021}
+\date{Version compiled 29 Jan 2021}
 
 \begin{document}
 \maketitle
@@ -139,7 +139,7 @@ This textbook is being used in the course \emph{Methods and Statistics 1} at Utr
 
 The main text has been kept free of mathematical derivations and formulas, which are typically not very helpful for humanities scholars and students. Our explanation is rather conceptual, and rich in examples. Where necessary we present derivations and formulas in separate sections.
 
-This book also contains instructions on how to ``do'' the statistical analyses and visualisations, both in SPSS (version 22 or later) and in R (version 3.0 or later). These instructions too are in separate sections.
+This book also contains instructions on how to ``do'' the statistical analyses and visualisations, using the statistical packages SPSS and R. These packages are further introduced in §\ref{sec:intro-outline}. These instructions too are in separate sections.
 
 We would like to thank our co-teachers in various courses for the many discussions and examples that have been used in any shape or form in this textbook. We thank our students for their curiosity and for their sharp eyes in spotting errors and inconsistencies in previous versions.
 
@@ -147,6 +147,7 @@ We are also thankful to
 Gerrit Bloothooft,
 Margot van den Berg,
 Willemijn Heeren,
+Rianne Kraakman,
 Caspar van Lissa,
 Els Rose,
 Tobias Quené,
@@ -163,6 +164,14 @@ Hugo Quené, \url{https://www.hugoquene.nl}
 Huub van den Bergh, \url{https://www.uu.nl/staff/HHvandenBergh}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{liever-nederlands}{%
+\section*{Liever Nederlands?}\label{liever-nederlands}}
+\addcontentsline{toc}{section}{Liever Nederlands?}
+
+This is the English version of the textbook, titled \emph{Quantitative Methods and Statistics}.
+
+U leest nu de Engelstalige versie van het tekstboek. Er is ook een parallelle Nederlandstalige versie, getiteld \emph{Kwantitatieve Methoden en Statistiek}, te vinden via \url{https://hugoquene.github.io/KMS-NL/}.
 
 \hypertarget{notation}{%
 \section*{Notation}\label{notation}}
@@ -310,8 +319,8 @@ Within the type of experimental research, we can also make a further division: t
 
 Both laboratory research and field research have advantages and disadvantages. The great advantage of laboratory research is, of course, the degree to which the researcher can keep all kinds of external matters under control. In a laboratory, the experiment is not likely to be disturbed by a starting engine or a downpour. However, this advantage of laboratory research also forms an important disadvantage, namely: the research takes place in a more or less artificial environment. It is not at all clear to what extent results obtained under artificial circumstances will also be true of everyday life outside the laboratory. Because of this, the latter forms a point to the advantage of field researcher: the research is conducted under circumstances that are natural. However, the disadvantage of field research is that many things can happen in the field that may influence the research results, but remain outside of the researcher's control (see example 1.2). The choice between both types of experimental research that a researcher has to make is obviously strongly guided by their research question. Some questions are better suited to being investigated in laboratory situations, while others are better suited to being investigated field situations (as is illustrated by the examples above).
 
-\hypertarget{outline-of-this-textbook}{%
-\section{Outline of this textbook}\label{outline-of-this-textbook}}
+\hypertarget{sec:intro-outline}{%
+\section{Outline of this textbook}\label{sec:intro-outline}}
 
 This textbook consists of three parts. Part I (Chapter 1 to 7) covers research methods and explains various terms and concepts that are important in designing and setting up a good scientific research study.
 
@@ -322,11 +331,25 @@ Secondly, we would like for you to have the knowledge and insight necessary for 
 
 These three goals are ordered by importance. We believe that an adequate and critical interpretation of statistical results and the conclusions that may be connected to these is of great importance to all students. For this reason, part I of this textbook devotes considerable attention to the `philosophy' or methodology behind the statistical techniques and analyses we will discuss later.
 
-We will also give you instructions on how you can perform these statistical analyses yourself in SPSS (a popular software package for statistical analysis) and in R (a slightly more challenging, but also much more powerful and versatile software package that has been gaining popularity).
-For students and employees at Utrecht University, both packages are pre-installed in \texttt{MyWorkSpace}. SPSS is available at \url{https://SurfSpot.nl} for a small fee.
-R is freely available at \url{https://www.R-project.org}.
-A brief introduction to R can be found at \url{https://hugoquene.github.io/emlar2020/}.
-Longer introductions are available in the excellent free web books listed on \url{https://statisticalhorizons.com/resources/free-web-books-for-learning-r}, as well as in \citet{Dalg02}.
+In separate subsections, we will also provide instructions on how you can perform these statistical analyses yourself, in two different statistical packages:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{SPSS} (version 22.0 and later): a popular software package for statistical analysis.
+  SPSS is available at \url{https://SurfSpot.nl} for a small fee.
+\end{itemize}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{R} (version 3.0 and later): a somewhat more challenging, but also much more powerful and versatile software package that is gaining popularity among researchers.\\
+  R is freely available at \url{https://www.R-project.org}.
+  A brief introduction to R can be found at \url{https://hugoquene.github.io/emlar2020/}.
+  Longer introductions are available in \citet{Dalg02} and in excellent web books; a list of recommended books is available at \url{https://statisticalhorizons.com/resources/free-web-books-for-learning-r}.
+\end{itemize}
+
+For students and employees at Utrecht University, these packages are pre-installed in \texttt{MyWorkPlace}.
 
 \hypertarget{ch:research}{%
 \chapter{Hypothesis testing research}\label{ch:research}}

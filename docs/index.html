@@ -133,6 +133,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
 <ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#liever-nederlands"><i class="fa fa-check"></i>Liever Nederlands?</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#notation"><i class="fa fa-check"></i>Notation</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#citation"><i class="fa fa-check"></i>Citation</a></li>
@@ -150,7 +151,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.3" data-path="ch-introduction.html"><a href="ch-introduction.html#sec:instrument-validation"><i class="fa fa-check"></i><b>1.3</b> Instrument validation</a></li>
 <li class="chapter" data-level="1.4" data-path="ch-introduction.html"><a href="ch-introduction.html#sec:descriptive-research"><i class="fa fa-check"></i><b>1.4</b> Descriptive research</a></li>
 <li class="chapter" data-level="1.5" data-path="ch-introduction.html"><a href="ch-introduction.html#sec:experimental-research"><i class="fa fa-check"></i><b>1.5</b> Experimental research</a></li>
-<li class="chapter" data-level="1.6" data-path="ch-introduction.html"><a href="ch-introduction.html#outline-of-this-textbook"><i class="fa fa-check"></i><b>1.6</b> Outline of this textbook</a></li>
+<li class="chapter" data-level="1.6" data-path="ch-introduction.html"><a href="ch-introduction.html#sec:intro-outline"><i class="fa fa-check"></i><b>1.6</b> Outline of this textbook</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="ch-research.html"><a href="ch-research.html"><i class="fa fa-check"></i><b>2</b> Hypothesis testing research</a>
 <ul>
@@ -482,7 +483,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <address class="author_afil">
 Utrecht University<br><a class="author_email" href="mailto:#"><a href="mailto:h.quene@uu.nl" class="email">h.quene@uu.nl</a></a>
 </address>
-<p class="date"><em>Version compiled 27 Jan 2021</em></p>
+<p class="date"><em>Version compiled 29 Jan 2021</em></p>
 </div>
 <div id="preface" class="section level1 unnumbered">
 <h1>Preface</h1>
@@ -490,23 +491,32 @@ Utrecht University<br><a class="author_email" href="mailto:#"><a href="mailto:h.
 Aimed at humanities researchers and students, this book offers an overview of and introduction into the most important quantitative methods and statistical techniques used in the humanities. The book provides a solid methodological foundation for quantitative research, and it introduces the most commonly used statistical techniques to describe data and to test hypotheses. This will also enable the reader to critically evaluate such quantitative research.</p>
 <p>This textbook is being used in the course <em>Methods and Statistics 1</em> at Utrecht University (Linguistics program). The book is also highly suitable for self-study at a basic level, for everybody who wishes to learn more about quantitative methods and statistics.</p>
 <p>The main text has been kept free of mathematical derivations and formulas, which are typically not very helpful for humanities scholars and students. Our explanation is rather conceptual, and rich in examples. Where necessary we present derivations and formulas in separate sections.</p>
-<p>This book also contains instructions on how to “do” the statistical analyses and visualisations, both in SPSS (version 22 or later) and in R (version 3.0 or later). These instructions too are in separate sections.</p>
+<p>This book also contains instructions on how to “do” the statistical analyses and visualisations, using the statistical packages SPSS and R. These packages are further introduced in §<a href="ch-introduction.html#sec:intro-outline">1.6</a>. These instructions too are in separate sections.</p>
 <p>We would like to thank our co-teachers in various courses for the many discussions and examples that have been used in any shape or form in this textbook. We thank our students for their curiosity and for their sharp eyes in spotting errors and inconsistencies in previous versions.</p>
 <p>We are also thankful to
 Gerrit Bloothooft,
 Margot van den Berg,
 Willemijn Heeren,
+Rianne Kraakman,
 Caspar van Lissa,
 Els Rose,
 Tobias Quené,
 Kirsten Schutter
 and Marijn Struiksma,
 for their advice, data, comments and suggestions.</p>
+<!--
+We thank Rianne Kraakman for writing the subsections on JASP instructions.
+-->
 <p>We thank Aleksei Nazarov and Joanna Wall for translating this book from Dutch to English.</p>
 <p>Utrecht, October 2020 - January 2021</p>
 <p>Hugo Quené, <a href="https://www.hugoquene.nl" class="uri">https://www.hugoquene.nl</a></p>
 <p>Huub van den Bergh, <a href="https://www.uu.nl/staff/HHvandenBergh" class="uri">https://www.uu.nl/staff/HHvandenBergh</a></p>
 <hr />
+<div id="liever-nederlands" class="section level2 unnumbered">
+<h2>Liever Nederlands?</h2>
+<p>This is the English version of the textbook, titled <em>Quantitative Methods and Statistics</em>.</p>
+<p>U leest nu de Engelstalige versie van het tekstboek. Er is ook een parallelle Nederlandstalige versie, getiteld <em>Kwantitatieve Methoden en Statistiek</em>, te vinden via <a href="https://hugoquene.github.io/KMS-NL/" class="uri">https://hugoquene.github.io/KMS-NL/</a>.</p>
+</div>
 <div id="notation" class="section level2 unnumbered">
 <h2>Notation</h2>
 <p>Following international usage we use the full stop (decimal point) as decimal separator; hence we write <span class="math inline">\(\frac{3}{2}=1.5\)</span>. Note that the decimal separator may vary between computers and between software packages on the same computer. Check which decimal separator is used by (each software package on) your computer.</p>

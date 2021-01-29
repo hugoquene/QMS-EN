@@ -521,6 +521,19 @@ $\mu=0$ and standard deviation $\sigma=1$ is
   (\#eq:prob-standardnormal)
 \end{equation}
 
+### R
+
+The normal probability distribution in Figure \@ref(fig:normalprobabilitydistribution) may be plotted in R using the command below. A `curve` is plotted, with `x` in the specified domain, and `y` being the function which computes the normal probability density using equation \@ref(eq:prob-normal): 
+```{r curve.dnorm}
+curve( dnorm( x, mean=0, sd=1 ), # function specifying y values, normal density
+       from=-5, to=+5, # domain of x
+       lwd=4, # line width is 4x default value
+       xlab="x", ylab="P(x)" # labels along x and y axes
+       )
+```
+
+If used with the additional argument `curve( ..., add=TRUE )`, then the curve will be added to the most recent plot (see e.g. Figure \@ref(fig:itunesmeanshist) below).
+
 ## Does my variable have a normal probability distribution? {#sec:isvarnormaldistributed}
 
 ```{r itunestimeshist-prep, echo=FALSE}

@@ -157,7 +157,7 @@ for their advice, data, comments and suggestions.
 
 We thank Aleksei Nazarov and Joanna Wall for translating this book from Dutch to English.
 
-Utrecht, October 2020 - January 2021
+Utrecht, January 2021
 
 Hugo Quené, \url{https://www.hugoquene.nl}
 
@@ -193,7 +193,7 @@ This document is licensed under the \emph{GNU GPL 3} license (for details see
 Please cite this work as follows (in APA style):
 
 Quené, H. \& Van den Bergh, H. (2021). \emph{Quantitative Methods and Statistics}.
-Retrieved 25 January 2021 from \url{https://hugoquene.github.io/QMS-EN/} .
+Retrieved 29 January 2021 from \url{https://hugoquene.github.io/QMS-EN/} .
 
 \hypertarget{technical-details}{%
 \section*{Technical details}\label{technical-details}}
@@ -3550,6 +3550,25 @@ The standard normal probability distribution of variable \(Z\) with average
   \label{eq:prob-standardnormal}
 \end{equation}
 
+\hypertarget{r-5}{%
+\subsection{R}\label{r-5}}
+
+The normal probability distribution in Figure \ref{fig:normalprobabilitydistribution} may be plotted in R using the command below. A \texttt{curve} is plotted, with \texttt{x} in the specified domain, and \texttt{y} being the function which computes the normal probability density using equation \eqref{eq:prob-normal}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{curve}\NormalTok{( }\KeywordTok{dnorm}\NormalTok{( x, }\DataTypeTok{mean=}\DecValTok{0}\NormalTok{, }\DataTypeTok{sd=}\DecValTok{1}\NormalTok{ ), }\CommentTok{\# function specifying y values, normal density}
+       \DataTypeTok{from=}\OperatorTok{{-}}\DecValTok{5}\NormalTok{, }\DataTypeTok{to=}\OperatorTok{+}\DecValTok{5}\NormalTok{, }\CommentTok{\# domain of x}
+       \DataTypeTok{lwd=}\DecValTok{4}\NormalTok{, }\CommentTok{\# line width is 4x default value}
+       \DataTypeTok{xlab=}\StringTok{"x"}\NormalTok{, }\DataTypeTok{ylab=}\StringTok{"P(x)"} \CommentTok{\# labels along x and y axes}
+\NormalTok{       )}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{QMS-EN_files/figure-latex/curve.dnorm-1.pdf}
+
+If used with the additional argument \texttt{curve(\ ...,\ add=TRUE\ )}, then the curve will be added to the most recent plot (see e.g.~Figure \ref{fig:itunesmeanshist} below).
+
 \hypertarget{sec:isvarnormaldistributed}{%
 \section{Does my variable have a normal probability distribution?}\label{sec:isvarnormaldistributed}}
 
@@ -3621,8 +3640,8 @@ warning in
 the lengths of music numbers are not normally distributed. After these
 test results, there is, amongst others, a Q-Q plot.
 
-\hypertarget{r-5}{%
-\subsection{R}\label{r-5}}
+\hypertarget{r-6}{%
+\subsection{R}\label{r-6}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4074,8 +4093,8 @@ Choose \texttt{Pearsons} correlation coefficient, tick:
 output (table) does not satisfy the style requirements; as such, you should
 take the data into or convert it into a table of your own which does satisfy these requirements.
 
-\hypertarget{r-6}{%
-\subsection{R}\label{r-6}}
+\hypertarget{r-7}{%
+\subsection{R}\label{r-7}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4282,8 +4301,8 @@ the predicted values and the residuals. Check whether the mean of the residual
 is indeed null. In this table, we can also see (line 2, column 4) that
 the standard variation of the residuals is \(3.212\).
 
-\hypertarget{r-7}{%
-\subsection{R}\label{r-7}}
+\hypertarget{r-8}{%
+\subsection{R}\label{r-8}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4462,8 +4481,8 @@ output (table) does not satisfy the style requirements; you thus have to take
 the data into or convert it into a table of your own which does satisfy these requirements,
 and report according to the usual conventions for correlation analysis.
 
-\hypertarget{r-8}{%
-\subsection{R}\label{r-8}}
+\hypertarget{r-9}{%
+\subsection{R}\label{r-9}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4599,8 +4618,8 @@ contingency table @ref(tab: cito-contingency-table).\\
 Choose \texttt{Statistics\ldots{}} and tick the option \texttt{Phi\ and\ Cramer’s\ V}!\\
 Confirm firstly with \texttt{Continue} and then again with \texttt{OK}.
 
-\hypertarget{r-9}{%
-\subsection{R}\label{r-9}}
+\hypertarget{r-10}{%
+\subsection{R}\label{r-10}}
 
 The dataset \texttt{cito} already contains a variable \texttt{UrbanRural} which indicates the pupils' origins.
 However, for completeness, let us still see how you can construct such a variable for yourself.
@@ -5271,8 +5290,8 @@ but if we were to remove rater 3 then the reliability
 would even increase (from 0.68 to 0.84). Presumably, this rater
 has rated a different concept to the others.
 
-\hypertarget{r-10}{%
-\section{R}\label{r-10}}
+\hypertarget{r-11}{%
+\section{R}\label{r-11}}
 
 For a reliability analysis of \(k=3\) language proficiency
 judgements in Table \ref{tab:reliability}:\\
@@ -5623,8 +5642,8 @@ of a \emph{two-sample} \(t\)-test.
 When transferring this output, take good note of the warning in
 §\ref{sec:plargerthannull} below: SPSS reports as if \texttt{p=.000} but that is untrue.
 
-\hypertarget{r-11}{%
-\subsection{R}\label{r-11}}
+\hypertarget{r-12}{%
+\subsection{R}\label{r-12}}
 
 Our hypothesis discussed above can be tested with the following exercises:
 
@@ -5796,8 +5815,8 @@ Confirm with \texttt{Continue} and with \texttt{OK}.\\
 The output contains several descriptive statistic measures, now also
 including the 95\% confidence interval of the mean.
 
-\hypertarget{r-12}{%
-\subsection{R}\label{r-12}}
+\hypertarget{r-13}{%
+\subsection{R}\label{r-13}}
 
 R states the confidence interval of the mean (with self-specifiable
 confidence level) for a \(t\)-test. We thus again conduct a \(t\)-test
@@ -6443,8 +6462,8 @@ The data are in the output of the pairwise \(t\)-test\\
 \texttt{Std.Deviation}:\\
 \(d = -2.200 / 1.033 = 2.130\), a super large effect.
 
-\hypertarget{r-13}{%
-\subsection{R}\label{r-13}}
+\hypertarget{r-14}{%
+\subsection{R}\label{r-14}}
 
 In R, it is easier to have the effect size calculated.
 
@@ -7599,8 +7618,8 @@ HSD test is also provided in the third column. We can see that red
 differs from blue, that red differs from grey, and that the scores of the
 grey and blue groups do not differ.
 
-\hypertarget{r-14}{%
-\subsection{R}\label{r-14}}
+\hypertarget{r-15}{%
+\subsection{R}\label{r-15}}
 
 \hypertarget{preparation-1}{%
 \subsubsection{preparation}\label{preparation-1}}
@@ -7932,8 +7951,8 @@ For the post hoc test, select the button \texttt{Post\ Hoc...}. Select the
 \texttt{region} factor and select \texttt{Tukey}. Confirm with \texttt{Continue} and then again
 with \texttt{OK}.
 
-\hypertarget{r-15}{%
-\subsection{R}\label{r-15}}
+\hypertarget{r-16}{%
+\subsection{R}\label{r-16}}
 
 \hypertarget{preparation-3}{%
 \subsubsection{preparation}\label{preparation-3}}
@@ -8385,8 +8404,8 @@ contingency table \ref{tab:titanic}.\\
 Choose \texttt{Statistics\ldots{}} and tick the option \texttt{Chi-square}. Confirm firstly with
 \texttt{Continue} and afterwards again with \texttt{OK}.
 
-\hypertarget{r-16}{%
-\section{R}\label{r-16}}
+\hypertarget{r-17}{%
+\section{R}\label{r-17}}
 
 \hypertarget{goodness-of-fit-testing-1}{%
 \subsection{goodness of fit: testing}\label{goodness-of-fit-testing-1}}

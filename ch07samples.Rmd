@@ -66,7 +66,7 @@ Enter `0` as lower limit and `9999` as upper limit, or use other limits as appro
 Confirm with `OK`.
 This results in a (new or overwritten existing) column with random numbers. 
 
-If you wish to sample random numbers from a normal density distribution (see Chapter  \@ref(ch:kansverdelingen)), then use the function `RV.NORMAL(mean,stdev)`. 
+If you wish to sample random numbers from a normal density distribution (see §\@ref(sec:normaldistribution)), then use the function `RV.NORMAL(mean,stdev)`. 
 
 We may provide a starting value for the random number generator, in order to make reproducible analyses (and examples):
 ```
@@ -81,7 +81,7 @@ You can use the resulting random numbers for randomly selecting units (e.g. part
 In R we may generate random numbers using the predefined function `runif`. 
 This function samples **r**andom values from a flat or  **unif**orm probability distribution, meaning that each number between the lower and upper limit has an equal chance of being sampled. The default limits are $(0,1)$. You may round off the resulting random values to integer numbers, as was done in Appendix \@ref(app:randomnumbers). 
 
-If you wish to sample random numbers from a normal density distribution (see Chapter  \@ref(ch:kansverdelingen)), then use the function `rnorm(n,mean,sd)`. 
+If you wish to sample random numbers from a normal density distribution (see §\@ref(sec:normaldistribution)), then use the function `rnorm(n,mean,sd)`. 
 
 We may provide a starting value (called a "seed") for the random number generator, in order to make reproducible analyses (and examples), using the predefined function `set.seed`:
 

@@ -526,7 +526,7 @@ This function samples <strong>r</strong>andom <strong>v</strong>alues from a fla
 Enter <code>0</code> as lower limit and <code>9999</code> as upper limit, or use other limits as appropriate.
 Confirm with <code>OK</code>.
 This results in a (new or overwritten existing) column with random numbers.</p>
-<p>If you wish to sample random numbers from a normal density distribution (see Chapter <a href="#ch:kansverdelingen"><strong>??</strong></a>), then use the function <code>RV.NORMAL(mean,stdev)</code>.</p>
+<p>If you wish to sample random numbers from a normal density distribution (see §<a href="ch-probability-distributions.html#sec:normaldistribution">10.3</a>), then use the function <code>RV.NORMAL(mean,stdev)</code>.</p>
 <p>We may provide a starting value for the random number generator, in order to make reproducible analyses (and examples):</p>
 <pre><code>Transform &gt; Random Number Generators...</code></pre>
 <p>In the panel “Active Generator Initialization”, check the option <code>Set Starting Point</code>, and enter a starting value, such as your favourite number. Confirm with <code>OK</code>.</p>
@@ -536,7 +536,7 @@ This results in a (new or overwritten existing) column with random numbers.</p>
 <h3><span class="header-section-number">7.3.2</span> R</h3>
 <p>In R we may generate random numbers using the predefined function <code>runif</code>.
 This function samples <strong>r</strong>andom values from a flat or <strong>unif</strong>orm probability distribution, meaning that each number between the lower and upper limit has an equal chance of being sampled. The default limits are <span class="math inline">\((0,1)\)</span>. You may round off the resulting random values to integer numbers, as was done in Appendix <a href="app-randomnumbers.html#app:randomnumbers">A</a>.</p>
-<p>If you wish to sample random numbers from a normal density distribution (see Chapter <a href="#ch:kansverdelingen"><strong>??</strong></a>), then use the function <code>rnorm(n,mean,sd)</code>.</p>
+<p>If you wish to sample random numbers from a normal density distribution (see §<a href="ch-probability-distributions.html#sec:normaldistribution">10.3</a>), then use the function <code>rnorm(n,mean,sd)</code>.</p>
 <p>We may provide a starting value (called a “seed”) for the random number generator, in order to make reproducible analyses (and examples), using the predefined function <code>set.seed</code>:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="ch-samples.html#cb12-1" aria-hidden="true"></a><span class="kw">set.seed</span>(<span class="dv">20200912</span>) <span class="co"># reproducible example, number is date on which this chunk was added</span></span>
 <span id="cb12-2"><a href="ch-samples.html#cb12-2" aria-hidden="true"></a><span class="kw">round</span> ( <span class="kw">runif</span>( <span class="dt">n=</span><span class="dv">5</span>, <span class="dt">min=</span><span class="dv">0</span>, <span class="dt">max=</span><span class="dv">9999</span> ) ) <span class="co"># similar to Appendix A</span></span></code></pre></div>

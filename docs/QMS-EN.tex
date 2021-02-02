@@ -2445,12 +2445,11 @@ are indicated here with a distinct symbol.
 \hypertarget{sec:variance}{%
 \subsection{Variance}\label{sec:variance}}
 
-Another
-way to show the dispersion of observations would be to look at how
+Another way to show the dispersion of observations would be to look at how
 each observation deviates from the mean, thus \((x_i-\overline{x})\). However, if we
 add up all the deviations, they always total zero! After all, the positive and negative
 deviations cancel each other out (check that out for yourself in
-Table @\#ref(tab:cito)).
+Table \ref{tab:cito}).
 Instead of calculating the mean of the deviations themselves, we thus calculate the mean
 of the squares of those deviations. Both the positive and negative deviations
 result in positive squared deviations. We then calculate the mean of all
@@ -2469,7 +2468,7 @@ The numerator of
 this fraction is referred to as the ``sum of squared deviations'' or
 ``sum of squares'' (SS) and the denominator is referred to as the number of
 ``degrees of freedom'' of the numerator (d.f.; see
-§\ref{sec:ttest-degreesoffreedom}).
+§\ref{sec:ttest-freedomdegrees}).
 
 Nowadays, we always calculate the variance with a calculator
 or computer.
@@ -2825,7 +2824,7 @@ afterwards with \texttt{OK}.\\
 The output comprises descriptive statistics and histogram and
 boxplot.
 
-For \textbf{significant figures}:~
+For \textbf{descriptive characteristic values}:~
 
 \begin{verbatim}
 Analyze > Descriptive Statistics > Descriptives...
@@ -2871,7 +2870,7 @@ For \textbf{quartiles and boxplot} like Figure \ref{fig:cito-boxplot}, we use th
 \NormalTok{cito \textless{}{-}}\StringTok{ }\KeywordTok{read.spss}\NormalTok{(}\StringTok{"data/cito.sav"}\NormalTok{)}
 \CommentTok{\# Columns in \textasciigrave{}cito.sav\textasciigrave{} have Dutch names:}
 \CommentTok{\# in Dutch: Leerling Lezen Rekenen Wereldorientatie stadplat rek.f}
-\CommentTok{\# in English: Pupil Reading Arithmetic World UrbRural Arith.factor}
+\CommentTok{\# in English: Pupil Reading Arithmetic Geography UrbRural Arith.factor}
 \KeywordTok{fivenum}\NormalTok{(cito}\OperatorTok{$}\NormalTok{Lezen) }\CommentTok{\# minimum, Q1, median, Q3, maximum}
 \end{Highlighting}
 \end{Shaded}
@@ -2981,11 +2980,12 @@ Various \textbf{dispersion measures} are also pre-programmed:
 \end{verbatim}
 
 In contrast, we have to calculate \textbf{standard scores} ourselves, and save them ourselves as a
-new variable, called here \texttt{zReading} (note the parentheses in the first line):
+new variable, called here \texttt{zReading} (note the parentheses in the first command line):
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{zReading \textless{}{-}}\StringTok{ }\NormalTok{(cito}\OperatorTok{$}\NormalTok{Lezen}\OperatorTok{{-}}\KeywordTok{mean}\NormalTok{(cito}\OperatorTok{$}\NormalTok{Lezen)) }\OperatorTok{/}\StringTok{ }\KeywordTok{sd}\NormalTok{(cito}\OperatorTok{$}\NormalTok{Lezen) }\CommentTok{\# standardized (z) reading scores}
+\CommentTok{\# standardized (or z) reading scores}
+\NormalTok{zReading \textless{}{-}}\StringTok{ }\NormalTok{(cito}\OperatorTok{$}\NormalTok{Lezen}\OperatorTok{{-}}\KeywordTok{mean}\NormalTok{(cito}\OperatorTok{$}\NormalTok{Lezen)) }\OperatorTok{/}\StringTok{ }\KeywordTok{sd}\NormalTok{(cito}\OperatorTok{$}\NormalTok{Lezen) }
 \KeywordTok{head}\NormalTok{(zReading) }\CommentTok{\# first few observations of variable zReading}
 \end{Highlighting}
 \end{Shaded}
@@ -3937,8 +3937,9 @@ pupils who achieve a relatively good score in reading, also achieve this
 in arithmetic. The observations from the two variables thus not
 only provide information about the two variables themselves, but moreover
 about the association between the variables. In this scatter plot, we can moreover
-see (c) that the highest reading score is an outlier (see also
-Fig.\ref{fig:cito-boxplot}); such outliers can have a disproportionately
+see (c) that the highest reading score is an outlier (see also Chapter 9,
+Figure \ref{fig:cito-boxplot});
+such outliers can have a disproportionately
 large influence on the correlation found.
 
 \hypertarget{sec:Pearson}{%
@@ -4054,7 +4055,7 @@ We report these findings as follows:
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{quote}
-\emph{Examples 11.2:} The
+\emph{Example 11.2:} The
 pairwise correlations between scores from the \(n=10\) pupils on the
 three subparts of the CITO test are summarised in
 Table \ref{tab:cito-correlations}. We can see a strong correlation between
@@ -4187,7 +4188,7 @@ between the two tests:
 This dashed line thus indicates what the value \(\widehat{Y}\) is for
 each value of \(X\). For the second pupil with \(X_2 = 32\),
 we thus predict \(\widehat{Y_2} = 12.97 + (0.52) (32) = 29.61\)
-(predicted vowel, green line fragment). For all observations which are not
+(predicted value, green line fragment). For all observations which are not
 precisely on the regression line (dashed line),
 there is a deviation between the predicted
 score \(\widehat{Y}\) and the observed score \(Y\) (residual, red line

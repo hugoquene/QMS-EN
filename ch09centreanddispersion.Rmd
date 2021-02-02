@@ -436,12 +436,11 @@ are indicated here with a distinct symbol.
 
 ### Variance {#sec:variance}
 
-Another
-way to show the dispersion of observations would be to look at how 
+Another way to show the dispersion of observations would be to look at how 
 each observation deviates from the mean, thus $(x_i-\overline{x})$. However, if we 
 add up all the deviations, they always total zero! After all, the positive and negative
 deviations cancel each other out (check that out for yourself in 
-Table \@#ref(tab:cito)).
+Table \@ref(tab:cito)).
 Instead of calculating the mean of the deviations themselves, we thus calculate the mean
 of the squares of those deviations. Both the positive and negative deviations
 result in positive squared deviations. We then calculate the mean of all 
@@ -457,7 +456,7 @@ The numerator of
 this fraction is referred to as the "sum of squared deviations" or
 "sum of squares" (SS) and the denominator is referred to as the number of 
 "degrees of freedom" of the numerator (d.f.; see
-§\@ref(sec:ttest-degreesoffreedom)).
+§\@ref(sec:ttest-freedomdegrees)).
 
 Nowadays, we always calculate the variance with a calculator
 or computer. 
@@ -773,7 +772,7 @@ afterwards with `OK`.\
 The output comprises descriptive statistics and histogram and
 boxplot.
 
-For **significant figures**:\ 
+For **descriptive characteristic values**:\ 
 ```
 Analyze > Descriptive Statistics > Descriptives...
 ```
@@ -813,7 +812,7 @@ require(foreign) # for foreign::read.spss
 cito <- read.spss("data/cito.sav")
 # Columns in `cito.sav` have Dutch names:
 # in Dutch: Leerling Lezen Rekenen Wereldorientatie stadplat rek.f
-# in English: Pupil Reading Arithmetic World UrbRural Arith.factor
+# in English: Pupil Reading Arithmetic Geography UrbRural Arith.factor
 fivenum(cito$Lezen) # minimum, Q1, median, Q3, maximum
 quantile(cito$Lezen, c( 1/4, 3/4 ) ) # Q1 and Q3, calculated differently 
 op <- par(mar=c(4,4,1,2)+0.1) # smaller margins
@@ -842,9 +841,10 @@ mad(cito$Lezen)  # MAD
 ```
 
 In contrast, we have to calculate **standard scores** ourselves, and save them ourselves as a
-new variable, called here `zReading` (note the parentheses in the first line):
+new variable, called here `zReading` (note the parentheses in the first command line):
 ```{r cito-zscores}
-zReading <- (cito$Lezen-mean(cito$Lezen)) / sd(cito$Lezen) # standardized (z) reading scores
+# standardized (or z) reading scores
+zReading <- (cito$Lezen-mean(cito$Lezen)) / sd(cito$Lezen) 
 head(zReading) # first few observations of variable zReading
 ```
 

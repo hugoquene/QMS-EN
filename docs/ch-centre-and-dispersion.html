@@ -907,12 +907,11 @@ are indicated here with a distinct symbol.</p>
 <h2><span class="header-section-number">9.5</span> Measures of dispersion</h2>
 <div id="sec:variance" class="section level3" number="9.5.1">
 <h3><span class="header-section-number">9.5.1</span> Variance</h3>
-<p>Another
-way to show the dispersion of observations would be to look at how
+<p>Another way to show the dispersion of observations would be to look at how
 each observation deviates from the mean, thus <span class="math inline">\((x_i-\overline{x})\)</span>. However, if we
 add up all the deviations, they always total zero! After all, the positive and negative
 deviations cancel each other out (check that out for yourself in
-Table @#ref(tab:cito)).
+Table <a href="ch-centre-and-dispersion.html#tab:cito">9.1</a>).
 Instead of calculating the mean of the deviations themselves, we thus calculate the mean
 of the squares of those deviations. Both the positive and negative deviations
 result in positive squared deviations. We then calculate the mean of all
@@ -927,7 +926,7 @@ those squared deviations, i.e. we add them up and divide them by
 this fraction is referred to as the “sum of squared deviations” or
 “sum of squares” (SS) and the denominator is referred to as the number of
 “degrees of freedom” of the numerator (d.f.; see
-§<a href="#sec:ttest-degreesoffreedom"><strong>??</strong></a>).</p>
+§<a href="ch-testing.html#sec:ttest-freedomdegrees">13.2.1</a>).</p>
 <p>Nowadays, we always calculate the variance with a calculator
 or computer.</p>
 </div>
@@ -1291,7 +1290,7 @@ Choose <code>Options</code>, tick: <code>Percentiles</code>, and confirm with <c
 afterwards with <code>OK</code>.<br />
 The output comprises descriptive statistics and histogram and
 boxplot.</p>
-<p>For <strong>significant figures</strong>: </p>
+<p>For <strong>descriptive characteristic values</strong>: </p>
 <pre><code>Analyze &gt; Descriptive Statistics &gt; Descriptives...</code></pre>
 <p>Select variable (drag to Variable(s) panel)<br />
 Choose <code>Options</code>; tick:
@@ -1324,7 +1323,7 @@ column(s) to the data file.<br />
 <span id="cb24-2"><a href="ch-centre-and-dispersion.html#cb24-2" aria-hidden="true"></a>cito &lt;-<span class="st"> </span><span class="kw">read.spss</span>(<span class="st">&quot;data/cito.sav&quot;</span>)</span>
 <span id="cb24-3"><a href="ch-centre-and-dispersion.html#cb24-3" aria-hidden="true"></a><span class="co"># Columns in `cito.sav` have Dutch names:</span></span>
 <span id="cb24-4"><a href="ch-centre-and-dispersion.html#cb24-4" aria-hidden="true"></a><span class="co"># in Dutch: Leerling Lezen Rekenen Wereldorientatie stadplat rek.f</span></span>
-<span id="cb24-5"><a href="ch-centre-and-dispersion.html#cb24-5" aria-hidden="true"></a><span class="co"># in English: Pupil Reading Arithmetic World UrbRural Arith.factor</span></span>
+<span id="cb24-5"><a href="ch-centre-and-dispersion.html#cb24-5" aria-hidden="true"></a><span class="co"># in English: Pupil Reading Arithmetic Geography UrbRural Arith.factor</span></span>
 <span id="cb24-6"><a href="ch-centre-and-dispersion.html#cb24-6" aria-hidden="true"></a><span class="kw">fivenum</span>(cito<span class="op">$</span>Lezen) <span class="co"># minimum, Q1, median, Q3, maximum</span></span></code></pre></div>
 <pre><code>## [1] 19 22 26 29 44</code></pre>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="ch-centre-and-dispersion.html#cb26-1" aria-hidden="true"></a><span class="kw">quantile</span>(cito<span class="op">$</span>Lezen, <span class="kw">c</span>( <span class="dv">1</span><span class="op">/</span><span class="dv">4</span>, <span class="dv">3</span><span class="op">/</span><span class="dv">4</span> ) ) <span class="co"># Q1 and Q3, calculated differently </span></span></code></pre></div>
@@ -1356,9 +1355,10 @@ column(s) to the data file.<br />
 <div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="ch-centre-and-dispersion.html#cb41-1" aria-hidden="true"></a><span class="kw">mad</span>(cito<span class="op">$</span>Lezen)  <span class="co"># MAD</span></span></code></pre></div>
 <pre><code>## [1] 5.1891</code></pre>
 <p>In contrast, we have to calculate <strong>standard scores</strong> ourselves, and save them ourselves as a
-new variable, called here <code>zReading</code> (note the parentheses in the first line):</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="ch-centre-and-dispersion.html#cb43-1" aria-hidden="true"></a>zReading &lt;-<span class="st"> </span>(cito<span class="op">$</span>Lezen<span class="op">-</span><span class="kw">mean</span>(cito<span class="op">$</span>Lezen)) <span class="op">/</span><span class="st"> </span><span class="kw">sd</span>(cito<span class="op">$</span>Lezen) <span class="co"># standardized (z) reading scores</span></span>
-<span id="cb43-2"><a href="ch-centre-and-dispersion.html#cb43-2" aria-hidden="true"></a><span class="kw">head</span>(zReading) <span class="co"># first few observations of variable zReading</span></span></code></pre></div>
+new variable, called here <code>zReading</code> (note the parentheses in the first command line):</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="ch-centre-and-dispersion.html#cb43-1" aria-hidden="true"></a><span class="co"># standardized (or z) reading scores</span></span>
+<span id="cb43-2"><a href="ch-centre-and-dispersion.html#cb43-2" aria-hidden="true"></a>zReading &lt;-<span class="st"> </span>(cito<span class="op">$</span>Lezen<span class="op">-</span><span class="kw">mean</span>(cito<span class="op">$</span>Lezen)) <span class="op">/</span><span class="st"> </span><span class="kw">sd</span>(cito<span class="op">$</span>Lezen) </span>
+<span id="cb43-3"><a href="ch-centre-and-dispersion.html#cb43-3" aria-hidden="true"></a><span class="kw">head</span>(zReading) <span class="co"># first few observations of variable zReading</span></span></code></pre></div>
 <pre><code>## [1] -1.1575990  0.6776189  2.3716662 -0.3105753  0.1129365 -0.7340872</code></pre>
 
 </div>

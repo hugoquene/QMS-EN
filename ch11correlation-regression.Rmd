@@ -61,8 +61,9 @@ pupils who achieve a relatively good score in reading, also achieve this
 in arithmetic. The observations from the two variables thus not
 only provide information about the two variables themselves, but moreover
 about the association between the variables. In this scatter plot, we can moreover
-see (c) that the highest reading score is an outlier (see also
-Fig.\@ref(fig:cito-boxplot)); such outliers can have a disproportionately
+see (c) that the highest reading score is an outlier (see also Chapter 9, 
+Figure \@ref(fig:cito-boxplot));
+such outliers can have a disproportionately
 large influence on the correlation found. 
 
 
@@ -196,7 +197,7 @@ We report these findings as follows:
 
 ---
 
-> *Examples 11.2:* The 
+> *Example 11.2:* The 
 pairwise correlations between scores from the $n=10$ pupils on the
 three subparts of the CITO test are summarised in
 Table \@ref(tab:cito-correlations). We can see a strong correlation between
@@ -309,7 +310,7 @@ with(cito, text( Reading[3]+1,Arithmetic[3], "3", cex=0.75, adj=0) )
 This dashed line thus indicates what the value $\widehat{Y}$ is for 
 each value of $X$. For the second pupil with $X_2 = 32$, 
 we thus predict $\widehat{Y_2} = 12.97 + (0.52) (32) = 29.61$
-(predicted vowel, green line fragment). For all observations which are not
+(predicted value, green line fragment). For all observations which are not
 precisely on the regression line (dashed line), 
 there is a deviation between the predicted
 score $\widehat{Y}$ and the observed score $Y$ (residual, red line

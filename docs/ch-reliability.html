@@ -283,12 +283,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:binomial-distribution"><i class="fa fa-check"></i><b>10.2</b> Binomial probability distribution</a>
 <ul>
 <li class="chapter" data-level="10.2.1" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#formulas"><i class="fa fa-check"></i><b>10.2.1</b> formulas</a></li>
-<li class="chapter" data-level="10.2.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-4"><i class="fa fa-check"></i><b>10.2.2</b> R</a></li>
+<li class="chapter" data-level="10.2.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#jasp-4"><i class="fa fa-check"></i><b>10.2.2</b> JASP</a></li>
+<li class="chapter" data-level="10.2.3" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-4"><i class="fa fa-check"></i><b>10.2.3</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="10.3" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:normaldistribution"><i class="fa fa-check"></i><b>10.3</b> Normal probability distribution</a>
 <ul>
 <li class="chapter" data-level="10.3.1" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#formulas-1"><i class="fa fa-check"></i><b>10.3.1</b> formulas</a></li>
-<li class="chapter" data-level="10.3.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-5"><i class="fa fa-check"></i><b>10.3.2</b> R</a></li>
+<li class="chapter" data-level="10.3.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#jasp-5"><i class="fa fa-check"></i><b>10.3.2</b> JASP</a></li>
+<li class="chapter" data-level="10.3.3" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-5"><i class="fa fa-check"></i><b>10.3.3</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="10.4" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:isvarnormaldistributed"><i class="fa fa-check"></i><b>10.4</b> Does my variable have a normal probability distribution?</a>
 <ul>
@@ -1074,10 +1076,10 @@ has rated a different concept to the others.</p>
 <p>For a reliability analysis of <span class="math inline">\(k=3\)</span> language proficiency
 judgements in Table <a href="ch-reliability.html#tab:reliability">12.1</a>:<br />
 </p>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="ch-reliability.html#cb83-1" aria-hidden="true"></a>raters &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="dt">file=</span><span class="st">&quot;data/beoordelaars.txt&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>)</span>
-<span id="cb83-2"><a href="ch-reliability.html#cb83-2" aria-hidden="true"></a><span class="cf">if</span> (<span class="kw">require</span>(psych)) { <span class="co"># for psych::alpha</span></span>
-<span id="cb83-3"><a href="ch-reliability.html#cb83-3" aria-hidden="true"></a>  <span class="kw">alpha</span>( raters[,<span class="dv">2</span><span class="op">:</span><span class="dv">4</span>] ) <span class="co"># columns 2 to 4</span></span>
-<span id="cb83-4"><a href="ch-reliability.html#cb83-4" aria-hidden="true"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="ch-reliability.html#cb85-1" aria-hidden="true"></a>raters &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="dt">file=</span><span class="st">&quot;data/beoordelaars.txt&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>)</span>
+<span id="cb85-2"><a href="ch-reliability.html#cb85-2" aria-hidden="true"></a><span class="cf">if</span> (<span class="kw">require</span>(psych)) { <span class="co"># for psych::alpha</span></span>
+<span id="cb85-3"><a href="ch-reliability.html#cb85-3" aria-hidden="true"></a>  <span class="kw">alpha</span>( raters[,<span class="dv">2</span><span class="op">:</span><span class="dv">4</span>] ) <span class="co"># columns 2 to 4</span></span>
+<span id="cb85-4"><a href="ch-reliability.html#cb85-4" aria-hidden="true"></a>}</span></code></pre></div>
 <pre><code>## Number of categories should be increased  in order to count frequencies.</code></pre>
 <pre><code>## 
 ## Reliability analysis   
@@ -1108,7 +1110,7 @@ increase (from 0.68 to 0.84). Over all three raters,
 <p>Correlations between <span class="math inline">\(k\)</span> raters or items are not explicitly
 provided (even if they can be deduced from the above output),
 thus we still request these:</p>
-<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="ch-reliability.html#cb86-1" aria-hidden="true"></a><span class="kw">cor</span>( raters[ ,<span class="kw">c</span>(<span class="st">&quot;B1&quot;</span>,<span class="st">&quot;B2&quot;</span>,<span class="st">&quot;B3&quot;</span>) ] ) <span class="co"># explicit column names</span></span></code></pre></div>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="ch-reliability.html#cb88-1" aria-hidden="true"></a><span class="kw">cor</span>( raters[ ,<span class="kw">c</span>(<span class="st">&quot;B1&quot;</span>,<span class="st">&quot;B2&quot;</span>,<span class="st">&quot;B3&quot;</span>) ] ) <span class="co"># explicit column names</span></span></code></pre></div>
 <pre><code>##           B1         B2         B3
 ## B1 1.0000000 0.74494845 0.40979738
 ## B2 0.7449484 1.00000000 0.08845909

@@ -3413,6 +3413,19 @@ standard deviation
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
+\hypertarget{jasp-4}{%
+\subsection{JASP}\label{jasp-4}}
+
+The binomial probability distribution such as shown in Figure \ref{fig:binomprobabilitydistribution3} may be obtained in JASP by selecting the following option in the top menu bar:
+
+\begin{verbatim}
+Distributions > Discrete: Binomial
+\end{verbatim}
+
+If the \texttt{Distributions} option is not shown in the top bar, then you can add the option by clicking on the blue \textbf{+}-button in the top right corner, and checking option \texttt{Distributions}.\\
+In the ``Binomial'' input, there is an input panel \texttt{Show\ Distribution}. In that panel, enter the appropriate values for \(p\) (under ``free parameter'') and for \(n\) (under ``fixed parameter''). In the ``Display'' input, check option \texttt{Probability\ mass\ function}.
+The output panel now shows the binomial \emph{Probability Mass Plot}.
+
 \hypertarget{r-4}{%
 \subsection{R}\label{r-4}}
 
@@ -3650,6 +3663,20 @@ The standard normal probability distribution of variable \(Z\) with average
     P(Z) = \frac{1}{\sqrt{2\pi}} \mbox{e}^{ \frac{-Z^2}{2} }
   \label{eq:prob-standardnormal}
 \end{equation}
+
+\hypertarget{jasp-5}{%
+\subsection{JASP}\label{jasp-5}}
+
+The normal probability distribution such as shown in Figure \ref{fig:normalprobabilitydistribution} may be obtained in JASP by selecting the following option in the top menu bar:
+
+\begin{verbatim}
+Distributions > Continuous: Normal
+\end{verbatim}
+
+If the \texttt{Distributions} option is not shown in the top bar, then you can add the option by clicking on the blue \textbf{+}-button in the top right corner, and checking option \texttt{Distributions}.\\
+In the ``Normal'' input panel, there is an input panel \texttt{Show\ Distribution}. In that panel, the values of the \emph{standard} normal distribution are entered by default, and option \texttt{Probability\ density\ function} is checked by default. The standard normal distribution is shown in the output under \emph{Density Plot}.\\
+For \emph{other} normal density distributions, the values of \(\mu\) and \(\sigma\) may be adjusted, and you may specify the domain shown (under ``Options'', then ``range of x'').
+Note that, under the heading ``Parameters'', you should select the option labeled ``\(\mu\), \(\sigma\)'' if you enter the mean and standard deviation (the default option is ``\(\mu\), \(\sigma^2\)'' using variance; for the \emph{standard} normal distribution \(\sigma=\sigma^2=1\)).
 
 \hypertarget{r-5}{%
 \subsection{R}\label{r-5}}

@@ -166,9 +166,11 @@ ch:probability-distributions
 sec:probabilities
 sec:binomial-distribution
 formulas
+jasp-4
 r-4
 sec:normaldistribution
 formulas-1
+jasp-5
 r-5
 sec:isvarnormaldistributed
 spss-4

@@ -283,12 +283,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:binomial-distribution"><i class="fa fa-check"></i><b>10.2</b> Binomial probability distribution</a>
 <ul>
 <li class="chapter" data-level="10.2.1" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#formulas"><i class="fa fa-check"></i><b>10.2.1</b> formulas</a></li>
-<li class="chapter" data-level="10.2.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-4"><i class="fa fa-check"></i><b>10.2.2</b> R</a></li>
+<li class="chapter" data-level="10.2.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#jasp-4"><i class="fa fa-check"></i><b>10.2.2</b> JASP</a></li>
+<li class="chapter" data-level="10.2.3" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-4"><i class="fa fa-check"></i><b>10.2.3</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="10.3" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:normaldistribution"><i class="fa fa-check"></i><b>10.3</b> Normal probability distribution</a>
 <ul>
 <li class="chapter" data-level="10.3.1" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#formulas-1"><i class="fa fa-check"></i><b>10.3.1</b> formulas</a></li>
-<li class="chapter" data-level="10.3.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-5"><i class="fa fa-check"></i><b>10.3.2</b> R</a></li>
+<li class="chapter" data-level="10.3.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#jasp-5"><i class="fa fa-check"></i><b>10.3.2</b> JASP</a></li>
+<li class="chapter" data-level="10.3.3" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-5"><i class="fa fa-check"></i><b>10.3.3</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="10.4" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:isvarnormaldistributed"><i class="fa fa-check"></i><b>10.4</b> Does my variable have a normal probability distribution?</a>
 <ul>
@@ -949,12 +951,20 @@ standard deviation
 </blockquote>
 <hr />
 </div>
-<div id="r-4" class="section level3" number="10.2.2">
-<h3><span class="header-section-number">10.2.2</span> R</h3>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="ch-probability-distributions.html#cb49-1" aria-hidden="true"></a><span class="kw">dbinom</span>( <span class="dv">0</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">size=</span><span class="dv">3</span>, <span class="dt">prob=</span>.<span class="dv">38</span> )</span></code></pre></div>
+<div id="jasp-4" class="section level3" number="10.2.2">
+<h3><span class="header-section-number">10.2.2</span> JASP</h3>
+<p>The binomial probability distribution such as shown in Figure <a href="ch-probability-distributions.html#fig:binomprobabilitydistribution3">10.1</a> may be obtained in JASP by selecting the following option in the top menu bar:</p>
+<pre><code>Distributions &gt; Discrete: Binomial</code></pre>
+<p>If the <code>Distributions</code> option is not shown in the top bar, then you can add the option by clicking on the blue <strong>+</strong>-button in the top right corner, and checking option <code>Distributions</code>.<br />
+In the “Binomial” input, there is an input panel <code>Show Distribution</code>. In that panel, enter the appropriate values for <span class="math inline">\(p\)</span> (under “free parameter”) and for <span class="math inline">\(n\)</span> (under “fixed parameter”). In the “Display” input, check option <code>Probability mass function</code>.
+The output panel now shows the binomial <em>Probability Mass Plot</em>.</p>
+</div>
+<div id="r-4" class="section level3" number="10.2.3">
+<h3><span class="header-section-number">10.2.3</span> R</h3>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="ch-probability-distributions.html#cb50-1" aria-hidden="true"></a><span class="kw">dbinom</span>( <span class="dv">0</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">size=</span><span class="dv">3</span>, <span class="dt">prob=</span>.<span class="dv">38</span> )</span></code></pre></div>
 <pre><code>## [1] 0.238328 0.438216 0.268584 0.054872</code></pre>
 <p>The output is shown in Table <a href="ch-probability-distributions.html#tab:binomprobabilitydistribution3">10.2</a> below.</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="ch-probability-distributions.html#cb51-1" aria-hidden="true"></a>matrixcalc<span class="op">::</span><span class="kw">pascal.matrix</span>( <span class="dv">10</span> ) <span class="co"># left under diagonal is Pascal&#39;s triangle</span></span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="ch-probability-distributions.html#cb52-1" aria-hidden="true"></a>matrixcalc<span class="op">::</span><span class="kw">pascal.matrix</span>( <span class="dv">10</span> ) <span class="co"># left under diagonal is Pascal&#39;s triangle</span></span></code></pre></div>
 <pre><code>##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
 ##  [1,]    1    0    0    0    0    0    0    0    0     0
 ##  [2,]    1    1    0    0    0    0    0    0    0     0
@@ -1146,14 +1156,23 @@ standard deviation <span class="math inline">\(\sigma\)</span> is
   \tag{10.9}
 \end{equation}\]</span></p>
 </div>
-<div id="r-5" class="section level3" number="10.3.2">
-<h3><span class="header-section-number">10.3.2</span> R</h3>
+<div id="jasp-5" class="section level3" number="10.3.2">
+<h3><span class="header-section-number">10.3.2</span> JASP</h3>
+<p>The normal probability distribution such as shown in Figure <a href="ch-probability-distributions.html#fig:normalprobabilitydistribution">10.3</a> may be obtained in JASP by selecting the following option in the top menu bar:</p>
+<pre><code>Distributions &gt; Continuous: Normal</code></pre>
+<p>If the <code>Distributions</code> option is not shown in the top bar, then you can add the option by clicking on the blue <strong>+</strong>-button in the top right corner, and checking option <code>Distributions</code>.<br />
+In the “Normal” input panel, there is an input panel <code>Show Distribution</code>. In that panel, the values of the <em>standard</em> normal distribution are entered by default, and option <code>Probability density function</code> is checked by default. The standard normal distribution is shown in the output under <em>Density Plot</em>.<br />
+For <em>other</em> normal density distributions, the values of <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span> may be adjusted, and you may specify the domain shown (under “Options”, then “range of x”).
+Note that, under the heading “Parameters”, you should select the option labeled “<span class="math inline">\(\mu\)</span>, <span class="math inline">\(\sigma\)</span>” if you enter the mean and standard deviation (the default option is “<span class="math inline">\(\mu\)</span>, <span class="math inline">\(\sigma^2\)</span>” using variance; for the <em>standard</em> normal distribution <span class="math inline">\(\sigma=\sigma^2=1\)</span>).</p>
+</div>
+<div id="r-5" class="section level3" number="10.3.3">
+<h3><span class="header-section-number">10.3.3</span> R</h3>
 <p>The normal probability distribution in Figure <a href="ch-probability-distributions.html#fig:normalprobabilitydistribution">10.3</a> may be plotted in R using the command below. A <code>curve</code> is plotted, with <code>x</code> in the specified domain, and <code>y</code> being the function which computes the normal probability density using equation <a href="ch-probability-distributions.html#eq:prob-normal">(10.8)</a>:</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="ch-probability-distributions.html#cb53-1" aria-hidden="true"></a><span class="kw">curve</span>( <span class="kw">dnorm</span>( x, <span class="dt">mean=</span><span class="dv">0</span>, <span class="dt">sd=</span><span class="dv">1</span> ), <span class="co"># function specifying y values, normal density</span></span>
-<span id="cb53-2"><a href="ch-probability-distributions.html#cb53-2" aria-hidden="true"></a>       <span class="dt">from=</span><span class="op">-</span><span class="dv">5</span>, <span class="dt">to=</span><span class="op">+</span><span class="dv">5</span>, <span class="co"># domain of x</span></span>
-<span id="cb53-3"><a href="ch-probability-distributions.html#cb53-3" aria-hidden="true"></a>       <span class="dt">lwd=</span><span class="dv">4</span>, <span class="co"># line width is 4x default value</span></span>
-<span id="cb53-4"><a href="ch-probability-distributions.html#cb53-4" aria-hidden="true"></a>       <span class="dt">xlab=</span><span class="st">&quot;x&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;P(x)&quot;</span> <span class="co"># labels along x and y axes</span></span>
-<span id="cb53-5"><a href="ch-probability-distributions.html#cb53-5" aria-hidden="true"></a>       )</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="ch-probability-distributions.html#cb55-1" aria-hidden="true"></a><span class="kw">curve</span>( <span class="kw">dnorm</span>( x, <span class="dt">mean=</span><span class="dv">0</span>, <span class="dt">sd=</span><span class="dv">1</span> ), <span class="co"># function specifying y values, normal density</span></span>
+<span id="cb55-2"><a href="ch-probability-distributions.html#cb55-2" aria-hidden="true"></a>       <span class="dt">from=</span><span class="op">-</span><span class="dv">5</span>, <span class="dt">to=</span><span class="op">+</span><span class="dv">5</span>, <span class="co"># domain of x</span></span>
+<span id="cb55-3"><a href="ch-probability-distributions.html#cb55-3" aria-hidden="true"></a>       <span class="dt">lwd=</span><span class="dv">4</span>, <span class="co"># line width is 4x default value</span></span>
+<span id="cb55-4"><a href="ch-probability-distributions.html#cb55-4" aria-hidden="true"></a>       <span class="dt">xlab=</span><span class="st">&quot;x&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;P(x)&quot;</span> <span class="co"># labels along x and y axes</span></span>
+<span id="cb55-5"><a href="ch-probability-distributions.html#cb55-5" aria-hidden="true"></a>       )</span></code></pre></div>
 <p><img src="QMS-EN_files/figure-html/curve.dnorm-1.png" width="672" /></p>
 <p>If used with the additional argument <code>curve( ..., add=TRUE )</code>, then the curve will be added to the most recent plot (see e.g. Figure <a href="ch-probability-distributions.html#fig:itunesmeanshist">10.6</a> below).</p>
 </div>
@@ -1225,11 +1244,11 @@ test results, there is, amongst others, a Q-Q plot.</p>
 </div>
 <div id="r-6" class="section level3" number="10.4.2">
 <h3><span class="header-section-number">10.4.2</span> R</h3>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="ch-probability-distributions.html#cb55-1" aria-hidden="true"></a>itunes &lt;-<span class="st"> </span><span class="kw">read.table</span>( <span class="dt">file=</span><span class="st">&quot;data/itunestimes20120511.txt&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span> )</span>
-<span id="cb55-2"><a href="ch-probability-distributions.html#cb55-2" aria-hidden="true"></a><span class="co"># Size in bytes, Time in ms</span></span>
-<span id="cb55-3"><a href="ch-probability-distributions.html#cb55-3" aria-hidden="true"></a><span class="kw">qqnorm</span>(itunes<span class="op">$</span>Time<span class="op">/</span><span class="dv">60000</span>, <span class="dt">datax=</span>T, <span class="dt">plot.it=</span><span class="ot">FALSE</span>) <span class="co"># normally we&#39;d use plot.it=TRUE  </span></span>
-<span id="cb55-4"><a href="ch-probability-distributions.html#cb55-4" aria-hidden="true"></a><span class="co"># qqline(itunes$Time/60000, datax=T, col=&quot;purple&quot;, lwd=T) # see QQ-plot above</span></span></code></pre></div>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="ch-probability-distributions.html#cb56-1" aria-hidden="true"></a><span class="kw">shapiro.test</span>(itunes<span class="op">$</span>Time<span class="op">/</span><span class="dv">60000</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="ch-probability-distributions.html#cb57-1" aria-hidden="true"></a>itunes &lt;-<span class="st"> </span><span class="kw">read.table</span>( <span class="dt">file=</span><span class="st">&quot;data/itunestimes20120511.txt&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span> )</span>
+<span id="cb57-2"><a href="ch-probability-distributions.html#cb57-2" aria-hidden="true"></a><span class="co"># Size in bytes, Time in ms</span></span>
+<span id="cb57-3"><a href="ch-probability-distributions.html#cb57-3" aria-hidden="true"></a><span class="kw">qqnorm</span>(itunes<span class="op">$</span>Time<span class="op">/</span><span class="dv">60000</span>, <span class="dt">datax=</span>T, <span class="dt">plot.it=</span><span class="ot">FALSE</span>) <span class="co"># normally we&#39;d use plot.it=TRUE  </span></span>
+<span id="cb57-4"><a href="ch-probability-distributions.html#cb57-4" aria-hidden="true"></a><span class="co"># qqline(itunes$Time/60000, datax=T, col=&quot;purple&quot;, lwd=T) # see QQ-plot above</span></span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="ch-probability-distributions.html#cb58-1" aria-hidden="true"></a><span class="kw">shapiro.test</span>(itunes<span class="op">$</span>Time<span class="op">/</span><span class="dv">60000</span>)</span></code></pre></div>
 <pre><code>## 
 ##  Shapiro-Wilk normality test
 ## 

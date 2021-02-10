@@ -216,7 +216,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3" data-path="ch-samples.html"><a href="ch-samples.html#sec:random-samples"><i class="fa fa-check"></i><b>7.3</b> Random samples</a>
 <ul>
 <li class="chapter" data-level="7.3.1" data-path="ch-samples.html"><a href="ch-samples.html#spss"><i class="fa fa-check"></i><b>7.3.1</b> SPSS</a></li>
-<li class="chapter" data-level="7.3.2" data-path="ch-samples.html"><a href="ch-samples.html#r"><i class="fa fa-check"></i><b>7.3.2</b> R</a></li>
+<li class="chapter" data-level="7.3.2" data-path="ch-samples.html"><a href="ch-samples.html#jasp"><i class="fa fa-check"></i><b>7.3.2</b> JASP</a></li>
+<li class="chapter" data-level="7.3.3" data-path="ch-samples.html"><a href="ch-samples.html#r"><i class="fa fa-check"></i><b>7.3.3</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="7.4" data-path="ch-samples.html"><a href="ch-samples.html#sec:sample-size"><i class="fa fa-check"></i><b>7.4</b> Sample size</a></li>
 </ul></li>
@@ -788,7 +789,7 @@ Choose <code>Statistics…</code> and tick the option <code>Chi-square</code>. C
 <h2><span class="header-section-number">16.8</span> R</h2>
 <div id="goodness-of-fit-testing-1" class="section level3" number="16.8.1">
 <h3><span class="header-section-number">16.8.1</span> goodness of fit: testing</h3>
-<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="ch-chi-square-tests.html#cb148-1" aria-hidden="true"></a><span class="kw">chisq.test</span>( <span class="kw">c</span>( <span class="dv">14</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">1</span> ) ) <span class="co"># die §16.1</span></span></code></pre></div>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="ch-chi-square-tests.html#cb149-1" aria-hidden="true"></a><span class="kw">chisq.test</span>( <span class="kw">c</span>( <span class="dv">14</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">1</span> ) ) <span class="co"># die §16.1</span></span></code></pre></div>
 <pre><code>## 
 ##  Chi-squared test for given probabilities
 ## 
@@ -800,9 +801,9 @@ Choose <code>Statistics…</code> and tick the option <code>Chi-square</code>. C
 <p>In R, the dataset <code>Titanic</code> is provided as a multidimensional matrix. We sum
 the observations and make a contingency table of the first dimension (class) and
 the fourth dimension (outcome).</p>
-<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="ch-chi-square-tests.html#cb150-1" aria-hidden="true"></a><span class="kw">apply</span>( Titanic, <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">4</span>), sum ) -&gt;<span class="st"> </span>Titanic.classoutcome</span></code></pre></div>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="ch-chi-square-tests.html#cb151-1" aria-hidden="true"></a><span class="kw">apply</span>( Titanic, <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">4</span>), sum ) -&gt;<span class="st"> </span>Titanic.classoutcome</span></code></pre></div>
 <p>Next, we use the contingency table as the input for a <code>chisq.test</code>.</p>
-<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="ch-chi-square-tests.html#cb151-1" aria-hidden="true"></a><span class="kw">chisq.test</span>( Titanic.classoutcome )  <span class="co"># p&lt;.0001</span></span></code></pre></div>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="ch-chi-square-tests.html#cb152-1" aria-hidden="true"></a><span class="kw">chisq.test</span>( Titanic.classoutcome )  <span class="co"># p&lt;.0001</span></span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s Chi-squared test
 ## 

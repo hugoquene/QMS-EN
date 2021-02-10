@@ -118,6 +118,7 @@ sec:convenience-samples
 sec:systematic-samples
 sec:random-samples
 spss
+jasp
 r
 sec:sample-size
 ch:frequencies

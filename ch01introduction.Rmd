@@ -99,15 +99,13 @@ Secondly, we would like for you to have the knowledge and insight necessary for 
 
 These three goals are ordered by importance. We believe that an adequate and critical interpretation of statistical results and the conclusions that may be connected to these is of great importance to all students. For this reason, part I of this textbook devotes considerable attention to the 'philosophy' or methodology behind the statistical techniques and analyses we will discuss later. 
 	
-In separate subsections, we will also provide instructions on how you can perform these statistical analyses yourself, in two different statistical packages:
+In separate subsections, we will also provide instructions on how you can perform these statistical analyses yourself, in three different statistical packages:
 
 * **SPSS** (version 22.0 and later): a popular software package for statistical analysis. 
 SPSS is available at <https://SurfSpot.nl> for a small fee. 
 
-<!--
 * **JASP** (version 0.11 and later): an attractive open-source package, very user-friendly, and offering attractive output of its results.    
 JASP is freely available at <https://jasp-stats.org>. The JASP website also offers further instruction documents and videos. 
--->
 
 * **R** (version 3.0 and later): a somewhat more challenging, but also much more powerful and versatile software package that is gaining popularity among researchers.    
 R is freely available at <https://www.R-project.org>. 

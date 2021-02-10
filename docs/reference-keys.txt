@@ -160,6 +160,7 @@ background-1
 sec:robustefficient
 sec:standardscores
 spss-3
+jasp-3
 r-3
 ch:probability-distributions
 sec:probabilities

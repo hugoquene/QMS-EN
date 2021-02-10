@@ -804,6 +804,37 @@ Tick: `Save standardized values as variables` and confirm with `OK`.\
 The new variable(s) with z-scores are added as new 
 column(s) to the data file.\
 
+## JASP
+
+For **histogram and boxplot**:\
+From the top bar, choose `Descriptives`. Select the variable(s) to summarize and place them into the field "Variables". Open the "Plots" field and check the option `Distribution plots` (under the heading "Basic plots") to obtain a histogram or bar chart (depending on the measurement level). 
+If desired, check the option `Boxplots` (with `Boxplot element`) under the heading "Customizable plots".
+
+For **summary numbers and quantiles**:\
+From the top bar, choose `Descriptives`. Select the variable(s) to summarize and place them into the field "Variables". Open the "Statistics" field and check the option `Quartiles` (under the heading "Percentile values") to obtain quartiles. 
+Other quantiles are also possible: check the option `Cut points for:` and enter a number, e.g. `6` will produce sextiles. If you want to know a specific percentile, e.g. the 17th percentile, check the option `Percentiles:` and enter the desired percentile value (here `17`). 
+
+For summaries of central tendency and dispersion, check the options (under the heading "Central Tendency") for `Mean`, `Median`, `Mode` en `Sum` , as well as those (under the heading "Dispersion") for `Variance`, `Std.deviation`, `MAD Robust` (with constant value fixed at 1; see Eq.\@ref(eq:MAD) above), `IQR`, `Minimum` and `Maximum` . This will produce a summary table showing the requested descriptive statistics of the variable(s). 
+
+In JASP, a column of **standard scores** can be created by first creating a new variable (column) and subsequently filling that column with standard scores.  
+
+To create a new variable, click on the **+** button to the right of the last column name in the data tab. A "Create Computed Column" panel appears, where you can enter a name for the new variable, e.g. `Lezen_Z`. You can also choose between `R` and a pointer. These are the two options in JASP to define formulas with which the new (empty) variable is filled; using `R` code, or manually using JASP. The paragraphs below explain how standard scores can be computed using these two options. Finally, you can check which measurement level the new variable should be (see Chapter \@ref(ch:levelsofmeasurement)). For standard scores, you can leave this at `Scale`. Next, click on `Create Column` to create the new variable. The new variable (empty column) appears as the rightmost variable in the data set. 
+
+If the **R** option is chosen to define the new variable, a field with "#Enter your R code here :)" appears above the data. Here you can enter R code (see below) that produces standardized values. \
+This snippet of R code produces standard scores of the variable `Lezen`: 
+```
+((Lezen - mean(Lezen)) / sd(Lezen))
+```
+Enter this R code, and click on the button `Compute column` below the work sheet to fill the empty variable. 
+
+If the **pointer** or **manual** option is chosen to define the new variable, a work sheet will appear above the data. To the left of the work sheet are the variables, above it are math symbols, and to the right of the work sheet are several functions. From those functions you can pick the ones required to compute standard scores. If something goes wrong, items on the work sheet can be erased by dragging them to the trash bin on the lower right bottom. After you have completed the specification on the work sheet, then click on the button `Compute column` under the work sheet, to fill the new variable with the generated numbers.\
+Drag the variable to convert into the empty sheet. Pick function `mean(y)` from the right. 
+Drag the variable to convert to "values". Pick $\div$ from the math symbols at the top. 
+Pick the function $\sigma$_y from the right and drag it to the denominator part of the fraction (below the fraction bar). For this function too, drag the variable to convert to "values". 
+Eventually the definition of standard scores (here for variable named `Lezen`) should look like this: \[\frac{(Lezen-mean(Lezen))}{\sigma (Lezen)}\] \
+Click on the button `Compute column` below the work sheet to fill the empty variable with the newly computed standard scores.  
+
+
 ## R
 
 For **quartiles and boxplot** like Figure \@ref(fig:cito-boxplot), we use the commands  `fivenum`, `quantile`, and `boxplot`: 

@@ -229,13 +229,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="8.2.1" data-path="ch-frequencies.html"><a href="ch-frequencies.html#sec:intervals"><i class="fa fa-check"></i><b>8.2.1</b> Intervals</a></li>
 <li class="chapter" data-level="8.2.2" data-path="ch-frequencies.html"><a href="ch-frequencies.html#spss-1"><i class="fa fa-check"></i><b>8.2.2</b> SPSS</a></li>
-<li class="chapter" data-level="8.2.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#r-1"><i class="fa fa-check"></i><b>8.2.3</b> R</a></li>
+<li class="chapter" data-level="8.2.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#jasp-1"><i class="fa fa-check"></i><b>8.2.3</b> JASP</a></li>
+<li class="chapter" data-level="8.2.4" data-path="ch-frequencies.html"><a href="ch-frequencies.html#r-1"><i class="fa fa-check"></i><b>8.2.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="8.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#sec:barcharts"><i class="fa fa-check"></i><b>8.3</b> Bar charts</a></li>
 <li class="chapter" data-level="8.4" data-path="ch-frequencies.html"><a href="ch-frequencies.html#sec:histograms"><i class="fa fa-check"></i><b>8.4</b> Histograms</a>
 <ul>
 <li class="chapter" data-level="8.4.1" data-path="ch-frequencies.html"><a href="ch-frequencies.html#spss-2"><i class="fa fa-check"></i><b>8.4.1</b> SPSS</a></li>
-<li class="chapter" data-level="8.4.2" data-path="ch-frequencies.html"><a href="ch-frequencies.html#r-2"><i class="fa fa-check"></i><b>8.4.2</b> R</a></li>
+<li class="chapter" data-level="8.4.2" data-path="ch-frequencies.html"><a href="ch-frequencies.html#jasp-2"><i class="fa fa-check"></i><b>8.4.2</b> JASP</a></li>
+<li class="chapter" data-level="8.4.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#r-2"><i class="fa fa-check"></i><b>8.4.3</b> R</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html"><i class="fa fa-check"></i><b>9</b> Centre and dispersion</a>
@@ -687,16 +689,16 @@ take the data into or convert it into a table of your own which does satisfy the
 </div>
 <div id="r-7" class="section level3" number="11.2.3">
 <h3><span class="header-section-number">11.2.3</span> R</h3>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="ch-correlation-regression.html#cb56-1" aria-hidden="true"></a>cito &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="dt">file=</span><span class="st">&quot;data/cito.txt&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>)</span>
-<span id="cb56-2"><a href="ch-correlation-regression.html#cb56-2" aria-hidden="true"></a><span class="co"># variable names are Lezen=Reading, Rekenen=Arithmetic, WO=Geography, ...</span></span>
-<span id="cb56-3"><a href="ch-correlation-regression.html#cb56-3" aria-hidden="true"></a><span class="kw">dimnames</span>(cito)[[<span class="dv">2</span>]] &lt;-<span class="st"> </span><span class="kw">c</span>( <span class="st">&quot;Pupil&quot;</span>, <span class="st">&quot;Reading&quot;</span>, <span class="st">&quot;Arithmetic&quot;</span>, <span class="st">&quot;Geography&quot;</span>,</span>
-<span id="cb56-4"><a href="ch-correlation-regression.html#cb56-4" aria-hidden="true"></a>                          <span class="st">&quot;UrbanRural&quot;</span>, <span class="st">&quot;Arith.2cat&quot;</span> )</span>
-<span id="cb56-5"><a href="ch-correlation-regression.html#cb56-5" aria-hidden="true"></a><span class="kw">cor</span>( cito[,<span class="dv">2</span><span class="op">:</span><span class="dv">4</span>] ) <span class="co"># correlation matrix of columns 2,3,4</span></span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="ch-correlation-regression.html#cb58-1" aria-hidden="true"></a>cito &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="dt">file=</span><span class="st">&quot;data/cito.txt&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>)</span>
+<span id="cb58-2"><a href="ch-correlation-regression.html#cb58-2" aria-hidden="true"></a><span class="co"># variable names are Lezen=Reading, Rekenen=Arithmetic, WO=Geography, ...</span></span>
+<span id="cb58-3"><a href="ch-correlation-regression.html#cb58-3" aria-hidden="true"></a><span class="kw">dimnames</span>(cito)[[<span class="dv">2</span>]] &lt;-<span class="st"> </span><span class="kw">c</span>( <span class="st">&quot;Pupil&quot;</span>, <span class="st">&quot;Reading&quot;</span>, <span class="st">&quot;Arithmetic&quot;</span>, <span class="st">&quot;Geography&quot;</span>,</span>
+<span id="cb58-4"><a href="ch-correlation-regression.html#cb58-4" aria-hidden="true"></a>                          <span class="st">&quot;UrbanRural&quot;</span>, <span class="st">&quot;Arith.2cat&quot;</span> )</span>
+<span id="cb58-5"><a href="ch-correlation-regression.html#cb58-5" aria-hidden="true"></a><span class="kw">cor</span>( cito[,<span class="dv">2</span><span class="op">:</span><span class="dv">4</span>] ) <span class="co"># correlation matrix of columns 2,3,4</span></span></code></pre></div>
 <pre><code>##               Reading Arithmetic   Geography
 ## Reading     1.0000000 0.74921033 -0.50881738
 ## Arithmetic  0.7492103 1.00000000  0.06351024
 ## Geography  -0.5088174 0.06351024  1.00000000</code></pre>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="ch-correlation-regression.html#cb58-1" aria-hidden="true"></a><span class="kw">with</span>( cito, <span class="kw">cor.test</span>( Reading, Arithmetic ) )</span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="ch-correlation-regression.html#cb60-1" aria-hidden="true"></a><span class="kw">with</span>( cito, <span class="kw">cor.test</span>( Reading, Arithmetic ) )</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
 ## 
@@ -855,7 +857,7 @@ the standard variation of the residuals is <span class="math inline">\(3.212\)</
 </div>
 <div id="r-8" class="section level3" number="11.3.3">
 <h3><span class="header-section-number">11.3.3</span> R</h3>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="ch-correlation-regression.html#cb61-1" aria-hidden="true"></a><span class="kw">summary</span>( m1 &lt;-<span class="st"> </span><span class="kw">lm</span>( Arithmetic<span class="op">~</span>Reading, <span class="dt">data=</span>cito ) )</span></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="ch-correlation-regression.html#cb63-1" aria-hidden="true"></a><span class="kw">summary</span>( m1 &lt;-<span class="st"> </span><span class="kw">lm</span>( Arithmetic<span class="op">~</span>Reading, <span class="dt">data=</span>cito ) )</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = Arithmetic ~ Reading, data = cito)
@@ -879,7 +881,7 @@ as the dependent variable and <code>Reading</code> as the predictor. This model 
 saved as an object called <code>m1</code>, and that is used again directly as an argument
 (input) for reporting. In the reporting of model <code>m1</code> the constant coefficient
 <span class="math inline">\(a\)</span> is referred to as the <code>Intercept</code>.</p>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="ch-correlation-regression.html#cb63-1" aria-hidden="true"></a><span class="kw">sd</span>( <span class="kw">resid</span>( m1 ) ) <span class="co"># s.d. of residuals according to `m1`</span></span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="ch-correlation-regression.html#cb65-1" aria-hidden="true"></a><span class="kw">sd</span>( <span class="kw">resid</span>( m1 ) ) <span class="co"># s.d. of residuals according to `m1`</span></span></code></pre></div>
 <pre><code>## [1] 3.211533</code></pre>
 </div>
 </div>
@@ -1047,7 +1049,7 @@ and report according to the usual conventions for correlation analysis.</p>
 </div>
 <div id="r-9" class="section level3" number="11.5.3">
 <h3><span class="header-section-number">11.5.3</span> R</h3>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="ch-correlation-regression.html#cb66-1" aria-hidden="true"></a><span class="kw">with</span>(cito, <span class="kw">cor.test</span>( Reading,Arithmetic, <span class="dt">method=</span><span class="st">&quot;spearman&quot;</span> ) )</span></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="ch-correlation-regression.html#cb68-1" aria-hidden="true"></a><span class="kw">with</span>(cito, <span class="kw">cor.test</span>( Reading,Arithmetic, <span class="dt">method=</span><span class="st">&quot;spearman&quot;</span> ) )</span></code></pre></div>
 <pre><code>## Warning in cor.test.default(Reading, Arithmetic, method = &quot;spearman&quot;): Cannot
 ## compute exact p-value with ties</code></pre>
 <pre><code>## 
@@ -1174,20 +1176,20 @@ Confirm firstly with <code>Continue</code> and then again with <code>OK</code>.<
 <h3><span class="header-section-number">11.6.3</span> R</h3>
 <p>The dataset <code>cito</code> already contains a variable <code>UrbanRural</code> which indicates the pupils’ origins.
 However, for completeness, let us still see how you can construct such a variable for yourself.</p>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="ch-correlation-regression.html#cb71-1" aria-hidden="true"></a>UrbanRural2 &lt;-<span class="st"> </span><span class="kw">ifelse</span>( cito<span class="op">$</span>Pupil<span class="op">&lt;</span><span class="dv">6</span>, <span class="dv">1</span>, <span class="dv">0</span>) <span class="co"># 1=urban, 0=rural</span></span>
-<span id="cb71-2"><a href="ch-correlation-regression.html#cb71-2" aria-hidden="true"></a>Arithmetic2 &lt;-<span class="st"> </span><span class="kw">ifelse</span>( cito<span class="op">$</span>Arithmetic<span class="op">&gt;</span><span class="kw">mean</span>(cito<span class="op">$</span>Arithmetic), <span class="dv">1</span>, <span class="dv">0</span> ) <span class="co"># 1=high, 0=low</span></span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="ch-correlation-regression.html#cb73-1" aria-hidden="true"></a>UrbanRural2 &lt;-<span class="st"> </span><span class="kw">ifelse</span>( cito<span class="op">$</span>Pupil<span class="op">&lt;</span><span class="dv">6</span>, <span class="dv">1</span>, <span class="dv">0</span>) <span class="co"># 1=urban, 0=rural</span></span>
+<span id="cb73-2"><a href="ch-correlation-regression.html#cb73-2" aria-hidden="true"></a>Arithmetic2 &lt;-<span class="st"> </span><span class="kw">ifelse</span>( cito<span class="op">$</span>Arithmetic<span class="op">&gt;</span><span class="kw">mean</span>(cito<span class="op">$</span>Arithmetic), <span class="dv">1</span>, <span class="dv">0</span> ) <span class="co"># 1=high, 0=low</span></span></code></pre></div>
 <p>Here we build a new variable <code>Arithmetic2</code>, which has the value <code>1</code> if the score for
 Arithmetic is higher than the average, and otherwise has the value <code>0</code>.</p>
 <p>In R, we also start by making a contingency table (Table <a href="ch-correlation-regression.html#tab:cito-contingency-table">11.3</a> and we then calculate the <span class="math inline">\(r_\Phi\)</span> over the contingency table.</p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="ch-correlation-regression.html#cb72-1" aria-hidden="true"></a><span class="kw">print</span>( <span class="kw">table</span>(UrbanRural2,Arithmetic2) -&gt;<span class="st"> </span>citocontingencytable ) </span></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="ch-correlation-regression.html#cb74-1" aria-hidden="true"></a><span class="kw">print</span>( <span class="kw">table</span>(UrbanRural2,Arithmetic2) -&gt;<span class="st"> </span>citocontingencytable ) </span></code></pre></div>
 <pre><code>##            Arithmetic2
 ## UrbanRural2 0 1
 ##           0 5 0
 ##           1 2 3</code></pre>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="ch-correlation-regression.html#cb74-1" aria-hidden="true"></a><span class="co"># make and store a contingency table</span></span>
-<span id="cb74-2"><a href="ch-correlation-regression.html#cb74-2" aria-hidden="true"></a><span class="cf">if</span> (<span class="kw">require</span>(psych)) { <span class="co"># for psych::phi</span></span>
-<span id="cb74-3"><a href="ch-correlation-regression.html#cb74-3" aria-hidden="true"></a>  <span class="kw">phi</span>(citocontingencytable) <span class="co"># contingency table made earlier is input here!</span></span>
-<span id="cb74-4"><a href="ch-correlation-regression.html#cb74-4" aria-hidden="true"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="ch-correlation-regression.html#cb76-1" aria-hidden="true"></a><span class="co"># make and store a contingency table</span></span>
+<span id="cb76-2"><a href="ch-correlation-regression.html#cb76-2" aria-hidden="true"></a><span class="cf">if</span> (<span class="kw">require</span>(psych)) { <span class="co"># for psych::phi</span></span>
+<span id="cb76-3"><a href="ch-correlation-regression.html#cb76-3" aria-hidden="true"></a>  <span class="kw">phi</span>(citocontingencytable) <span class="co"># contingency table made earlier is input here!</span></span>
+<span id="cb76-4"><a href="ch-correlation-regression.html#cb76-4" aria-hidden="true"></a>}</span></code></pre></div>
 <pre><code>## Loading required package: psych</code></pre>
 <pre><code>## 
 ## Attaching package: &#39;psych&#39;</code></pre>

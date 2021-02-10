@@ -229,13 +229,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="8.2.1" data-path="ch-frequencies.html"><a href="ch-frequencies.html#sec:intervals"><i class="fa fa-check"></i><b>8.2.1</b> Intervals</a></li>
 <li class="chapter" data-level="8.2.2" data-path="ch-frequencies.html"><a href="ch-frequencies.html#spss-1"><i class="fa fa-check"></i><b>8.2.2</b> SPSS</a></li>
-<li class="chapter" data-level="8.2.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#r-1"><i class="fa fa-check"></i><b>8.2.3</b> R</a></li>
+<li class="chapter" data-level="8.2.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#jasp-1"><i class="fa fa-check"></i><b>8.2.3</b> JASP</a></li>
+<li class="chapter" data-level="8.2.4" data-path="ch-frequencies.html"><a href="ch-frequencies.html#r-1"><i class="fa fa-check"></i><b>8.2.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="8.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#sec:barcharts"><i class="fa fa-check"></i><b>8.3</b> Bar charts</a></li>
 <li class="chapter" data-level="8.4" data-path="ch-frequencies.html"><a href="ch-frequencies.html#sec:histograms"><i class="fa fa-check"></i><b>8.4</b> Histograms</a>
 <ul>
 <li class="chapter" data-level="8.4.1" data-path="ch-frequencies.html"><a href="ch-frequencies.html#spss-2"><i class="fa fa-check"></i><b>8.4.1</b> SPSS</a></li>
-<li class="chapter" data-level="8.4.2" data-path="ch-frequencies.html"><a href="ch-frequencies.html#r-2"><i class="fa fa-check"></i><b>8.4.2</b> R</a></li>
+<li class="chapter" data-level="8.4.2" data-path="ch-frequencies.html"><a href="ch-frequencies.html#jasp-2"><i class="fa fa-check"></i><b>8.4.2</b> JASP</a></li>
+<li class="chapter" data-level="8.4.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#r-2"><i class="fa fa-check"></i><b>8.4.3</b> R</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html"><i class="fa fa-check"></i><b>9</b> Centre and dispersion</a>
@@ -1071,10 +1073,10 @@ has rated a different concept to the others.</p>
 <p>For a reliability analysis of <span class="math inline">\(k=3\)</span> language proficiency
 judgements in Table <a href="ch-reliability.html#tab:reliability">12.1</a>:<br />
 </p>
-<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="ch-reliability.html#cb80-1" aria-hidden="true"></a>raters &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="dt">file=</span><span class="st">&quot;data/beoordelaars.txt&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>)</span>
-<span id="cb80-2"><a href="ch-reliability.html#cb80-2" aria-hidden="true"></a><span class="cf">if</span> (<span class="kw">require</span>(psych)) { <span class="co"># for psych::alpha</span></span>
-<span id="cb80-3"><a href="ch-reliability.html#cb80-3" aria-hidden="true"></a>  <span class="kw">alpha</span>( raters[,<span class="dv">2</span><span class="op">:</span><span class="dv">4</span>] ) <span class="co"># columns 2 to 4</span></span>
-<span id="cb80-4"><a href="ch-reliability.html#cb80-4" aria-hidden="true"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="ch-reliability.html#cb82-1" aria-hidden="true"></a>raters &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="dt">file=</span><span class="st">&quot;data/beoordelaars.txt&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>)</span>
+<span id="cb82-2"><a href="ch-reliability.html#cb82-2" aria-hidden="true"></a><span class="cf">if</span> (<span class="kw">require</span>(psych)) { <span class="co"># for psych::alpha</span></span>
+<span id="cb82-3"><a href="ch-reliability.html#cb82-3" aria-hidden="true"></a>  <span class="kw">alpha</span>( raters[,<span class="dv">2</span><span class="op">:</span><span class="dv">4</span>] ) <span class="co"># columns 2 to 4</span></span>
+<span id="cb82-4"><a href="ch-reliability.html#cb82-4" aria-hidden="true"></a>}</span></code></pre></div>
 <pre><code>## Number of categories should be increased  in order to count frequencies.</code></pre>
 <pre><code>## 
 ## Reliability analysis   
@@ -1105,7 +1107,7 @@ increase (from 0.68 to 0.84). Over all three raters,
 <p>Correlations between <span class="math inline">\(k\)</span> raters or items are not explicitly
 provided (even if they can be deduced from the above output),
 thus we still request these:</p>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="ch-reliability.html#cb83-1" aria-hidden="true"></a><span class="kw">cor</span>( raters[ ,<span class="kw">c</span>(<span class="st">&quot;B1&quot;</span>,<span class="st">&quot;B2&quot;</span>,<span class="st">&quot;B3&quot;</span>) ] ) <span class="co"># explicit column names</span></span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="ch-reliability.html#cb85-1" aria-hidden="true"></a><span class="kw">cor</span>( raters[ ,<span class="kw">c</span>(<span class="st">&quot;B1&quot;</span>,<span class="st">&quot;B2&quot;</span>,<span class="st">&quot;B3&quot;</span>) ] ) <span class="co"># explicit column names</span></span></code></pre></div>
 <pre><code>##           B1         B2         B3
 ## B1 1.0000000 0.74494845 0.40979738
 ## B2 0.7449484 1.00000000 0.08845909

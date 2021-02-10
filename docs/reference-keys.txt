@@ -126,10 +126,12 @@ introduction-3
 sec:frequencies
 sec:intervals
 spss-1
+jasp-1
 r-1
 sec:barcharts
 sec:histograms
 spss-2
+jasp-2
 r-2
 ch:centre-and-dispersion
 introduction-4

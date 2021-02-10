@@ -229,13 +229,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="8.2.1" data-path="ch-frequencies.html"><a href="ch-frequencies.html#sec:intervals"><i class="fa fa-check"></i><b>8.2.1</b> Intervals</a></li>
 <li class="chapter" data-level="8.2.2" data-path="ch-frequencies.html"><a href="ch-frequencies.html#spss-1"><i class="fa fa-check"></i><b>8.2.2</b> SPSS</a></li>
-<li class="chapter" data-level="8.2.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#r-1"><i class="fa fa-check"></i><b>8.2.3</b> R</a></li>
+<li class="chapter" data-level="8.2.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#jasp-1"><i class="fa fa-check"></i><b>8.2.3</b> JASP</a></li>
+<li class="chapter" data-level="8.2.4" data-path="ch-frequencies.html"><a href="ch-frequencies.html#r-1"><i class="fa fa-check"></i><b>8.2.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="8.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#sec:barcharts"><i class="fa fa-check"></i><b>8.3</b> Bar charts</a></li>
 <li class="chapter" data-level="8.4" data-path="ch-frequencies.html"><a href="ch-frequencies.html#sec:histograms"><i class="fa fa-check"></i><b>8.4</b> Histograms</a>
 <ul>
 <li class="chapter" data-level="8.4.1" data-path="ch-frequencies.html"><a href="ch-frequencies.html#spss-2"><i class="fa fa-check"></i><b>8.4.1</b> SPSS</a></li>
-<li class="chapter" data-level="8.4.2" data-path="ch-frequencies.html"><a href="ch-frequencies.html#r-2"><i class="fa fa-check"></i><b>8.4.2</b> R</a></li>
+<li class="chapter" data-level="8.4.2" data-path="ch-frequencies.html"><a href="ch-frequencies.html#jasp-2"><i class="fa fa-check"></i><b>8.4.2</b> JASP</a></li>
+<li class="chapter" data-level="8.4.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#r-2"><i class="fa fa-check"></i><b>8.4.3</b> R</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html"><i class="fa fa-check"></i><b>9</b> Centre and dispersion</a>
@@ -789,7 +791,7 @@ Choose <code>Statistics…</code> and tick the option <code>Chi-square</code>. C
 <h2><span class="header-section-number">16.8</span> R</h2>
 <div id="goodness-of-fit-testing-1" class="section level3" number="16.8.1">
 <h3><span class="header-section-number">16.8.1</span> goodness of fit: testing</h3>
-<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="ch-chi-square-tests.html#cb149-1" aria-hidden="true"></a><span class="kw">chisq.test</span>( <span class="kw">c</span>( <span class="dv">14</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">1</span> ) ) <span class="co"># die §16.1</span></span></code></pre></div>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="ch-chi-square-tests.html#cb151-1" aria-hidden="true"></a><span class="kw">chisq.test</span>( <span class="kw">c</span>( <span class="dv">14</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">1</span> ) ) <span class="co"># die §16.1</span></span></code></pre></div>
 <pre><code>## 
 ##  Chi-squared test for given probabilities
 ## 
@@ -801,9 +803,9 @@ Choose <code>Statistics…</code> and tick the option <code>Chi-square</code>. C
 <p>In R, the dataset <code>Titanic</code> is provided as a multidimensional matrix. We sum
 the observations and make a contingency table of the first dimension (class) and
 the fourth dimension (outcome).</p>
-<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="ch-chi-square-tests.html#cb151-1" aria-hidden="true"></a><span class="kw">apply</span>( Titanic, <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">4</span>), sum ) -&gt;<span class="st"> </span>Titanic.classoutcome</span></code></pre></div>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="ch-chi-square-tests.html#cb153-1" aria-hidden="true"></a><span class="kw">apply</span>( Titanic, <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">4</span>), sum ) -&gt;<span class="st"> </span>Titanic.classoutcome</span></code></pre></div>
 <p>Next, we use the contingency table as the input for a <code>chisq.test</code>.</p>
-<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="ch-chi-square-tests.html#cb152-1" aria-hidden="true"></a><span class="kw">chisq.test</span>( Titanic.classoutcome )  <span class="co"># p&lt;.0001</span></span></code></pre></div>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="ch-chi-square-tests.html#cb154-1" aria-hidden="true"></a><span class="kw">chisq.test</span>( Titanic.classoutcome )  <span class="co"># p&lt;.0001</span></span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s Chi-squared test
 ## 

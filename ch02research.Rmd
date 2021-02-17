@@ -50,8 +50,8 @@ The researcher varies the independent variable and observes whether this results
 
 ---
 
-> *Voorbeeld 2.1*: 
-@QSF12 investigated whether a smile or frown influences how listeners process spoken words. The words were 'pronounce' (synthesized) by a computer in various phonetic variants - specifically, in such a way that these words sounded as if pronounced neutrally, with a smile, or with a frown. Listeners has to classify the words a 'positive' or 'negative' (in meaning) as quickly as possible. In this study, the phonetic variant (neutral, smile, drown) takes the place of the independent variable, and the speed with which listeners give their judgment is the dependent variable.
+> *Example 2.1*: 
+@QSF12 investigated whether a smile or frown influences how listeners process spoken words. The words were 'pronounced' (synthesized) by a computer in various phonetic variants - specifically, in such a way that these words sounded as if pronounced neutrally, with a smile, or with a frown. Listeners had to classify the words as 'positive' or 'negative' (in meaning) as quickly as possible. In this study, the phonetic variant (neutral, smile, frown) takes the place of the independent variable, and the speed with which listeners give their judgment is the dependent variable.
 
 ---
 

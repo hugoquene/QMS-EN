@@ -68,11 +68,11 @@ The method just described is called falsification, because we gain knowledge by 
 
 > " ... to explain (the world) ... as far as possible, with the help of laws and explanatory theories ...there is no more rational procedure than the method of trial and error --- of conjecture and refutation: of boldly proposing theories; of trying our best to show that these are erroneous; and of accepting them tentatively if our critical efforts are unsuccessful." 
 
-Thus, a proper scientific statement or theory ought to be falsifiable or refutable or testable [@Popp63]. In other words, it must be possible to prove this statement or theory wrong. A testable statement's scientific motivation, and, therefore, its plausibility increase with each time this statement proves to be immune to falsification, and with each new set of circumstances under which this happens. 'Earth's climate is warming up' is a good example of a statement that is becoming increasingly immune to falsification, and, therefore, is becoming increasingly stronger.
+Thus, a proper scientific statement or theory ought to be falsifiable or refutable or testable [@Popp63]. In other words, it must be possible to prove this statement or theory wrong. A testable statement's scientific motivation, and, therefore, its plausibility increases with each time this statement proves to be immune to falsification, and with each new set of circumstances under which this happens. 'Earth's climate is warming up' is a good example of a statement that is becoming increasingly immune to falsification, and, therefore, is becoming increasingly stronger.
 
 ---
 
-> *Voorbeeld 2.2*: 'All swans are white' and 'Earth's climate is warming up' are falsifiable, and therefore scientifically useful statements. What about the following statements?\
+> *Example 2.2*: 'All swans are white' and 'Earth's climate is warming up' are falsifiable, and therefore scientifically useful statements. What about the following statements?\
 > a. Gold dissolves in water.\
 > b. Salt dissolves in water.\
 > c. Women talk more than men.\

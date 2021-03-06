@@ -7780,11 +7780,7 @@ time as the analysis of variance itself.
 \hypertarget{anova-1}{%
 \subsubsection{ANOVA}\label{anova-1}}
 
-In the upper menu bar, click on:
-
-\begin{verbatim}
-ANOVA > ANOVA (onder 'Classical')
-\end{verbatim}
+From the top menu bar, choose \textbf{ANOVA}, then \texttt{ANOVA} under \texttt{Classical}.
 
 Select the variable \emph{score} and move it to the field ``Dependent Variable'', and move the variable \emph{kleur} (the Dutch variable name for ``colour'' of the group) to the field ``Fixed Factors''.\\
 Under the heading ``Display'' check \texttt{Estimates\ of\ effect\ size}, and select \(\omega^2\) and/or (partial) \(\eta^2\). In this book we prefer \(\omega^2\).
@@ -7792,7 +7788,7 @@ You can also check \texttt{Descriptive\ statistics} to learn more about the scor
 
 Open the bar named ``Assumption Checks'' and check \texttt{Homogeneity\ tests}.
 ``Homogeneity corrections'' may remain at the default value of \texttt{None} .
-Here you can examine whether the distribution within each group is normal, which is equivalent to a normal distribution of the \emph{residuals} of the analysis of variance. You can inspect that by checking \texttt{Q-Q\ plot\ of\ residuals}; in the resulting Q-Q plot the residuals should fall on an approximately straight line (see §\ref{sec:isvarnormaldistributed}).
+Here you can also examine whether the distribution within each group is normal, as assumed by the analysis of variance. This is equivalent to assuming a normal distribution of the \emph{residuals} of the analysis of variance. You can inspect the latter by checking \texttt{Q-Q\ plot\ of\ residuals}. If the assumption is met (and if residuals are distributed normally) then the residuals should fall on an approximately straight line in the resulting Q-Q plot (see §\ref{sec:isvarnormaldistributed}).
 
 The analysis of variance is summarized in the output in a table similar to Table \ref{tab:colours-anova}, in which the effect size should be reported as well.
 

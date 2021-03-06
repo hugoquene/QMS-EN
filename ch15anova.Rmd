@@ -740,17 +740,15 @@ time as the analysis of variance itself.
 
 #### ANOVA
 
-In the upper menu bar, click on:
-```
-ANOVA > ANOVA (onder 'Classical')
-```
+From the top menu bar, choose **ANOVA**, then `ANOVA` under `Classical`. 
+
 Select the variable *score* and move it to the field "Dependent Variable", and move the variable *kleur* (the Dutch variable name for "colour" of the group) to the field "Fixed Factors".\
 Under the heading "Display" check `Estimates of effect size`, and select $\omega^2$ and/or  (partial) $\eta^2$. In this book we prefer $\omega^2$. 
 You can also check `Descriptive statistics` to learn more about the scores in each cell. 
 
 Open the bar named "Assumption Checks" and check `Homogeneity tests`. 
 "Homogeneity corrections" may remain at the default value of  `None` . 
-Here you can examine whether the distribution within each group is normal, which is equivalent to a normal distribution of the *residuals* of the analysis of variance. You can inspect that by checking `Q-Q plot of residuals`; in the resulting Q-Q plot the residuals should fall on an approximately straight line (see §\@ref(sec:isvarnormaldistributed)).
+Here you can also examine whether the distribution within each group is normal, as assumed by the analysis of variance. This is equivalent to assuming a normal distribution of the *residuals* of the analysis of variance. You can inspect the latter by checking `Q-Q plot of residuals`. If the assumption is met (and if residuals are distributed normally) then the residuals should fall on an approximately straight line in the resulting Q-Q plot (see §\@ref(sec:isvarnormaldistributed)).
 
 The analysis of variance is summarized in the output in a table similar to Table \@ref(tab:colours-anova), in which the effect size should be reported as well. 
 

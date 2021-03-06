@@ -158,7 +158,10 @@ Confirm with `OK`.\
 
 ### JASP 
 
-From the top bar, choose `Descriptives`. Select the variable(s) to summarize and place them into the field "Variables". Check the option `Frequency tables (nominal and ordinal variables)` (below the field with Variables) to obtain frequency tables for all selected variables. 
+From the top bar, choose 
+```Descriptives```
+
+Select the variable(s) to summarize and place them into the field "Variables". Check the option `Frequency tables (nominal and ordinal variables)` (below the field with Variables) to obtain frequency tables for all selected variables. 
 
 If a variable has higher measurement level ("Scale", i.e. interval or ratio, Chapter \@ref(ch:levelsofmeasurement)), and you nevertheless want a frequency table of that variable, then you need to adjust the measurement level of that variable to "Nominal" or "Ordinal". In JASP, you can do so by clicking on the icon for measurement level, preceding the variable name in the column header in the data window. 
 
@@ -316,9 +319,13 @@ Confirm with `OK`.\
 
 ### JASP
 
-From the top bar, choose `Descriptives`. Select the variable(s) to summarize and place them into the field "Variables". Open the "Plots" field and check the option `Distribution plots` (under the header "Basic plots"). 
+From the top bar, choose 
+```
+Descriptives
+```
+Select the variable(s) to summarize and place them into the field "Variables". Open the "Plots" field and check the option `Distribution plots` (under the header "Basic plots"). 
 
-JASP will automatically make a bar chart if the variable is discrete (nominal or ordinal), and it will make a histogram if the variable is a a scalar, i.e., numerical and continuous (interval or ratio). Ensure that the correct measurement level is specified for your variables. In JASP, you can set the measurement level by clicking on the icon for measurement level, which precedes the variable name in the column header in the data window. 
+JASP will automatically make a bar chart if the variable is discrete (nominal or ordinal), and it will make a histogram if the variable is a scalar, i.e., numerical and continuous (interval or ratio). Ensure that the correct measurement level is specified for your variables. In JASP, you can set the measurement level by clicking on the icon for measurement level, which precedes the variable name in the column header in the data window. 
 
 ### R
 

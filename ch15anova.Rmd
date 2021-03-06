@@ -740,7 +740,10 @@ time as the analysis of variance itself.
 
 #### ANOVA
 
-From the top menu bar, choose **ANOVA**, then `ANOVA` under `Classical`. 
+From the top menu bar, choose 
+```
+ANOVA > Classical: ANOVA
+```
 
 Select the variable *score* and move it to the field "Dependent Variable", and move the variable *kleur* (the Dutch variable name for "colour" of the group) to the field "Fixed Factors".\
 Under the heading "Display" check `Estimates of effect size`, and select $\omega^2$ and/or  (partial) $\eta^2$. In this book we prefer $\omega^2$. 

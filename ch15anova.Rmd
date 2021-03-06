@@ -83,7 +83,7 @@ plotrix::axis.break(axis=2)
 ```
 
 In order to investigate whether the four populations differ in their average
-speech tempo, we could in the first instance conduct *t*-tests for all pairs
+speech tempo, we might think about conducting *t*-tests for all pairs
 of levels. (With 4 levels, that would require 6 tests, see
 equation \@ref(eq:choose) with $n=4$ and $x=2$). There are however various
 objections to this approach. We will discuss one of these here. For
@@ -158,12 +158,12 @@ must be satisfied to use this test; these assumptions match those of the
 *t*-test
 (§\@ref(sec:ttest-assumptions)).
 
-* The data has to be measured on an interval level of measurement (see
+* The data have to be measured on an interval level of measurement (see
 §\@ref(sec:interval)).
 
 * All observations have to be independent of each other. 
 
-* The scores have to be normally distributed (see
+* The scores have to be normally distributed within each group (see
 §\@ref(sec:isvarnormaldistributed)).
 
 * The variance of the scores has to be (approximately) equal in 
@@ -422,7 +422,7 @@ Table: (#tab:colours-anova) Summary of analysis of variance of the observations 
 
 > *Example 15.2*: 
 The mean scores are not equal for the red, grey and blue group 
-[$F(2,42) = 9.35$, $p = .0004$, $\omega^2 = 0.28$].
+$[F(2,42) = 9.35$, $p = .0004$, $\omega^2 = 0.28]$.
 
 ---
 
@@ -595,11 +595,20 @@ $\alpha$ (see §\@ref(sec:anova-examples)). The Tukey HSD test results in
 a 95% confidence interval for the difference between two conditions,
 and/or in a $p$-value for the difference between two conditions. 
 
+---
+
+> *Example 15.4*:
+The mean scores are not equal for the red, grey and blue group 
+$[F(2,42) = 9.35$, $p = .0004$, $\omega^2 = 0.28]$.
+Post-hoc comparisons using Tukey's HSD test show that the grey and blue groups do not differ ($p=.875$), while there are significant differences between the red and blue groups ($p<.001$) and between the red and grey group ($p=.003$).
+
+---
+
 ### SPSS
 
 #### preparation
 
-We will use the data in the file `data/kleurgroepen.txt`; this data is also shown in Figure \@ref(fig:colours-obs).
+We will use the data in the file `data/kleurgroepen.txt`; these data are also shown in Figure \@ref(fig:colours-obs).
 Read first the required data, and check this: 
 ```
 File > Import Data > Text Data...
@@ -614,7 +623,7 @@ the standard options of SPSS work well here.\
 Confirm the last selection screen with `Done`. The data will
 then be read in. 
 
-Examine whether the responses are normally distributed, using the
+Examine whether the responses are normally distributed within each group, using the
 techniques from Part II of this textbook (especially
 §\@ref(sec:isvarnormaldistributed)).
 
@@ -658,7 +667,8 @@ $\omega^2$, but you do have to calculate that yourself!
 #### planned comparison
 
 For an analysis of variance with planned comparisons, we have to 
-indicate the desired contrasts for the factor `kleur` (the Dutch variable name for colour of the group). 
+indicate the desired contrasts for the factor `kleur` 
+(the Dutch variable name for colour of the group). 
 However, the method
 is different to the above. We cannot set the planned contrasts in SPSS
 via the menu system which we used until now. Here, we instead have
@@ -669,8 +679,8 @@ will be opened (or activated, if it was already open). Within it, you
 will see the SPSS command that you built via the menu.     
 We are going to edit this command in order to indicate our own, special
 contrasts. When specifying the contrasts, we do have to take into 
-account the *alphabetic* order of the conditions: blue, grey,
-red.\
+account the order of the conditions, which is *alphabetical* by default: **b**lue, **g**rey,
+**r**ed.\
 The command in the Syntax window should eventually look like the one
 below, after you have added the line `/CONTRAST`. The command
 must be terminated with a full stop.\
@@ -712,18 +722,73 @@ HSD test is also provided in the third column. We can see that red
 differs from blue, that red differs from grey, and that the scores of the
 grey and blue groups do not differ.
 
+### JASP
+
+#### preparation
+
+We will use the data in the file `data/kleurgroepen.txt`; these data are also shown in Figure \@ref(fig:colours-obs).
+First read the required data, and check this. 
+
+Examine whether the responses are normally distributed within each group, using the
+techniques from Part II of this textbook (especially
+§\@ref(sec:isvarnormaldistributed)). 
+Note: In JASP it is possible to examine the distribution at the same time as the analysis of variance itself, see below. 
+
+We also need to examine whether the variances in the three groups
+are equal, as required for the analysis of variance. We will do that too at the same 
+time as the analysis of variance itself. 
+
+#### ANOVA
+
+In the upper menu bar, click on:
+```
+ANOVA > ANOVA (onder 'Classical')
+```
+Select the variable *score* and move it to the field "Dependent Variable", and move the variable *kleur* (the Dutch variable name for "colour" of the group) to the field "Fixed Factors".\
+Under the heading "Display" check `Estimates of effect size`, and select $\omega^2$ and/or  (partial) $\eta^2$. In this book we prefer $\omega^2$. 
+You can also check `Descriptive statistics` to learn more about the scores in each cell. 
+
+Open the bar named "Assumption Checks" and check `Homogeneity tests`. 
+"Homogeneity corrections" may remain at the default value of  `None` . 
+Here you can examine whether the distribution within each group is normal, which is equivalent to a normal distribution of the *residuals* of the analysis of variance. You can inspect that by checking `Q-Q plot of residuals`; in the resulting Q-Q plot the residuals should fall on an approximately straight line (see §\@ref(sec:isvarnormaldistributed)).
+
+The analysis of variance is summarized in the output in a table similar to Table \@ref(tab:colours-anova), in which the effect size should be reported as well. 
+
+The output also contains the summary of Levene's test for equal variances (homogeneity of variance). This test does not support rejection of H0, so we may conclude that the variances are indeed approximately equal, i.e., that that particular assumption of the analysis of variance is warranted. 
+
+#### planned comparison
+
+For an analysis of variance with planned comparisons we need to specify the planned comparisons for the factor `kleur`. The procedure is initially the same as above, so repeat the instructions given under **ANOVA** above. 
+
+Next, open the bar named "Contrasts". The field "Factors" should contain the factor *kleur* followed by "none".
+Instead of "none" select the option "custom". Now below the field there appears a work sheet titled "Custom for kleur". Enter the the values for the contrast as specified above (§\@ref(sec:anova-oneway-planned)). For contrast 1, enter $-1$ for red and $0.5$ for blue and grey both. Next, click on `Add contrast` to add another contrast, and for contrast 2 enter $0$ for red (i.e. ignore this group), $-1$ for grey and $+1$ for blue.  
+
+The output of the planned contrasts provides the test value, its significance, and optionally the confidence interval of the contrasts. Note that in the text above (§\@ref(sec:anova-oneway-planned)), the planned contrasts were tested using the $F$ test statistic, whereas JASP uses the $t$ test. The reported $p$ values are identical. Report the testing of the planned contrasts using the $t$ values and $p$ values, just as you would do for a regular $t$ test.
+The first contrast is indeed significant and the second is not, see Example 15.3 and Table \@ref(tab:colours-anova-contrast).
+
+#### post-hoc comparisons
+
+For an analysis of variance with post-hoc comparisons we need to specify the post-hoc comparisons for the factor `kleur`. The procedure is initially the same as above, so repeat the instructions given under **ANOVA** above. 
+
+Next, open the bar named "Post Hoc Tests", and move the factor *kleur* to the righthand field. 
+Check that "Type" is set to `Standard` and that the option `Effect size` is also checked. 
+Under "Correction" check the option `Tukey`, and under "Display" check the option `Confidence intervals`. 
+
+The output of the *Post Hoc Tests* shows for each pairwise comparison the difference, the standard error, and the 95% confidence interval of the difference. If the interval does *not* contain zero, then the scores are probably different between the two groups. For each pairwise comparison JASP reports a $t$ test with its adjusted $p$ value. We see that red differs from blue, that red differs from grey, and that scores do not differ between the blue and grey groups. Report that you have used Tukey's HSD test, and report the $p$ values for each comparison, as in Example 15.4 above. 
+
+
 ### R
 
 #### preparation
 
-Read firstly the necessary data, and check this:
+We will use the data in the file `data/kleurgroepen.txt`; these data are also shown in Figure \@ref(fig:colours-obs). First read the data, and check this: 
 ```{r}
 # same data as used in Fig.15.2
 colourgroups <- read.table( "data/kleurgroepen.txt", 
                             header=TRUE, stringsAsFactors=TRUE )
 ```
 
-Examine whether the responses are normally distributed, using
+Examine whether the responses are normally distributed within each group, using
 the techniques from Part II of this textbook (especially
 §\@ref(sec:isvarnormaldistributed)).
 
@@ -761,7 +826,7 @@ omegasq( m01, "kleur" ) # call function with 2 arguments
 
 When specifying the contrasts, we have to take into account the
 *alphabetic* ordering of the conditions: *blue, grey, red*. 
-Note that the predictor is named `kleur` which is the Dutch term for colour of the group).
+(Note that the predictor itself is named *kleur* which is the Dutch term for colour of the group).
 
 ```{r anova.plannedcomparison}
 # make matrix of two orthogonal contrasts (per column, not per row) 
@@ -779,19 +844,20 @@ When we have planned contrasts, the previously constructed function `omegasq` ca
 (0.188-1*0.775)/(0.775+14.308+0.19+32.54) # rounded off 0.00
 ```
 
-#### post hoc comparisons {#post-hoc-comparisons}
+#### post hoc comparisons {#r-post-hoc-comparisons}
 
 ```{r}
 TukeyHSD(m02)
 ```
 For each pair, we see the difference, and the Lower Bound (`lwr`) and
 the Upper Bound (`upr`) of the 95% confidence interval
-of the difference. If that interval does *not* include null, then
+of the difference. If that interval does *not* include zero, then
 the difference between the two groups or conditions is thus probably not
-equal to null. The corrected p-value according to
+equal to zero. The corrected p-value according to
 Tukey's HSD test is also given in the last column. 
 Again, we see that red differs from grey, that red differs from
 blue, and that the grey and blue scores do not differ.
+
 
 ## Two-way analysis of variance
 

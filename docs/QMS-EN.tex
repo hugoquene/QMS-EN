@@ -5536,6 +5536,36 @@ but if we were to remove rater 3 then the reliability
 would even increase (from 0.68 to 0.84). Presumably, this rater
 has rated a different concept to the others.
 
+\hypertarget{jasp-10}{%
+\section{JASP}\label{jasp-10}}
+
+For a reliability analysis of \(k=3\) language proficiency
+judgements in Table \ref{tab:reliability}: in the top menu bar, choose\\
+
+\begin{verbatim}
+Reliability > Classical: Single-Test Reliability Analysis
+\end{verbatim}
+
+Perhaps the button for \texttt{Reliability} is not yet visible in the top menu bar; if so, you can add it yourself by clicking the huge blue \textbf{+} button at the righthand side of the top menu bar, and then check the \texttt{Reliability} module.
+
+Select those variables that presumably measure the same construct, in this example the three raters' judgements, and put those in the field ``Variables''. We regard the \(k=3\) raters or judges as \emph{items} (test questions) that measure the construct of ``speaking skill'' of 10 students.\\
+Open the menu bar \texttt{Single-Test\ Reliability}, and under ``Scale Statistics'' check \texttt{Cronbach\textquotesingle{}s\ a} (see equation \eqref{eq:cronbach-corr}). Aso check the options for \texttt{Average\ interitem\ correlation}, \texttt{Mean} and \texttt{Standard\ deviation} to inspect these properties of the joint scale of speaking skill. (This joint scale is constructed by averaging the values of the three raters).\\
+Under ``Individual Item Statistics'' check the options for \texttt{Cronbach\textquotesingle{}s\ a\ (if\ item\ dropped)} and \texttt{Item-rest\ correlation}, as well as \texttt{Mean} and \texttt{Standard\ deviation} in order to obtain these values for the separate items (raters).
+
+The output table titled \textbf{Frequentist Scale Reliability Statistics} reports Cronbach's Alpha.
+The output table titled \textbf{Frequentist Individual Item Reliability Statistics} contains the column ``If item dropped'' which reports the Cronbach's Alpha reliability coefficient if we would drop or ignore a particular item or rater. In this example, the output shows that raters 1 and 2 are more important and relevant than rater 3. If we would remove either rater 1 or 2 then the reliability would collapse, but if we would remove rater 3 then the reliability would even improve (from 0.68 to 0.84). Presumably this rater 3 has measured some other construct than the other two raters.
+
+The output does contain the average inter-item correlation (in the table \textbf{Frequentist Scale Reliability Statistics}), but not the correlations among all the individual items or raters.
+We need to obtain these correlations explicitly (see §\ref{sec:Pearson}), by going to the top menu bar and then choosing:
+
+\begin{verbatim}
+Regression > Classical: Correlation
+\end{verbatim}
+
+In the field ``Variables'', select the variables of which you want to know the correlations (the three raters, in this example).
+Make sure that under ``Sample Correlation Coefficient'', option \texttt{Pearson\textquotesingle{}s\ r} is checked.
+Under ``Additional Options'', check \texttt{Report\ significance}, \texttt{Flag\ significant\ correlations} and \texttt{Sample\ size}. You may also check the option \texttt{Display\ pairwise} to obtain simple table output. The output confirms that the inter-rater correlation between raters 1 and 2 is rather high (and significant), and that the inter-rater correlations involving rater 3 are rather low (and not significant).
+
 \hypertarget{r-10}{%
 \section{R}\label{r-10}}
 
@@ -5580,14 +5610,13 @@ judgements in Table \ref{tab:reliability}:\\
 \end{verbatim}
 
 This output includes Cronbach's Alpha (\texttt{raw\_alpha\ 0.68}), and the
-reliability if we were to remove a certain rater.
-If we were to replace rater 3, then the reliability would even
-increase (from 0.68 to 0.84). Over all three raters,
+reliability if we would remove or drop a certain rater.
+If we were to remove rater 3, then the reliability would even
+improve (from 0.68 to 0.84). Over all three raters,
 \texttt{average\_r=0.41}.
 
-Correlations between \(k\) raters or items are not explicitly
-provided (even if they can be deduced from the above output),
-thus we still request these:
+The output does contain the average inter-item correlation but not the correlations among all the individual items or raters.
+We need to obtain these correlations explicitly (see §\ref{sec:Pearson}):
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -5601,6 +5630,8 @@ thus we still request these:
 ## B2 0.7449484 1.00000000 0.08845909
 ## B3 0.4097974 0.08845909 1.00000000
 \end{verbatim}
+
+The output confirms that the inter-rater correlation between raters 1 and 2 is rather high, and that the inter-rater correlations involving rater 3 are rather low.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -7876,8 +7907,8 @@ HSD test is also provided in the third column. We can see that red
 differs from blue, that red differs from grey, and that the scores of the
 grey and blue groups do not differ.
 
-\hypertarget{jasp-10}{%
-\subsection{JASP}\label{jasp-10}}
+\hypertarget{jasp-11}{%
+\subsection{JASP}\label{jasp-11}}
 
 \hypertarget{preparation-1}{%
 \subsubsection{preparation}\label{preparation-1}}

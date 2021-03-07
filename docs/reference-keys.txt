@@ -211,6 +211,7 @@ methods-for-estimating-reliability
 reliability-between-assessors
 reliability-and-construct-validity
 spss-9
+jasp-10
 r-10
 ch:testing
 sec:testing-introduction
@@ -267,7 +268,7 @@ preparation
 anova
 planned-comparison
 post-hoc-comparison
-jasp-10
+jasp-11
 preparation-1
 anova-1
 planned-comparison-1

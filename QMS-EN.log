@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.10.22)  7 MAR 2021 14:15
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.10.22)  7 MAR 2021 15:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1250,51 +1250,51 @@ Chapter 12.
 Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;!
-[184] [185] [186] [187] [188] [189] [190] [191]
-Overfull \hbox (48.75pt too wide) in paragraph at lines 5556--5556
+[184] [185] [186] [187] [188] [189] [190] [191] [192]
+Overfull \hbox (48.75pt too wide) in paragraph at lines 5586--5586
 []\TU/lmtt/m/n/10 ## Number of categories should be increased  in order to coun
 t frequencies.[] 
  []
 
-
-Overfull \hbox (17.25pt too wide) in paragraph at lines 5580--5580
+[193]
+Overfull \hbox (17.25pt too wide) in paragraph at lines 5610--5610
 []\TU/lmtt/m/n/10 ##   raw_alpha std.alpha G6(smc) average_r S/N  ase mean  sd 
 median_r[] 
  []
 
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 5580--5580
+Overfull \hbox (12.0pt too wide) in paragraph at lines 5610--5610
 []\TU/lmtt/m/n/10 ##       0.68      0.68    0.74      0.41 2.1 0.17   72 4.6  
    0.41[] 
  []
 
-[192]
-Overfull \hbox (17.25pt too wide) in paragraph at lines 5580--5580
+
+Overfull \hbox (17.25pt too wide) in paragraph at lines 5610--5610
 []\TU/lmtt/m/n/10 ##    raw_alpha std.alpha G6(smc) average_r  S/N alpha se var
 .r med.r[] 
  []
 
 
-Overfull \hbox (17.25pt too wide) in paragraph at lines 5580--5580
+Overfull \hbox (17.25pt too wide) in paragraph at lines 5610--5610
 []\TU/lmtt/m/n/10 ## B1      0.15      0.16   0.088     0.088 0.19    0.497    
 NA 0.088[] 
  []
 
 
-Overfull \hbox (17.25pt too wide) in paragraph at lines 5580--5580
+Overfull \hbox (17.25pt too wide) in paragraph at lines 5610--5610
 []\TU/lmtt/m/n/10 ## B2      0.58      0.58   0.410     0.410 1.39    0.264    
 NA 0.410[] 
  []
 
 
-Overfull \hbox (17.25pt too wide) in paragraph at lines 5580--5580
+Overfull \hbox (17.25pt too wide) in paragraph at lines 5610--5610
 []\TU/lmtt/m/n/10 ## B3      0.84      0.85   0.745     0.745 5.84    0.095    
 NA 0.745[] 
  []
 
-[193] [194
+[194] [195
 
-] [195] [196]
+] [196]
 Chapter 13.
 [197
 
@@ -1304,11 +1304,11 @@ File: QMS-EN_files/figure-latex/gramm2013onesample-1.pdf Graphic file (type pdf
 <use QMS-EN_files/figure-latex/gramm2013onesample-1.pdf>
 [198]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 14.4pt on input line 5738.
+(Font)              scaled to size 14.4pt on input line 5769.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 14.4013pt on input line 5738.
+(Font)              scaled to size 14.4013pt on input line 5769.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 14.39845pt on input line 5738.
+(Font)              scaled to size 14.39845pt on input line 5769.
 
 Underfull \vbox (badness 2065) has occurred while \output is active []
 
@@ -1323,13 +1323,13 @@ Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;
 Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;!
 [207] [208] [209]
-Overfull \hbox (17.25pt too wide) in paragraph at lines 6318--6318
+Overfull \hbox (17.25pt too wide) in paragraph at lines 6349--6349
 []\TU/lmtt/m/n/10 ## alternative hypothesis: true difference in means is not eq
 ual to 0[] 
  []
 
 [210] [211] [212]
-Overfull \hbox (17.25pt too wide) in paragraph at lines 6475--6475
+Overfull \hbox (17.25pt too wide) in paragraph at lines 6506--6506
 []\TU/lmtt/m/n/10 ## alternative hypothesis: true difference in means is not eq
 ual to 0[] 
  []
@@ -1377,13 +1377,13 @@ f)
 [230] [231] [232]
 
 LaTeX Warning: Reference `fig:colours-obs' on page 233 undefined on input line 
-7368.
+7399.
 
 File: QMS-EN_files/figure-latex/colours-obs-1.pdf Graphic file (type pdf)
 <use QMS-EN_files/figure-latex/colours-obs-1.pdf>
 
 LaTeX Warning: Reference `fig:colours-obs' on page 233 undefined on input line 
-7380.
+7411.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1394,60 +1394,60 @@ Underfull \vbox (badness 6725) has occurred while \output is active []
 [234]
 
 LaTeX Warning: Reference `fig:colours-obs' on page 235 undefined on input line 
-7411.
+7442.
 
 [235]
 
 LaTeX Warning: Reference `fig:colours-obs' on page 236 undefined on input line 
-7529.
+7560.
 
 
 LaTeX Warning: Reference `fig:colours-obs' on page 236 undefined on input line 
-7529.
+7560.
 
 [236] [237]
 
 LaTeX Warning: Reference `fig:colours-obs' on page 238 undefined on input line 
-7602.
+7633.
 
 [238]
 
 LaTeX Warning: Reference `fig:colours-obs' on page 239 undefined on input line 
-7656.
+7687.
 
 
 LaTeX Warning: Reference `fig:colours-obs' on page 239 undefined on input line 
-7656.
+7687.
 
 [239]
 
 LaTeX Warning: Reference `fig:colours-obs' on page 240 undefined on input line 
-7759.
+7790.
 
 [240] [241] [242]
 
 LaTeX Warning: Reference `fig:colours-obs' on page 243 undefined on input line 
-7885.
+7916.
 
 [243]
 
 LaTeX Warning: Reference `fig:colours-obs' on page 244 undefined on input line 
-7946.
+7977.
 
 [244] [245] [246] [247] [248] [249] [250] [251]
-Overfull \hbox (69.75pt too wide) in paragraph at lines 8364--8364
+Overfull \hbox (69.75pt too wide) in paragraph at lines 8395--8395
 []\TU/lmtt/m/n/10 ## Warning in replications(paste("~", xx), data = mf): non-fa
 ctors ignored: sex[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 8369--8369
+Overfull \hbox (90.75pt too wide) in paragraph at lines 8400--8400
 []\TU/lmtt/m/n/10 ## Warning in replications(paste("~", xx), data = mf): non-fa
 ctors ignored: region,[] 
  []
 
 
-Overfull \hbox (38.25pt too wide) in paragraph at lines 8385--8385
+Overfull \hbox (38.25pt too wide) in paragraph at lines 8416--8416
 []\TU/lmtt/m/n/10 ## Fit: aov(formula = syldur ~ region * sex, data = talkers, 
 subset = ok)[] 
  []
@@ -1466,17 +1466,17 @@ GLE SAMPLE \TU/lmr/m/n/10 255
 Overfull \vbox (0.62584pt too high) has occurred while \output is active []
 
 [256] [257] [258] [259]
-Overfull \hbox (29.9901pt too wide) in alignment at lines 8795--8804
+Overfull \hbox (29.9901pt too wide) in alignment at lines 8826--8835
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (29.9901pt too wide) in alignment at lines 8804--8808
+Overfull \hbox (29.9901pt too wide) in alignment at lines 8835--8839
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (29.9901pt too wide) in alignment at lines 8808--8813
+Overfull \hbox (29.9901pt too wide) in alignment at lines 8839--8844
  [] [] [] [] [] [] [] 
  []
 
@@ -1498,28 +1498,28 @@ File: QMS-EN_files/figure-latex/kritiekeZwaarden-hulpfiguur-1.pdf Graphic file
 ] [272]
 Appendix C.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 24.88pt on input line 9215.
+(Font)              scaled to size 24.88pt on input line 9246.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 20.74pt on input line 9215.
+(Font)              scaled to size 20.74pt on input line 9246.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 17.28pt on input line 9215.
+(Font)              scaled to size 17.28pt on input line 9246.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 24.88228pt on input line 9215.
+(Font)              scaled to size 24.88228pt on input line 9246.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 20.7419pt on input line 9215.
+(Font)              scaled to size 20.7419pt on input line 9246.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 17.28157pt on input line 9215.
+(Font)              scaled to size 17.28157pt on input line 9246.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 24.87733pt on input line 9215.
+(Font)              scaled to size 24.87733pt on input line 9246.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 20.73778pt on input line 9215.
+(Font)              scaled to size 20.73778pt on input line 9246.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 17.27815pt on input line 9215.
+(Font)              scaled to size 17.27815pt on input line 9246.
 File: QMS-EN_files/figure-latex/criticaltvalues-auxiliaryfigure-1.pdf Graphic f
 ile (type pdf)
 <use QMS-EN_files/figure-latex/criticaltvalues-auxiliaryfigure-1.pdf>
 
-Overfull \hbox (19.32014pt too wide) in paragraph at lines 9227--9272
+Overfull \hbox (19.32014pt too wide) in paragraph at lines 9258--9303
  [][] 
  []
 
@@ -1534,7 +1534,7 @@ File: QMS-EN_files/figure-latex/criticalchi2values-auxiliaryfigure-1.pdf Graphi
 c file (type pdf)
 <use QMS-EN_files/figure-latex/criticalchi2values-auxiliaryfigure-1.pdf>
 
-Overfull \hbox (17.80014pt too wide) in paragraph at lines 9283--9326
+Overfull \hbox (17.80014pt too wide) in paragraph at lines 9314--9357
  [][] 
  []
 
@@ -1547,7 +1547,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ] [278] [279] [280] [281]) [282] (./QMS-EN.aux)
 Package rerunfilecheck Info: File `QMS-EN.out' has not changed.
-(rerunfilecheck)             Checksum: B5592B5CC5E94AE7F6808629384AE4B8;22726.
+(rerunfilecheck)             Checksum: F4B2901C1590043F93B1E30206E72D72;22805.
 
 LaTeX Warning: There were undefined references.
 
@@ -1556,10 +1556,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 17989 strings out of 479441
- 318694 string characters out of 5880450
- 811059 words of memory out of 5000000
- 37023 multiletter control sequences out of 15000+600000
+ 17990 strings out of 479441
+ 318703 string characters out of 5880450
+ 811186 words of memory out of 5000000
+ 37024 multiletter control sequences out of 15000+600000
  545455 words of font info for 115 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  84i,10n,118p,1870b,581s stack positions out of 5000i,500n,10000p,200000b,80000s

@@ -347,7 +347,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.6" data-path="ch-reliability.html"><a href="ch-reliability.html#reliability-between-assessors"><i class="fa fa-check"></i><b>12.6</b> Reliability between assessors</a></li>
 <li class="chapter" data-level="12.7" data-path="ch-reliability.html"><a href="ch-reliability.html#reliability-and-construct-validity"><i class="fa fa-check"></i><b>12.7</b> Reliability and construct validity</a></li>
 <li class="chapter" data-level="12.8" data-path="ch-reliability.html"><a href="ch-reliability.html#spss-9"><i class="fa fa-check"></i><b>12.8</b> SPSS</a></li>
-<li class="chapter" data-level="12.9" data-path="ch-reliability.html"><a href="ch-reliability.html#r-10"><i class="fa fa-check"></i><b>12.9</b> R</a></li>
+<li class="chapter" data-level="12.9" data-path="ch-reliability.html"><a href="ch-reliability.html#jasp-10"><i class="fa fa-check"></i><b>12.9</b> JASP</a></li>
+<li class="chapter" data-level="12.10" data-path="ch-reliability.html"><a href="ch-reliability.html#r-10"><i class="fa fa-check"></i><b>12.10</b> R</a></li>
 </ul></li>
 <li class="part"><span><b>Part III: Inferential statistics</b></span></li>
 <li class="chapter" data-level="13" data-path="ch-testing.html"><a href="ch-testing.html"><i class="fa fa-check"></i><b>13</b> Testing hypotheses</a>
@@ -414,7 +415,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.3.4" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-planned"><i class="fa fa-check"></i><b>15.3.4</b> Planned comparisons</a></li>
 <li class="chapter" data-level="15.3.5" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-posthoc"><i class="fa fa-check"></i><b>15.3.5</b> Post-hoc comparisons</a></li>
 <li class="chapter" data-level="15.3.6" data-path="ch-anova.html"><a href="ch-anova.html#spss-12"><i class="fa fa-check"></i><b>15.3.6</b> SPSS</a></li>
-<li class="chapter" data-level="15.3.7" data-path="ch-anova.html"><a href="ch-anova.html#jasp-10"><i class="fa fa-check"></i><b>15.3.7</b> JASP</a></li>
+<li class="chapter" data-level="15.3.7" data-path="ch-anova.html"><a href="ch-anova.html#jasp-11"><i class="fa fa-check"></i><b>15.3.7</b> JASP</a></li>
 <li class="chapter" data-level="15.3.8" data-path="ch-anova.html"><a href="ch-anova.html#r-14"><i class="fa fa-check"></i><b>15.3.8</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="15.4" data-path="ch-anova.html"><a href="ch-anova.html#two-way-analysis-of-variance"><i class="fa fa-check"></i><b>15.4</b> Two-way analysis of variance</a>
@@ -1075,15 +1076,34 @@ but if we were to remove rater 3 then the reliability
 would even increase (from 0.68 to 0.84). Presumably, this rater
 has rated a different concept to the others.</p>
 </div>
-<div id="r-10" class="section level2" number="12.9">
-<h2><span class="header-section-number">12.9</span> R</h2>
+<div id="jasp-10" class="section level2" number="12.9">
+<h2><span class="header-section-number">12.9</span> JASP</h2>
+<p>For a reliability analysis of <span class="math inline">\(k=3\)</span> language proficiency
+judgements in Table <a href="ch-reliability.html#tab:reliability">12.1</a>: in the top menu bar, choose<br />
+</p>
+<pre><code>Reliability &gt; Classical: Single-Test Reliability Analysis</code></pre>
+<p>Perhaps the button for <code>Reliability</code> is not yet visible in the top menu bar; if so, you can add it yourself by clicking the huge blue <strong>+</strong> button at the righthand side of the top menu bar, and then check the <code>Reliability</code> module.</p>
+<p>Select those variables that presumably measure the same construct, in this example the three raters’ judgements, and put those in the field “Variables”. We regard the <span class="math inline">\(k=3\)</span> raters or judges as <em>items</em> (test questions) that measure the construct of “speaking skill” of 10 students.<br />
+Open the menu bar <code>Single-Test Reliability</code>, and under “Scale Statistics” check <code>Cronbach's a</code> (see equation <a href="ch-reliability.html#eq:cronbach-corr">(12.7)</a>). Aso check the options for <code>Average interitem correlation</code>, <code>Mean</code> and <code>Standard deviation</code> to inspect these properties of the joint scale of speaking skill. (This joint scale is constructed by averaging the values of the three raters).<br />
+Under “Individual Item Statistics” check the options for <code>Cronbach's a (if item dropped)</code> and <code>Item-rest correlation</code>, as well as <code>Mean</code> and <code>Standard deviation</code> in order to obtain these values for the separate items (raters).</p>
+<p>The output table titled <strong>Frequentist Scale Reliability Statistics</strong> reports Cronbach’s Alpha.
+The output table titled <strong>Frequentist Individual Item Reliability Statistics</strong> contains the column “If item dropped” which reports the Cronbach’s Alpha reliability coefficient if we would drop or ignore a particular item or rater. In this example, the output shows that raters 1 and 2 are more important and relevant than rater 3. If we would remove either rater 1 or 2 then the reliability would collapse, but if we would remove rater 3 then the reliability would even improve (from 0.68 to 0.84). Presumably this rater 3 has measured some other construct than the other two raters.</p>
+<p>The output does contain the average inter-item correlation (in the table <strong>Frequentist Scale Reliability Statistics</strong>), but not the correlations among all the individual items or raters.
+We need to obtain these correlations explicitly (see §<a href="ch-correlation-regression.html#sec:Pearson">11.2</a>), by going to the top menu bar and then choosing:</p>
+<pre><code>Regression &gt; Classical: Correlation</code></pre>
+<p>In the field “Variables”, select the variables of which you want to know the correlations (the three raters, in this example).
+Make sure that under “Sample Correlation Coefficient”, option <code>Pearson's r</code> is checked.
+Under “Additional Options”, check <code>Report significance</code>, <code>Flag significant correlations</code> and <code>Sample size</code>. You may also check the option <code>Display pairwise</code> to obtain simple table output. The output confirms that the inter-rater correlation between raters 1 and 2 is rather high (and significant), and that the inter-rater correlations involving rater 3 are rather low (and not significant).</p>
+</div>
+<div id="r-10" class="section level2" number="12.10">
+<h2><span class="header-section-number">12.10</span> R</h2>
 <p>For a reliability analysis of <span class="math inline">\(k=3\)</span> language proficiency
 judgements in Table <a href="ch-reliability.html#tab:reliability">12.1</a>:<br />
 </p>
-<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="ch-reliability.html#cb93-1" aria-hidden="true"></a>raters &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="dt">file=</span><span class="st">&quot;data/beoordelaars.txt&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>)</span>
-<span id="cb93-2"><a href="ch-reliability.html#cb93-2" aria-hidden="true"></a><span class="cf">if</span> (<span class="kw">require</span>(psych)) { <span class="co"># for psych::alpha</span></span>
-<span id="cb93-3"><a href="ch-reliability.html#cb93-3" aria-hidden="true"></a>  <span class="kw">alpha</span>( raters[,<span class="dv">2</span><span class="op">:</span><span class="dv">4</span>] ) <span class="co"># columns 2 to 4</span></span>
-<span id="cb93-4"><a href="ch-reliability.html#cb93-4" aria-hidden="true"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="ch-reliability.html#cb95-1" aria-hidden="true"></a>raters &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="dt">file=</span><span class="st">&quot;data/beoordelaars.txt&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>)</span>
+<span id="cb95-2"><a href="ch-reliability.html#cb95-2" aria-hidden="true"></a><span class="cf">if</span> (<span class="kw">require</span>(psych)) { <span class="co"># for psych::alpha</span></span>
+<span id="cb95-3"><a href="ch-reliability.html#cb95-3" aria-hidden="true"></a>  <span class="kw">alpha</span>( raters[,<span class="dv">2</span><span class="op">:</span><span class="dv">4</span>] ) <span class="co"># columns 2 to 4</span></span>
+<span id="cb95-4"><a href="ch-reliability.html#cb95-4" aria-hidden="true"></a>}</span></code></pre></div>
 <pre><code>## Number of categories should be increased  in order to count frequencies.</code></pre>
 <pre><code>## 
 ## Reliability analysis   
@@ -1107,18 +1127,18 @@ judgements in Table <a href="ch-reliability.html#tab:reliability">12.1</a>:<br /
 ## B2 10  0.84  0.78  0.72   0.53   74 7.0
 ## B3 10  0.56  0.64  0.38   0.25   72 4.7</code></pre>
 <p>This output includes Cronbach’s Alpha (<code>raw_alpha 0.68</code>), and the
-reliability if we were to remove a certain rater.
-If we were to replace rater 3, then the reliability would even
-increase (from 0.68 to 0.84). Over all three raters,
+reliability if we would remove or drop a certain rater.
+If we were to remove rater 3, then the reliability would even
+improve (from 0.68 to 0.84). Over all three raters,
 <code>average_r=0.41</code>.</p>
-<p>Correlations between <span class="math inline">\(k\)</span> raters or items are not explicitly
-provided (even if they can be deduced from the above output),
-thus we still request these:</p>
-<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="ch-reliability.html#cb96-1" aria-hidden="true"></a><span class="kw">cor</span>( raters[ ,<span class="kw">c</span>(<span class="st">&quot;B1&quot;</span>,<span class="st">&quot;B2&quot;</span>,<span class="st">&quot;B3&quot;</span>) ] ) <span class="co"># explicit column names</span></span></code></pre></div>
+<p>The output does contain the average inter-item correlation but not the correlations among all the individual items or raters.
+We need to obtain these correlations explicitly (see §<a href="ch-correlation-regression.html#sec:Pearson">11.2</a>):</p>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="ch-reliability.html#cb98-1" aria-hidden="true"></a><span class="kw">cor</span>( raters[ ,<span class="kw">c</span>(<span class="st">&quot;B1&quot;</span>,<span class="st">&quot;B2&quot;</span>,<span class="st">&quot;B3&quot;</span>) ] ) <span class="co"># explicit column names</span></span></code></pre></div>
 <pre><code>##           B1         B2         B3
 ## B1 1.0000000 0.74494845 0.40979738
 ## B2 0.7449484 1.00000000 0.08845909
 ## B3 0.4097974 0.08845909 1.00000000</code></pre>
+<p>The output confirms that the inter-rater correlation between raters 1 and 2 is rather high, and that the inter-rater correlations involving rater 3 are rather low.</p>
 <hr />
 
 </div>

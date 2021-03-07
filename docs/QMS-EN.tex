@@ -119,7 +119,7 @@
 
 \title{Quantitative Methods and Statistics}
 \author{true}
-\date{Version compiled 06 Mar 2021}
+\date{Version compiled 07 Mar 2021}
 
 \begin{document}
 \maketitle
@@ -4242,6 +4242,20 @@ Choose \texttt{Pearsons} correlation coefficient, tick:
 output (table) does not satisfy the style requirements; as such, you should
 take the data into or convert it into a table of your own which does satisfy these requirements.
 
+\hypertarget{jasp-6}{%
+\subsection{JASP}\label{jasp-6}}
+
+For Pearson's product-moment correlation coefficient, go to the top menu bar and choose:
+
+\begin{verbatim}
+Regression > Classical: Correlation
+\end{verbatim}
+
+In the field ``Variables'', select the variables of which you want to know the correlation.
+Make sure that under ``Sample Correlation Coefficient'', option \texttt{Pearson\textquotesingle{}s\ r} is checked.
+Under ``Additional Options'', check \texttt{Report\ significance}, \texttt{Flag\ significant\ correlations} and \texttt{Sample\ size}. You may also check the option \texttt{Display\ pairwise} to obtain simple table output.
+Note that with or without this option checked, the output table does not adhere to APA guidelines for reporting such tables; hence you'll need to revise the table or create your own using the JASP output.
+
 \hypertarget{r-6}{%
 \subsection{R}\label{r-6}}
 
@@ -4298,8 +4312,7 @@ of \(X_i\) and the linear relation between \(X\) and \(Y\):
 \end{equation}\\
 The straight line is described with
 two parameters, namely the intercept (or constant) \(a\) and the slope \(b\)
-\footnote{In school books, this comparison is described as \(Y = a X + b\), with \(a\) as the slope
-  and \(b\) as the intercept; however, we keep to the conventional international notation here.}. The straight line which describes the linear relation is often
+\footnote{In some school books, this equation is described as \(Y = a X + b\), with \(a\) as the slope and \(b\) as the intercept; however, we keep to the conventional international notation here.}. The straight line which describes the linear relation is often
 referred to as the ``regression line'';
 after all, we try to trace the observed values of \(Y\) back to this linear
 function of the values of \(X\).
@@ -4449,6 +4462,26 @@ The table titled \emph{Residual Statistics} provides information about both
 the predicted values and the residuals. Check whether the mean of the residual
 is indeed null. In this table, we can also see (line 2, column 4) that
 the standard variation of the residuals is \(3.212\).
+
+\hypertarget{jasp-7}{%
+\subsection{JASP}\label{jasp-7}}
+
+For linear regression, go to the top menu bar and choose:
+
+\begin{verbatim}
+Regression > Classical: Linear Regression
+\end{verbatim}
+
+Choose the variable \emph{Arithmetic} as ``Dependent Variable'', and choose the variable \emph{Reading} under ``Covariates''.\\
+Next, open the menu bar \texttt{Model}, and inspect whether the predictor \emph{Reading} is indeed listed under ``Model Terms''. The option \texttt{Include\ intercept} should be checked, in order to have the constant term or intercept \texttt{a} included in the regression model (see §\ref{sec:regression-formulas}).\\
+Open the menu bar \texttt{Statistics}, and check the options \texttt{Estimates}, \texttt{Model\ fit} and \texttt{R\ squared\ change}.
+Under ``Residuals'', check \texttt{Statistics} to obtain a numerical summary of the residuals.
+Open the menu bar \texttt{Plots}, and choose plots for \texttt{Residuals\ vs.\ histogram} and \texttt{Q-Q\ plot\ standardized\ residuals}; these allow visual inspection of the (distribution of) residuals.
+
+The resulting output contains several tables and figure, which do not conform to APA guidelines and hence cannot be used directly in your report (see also Example 11.3 above).\\
+The table titled \textbf{Model Summary} reports the correlation coefficient, here reported with capital \(R=.749\).\\
+The table titled \textbf{Coefficients} contains the regression coefficients. The row with indication \texttt{(Intercept)} reports the constant \(a=13.25\); the row with indication \texttt{Reading} reports the slope or regression coefficient \(b=0.51\).\\
+The table titled \textbf{Residual Statistics} provides information about the predicted values and residuals. Inspect whether the mean of the residuals is approximately zero (it should be). We also see here (row 2, column 4) that the standard deviation of the residuals is \(3.212\).
 
 \hypertarget{r-7}{%
 \subsection{R}\label{r-7}}
@@ -4630,6 +4663,20 @@ output (table) does not satisfy the style requirements; you thus have to take
 the data into or convert it into a table of your own which does satisfy these requirements,
 and report according to the usual conventions for correlation analysis.
 
+\hypertarget{jasp-8}{%
+\subsection{JASP}\label{jasp-8}}
+
+For Spearman's rank correlation coefficient, go to the top menu bar and choose:
+
+\begin{verbatim}
+Regression > Classical: Correlation
+\end{verbatim}
+
+In the field ``Variables'', select the variables of which you want to know the correlation.
+Make sure that under ``Sample Correlation Coefficient'', option \texttt{Spearman\textquotesingle{}s\ rho} is checked.
+Under ``Additional Options'', check \texttt{Report\ significance}, \texttt{Flag\ significant\ correlations} and \texttt{Sample\ size}. You may also check the option \texttt{Display\ pairwise} to obtain simple table output.
+Note that with or without this option checked, the output table does not adhere to APA guidelines for reporting such tables; hence you'll need to revise the table or create your own using the JASP output.
+
 \hypertarget{r-8}{%
 \subsection{R}\label{r-8}}
 
@@ -4767,6 +4814,56 @@ contingency table @ref(tab: cito-contingency-table).\\
 Choose \texttt{Statistics\ldots{}} and tick the option \texttt{Phi\ and\ Cramer’s\ V}!\\
 Confirm firstly with \texttt{Continue} and then again with \texttt{OK}.
 
+\hypertarget{jasp-9}{%
+\subsection{JASP}\label{jasp-9}}
+
+The dataset \texttt{cito} already contains a variable \texttt{UrbanRural} which indicates the pupils' origins.
+However, for completeness, let us still see how you can construct such a variable for yourself.
+
+First, create a new variable by clicking the \textbf{+} button which is to the right of the rightmost column header in the data sheet. A new panel ``Create Computed Column'' will appear, in which you can enter a name for the new variable, such as \texttt{UrbanRural2}.
+There are two methods to specify the new variable, using \texttt{R} commands or using a hand pointer sign (manual specification). Below we will explain for both options how to specify the new variable. You can also indicate the measurement level of the new variable; in this example we will use \texttt{Nominal}. Finally, click on \texttt{Create\ Column} to create the new variable, which will appear as a new empty column in the data sheet.
+
+If you chose the \texttt{R} command method to define a new variable, then a new panel will appear above the data sheet, with the text ``\#Enter your R code here :)''. You can enter some \texttt{R} commands and use \texttt{R} functions\footnote{Only selected \texttt{R} functions from a so-called ``whitelist'' of functions are allowed.} to define the new variable. Enter your \texttt{R} commands and click on \texttt{Compute\ column} to fill the empty variable with the new values.
+
+For the new \texttt{UrbanRural2} variable in this example we may use this code:
+
+\begin{verbatim}
+ifelse(Leerling <= 5, 1, 0) 
+\end{verbatim}
+
+This command means: \emph{if} the value of ID variable \texttt{Leerling} (Pupil) is less than or equal to 5 (this if-condition is the first argument), then the new value will be 1 (the second argument), \emph{else} the new value will be 0 (the third argument). In short: if Leerling \(\leq\) 5, then 1, else 0.
+Note that this \texttt{R} command will only work in JASP if the variable in the first argument is at the ``Scale'' level of measurement; otherwise the \texttt{\textless{}=} operator is not defined. If the measurement level of the source variable is not set to ``Scale'', then you may change this by going to the data sheet, click on the icon that indicates the measurement level, in the column header, and then select ``Scale''.
+
+If you chose the manual specification method (hand pointer) to define the new variable, then a new panel will appear above the data sheet. The panel has variables to the left, math symbols at the top, and some functions to the right. Here you can manually build the expression to define the new variable. After you have built your expression (see below), click on \texttt{Compute\ column} to fill the empty variable with the new values.
+
+For the new \texttt{UrbanRural2} variable in this example, scroll down through the functions on the righthandd side, and click on \texttt{ifElse(y)}. The function appears in the working panel. Replace the arguments ``test'' and ``then'' and ``else'' by appropriate values.\\
+-- Click on ``test'' and select the symbol \(\leq\) from the top. Drag variable \emph{Leerling} (Pupil) from the left side to the dots preceding the \(\leq\) operator, and enter the value \texttt{5} following the operator.\\
+-- For ``then'' type \texttt{1}.\\
+-- For ``else'' type \texttt{0}.\\
+The complete expression should read \texttt{ifElse(Leerling\ \textless{}=\ 5,1,0)}, and this expression is equivalent to the \texttt{R} command discussed above.
+
+As explained above for \texttt{R} commands within JASP, the expression built here, containing a \(\leq\) or \texttt{\textless{}=} operator, will only work in JASP if the variable in the first argument is at the ``Scale'' level of measurement; otherwise the \texttt{\textless{}=} operator is not defined. If the measurement level of the source variable is not set to ``Scale'', then you may change this by going to the data sheet, click on the icon that indicates the measurement level, in the column header, and then select ``Scale''.
+
+We repeat the same create-and-define steps as above, now for a new version of the variable \emph{Arithmetic}: the new variable will be named \texttt{Arithmetic2} and it will be at the \texttt{Nominal} level.
+
+First we create a new variable by clicking the \textbf{+} button to the right of the rightmost column header in the data sheet. A new panel ``Create Computed Column'' will appear, in which you can enter a name for the new variable, such as \texttt{UrbanRural2}. Click on \texttt{Create\ Column} to create the new variable, which will appear as a new empty column in the data sheet.
+
+If you chose the \texttt{R} command method to define this new variable, then you may use this \texttt{R} code: \texttt{ifelse(Arithmetic\ \textless{}\ mean(Arithmetic),\ 0,\ 1)}
+This command means: \emph{if} the value of the source variable \texttt{Arithmetic} is less than the mean of the same variable \texttt{Arithmetic}, \emph{then} the new value will be zero (mnemonic code for ``low''), and \emph{else} the new value will be one (code for ``high''). In short: if Arithmetic \textless{} mean(Arithmetic), then 0, else 1. Enter the \texttt{R} command given above, and click on \texttt{Compute\ column} to fill the empty variable with the specified (nominal) values.
+
+If you chose the manual specification method (hand pointer) to define the new variable, then you need to select the function \texttt{ifElse(y)} once more. For ``test'', select the \(<\) operator from the top, drag the function \texttt{mean(y)} from the righthand menu to the preceding dots, and drag the variable \texttt{Arithmetic} from the lefthand menu to the ``values'' part of the \texttt{mean(y)} function. For ``then'' enter \texttt{0} and for ``else'' enter \texttt{1}. The complete expression should read \texttt{ifElse(Arithmetic\ \textless{}\ mean(Arithmetic),\ 0,\ 1)}, and this expression is equivalent to the \texttt{R} command discussed above.
+After you have built your expression, click on \texttt{Compute\ column} to fill the empty variable with the new values.
+
+After all this preparatory work, we can finally calculate \(r_\Phi\). From the top menu bar, choose
+
+\begin{verbatim}
+Frequencies > Classical: Contingency Tables
+\end{verbatim}
+
+Select the variables \texttt{UrbanRural2} (for the ``Rows'' panel) and \texttt{Arithmetic2} (for the ``Columns'' panel) to obtain the contingency table (see Table \ref{tab:cito-contingency-table}) .
+Open the \texttt{Statistics} menu bar, and under ``Nominal'' check \texttt{Phi\ and\ Cramer’s\ V}.
+The value of \(r_\Phi\) is reported in the output under the heading \textbf{Phi coefficient}.
+
 \hypertarget{r-9}{%
 \subsection{R}\label{r-9}}
 
@@ -4783,7 +4880,7 @@ However, for completeness, let us still see how you can construct such a variabl
 Here we build a new variable \texttt{Arithmetic2}, which has the value \texttt{1} if the score for
 Arithmetic is higher than the average, and otherwise has the value \texttt{0}.
 
-In R, we also start by making a contingency table (Table \ref{tab:cito-contingency-table} and we then calculate the \(r_\Phi\) over the contingency table.
+In R, we also start by making a contingency table (Table \ref{tab:cito-contingency-table}) and we then calculate the \(r_\Phi\) over the contingency table.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -7779,8 +7876,8 @@ HSD test is also provided in the third column. We can see that red
 differs from blue, that red differs from grey, and that the scores of the
 grey and blue groups do not differ.
 
-\hypertarget{jasp-6}{%
-\subsection{JASP}\label{jasp-6}}
+\hypertarget{jasp-10}{%
+\subsection{JASP}\label{jasp-10}}
 
 \hypertarget{preparation-1}{%
 \subsubsection{preparation}\label{preparation-1}}

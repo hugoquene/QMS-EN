@@ -236,6 +236,16 @@ Choose `Pearsons` correlation coefficient, tick:
 output (table) does not satisfy the style requirements; as such, you should 
 take the data into or convert it into a table of your own which does satisfy these requirements.
 
+### JASP
+
+For Pearson's product-moment correlation coefficient, go to the top menu bar and choose:
+```
+Regression > Classical: Correlation
+```
+In the field "Variables", select the variables of which you want to know the correlation. 
+Make sure that under "Sample Correlation Coefficient", option `Pearson's r` is checked. 
+Under "Additional Options", check `Report significance`, `Flag significant correlations` and `Sample size`. You may also check the option `Display pairwise` to obtain simple table output. 
+Note that with or without this option checked, the output table does not adhere to APA guidelines for reporting such tables; hence you'll need to revise the table or create your own using the JASP output. 
 
 ### R
 
@@ -394,7 +404,6 @@ The best estimation for $a$ is $$a = \overline{y} - b \overline{x}$$
 ### SPSS
 
 For linear regression:
-
 ``` {.console}
 Analyze > Regression > Linear...
 ```
@@ -420,6 +429,23 @@ The table titled *Residual Statistics* provides information about both
 the predicted values and the residuals. Check whether the mean of the residual 
 is indeed null. In this table, we can also see (line 2, column 4) that
 the standard variation of the residuals is $3.212$.
+
+### JASP
+
+For linear regression, go to the top menu bar and choose:
+```
+Regression > Classical: Linear Regression
+```
+Choose the variable *Arithmetic* as “Dependent Variable”, and choose the variable *Reading* under “Covariates”.\
+Next, open the menu bar `Model`, and inspect whether the predictor *Reading* is indeed listed under "Model Terms". The option `Include intercept` should be checked, in order to have the constant term or intercept `a` included in the regression model (see §\@ref(sec:regression-formulas)).\
+Open the menu bar `Statistics`, and check the options `Estimates`, `Model fit` and `R squared change`.
+Under "Residuals", check `Statistics` to obtain a numerical summary of the residuals. 
+Open the menu bar `Plots`, and choose plots for `Residuals vs. histogram` and `Q-Q plot standardized residuals`; these allow visual inspection of the (distribution of) residuals. 
+
+The resulting output contains several tables and figure, which do not conform to APA guidelines and hence cannot be used directly in your report (see also Example 11.3 above).\
+The table titled **Model Summary** reports the correlation coefficient, here reported with capital $R=.749$.\
+The table titled **Coefficients** contains the regression coefficients. The row with indication `(Intercept)` reports the constant $a=13.25$; the row with indication `Reading` reports the slope or regression coefficient $b=0.51$.\
+The table titled **Residual Statistics** provides information about the predicted values and residuals. Inspect whether the mean of the residuals is approximately zero (it should be). We also see here (row 2, column 4) that the standard deviation of the residuals is $3.212$.
 
 ### R
 
@@ -562,6 +588,18 @@ output (table) does not satisfy the style requirements; you thus have to take
 the data into or convert it into a table of your own which does satisfy these requirements,
 and report according to the usual conventions for correlation analysis.
 
+### JASP
+
+For Spearman's rank correlation coefficient, go to the top menu bar and choose:
+```
+Regression > Classical: Correlation
+```
+
+In the field "Variables", select the variables of which you want to know the correlation. 
+Make sure that under "Sample Correlation Coefficient", option `Spearman's rho` is checked. 
+Under "Additional Options", check `Report significance`, `Flag significant correlations` and `Sample size`. You may also check the option `Display pairwise` to obtain simple table output. 
+Note that with or without this option checked, the output table does not adhere to APA guidelines for reporting such tables; hence you'll need to revise the table or create your own using the JASP output. 
+
 ### R
 
 ```{r}
@@ -657,17 +695,65 @@ new value 0 for this new variable. All values
 from the mean ($27.2$) to the highest value are transformed to the new value 1.
 
 After this preparatory work, we can finally calculate $r_\Phi$.
-
 ```
 Analyze > Descriptives > Crosstabs...
 ```
-
 
 Select the variables `UrbanRural2` (in the "Rows" panel) and `Arithmetic2`
 (in the  "Columns" panel) for
 contingency table \@ref(tab: cito-contingency-table).\
 Choose `Statistics…` and tick the option `Phi and Cramer’s V`!\
 Confirm firstly with `Continue` and then again with `OK`.
+
+### JASP 
+
+The dataset `cito` already contains a variable `UrbanRural` which indicates the pupils' origins.
+However, for completeness, let us still see how you can construct such a variable for yourself.
+
+First, create a new variable by clicking the **+** button which is to the right of the rightmost column header in the data sheet. A new panel "Create Computed Column" will appear, in which you can enter a name for the new variable, such as `UrbanRural2`. 
+There are two methods to specify the new variable, using `R` commands or using a hand pointer sign (manual specification). Below we will explain for both options how to specify the new variable. You can also indicate the measurement level of the new variable; in this example we will use `Nominal`.  Finally, click on `Create Column` to create the new variable, which will appear as a new empty column in the data sheet. 
+
+If you chose the `R` command method to define a new variable, then a new panel will appear above the data sheet, with the text "#Enter your R code here :)". You can enter some `R` commands and use `R` functions[^fn11-3] to define the new variable. Enter your `R` commands and click on `Compute column` to fill the empty variable with the new values. 
+
+[^fn11-3]: Only selected `R` functions from a so-called "whitelist" of functions are allowed.
+
+For the new `UrbanRural2` variable in this example we may use this code: 
+```
+ifelse(Leerling <= 5, 1, 0) 
+```
+This command means: *if* the value of ID variable `Leerling` (Pupil) is less than or equal to 5 (this if-condition is the first argument), then the new value will be 1 (the second argument), *else* the new value will be 0 (the third argument). In short: if Leerling $\leq$ 5, then 1, else 0.
+Note that this `R` command will only work in JASP if the variable in the first argument is at the "Scale" level of measurement; otherwise the `<=` operator is not defined. If the measurement level of the source variable is not set to "Scale", then you may change this by going to the data sheet, click on the icon that indicates the measurement level, in the column header, and then select "Scale". 
+
+If you chose the manual specification method (hand pointer) to define the new variable, then a new panel will appear above the data sheet. The panel has variables to the left, math symbols at the top, and some functions to the right. Here you can manually build the expression to define the new variable. After you have built your expression (see below), click on `Compute column` to fill the empty variable with the new values. 
+
+For the new `UrbanRural2` variable in this example, scroll down through the functions on the righthandd side, and click on `ifElse(y)`. The function appears in the working panel. Replace the arguments "test" and "then" and "else" by appropriate values.\
+-- Click on "test" and select the symbol $\leq$ from the top. Drag variable *Leerling* (Pupil) from the left side to the dots preceding the $\leq$ operator, and enter the value `5` following the operator.\
+-- For "then" type `1`.\
+-- For "else" type `0`.\
+The complete expression should read `ifElse(Leerling <= 5,1,0)`, and this expression is equivalent to the `R` command discussed above. 
+
+As explained above for `R` commands within JASP, the expression built here, containing a $\leq$ or `<=` operator, will only work in JASP if the variable in the first argument is at the "Scale" level of measurement; otherwise the `<=` operator is not defined. If the measurement level of the source variable is not set to "Scale", then you may change this by going to the data sheet, click on the icon that indicates the measurement level, in the column header, and then select "Scale". 
+
+We repeat the same create-and-define steps as above, now for a new version of the variable *Arithmetic*: the new variable will be named `Arithmetic2` and it will be at the `Nominal` level.
+
+First we create a new variable by clicking the **+** button to the right of the rightmost column header in the data sheet. A new panel "Create Computed Column" will appear, in which you can enter a name for the new variable, such as `UrbanRural2`. Click on `Create Column` to create the new variable, which will appear as a new empty column in the data sheet. 
+
+If you chose the `R` command method to define this new variable, then you may use this `R` code: ```
+ifelse(Arithmetic < mean(Arithmetic), 0, 1)
+```
+This command means: *if* the value of the source variable `Arithmetic` is less than the mean of the same variable `Arithmetic`, *then* the new value will be zero (mnemonic code for "low"), and *else* the new value will be one (code for "high"). In short: if Arithmetic < mean(Arithmetic), then 0, else 1. Enter the `R` command given above, and click on `Compute column` to fill the empty variable with the specified (nominal) values. 
+
+If you chose the manual specification method (hand pointer) to define the new variable, then you need to select the function `ifElse(y)` once more. For "test", select the $<$ operator from the top, drag the function `mean(y)` from the righthand menu to the preceding dots, and drag the variable `Arithmetic` from the lefthand menu to the "values" part of the `mean(y)` function. For "then" enter `0` and for "else" enter `1`. The complete expression should read `ifElse(Arithmetic < mean(Arithmetic), 0, 1)`, and this expression is equivalent to the `R` command discussed above. 
+After you have built your expression, click on `Compute column` to fill the empty variable with the new values. 
+
+After all this preparatory work, we can finally calculate $r_\Phi$. From the top menu bar, choose
+```
+Frequencies > Classical: Contingency Tables
+```
+
+Select the variables `UrbanRural2` (for the "Rows" panel) and `Arithmetic2` (for the "Columns" panel) to obtain the contingency table (see Table \@ref(tab:cito-contingency-table)) . 
+Open the `Statistics` menu bar, and under "Nominal" check `Phi and Cramer’s V`.
+The value of $r_\Phi$ is reported in the output under the heading **Phi coefficient**. 
 
 ### R
 
@@ -680,7 +766,7 @@ Arithmetic2 <- ifelse( cito$Arithmetic>mean(cito$Arithmetic), 1, 0 ) # 1=high, 0
 Here we build a new variable `Arithmetic2`, which has the value `1` if the score for
 Arithmetic is higher than the average, and otherwise has the value `0`.
 
-In R, we also start by making a contingency table (Table \@ref(tab:cito-contingency-table) and we then calculate the $r_\Phi$ over the contingency table.
+In R, we also start by making a contingency table (Table \@ref(tab:cito-contingency-table)) and we then calculate the $r_\Phi$ over the contingency table.
 ``` {r}
 print( table(UrbanRural2,Arithmetic2) -> citocontingencytable ) 
 # make and store a contingency table
@@ -709,5 +795,4 @@ knitr::include_graphics("figures/correlation.png")
 and then we discount an interpretation of the correlation. We do then state in our report
 the correlation coefficient found and the established significance for it. 
 
-[^fn11-2]: In school books, this comparison is described as $Y = a X + b$, with $a$ as the slope
-and $b$ as the intercept; however, we keep to the conventional international notation here.
+[^fn11-2]: In some school books, this equation is described as $Y = a X + b$, with $a$ as the slope and $b$ as the intercept; however, we keep to the conventional international notation here.

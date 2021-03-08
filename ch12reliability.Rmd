@@ -556,6 +556,32 @@ but if we were to remove rater 3 then the reliability
 would even increase (from 0.68 to 0.84). Presumably, this rater
 has rated a different concept to the others. 
 
+## JASP
+
+For a reliability analysis of $k=3$ language proficiency 
+judgements in Table \@ref(tab:reliability): in the top menu bar, choose\
+```
+Reliability > Classical: Single-Test Reliability Analysis
+```
+Perhaps the button for `Reliability` is not yet visible in the top menu bar; if so, you can add it yourself by clicking the huge blue **+** button at the righthand side of the top menu bar, and then check the `Reliability` module.
+
+Select those variables that presumably measure the same construct, in this example the three raters' judgements, and put those in the field "Variables". We regard the $k=3$ raters or judges as *items* (test questions) that measure the construct of "speaking skill" of 10 students.\
+Open the menu bar `Single-Test Reliability`, and under "Scale Statistics" check `Cronbach's a` (see equation \@ref(eq:cronbach-corr)). Aso check the options for `Average interitem correlation`, `Mean` and `Standard deviation` to inspect these properties of the joint scale of speaking skill. (This joint scale is constructed by averaging the values of the three raters).\
+Under "Individual Item Statistics" check the options for `Cronbach's a (if item dropped)` and `Item-rest correlation`, as well as `Mean` and `Standard deviation` in order to obtain these values for the separate items (raters). 
+
+The output table titled **Frequentist Scale Reliability Statistics** reports Cronbach's Alpha. 
+The output table titled **Frequentist Individual Item Reliability Statistics** contains the column "If item dropped" which reports the Cronbach's Alpha reliability coefficient if we would drop or ignore a particular item or rater. In this example, the output shows that raters 1 and 2 are more important and relevant than rater 3. If we would remove either rater 1 or 2 then the reliability would collapse, but if we would remove rater 3 then the reliability would even improve (from 0.68 to 0.84). Presumably this rater 3 has measured some other construct than the other two raters. 
+
+The output does contain the average inter-item correlation (in the table **Frequentist Scale Reliability Statistics**), but not the correlations among all the individual items or raters. 
+We need to obtain these correlations explicitly (see §\@ref(sec:Pearson)), by going to the top menu bar and then choosing: 
+```
+Regression > Classical: Correlation
+```
+In the field "Variables", select the variables of which you want to know the correlations (the three raters, in this example). 
+Make sure that under "Sample Correlation Coefficient", option `Pearson's r` is checked. 
+Under "Additional Options", check `Report significance`, `Flag significant correlations` and `Sample size`. You may also check the option `Display pairwise` to obtain simple table output. The output confirms that the inter-rater correlation between raters 1 and 2 is rather high (and significant), and that the inter-rater correlations involving rater 3 are rather low (and not significant). 
+
+
 ## R
 
 For a reliability analysis of $k=3$ language proficiency 
@@ -569,18 +595,18 @@ if (require(psych)) { # for psych::alpha
 ```
 
 This output includes Cronbach's Alpha (`raw_alpha 0.68`), and the 
-reliability if we were to remove a certain rater.
-If we were to replace rater 3, then the reliability would even
-increase (from 0.68 to 0.84). Over all three raters, 
+reliability if we would remove or drop a certain rater.
+If we were to remove rater 3, then the reliability would even
+improve (from 0.68 to 0.84). Over all three raters, 
 `average_r=0.41`.
 
-Correlations between $k$ raters or items are not explicitly
-provided (even if they can be deduced from the above output),
-thus we still request these:
-
+The output does contain the average inter-item correlation but not the correlations among all the individual items or raters. 
+We need to obtain these correlations explicitly (see §\@ref(sec:Pearson)): 
 ```{r}
 cor( raters[ ,c("B1","B2","B3") ] ) # explicit column names
 ```
+The output confirms that the inter-rater correlation between raters 1 and 2 is rather high, and that the inter-rater correlations involving rater 3 are rather low. 
+
 
 ---
 

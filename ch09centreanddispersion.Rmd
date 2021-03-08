@@ -807,11 +807,19 @@ column(s) to the data file.\
 ## JASP
 
 For **histogram and boxplot**:\
-From the top bar, choose `Descriptives`. Select the variable(s) to summarize and place them into the field "Variables". Open the "Plots" field and check the option `Distribution plots` (under the heading "Basic plots") to obtain a histogram or bar chart (depending on the measurement level). 
+From the top bar, choose 
+```
+Descriptives
+```
+Select the variable(s) to summarize and place them into the field "Variables". Open the "Plots" field and check the option `Distribution plots` (under the heading "Basic plots") to obtain a histogram or bar chart (depending on the measurement level). 
 If desired, check the option `Boxplots` (with `Boxplot element`) under the heading "Customizable plots".
 
 For **summary numbers and quantiles**:\
-From the top bar, choose `Descriptives`. Select the variable(s) to summarize and place them into the field "Variables". Open the "Statistics" field and check the option `Quartiles` (under the heading "Percentile values") to obtain quartiles. 
+From the top bar, choose 
+```
+Descriptives
+```
+Select the variable(s) to summarize and place them into the field "Variables". Open the "Statistics" field and check the option `Quartiles` (under the heading "Percentile values") to obtain quartiles. 
 Other quantiles are also possible: check the option `Cut points for:` and enter a number, e.g. `6` will produce sextiles. If you want to know a specific percentile, e.g. the 17th percentile, check the option `Percentiles:` and enter the desired percentile value (here `17`). 
 
 For summaries of central tendency and dispersion, check the options (under the heading "Central Tendency") for `Mean`, `Median`, `Mode` en `Sum` , as well as those (under the heading "Dispersion") for `Variance`, `Std.deviation`, `MAD Robust` (with constant value fixed at 1; see Eq.\@ref(eq:MAD) above), `IQR`, `Minimum` and `Maximum` . This will produce a summary table showing the requested descriptive statistics of the variable(s). 

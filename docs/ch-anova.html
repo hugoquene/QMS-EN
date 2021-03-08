@@ -428,7 +428,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.4.1" data-path="ch-anova.html"><a href="ch-anova.html#an-intuitive-explanation"><i class="fa fa-check"></i><b>15.4.1</b> An intuitive explanation</a></li>
 <li class="chapter" data-level="15.4.2" data-path="ch-anova.html"><a href="ch-anova.html#a-formal-explanation"><i class="fa fa-check"></i><b>15.4.2</b> A formal explanation</a></li>
 <li class="chapter" data-level="15.4.3" data-path="ch-anova.html"><a href="ch-anova.html#spss-13"><i class="fa fa-check"></i><b>15.4.3</b> SPSS</a></li>
-<li class="chapter" data-level="15.4.4" data-path="ch-anova.html"><a href="ch-anova.html#r-15"><i class="fa fa-check"></i><b>15.4.4</b> R</a></li>
+<li class="chapter" data-level="15.4.4" data-path="ch-anova.html"><a href="ch-anova.html#jasp-14"><i class="fa fa-check"></i><b>15.4.4</b> JASP</a></li>
+<li class="chapter" data-level="15.4.5" data-path="ch-anova.html"><a href="ch-anova.html#r-15"><i class="fa fa-check"></i><b>15.4.5</b> R</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="16" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html"><i class="fa fa-check"></i><b>16</b> Chi-square-tests</a>
@@ -1573,7 +1574,7 @@ tempos in Table <a href="ch-anova.html#tab:sylduration2way">15.2</a>.</caption>
 <h3><span class="header-section-number">15.4.3</span> SPSS</h3>
 <div id="preparation-3" class="section level4" number="15.4.3.1">
 <h4><span class="header-section-number">15.4.3.1</span> Preparation</h4>
-<p>One speaker has a very long mean syllable length; we will ignore this
+<p>One speaker has a very long average syllable duration; we will ignore this
 observation from now on.</p>
 <pre><code>Data &gt; Select cases...</code></pre>
 <p>Specify that we are only using observations which satisfy a condition,
@@ -1590,25 +1591,58 @@ For the post hoc test, select the button <code>Post Hoc...</code>. Select the
 with <code>OK</code>.</p>
 </div>
 </div>
-<div id="r-15" class="section level3" number="15.4.4">
-<h3><span class="header-section-number">15.4.4</span> R</h3>
+<div id="jasp-14" class="section level3" number="15.4.4">
+<h3><span class="header-section-number">15.4.4</span> JASP</h3>
 <div id="preparation-4" class="section level4" number="15.4.4.1">
 <h4><span class="header-section-number">15.4.4.1</span> preparation</h4>
-<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="ch-anova.html#cb149-1" aria-hidden="true"></a><span class="kw">require</span>(hqmisc) <span class="co"># for hqmisc::talkers data set</span></span>
-<span id="cb149-2"><a href="ch-anova.html#cb149-2" aria-hidden="true"></a><span class="kw">data</span>(talkers)</span>
-<span id="cb149-3"><a href="ch-anova.html#cb149-3" aria-hidden="true"></a>ok &lt;-<span class="st"> </span>talkers<span class="op">$</span>syldur<span class="op">&lt;</span><span class="fl">0.4</span> <span class="co"># TRUE for 79 of 80 talkers</span></span>
-<span id="cb149-4"><a href="ch-anova.html#cb149-4" aria-hidden="true"></a><span class="co"># table of means, see Table 15.2 in main text</span></span>
-<span id="cb149-5"><a href="ch-anova.html#cb149-5" aria-hidden="true"></a><span class="kw">with</span>(talkers, <span class="kw">tapply</span>( syldur[ok], <span class="kw">list</span>(region[ok],sex[ok]), mean ))</span></code></pre></div>
+<p>One speaker has a very long average syllable duration; we will ignore this observation from now on. We do so by setting a filter which excludes this particular observation. Go to the data sheet, and click on the funnel or filter symbol in the top left cell. A working panel will appear in which you can specify the selection.
+Select the variable <em>syldur</em> from the lefthand menu, so that it moves to the working panel. Then click on the symbol <code>&lt;</code> from the top menu of operators, and place the cursor to the right of the <code>&lt;</code> symbol on the working panel, and then type <code>0.4</code>. The complete condition on the working panel should now be <code>syldur &lt; 0.4</code>.
+Next click on the button <code>Apply pass-through filter</code> below the working panel in order to apply this filter. In the data sheet, you should see immediately that the row of excluded data (speaker with overlong syllable duration) is greyed out. That row (observation) will no longer be used, until you cancel the selection (instructions for which are in §<a href="ch-testing.html#sec:jaspttestonesample">13.2.5</a>).</p>
+</div>
+<div id="anova-3" class="section level4" number="15.4.4.2">
+<h4><span class="header-section-number">15.4.4.2</span> ANOVA</h4>
+<p>In the top menu bar, choose:</p>
+<pre><code>ANOVA &gt; Classical: ANOVA</code></pre>
+<p>Select the variable <em>score</em> and move it to the field “Dependent Variable”, and move the variables <em>region</em> and <em>sex</em> to the field “Fixed Factors”.<br />
+Under the heading “Display” check <code>Estimates of effect size</code>, and select <span class="math inline">\(\omega^2\)</span> and/or (partial) <span class="math inline">\(\eta^2\)</span>. In this book we prefer <span class="math inline">\(\omega^2\)</span>.
+You can also check <code>Descriptive statistics</code> to learn more about the scores in each cell.</p>
+<p>Open the menu bar named “Model” and for “Sum of squares” choose option <code>Type I</code>.<br />
+Open the menu bar named “Assumption Checks” and check <code>Homogeneity tests</code>.<br />
+“Homogeneity corrections” may remain at the default value of <code>None</code>. 
+Here you can also examine whether the distribution within each group is normal, as assumed by the analysis of variance. This is equivalent to assuming a normal distribution of the <em>residuals</em> of the analysis of variance. You can inspect the latter by checking <code>Q-Q plot of residuals</code>. If the assumption is met (and if residuals are distributed normally) then the residuals should fall on an approximately straight line in the resulting Q-Q plot (see §<a href="ch-probability-distributions.html#sec:isvarnormaldistributed">10.4</a>).<br />
+Open the menu bar named “Descriptive Plots” and select <em>region</em> for the field “Horizontal Axis” and select <em>sex</em> for the field “Separate Lines”.</p>
+<p>The output summarizes the analysis of variance in a table similar to Table <a href="ch-anova.html#tab:syldur2way-anova">15.5</a>, with the effect size included.
+The <em>Descriptive plots</em> section provides a visualisation which may be helpful in understanding a possible interaction effect.</p>
+<p>The output under <strong>Assumption Check</strong> also reports Levene’s test for equal variances (homogeneity of variance). This test does not suggest rejection of H0, so we may conclude that the variances are indeed approximately equal, i.e., that that particular assumption of the analysis of variance is warranted.</p>
+</div>
+<div id="post-hoc-comparisons-1" class="section level4" number="15.4.4.3">
+<h4><span class="header-section-number">15.4.4.3</span> post hoc comparisons</h4>
+<p>For an analysis of variance with post-hoc comparisons we need to specify the post-hoc comparisons. The procedure is initially the same as above, so repeat the instructions given under <strong>ANOVA</strong> above.</p>
+<p>Next, open the bar named “Post Hoc Tests”, and move the factor <em>region</em> to the righthand field.
+Check that “Type” is set to <code>Standard</code> and that the option <code>Effect size</code> is also checked.
+Under “Correction” check the option <code>Tukey</code>, and under “Display” check the option <code>Confidence intervals</code>.</p>
+<p>The output of the <em>Post Hoc Tests</em> shows for each pairwise comparison the difference, the standard error, and the 95% confidence interval of the difference. If the interval does <em>not</em> contain zero, then the scores are probably different between the two groups. For each pairwise comparison JASP reports a <span class="math inline">\(t\)</span> test with its adjusted <span class="math inline">\(p\)</span> value using Tukey’s correction. We see that speakers from the North and West regions differ, as do speakers from the South and West, with large effect sizes for these two differences. The other differences among regions are not significant.</p>
+</div>
+</div>
+<div id="r-15" class="section level3" number="15.4.5">
+<h3><span class="header-section-number">15.4.5</span> R</h3>
+<div id="preparation-5" class="section level4" number="15.4.5.1">
+<h4><span class="header-section-number">15.4.5.1</span> preparation</h4>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="ch-anova.html#cb150-1" aria-hidden="true"></a><span class="kw">require</span>(hqmisc) <span class="co"># for hqmisc::talkers data set</span></span>
+<span id="cb150-2"><a href="ch-anova.html#cb150-2" aria-hidden="true"></a><span class="kw">data</span>(talkers)</span>
+<span id="cb150-3"><a href="ch-anova.html#cb150-3" aria-hidden="true"></a>ok &lt;-<span class="st"> </span>talkers<span class="op">$</span>syldur<span class="op">&lt;</span><span class="fl">0.4</span> <span class="co"># TRUE for 79 of 80 talkers</span></span>
+<span id="cb150-4"><a href="ch-anova.html#cb150-4" aria-hidden="true"></a><span class="co"># table of means, see Table 15.2 in main text</span></span>
+<span id="cb150-5"><a href="ch-anova.html#cb150-5" aria-hidden="true"></a><span class="kw">with</span>(talkers, <span class="kw">tapply</span>( syldur[ok], <span class="kw">list</span>(region[ok],sex[ok]), mean ))</span></code></pre></div>
 <pre><code>##           0       1
 ## M 0.2707400 0.23460
 ## N 0.2846000 0.25282
 ## S 0.2691444 0.25175
 ## W 0.2378100 0.23199</code></pre>
 </div>
-<div id="anova-3" class="section level4" number="15.4.4.2">
-<h4><span class="header-section-number">15.4.4.2</span> ANOVA</h4>
-<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="ch-anova.html#cb151-1" aria-hidden="true"></a><span class="co"># see Table 15.5 in main text</span></span>
-<span id="cb151-2"><a href="ch-anova.html#cb151-2" aria-hidden="true"></a><span class="kw">summary</span>( <span class="kw">aov</span>(syldur<span class="op">~</span>region<span class="op">*</span>sex, <span class="dt">data=</span>talkers, <span class="dt">subset=</span>ok) -&gt;<span class="st"> </span>m03 )</span></code></pre></div>
+<div id="anova-4" class="section level4" number="15.4.5.2">
+<h4><span class="header-section-number">15.4.5.2</span> ANOVA</h4>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="ch-anova.html#cb152-1" aria-hidden="true"></a><span class="co"># see Table 15.5 in main text</span></span>
+<span id="cb152-2"><a href="ch-anova.html#cb152-2" aria-hidden="true"></a><span class="kw">summary</span>( <span class="kw">aov</span>(syldur<span class="op">~</span>region<span class="op">*</span>sex, <span class="dt">data=</span>talkers, <span class="dt">subset=</span>ok) -&gt;<span class="st"> </span>m03 )</span></code></pre></div>
 <pre><code>##             Df  Sum Sq  Mean Sq F value   Pr(&gt;F)    
 ## region       3 0.01234 0.004114   6.039 0.001009 ** 
 ## sex          1 0.01031 0.010310  15.135 0.000223 ***
@@ -1617,20 +1651,20 @@ with <code>OK</code>.</p>
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 </div>
-<div id="effectsize" class="section level4" number="15.4.4.3">
-<h4><span class="header-section-number">15.4.4.3</span> Effect size</h4>
+<div id="effectsize" class="section level4" number="15.4.5.3">
+<h4><span class="header-section-number">15.4.5.3</span> Effect size</h4>
 <p>In order to assess effect size, we will use the previously programmed function <code>omegasq</code>
 (§<a href="ch-anova.html#R:omega-square">15.3.8.3</a>):</p>
-<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="ch-anova.html#cb153-1" aria-hidden="true"></a><span class="kw">omegasq</span>(m03, <span class="st">&quot;region&quot;</span>)      <span class="co"># [1] 0.1380875</span></span></code></pre></div>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="ch-anova.html#cb154-1" aria-hidden="true"></a><span class="kw">omegasq</span>(m03, <span class="st">&quot;region&quot;</span>)      <span class="co"># [1] 0.1380875</span></span></code></pre></div>
 <pre><code>## [1] 0.1380875</code></pre>
-<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="ch-anova.html#cb155-1" aria-hidden="true"></a><span class="kw">omegasq</span>(m03, <span class="st">&quot;sex&quot;</span>)         <span class="co"># [1] 0.1291232</span></span></code></pre></div>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="ch-anova.html#cb156-1" aria-hidden="true"></a><span class="kw">omegasq</span>(m03, <span class="st">&quot;sex&quot;</span>)         <span class="co"># [1] 0.1291232</span></span></code></pre></div>
 <pre><code>## [1] 0.1291232</code></pre>
-<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="ch-anova.html#cb157-1" aria-hidden="true"></a><span class="kw">omegasq</span>(m03, <span class="st">&quot;region:sex&quot;</span>)  <span class="co"># [1] 0.01112131</span></span></code></pre></div>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="ch-anova.html#cb158-1" aria-hidden="true"></a><span class="kw">omegasq</span>(m03, <span class="st">&quot;region:sex&quot;</span>)  <span class="co"># [1] 0.01112131</span></span></code></pre></div>
 <pre><code>## [1] 0.01112131</code></pre>
 </div>
-<div id="post-hoc-tests" class="section level4" number="15.4.4.4">
-<h4><span class="header-section-number">15.4.4.4</span> post-hoc tests</h4>
-<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="ch-anova.html#cb159-1" aria-hidden="true"></a><span class="kw">TukeyHSD</span>(<span class="dt">x=</span>m03, <span class="dt">which=</span><span class="st">&quot;region&quot;</span>)</span></code></pre></div>
+<div id="post-hoc-tests" class="section level4" number="15.4.5.4">
+<h4><span class="header-section-number">15.4.5.4</span> post-hoc tests</h4>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="ch-anova.html#cb160-1" aria-hidden="true"></a><span class="kw">TukeyHSD</span>(<span class="dt">x=</span>m03, <span class="dt">which=</span><span class="st">&quot;region&quot;</span>)</span></code></pre></div>
 <pre><code>## Warning in replications(paste(&quot;~&quot;, xx), data = mf): non-factors ignored: sex</code></pre>
 <pre><code>## Warning in replications(paste(&quot;~&quot;, xx), data = mf): non-factors ignored: region,
 ## sex</code></pre>

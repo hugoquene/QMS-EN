@@ -8368,7 +8368,7 @@ within & 71 & 0.04837 & 0.000681 & &\tabularnewline
 \hypertarget{preparation-3}{%
 \subsubsection{Preparation}\label{preparation-3}}
 
-One speaker has a very long mean syllable length; we will ignore this
+One speaker has a very long average syllable duration; we will ignore this
 observation from now on.
 
 \begin{verbatim}
@@ -8392,11 +8392,56 @@ For the post hoc test, select the button \texttt{Post\ Hoc...}. Select the
 \texttt{region} factor and select \texttt{Tukey}. Confirm with \texttt{Continue} and then again
 with \texttt{OK}.
 
-\hypertarget{r-15}{%
-\subsection{R}\label{r-15}}
+\hypertarget{jasp-14}{%
+\subsection{JASP}\label{jasp-14}}
 
 \hypertarget{preparation-4}{%
 \subsubsection{preparation}\label{preparation-4}}
+
+One speaker has a very long average syllable duration; we will ignore this observation from now on. We do so by setting a filter which excludes this particular observation. Go to the data sheet, and click on the funnel or filter symbol in the top left cell. A working panel will appear in which you can specify the selection.
+Select the variable \emph{syldur} from the lefthand menu, so that it moves to the working panel. Then click on the symbol \texttt{\textless{}} from the top menu of operators, and place the cursor to the right of the \texttt{\textless{}} symbol on the working panel, and then type \texttt{0.4}. The complete condition on the working panel should now be \texttt{syldur\ \textless{}\ 0.4}.
+Next click on the button \texttt{Apply\ pass-through\ filter} below the working panel in order to apply this filter. In the data sheet, you should see immediately that the row of excluded data (speaker with overlong syllable duration) is greyed out. That row (observation) will no longer be used, until you cancel the selection (instructions for which are in §\ref{sec:jaspttestonesample}).
+
+\hypertarget{anova-3}{%
+\subsubsection{ANOVA}\label{anova-3}}
+
+In the top menu bar, choose:
+
+\begin{verbatim}
+ANOVA > Classical: ANOVA
+\end{verbatim}
+
+Select the variable \emph{score} and move it to the field ``Dependent Variable'', and move the variables \emph{region} and \emph{sex} to the field ``Fixed Factors''.\\
+Under the heading ``Display'' check \texttt{Estimates\ of\ effect\ size}, and select \(\omega^2\) and/or (partial) \(\eta^2\). In this book we prefer \(\omega^2\).
+You can also check \texttt{Descriptive\ statistics} to learn more about the scores in each cell.
+
+Open the menu bar named ``Model'' and for ``Sum of squares'' choose option \texttt{Type\ I}.\\
+Open the menu bar named ``Assumption Checks'' and check \texttt{Homogeneity\ tests}.\\
+``Homogeneity corrections'' may remain at the default value of \texttt{None}.~
+Here you can also examine whether the distribution within each group is normal, as assumed by the analysis of variance. This is equivalent to assuming a normal distribution of the \emph{residuals} of the analysis of variance. You can inspect the latter by checking \texttt{Q-Q\ plot\ of\ residuals}. If the assumption is met (and if residuals are distributed normally) then the residuals should fall on an approximately straight line in the resulting Q-Q plot (see §\ref{sec:isvarnormaldistributed}).\\
+Open the menu bar named ``Descriptive Plots'' and select \emph{region} for the field ``Horizontal Axis'' and select \emph{sex} for the field ``Separate Lines''.
+
+The output summarizes the analysis of variance in a table similar to Table \ref{tab:syldur2way-anova}, with the effect size included.
+The \emph{Descriptive plots} section provides a visualisation which may be helpful in understanding a possible interaction effect.
+
+The output under \textbf{Assumption Check} also reports Levene's test for equal variances (homogeneity of variance). This test does not suggest rejection of H0, so we may conclude that the variances are indeed approximately equal, i.e., that that particular assumption of the analysis of variance is warranted.
+
+\hypertarget{post-hoc-comparisons-1}{%
+\subsubsection{post hoc comparisons}\label{post-hoc-comparisons-1}}
+
+For an analysis of variance with post-hoc comparisons we need to specify the post-hoc comparisons. The procedure is initially the same as above, so repeat the instructions given under \textbf{ANOVA} above.
+
+Next, open the bar named ``Post Hoc Tests'', and move the factor \emph{region} to the righthand field.
+Check that ``Type'' is set to \texttt{Standard} and that the option \texttt{Effect\ size} is also checked.
+Under ``Correction'' check the option \texttt{Tukey}, and under ``Display'' check the option \texttt{Confidence\ intervals}.
+
+The output of the \emph{Post Hoc Tests} shows for each pairwise comparison the difference, the standard error, and the 95\% confidence interval of the difference. If the interval does \emph{not} contain zero, then the scores are probably different between the two groups. For each pairwise comparison JASP reports a \(t\) test with its adjusted \(p\) value using Tukey's correction. We see that speakers from the North and West regions differ, as do speakers from the South and West, with large effect sizes for these two differences. The other differences among regions are not significant.
+
+\hypertarget{r-15}{%
+\subsection{R}\label{r-15}}
+
+\hypertarget{preparation-5}{%
+\subsubsection{preparation}\label{preparation-5}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -8416,8 +8461,8 @@ with \texttt{OK}.
 ## W 0.2378100 0.23199
 \end{verbatim}
 
-\hypertarget{anova-3}{%
-\subsubsection{ANOVA}\label{anova-3}}
+\hypertarget{anova-4}{%
+\subsubsection{ANOVA}\label{anova-4}}
 
 \begin{Shaded}
 \begin{Highlighting}[]

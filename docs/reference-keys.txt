@@ -290,9 +290,13 @@ a-formal-explanation
 spss-13
 preparation-3
 anova-and-post-hoc-tests
-r-15
+jasp-14
 preparation-4
 anova-3
+post-hoc-comparisons-1
+r-15
+preparation-5
+anova-4
 effectsize
 post-hoc-tests
 ch:chi-square-tests

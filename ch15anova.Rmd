@@ -978,7 +978,7 @@ tempos in Table \@ref(tab:sylduration2way).
 
 #### Preparation
 
-One speaker has a very long mean syllable length; we will ignore this 
+One speaker has a very long average syllable duration; we will ignore this 
 observation from now on. 
 ```
 Data > Select cases...
@@ -997,6 +997,46 @@ Fixed factor(s) box.\
 For the post hoc test, select the button `Post Hoc...`. Select the 
 `region` factor and select `Tukey`. Confirm with `Continue` and then again
 with `OK`.
+
+### JASP
+
+#### preparation
+
+One speaker has a very long average syllable duration; we will ignore this observation from now on. We do so by setting a filter which excludes this particular observation. Go to the data sheet, and click on the funnel or filter symbol in the top left cell. A working panel will appear in which you can specify the selection.
+Select the variable *syldur* from the lefthand menu, so that it moves to the working panel. Then click on the symbol `<` from the top menu of operators, and place the cursor to the right of the `<` symbol on the working panel, and then type `0.4`. The complete condition on the working panel should now be `syldur < 0.4`.
+Next click on the button `Apply pass-through filter` below the working panel in order to apply this filter. In the data sheet, you should see immediately that the row of excluded data (speaker with overlong syllable duration) is greyed out. That row (observation) will no longer be used, until you cancel the selection (instructions for which are in §\@ref(sec:jaspttestonesample)).
+
+#### ANOVA
+
+In the top menu bar, choose:
+```
+ANOVA > Classical: ANOVA
+```
+Select the variable *score* and move it to the field "Dependent Variable", and move the variables *region* and *sex* to the field "Fixed Factors".\
+Under the heading "Display" check `Estimates of effect size`, and select $\omega^2$ and/or  (partial) $\eta^2$. In this book we prefer $\omega^2$. 
+You can also check `Descriptive statistics` to learn more about the scores in each cell. 
+
+Open the menu bar named "Model" and for "Sum of squares" choose option `Type I`.\
+Open the menu bar named "Assumption Checks" and check `Homogeneity tests`.\
+"Homogeneity corrections" may remain at the default value of  `None`.\ 
+Here you can also examine whether the distribution within each group is normal, as assumed by the analysis of variance. This is equivalent to assuming a normal distribution of the *residuals* of the analysis of variance. You can inspect the latter by checking `Q-Q plot of residuals`. If the assumption is met (and if residuals are distributed normally) then the residuals should fall on an approximately straight line in the resulting Q-Q plot (see §\@ref(sec:isvarnormaldistributed)).\
+Open the menu bar named "Descriptive Plots" and select *region* for the field "Horizontal Axis" and select *sex* for the field "Separate Lines". 
+
+The output summarizes the analysis of variance in a table similar to Table \@ref(tab:syldur2way-anova), with the effect size included. 
+The *Descriptive plots* section provides a visualisation which may be helpful in understanding a possible interaction effect.
+
+The output under **Assumption Check** also reports Levene's test for equal variances (homogeneity of variance). This test does not suggest rejection of H0, so we may conclude that the variances are indeed approximately equal, i.e., that that particular assumption of the analysis of variance is warranted. 
+
+#### post hoc comparisons
+
+For an analysis of variance with post-hoc comparisons we need to specify the post-hoc comparisons. The procedure is initially the same as above, so repeat the instructions given under **ANOVA** above. 
+
+Next, open the bar named "Post Hoc Tests", and move the factor *region* to the righthand field. 
+Check that "Type" is set to `Standard` and that the option `Effect size` is also checked. 
+Under "Correction" check the option `Tukey`, and under "Display" check the option `Confidence intervals`. 
+
+The output of the *Post Hoc Tests* shows for each pairwise comparison the difference, the standard error, and the 95% confidence interval of the difference. If the interval does *not* contain zero, then the scores are probably different between the two groups. For each pairwise comparison JASP reports a $t$ test with its adjusted $p$ value using Tukey's correction. We see that speakers from the North and West regions differ, as do speakers from the South and West, with large effect sizes for these two differences. The other differences among regions are not significant. 
+
 
 ### R 
 

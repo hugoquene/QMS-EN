@@ -119,7 +119,7 @@
 
 \title{Quantitative Methods and Statistics}
 \author{true}
-\date{Version compiled 07 Mar 2021}
+\date{Version compiled 08 Mar 2021}
 
 \begin{document}
 \maketitle
@@ -5696,7 +5696,7 @@ data, whilst H0 is true:
 \(P(\overline{x}=84.4|\textrm{H0},n=34)\). In this case, the probability \(P\)
 is very small.
 
-For the argumentation, it is essential that the data is valid and
+For the argumentation, it is essential that the data are valid and
 reliable --- this is precisely the reason why we discussed validity
 (Chapter \ref{ch:validity}) and reliability
 (Chapter~\ref{ch:reliability}). If we have done everything properly,
@@ -5919,10 +5919,36 @@ of a \emph{two-sample} \(t\)-test.
 When transferring this output, take good note of the warning in
 §\ref{sec:plargerthannull} below: SPSS reports as if \texttt{p=.000} but that is untrue.
 
+\hypertarget{sec:jaspttestonesample}{%
+\subsection{JASP}\label{sec:jaspttestonesample}}
+
+The above discussed data can be found in the file \texttt{data/grammaticatoets2013.csv}.
+
+To test our earlier hypothesis, in JASP, we firstly have
+to select or filter the observations of the Linguistics students. To do so, go to the data sheet, and click on the funnel or filter symbol in the top left cell. A working panel will appear in which you can specify the selection.\\
+Select the variable \texttt{progr} from the lefthand menu, so that it moves to the working panel. Then click on the symbol \texttt{=} from the top menu of operators, and type \texttt{TW} (the Dutch abbreviation for the Linguistics program, use capitals, no quotes). The complete condition on the working panel should now be \texttt{progr\ =\ TW}.\\
+Next click on the button \texttt{Apply\ pass-through\ filter} below the working panel in order to apply this filter. In the data sheet, you should see immediately that the rows of excluded data (students of other programs than Linguistics) are greyed out. Those rows (observations) will no longer be used, until you cancel the selection (which is explained below).
+
+To conduct the one sample \(t\) test, choose from the top menu bar:
+
+\begin{verbatim}
+T-Tests > Classical: One Sample T-Test
+\end{verbatim}
+
+In the field ``Variables'', select the variable \emph{score} to be tested.
+Under ``Tests'', check \texttt{Student} (for Student's \(t\) test statistic), and as the \texttt{Test\ value} enter the value of \(\mu\) to use in the test; for this example, enter \texttt{73}. Under ``Alt. Hypothesis'', select \texttt{\textgreater{}\ Test\ value} for a one-sided \(t\) test; here we test H1: \(\mu>73\) (see §\ref{sec:ttest-onesidedtwosided}).\\
+Under ``Additional Statistics'', you may check \texttt{Descriptives} and \texttt{Descriptive\ Plots} to learn more about the dependent variable. Also check the option \texttt{Effect\ size} (see §\ref{sec:ttest-effectsize} below).\\
+Under the heading ``Assumption checks'', finally, check the option \texttt{Normality} (see §\ref{sec:isvarnormaldistributed}).
+
+The output reports the one-sided \(t\) test, including its effect size.
+The table titled \textbf{Assumption Checks} reports the Shapiro-Wilk test of normality. If checked in the input, descriptive statistics and summary plots are also reported. This visualises the test value (here: 73) relative to the scores of the students of Linguistics.
+
+Note that we have activated a filter to select only the students of Linguistics, and this filter remains in effect until it is deactivated. You can de-activate the filter by navigating to the data sheet, go to the top left corner, go to the filter working panel, and double-click on the trash can or waste bin symbol in the lower right corner. A confirmation text ``Filter cleared'' should appear, and all observations (rows) in the data sheet should be un-greyed and active.
+
 \hypertarget{r-11}{%
 \subsection{R}\label{r-11}}
 
-Our hypothesis discussed above can be tested with the following exercises:
+Our hypothesis discussed above can be tested with the following commands:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6092,6 +6118,26 @@ Confirm with \texttt{Continue} and with \texttt{OK}.\\
 The output contains several descriptive statistic measures, now also
 including the 95\% confidence interval of the mean.
 
+\hypertarget{jasp-11}{%
+\subsection{JASP}\label{jasp-11}}
+
+In JASP you can request the confidence interval of the mean by using a one sample \(t\) test.
+So we conduct this test again and find the confidence interval of the mean in the output.
+
+For the example discussed above, make sure that the proper selection is used so that only observations about students of Linguistics will be included in the analysis (see §\ref{sec:jaspttestonesample} for how to filter observations).
+
+Next, from the top menu bar, choose:
+
+\begin{verbatim}
+T-Tests > Classical: One Sample T-Test
+\end{verbatim}
+
+In the field ``Variables'', select the variable \emph{score} to be tested.
+Under ``Tests'', check \texttt{Student} (for Student's \(t\) test statistic), and as the \texttt{Test\ value} now enter \(0\) (zero).
+Under ``Additional Statistics'', check \texttt{Location\ parameter} and \texttt{Confidence\ interval} too. Here you can specify the confidence limits; the default value of 95\% is usually OK.
+
+The output reports the mean of \emph{score}, because observed scores are now compared to the \texttt{test\ value} which is set to \(0\), so that the \texttt{Mean\ Difference} of \((\textrm{score}-)\) is now equal to the mean value of \emph{score}. The same table also reports the \texttt{95\%\ CI\ for\ Mean\ Difference}, which is equivalent here with the confidence interval of the mean.
+
 \hypertarget{r-12}{%
 \subsection{R}\label{r-12}}
 
@@ -6193,29 +6239,28 @@ investigated recordings from 1999, the speakers from the West thus
 speak more quickly than those from the North of the Netherlands.
 \end{quote}
 
-\hypertarget{assumptions}{%
-\subsection{assumptions}\label{assumptions}}
+\hypertarget{sec:ttest-unpaired-assumptions}{%
+\subsection{assumptions}\label{sec:ttest-unpaired-assumptions}}
 
 The Student's \(t\)-test for two independent samples requires four assumptions
 which must be satisfied in order to use the test.
 
 \begin{itemize}
 \item
-  The data has to be measured on an interval level of measurement (see
+  The data have to be measured on an interval level of measurement (see
   §\ref{sec:interval}).
 \item
   All the observations must be independent of each other.
 \item
-  Both groups' scores must be normally distributed (see
+  The scores must be normally distributed within each group (see
   §\ref{sec:isvarnormaldistributed}).
+\item
+  The scores must have approximately equal variances in both groups.
+  The more the two samples differ in size, the more
+  serious the violation of this latter assumption is. It is thus prudent
+  to work with samples that are of (approximately) the same size, and preferably not too small! If the samples are equally large, then the violation of this assumption of equal
+  variances is not so serious.
 \end{itemize}
-
-The variance of the scores has to be equal in both
-samples. The more the two samples differ in size, the more
-serious the violation of this assumption is. It is thus prudent
-to work with equally large, and preferably not too small samples. If the
-samples are equally large, then the violation of this assumption of equal
-variances is not so serious.
 
 \hypertarget{sec:ttest-formulas}{%
 \subsection{formulas}\label{sec:ttest-formulas}}
@@ -6223,7 +6268,7 @@ variances is not so serious.
 \hypertarget{test-statistic}{%
 \subsubsection{test statistic}\label{test-statistic}}
 
-To calculate test statistic \(t\), various formulas are used.
+To calculate the test statistic \(t\), various formulas are used.
 
 If the samples have about equal variance, then we firstly use
 the ``pooled standard deviation'' \(s_p\) as an intermediate step. In this, both
@@ -6322,6 +6367,32 @@ In this example, the variances are around equal, as the
 Levene's test also indicates. We thus use the first line of the output,
 and report \(t(38)=-3.765, p=.001\).
 
+\hypertarget{sec:JASP-ttest-unpaired}{%
+\subsection{JASP}\label{sec:JASP-ttest-unpaired}}
+
+Here, the second example above is worked out: the tempo (speech rate) of speakers from the West and North of the Netherlands is to be compared.\\
+To this end, only observations from the Northern and Western speakers are to be used. This may be achieved by navigating to the data sheet, and click on the column header of the variable \emph{region}. This will open a working panel, in which you can select and unselect \texttt{Values} (i.e.~regions) of the nominal variable \emph{region}. The column ``Filter'' normally has all values checked, which means that all observations are included. Uncheck the values to be excluded, i.e.~\emph{S}outh and \emph{M}id, so that the check marks are crossed out, and the corresponding observations in the data sheet are greyed out. Only leave check marks at the \emph{N}orth and \emph{W}est values.
+
+Note: do not forget to remove the filter and include all regions for later analyses.
+
+After filtering the observations, choose from the top menu bar:
+
+\begin{verbatim}
+T-Tests > Classical: Independent Samples T-Test
+\end{verbatim}
+
+In the field ``Variables'', select the variable \emph{syldur} to be tested.
+In the field ``Grouping Variable'', select the independent variable \emph{region}. (If the independent variable has more than two groups, JASP will report an error. To avoid this problem, we have filtered the independent variable, so that only two groups remain.)\\
+
+Under ``Tests'', check \texttt{Student} (for Student's \(t\) test statistic). Under ``Alt. Hypothesis'', select the first option (groups are not the same) for a two-sided \(t\) test.
+Under ``Additional Statistics'', you may check \texttt{Descriptives} and \texttt{Descriptive\ Plots} to learn more about the dependent variable. Also check the option \texttt{Effect\ size} (see §\ref{sec:ttest-effectsize} below).\\
+Under the heading ``Assumption checks'', finally, check the options \texttt{Normality} (see §\ref{sec:isvarnormaldistributed}) and \texttt{Equality\ of\ variances} (see §\ref{sec:ttest-unpaired-assumptions}).
+
+The output reports the two-sided \(t\) test for two independent samples, including its effect size.
+The table titled \textbf{Assumption Checks} reports the Shapiro-Wilk test of normality in both groups.\\
+The table titled \textbf{Test of Equality of Variances} reports Levene's test, which tests whether the two variances are equal (H0: \(s^2_1 = s^2_2\)). If this test reports a low value of \(F\) and a high value of \(p\) then H0 is not rejected, and the assumption of equal variances does not need to be rejected. If Levene's test reports a high value of \(F\) and a low value of \(p\), however, then you should reject H0, and the assumption of equal variances should hence be rejected. In this example, we do not reject the assumption of equal variances.\\
+If checked in the input, descriptive statistics and summary plots are also reported. This provides insights into how the scores from the two groups differ.
+
 \hypertarget{sec:R-ttest-unpaired}{%
 \subsection{R}\label{sec:R-ttest-unpaired}}
 
@@ -6353,9 +6424,8 @@ and report \(t(38)=-3.765, p=.001\).
 
 The Student's \(t\)-test is also used to investigate a difference between the
 means of two dependent or paired observations. This is the case if we only draw
-one sample (see Chapter
-\ref{ch:samples}), and then collect two observations from the members of this
-sample,
+one sample (see Chapter \ref{ch:samples}), and then collect two observations
+from the members of this sample,
 namely one observation under each of the conditions. The two
 observations are then paired, i.e.~related to each other,
 and these observations are thus not independent (since they come
@@ -6404,8 +6474,7 @@ variable score of the \(i\)-th respondent for condition 1. This
 difference score is also stated in
 Table~\ref{tab:data-uje-paired}.
 
-This difference score \(D\) is then actually analysed with the earlier discussed \(t\)-test for a single sample (see
-§\ref{sec:ttest-onesample}), where H0: \(\mu_D=0\), i.e.~according to H0, there is no
+This difference score \(D\) is then actually analysed with the earlier discussed \(t\)-test for a single sample (see §\ref{sec:ttest-onesample}), where H0: \(\mu_D=0\), i.e.~according to H0, there is no
 difference between conditions. We calculate the mean of the difference score,
 \(\overline{D}\), and the standard variance of the difference score, \(s_{D}\),
 in the usual manner (see
@@ -6452,10 +6521,8 @@ tests.
   All \emph{pairs} of observations have to be independent of
   each other.
 \item
-  The \emph{difference scores} \(D\) have to be normally distributed (see\\
-  §\ref{sec:isvarnormaldistributed}); however, if the number of pairs of
-  observations in the sample is larger than ca. 30 then the t-test is
-  usually useable.
+  The \emph{difference scores} \(D\) have to be normally distributed (see §\ref{sec:isvarnormaldistributed}); however, if the number of pairs of
+  observations in the sample is larger than ca 30 then the \(t\) test is rather robust against violations of this assumption.
 \end{itemize}
 
 \hypertarget{sec:formulas13-4}{%
@@ -6479,8 +6546,28 @@ Drag the first dependent variable \texttt{cond.u} to the Paired
 Variables panel under Variable1, and drag the second variable \texttt{cond.je} to
 the same panel under Variable2. Confirm with \texttt{OK}.
 
+\hypertarget{sec:JASP-ttest-paired}{%
+\subsection{JASP}\label{sec:JASP-ttest-paired}}
+
+The data for the above example can be found in the file \texttt{data/ujedata.csv}.
+
+In the top menu bar, choose
+
+\begin{verbatim}
+T-Tests > Classical: Paired Samples T-Test
+\end{verbatim}
+
+In the field ``Variable pairs'', select the two variables to be compared. Here we select the variables \emph{cond.U} and \emph{cond.je}.\\
+Under ``Tests'', check \texttt{Student} (for Student's \(t\) test statistic). Under ``Alt. Hypothesis'', select the first option (observations on the two variables are not the same) for a two-sided \(t\) test.
+Under ``Additional Statistics'', you may check \texttt{Descriptives} and \texttt{Descriptive\ Plots} to learn more about the two dependent variables and their difference. Also check the option \texttt{Effect\ size} (see §\ref{sec:ttest-effectsize} below).\\
+Under the heading ``Assumption checks'', finally, check the option \texttt{Normality} (see §\ref{sec:isvarnormaldistributed}).
+
+The output reports the two-sided \(t\) test for paired observations, including its effect size. The output table shows that the difference being analysed is between ``Measure 1'' (\emph{cond.u}) and ``Measure 2'' (\emph{cond.je}).\\
+The table titled \textbf{Assumption Checks} reports the Shapiro-Wilk test of normality of the difference.\\
+If checked in the input, descriptive statistics and summary plots are also reported. These provides insights into how the scores on the two variables differ.
+
 \hypertarget{sec:R-ttest-paired}{%
-\subsection{}\label{sec:R-ttest-paired}}
+\subsection{R}\label{sec:R-ttest-paired}}
 
 The data from the above example can be found in the file \texttt{data/ujedata.csv}.
 
@@ -6614,9 +6701,9 @@ effect as follows:
 The average length of a syllable spoken by a speaker from
 the West of the Netherlands is \(0.235\) seconds (\(s=0.028\)). This is
 considerably shorter than for speakers from the North of the Netherlands
-(\(\overline{x}=0.269\) s, \(s=0.029\)). The difference is ca. 10\%; this
-difference is very large (\(d=-1.15\)) and significant
-(\(t(38)=-3.76, p<.05\)). In the investigated recordings from 1999, the
+\((\overline{x}=0.269 \textrm{s}, s=0.029)\). The difference is ca. 10\%; this
+difference is very large \((d=-1.15)\) and significant
+\([t(38)=-3.76, p<.05]\). In the investigated recordings from 1999, the
 speakers from the West thus speak considerably more quickly than those from
 the North of the Netherlands.
 \end{quote}
@@ -6637,8 +6724,8 @@ of around 0.8 or larger a large effect \citep{Cohen88, Rose08}.
 \emph{Example 13.3:}
 Look again at the formula \eqref{eq:Rose08}
 and at the Figure \ref{fig:smallestsignifdifference} which illustrate
-the relation between sample size and effect size. With an
-effect size of \(n_1=122\), we can only detect an effect of \(d=0.42\)
+the relation between sample size and effect size. With a sample size
+of \(n_1=122\), we can only detect an effect of \(d=0.42\)
 or more, with sufficiently low probabilities of Type I and II errors again
 (\(\alpha=.05\), \(\beta=.10\)). To detect the very small effect of \(d=0.11\),
 with the same small error probabilities \(\alpha\) and \(\beta\), samples
@@ -6734,15 +6821,20 @@ of the formulas
 For a single sample with two paired observations
 (formula~\eqref{eq:d-paired}), we can again calculate the effect
 size more simply from the mean and the standard deviation of the difference.
-The data are in the output of the pairwise \(t\)-test\\
+The information is in the output of the pairwise \(t\)-test\\
 (§\ref{sec:SPSS-ttest-paired}), respectively as \texttt{Mean} and
 \texttt{Std.Deviation}:\\
 \(d = -2.200 / 1.033 = 2.130\), a super large effect.
 
+\hypertarget{jasp-12}{%
+\subsection{JASP}\label{jasp-12}}
+
+In JASP, the effect size can be requested when conducting the \(t\) tests, just by checking the option \texttt{Effect\ size} under ``Additional Statistics''. For more detailed instructions on how to specify this using JASP, see the respective subsections for conducting a \(t\) test for a single sample (§\ref{sec:jaspttestonesample}), a \(t\) test for two independent groups (§\ref{sec:JASP-ttest-unpaired}), and a \(t\) test for paired observations (§\ref{sec:JASP-ttest-paired}).
+
+The output of the \(t\) test will report Cohen's \(d\) as measure for the effect size. You can also ask for the \texttt{Confidence\ interval} of the effect size, which will typically report the 95\% confidence interval of the effect size (see §\ref{sec:confint-effectsize} below).
+
 \hypertarget{r-13}{%
 \subsection{R}\label{r-13}}
-
-In R, it is easier to have the effect size calculated.
 
 For a single sample
 (formula~\eqref{eq:d-onesample}):\\
@@ -6821,8 +6913,8 @@ For a single sample with two paired observations
 ## [1] -2.130141
 \end{verbatim}
 
-\hypertarget{confidence-interval-of-the-effect-size}{%
-\subsection{Confidence interval of the effect size}\label{confidence-interval-of-the-effect-size}}
+\hypertarget{sec:confint-effectsize}{%
+\subsection{Confidence interval of the effect size}\label{sec:confint-effectsize}}
 
 Earlier, we already saw
 (§\ref{sec:confidenceinterval-mean} and
@@ -6881,18 +6973,17 @@ effect size:
 (see the correspond
 formula \eqref{eq:t-onesampleCI}).
 
-After filling in \(t^*_9=2.262\) (see
-Appendix~\ref{app:criticaltvalues}) and
-\(\textrm{se}_d = 0.519\), we eventually find
-a 95\% confidence interval of \((-3.30,-0.96)\). We thus
+After substituting \(t^*_9=2.262\) (see Appendix~\ref{app:criticaltvalues}) and
+\(\textrm{se}_d = 0.519\), we eventually find a 95\% confidence interval of \((-3.30,-0.96)\).
+We thus
 know with 95\% confidence that the unknown effect size in the population
 is somewhere within this interval, and thus also that it is smaller than
-zero. On the basis of this last consideration, we can reject H0.
-But: we now know not only \emph{that} the preference deviates from zero, but
+zero. On the basis of this last consideration, we may reject H0.
+And: we now know not only \emph{that} the preference deviates from zero, but
 also \emph{to what extent} the (standardised) preference deviates from zero,
 i.e.~how strong the preference for the \emph{je}-version is. This new knowledge
 about the extent or size of the effect is often more useful and more interesting
-than the binary decision of whether there is an effect or not (whether or not
+than the binary decision of whether or not there is an effect (whether or not
 to reject H0) \citep{Cumm12}.
 
 \hypertarget{ch:power}{%
@@ -7333,8 +7424,8 @@ West speak more quickly than the others, and that (ii) men speak more quickly th
 women (!). And (iii) the difference between men and women appears to be smaller
 for speakers from the West than for speakers from other regions.
 
-\hypertarget{assumptions-2}{%
-\subsection{assumptions}\label{assumptions-2}}
+\hypertarget{assumptions}{%
+\subsection{assumptions}\label{assumptions}}
 
 The analysis of variance requires four assumptions which
 must be satisfied to use this test; these assumptions match those of the
@@ -7907,8 +7998,8 @@ HSD test is also provided in the third column. We can see that red
 differs from blue, that red differs from grey, and that the scores of the
 grey and blue groups do not differ.
 
-\hypertarget{jasp-11}{%
-\subsection{JASP}\label{jasp-11}}
+\hypertarget{jasp-13}{%
+\subsection{JASP}\label{jasp-13}}
 
 \hypertarget{preparation-1}{%
 \subsubsection{preparation}\label{preparation-1}}

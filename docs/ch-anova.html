@@ -1305,7 +1305,7 @@ time as the analysis of variance itself.</p>
 Under the heading “Display” check <code>Estimates of effect size</code>, and select <span class="math inline">\(\omega^2\)</span> and/or (partial) <span class="math inline">\(\eta^2\)</span>. In this book we prefer <span class="math inline">\(\omega^2\)</span>.
 You can also check <code>Descriptive statistics</code> to learn more about the scores in each cell.</p>
 <p>Open the bar named “Assumption Checks” and check <code>Homogeneity tests</code>.
-“Homogeneity corrections” may remain at the default value of <code>None</code> .
+“Homogeneity corrections” may remain at the default value of <code>None</code>.
 Here you can also examine whether the distribution within each group is normal, as assumed by the analysis of variance. This is equivalent to assuming a normal distribution of the <em>residuals</em> of the analysis of variance. You can inspect the latter by checking <code>Q-Q plot of residuals</code>. If the assumption is met (and if residuals are distributed normally) then the residuals should fall on an approximately straight line in the resulting Q-Q plot (see §<a href="ch-probability-distributions.html#sec:isvarnormaldistributed">10.4</a>).</p>
 <p>The analysis of variance is summarized in the output in a table similar to Table <a href="ch-anova.html#tab:colours-anova">15.3</a>, in which the effect size should be reported as well.</p>
 <p>The output also contains the summary of Levene’s test for equal variances (homogeneity of variance). This test does not support rejection of H0, so we may conclude that the variances are indeed approximately equal, i.e., that that particular assumption of the analysis of variance is warranted.</p>
@@ -1449,8 +1449,7 @@ If the differences between the regions are different for men compared with
 women, or put differently, if the differences between men and women are
 different for the different regions then we speak of an interaction. By adding
 a second factor into the study, we thus have to deal with a third factor,
-namely the interaction between
-the first and second factor.<a href="#fn36" class="footnote-ref" id="fnref36"><sup>36</sup></a></p>
+namely the interaction between the first and second factor<a href="#fn36" class="footnote-ref" id="fnref36"><sup>36</sup></a>.</p>
 <p>If a significant interaction is present then we can no longer make
 general statements about the main effect we are concerned with. After all, the
 impact of a main effect is also dependent on the interaction with
@@ -1512,13 +1511,13 @@ effects, and then the non-significant interaction effect.</p>
 <blockquote>
 <p>The observed speech tempos differ significantly between the four
 regions of origin of the speakers
-[<span class="math inline">\(F(3,71)=6.0, p=.0010\)</span>, <span class="math inline">\(\omega^2=.14\)</span>], and men speak significantly faster
-than women [<span class="math inline">\(F(1,71)=15.1, p=.0002\)</span>, <span class="math inline">\(\omega^2=.13\)</span>].
+<span class="math inline">\([F(3,71)=6.09, p&lt;.001\)</span>, <span class="math inline">\(\omega^2=.14]\)</span>, and men speak significantly faster
+than women <span class="math inline">\([F(1,71)=15.03, p=.0002, \omega^2=.13]\)</span>.
 The two factors show no interaction
-[<span class="math inline">\(F(3,71)=1.4, \textrm{n.s.}\)</span>, <span class="math inline">\(\omega^2=.01\)</span>].
+<span class="math inline">\([F(3,71)=1.41, \textrm{n.s.}, \omega^2=.01]\)</span>.
 A post hoc comparison between the regions showed that speakers from
 the West speak significantly more quickly than those from the North (Tukey’s
-HSD test, <span class="math inline">\(p=.0006\)</span>) and from those from the South (<span class="math inline">\(p=.0190\)</span>); other
+HSD test, <span class="math inline">\(p=.0006\)</span>) and from those from the South (<span class="math inline">\(p=.0164\)</span>); other
 pairwise differences between regions were not significant.</p>
 </blockquote>
 <table>
@@ -1536,34 +1535,34 @@ tempos in Table <a href="ch-anova.html#tab:sylduration2way">15.2</a>.</caption>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">(i) Region</td>
+<td align="left">(i) Regio</td>
 <td align="center">3</td>
-<td align="center">0.01234</td>
-<td align="center">0.004114</td>
-<td align="center">6.039</td>
-<td align="center">0.0010</td>
+<td align="center">0.0124</td>
+<td align="center">0.0041</td>
+<td align="center">6.09</td>
+<td align="center">&lt;.001</td>
 </tr>
 <tr class="even">
 <td align="left">(ii) Sex</td>
 <td align="center">1</td>
-<td align="center">0.01031</td>
-<td align="center">0.010310</td>
-<td align="center">15.135</td>
-<td align="center">0.0002</td>
+<td align="center">0.0102</td>
+<td align="center">0.0102</td>
+<td align="center">15.03</td>
+<td align="center">&lt;.001</td>
 </tr>
 <tr class="odd">
 <td align="left">(iii) Region <span class="math inline">\(\times\)</span> Sex</td>
 <td align="center">3</td>
-<td align="center">0.00287</td>
-<td align="center">0.000958</td>
-<td align="center">1.406</td>
-<td align="center">0.2482</td>
+<td align="center">0.0029</td>
+<td align="center">0.0010</td>
+<td align="center">1.41</td>
+<td align="center">.248</td>
 </tr>
 <tr class="even">
 <td align="left">within</td>
 <td align="center">71</td>
-<td align="center">0.04837</td>
-<td align="center">0.000681</td>
+<td align="center">0.0484</td>
+<td align="center">0.0007</td>
 <td align="center"></td>
 <td align="center"></td>
 </tr>
@@ -1598,6 +1597,10 @@ with <code>OK</code>.</p>
 <p>One speaker has a very long average syllable duration; we will ignore this observation from now on. We do so by setting a filter which excludes this particular observation. Go to the data sheet, and click on the funnel or filter symbol in the top left cell. A working panel will appear in which you can specify the selection.
 Select the variable <em>syldur</em> from the lefthand menu, so that it moves to the working panel. Then click on the symbol <code>&lt;</code> from the top menu of operators, and place the cursor to the right of the <code>&lt;</code> symbol on the working panel, and then type <code>0.4</code>. The complete condition on the working panel should now be <code>syldur &lt; 0.4</code>.
 Next click on the button <code>Apply pass-through filter</code> below the working panel in order to apply this filter. In the data sheet, you should see immediately that the row of excluded data (speaker with overlong syllable duration) is greyed out. That row (observation) will no longer be used, until you cancel the selection (instructions for which are in §<a href="ch-testing.html#sec:jaspttestonesample">13.2.5</a>).</p>
+<p>Examine whether the responses are normally distributed within each group or cell, using the
+techniques from Part II of this textbook (especially
+§<a href="ch-probability-distributions.html#sec:isvarnormaldistributed">10.4</a>).
+Note: In JASP it is possible to examine the distribution at the same time as the analysis of variance itself, see below.</p>
 </div>
 <div id="anova-3" class="section level4" number="15.4.4.2">
 <h4><span class="header-section-number">15.4.4.2</span> ANOVA</h4>
@@ -1606,10 +1609,10 @@ Next click on the button <code>Apply pass-through filter</code> below the workin
 <p>Select the variable <em>score</em> and move it to the field “Dependent Variable”, and move the variables <em>region</em> and <em>sex</em> to the field “Fixed Factors”.<br />
 Under the heading “Display” check <code>Estimates of effect size</code>, and select <span class="math inline">\(\omega^2\)</span> and/or (partial) <span class="math inline">\(\eta^2\)</span>. In this book we prefer <span class="math inline">\(\omega^2\)</span>.
 You can also check <code>Descriptive statistics</code> to learn more about the scores in each cell.</p>
-<p>Open the menu bar named “Model” and for “Sum of squares” choose option <code>Type I</code>.<br />
+<p>Open the menu bar named “Model” and for “Sum of squares” choose option <code>Type III</code>.<br />
 Open the menu bar named “Assumption Checks” and check <code>Homogeneity tests</code>.<br />
 “Homogeneity corrections” may remain at the default value of <code>None</code>. 
-Here you can also examine whether the distribution within each group is normal, as assumed by the analysis of variance. This is equivalent to assuming a normal distribution of the <em>residuals</em> of the analysis of variance. You can inspect the latter by checking <code>Q-Q plot of residuals</code>. If the assumption is met (and if residuals are distributed normally) then the residuals should fall on an approximately straight line in the resulting Q-Q plot (see §<a href="ch-probability-distributions.html#sec:isvarnormaldistributed">10.4</a>).<br />
+Here you can also examine whether the distribution within each group or cell is normal, as assumed by the analysis of variance. This is equivalent to assuming a normal distribution of the <em>residuals</em> of the analysis of variance. You can inspect the latter by checking <code>Q-Q plot of residuals</code>. If the assumption is met (and if residuals are distributed normally) then the residuals should fall on an approximately straight line in the resulting Q-Q plot (see §<a href="ch-probability-distributions.html#sec:isvarnormaldistributed">10.4</a>).<br />
 Open the menu bar named “Descriptive Plots” and select <em>region</em> for the field “Horizontal Axis” and select <em>sex</em> for the field “Separate Lines”.</p>
 <p>The output summarizes the analysis of variance in a table similar to Table <a href="ch-anova.html#tab:syldur2way-anova">15.5</a>, with the effect size included.
 The <em>Descriptive plots</em> section provides a visualisation which may be helpful in understanding a possible interaction effect.</p>
@@ -1641,7 +1644,7 @@ Under “Correction” check the option <code>Tukey</code>, and under “Display
 </div>
 <div id="anova-4" class="section level4" number="15.4.5.2">
 <h4><span class="header-section-number">15.4.5.2</span> ANOVA</h4>
-<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="ch-anova.html#cb152-1" aria-hidden="true"></a><span class="co"># see Table 15.5 in main text</span></span>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="ch-anova.html#cb152-1" aria-hidden="true"></a><span class="co"># approximately similar to Table 15.5 in main text, but R uses Type I SS</span></span>
 <span id="cb152-2"><a href="ch-anova.html#cb152-2" aria-hidden="true"></a><span class="kw">summary</span>( <span class="kw">aov</span>(syldur<span class="op">~</span>region<span class="op">*</span>sex, <span class="dt">data=</span>talkers, <span class="dt">subset=</span>ok) -&gt;<span class="st"> </span>m03 )</span></code></pre></div>
 <pre><code>##             Df  Sum Sq  Mean Sq F value   Pr(&gt;F)    
 ## region       3 0.01234 0.004114   6.039 0.001009 ** 
@@ -1650,6 +1653,7 @@ Under “Correction” check the option <code>Tukey</code>, and under “Display
 ## Residuals   71 0.04837 0.000681                     
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>The results are slightly different from those reported in Table <a href="ch-anova.html#tab:syldur2way-anova">15.5</a> above, because R computes the sums of squares somewhat differently<a href="#fn37" class="footnote-ref" id="fnref37"><sup>37</sup></a>.</p>
 </div>
 <div id="effectsize" class="section level4" number="15.4.5.3">
 <h4><span class="header-section-number">15.4.5.3</span> Effect size</h4>
@@ -1661,6 +1665,7 @@ Under “Correction” check the option <code>Tukey</code>, and under “Display
 <pre><code>## [1] 0.1291232</code></pre>
 <div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="ch-anova.html#cb158-1" aria-hidden="true"></a><span class="kw">omegasq</span>(m03, <span class="st">&quot;region:sex&quot;</span>)  <span class="co"># [1] 0.01112131</span></span></code></pre></div>
 <pre><code>## [1] 0.01112131</code></pre>
+<p>These results too differ slighly from those reported in the main text above, because R computes the sums of squares somewhat differently.</p>
 </div>
 <div id="post-hoc-tests" class="section level4" number="15.4.5.4">
 <h4><span class="header-section-number">15.4.5.4</span> post-hoc tests</h4>
@@ -1681,6 +1686,7 @@ Under “Correction” check the option <code>Tukey</code>, and under “Display
 ## S-N -0.008720526 -0.030718836  0.013277783 0.7248801
 ## W-N -0.033810000 -0.055524448 -0.012095552 0.0006238
 ## W-S -0.025089474 -0.047087783 -0.003091164 0.0190285</code></pre>
+<p>These results too differ slighly from those reported in the main text above, because R computes the sums of squares somewhat differently.</p>
 
 </div>
 </div>
@@ -1714,6 +1720,7 @@ finding) and that red differs from blue (we already knew that).<a href="ch-anova
 With three main effects, there are already 3 two-way interactions plus 1 three-way
 interaction. With four main effects, there are already 6 two-way interactions, plus
 4 three-way interactions, plus 1 four-way interaction.<a href="ch-anova.html#fnref36" class="footnote-back">↩︎</a></p></li>
+<li id="fn37"><p>The default type of computing sums of squares in R (Type I) may be used in JASP by choosing: Model, Sum of squares: Type I. The default type of computing sums of squares in JASP (Type III) may be achieved in R by various workarounds, see e.g. <a href="https://www.r-bloggers.com/2011/03/anova-%E2%80%93-type-iiiiii-ss-explained" class="uri">https://www.r-bloggers.com/2011/03/anova-%E2%80%93-type-iiiiii-ss-explained</a>.<a href="ch-anova.html#fnref37" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

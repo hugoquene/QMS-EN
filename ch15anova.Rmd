@@ -750,7 +750,7 @@ Under the heading "Display" check `Estimates of effect size`, and select $\omega
 You can also check `Descriptive statistics` to learn more about the scores in each cell. 
 
 Open the bar named "Assumption Checks" and check `Homogeneity tests`. 
-"Homogeneity corrections" may remain at the default value of  `None` . 
+"Homogeneity corrections" may remain at the default value of  `None`. 
 Here you can also examine whether the distribution within each group is normal, as assumed by the analysis of variance. This is equivalent to assuming a normal distribution of the *residuals* of the analysis of variance. You can inspect the latter by checking `Q-Q plot of residuals`. If the assumption is met (and if residuals are distributed normally) then the residuals should fall on an approximately straight line in the resulting Q-Q plot (see §\@ref(sec:isvarnormaldistributed)).
 
 The analysis of variance is summarized in the output in a table similar to Table \@ref(tab:colours-anova), in which the effect size should be reported as well. 
@@ -883,9 +883,7 @@ If the differences between the regions are different for men compared with
 women, or put differently, if the differences between men and women are 
 different for the different regions then we speak of an interaction. By adding
 a second factor into the study, we thus have to deal with a third factor,
-namely the interaction between
-the first and second factor
-[^fn15-2].
+namely the interaction between the first and second factor[^fn15-2].
 
 If a significant interaction is present then we can no longer make
 general statements about the main effect we are concerned with. After all, the
@@ -954,13 +952,13 @@ effects, and then the non-significant interaction effect.
 
 > The observed speech tempos differ significantly between the four
 regions of origin of the speakers
-[$F(3,71)=6.0, p=.0010$, $\omega^2=.14$], and men speak significantly faster
-than women [$F(1,71)=15.1, p=.0002$, $\omega^2=.13$]. 
+$[F(3,71)=6.09, p<.001$, $\omega^2=.14]$, and men speak significantly faster
+than women $[F(1,71)=15.03, p=.0002, \omega^2=.13]$. 
 The two factors show no interaction
-[$F(3,71)=1.4, \textrm{n.s.}$, $\omega^2=.01$]. 
+$[F(3,71)=1.41, \textrm{n.s.}, \omega^2=.01]$. 
 A post hoc comparison between the regions showed that speakers from
 the West speak significantly more quickly than those from the North (Tukey's
-HSD test, $p=.0006$) and from those from the South ($p=.0190$); other
+HSD test, $p=.0006$) and from those from the South ($p=.0164$); other
 pairwise differences between regions were not significant. 
 
 Table: (#tab:syldur2way-anova) Summary of two-way analysis of variance of the speech
@@ -968,10 +966,10 @@ tempos in Table \@ref(tab:sylduration2way).
 
   Source of variance                 df    SS         MS       $F$      $p$
   --------------------------------- ---- --------- ---------- -------- --------
-  (i) Region                          3   0.01234   0.004114   6.039    0.0010
-  (ii) Sex                            1   0.01031   0.010310   15.135   0.0002
-  (iii) Region $\times$ Sex           3   0.00287   0.000958   1.406    0.2482
-  within                             71   0.04837   0.000681           
+  (i) Regio                           3   0.0124    0.0041     6.09     <.001
+  (ii) Sex                            1   0.0102    0.0102    15.03     <.001
+  (iii) Region $\times$ Sex           3   0.0029    0.0010     1.41      .248
+  within                             71   0.0484    0.0007           
 
 
 ### SPSS
@@ -1006,6 +1004,11 @@ One speaker has a very long average syllable duration; we will ignore this obser
 Select the variable *syldur* from the lefthand menu, so that it moves to the working panel. Then click on the symbol `<` from the top menu of operators, and place the cursor to the right of the `<` symbol on the working panel, and then type `0.4`. The complete condition on the working panel should now be `syldur < 0.4`.
 Next click on the button `Apply pass-through filter` below the working panel in order to apply this filter. In the data sheet, you should see immediately that the row of excluded data (speaker with overlong syllable duration) is greyed out. That row (observation) will no longer be used, until you cancel the selection (instructions for which are in §\@ref(sec:jaspttestonesample)).
 
+Examine whether the responses are normally distributed within each group or cell, using the
+techniques from Part II of this textbook (especially
+§\@ref(sec:isvarnormaldistributed)). 
+Note: In JASP it is possible to examine the distribution at the same time as the analysis of variance itself, see below. 
+
 #### ANOVA
 
 In the top menu bar, choose:
@@ -1016,10 +1019,10 @@ Select the variable *score* and move it to the field "Dependent Variable", and m
 Under the heading "Display" check `Estimates of effect size`, and select $\omega^2$ and/or  (partial) $\eta^2$. In this book we prefer $\omega^2$. 
 You can also check `Descriptive statistics` to learn more about the scores in each cell. 
 
-Open the menu bar named "Model" and for "Sum of squares" choose option `Type I`.\
+Open the menu bar named "Model" and for "Sum of squares" choose option `Type III`.\
 Open the menu bar named "Assumption Checks" and check `Homogeneity tests`.\
 "Homogeneity corrections" may remain at the default value of  `None`.\ 
-Here you can also examine whether the distribution within each group is normal, as assumed by the analysis of variance. This is equivalent to assuming a normal distribution of the *residuals* of the analysis of variance. You can inspect the latter by checking `Q-Q plot of residuals`. If the assumption is met (and if residuals are distributed normally) then the residuals should fall on an approximately straight line in the resulting Q-Q plot (see §\@ref(sec:isvarnormaldistributed)).\
+Here you can also examine whether the distribution within each group or cell is normal, as assumed by the analysis of variance. This is equivalent to assuming a normal distribution of the *residuals* of the analysis of variance. You can inspect the latter by checking `Q-Q plot of residuals`. If the assumption is met (and if residuals are distributed normally) then the residuals should fall on an approximately straight line in the resulting Q-Q plot (see §\@ref(sec:isvarnormaldistributed)).\
 Open the menu bar named "Descriptive Plots" and select *region* for the field "Horizontal Axis" and select *sex* for the field "Separate Lines". 
 
 The output summarizes the analysis of variance in a table similar to Table \@ref(tab:syldur2way-anova), with the effect size included. 
@@ -1053,9 +1056,11 @@ with(talkers, tapply( syldur[ok], list(region[ok],sex[ok]), mean ))
 #### ANOVA
 
 ```{r}
-# see Table 15.5 in main text
+# approximately similar to Table 15.5 in main text, but R uses Type I SS
 summary( aov(syldur~region*sex, data=talkers, subset=ok) -> m03 )
 ```
+
+The results are slightly different from those reported in Table \@ref(tab:syldur2way-anova) above, because R computes the sums of squares somewhat differently[^fn15-3]. 
 
 #### Effect size {#effectsize}
 
@@ -1068,11 +1073,15 @@ omegasq(m03, "sex")         # [1] 0.1291232
 omegasq(m03, "region:sex")  # [1] 0.01112131
 ```
 
+These results too differ slighly from those reported in the main text above, because R computes the sums of squares somewhat differently. 
+
 #### post-hoc tests
 
 ```{r}
 TukeyHSD(x=m03, which="region")
 ```
+
+These results too differ slighly from those reported in the main text above, because R computes the sums of squares somewhat differently. 
 
 
 [^fn15-1]: If (1) red does differ from grey and blue, and if (2) grey and blue
@@ -1083,3 +1092,5 @@ finding) and that red differs from blue (we already knew that).
 With three main effects, there are already 3 two-way interactions plus 1 three-way 
 interaction. With four main effects, there are already 6 two-way interactions, plus
 4 three-way interactions, plus 1 four-way interaction. 
+
+[^fn15-3]: The default type of computing sums of squares in R (Type I) may be used in JASP by choosing: Model, Sum of squares: Type I. The default type of computing sums of squares in JASP (Type III) may be achieved in R by various workarounds, see e.g.  <https://www.r-bloggers.com/2011/03/anova-%E2%80%93-type-iiiiii-ss-explained>. 

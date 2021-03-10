@@ -119,7 +119,7 @@
 
 \title{Quantitative Methods and Statistics}
 \author{true}
-\date{Version compiled 08 Mar 2021}
+\date{Version compiled 10 Mar 2021}
 
 \begin{document}
 \maketitle
@@ -8030,7 +8030,7 @@ Under the heading ``Display'' check \texttt{Estimates\ of\ effect\ size}, and se
 You can also check \texttt{Descriptive\ statistics} to learn more about the scores in each cell.
 
 Open the bar named ``Assumption Checks'' and check \texttt{Homogeneity\ tests}.
-``Homogeneity corrections'' may remain at the default value of \texttt{None} .
+``Homogeneity corrections'' may remain at the default value of \texttt{None}.
 Here you can also examine whether the distribution within each group is normal, as assumed by the analysis of variance. This is equivalent to assuming a normal distribution of the \emph{residuals} of the analysis of variance. You can inspect the latter by checking \texttt{Q-Q\ plot\ of\ residuals}. If the assumption is met (and if residuals are distributed normally) then the residuals should fall on an approximately straight line in the resulting Q-Q plot (see §\ref{sec:isvarnormaldistributed}).
 
 The analysis of variance is summarized in the output in a table similar to Table \ref{tab:colours-anova}, in which the effect size should be reported as well.
@@ -8258,9 +8258,7 @@ If the differences between the regions are different for men compared with
 women, or put differently, if the differences between men and women are
 different for the different regions then we speak of an interaction. By adding
 a second factor into the study, we thus have to deal with a third factor,
-namely the interaction between
-the first and second factor
-\footnote{If we add more factors then the situation quickly becomes confusing.
+namely the interaction between the first and second factor\footnote{If we add more factors then the situation quickly becomes confusing.
   With three main effects, there are already 3 two-way interactions plus 1 three-way
   interaction. With four main effects, there are already 6 two-way interactions, plus
   4 three-way interactions, plus 1 four-way interaction.}.
@@ -8334,13 +8332,13 @@ effects, and then the non-significant interaction effect.
 \begin{quote}
 The observed speech tempos differ significantly between the four
 regions of origin of the speakers
-{[}\(F(3,71)=6.0, p=.0010\), \(\omega^2=.14\){]}, and men speak significantly faster
-than women {[}\(F(1,71)=15.1, p=.0002\), \(\omega^2=.13\){]}.
+\([F(3,71)=6.09, p<.001\), \(\omega^2=.14]\), and men speak significantly faster
+than women \([F(1,71)=15.03, p=.0002, \omega^2=.13]\).
 The two factors show no interaction
-{[}\(F(3,71)=1.4, \textrm{n.s.}\), \(\omega^2=.01\){]}.
+\([F(3,71)=1.41, \textrm{n.s.}, \omega^2=.01]\).
 A post hoc comparison between the regions showed that speakers from
 the West speak significantly more quickly than those from the North (Tukey's
-HSD test, \(p=.0006\)) and from those from the South (\(p=.0190\)); other
+HSD test, \(p=.0006\)) and from those from the South (\(p=.0164\)); other
 pairwise differences between regions were not significant.
 \end{quote}
 
@@ -8355,10 +8353,10 @@ Source of variance & df & SS & MS & \(F\) & \(p\)\tabularnewline
 Source of variance & df & SS & MS & \(F\) & \(p\)\tabularnewline
 \midrule
 \endhead
-(i) Region & 3 & 0.01234 & 0.004114 & 6.039 & 0.0010\tabularnewline
-(ii) Sex & 1 & 0.01031 & 0.010310 & 15.135 & 0.0002\tabularnewline
-(iii) Region \(\times\) Sex & 3 & 0.00287 & 0.000958 & 1.406 & 0.2482\tabularnewline
-within & 71 & 0.04837 & 0.000681 & &\tabularnewline
+(i) Regio & 3 & 0.0124 & 0.0041 & 6.09 & \textless.001\tabularnewline
+(ii) Sex & 1 & 0.0102 & 0.0102 & 15.03 & \textless.001\tabularnewline
+(iii) Region \(\times\) Sex & 3 & 0.0029 & 0.0010 & 1.41 & .248\tabularnewline
+within & 71 & 0.0484 & 0.0007 & &\tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -8402,6 +8400,11 @@ One speaker has a very long average syllable duration; we will ignore this obser
 Select the variable \emph{syldur} from the lefthand menu, so that it moves to the working panel. Then click on the symbol \texttt{\textless{}} from the top menu of operators, and place the cursor to the right of the \texttt{\textless{}} symbol on the working panel, and then type \texttt{0.4}. The complete condition on the working panel should now be \texttt{syldur\ \textless{}\ 0.4}.
 Next click on the button \texttt{Apply\ pass-through\ filter} below the working panel in order to apply this filter. In the data sheet, you should see immediately that the row of excluded data (speaker with overlong syllable duration) is greyed out. That row (observation) will no longer be used, until you cancel the selection (instructions for which are in §\ref{sec:jaspttestonesample}).
 
+Examine whether the responses are normally distributed within each group or cell, using the
+techniques from Part II of this textbook (especially
+§\ref{sec:isvarnormaldistributed}).
+Note: In JASP it is possible to examine the distribution at the same time as the analysis of variance itself, see below.
+
 \hypertarget{anova-3}{%
 \subsubsection{ANOVA}\label{anova-3}}
 
@@ -8415,10 +8418,10 @@ Select the variable \emph{score} and move it to the field ``Dependent Variable''
 Under the heading ``Display'' check \texttt{Estimates\ of\ effect\ size}, and select \(\omega^2\) and/or (partial) \(\eta^2\). In this book we prefer \(\omega^2\).
 You can also check \texttt{Descriptive\ statistics} to learn more about the scores in each cell.
 
-Open the menu bar named ``Model'' and for ``Sum of squares'' choose option \texttt{Type\ I}.\\
+Open the menu bar named ``Model'' and for ``Sum of squares'' choose option \texttt{Type\ III}.\\
 Open the menu bar named ``Assumption Checks'' and check \texttt{Homogeneity\ tests}.\\
 ``Homogeneity corrections'' may remain at the default value of \texttt{None}.~
-Here you can also examine whether the distribution within each group is normal, as assumed by the analysis of variance. This is equivalent to assuming a normal distribution of the \emph{residuals} of the analysis of variance. You can inspect the latter by checking \texttt{Q-Q\ plot\ of\ residuals}. If the assumption is met (and if residuals are distributed normally) then the residuals should fall on an approximately straight line in the resulting Q-Q plot (see §\ref{sec:isvarnormaldistributed}).\\
+Here you can also examine whether the distribution within each group or cell is normal, as assumed by the analysis of variance. This is equivalent to assuming a normal distribution of the \emph{residuals} of the analysis of variance. You can inspect the latter by checking \texttt{Q-Q\ plot\ of\ residuals}. If the assumption is met (and if residuals are distributed normally) then the residuals should fall on an approximately straight line in the resulting Q-Q plot (see §\ref{sec:isvarnormaldistributed}).\\
 Open the menu bar named ``Descriptive Plots'' and select \emph{region} for the field ``Horizontal Axis'' and select \emph{sex} for the field ``Separate Lines''.
 
 The output summarizes the analysis of variance in a table similar to Table \ref{tab:syldur2way-anova}, with the effect size included.
@@ -8466,7 +8469,7 @@ The output of the \emph{Post Hoc Tests} shows for each pairwise comparison the d
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\# see Table 15.5 in main text}
+\CommentTok{\# approximately similar to Table 15.5 in main text, but R uses Type I SS}
 \KeywordTok{summary}\NormalTok{( }\KeywordTok{aov}\NormalTok{(syldur}\OperatorTok{\textasciitilde{}}\NormalTok{region}\OperatorTok{*}\NormalTok{sex, }\DataTypeTok{data=}\NormalTok{talkers, }\DataTypeTok{subset=}\NormalTok{ok) {-}\textgreater{}}\StringTok{ }\NormalTok{m03 )}
 \end{Highlighting}
 \end{Shaded}
@@ -8480,6 +8483,8 @@ The output of the \emph{Post Hoc Tests} shows for each pairwise comparison the d
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 \end{verbatim}
+
+The results are slightly different from those reported in Table \ref{tab:syldur2way-anova} above, because R computes the sums of squares somewhat differently\footnote{The default type of computing sums of squares in R (Type I) may be used in JASP by choosing: Model, Sum of squares: Type I. The default type of computing sums of squares in JASP (Type III) may be achieved in R by various workarounds, see e.g.~\url{https://www.r-bloggers.com/2011/03/anova-\%E2\%80\%93-type-iiiiii-ss-explained}.}.
 
 \hypertarget{effectsize}{%
 \subsubsection{Effect size}\label{effectsize}}
@@ -8517,6 +8522,8 @@ In order to assess effect size, we will use the previously programmed function \
 ## [1] 0.01112131
 \end{verbatim}
 
+These results too differ slighly from those reported in the main text above, because R computes the sums of squares somewhat differently.
+
 \hypertarget{post-hoc-tests}{%
 \subsubsection{post-hoc tests}\label{post-hoc-tests}}
 
@@ -8550,6 +8557,8 @@ In order to assess effect size, we will use the previously programmed function \
 ## W-N -0.033810000 -0.055524448 -0.012095552 0.0006238
 ## W-S -0.025089474 -0.047087783 -0.003091164 0.0190285
 \end{verbatim}
+
+These results too differ slighly from those reported in the main text above, because R computes the sums of squares somewhat differently.
 
 \hypertarget{ch:chi-square-tests}{%
 \chapter{Chi-square-tests}\label{ch:chi-square-tests}}

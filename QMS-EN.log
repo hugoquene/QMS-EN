@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.10.22)  8 MAR 2021 20:43
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.10.22)  10 MAR 2021 14:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1431,24 +1431,24 @@ LaTeX Warning: Reference `fig:colours-obs' on page 248 undefined on input line
 8068.
 
 [248] [249] [250] [251] [252] [253] [254] [255] [256]
-Overfull \hbox (69.75pt too wide) in paragraph at lines 8531--8531
+Overfull \hbox (69.75pt too wide) in paragraph at lines 8538--8538
 []\TU/lmtt/m/n/10 ## Warning in replications(paste("~", xx), data = mf): non-fa
 ctors ignored: sex[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 8536--8536
+Overfull \hbox (90.75pt too wide) in paragraph at lines 8543--8543
 []\TU/lmtt/m/n/10 ## Warning in replications(paste("~", xx), data = mf): non-fa
 ctors ignored: region,[] 
  []
 
-
-Overfull \hbox (38.25pt too wide) in paragraph at lines 8552--8552
+[257]
+Overfull \hbox (38.25pt too wide) in paragraph at lines 8559--8559
 []\TU/lmtt/m/n/10 ## Fit: aov(formula = syldur ~ region * sex, data = talkers, 
 subset = ok)[] 
  []
 
-[257] [258]
+[258]
 Chapter 16.
 [259
 
@@ -1462,17 +1462,17 @@ GLE SAMPLE \TU/lmr/m/n/10 261
 Overfull \vbox (0.62584pt too high) has occurred while \output is active []
 
 [262] [263] [264] [265]
-Overfull \hbox (29.9901pt too wide) in alignment at lines 8962--8971
+Overfull \hbox (29.9901pt too wide) in alignment at lines 8971--8980
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (29.9901pt too wide) in alignment at lines 8971--8975
+Overfull \hbox (29.9901pt too wide) in alignment at lines 8980--8984
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (29.9901pt too wide) in alignment at lines 8975--8980
+Overfull \hbox (29.9901pt too wide) in alignment at lines 8984--8989
  [] [] [] [] [] [] [] 
  []
 
@@ -1494,28 +1494,28 @@ File: QMS-EN_files/figure-latex/kritiekeZwaarden-hulpfiguur-1.pdf Graphic file
 ] [278]
 Appendix C.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 24.88pt on input line 9382.
+(Font)              scaled to size 24.88pt on input line 9391.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 20.74pt on input line 9382.
+(Font)              scaled to size 20.74pt on input line 9391.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 17.28pt on input line 9382.
+(Font)              scaled to size 17.28pt on input line 9391.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 24.88228pt on input line 9382.
+(Font)              scaled to size 24.88228pt on input line 9391.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 20.7419pt on input line 9382.
+(Font)              scaled to size 20.7419pt on input line 9391.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 17.28157pt on input line 9382.
+(Font)              scaled to size 17.28157pt on input line 9391.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 24.87733pt on input line 9382.
+(Font)              scaled to size 24.87733pt on input line 9391.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 20.73778pt on input line 9382.
+(Font)              scaled to size 20.73778pt on input line 9391.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 17.27815pt on input line 9382.
+(Font)              scaled to size 17.27815pt on input line 9391.
 File: QMS-EN_files/figure-latex/criticaltvalues-auxiliaryfigure-1.pdf Graphic f
 ile (type pdf)
 <use QMS-EN_files/figure-latex/criticaltvalues-auxiliaryfigure-1.pdf>
 
-Overfull \hbox (19.32014pt too wide) in paragraph at lines 9394--9439
+Overfull \hbox (19.32014pt too wide) in paragraph at lines 9403--9448
  [][] 
  []
 
@@ -1530,7 +1530,7 @@ File: QMS-EN_files/figure-latex/criticalchi2values-auxiliaryfigure-1.pdf Graphi
 c file (type pdf)
 <use QMS-EN_files/figure-latex/criticalchi2values-auxiliaryfigure-1.pdf>
 
-Overfull \hbox (17.80014pt too wide) in paragraph at lines 9450--9493
+Overfull \hbox (17.80014pt too wide) in paragraph at lines 9459--9502
  [][] 
  []
 

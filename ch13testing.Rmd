@@ -613,7 +613,7 @@ which must be satisfied in order to use the test.
 The more the two samples differ in size, the more
 serious the violation of this latter assumption is. It is thus prudent
 to work with samples that are of (approximately) the same size, and preferably not too small!  If the samples are equally large, then the violation of this assumption of equal
-variances is not so serious. 
+variances is not so serious (see §\@ref(sec:ttest-formulas) directly below).
 
 ### formulas {#sec:ttest-formulas}
 
@@ -621,10 +621,10 @@ variances is not so serious.
 
 To calculate the test statistic $t$, various formulas are used.
 
-If the samples have about equal variance, then we firstly use
-the "pooled standard deviation" $s_p$ as an intermediate step. In this, both
+If the samples have approximately **equal variances**, then we firstly compute
+the "pooled standard deviation" $s_p$ as an intermediate step. For this, the two
 standard deviations from the two samples are weighted according
-to their sample size.
+to their sample sizes.
 \begin{equation}
     s_p = \sqrt{ \frac{(n_1-1) s^2_1 + (n_2-1) s^2_2} {n_1+n_2-2} }
     (\#eq:sd-pooled)
@@ -635,8 +635,8 @@ Then
   t = \frac{ \overline{x_1}-\overline{x_2} } { s_p \sqrt{\frac{1}{n_1}+\frac{1}{n_2}} }
 \end{equation}
 
-If the samples do *not* have equal variance, and the fourth assumed
-sample above is thus violated, then Welch's t-test is 
+If the samples do have **unequal variances**, and the fourth assumed
+sample above is thus violated, then Welch's version of the t-test is 
 used: 
 \begin{equation}
   (\#eq:sd-WS)
@@ -715,10 +715,15 @@ and report $t(38)=-3.765, p=.001$.
 
 ### JASP {#sec:JASP-ttest-unpaired}
 
-Here, the second example above is worked out: the tempo (speech rate) of speakers from the West and North of the Netherlands is to be compared. \
+Here, the second example above is worked out: the tempo (speech rate) of speakers from the West and North of the Netherlands is to be compared.
+
+#### preparation
+
 To this end, only observations from the Northern and Western speakers are to be used. This may be achieved by navigating to the data sheet, and click on the column header of the variable *region*. This will open a working panel, in which you can select and unselect `Values` (i.e. regions) of the nominal variable *region*. The column "Filter" normally has all values checked, which means that all observations are included. Uncheck the values to be excluded, i.e. *S*outh and *M*id, so that the check marks are crossed out, and the corresponding observations in the data sheet are greyed out. Only leave check marks at the *N*orth and *W*est values. 
 
 Note: do not forget to remove the filter and include all regions for later analyses. 
+
+#### *t* test
 
 After filtering the observations, choose from the top menu bar: 
 ```
@@ -726,15 +731,24 @@ T-Tests > Classical: Independent Samples T-Test
 ```
 
 In the field "Variables", select the variable *syldur* to be tested. 
-In the field "Grouping Variable", select the independent variable *region*. (If the independent variable has more than two groups, JASP will report an error. To avoid this problem, we have filtered the independent variable, so that only two groups remain.)\
+In the field "Grouping Variable", select the independent variable *region*. (If the independent variable has more than two groups, JASP will report an error. To avoid this problem, we have filtered the independent variable, so that only two groups remain.)
 
 Under "Tests", check `Student` (for Student's $t$ test statistic). Under "Alt. Hypothesis", select the first option (groups are not the same) for a two-sided $t$ test.
-Under "Additional Statistics", you may check `Descriptives` and `Descriptive Plots` to learn more about the dependent variable. Also check the option `Effect size` (see §\@ref(sec:ttest-effectsize) below).\
-Under the heading "Assumption checks", finally, check the options `Normality` (see §\@ref(sec:isvarnormaldistributed)) and `Equality of variances` (see §\@ref(sec:ttest-unpaired-assumptions)). 
+Under "Additional Statistics", you may check `Descriptives` and `Descriptive Plots` to learn more about the dependent variable. Also check the option `Effect size` (see §\@ref(sec:ttest-effectsize) below).
+
+Under the heading "Assumption checks", check the options `Normality` (see
+§\@ref(sec:ttest-unpaired-assumptions), third assumption, see also  
+§\@ref(sec:isvarnormaldistributed)) and `Equality of variances` too (see §\@ref(sec:ttest-unpaired-assumptions), fourth assumption). 
 
 The output reports the two-sided $t$ test for two independent samples, including its effect size.
+
 The table titled **Assumption Checks** reports the Shapiro-Wilk test of normality in both groups.\
-The table titled **Test of Equality of Variances** reports Levene's test, which tests whether the two variances are equal (H0: $s^2_1 = s^2_2$). If this test reports a low value of $F$ and a high value of $p$ then H0 is not rejected, and the assumption of equal variances does not need to be rejected. If Levene's test reports a high value of $F$ and a low value of $p$, however, then you should reject H0, and the assumption of equal variances should hence be rejected. In this example, we do not reject the assumption of equal variances.\
+The table titled **Test of Equality of Variances** reports Levene's test, which tests whether the two variances are equal (H0: $s^2_1 = s^2_2$). 
+If this test reports a low value of $F$ and a high value of $p$ then H0 is not rejected, and the assumption of equal variances does not need to be rejected. You may assume that the two variances are indeed approximately equal. Use and report the *Student* version of the $t$ test (as chosen under the "Tests" menu bar).
+If Levene's test reports a high value of $F$ and a low value of $p$, however, then you should reject H0, and you may not assume that the two variances are equal. Under the "Tests" menu bar, you should then select the *Welch* option, and you should use and report the *Welch* version of the $t$ test. 
+
+In this example, the tests for normality and for equal variances do not show significant results. This means that the third and fourth assumptions mentioned above are appropriate; hence we use and report the Student $t$ test: $t(38)=3.76, p<.001, d=1.2$.
+
 If checked in the input, descriptive statistics and summary plots are also reported. This provides insights into how the scores from the two groups differ. 
 
 

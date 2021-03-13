@@ -490,12 +490,11 @@ correlation would be considerably higher
 ($r_{-2}=.86$) but the slope of the regression line would only 
 change a little ($b=0.45$).
 
-As such, for a correlation analysis or regression analysis you always have
-to make and study a scatter plot in order to see to what extent the results
-have been influenced by one or a small number of observations. When doing so, pay 
-particular attention to observations which are far away from the mean, to each 
-of the two variables, and to observations which are far away from 
-the regression line. 
+For a correlation analysis or regression analysis you always have
+to make and study a scatter plot, in order to see the pattern for yourself (is it linear?) and to inspect whether and to what extent the results
+may have been influenced by one or a few observation(s). Pay 
+particular attention to observations which are far away from the mean, for each 
+of the two variables, and to observations which are far away from the regression line. 
 
 ## Spearman's rank correlation coefficient {#sec:Spearman}
 
@@ -677,6 +676,9 @@ $$
 The dataset `cito` already contains the variable `UrbanRural` which indicates the 
 origin of the pupils. However, for completeness, we will still show how you can 
 construct a variable like this for yourself.
+
+#### construct new variable
+
 ```
 Transform > Recode into different variables...
 ```
@@ -694,6 +696,8 @@ All values from the lowest value to the mean ($27.2$) are transformed to the
 new value 0 for this new variable. All values
 from the mean ($27.2$) to the highest value are transformed to the new value 1.
 
+#### correlation analysis
+
 After this preparatory work, we can finally calculate $r_\Phi$.
 ```
 Analyze > Descriptives > Crosstabs...
@@ -709,6 +713,8 @@ Confirm firstly with `Continue` and then again with `OK`.
 
 The dataset `cito` already contains a variable `UrbanRural` which indicates the pupils' origins.
 However, for completeness, let us still see how you can construct such a variable for yourself.
+
+#### construct new variable
 
 First, create a new variable by clicking the **+** button which is to the right of the rightmost column header in the data sheet. A new panel "Create Computed Column" will appear, in which you can enter a name for the new variable, such as `UrbanRural2`. 
 There are two methods to specify the new variable, using `R` commands or using a hand pointer sign (manual specification). Below we will explain for both options how to specify the new variable. You can also indicate the measurement level of the new variable; in this example we will use `Nominal`.  Finally, click on `Create Column` to create the new variable, which will appear as a new empty column in the data sheet. 
@@ -738,13 +744,16 @@ We repeat the same create-and-define steps as above, now for a new version of th
 
 First we create a new variable by clicking the **+** button to the right of the rightmost column header in the data sheet. A new panel "Create Computed Column" will appear, in which you can enter a name for the new variable, such as `UrbanRural2`. Click on `Create Column` to create the new variable, which will appear as a new empty column in the data sheet. 
 
-If you chose the `R` command method to define this new variable, then you may use this `R` code: ```
+If you chose the `R` command method to define this new variable, then you may use this `R` code: 
+```
 ifelse(Arithmetic < mean(Arithmetic), 0, 1)
 ```
 This command means: *if* the value of the source variable `Arithmetic` is less than the mean of the same variable `Arithmetic`, *then* the new value will be zero (mnemonic code for "low"), and *else* the new value will be one (code for "high"). In short: if Arithmetic < mean(Arithmetic), then 0, else 1. Enter the `R` command given above, and click on `Compute column` to fill the empty variable with the specified (nominal) values. 
 
 If you chose the manual specification method (hand pointer) to define the new variable, then you need to select the function `ifElse(y)` once more. For "test", select the $<$ operator from the top, drag the function `mean(y)` from the righthand menu to the preceding dots, and drag the variable `Arithmetic` from the lefthand menu to the "values" part of the `mean(y)` function. For "then" enter `0` and for "else" enter `1`. The complete expression should read `ifElse(Arithmetic < mean(Arithmetic), 0, 1)`, and this expression is equivalent to the `R` command discussed above. 
 After you have built your expression, click on `Compute column` to fill the empty variable with the new values. 
+
+#### correlation analysis
 
 After all this preparatory work, we can finally calculate $r_\Phi$. From the top menu bar, choose
 ```
@@ -759,12 +768,17 @@ The value of $r_\Phi$ is reported in the output under the heading **Phi coeffici
 
 The dataset `cito` already contains a variable `UrbanRural` which indicates the pupils' origins.
 However, for completeness, let us still see how you can construct such a variable for yourself.
+
+#### construct new variable
+
 ```{r phi1}
 UrbanRural2 <- ifelse( cito$Pupil<6, 1, 0) # 1=urban, 0=rural
 Arithmetic2 <- ifelse( cito$Arithmetic>mean(cito$Arithmetic), 1, 0 ) # 1=high, 0=low
 ```
 Here we build a new variable `Arithmetic2`, which has the value `1` if the score for
 Arithmetic is higher than the average, and otherwise has the value `0`.
+
+#### correlation analysis
 
 In R, we also start by making a contingency table (Table \@ref(tab:cito-contingency-table)) and we then calculate the $r_\Phi$ over the contingency table.
 ``` {r}

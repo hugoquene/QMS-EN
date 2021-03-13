@@ -752,11 +752,11 @@ The table titled <strong>Assumption Checks</strong> reports the Shapiro-Wilk tes
 <div id="r-11" class="section level3" number="13.2.6">
 <h3><span class="header-section-number">13.2.6</span> R</h3>
 <p>Our hypothesis discussed above can be tested with the following commands:</p>
-<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="ch-testing.html#cb103-1" aria-hidden="true"></a>gramm2013 &lt;-<span class="st"> </span><span class="kw">read.csv</span>( <span class="dt">file=</span><span class="st">&quot;data/grammaticatoets2013.csv&quot;</span>,<span class="dt">header=</span>F)</span>
-<span id="cb103-2"><a href="ch-testing.html#cb103-2" aria-hidden="true"></a><span class="kw">dimnames</span>(gramm2013)[[<span class="dv">2</span>]] &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;score&quot;</span>,<span class="st">&quot;progr&quot;</span>)</span>
-<span id="cb103-3"><a href="ch-testing.html#cb103-3" aria-hidden="true"></a><span class="co"># program levels have Dutch labels: TW=Linguistics</span></span>
-<span id="cb103-4"><a href="ch-testing.html#cb103-4" aria-hidden="true"></a><span class="kw">with</span>( gramm2013,</span>
-<span id="cb103-5"><a href="ch-testing.html#cb103-5" aria-hidden="true"></a>      <span class="kw">t.test</span>( score[progr<span class="op">==</span><span class="st">&quot;TW&quot;</span>], <span class="dt">mu=</span><span class="dv">73</span>, <span class="dt">alt=</span><span class="st">&quot;greater&quot;</span> ) )</span></code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="ch-testing.html#cb104-1" aria-hidden="true"></a>gramm2013 &lt;-<span class="st"> </span><span class="kw">read.csv</span>( <span class="dt">file=</span><span class="st">&quot;data/grammaticatoets2013.csv&quot;</span>,<span class="dt">header=</span>F)</span>
+<span id="cb104-2"><a href="ch-testing.html#cb104-2" aria-hidden="true"></a><span class="kw">dimnames</span>(gramm2013)[[<span class="dv">2</span>]] &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;score&quot;</span>,<span class="st">&quot;progr&quot;</span>)</span>
+<span id="cb104-3"><a href="ch-testing.html#cb104-3" aria-hidden="true"></a><span class="co"># program levels have Dutch labels: TW=Linguistics</span></span>
+<span id="cb104-4"><a href="ch-testing.html#cb104-4" aria-hidden="true"></a><span class="kw">with</span>( gramm2013,</span>
+<span id="cb104-5"><a href="ch-testing.html#cb104-5" aria-hidden="true"></a>      <span class="kw">t.test</span>( score[progr<span class="op">==</span><span class="st">&quot;TW&quot;</span>], <span class="dt">mu=</span><span class="dv">73</span>, <span class="dt">alt=</span><span class="st">&quot;greater&quot;</span> ) )</span></code></pre></div>
 <pre><code>## 
 ##  One Sample t-test
 ## 
@@ -913,7 +913,7 @@ Under “Additional Statistics”, check <code>Location parameter</code> and <co
 confidence level) for a <span class="math inline">\(t\)</span>-test. We thus again conduct a <span class="math inline">\(t\)</span>-test
 and find the confidence interval of the mean in the
 output.</p>
-<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="ch-testing.html#cb107-1" aria-hidden="true"></a><span class="kw">with</span>( gramm2013, <span class="kw">t.test</span>( score[progr<span class="op">==</span><span class="st">&quot;TW&quot;</span>] ) )</span></code></pre></div>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="ch-testing.html#cb108-1" aria-hidden="true"></a><span class="kw">with</span>( gramm2013, <span class="kw">t.test</span>( score[progr<span class="op">==</span><span class="st">&quot;TW&quot;</span>] ) )</span></code></pre></div>
 <pre><code>## 
 ##  One Sample t-test
 ## 
@@ -1008,7 +1008,7 @@ which must be satisfied in order to use the test.</p>
 The more the two samples differ in size, the more
 serious the violation of this latter assumption is. It is thus prudent
 to work with samples that are of (approximately) the same size, and preferably not too small! If the samples are equally large, then the violation of this assumption of equal
-variances is not so serious.</p></li>
+variances is not so serious (see §<a href="ch-testing.html#sec:ttest-formulas">13.6.2</a> directly below).</p></li>
 </ul>
 </div>
 <div id="sec:ttest-formulas" class="section level3" number="13.6.2">
@@ -1016,10 +1016,10 @@ variances is not so serious.</p></li>
 <div id="test-statistic" class="section level4" number="13.6.2.1">
 <h4><span class="header-section-number">13.6.2.1</span> test statistic</h4>
 <p>To calculate the test statistic <span class="math inline">\(t\)</span>, various formulas are used.</p>
-<p>If the samples have about equal variance, then we firstly use
-the “pooled standard deviation” <span class="math inline">\(s_p\)</span> as an intermediate step. In this, both
+<p>If the samples have approximately <strong>equal variances</strong>, then we firstly compute
+the “pooled standard deviation” <span class="math inline">\(s_p\)</span> as an intermediate step. For this, the two
 standard deviations from the two samples are weighted according
-to their sample size.
+to their sample sizes.
 <span class="math display" id="eq:sd-pooled">\[\begin{equation}
     s_p = \sqrt{ \frac{(n_1-1) s^2_1 + (n_2-1) s^2_2} {n_1+n_2-2} }
     \tag{13.2}
@@ -1029,8 +1029,8 @@ Then
   \tag{13.3}
   t = \frac{ \overline{x_1}-\overline{x_2} } { s_p \sqrt{\frac{1}{n_1}+\frac{1}{n_2}} }
 \end{equation}\]</span></p>
-<p>If the samples do <em>not</em> have equal variance, and the fourth assumed
-sample above is thus violated, then Welch’s t-test is
+<p>If the samples do have <strong>unequal variances</strong>, and the fourth assumed
+sample above is thus violated, then Welch’s version of the t-test is
 used:
 <span class="math display" id="eq:sd-WS">\[\begin{equation}
   \tag{13.4}
@@ -1104,28 +1104,38 @@ and report <span class="math inline">\(t(38)=-3.765, p=.001\)</span>.</p>
 </div>
 <div id="sec:JASP-ttest-unpaired" class="section level3" number="13.6.4">
 <h3><span class="header-section-number">13.6.4</span> JASP</h3>
-<p>Here, the second example above is worked out: the tempo (speech rate) of speakers from the West and North of the Netherlands is to be compared.<br />
-To this end, only observations from the Northern and Western speakers are to be used. This may be achieved by navigating to the data sheet, and click on the column header of the variable <em>region</em>. This will open a working panel, in which you can select and unselect <code>Values</code> (i.e. regions) of the nominal variable <em>region</em>. The column “Filter” normally has all values checked, which means that all observations are included. Uncheck the values to be excluded, i.e. <em>S</em>outh and <em>M</em>id, so that the check marks are crossed out, and the corresponding observations in the data sheet are greyed out. Only leave check marks at the <em>N</em>orth and <em>W</em>est values.</p>
+<p>Here, the second example above is worked out: the tempo (speech rate) of speakers from the West and North of the Netherlands is to be compared.</p>
+<div id="preparation" class="section level4" number="13.6.4.1">
+<h4><span class="header-section-number">13.6.4.1</span> preparation</h4>
+<p>To this end, only observations from the Northern and Western speakers are to be used. This may be achieved by navigating to the data sheet, and click on the column header of the variable <em>region</em>. This will open a working panel, in which you can select and unselect <code>Values</code> (i.e. regions) of the nominal variable <em>region</em>. The column “Filter” normally has all values checked, which means that all observations are included. Uncheck the values to be excluded, i.e. <em>S</em>outh and <em>M</em>id, so that the check marks are crossed out, and the corresponding observations in the data sheet are greyed out. Only leave check marks at the <em>N</em>orth and <em>W</em>est values.</p>
 <p>Note: do not forget to remove the filter and include all regions for later analyses.</p>
+</div>
+<div id="t-test" class="section level4" number="13.6.4.2">
+<h4><span class="header-section-number">13.6.4.2</span> <em>t</em> test</h4>
 <p>After filtering the observations, choose from the top menu bar:</p>
 <pre><code>T-Tests &gt; Classical: Independent Samples T-Test</code></pre>
 <p>In the field “Variables”, select the variable <em>syldur</em> to be tested.
-In the field “Grouping Variable”, select the independent variable <em>region</em>. (If the independent variable has more than two groups, JASP will report an error. To avoid this problem, we have filtered the independent variable, so that only two groups remain.)<br />
-</p>
+In the field “Grouping Variable”, select the independent variable <em>region</em>. (If the independent variable has more than two groups, JASP will report an error. To avoid this problem, we have filtered the independent variable, so that only two groups remain.)</p>
 <p>Under “Tests”, check <code>Student</code> (for Student’s <span class="math inline">\(t\)</span> test statistic). Under “Alt. Hypothesis”, select the first option (groups are not the same) for a two-sided <span class="math inline">\(t\)</span> test.
-Under “Additional Statistics”, you may check <code>Descriptives</code> and <code>Descriptive Plots</code> to learn more about the dependent variable. Also check the option <code>Effect size</code> (see §<a href="ch-testing.html#sec:ttest-effectsize">13.8</a> below).<br />
-Under the heading “Assumption checks”, finally, check the options <code>Normality</code> (see §<a href="ch-probability-distributions.html#sec:isvarnormaldistributed">10.4</a>) and <code>Equality of variances</code> (see §<a href="ch-testing.html#sec:ttest-unpaired-assumptions">13.6.1</a>).</p>
-<p>The output reports the two-sided <span class="math inline">\(t\)</span> test for two independent samples, including its effect size.
-The table titled <strong>Assumption Checks</strong> reports the Shapiro-Wilk test of normality in both groups.<br />
-The table titled <strong>Test of Equality of Variances</strong> reports Levene’s test, which tests whether the two variances are equal (H0: <span class="math inline">\(s^2_1 = s^2_2\)</span>). If this test reports a low value of <span class="math inline">\(F\)</span> and a high value of <span class="math inline">\(p\)</span> then H0 is not rejected, and the assumption of equal variances does not need to be rejected. If Levene’s test reports a high value of <span class="math inline">\(F\)</span> and a low value of <span class="math inline">\(p\)</span>, however, then you should reject H0, and the assumption of equal variances should hence be rejected. In this example, we do not reject the assumption of equal variances.<br />
-If checked in the input, descriptive statistics and summary plots are also reported. This provides insights into how the scores from the two groups differ.</p>
+Under “Additional Statistics”, you may check <code>Descriptives</code> and <code>Descriptive Plots</code> to learn more about the dependent variable. Also check the option <code>Effect size</code> (see §<a href="ch-testing.html#sec:ttest-effectsize">13.8</a> below).</p>
+<p>Under the heading “Assumption checks”, check the options <code>Normality</code> (see
+§<a href="ch-testing.html#sec:ttest-unpaired-assumptions">13.6.1</a>, third assumption, see also<br />
+§<a href="ch-probability-distributions.html#sec:isvarnormaldistributed">10.4</a>) and <code>Equality of variances</code> too (see §<a href="ch-testing.html#sec:ttest-unpaired-assumptions">13.6.1</a>, fourth assumption).</p>
+<p>The output reports the two-sided <span class="math inline">\(t\)</span> test for two independent samples, including its effect size.</p>
+<p>The table titled <strong>Assumption Checks</strong> reports the Shapiro-Wilk test of normality in both groups.<br />
+The table titled <strong>Test of Equality of Variances</strong> reports Levene’s test, which tests whether the two variances are equal (H0: <span class="math inline">\(s^2_1 = s^2_2\)</span>).
+If this test reports a low value of <span class="math inline">\(F\)</span> and a high value of <span class="math inline">\(p\)</span> then H0 is not rejected, and the assumption of equal variances does not need to be rejected. You may assume that the two variances are indeed approximately equal. Use and report the <em>Student</em> version of the <span class="math inline">\(t\)</span> test (as chosen under the “Tests” menu bar).
+If Levene’s test reports a high value of <span class="math inline">\(F\)</span> and a low value of <span class="math inline">\(p\)</span>, however, then you should reject H0, and you may not assume that the two variances are equal. Under the “Tests” menu bar, you should then select the <em>Welch</em> option, and you should use and report the <em>Welch</em> version of the <span class="math inline">\(t\)</span> test.</p>
+<p>In this example, the tests for normality and for equal variances do not show significant results. This means that the third and fourth assumptions mentioned above are appropriate; hence we use and report the Student <span class="math inline">\(t\)</span> test: <span class="math inline">\(t(38)=3.76, p&lt;.001, d=1.2\)</span>.</p>
+<p>If checked in the input, descriptive statistics and summary plots are also reported. This provides insights into how the scores from the two groups differ.</p>
+</div>
 </div>
 <div id="sec:R-ttest-unpaired" class="section level3" number="13.6.5">
 <h3><span class="header-section-number">13.6.5</span> R</h3>
-<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="ch-testing.html#cb111-1" aria-hidden="true"></a><span class="kw">require</span>(hqmisc)</span>
-<span id="cb111-2"><a href="ch-testing.html#cb111-2" aria-hidden="true"></a><span class="kw">data</span>(talkers)</span>
-<span id="cb111-3"><a href="ch-testing.html#cb111-3" aria-hidden="true"></a><span class="kw">with</span>(talkers, <span class="kw">t.test</span>( syldur[region<span class="op">==</span><span class="st">&quot;W&quot;</span>], syldur[region<span class="op">==</span><span class="st">&quot;N&quot;</span>], </span>
-<span id="cb111-4"><a href="ch-testing.html#cb111-4" aria-hidden="true"></a>            <span class="dt">paired=</span>F, <span class="dt">var.equal=</span>T ) )</span></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="ch-testing.html#cb112-1" aria-hidden="true"></a><span class="kw">require</span>(hqmisc)</span>
+<span id="cb112-2"><a href="ch-testing.html#cb112-2" aria-hidden="true"></a><span class="kw">data</span>(talkers)</span>
+<span id="cb112-3"><a href="ch-testing.html#cb112-3" aria-hidden="true"></a><span class="kw">with</span>(talkers, <span class="kw">t.test</span>( syldur[region<span class="op">==</span><span class="st">&quot;W&quot;</span>], syldur[region<span class="op">==</span><span class="st">&quot;N&quot;</span>], </span>
+<span id="cb112-4"><a href="ch-testing.html#cb112-4" aria-hidden="true"></a>            <span class="dt">paired=</span>F, <span class="dt">var.equal=</span>T ) )</span></code></pre></div>
 <pre><code>## 
 ##  Two Sample t-test
 ## 
@@ -1319,8 +1329,8 @@ If checked in the input, descriptive statistics and summary plots are also repor
 <div id="sec:R-ttest-paired" class="section level3" number="13.7.5">
 <h3><span class="header-section-number">13.7.5</span> R</h3>
 <p>The data from the above example can be found in the file <code>data/ujedata.csv</code>.</p>
-<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="ch-testing.html#cb115-1" aria-hidden="true"></a>ujedata &lt;-<span class="st"> </span><span class="kw">read.table</span>( <span class="dt">file=</span><span class="st">&quot;data/ujedata.csv&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>, <span class="dt">sep=</span><span class="st">&quot;;&quot;</span> )</span>
-<span id="cb115-2"><a href="ch-testing.html#cb115-2" aria-hidden="true"></a><span class="kw">with</span>(ujedata, <span class="kw">t.test</span>( cond.u, cond.je, <span class="dt">paired=</span><span class="ot">TRUE</span> ) )</span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="ch-testing.html#cb116-1" aria-hidden="true"></a>ujedata &lt;-<span class="st"> </span><span class="kw">read.table</span>( <span class="dt">file=</span><span class="st">&quot;data/ujedata.csv&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>, <span class="dt">sep=</span><span class="st">&quot;;&quot;</span> )</span>
+<span id="cb116-2"><a href="ch-testing.html#cb116-2" aria-hidden="true"></a><span class="kw">with</span>(ujedata, <span class="kw">t.test</span>( cond.u, cond.je, <span class="dt">paired=</span><span class="ot">TRUE</span> ) )</span></code></pre></div>
 <pre><code>## 
 ##  Paired t-test
 ## 
@@ -1544,16 +1554,16 @@ The information is in the output of the pairwise <span class="math inline">\(t\)
 <p>For a single sample
 (formula <a href="ch-testing.html#eq:d-onesample">(13.10)</a>):<br />
 </p>
-<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="ch-testing.html#cb118-1" aria-hidden="true"></a>gramm2013 &lt;-<span class="st"> </span><span class="kw">read.csv</span>( <span class="dt">file=</span><span class="st">&quot;data/grammaticatoets2013.csv&quot;</span>,<span class="dt">header=</span>F)</span>
-<span id="cb118-2"><a href="ch-testing.html#cb118-2" aria-hidden="true"></a><span class="kw">dimnames</span>(gramm2013)[[<span class="dv">2</span>]] &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;score&quot;</span>,<span class="st">&quot;progr&quot;</span>)</span>
-<span id="cb118-3"><a href="ch-testing.html#cb118-3" aria-hidden="true"></a><span class="co"># programs have Dutch labels, TW=Linguistics</span></span>
-<span id="cb118-4"><a href="ch-testing.html#cb118-4" aria-hidden="true"></a><span class="kw">with</span>(gramm2013, score[progr<span class="op">==</span><span class="st">&quot;TW&quot;</span>]) -&gt;<span class="st"> </span>score.ling</span>
-<span id="cb118-5"><a href="ch-testing.html#cb118-5" aria-hidden="true"></a><span class="co"># auxiliary variable</span></span>
-<span id="cb118-6"><a href="ch-testing.html#cb118-6" aria-hidden="true"></a>( <span class="kw">mean</span>(score.ling)<span class="op">-</span><span class="dv">73</span> ) <span class="op">/</span><span class="st"> </span><span class="kw">sd</span>(score.ling) </span></code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="ch-testing.html#cb119-1" aria-hidden="true"></a>gramm2013 &lt;-<span class="st"> </span><span class="kw">read.csv</span>( <span class="dt">file=</span><span class="st">&quot;data/grammaticatoets2013.csv&quot;</span>,<span class="dt">header=</span>F)</span>
+<span id="cb119-2"><a href="ch-testing.html#cb119-2" aria-hidden="true"></a><span class="kw">dimnames</span>(gramm2013)[[<span class="dv">2</span>]] &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;score&quot;</span>,<span class="st">&quot;progr&quot;</span>)</span>
+<span id="cb119-3"><a href="ch-testing.html#cb119-3" aria-hidden="true"></a><span class="co"># programs have Dutch labels, TW=Linguistics</span></span>
+<span id="cb119-4"><a href="ch-testing.html#cb119-4" aria-hidden="true"></a><span class="kw">with</span>(gramm2013, score[progr<span class="op">==</span><span class="st">&quot;TW&quot;</span>]) -&gt;<span class="st"> </span>score.ling</span>
+<span id="cb119-5"><a href="ch-testing.html#cb119-5" aria-hidden="true"></a><span class="co"># auxiliary variable</span></span>
+<span id="cb119-6"><a href="ch-testing.html#cb119-6" aria-hidden="true"></a>( <span class="kw">mean</span>(score.ling)<span class="op">-</span><span class="dv">73</span> ) <span class="op">/</span><span class="st"> </span><span class="kw">sd</span>(score.ling) </span></code></pre></div>
 <pre><code>## [1] 1.359783</code></pre>
 <p>The probability of a score larger than the population mean (the test value) <code>73</code> for a random Linguistics
 student (of which we assume that <span class="math inline">\(\mu=84.4\)</span> and <span class="math inline">\(s=8.4\)</span>):</p>
-<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="ch-testing.html#cb120-1" aria-hidden="true"></a><span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">pnorm</span>( <span class="dv">73</span>, <span class="dt">mean=</span><span class="fl">84.4</span>, <span class="dt">sd=</span><span class="fl">8.4</span> ) </span></code></pre></div>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="ch-testing.html#cb121-1" aria-hidden="true"></a><span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">pnorm</span>( <span class="dv">73</span>, <span class="dt">mean=</span><span class="fl">84.4</span>, <span class="dt">sd=</span><span class="fl">8.4</span> ) </span></code></pre></div>
 <pre><code>## [1] 0.9126321</code></pre>
 <p>For unpaired, independent observations, we can calculate the smallest
 significant effect (see also
@@ -1563,7 +1573,7 @@ also used to construct Fig.<a href="ch-testing.html#fig:smallestsignifdifference
 With this function, you have to set the desired <code>power</code> as
 an argument (power = <span class="math inline">\(1-\beta\)</span>; see
 §<a href="ch-power.html#sec:power-introduction">14.1</a>).</p>
-<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="ch-testing.html#cb122-1" aria-hidden="true"></a><span class="kw">power.t.test</span>( <span class="dt">n=</span><span class="dv">122</span>, <span class="dt">sig=</span>.<span class="dv">05</span>, <span class="dt">power=</span>.<span class="dv">90</span>, <span class="dt">type=</span><span class="st">&quot;two.sample&quot;</span> )</span></code></pre></div>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="ch-testing.html#cb123-1" aria-hidden="true"></a><span class="kw">power.t.test</span>( <span class="dt">n=</span><span class="dv">122</span>, <span class="dt">sig=</span>.<span class="dv">05</span>, <span class="dt">power=</span>.<span class="dv">90</span>, <span class="dt">type=</span><span class="st">&quot;two.sample&quot;</span> )</span></code></pre></div>
 <pre><code>## 
 ##      Two-sample t test power calculation 
 ## 
@@ -1579,8 +1589,8 @@ an argument (power = <span class="math inline">\(1-\beta\)</span>; see
 Example 13.3 above.</p>
 <p>For a single sample with two paired observations
 (formula<a href="ch-testing.html#eq:d-paired">(13.12)</a>):</p>
-<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="ch-testing.html#cb124-1" aria-hidden="true"></a>ujedata &lt;-<span class="st"> </span><span class="kw">read.table</span>( <span class="dt">file=</span><span class="st">&quot;data/ujedata.csv&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>, <span class="dt">sep=</span><span class="st">&quot;;&quot;</span> )</span>
-<span id="cb124-2"><a href="ch-testing.html#cb124-2" aria-hidden="true"></a><span class="kw">with</span>( ujedata, <span class="kw">mean</span>(cond.u<span class="op">-</span>cond.je) <span class="op">/</span><span class="st"> </span><span class="kw">sd</span>(cond.u<span class="op">-</span>cond.je) )</span></code></pre></div>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="ch-testing.html#cb125-1" aria-hidden="true"></a>ujedata &lt;-<span class="st"> </span><span class="kw">read.table</span>( <span class="dt">file=</span><span class="st">&quot;data/ujedata.csv&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>, <span class="dt">sep=</span><span class="st">&quot;;&quot;</span> )</span>
+<span id="cb125-2"><a href="ch-testing.html#cb125-2" aria-hidden="true"></a><span class="kw">with</span>( ujedata, <span class="kw">mean</span>(cond.u<span class="op">-</span>cond.je) <span class="op">/</span><span class="st"> </span><span class="kw">sd</span>(cond.u<span class="op">-</span>cond.je) )</span></code></pre></div>
 <pre><code>## [1] -2.130141</code></pre>
 </div>
 <div id="sec:confint-effectsize" class="section level3" number="13.8.5">

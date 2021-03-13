@@ -1106,10 +1106,10 @@ Under “Additional Options”, check <code>Report significance</code>, <code>Fl
 <p>For a reliability analysis of <span class="math inline">\(k=3\)</span> language proficiency
 judgements in Table <a href="ch-reliability.html#tab:reliability">12.1</a>:<br />
 </p>
-<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="ch-reliability.html#cb95-1" aria-hidden="true"></a>raters &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="dt">file=</span><span class="st">&quot;data/beoordelaars.txt&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>)</span>
-<span id="cb95-2"><a href="ch-reliability.html#cb95-2" aria-hidden="true"></a><span class="cf">if</span> (<span class="kw">require</span>(psych)) { <span class="co"># for psych::alpha</span></span>
-<span id="cb95-3"><a href="ch-reliability.html#cb95-3" aria-hidden="true"></a>  <span class="kw">alpha</span>( raters[,<span class="dv">2</span><span class="op">:</span><span class="dv">4</span>] ) <span class="co"># columns 2 to 4</span></span>
-<span id="cb95-4"><a href="ch-reliability.html#cb95-4" aria-hidden="true"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="ch-reliability.html#cb96-1" aria-hidden="true"></a>raters &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="dt">file=</span><span class="st">&quot;data/beoordelaars.txt&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>)</span>
+<span id="cb96-2"><a href="ch-reliability.html#cb96-2" aria-hidden="true"></a><span class="cf">if</span> (<span class="kw">require</span>(psych)) { <span class="co"># for psych::alpha</span></span>
+<span id="cb96-3"><a href="ch-reliability.html#cb96-3" aria-hidden="true"></a>  <span class="kw">alpha</span>( raters[,<span class="dv">2</span><span class="op">:</span><span class="dv">4</span>] ) <span class="co"># columns 2 to 4</span></span>
+<span id="cb96-4"><a href="ch-reliability.html#cb96-4" aria-hidden="true"></a>}</span></code></pre></div>
 <pre><code>## Number of categories should be increased  in order to count frequencies.</code></pre>
 <pre><code>## 
 ## Reliability analysis   
@@ -1139,7 +1139,7 @@ improve (from 0.68 to 0.84). Over all three raters,
 <code>average_r=0.41</code>.</p>
 <p>The output does contain the average inter-item correlation but not the correlations among all the individual items or raters.
 We need to obtain these correlations explicitly (see §<a href="ch-correlation-regression.html#sec:Pearson">11.2</a>):</p>
-<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="ch-reliability.html#cb98-1" aria-hidden="true"></a><span class="kw">cor</span>( raters[ ,<span class="kw">c</span>(<span class="st">&quot;B1&quot;</span>,<span class="st">&quot;B2&quot;</span>,<span class="st">&quot;B3&quot;</span>) ] ) <span class="co"># explicit column names</span></span></code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="ch-reliability.html#cb99-1" aria-hidden="true"></a><span class="kw">cor</span>( raters[ ,<span class="kw">c</span>(<span class="st">&quot;B1&quot;</span>,<span class="st">&quot;B2&quot;</span>,<span class="st">&quot;B3&quot;</span>) ] ) <span class="co"># explicit column names</span></span></code></pre></div>
 <pre><code>##           B1         B2         B3
 ## B1 1.0000000 0.74494845 0.40979738
 ## B2 0.7449484 1.00000000 0.08845909

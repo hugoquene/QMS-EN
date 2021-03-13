@@ -945,12 +945,11 @@ but does have the largest residual. If we discounted this pupil 2 then the
 correlation would be considerably higher
 (<span class="math inline">\(r_{-2}=.86\)</span>) but the slope of the regression line would only
 change a little (<span class="math inline">\(b=0.45\)</span>).</p>
-<p>As such, for a correlation analysis or regression analysis you always have
-to make and study a scatter plot in order to see to what extent the results
-have been influenced by one or a small number of observations. When doing so, pay
-particular attention to observations which are far away from the mean, to each
-of the two variables, and to observations which are far away from
-the regression line.</p>
+<p>For a correlation analysis or regression analysis you always have
+to make and study a scatter plot, in order to see the pattern for yourself (is it linear?) and to inspect whether and to what extent the results
+may have been influenced by one or a few observation(s). Pay
+particular attention to observations which are far away from the mean, for each
+of the two variables, and to observations which are far away from the regression line.</p>
 </div>
 <div id="sec:Spearman" class="section level2" number="11.5">
 <h2><span class="header-section-number">11.5</span> Spearman’s rank correlation coefficient</h2>
@@ -1198,6 +1197,8 @@ where the letters refer to the numbers in the cells of a contingency table
 <p>The dataset <code>cito</code> already contains the variable <code>UrbanRural</code> which indicates the
 origin of the pupils. However, for completeness, we will still show how you can
 construct a variable like this for yourself.</p>
+<div id="construct-new-variable" class="section level4" number="11.6.2.1">
+<h4><span class="header-section-number">11.6.2.1</span> construct new variable</h4>
 <pre><code>Transform &gt; Recode into different variables...</code></pre>
 <p>Choose <code>Pupil</code> as the old variable and fill in as the new name for the new variable
 <code>UrbanRural2</code>. Indicate that the old values in <code>Range</code> from
@@ -1210,6 +1211,9 @@ again in the same way as before, named <code>Arithmetic2</code>.
 All values from the lowest value to the mean (<span class="math inline">\(27.2\)</span>) are transformed to the
 new value 0 for this new variable. All values
 from the mean (<span class="math inline">\(27.2\)</span>) to the highest value are transformed to the new value 1.</p>
+</div>
+<div id="correlation-analysis" class="section level4" number="11.6.2.2">
+<h4><span class="header-section-number">11.6.2.2</span> correlation analysis</h4>
 <p>After this preparatory work, we can finally calculate <span class="math inline">\(r_\Phi\)</span>.</p>
 <pre><code>Analyze &gt; Descriptives &gt; Crosstabs...</code></pre>
 <p>Select the variables <code>UrbanRural2</code> (in the “Rows” panel) and <code>Arithmetic2</code>
@@ -1218,10 +1222,13 @@ contingency table @ref(tab: cito-contingency-table).<br />
 Choose <code>Statistics…</code> and tick the option <code>Phi and Cramer’s V</code>!<br />
 Confirm firstly with <code>Continue</code> and then again with <code>OK</code>.</p>
 </div>
+</div>
 <div id="jasp-9" class="section level3" number="11.6.3">
 <h3><span class="header-section-number">11.6.3</span> JASP</h3>
 <p>The dataset <code>cito</code> already contains a variable <code>UrbanRural</code> which indicates the pupils’ origins.
 However, for completeness, let us still see how you can construct such a variable for yourself.</p>
+<div id="construct-new-variable-1" class="section level4" number="11.6.3.1">
+<h4><span class="header-section-number">11.6.3.1</span> construct new variable</h4>
 <p>First, create a new variable by clicking the <strong>+</strong> button which is to the right of the rightmost column header in the data sheet. A new panel “Create Computed Column” will appear, in which you can enter a name for the new variable, such as <code>UrbanRural2</code>.
 There are two methods to specify the new variable, using <code>R</code> commands or using a hand pointer sign (manual specification). Below we will explain for both options how to specify the new variable. You can also indicate the measurement level of the new variable; in this example we will use <code>Nominal</code>. Finally, click on <code>Create Column</code> to create the new variable, which will appear as a new empty column in the data sheet.</p>
 <p>If you chose the <code>R</code> command method to define a new variable, then a new panel will appear above the data sheet, with the text “#Enter your R code here :)”. You can enter some <code>R</code> commands and use <code>R</code> functions<a href="#fn26" class="footnote-ref" id="fnref26"><sup>26</sup></a> to define the new variable. Enter your <code>R</code> commands and click on <code>Compute column</code> to fill the empty variable with the new values.</p>
@@ -1238,34 +1245,44 @@ The complete expression should read <code>ifElse(Leerling &lt;= 5,1,0)</code>, a
 <p>As explained above for <code>R</code> commands within JASP, the expression built here, containing a <span class="math inline">\(\leq\)</span> or <code>&lt;=</code> operator, will only work in JASP if the variable in the first argument is at the “Scale” level of measurement; otherwise the <code>&lt;=</code> operator is not defined. If the measurement level of the source variable is not set to “Scale”, then you may change this by going to the data sheet, click on the icon that indicates the measurement level, in the column header, and then select “Scale”.</p>
 <p>We repeat the same create-and-define steps as above, now for a new version of the variable <em>Arithmetic</em>: the new variable will be named <code>Arithmetic2</code> and it will be at the <code>Nominal</code> level.</p>
 <p>First we create a new variable by clicking the <strong>+</strong> button to the right of the rightmost column header in the data sheet. A new panel “Create Computed Column” will appear, in which you can enter a name for the new variable, such as <code>UrbanRural2</code>. Click on <code>Create Column</code> to create the new variable, which will appear as a new empty column in the data sheet.</p>
-<p>If you chose the <code>R</code> command method to define this new variable, then you may use this <code>R</code> code: <code>ifelse(Arithmetic &lt; mean(Arithmetic), 0, 1)</code>
-This command means: <em>if</em> the value of the source variable <code>Arithmetic</code> is less than the mean of the same variable <code>Arithmetic</code>, <em>then</em> the new value will be zero (mnemonic code for “low”), and <em>else</em> the new value will be one (code for “high”). In short: if Arithmetic &lt; mean(Arithmetic), then 0, else 1. Enter the <code>R</code> command given above, and click on <code>Compute column</code> to fill the empty variable with the specified (nominal) values.</p>
+<p>If you chose the <code>R</code> command method to define this new variable, then you may use this <code>R</code> code:</p>
+<pre><code>ifelse(Arithmetic &lt; mean(Arithmetic), 0, 1)</code></pre>
+<p>This command means: <em>if</em> the value of the source variable <code>Arithmetic</code> is less than the mean of the same variable <code>Arithmetic</code>, <em>then</em> the new value will be zero (mnemonic code for “low”), and <em>else</em> the new value will be one (code for “high”). In short: if Arithmetic &lt; mean(Arithmetic), then 0, else 1. Enter the <code>R</code> command given above, and click on <code>Compute column</code> to fill the empty variable with the specified (nominal) values.</p>
 <p>If you chose the manual specification method (hand pointer) to define the new variable, then you need to select the function <code>ifElse(y)</code> once more. For “test”, select the <span class="math inline">\(&lt;\)</span> operator from the top, drag the function <code>mean(y)</code> from the righthand menu to the preceding dots, and drag the variable <code>Arithmetic</code> from the lefthand menu to the “values” part of the <code>mean(y)</code> function. For “then” enter <code>0</code> and for “else” enter <code>1</code>. The complete expression should read <code>ifElse(Arithmetic &lt; mean(Arithmetic), 0, 1)</code>, and this expression is equivalent to the <code>R</code> command discussed above.
 After you have built your expression, click on <code>Compute column</code> to fill the empty variable with the new values.</p>
+</div>
+<div id="correlation-analysis-1" class="section level4" number="11.6.3.2">
+<h4><span class="header-section-number">11.6.3.2</span> correlation analysis</h4>
 <p>After all this preparatory work, we can finally calculate <span class="math inline">\(r_\Phi\)</span>. From the top menu bar, choose</p>
 <pre><code>Frequencies &gt; Classical: Contingency Tables</code></pre>
 <p>Select the variables <code>UrbanRural2</code> (for the “Rows” panel) and <code>Arithmetic2</code> (for the “Columns” panel) to obtain the contingency table (see Table <a href="ch-correlation-regression.html#tab:cito-contingency-table">11.3</a>) .
 Open the <code>Statistics</code> menu bar, and under “Nominal” check <code>Phi and Cramer’s V</code>.
 The value of <span class="math inline">\(r_\Phi\)</span> is reported in the output under the heading <strong>Phi coefficient</strong>.</p>
 </div>
+</div>
 <div id="r-9" class="section level3" number="11.6.4">
 <h3><span class="header-section-number">11.6.4</span> R</h3>
 <p>The dataset <code>cito</code> already contains a variable <code>UrbanRural</code> which indicates the pupils’ origins.
 However, for completeness, let us still see how you can construct such a variable for yourself.</p>
-<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="ch-correlation-regression.html#cb84-1" aria-hidden="true"></a>UrbanRural2 &lt;-<span class="st"> </span><span class="kw">ifelse</span>( cito<span class="op">$</span>Pupil<span class="op">&lt;</span><span class="dv">6</span>, <span class="dv">1</span>, <span class="dv">0</span>) <span class="co"># 1=urban, 0=rural</span></span>
-<span id="cb84-2"><a href="ch-correlation-regression.html#cb84-2" aria-hidden="true"></a>Arithmetic2 &lt;-<span class="st"> </span><span class="kw">ifelse</span>( cito<span class="op">$</span>Arithmetic<span class="op">&gt;</span><span class="kw">mean</span>(cito<span class="op">$</span>Arithmetic), <span class="dv">1</span>, <span class="dv">0</span> ) <span class="co"># 1=high, 0=low</span></span></code></pre></div>
+<div id="construct-new-variable-2" class="section level4" number="11.6.4.1">
+<h4><span class="header-section-number">11.6.4.1</span> construct new variable</h4>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="ch-correlation-regression.html#cb85-1" aria-hidden="true"></a>UrbanRural2 &lt;-<span class="st"> </span><span class="kw">ifelse</span>( cito<span class="op">$</span>Pupil<span class="op">&lt;</span><span class="dv">6</span>, <span class="dv">1</span>, <span class="dv">0</span>) <span class="co"># 1=urban, 0=rural</span></span>
+<span id="cb85-2"><a href="ch-correlation-regression.html#cb85-2" aria-hidden="true"></a>Arithmetic2 &lt;-<span class="st"> </span><span class="kw">ifelse</span>( cito<span class="op">$</span>Arithmetic<span class="op">&gt;</span><span class="kw">mean</span>(cito<span class="op">$</span>Arithmetic), <span class="dv">1</span>, <span class="dv">0</span> ) <span class="co"># 1=high, 0=low</span></span></code></pre></div>
 <p>Here we build a new variable <code>Arithmetic2</code>, which has the value <code>1</code> if the score for
 Arithmetic is higher than the average, and otherwise has the value <code>0</code>.</p>
+</div>
+<div id="correlation-analysis-2" class="section level4" number="11.6.4.2">
+<h4><span class="header-section-number">11.6.4.2</span> correlation analysis</h4>
 <p>In R, we also start by making a contingency table (Table <a href="ch-correlation-regression.html#tab:cito-contingency-table">11.3</a>) and we then calculate the <span class="math inline">\(r_\Phi\)</span> over the contingency table.</p>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="ch-correlation-regression.html#cb85-1" aria-hidden="true"></a><span class="kw">print</span>( <span class="kw">table</span>(UrbanRural2,Arithmetic2) -&gt;<span class="st"> </span>citocontingencytable ) </span></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="ch-correlation-regression.html#cb86-1" aria-hidden="true"></a><span class="kw">print</span>( <span class="kw">table</span>(UrbanRural2,Arithmetic2) -&gt;<span class="st"> </span>citocontingencytable ) </span></code></pre></div>
 <pre><code>##            Arithmetic2
 ## UrbanRural2 0 1
 ##           0 5 0
 ##           1 2 3</code></pre>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="ch-correlation-regression.html#cb87-1" aria-hidden="true"></a><span class="co"># make and store a contingency table</span></span>
-<span id="cb87-2"><a href="ch-correlation-regression.html#cb87-2" aria-hidden="true"></a><span class="cf">if</span> (<span class="kw">require</span>(psych)) { <span class="co"># for psych::phi</span></span>
-<span id="cb87-3"><a href="ch-correlation-regression.html#cb87-3" aria-hidden="true"></a>  <span class="kw">phi</span>(citocontingencytable) <span class="co"># contingency table made earlier is input here!</span></span>
-<span id="cb87-4"><a href="ch-correlation-regression.html#cb87-4" aria-hidden="true"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="ch-correlation-regression.html#cb88-1" aria-hidden="true"></a><span class="co"># make and store a contingency table</span></span>
+<span id="cb88-2"><a href="ch-correlation-regression.html#cb88-2" aria-hidden="true"></a><span class="cf">if</span> (<span class="kw">require</span>(psych)) { <span class="co"># for psych::phi</span></span>
+<span id="cb88-3"><a href="ch-correlation-regression.html#cb88-3" aria-hidden="true"></a>  <span class="kw">phi</span>(citocontingencytable) <span class="co"># contingency table made earlier is input here!</span></span>
+<span id="cb88-4"><a href="ch-correlation-regression.html#cb88-4" aria-hidden="true"></a>}</span></code></pre></div>
 <pre><code>## Loading required package: psych</code></pre>
 <pre><code>## 
 ## Attaching package: &#39;psych&#39;</code></pre>
@@ -1273,6 +1290,7 @@ Arithmetic is higher than the average, and otherwise has the value <code>0</code
 ## 
 ##     harmonic.mean, logit</code></pre>
 <pre><code>## [1] 0.65</code></pre>
+</div>
 </div>
 </div>
 <div id="sec:correlationcausation" class="section level2" number="11.7">

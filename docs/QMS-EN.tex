@@ -119,7 +119,7 @@
 
 \title{Quantitative Methods and Statistics}
 \author{true}
-\date{Version compiled 10 Mar 2021}
+\date{Version compiled 13 Mar 2021}
 
 \begin{document}
 \maketitle
@@ -4555,12 +4555,11 @@ correlation would be considerably higher
 (\(r_{-2}=.86\)) but the slope of the regression line would only
 change a little (\(b=0.45\)).
 
-As such, for a correlation analysis or regression analysis you always have
-to make and study a scatter plot in order to see to what extent the results
-have been influenced by one or a small number of observations. When doing so, pay
-particular attention to observations which are far away from the mean, to each
-of the two variables, and to observations which are far away from
-the regression line.
+For a correlation analysis or regression analysis you always have
+to make and study a scatter plot, in order to see the pattern for yourself (is it linear?) and to inspect whether and to what extent the results
+may have been influenced by one or a few observation(s). Pay
+particular attention to observations which are far away from the mean, for each
+of the two variables, and to observations which are far away from the regression line.
 
 \hypertarget{sec:Spearman}{%
 \section{Spearman's rank correlation coefficient}\label{sec:Spearman}}
@@ -4785,6 +4784,9 @@ The dataset \texttt{cito} already contains the variable \texttt{UrbanRural} whic
 origin of the pupils. However, for completeness, we will still show how you can
 construct a variable like this for yourself.
 
+\hypertarget{construct-new-variable}{%
+\subsubsection{construct new variable}\label{construct-new-variable}}
+
 \begin{verbatim}
 Transform > Recode into different variables...
 \end{verbatim}
@@ -4801,6 +4803,9 @@ again in the same way as before, named \texttt{Arithmetic2}.
 All values from the lowest value to the mean (\(27.2\)) are transformed to the
 new value 0 for this new variable. All values
 from the mean (\(27.2\)) to the highest value are transformed to the new value 1.
+
+\hypertarget{correlation-analysis}{%
+\subsubsection{correlation analysis}\label{correlation-analysis}}
 
 After this preparatory work, we can finally calculate \(r_\Phi\).
 
@@ -4819,6 +4824,9 @@ Confirm firstly with \texttt{Continue} and then again with \texttt{OK}.
 
 The dataset \texttt{cito} already contains a variable \texttt{UrbanRural} which indicates the pupils' origins.
 However, for completeness, let us still see how you can construct such a variable for yourself.
+
+\hypertarget{construct-new-variable-1}{%
+\subsubsection{construct new variable}\label{construct-new-variable-1}}
 
 First, create a new variable by clicking the \textbf{+} button which is to the right of the rightmost column header in the data sheet. A new panel ``Create Computed Column'' will appear, in which you can enter a name for the new variable, such as \texttt{UrbanRural2}.
 There are two methods to specify the new variable, using \texttt{R} commands or using a hand pointer sign (manual specification). Below we will explain for both options how to specify the new variable. You can also indicate the measurement level of the new variable; in this example we will use \texttt{Nominal}. Finally, click on \texttt{Create\ Column} to create the new variable, which will appear as a new empty column in the data sheet.
@@ -4848,11 +4856,19 @@ We repeat the same create-and-define steps as above, now for a new version of th
 
 First we create a new variable by clicking the \textbf{+} button to the right of the rightmost column header in the data sheet. A new panel ``Create Computed Column'' will appear, in which you can enter a name for the new variable, such as \texttt{UrbanRural2}. Click on \texttt{Create\ Column} to create the new variable, which will appear as a new empty column in the data sheet.
 
-If you chose the \texttt{R} command method to define this new variable, then you may use this \texttt{R} code: \texttt{ifelse(Arithmetic\ \textless{}\ mean(Arithmetic),\ 0,\ 1)}
+If you chose the \texttt{R} command method to define this new variable, then you may use this \texttt{R} code:
+
+\begin{verbatim}
+ifelse(Arithmetic < mean(Arithmetic), 0, 1)
+\end{verbatim}
+
 This command means: \emph{if} the value of the source variable \texttt{Arithmetic} is less than the mean of the same variable \texttt{Arithmetic}, \emph{then} the new value will be zero (mnemonic code for ``low''), and \emph{else} the new value will be one (code for ``high''). In short: if Arithmetic \textless{} mean(Arithmetic), then 0, else 1. Enter the \texttt{R} command given above, and click on \texttt{Compute\ column} to fill the empty variable with the specified (nominal) values.
 
 If you chose the manual specification method (hand pointer) to define the new variable, then you need to select the function \texttt{ifElse(y)} once more. For ``test'', select the \(<\) operator from the top, drag the function \texttt{mean(y)} from the righthand menu to the preceding dots, and drag the variable \texttt{Arithmetic} from the lefthand menu to the ``values'' part of the \texttt{mean(y)} function. For ``then'' enter \texttt{0} and for ``else'' enter \texttt{1}. The complete expression should read \texttt{ifElse(Arithmetic\ \textless{}\ mean(Arithmetic),\ 0,\ 1)}, and this expression is equivalent to the \texttt{R} command discussed above.
 After you have built your expression, click on \texttt{Compute\ column} to fill the empty variable with the new values.
+
+\hypertarget{correlation-analysis-1}{%
+\subsubsection{correlation analysis}\label{correlation-analysis-1}}
 
 After all this preparatory work, we can finally calculate \(r_\Phi\). From the top menu bar, choose
 
@@ -4870,6 +4886,9 @@ The value of \(r_\Phi\) is reported in the output under the heading \textbf{Phi 
 The dataset \texttt{cito} already contains a variable \texttt{UrbanRural} which indicates the pupils' origins.
 However, for completeness, let us still see how you can construct such a variable for yourself.
 
+\hypertarget{construct-new-variable-2}{%
+\subsubsection{construct new variable}\label{construct-new-variable-2}}
+
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{UrbanRural2 \textless{}{-}}\StringTok{ }\KeywordTok{ifelse}\NormalTok{( cito}\OperatorTok{$}\NormalTok{Pupil}\OperatorTok{\textless{}}\DecValTok{6}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{) }\CommentTok{\# 1=urban, 0=rural}
@@ -4879,6 +4898,9 @@ However, for completeness, let us still see how you can construct such a variabl
 
 Here we build a new variable \texttt{Arithmetic2}, which has the value \texttt{1} if the score for
 Arithmetic is higher than the average, and otherwise has the value \texttt{0}.
+
+\hypertarget{correlation-analysis-2}{%
+\subsubsection{correlation analysis}\label{correlation-analysis-2}}
 
 In R, we also start by making a contingency table (Table \ref{tab:cito-contingency-table}) and we then calculate the \(r_\Phi\) over the contingency table.
 
@@ -6259,7 +6281,7 @@ which must be satisfied in order to use the test.
   The more the two samples differ in size, the more
   serious the violation of this latter assumption is. It is thus prudent
   to work with samples that are of (approximately) the same size, and preferably not too small! If the samples are equally large, then the violation of this assumption of equal
-  variances is not so serious.
+  variances is not so serious (see §\ref{sec:ttest-formulas} directly below).
 \end{itemize}
 
 \hypertarget{sec:ttest-formulas}{%
@@ -6270,10 +6292,10 @@ which must be satisfied in order to use the test.
 
 To calculate the test statistic \(t\), various formulas are used.
 
-If the samples have about equal variance, then we firstly use
-the ``pooled standard deviation'' \(s_p\) as an intermediate step. In this, both
+If the samples have approximately \textbf{equal variances}, then we firstly compute
+the ``pooled standard deviation'' \(s_p\) as an intermediate step. For this, the two
 standard deviations from the two samples are weighted according
-to their sample size.
+to their sample sizes.
 \begin{equation}
     s_p = \sqrt{ \frac{(n_1-1) s^2_1 + (n_2-1) s^2_2} {n_1+n_2-2} }
     \label{eq:sd-pooled}
@@ -6284,8 +6306,8 @@ Then
   t = \frac{ \overline{x_1}-\overline{x_2} } { s_p \sqrt{\frac{1}{n_1}+\frac{1}{n_2}} }
 \end{equation}
 
-If the samples do \emph{not} have equal variance, and the fourth assumed
-sample above is thus violated, then Welch's t-test is
+If the samples do have \textbf{unequal variances}, and the fourth assumed
+sample above is thus violated, then Welch's version of the t-test is
 used:
 \begin{equation}
   \label{eq:sd-WS}
@@ -6370,10 +6392,17 @@ and report \(t(38)=-3.765, p=.001\).
 \hypertarget{sec:JASP-ttest-unpaired}{%
 \subsection{JASP}\label{sec:JASP-ttest-unpaired}}
 
-Here, the second example above is worked out: the tempo (speech rate) of speakers from the West and North of the Netherlands is to be compared.\\
+Here, the second example above is worked out: the tempo (speech rate) of speakers from the West and North of the Netherlands is to be compared.
+
+\hypertarget{preparation}{%
+\subsubsection{preparation}\label{preparation}}
+
 To this end, only observations from the Northern and Western speakers are to be used. This may be achieved by navigating to the data sheet, and click on the column header of the variable \emph{region}. This will open a working panel, in which you can select and unselect \texttt{Values} (i.e.~regions) of the nominal variable \emph{region}. The column ``Filter'' normally has all values checked, which means that all observations are included. Uncheck the values to be excluded, i.e.~\emph{S}outh and \emph{M}id, so that the check marks are crossed out, and the corresponding observations in the data sheet are greyed out. Only leave check marks at the \emph{N}orth and \emph{W}est values.
 
 Note: do not forget to remove the filter and include all regions for later analyses.
+
+\hypertarget{t-test}{%
+\subsubsection{\texorpdfstring{\emph{t} test}{t test}}\label{t-test}}
 
 After filtering the observations, choose from the top menu bar:
 
@@ -6382,15 +6411,24 @@ T-Tests > Classical: Independent Samples T-Test
 \end{verbatim}
 
 In the field ``Variables'', select the variable \emph{syldur} to be tested.
-In the field ``Grouping Variable'', select the independent variable \emph{region}. (If the independent variable has more than two groups, JASP will report an error. To avoid this problem, we have filtered the independent variable, so that only two groups remain.)\\
+In the field ``Grouping Variable'', select the independent variable \emph{region}. (If the independent variable has more than two groups, JASP will report an error. To avoid this problem, we have filtered the independent variable, so that only two groups remain.)
 
 Under ``Tests'', check \texttt{Student} (for Student's \(t\) test statistic). Under ``Alt. Hypothesis'', select the first option (groups are not the same) for a two-sided \(t\) test.
-Under ``Additional Statistics'', you may check \texttt{Descriptives} and \texttt{Descriptive\ Plots} to learn more about the dependent variable. Also check the option \texttt{Effect\ size} (see §\ref{sec:ttest-effectsize} below).\\
-Under the heading ``Assumption checks'', finally, check the options \texttt{Normality} (see §\ref{sec:isvarnormaldistributed}) and \texttt{Equality\ of\ variances} (see §\ref{sec:ttest-unpaired-assumptions}).
+Under ``Additional Statistics'', you may check \texttt{Descriptives} and \texttt{Descriptive\ Plots} to learn more about the dependent variable. Also check the option \texttt{Effect\ size} (see §\ref{sec:ttest-effectsize} below).
+
+Under the heading ``Assumption checks'', check the options \texttt{Normality} (see
+§\ref{sec:ttest-unpaired-assumptions}, third assumption, see also\\
+§\ref{sec:isvarnormaldistributed}) and \texttt{Equality\ of\ variances} too (see §\ref{sec:ttest-unpaired-assumptions}, fourth assumption).
 
 The output reports the two-sided \(t\) test for two independent samples, including its effect size.
+
 The table titled \textbf{Assumption Checks} reports the Shapiro-Wilk test of normality in both groups.\\
-The table titled \textbf{Test of Equality of Variances} reports Levene's test, which tests whether the two variances are equal (H0: \(s^2_1 = s^2_2\)). If this test reports a low value of \(F\) and a high value of \(p\) then H0 is not rejected, and the assumption of equal variances does not need to be rejected. If Levene's test reports a high value of \(F\) and a low value of \(p\), however, then you should reject H0, and the assumption of equal variances should hence be rejected. In this example, we do not reject the assumption of equal variances.\\
+The table titled \textbf{Test of Equality of Variances} reports Levene's test, which tests whether the two variances are equal (H0: \(s^2_1 = s^2_2\)).
+If this test reports a low value of \(F\) and a high value of \(p\) then H0 is not rejected, and the assumption of equal variances does not need to be rejected. You may assume that the two variances are indeed approximately equal. Use and report the \emph{Student} version of the \(t\) test (as chosen under the ``Tests'' menu bar).
+If Levene's test reports a high value of \(F\) and a low value of \(p\), however, then you should reject H0, and you may not assume that the two variances are equal. Under the ``Tests'' menu bar, you should then select the \emph{Welch} option, and you should use and report the \emph{Welch} version of the \(t\) test.
+
+In this example, the tests for normality and for equal variances do not show significant results. This means that the third and fourth assumptions mentioned above are appropriate; hence we use and report the Student \(t\) test: \(t(38)=3.76, p<.001, d=1.2\).
+
 If checked in the input, descriptive statistics and summary plots are also reported. This provides insights into how the scores from the two groups differ.
 
 \hypertarget{sec:R-ttest-unpaired}{%
@@ -7875,8 +7913,8 @@ Post-hoc comparisons using Tukey's HSD test show that the grey and blue groups d
 \hypertarget{spss-12}{%
 \subsection{SPSS}\label{spss-12}}
 
-\hypertarget{preparation}{%
-\subsubsection{preparation}\label{preparation}}
+\hypertarget{preparation-1}{%
+\subsubsection{preparation}\label{preparation-1}}
 
 We will use the data in the file \texttt{data/kleurgroepen.txt}; these data are also shown in Figure \ref{fig:colours-obs}.
 Read first the required data, and check this:
@@ -8001,8 +8039,8 @@ grey and blue groups do not differ.
 \hypertarget{jasp-13}{%
 \subsection{JASP}\label{jasp-13}}
 
-\hypertarget{preparation-1}{%
-\subsubsection{preparation}\label{preparation-1}}
+\hypertarget{preparation-2}{%
+\subsubsection{preparation}\label{preparation-2}}
 
 We will use the data in the file \texttt{data/kleurgroepen.txt}; these data are also shown in Figure \ref{fig:colours-obs}.
 First read the required data, and check this.
@@ -8062,8 +8100,8 @@ The output of the \emph{Post Hoc Tests} shows for each pairwise comparison the d
 \hypertarget{r-14}{%
 \subsection{R}\label{r-14}}
 
-\hypertarget{preparation-2}{%
-\subsubsection{preparation}\label{preparation-2}}
+\hypertarget{preparation-3}{%
+\subsubsection{preparation}\label{preparation-3}}
 
 We will use the data in the file \texttt{data/kleurgroepen.txt}; these data are also shown in Figure \ref{fig:colours-obs}. First read the data, and check this:
 
@@ -8363,8 +8401,8 @@ within & 71 & 0.0484 & 0.0007 & &\tabularnewline
 \hypertarget{spss-13}{%
 \subsection{SPSS}\label{spss-13}}
 
-\hypertarget{preparation-3}{%
-\subsubsection{Preparation}\label{preparation-3}}
+\hypertarget{preparation-4}{%
+\subsubsection{Preparation}\label{preparation-4}}
 
 One speaker has a very long average syllable duration; we will ignore this
 observation from now on.
@@ -8393,8 +8431,8 @@ with \texttt{OK}.
 \hypertarget{jasp-14}{%
 \subsection{JASP}\label{jasp-14}}
 
-\hypertarget{preparation-4}{%
-\subsubsection{preparation}\label{preparation-4}}
+\hypertarget{preparation-5}{%
+\subsubsection{preparation}\label{preparation-5}}
 
 One speaker has a very long average syllable duration; we will ignore this observation from now on. We do so by setting a filter which excludes this particular observation. Go to the data sheet, and click on the funnel or filter symbol in the top left cell. A working panel will appear in which you can specify the selection.
 Select the variable \emph{syldur} from the lefthand menu, so that it moves to the working panel. Then click on the symbol \texttt{\textless{}} from the top menu of operators, and place the cursor to the right of the \texttt{\textless{}} symbol on the working panel, and then type \texttt{0.4}. The complete condition on the working panel should now be \texttt{syldur\ \textless{}\ 0.4}.
@@ -8443,8 +8481,8 @@ The output of the \emph{Post Hoc Tests} shows for each pairwise comparison the d
 \hypertarget{r-15}{%
 \subsection{R}\label{r-15}}
 
-\hypertarget{preparation-5}{%
-\subsubsection{preparation}\label{preparation-5}}
+\hypertarget{preparation-6}{%
+\subsubsection{preparation}\label{preparation-6}}
 
 \begin{Shaded}
 \begin{Highlighting}[]

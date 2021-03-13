@@ -1179,7 +1179,7 @@ Post-hoc comparisons using Tukey’s HSD test show that the grey and blue groups
 </div>
 <div id="spss-12" class="section level3" number="15.3.6">
 <h3><span class="header-section-number">15.3.6</span> SPSS</h3>
-<div id="preparation" class="section level4" number="15.3.6.1">
+<div id="preparation-1" class="section level4" number="15.3.6.1">
 <h4><span class="header-section-number">15.3.6.1</span> preparation</h4>
 <p>We will use the data in the file <code>data/kleurgroepen.txt</code>; these data are also shown in Figure <a href="ch-anova.html#fig:colours-obs">15.2</a>.
 Read first the required data, and check this:</p>
@@ -1285,7 +1285,7 @@ grey and blue groups do not differ.</p>
 </div>
 <div id="jasp-13" class="section level3" number="15.3.7">
 <h3><span class="header-section-number">15.3.7</span> JASP</h3>
-<div id="preparation-1" class="section level4" number="15.3.7.1">
+<div id="preparation-2" class="section level4" number="15.3.7.1">
 <h4><span class="header-section-number">15.3.7.1</span> preparation</h4>
 <p>We will use the data in the file <code>data/kleurgroepen.txt</code>; these data are also shown in Figure <a href="ch-anova.html#fig:colours-obs">15.2</a>.
 First read the required data, and check this.</p>
@@ -1329,12 +1329,12 @@ Under “Correction” check the option <code>Tukey</code>, and under “Display
 </div>
 <div id="r-14" class="section level3" number="15.3.8">
 <h3><span class="header-section-number">15.3.8</span> R</h3>
-<div id="preparation-2" class="section level4" number="15.3.8.1">
+<div id="preparation-3" class="section level4" number="15.3.8.1">
 <h4><span class="header-section-number">15.3.8.1</span> preparation</h4>
 <p>We will use the data in the file <code>data/kleurgroepen.txt</code>; these data are also shown in Figure <a href="ch-anova.html#fig:colours-obs">15.2</a>. First read the data, and check this:</p>
-<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="ch-anova.html#cb130-1" aria-hidden="true"></a><span class="co"># same data as used in Fig.15.2</span></span>
-<span id="cb130-2"><a href="ch-anova.html#cb130-2" aria-hidden="true"></a>colourgroups &lt;-<span class="st"> </span><span class="kw">read.table</span>( <span class="st">&quot;data/kleurgroepen.txt&quot;</span>, </span>
-<span id="cb130-3"><a href="ch-anova.html#cb130-3" aria-hidden="true"></a>                            <span class="dt">header=</span><span class="ot">TRUE</span>, <span class="dt">stringsAsFactors=</span><span class="ot">TRUE</span> )</span></code></pre></div>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="ch-anova.html#cb131-1" aria-hidden="true"></a><span class="co"># same data as used in Fig.15.2</span></span>
+<span id="cb131-2"><a href="ch-anova.html#cb131-2" aria-hidden="true"></a>colourgroups &lt;-<span class="st"> </span><span class="kw">read.table</span>( <span class="st">&quot;data/kleurgroepen.txt&quot;</span>, </span>
+<span id="cb131-3"><a href="ch-anova.html#cb131-3" aria-hidden="true"></a>                            <span class="dt">header=</span><span class="ot">TRUE</span>, <span class="dt">stringsAsFactors=</span><span class="ot">TRUE</span> )</span></code></pre></div>
 <p>Examine whether the responses are normally distributed within each group, using
 the techniques from Part II of this textbook (especially
 §<a href="ch-probability-distributions.html#sec:isvarnormaldistributed">10.4</a>).</p>
@@ -1342,7 +1342,7 @@ the techniques from Part II of this textbook (especially
 for analysis of variance. The H0 which we are testing is:
 <span class="math inline">\(s^2_\textrm{red} = s^2_\textrm{grey} = s^2_\textrm{blue}\)</span>. We
 test this H0 using Bartlett’s test.</p>
-<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="ch-anova.html#cb131-1" aria-hidden="true"></a><span class="kw">bartlett.test</span>( <span class="dt">x=</span>colourgroups<span class="op">$</span>score, <span class="dt">g=</span>colourgroups<span class="op">$</span>kleur )</span></code></pre></div>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="ch-anova.html#cb132-1" aria-hidden="true"></a><span class="kw">bartlett.test</span>( <span class="dt">x=</span>colourgroups<span class="op">$</span>score, <span class="dt">g=</span>colourgroups<span class="op">$</span>kleur )</span></code></pre></div>
 <pre><code>## 
 ##  Bartlett test of homogeneity of variances
 ## 
@@ -1351,7 +1351,7 @@ test this H0 using Bartlett’s test.</p>
 </div>
 <div id="anova-2" class="section level4" number="15.3.8.2">
 <h4><span class="header-section-number">15.3.8.2</span> ANOVA</h4>
-<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="ch-anova.html#cb133-1" aria-hidden="true"></a><span class="kw">summary</span>( <span class="kw">aov</span>( score<span class="op">~</span>kleur, <span class="dt">data=</span>colourgroups) -&gt;<span class="st"> </span>m01 ) <span class="co"># see Table 15.3</span></span></code></pre></div>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="ch-anova.html#cb134-1" aria-hidden="true"></a><span class="kw">summary</span>( <span class="kw">aov</span>( score<span class="op">~</span>kleur, <span class="dt">data=</span>colourgroups) -&gt;<span class="st"> </span>m01 ) <span class="co"># see Table 15.3</span></span></code></pre></div>
 <pre><code>##             Df Sum Sq Mean Sq F value   Pr(&gt;F)    
 ## kleur        2  14.50   7.248   9.356 0.000436 ***
 ## Residuals   42  32.54   0.775                     
@@ -1360,16 +1360,16 @@ test this H0 using Bartlett’s test.</p>
 </div>
 <div id="R:omega-square" class="section level4" number="15.3.8.3">
 <h4><span class="header-section-number">15.3.8.3</span> effect size</h4>
-<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="ch-anova.html#cb135-1" aria-hidden="true"></a><span class="co"># own function to calculate omega2, see comparison (15.7) in the main text,</span></span>
-<span id="cb135-2"><a href="ch-anova.html#cb135-2" aria-hidden="true"></a><span class="co"># for effect called `term` in summary(`model`)</span></span>
-<span id="cb135-3"><a href="ch-anova.html#cb135-3" aria-hidden="true"></a>omegasq &lt;-<span class="st"> </span><span class="cf">function</span> ( model, term ) {   </span>
-<span id="cb135-4"><a href="ch-anova.html#cb135-4" aria-hidden="true"></a>     mtab &lt;-<span class="st"> </span><span class="kw">anova</span>(model)</span>
-<span id="cb135-5"><a href="ch-anova.html#cb135-5" aria-hidden="true"></a>     rterm &lt;-<span class="st"> </span><span class="kw">dim</span>(mtab)[<span class="dv">1</span>] <span class="co"># resid term</span></span>
-<span id="cb135-6"><a href="ch-anova.html#cb135-6" aria-hidden="true"></a>     <span class="kw">return</span>( (mtab[term,<span class="dv">2</span>]<span class="op">-</span>mtab[term,<span class="dv">1</span>]<span class="op">*</span>mtab[rterm,<span class="dv">3</span>]) <span class="op">/</span><span class="st"> </span></span>
-<span id="cb135-7"><a href="ch-anova.html#cb135-7" aria-hidden="true"></a><span class="st">             </span>(mtab[rterm,<span class="dv">3</span>]<span class="op">+</span><span class="kw">sum</span>(mtab[,<span class="dv">2</span>])) )</span>
-<span id="cb135-8"><a href="ch-anova.html#cb135-8" aria-hidden="true"></a>}</span>
-<span id="cb135-9"><a href="ch-anova.html#cb135-9" aria-hidden="true"></a><span class="co"># variable kleur=colour is the term to inspect</span></span>
-<span id="cb135-10"><a href="ch-anova.html#cb135-10" aria-hidden="true"></a><span class="kw">omegasq</span>( m01, <span class="st">&quot;kleur&quot;</span> ) <span class="co"># call function with 2 arguments</span></span></code></pre></div>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="ch-anova.html#cb136-1" aria-hidden="true"></a><span class="co"># own function to calculate omega2, see comparison (15.7) in the main text,</span></span>
+<span id="cb136-2"><a href="ch-anova.html#cb136-2" aria-hidden="true"></a><span class="co"># for effect called `term` in summary(`model`)</span></span>
+<span id="cb136-3"><a href="ch-anova.html#cb136-3" aria-hidden="true"></a>omegasq &lt;-<span class="st"> </span><span class="cf">function</span> ( model, term ) {   </span>
+<span id="cb136-4"><a href="ch-anova.html#cb136-4" aria-hidden="true"></a>     mtab &lt;-<span class="st"> </span><span class="kw">anova</span>(model)</span>
+<span id="cb136-5"><a href="ch-anova.html#cb136-5" aria-hidden="true"></a>     rterm &lt;-<span class="st"> </span><span class="kw">dim</span>(mtab)[<span class="dv">1</span>] <span class="co"># resid term</span></span>
+<span id="cb136-6"><a href="ch-anova.html#cb136-6" aria-hidden="true"></a>     <span class="kw">return</span>( (mtab[term,<span class="dv">2</span>]<span class="op">-</span>mtab[term,<span class="dv">1</span>]<span class="op">*</span>mtab[rterm,<span class="dv">3</span>]) <span class="op">/</span><span class="st"> </span></span>
+<span id="cb136-7"><a href="ch-anova.html#cb136-7" aria-hidden="true"></a><span class="st">             </span>(mtab[rterm,<span class="dv">3</span>]<span class="op">+</span><span class="kw">sum</span>(mtab[,<span class="dv">2</span>])) )</span>
+<span id="cb136-8"><a href="ch-anova.html#cb136-8" aria-hidden="true"></a>}</span>
+<span id="cb136-9"><a href="ch-anova.html#cb136-9" aria-hidden="true"></a><span class="co"># variable kleur=colour is the term to inspect</span></span>
+<span id="cb136-10"><a href="ch-anova.html#cb136-10" aria-hidden="true"></a><span class="kw">omegasq</span>( m01, <span class="st">&quot;kleur&quot;</span> ) <span class="co"># call function with 2 arguments</span></span></code></pre></div>
 <pre><code>## [1] 0.2708136</code></pre>
 </div>
 <div id="planned-comparison-2" class="section level4" number="15.3.8.4">
@@ -1377,19 +1377,19 @@ test this H0 using Bartlett’s test.</p>
 <p>When specifying the contrasts, we have to take into account the
 <em>alphabetic</em> ordering of the conditions: <em>blue, grey, red</em>.
 (Note that the predictor itself is named <em>kleur</em> which is the Dutch term for colour of the group).</p>
-<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="ch-anova.html#cb137-1" aria-hidden="true"></a><span class="co"># make matrix of two orthogonal contrasts (per column, not per row) </span></span>
-<span id="cb137-2"><a href="ch-anova.html#cb137-2" aria-hidden="true"></a>conmat &lt;-<span class="st"> </span><span class="kw">matrix</span>( <span class="kw">c</span>(.<span class="dv">5</span>,.<span class="dv">5</span>,<span class="op">-</span><span class="dv">1</span>, <span class="op">+</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">0</span>), <span class="dt">byrow=</span>F, <span class="dt">nrow=</span><span class="dv">3</span> )</span>
-<span id="cb137-3"><a href="ch-anova.html#cb137-3" aria-hidden="true"></a><span class="kw">dimnames</span>(conmat)[[<span class="dv">2</span>]] &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;.R.GB&quot;</span>,<span class="st">&quot;.0G.B&quot;</span>) <span class="co"># (1) R vs G+B, (2) G vs B </span></span>
-<span id="cb137-4"><a href="ch-anova.html#cb137-4" aria-hidden="true"></a><span class="kw">contrasts</span>(colourgroups<span class="op">$</span>kleur) &lt;-<span class="st"> </span>conmat <span class="co"># assign contrasts to factor</span></span>
-<span id="cb137-5"><a href="ch-anova.html#cb137-5" aria-hidden="true"></a><span class="kw">summary</span>( <span class="kw">aov</span>( score<span class="op">~</span>kleur, <span class="dt">data=</span>colourgroups) -&gt;<span class="st"> </span>m02 ) </span></code></pre></div>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="ch-anova.html#cb138-1" aria-hidden="true"></a><span class="co"># make matrix of two orthogonal contrasts (per column, not per row) </span></span>
+<span id="cb138-2"><a href="ch-anova.html#cb138-2" aria-hidden="true"></a>conmat &lt;-<span class="st"> </span><span class="kw">matrix</span>( <span class="kw">c</span>(.<span class="dv">5</span>,.<span class="dv">5</span>,<span class="op">-</span><span class="dv">1</span>, <span class="op">+</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">0</span>), <span class="dt">byrow=</span>F, <span class="dt">nrow=</span><span class="dv">3</span> )</span>
+<span id="cb138-3"><a href="ch-anova.html#cb138-3" aria-hidden="true"></a><span class="kw">dimnames</span>(conmat)[[<span class="dv">2</span>]] &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;.R.GB&quot;</span>,<span class="st">&quot;.0G.B&quot;</span>) <span class="co"># (1) R vs G+B, (2) G vs B </span></span>
+<span id="cb138-4"><a href="ch-anova.html#cb138-4" aria-hidden="true"></a><span class="kw">contrasts</span>(colourgroups<span class="op">$</span>kleur) &lt;-<span class="st"> </span>conmat <span class="co"># assign contrasts to factor</span></span>
+<span id="cb138-5"><a href="ch-anova.html#cb138-5" aria-hidden="true"></a><span class="kw">summary</span>( <span class="kw">aov</span>( score<span class="op">~</span>kleur, <span class="dt">data=</span>colourgroups) -&gt;<span class="st"> </span>m02 ) </span></code></pre></div>
 <pre><code>##             Df Sum Sq Mean Sq F value   Pr(&gt;F)    
 ## kleur        2  14.50   7.248   9.356 0.000436 ***
 ## Residuals   42  32.54   0.775                     
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="ch-anova.html#cb139-1" aria-hidden="true"></a><span class="co"># output is necessary for omega2</span></span>
-<span id="cb139-2"><a href="ch-anova.html#cb139-2" aria-hidden="true"></a><span class="co"># see https://blogs.uoregon.edu/rclub/2015/11/03/anova-contrasts-in-r/</span></span>
-<span id="cb139-3"><a href="ch-anova.html#cb139-3" aria-hidden="true"></a><span class="kw">summary.aov</span>( m02, <span class="dt">split=</span><span class="kw">list</span>(<span class="dt">kleur=</span><span class="kw">list</span>(<span class="dv">1</span>,<span class="dv">2</span>)) )</span></code></pre></div>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="ch-anova.html#cb140-1" aria-hidden="true"></a><span class="co"># output is necessary for omega2</span></span>
+<span id="cb140-2"><a href="ch-anova.html#cb140-2" aria-hidden="true"></a><span class="co"># see https://blogs.uoregon.edu/rclub/2015/11/03/anova-contrasts-in-r/</span></span>
+<span id="cb140-3"><a href="ch-anova.html#cb140-3" aria-hidden="true"></a><span class="kw">summary.aov</span>( m02, <span class="dt">split=</span><span class="kw">list</span>(<span class="dt">kleur=</span><span class="kw">list</span>(<span class="dv">1</span>,<span class="dv">2</span>)) )</span></code></pre></div>
 <pre><code>##             Df Sum Sq Mean Sq F value   Pr(&gt;F)    
 ## kleur        2  14.50   7.248   9.356 0.000436 ***
 ##   kleur: C1  1  14.31  14.308  18.470 0.000100 ***
@@ -1398,14 +1398,14 @@ test this H0 using Bartlett’s test.</p>
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p>When we have planned contrasts, the previously constructed function <code>omegasq</code> can no longer be used (and neither can the previously provided formula). We now have to calculate the <span class="math inline">\(\omega^2\)</span> by hand using the output from the summary of model <code>m02</code>:</p>
-<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="ch-anova.html#cb141-1" aria-hidden="true"></a>(<span class="fl">14.308</span><span class="dv">-1</span><span class="op">*</span><span class="fl">0.775</span>)<span class="op">/</span>(<span class="fl">0.775+14.308+0.19+32.54</span>) <span class="co"># 0.2830402</span></span></code></pre></div>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="ch-anova.html#cb142-1" aria-hidden="true"></a>(<span class="fl">14.308</span><span class="dv">-1</span><span class="op">*</span><span class="fl">0.775</span>)<span class="op">/</span>(<span class="fl">0.775+14.308+0.19+32.54</span>) <span class="co"># 0.2830402</span></span></code></pre></div>
 <pre><code>## [1] 0.2830402</code></pre>
-<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="ch-anova.html#cb143-1" aria-hidden="true"></a>(<span class="fl">0.188</span><span class="dv">-1</span><span class="op">*</span><span class="fl">0.775</span>)<span class="op">/</span>(<span class="fl">0.775+14.308+0.19+32.54</span>) <span class="co"># rounded off 0.00</span></span></code></pre></div>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="ch-anova.html#cb144-1" aria-hidden="true"></a>(<span class="fl">0.188</span><span class="dv">-1</span><span class="op">*</span><span class="fl">0.775</span>)<span class="op">/</span>(<span class="fl">0.775+14.308+0.19+32.54</span>) <span class="co"># rounded off 0.00</span></span></code></pre></div>
 <pre><code>## [1] -0.012277</code></pre>
 </div>
 <div id="r-post-hoc-comparisons" class="section level4" number="15.3.8.5">
 <h4><span class="header-section-number">15.3.8.5</span> post hoc comparisons</h4>
-<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="ch-anova.html#cb145-1" aria-hidden="true"></a><span class="kw">TukeyHSD</span>(m02)</span></code></pre></div>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="ch-anova.html#cb146-1" aria-hidden="true"></a><span class="kw">TukeyHSD</span>(m02)</span></code></pre></div>
 <pre><code>##   Tukey multiple comparisons of means
 ##     95% family-wise confidence level
 ## 
@@ -1571,7 +1571,7 @@ tempos in Table <a href="ch-anova.html#tab:sylduration2way">15.2</a>.</caption>
 </div>
 <div id="spss-13" class="section level3" number="15.4.3">
 <h3><span class="header-section-number">15.4.3</span> SPSS</h3>
-<div id="preparation-3" class="section level4" number="15.4.3.1">
+<div id="preparation-4" class="section level4" number="15.4.3.1">
 <h4><span class="header-section-number">15.4.3.1</span> Preparation</h4>
 <p>One speaker has a very long average syllable duration; we will ignore this
 observation from now on.</p>
@@ -1592,7 +1592,7 @@ with <code>OK</code>.</p>
 </div>
 <div id="jasp-14" class="section level3" number="15.4.4">
 <h3><span class="header-section-number">15.4.4</span> JASP</h3>
-<div id="preparation-4" class="section level4" number="15.4.4.1">
+<div id="preparation-5" class="section level4" number="15.4.4.1">
 <h4><span class="header-section-number">15.4.4.1</span> preparation</h4>
 <p>One speaker has a very long average syllable duration; we will ignore this observation from now on. We do so by setting a filter which excludes this particular observation. Go to the data sheet, and click on the funnel or filter symbol in the top left cell. A working panel will appear in which you can specify the selection.
 Select the variable <em>syldur</em> from the lefthand menu, so that it moves to the working panel. Then click on the symbol <code>&lt;</code> from the top menu of operators, and place the cursor to the right of the <code>&lt;</code> symbol on the working panel, and then type <code>0.4</code>. The complete condition on the working panel should now be <code>syldur &lt; 0.4</code>.
@@ -1629,13 +1629,13 @@ Under “Correction” check the option <code>Tukey</code>, and under “Display
 </div>
 <div id="r-15" class="section level3" number="15.4.5">
 <h3><span class="header-section-number">15.4.5</span> R</h3>
-<div id="preparation-5" class="section level4" number="15.4.5.1">
+<div id="preparation-6" class="section level4" number="15.4.5.1">
 <h4><span class="header-section-number">15.4.5.1</span> preparation</h4>
-<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="ch-anova.html#cb150-1" aria-hidden="true"></a><span class="kw">require</span>(hqmisc) <span class="co"># for hqmisc::talkers data set</span></span>
-<span id="cb150-2"><a href="ch-anova.html#cb150-2" aria-hidden="true"></a><span class="kw">data</span>(talkers)</span>
-<span id="cb150-3"><a href="ch-anova.html#cb150-3" aria-hidden="true"></a>ok &lt;-<span class="st"> </span>talkers<span class="op">$</span>syldur<span class="op">&lt;</span><span class="fl">0.4</span> <span class="co"># TRUE for 79 of 80 talkers</span></span>
-<span id="cb150-4"><a href="ch-anova.html#cb150-4" aria-hidden="true"></a><span class="co"># table of means, see Table 15.2 in main text</span></span>
-<span id="cb150-5"><a href="ch-anova.html#cb150-5" aria-hidden="true"></a><span class="kw">with</span>(talkers, <span class="kw">tapply</span>( syldur[ok], <span class="kw">list</span>(region[ok],sex[ok]), mean ))</span></code></pre></div>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="ch-anova.html#cb151-1" aria-hidden="true"></a><span class="kw">require</span>(hqmisc) <span class="co"># for hqmisc::talkers data set</span></span>
+<span id="cb151-2"><a href="ch-anova.html#cb151-2" aria-hidden="true"></a><span class="kw">data</span>(talkers)</span>
+<span id="cb151-3"><a href="ch-anova.html#cb151-3" aria-hidden="true"></a>ok &lt;-<span class="st"> </span>talkers<span class="op">$</span>syldur<span class="op">&lt;</span><span class="fl">0.4</span> <span class="co"># TRUE for 79 of 80 talkers</span></span>
+<span id="cb151-4"><a href="ch-anova.html#cb151-4" aria-hidden="true"></a><span class="co"># table of means, see Table 15.2 in main text</span></span>
+<span id="cb151-5"><a href="ch-anova.html#cb151-5" aria-hidden="true"></a><span class="kw">with</span>(talkers, <span class="kw">tapply</span>( syldur[ok], <span class="kw">list</span>(region[ok],sex[ok]), mean ))</span></code></pre></div>
 <pre><code>##           0       1
 ## M 0.2707400 0.23460
 ## N 0.2846000 0.25282
@@ -1644,8 +1644,8 @@ Under “Correction” check the option <code>Tukey</code>, and under “Display
 </div>
 <div id="anova-4" class="section level4" number="15.4.5.2">
 <h4><span class="header-section-number">15.4.5.2</span> ANOVA</h4>
-<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="ch-anova.html#cb152-1" aria-hidden="true"></a><span class="co"># approximately similar to Table 15.5 in main text, but R uses Type I SS</span></span>
-<span id="cb152-2"><a href="ch-anova.html#cb152-2" aria-hidden="true"></a><span class="kw">summary</span>( <span class="kw">aov</span>(syldur<span class="op">~</span>region<span class="op">*</span>sex, <span class="dt">data=</span>talkers, <span class="dt">subset=</span>ok) -&gt;<span class="st"> </span>m03 )</span></code></pre></div>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="ch-anova.html#cb153-1" aria-hidden="true"></a><span class="co"># approximately similar to Table 15.5 in main text, but R uses Type I SS</span></span>
+<span id="cb153-2"><a href="ch-anova.html#cb153-2" aria-hidden="true"></a><span class="kw">summary</span>( <span class="kw">aov</span>(syldur<span class="op">~</span>region<span class="op">*</span>sex, <span class="dt">data=</span>talkers, <span class="dt">subset=</span>ok) -&gt;<span class="st"> </span>m03 )</span></code></pre></div>
 <pre><code>##             Df  Sum Sq  Mean Sq F value   Pr(&gt;F)    
 ## region       3 0.01234 0.004114   6.039 0.001009 ** 
 ## sex          1 0.01031 0.010310  15.135 0.000223 ***
@@ -1659,17 +1659,17 @@ Under “Correction” check the option <code>Tukey</code>, and under “Display
 <h4><span class="header-section-number">15.4.5.3</span> Effect size</h4>
 <p>In order to assess effect size, we will use the previously programmed function <code>omegasq</code>
 (§<a href="ch-anova.html#R:omega-square">15.3.8.3</a>):</p>
-<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="ch-anova.html#cb154-1" aria-hidden="true"></a><span class="kw">omegasq</span>(m03, <span class="st">&quot;region&quot;</span>)      <span class="co"># [1] 0.1380875</span></span></code></pre></div>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="ch-anova.html#cb155-1" aria-hidden="true"></a><span class="kw">omegasq</span>(m03, <span class="st">&quot;region&quot;</span>)      <span class="co"># [1] 0.1380875</span></span></code></pre></div>
 <pre><code>## [1] 0.1380875</code></pre>
-<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="ch-anova.html#cb156-1" aria-hidden="true"></a><span class="kw">omegasq</span>(m03, <span class="st">&quot;sex&quot;</span>)         <span class="co"># [1] 0.1291232</span></span></code></pre></div>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="ch-anova.html#cb157-1" aria-hidden="true"></a><span class="kw">omegasq</span>(m03, <span class="st">&quot;sex&quot;</span>)         <span class="co"># [1] 0.1291232</span></span></code></pre></div>
 <pre><code>## [1] 0.1291232</code></pre>
-<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="ch-anova.html#cb158-1" aria-hidden="true"></a><span class="kw">omegasq</span>(m03, <span class="st">&quot;region:sex&quot;</span>)  <span class="co"># [1] 0.01112131</span></span></code></pre></div>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="ch-anova.html#cb159-1" aria-hidden="true"></a><span class="kw">omegasq</span>(m03, <span class="st">&quot;region:sex&quot;</span>)  <span class="co"># [1] 0.01112131</span></span></code></pre></div>
 <pre><code>## [1] 0.01112131</code></pre>
 <p>These results too differ slighly from those reported in the main text above, because R computes the sums of squares somewhat differently.</p>
 </div>
 <div id="post-hoc-tests" class="section level4" number="15.4.5.4">
 <h4><span class="header-section-number">15.4.5.4</span> post-hoc tests</h4>
-<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="ch-anova.html#cb160-1" aria-hidden="true"></a><span class="kw">TukeyHSD</span>(<span class="dt">x=</span>m03, <span class="dt">which=</span><span class="st">&quot;region&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="ch-anova.html#cb161-1" aria-hidden="true"></a><span class="kw">TukeyHSD</span>(<span class="dt">x=</span>m03, <span class="dt">which=</span><span class="st">&quot;region&quot;</span>)</span></code></pre></div>
 <pre><code>## Warning in replications(paste(&quot;~&quot;, xx), data = mf): non-factors ignored: sex</code></pre>
 <pre><code>## Warning in replications(paste(&quot;~&quot;, xx), data = mf): non-factors ignored: region,
 ## sex</code></pre>

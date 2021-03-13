@@ -805,7 +805,7 @@ Choose <code>Statistics…</code> and tick the option <code>Chi-square</code>. C
 <h2><span class="header-section-number">16.8</span> R</h2>
 <div id="goodness-of-fit-testing-1" class="section level3" number="16.8.1">
 <h3><span class="header-section-number">16.8.1</span> goodness of fit: testing</h3>
-<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="ch-chi-square-tests.html#cb170-1" aria-hidden="true"></a><span class="kw">chisq.test</span>( <span class="kw">c</span>( <span class="dv">14</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">1</span> ) ) <span class="co"># die §16.1</span></span></code></pre></div>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="ch-chi-square-tests.html#cb171-1" aria-hidden="true"></a><span class="kw">chisq.test</span>( <span class="kw">c</span>( <span class="dv">14</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">1</span> ) ) <span class="co"># die §16.1</span></span></code></pre></div>
 <pre><code>## 
 ##  Chi-squared test for given probabilities
 ## 
@@ -817,9 +817,9 @@ Choose <code>Statistics…</code> and tick the option <code>Chi-square</code>. C
 <p>In R, the dataset <code>Titanic</code> is provided as a multidimensional matrix. We sum
 the observations and make a contingency table of the first dimension (class) and
 the fourth dimension (outcome).</p>
-<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="ch-chi-square-tests.html#cb172-1" aria-hidden="true"></a><span class="kw">apply</span>( Titanic, <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">4</span>), sum ) -&gt;<span class="st"> </span>Titanic.classoutcome</span></code></pre></div>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="ch-chi-square-tests.html#cb173-1" aria-hidden="true"></a><span class="kw">apply</span>( Titanic, <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">4</span>), sum ) -&gt;<span class="st"> </span>Titanic.classoutcome</span></code></pre></div>
 <p>Next, we use the contingency table as the input for a <code>chisq.test</code>.</p>
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="ch-chi-square-tests.html#cb173-1" aria-hidden="true"></a><span class="kw">chisq.test</span>( Titanic.classoutcome )  <span class="co"># p&lt;.0001</span></span></code></pre></div>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="ch-chi-square-tests.html#cb174-1" aria-hidden="true"></a><span class="kw">chisq.test</span>( Titanic.classoutcome )  <span class="co"># p&lt;.0001</span></span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s Chi-squared test
 ## 

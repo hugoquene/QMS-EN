@@ -542,7 +542,7 @@ of 18-month old Swedish girls and boys [@Ande11]. We investigate the hypothesis
 that the vocabulary of girls differs from that of boys, i.e. 
 H1: $\mu_{girls} \ne \mu_{boys}$.
 We cannot a priori assume that a potential difference can only go in one direction;
-we thus use a two-sided test, as already appears to be the case from H1. 
+we thus use a two-sided test, as is already evident from H1. 
 The corresponding null hypothesis which we test is H0: $\mu_{girls} = \mu_{boys}$.
 In this study, the vocabulary is estimated on the basis of questionnaires 
 from the parents of the children in the sample. Participants were
@@ -672,10 +672,10 @@ For the second example above, the approximation of formula
 \@ref(eq:df-WS) gives
 an estimation of $37.99 \approx 38$ d.f. The conservative lower limit is
 $n_1-1 = n_2-1 = 19$. The liberal upper limit is $n_1+n_2 -2 = 38$. 
-(In the table with critical values $t*$, in
-Appendix \@ref(app:criticaltvalues), it is usually advisable to use the row 
-with the first-following smaller value for the number of
-degrees of freedom; hence for this example you would look up $t*$ critical values in the row with $30$ d.f.)
+(When using the table with critical values $t*$, in
+Appendix \@ref(app:criticaltvalues), it is usually advisable to use the table row 
+with the rounded *down* degrees of freedom, i.e. first-following *smaller* d.f.; 
+hence for this example you would use $t*$ critical values in the row with $30$ d.f.)
 
 ### SPSS {#sec:SPSS-ttest-unpaired}
 

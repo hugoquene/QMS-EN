@@ -339,16 +339,3 @@ app:randomnumbers
 app:criticalZvalues
 app:criticaltvalues
 app:criticalchi2values
-eq:t-onesampleCI
-eq:sd-pooled
-eq:t-homoskedastic
-eq:sd-WS
-eq:t-WS
-eq:df-WS
-eq:Rose08
-eq:d-standardized
-eq:d-onesample
-eq:d-homoskedastic
-eq:d-paired
-eq:d-paired-CI
-r-17

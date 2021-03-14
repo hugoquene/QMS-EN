@@ -119,7 +119,7 @@
 
 \title{Quantitative Methods and Statistics}
 \author{true}
-\date{Version compiled 13 Mar 2021}
+\date{Version compiled 14 Mar 2021}
 
 \begin{document}
 \maketitle
@@ -6202,10 +6202,10 @@ for the chosen significance level \(\alpha\).
 As a first example, we will take a study of the productive vocabulary size
 of 18-month old Swedish girls and boys \citep{Ande11}. We investigate the hypothesis
 that the vocabulary of girls differs from that of boys, i.e.~
-H1: \(\mu_m \ne \mu_j\).
+H1: \(\mu_{girls} \ne \mu_{boys}\).
 We cannot a priori assume that a potential difference can only go in one direction;
-we thus use a two-sided test, as already appears to be the case from H1.
-The corresponding null hypothesis which we test is H0: \(\mu_m = \mu_j\).
+we thus use a two-sided test, as is already evident from H1.
+The corresponding null hypothesis which we test is H0: \(\mu_{girls} = \mu_{boys}\).
 In this study, the vocabulary is estimated on the basis of questionnaires
 from the parents of the children in the sample. Participants were
 (parents of) \(n_1=123\) girls and \(n_2=129\) boys, who were all 18 months
@@ -6337,17 +6337,17 @@ According to this approximation, the number of degrees of freedom has as its lib
 upper limit \((n_1+n_2-2)\), and as its conservative lower limit the smallest
 of \((n_1-1)\) or \((n_2-1)\). You can thus always use this conservative
 lower limit. If the two groups have around the same variance
-(i.e.~\(s_1 \approx s_2\)), then you can also use the liberal lower
+(i.e.~\(s_1 \approx s_2\)), then you can also use the liberal upper
 limit.
 
 For the second example above, the approximation of formula
 \eqref{eq:df-WS} gives
 an estimation of \(37.99 \approx 38\) d.f. The conservative lower limit is
-\(n_1-1 = n_2-1 = 19\). The liberal lower limit is \(n_1+n_2 -2 = 38\). (In
-the table with critical values \(t*\), in
-Appendix \ref{app:criticaltvalues}, it is usually advisable to use the row
-with the first-following smaller value for the number of
-degrees of freedom.)
+\(n_1-1 = n_2-1 = 19\). The liberal upper limit is \(n_1+n_2 -2 = 38\).
+(When using the table with critical values \(t*\), in
+Appendix \ref{app:criticaltvalues}, it is usually advisable to use the table row
+with the rounded \emph{down} degrees of freedom, i.e.~first-following \emph{smaller} d.f.;
+hence for this example you would use \(t*\) critical values in the row with \(30\) d.f.)
 
 \hypertarget{sec:SPSS-ttest-unpaired}{%
 \subsection{SPSS}\label{sec:SPSS-ttest-unpaired}}

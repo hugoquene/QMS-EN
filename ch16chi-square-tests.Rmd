@@ -3,29 +3,28 @@
 ## Introduction {#sec:ch16introduction}
 
 Earlier, we already saw that we cannot always make use of a 
-parametric test like the *t*-test or analysis of variance, because
-the collected data does not satisfy the assumptions. If the collected data 
-has been measured on an interval level of measurement (see Chapter 
+parametric test such as the *t* test or analysis of variance, because
+the collected data do not satisfy the assumptions. If the collected data 
+have been measured on an interval level of measurement (see Chapter 
 \@ref(ch:levelsofmeasurement)), or if the probability distribution
 of the data is far from normal (see
-§\@ref(sec:whatifnotnormal)), then a non-parametric test should be 
+§\@ref(sec:whatifnotnormal)), then a non-parametric test is to be 
 preferred over such a parametric test. If the collected data
-does satisfy the assumptions for a parametric test, then a non-parametric
+do satisfy the assumptions for a parametric test, then a non-parametric
 test is less sensitive (more conservative) than a parametric test, i.e. the 
 non-parametric test requires a larger effect and/or a larger sample, and generally
 has less power than a parametric test when seeking out an effect
 (see Chapter \@ref(ch:power)).
 
 In this Chapter, we discuss the most used non-parametric
-test: the so-called $\chi^2$-test, pronounced as "chi-square-test" (with the greek letter "chi"). 
+test: the so-called $\chi^2$ test, pronounced as "chi-square-test" (with the greek letter "chi"). 
 
-
-## $\chi^2$-test for "goodness of fit" in single sample {#sec:chi2gof}
+## $\chi^2$ test for "goodness of fit" in single sample {#sec:chi2gof}
 
 Data of nominal level of measurement are often analysed with the 
-$\chi^2$-test. The number of dots on a dice
+$\chi^2$ test. The number of dots on a dice
 is an example of a dependent variable of nominal level of measurement:
-there is no ordering between the six sides, and each side of a die has
+there is no physical ordering between the six sides, and each side of a die has
 an equally high probability of appearing on the top. Imagine we throw
 a die $60\times$, and find the following frequencies
 of the six possible outcomes: $14, 9, 11, 10, 15, 1$. This can be 
@@ -35,47 +34,45 @@ be seen as a contingency table of 1 row and 6
 columns (i.e. 6 cells). How high is the probability of this distribution
 of outcomes? Is the die indeed honest?
 
-The $\chi^2$-test is based on the differences between the expected
-and observed frequencies. According to the null hypothesis (the die is honest),
+The $\chi^2$ test is based on the differences between the expected
+and observed frequencies. According to the null hypothesis (H0: the die is honest),
 we expect 10 outcomes in each cell ($60/6=10$), i.e. the 
 expected frequency is identical for each cell (this is called
 a *uniform* distribution).
 The observed outcomes deviate from the expected frequencies of outcomes, 
 in particular because the outcome "six" barely occurs in this sample. This
-might of course also be chance. The $\chi^2$-test indicates how high the probability
-is of this "skewed" distribution of outcomes (or an even more skewed distribution),
+might of course also have happened by chance. The $\chi^2$ test indicates how high the probability is of this uneven distribution of outcomes (or an even more uneven distribution),
 if H0 is true.
 The expected outcomes are thus deduced from a distribution of the outcomes
 according to H0, and we investigate how well the observed outcomes 
-fit the expected outcomes. This form of the $\chi^2$-test is thus also 
+fit the expected outcomes. This form of the $\chi^2$ test is thus also 
 referred to as a test of the 'goodness of fit'.
 
 For this example, we find the outcome of the testing $\chi^2=12.44$
 with 5 degrees of freedom (see
 §\@ref(sec:ttest-freedomdegrees) for explanation about
-degrees of freedom), with $p=.0297$. We usually get the computer to 
+degrees of freedom), with $p=.0297$. We usually use the computer to 
 calculate this probability value, but we can also estimate this probability
 via a table with critical
 $\chi^2$-values, see Appendix \@ref(app:criticalchi2values), and footnote
 [^fn16-1]). 
 If H0 is true, then we have only 3% probability
-of finding this outcome (or an even extremer distribution of outcomes).
+of finding this outcome (or an even more uneven distribution of outcomes).
 The significance $p$ found is smaller than $\alpha=.05$, and we thus
 reject H0. We conclude that this die is not honest: the distribution
 of outcomes found deviates significantly from the expected
 distribution according to H0. 
 
-## $\chi^2$-test for homogeneity of a variable in multiple samples
+## $\chi^2$ test for homogeneity of a variable in multiple samples
 
-The $\chi^2$-test can also be used for a research design with *one* nominal
+The $\chi^2$ test can also be used for a research design with *one* nominal
 variable which we have observed in two or more samples. The
 question is then whether the distribution of the observations over the
 categories is equal for the different samples. This test is comparable with
-*t*-tests for two independent samples
+*t* tests for two independent samples
 (§\@ref(sec:ttest-indep)). We usually then summarise the numbers of observations
 with a contingency table with multiple rows for the different samples,
-and multiple columns for the categories of the 
-nominal dependent variable (see also
+and multiple columns for the categories of the nominal dependent variable (see also
 Table \@ref(tab:cito-contingency-table)).
 
 The $\chi^2$-test is again based on the differences between the expected and
@@ -84,9 +81,9 @@ in distribution between the two samples), the distribution of observations
 across the columns should be approximately equal for all rows 
 (and vice versa).
 
-## $\chi^2$-test for association between two variables in single sample
+## $\chi^2$ test for association between two variables in single sample
 
-Finally, the $\chi^2$-test can equally well be used for a research design
+Finally, the $\chi^2$ test can equally well be used for a research design
 with *two* nominal variables, which we have observed in a single 
 sample. The question then is whether the distribution of observations
 over the second variable's categories is equal for the different
@@ -128,16 +125,15 @@ and status (survived or not). Data taken from the dataset
 the different numbers of those on board in the different classes,
 and the unequal distribution of outcomes (1490 non-survivors and 711 
 survivors). If there were no association between the class and the survival
-status, we would expect there to be 22 non-survivors amongst the first class
-passengers [$(1490/2201) \times 325 = (325 \times 1490) / 2201$ = 220] 
-and 105 non-survivors [$(711/2201) \times 325 = (325 \times 711) / 2201$ =
-105]. In this way, we can determine the expected frequencies for each cell,
+status, we would expect there to be 220 non-survivors amongst the first class
+passengers $[(1490/2201) \times 325 = (325 \times 1490) / 2201 = 220]$ 
+and 105 non-survivors $[(711/2201) \times 325 = (325 \times 711) / 2201 =
+105]$. In this way, we can determine the expected frequencies for each cell,
 taking into account the marginal totals. With the help of these 
 expected frequencies, we then calculate $\chi^2=190.4$, here with 3 d.f.,
 $p<.001$. The significance $p$ found is smaller than $\alpha=.001$, and
-we thus reject H0. We conclude that the outcome of the ship disaster
-((non-)survivors) was *unevenly* distributed for the four classes of those
-on board the *Titanic*.
+we thus reject H0. We conclude that the outcome of the disaster (died or survived)
+was *unevenly* distributed for the four classes of those on board the *Titanic*.
 
 ---
 
@@ -300,6 +296,78 @@ Select the variables `class` (in "Rows" panel) and `survivor` (in
 contingency table \@ref(tab:titanic).\
 Choose `Statistics…` and tick the option `Chi-square`. Confirm firstly with
 `Continue` and afterwards again with `OK`.
+
+## JASP
+
+### goodness of fit: preparation
+
+The nominal data to investigate are typically coded as a "long" column in the data file. Each observation typically forms a separate row in the data file, and the nominal independent variable is a column in the data file. However, for the "goodness of fit" $\chi^2$ test in JASP, the data have to be entered not in this "long" fashion (with $N$ rows), but in the form of a summary of numbers of observations (counts, frequency) per category of the nominal variable (with $k$ rows, one row for each of $k$ categories). 
+
+For the example in §\@ref(sec:chi2gof) these summary data would look like this:
+```
+outcome count
+ 1        14
+ 2         9
+ 3        11
+ 4        10
+ 5        15
+ 6         1
+```
+In order to enter these data in JASP, create a data file (using e.g. Excel or any text editor) with the contents as listed above, including the column headers. Save the file in CSV format (`.csv`, not `.xlsx`) and open it in JASP. 
+
+### goodness of fit: testing
+
+In the top menu bar, choose
+```
+Frequencies > Classical: Multinomial Test
+```
+Select the variable containing the categories of the nominal variable, here `outcome`, and place it in the entry field "Factor". 
+Select the variable containing the counts (frequencies) of each category, and place it in the entry field "Count". 
+
+Under "Test Values" there are two options. \
+If you choose `Equal proportions (multinomial test)`, a special version of the $\chi^2$ test will be performed, testing for a uniform distribution (as explained above, this means that the expected frequency is equal for each outcome category). In this example, this H0 implies that the die is honest, which is exactly what we want to test here.\
+If you choose `Expected proportions (chi-square test)`, you may adjust the expected frequencies in each cell. Use this option if your H0 postulates a non-uniform (e.g. gaussian) distribution. A table will appear, in which you must enter the expected frequencies according to *H0* for each category or cell. By default, the values in this table are all equal, so that the default is equivalent to the "equal proportions" or uniform H0 in the first option. 
+
+You may also check `Descriptives` and `Confidence interval` under the heading "Additional Statistics", and check `Descriptives plot` under "Plots", so as to gain better insight in the patterns in your data. 
+
+### contingency tables: preparation
+
+The nominal data to investigate are typically coded as two or more "long" columns in the data file. Each observation (e.g. each person on the Titanic, in Example 16.1) corresponds with a separate row in the data file, and the nominal variables are in columns in the data file (e.g. `class` and `outcome`). We can use such a "long" data file for creating a contingency table in JASP, and for performing a $\chi^2$ test on that contingency table --- see the end of the next subsection for further instructions. 
+
+However, for performing a $\chi^2$ test on a contingency table in JASP, the data do not necessarily have to be entered in this "long" fashion (with $N$ rows); the data may also be in the form of a summary of numbers of observations (counts, frequency) per category of the nominal variable (with $k$ rows, one row for each of $k$ cells or combinations of categories). 
+
+For example 16.1, the data would then look as follows:
+```
+class   outcome    count
+1st     died       122
+1st     survived   203
+2nd     died       167
+2nd     survived   118
+3rd     died       528
+3rd     survived   178
+crew    died       673
+crew    survived   212
+```
+In order to enter these data in JASP, create a data file (using e.g. Excel or any text editor) with the contents as listed above, including the column headers. Save the file in CSV format (`.csv`, not `.xlsx`) and open it in JASP. 
+
+### contingency tables: testing
+
+The $\chi^2$ test on a contingency table proceeds in the same way as described in 
+§\@ref(sec:Phi) for association between two nominal variables. 
+
+In the top menu bar, choose:
+```
+Frequencies > Classical: Contingency Tables
+```
+Select one nominal variable (`class`) in the "Rows" field, and the other nominal variable (`outcome`) in the "Columns" field, to set up the contingency table (Table \@ref(tab:titanic)). 
+Select the variable `count` into the "Counts" field; this specifies the numbers of observations for each cell.\
+Open the `Statistics` section bar, and check the option `Chi-square` ($\chi^2$). 
+
+The resulting value of the $\chi^2$ test statistic is reported in the output under **Chi-Squared Tests**. 
+
+If you have a "long" data sheet, with one observation per row, then you only need to select one nominal variable (`class`) in the "Rows" field, and the other nominal variable (`outcome`) in the "Columns" field, to set up the contingency table (Table \@ref(tab:titanic)).\
+Open the `Statistics` section bar, and check the option `Chi-square` ($\chi^2$). 
+
 
 ## R
 

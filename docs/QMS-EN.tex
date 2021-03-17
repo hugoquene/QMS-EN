@@ -119,7 +119,7 @@
 
 \title{Quantitative Methods and Statistics}
 \author{true}
-\date{Version compiled 14 Mar 2021}
+\date{Version compiled 17 Mar 2021}
 
 \begin{document}
 \maketitle
@@ -5693,30 +5693,29 @@ We already discussed the general principle of testing briefly in
 §\ref{sec:falsification} and §\ref{sec:empiricalcycle}.
 We will illustrate this again here
 with an example. We investigate the statement H1:\\
-`Linguistics students master traditional
-grammar \emph{better} than the average language student'. As a measurement instrument,
-we use the so-called ``grammar test''\footnote{We would like to thank Els Rose for making these data available.} which is required for most students
-in language programs at Utrecht University. On the basis of previous year groups,
+`Linguistics students master traditional grammar \emph{better} than the average language student'. As a measurement instrument, we use the so-called ``grammar test''\footnote{We would like to thank Els Rose for making these data available.} which is compulsory
+for most students
+in language programs at Utrecht University. On the basis of previous cohorts (year groups),
 we expect a mean score of 73 on this test; this is the mean number of good answers
 from 100 questions. We thus operationalise this first as \(\mu > 73\), and from this deduce
 the accompanying null hypothesis which is actually tested:
 \(\mu = 73\).
 (In §\ref{sec:ttest-onesidedtwosided} below, we will go into more detail
-about whether or not to name the \emph{direction} of the difference in H1).
+about whether or not to specify the \emph{direction} of the difference in H1).
 
-For the first year Linguistics students (\(n=34\)) from a certain year group,
-we find an average score of 84.4. That is indeed far above the reference value\\
-of 73 but that might also be a coincidence.
-Perhaps, H0 is true, and, wholly by chance, there are many grammar experts
+For the first year Linguistics students (\(n=34\)) from a certain cohort,
+we find an average score of 84.4. That is indeed far above the reference value
+of 73 --- but that might also be a coincidence.
+Perhaps, H0 is true, and, by chance, there happen to be many grammar experts
 in our sample (from the population of possible first year students
-in Linguistics). We can calculate the probability \(P\) of the situation
+in Linguistics). We can calculate the probability \(P\) of this situation,
 i.e.~the probability \(P\) of finding a mean score of \(\overline{x}=84.4\),
 given a random sample of \(n=34\) people and given that
-H0 is in fact true (i.e.~\(\mu=73\)): then it appears that
+H0 is in fact true (i.e.~\(\mu=73\)): this probability
 \(P=.000000001913\). This probability \(P\) represents the probability of finding this
 data, whilst H0 is true:
-\(P(\overline{x}=84.4|\textrm{H0},n=34)\). In this case, the probability \(P\)
-is very small.
+\(P(\overline{x}=84.4|\textrm{H0},n=34)\).
+In this example, the probability \(P\) is very small.
 
 For the argumentation, it is essential that the data are valid and
 reliable --- this is precisely the reason why we discussed validity
@@ -5725,7 +5724,7 @@ reliable --- this is precisely the reason why we discussed validity
 we can, after all, trust the data obtained.
 We are then \emph{not} reasonably able to attribute the low probability of the data according
 to H0 to errors in operationalisation, or measurement errors, or other deviations in the data.
-The logical conclusion then is that the improbable outcome shows that the
+The logical conclusion then must be that the improbable outcome shows that the
 premise (H0) is probably \emph{not} true: we reject H0; H0 has thus been
 falsified. Thereby, our knowledge has increased because we can now
 assume on legitimate grounds that H0 is untrue (and thus that H1
@@ -5736,7 +5735,7 @@ based on probability, then we do have to take into account the small
 probability \(P\) that rejecting H0 is an unjustified decision (Type I error; see
 §\ref{sec:empiricalcycle}). After all, there is the probability \(P\) that
 we find these data when H0 is in fact true (in this example: when the linguists
-on average do not score differently than \(\mu=73\)).
+on average do not score better than \(\mu=73\)).
 
 \begin{figure}
 \centering
@@ -5765,15 +5764,14 @@ The decision about whether or not to reject H0 is based on the probability
 \(P\) of the outcomes, given H0. The decision might also be
 incorrect. The finding that \(P < \alpha\) is thus not an
 \emph{irrefutable} proof that H0 is untrue (and \emph{has to} be
-rejected); it is also true that H0 is in fact true but that the
-effect found was a fluke (Type 1 error). Conversely, the finding
+rejected); it could also be that H0 is in fact true but that the
+effect found was a fluke (Type I error). Conversely, the finding
 that \(P > \alpha\) is not conclusive evidence that H0 is true. There can
 be all kinds of other, plausible reasons why an effect which exists (H0 is untrue)
 can still not be observed. If I do not hear any birds singing, that does not necessarily
 mean that there are genuinely no birds singing. More generally: ``absence of evidence is not
-evidence of absence'' (; ). It is thus good to always report the size
-of the effect found (this is explained in more detail in
-§@ref(\#sec:ttest-effectsize) below).
+evidence of absence'' \citetext{\citealp[p.121]{Sagan96}; \citealp{Alde04}}. It is therefore recommended to always report the size of the effect found; this is explained in more detail in
+§\ref{sec:ttest-effectsize} below.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -5838,13 +5836,12 @@ the same line, we see that the stated \(t^*\) increases further.\\
 Our established test statistic \(t\) is even larger than \(t^*=3.385\) in the last column.
 The p-value is thus even smaller than \(p=.001\) from the title of that last
 column. (The statistical analysis program usually also calculates the p-value.)
-We report
-the result as follows:
+We report the result as follows:
 
 \begin{quote}
-The mean score of Linguistics students (class of 2013) is
+The mean score of Linguistics students (cohort 2013) is
 84.4 (\(s=8.4\)); this is significantly better than the assumed
-population mean of 73 (\(t(33)=7.9, p<.001\)).
+population mean of 73 \([t(33)=7.9, p<.001]\).
 \end{quote}
 
 \hypertarget{sec:ttest-freedomdegrees}{%
@@ -6307,7 +6304,7 @@ Then
 \end{equation}
 
 If the samples do have \textbf{unequal variances}, and the fourth assumed
-sample above is thus violated, then Welch's version of the t-test is
+sample above is thus violated, then Welch's version of the \(t\) test is
 used:
 \begin{equation}
   \label{eq:sd-WS}
@@ -6322,9 +6319,7 @@ Then
 \hypertarget{freedomdegrees}{%
 \subsubsection{degrees of freedom}\label{freedomdegrees}}
 
-The t-test is usually conducted by a computer program. There,
-the following approximation of degrees of freedom is usually used
-(\(\nu\), see §\ref{sec:ttest-freedomdegrees}).
+The \(t\) test is usually conducted by a computer program, which typically uses the following approximation of degrees of freedom (symbol \(\nu\), Greek ``nu'', see §\ref{sec:ttest-freedomdegrees}).
 Firstly, \(g_1=s^2_1/n_1\)
 and \(g_2=s^2_2/n_2\) are calculated. The number of degrees of freedom of \(t\) is then
 \begin{equation}
@@ -6344,10 +6339,12 @@ For the second example above, the approximation of formula
 \eqref{eq:df-WS} gives
 an estimation of \(37.99 \approx 38\) d.f. The conservative lower limit is
 \(n_1-1 = n_2-1 = 19\). The liberal upper limit is \(n_1+n_2 -2 = 38\).
-(When using the table with critical values \(t*\), in
+
+When using the table with critical values \(t*\), in
 Appendix \ref{app:criticaltvalues}, it is usually advisable to use the table row
-with the rounded \emph{down} degrees of freedom, i.e.~first-following \emph{smaller} d.f.;
-hence for this example you would use \(t*\) critical values in the row with \(30\) d.f.)
+with the rounded \emph{down} degrees of freedom, i.e.~first-following \emph{smaller} d.f..
+Hence, for this example, you would use \(t*\) critical values in the row with \(30\) d.f.
+(see also §\ref{sec:ttest-onesample} above).
 
 \hypertarget{sec:SPSS-ttest-unpaired}{%
 \subsection{SPSS}\label{sec:SPSS-ttest-unpaired}}
@@ -8605,29 +8602,29 @@ These results too differ slighly from those reported in the main text above, bec
 \section{Introduction}\label{sec:ch16introduction}}
 
 Earlier, we already saw that we cannot always make use of a
-parametric test like the \emph{t}-test or analysis of variance, because
-the collected data does not satisfy the assumptions. If the collected data
-has been measured on an interval level of measurement (see Chapter
+parametric test such as the \emph{t} test or analysis of variance, because
+the collected data do not satisfy the assumptions. If the collected data
+have been measured on an interval level of measurement (see Chapter
 \ref{ch:levelsofmeasurement}), or if the probability distribution
 of the data is far from normal (see
-§\ref{sec:whatifnotnormal}), then a non-parametric test should be
+§\ref{sec:whatifnotnormal}), then a non-parametric test is to be
 preferred over such a parametric test. If the collected data
-does satisfy the assumptions for a parametric test, then a non-parametric
+do satisfy the assumptions for a parametric test, then a non-parametric
 test is less sensitive (more conservative) than a parametric test, i.e.~the
 non-parametric test requires a larger effect and/or a larger sample, and generally
 has less power than a parametric test when seeking out an effect
 (see Chapter \ref{ch:power}).
 
 In this Chapter, we discuss the most used non-parametric
-test: the so-called \(\chi^2\)-test, pronounced as ``chi-square-test'' (with the greek letter ``chi'').
+test: the so-called \(\chi^2\) test, pronounced as ``chi-square-test'' (with the greek letter ``chi'').
 
 \hypertarget{sec:chi2gof}{%
-\section{\texorpdfstring{\(\chi^2\)-test for ``goodness of fit'' in single sample}{\textbackslash chi\^{}2-test for ``goodness of fit'' in single sample}}\label{sec:chi2gof}}
+\section{\texorpdfstring{\(\chi^2\) test for ``goodness of fit'' in single sample}{\textbackslash chi\^{}2 test for ``goodness of fit'' in single sample}}\label{sec:chi2gof}}
 
 Data of nominal level of measurement are often analysed with the
-\(\chi^2\)-test. The number of dots on a dice
+\(\chi^2\) test. The number of dots on a dice
 is an example of a dependent variable of nominal level of measurement:
-there is no ordering between the six sides, and each side of a die has
+there is no physical ordering between the six sides, and each side of a die has
 an equally high probability of appearing on the top. Imagine we throw
 a die \(60\times\), and find the following frequencies
 of the six possible outcomes: \(14, 9, 11, 10, 15, 1\). This can be
@@ -8637,25 +8634,24 @@ be seen as a contingency table of 1 row and 6
 columns (i.e.~6 cells). How high is the probability of this distribution
 of outcomes? Is the die indeed honest?
 
-The \(\chi^2\)-test is based on the differences between the expected
-and observed frequencies. According to the null hypothesis (the die is honest),
+The \(\chi^2\) test is based on the differences between the expected
+and observed frequencies. According to the null hypothesis (H0: the die is honest),
 we expect 10 outcomes in each cell (\(60/6=10\)), i.e.~the
 expected frequency is identical for each cell (this is called
 a \emph{uniform} distribution).
 The observed outcomes deviate from the expected frequencies of outcomes,
 in particular because the outcome ``six'' barely occurs in this sample. This
-might of course also be chance. The \(\chi^2\)-test indicates how high the probability
-is of this ``skewed'' distribution of outcomes (or an even more skewed distribution),
+might of course also have happened by chance. The \(\chi^2\) test indicates how high the probability is of this uneven distribution of outcomes (or an even more uneven distribution),
 if H0 is true.
 The expected outcomes are thus deduced from a distribution of the outcomes
 according to H0, and we investigate how well the observed outcomes
-fit the expected outcomes. This form of the \(\chi^2\)-test is thus also
+fit the expected outcomes. This form of the \(\chi^2\) test is thus also
 referred to as a test of the `goodness of fit'.
 
 For this example, we find the outcome of the testing \(\chi^2=12.44\)
 with 5 degrees of freedom (see
 §\ref{sec:ttest-freedomdegrees} for explanation about
-degrees of freedom), with \(p=.0297\). We usually get the computer to
+degrees of freedom), with \(p=.0297\). We usually use the computer to
 calculate this probability value, but we can also estimate this probability
 via a table with critical
 \(\chi^2\)-values, see Appendix \ref{app:criticalchi2values}, and footnote
@@ -8663,24 +8659,23 @@ via a table with critical
   5 d.f. and \(p=.025\), (there \((\chi^2)^*=12.83\)), thus the corresponding probability
   of this value or a larger value is slightly greater than \(0.025\).}).
 If H0 is true, then we have only 3\% probability
-of finding this outcome (or an even extremer distribution of outcomes).
+of finding this outcome (or an even more uneven distribution of outcomes).
 The significance \(p\) found is smaller than \(\alpha=.05\), and we thus
 reject H0. We conclude that this die is not honest: the distribution
 of outcomes found deviates significantly from the expected
 distribution according to H0.
 
 \hypertarget{chi2-test-for-homogeneity-of-a-variable-in-multiple-samples}{%
-\section{\texorpdfstring{\(\chi^2\)-test for homogeneity of a variable in multiple samples}{\textbackslash chi\^{}2-test for homogeneity of a variable in multiple samples}}\label{chi2-test-for-homogeneity-of-a-variable-in-multiple-samples}}
+\section{\texorpdfstring{\(\chi^2\) test for homogeneity of a variable in multiple samples}{\textbackslash chi\^{}2 test for homogeneity of a variable in multiple samples}}\label{chi2-test-for-homogeneity-of-a-variable-in-multiple-samples}}
 
-The \(\chi^2\)-test can also be used for a research design with \emph{one} nominal
+The \(\chi^2\) test can also be used for a research design with \emph{one} nominal
 variable which we have observed in two or more samples. The
 question is then whether the distribution of the observations over the
 categories is equal for the different samples. This test is comparable with
-\emph{t}-tests for two independent samples
+\emph{t} tests for two independent samples
 (§\ref{sec:ttest-indep}). We usually then summarise the numbers of observations
 with a contingency table with multiple rows for the different samples,
-and multiple columns for the categories of the
-nominal dependent variable (see also
+and multiple columns for the categories of the nominal dependent variable (see also
 Table \ref{tab:cito-contingency-table}).
 
 The \(\chi^2\)-test is again based on the differences between the expected and
@@ -8690,9 +8685,9 @@ across the columns should be approximately equal for all rows
 (and vice versa).
 
 \hypertarget{chi2-test-for-association-between-two-variables-in-single-sample}{%
-\section{\texorpdfstring{\(\chi^2\)-test for association between two variables in single sample}{\textbackslash chi\^{}2-test for association between two variables in single sample}}\label{chi2-test-for-association-between-two-variables-in-single-sample}}
+\section{\texorpdfstring{\(\chi^2\) test for association between two variables in single sample}{\textbackslash chi\^{}2 test for association between two variables in single sample}}\label{chi2-test-for-association-between-two-variables-in-single-sample}}
 
-Finally, the \(\chi^2\)-test can equally well be used for a research design
+Finally, the \(\chi^2\) test can equally well be used for a research design
 with \emph{two} nominal variables, which we have observed in a single
 sample. The question then is whether the distribution of observations
 over the second variable's categories is equal for the different
@@ -8745,16 +8740,14 @@ For the expected frequencies, we have to take into account
 the different numbers of those on board in the different classes,
 and the unequal distribution of outcomes (1490 non-survivors and 711
 survivors). If there were no association between the class and the survival
-status, we would expect there to be 22 non-survivors amongst the first class
-passengers {[}\((1490/2201) \times 325 = (325 \times 1490) / 2201\) = 220{]}
-and 105 non-survivors {[}\((711/2201) \times 325 = (325 \times 711) / 2201\) =
-105{]}. In this way, we can determine the expected frequencies for each cell,
+status, we would expect there to be 220 non-survivors amongst the first class
+passengers \([(1490/2201) \times 325 = (325 \times 1490) / 2201 = 220]\)
+and 105 non-survivors \([(711/2201) \times 325 = (325 \times 711) / 2201 = 105]\). In this way, we can determine the expected frequencies for each cell,
 taking into account the marginal totals. With the help of these
 expected frequencies, we then calculate \(\chi^2=190.4\), here with 3 d.f.,
 \(p<.001\). The significance \(p\) found is smaller than \(\alpha=.001\), and
-we thus reject H0. We conclude that the outcome of the ship disaster
-((non-)survivors) was \emph{unevenly} distributed for the four classes of those
-on board the \emph{Titanic}.
+we thus reject H0. We conclude that the outcome of the disaster (died or survived)
+was \emph{unevenly} distributed for the four classes of those on board the \emph{Titanic}.
 \end{quote}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -8937,11 +8930,95 @@ contingency table \ref{tab:titanic}.\\
 Choose \texttt{Statistics\ldots{}} and tick the option \texttt{Chi-square}. Confirm firstly with
 \texttt{Continue} and afterwards again with \texttt{OK}.
 
-\hypertarget{r-16}{%
-\section{R}\label{r-16}}
+\hypertarget{jasp-15}{%
+\section{JASP}\label{jasp-15}}
+
+\hypertarget{goodness-of-fit-preparation-1}{%
+\subsection{goodness of fit: preparation}\label{goodness-of-fit-preparation-1}}
+
+The nominal data to investigate are typically coded as a ``long'' column in the data file. Each observation typically forms a separate row in the data file, and the nominal independent variable is a column in the data file. However, for the ``goodness of fit'' \(\chi^2\) test in JASP, the data have to be entered not in this ``long'' fashion (with \(N\) rows), but in the form of a summary of numbers of observations (counts, frequency) per category of the nominal variable (with \(k\) rows, one row for each of \(k\) categories).
+
+For the example in §\ref{sec:chi2gof} these summary data would look like this:
+
+\begin{verbatim}
+outcome count
+ 1        14
+ 2         9
+ 3        11
+ 4        10
+ 5        15
+ 6         1
+\end{verbatim}
+
+In order to enter these data in JASP, create a data file (using e.g.~Excel or any text editor) with the contents as listed above, including the column headers. Save the file in CSV format (\texttt{.csv}, not \texttt{.xlsx}) and open it in JASP.
 
 \hypertarget{goodness-of-fit-testing-1}{%
 \subsection{goodness of fit: testing}\label{goodness-of-fit-testing-1}}
+
+In the top menu bar, choose
+
+\begin{verbatim}
+Frequencies > Classical: Multinomial Test
+\end{verbatim}
+
+Select the variable containing the categories of the nominal variable, here \texttt{outcome}, and place it in the entry field ``Factor''.
+Select the variable containing the counts (frequencies) of each category, and place it in the entry field ``Count''.
+
+Under ``Test Values'' there are two options.\\
+If you choose \texttt{Equal\ proportions\ (multinomial\ test)}, a special version of the \(\chi^2\) test will be performed, testing for a uniform distribution (as explained above, this means that the expected frequency is equal for each outcome category). In this example, this H0 implies that the die is honest, which is exactly what we want to test here.\\
+If you choose \texttt{Expected\ proportions\ (chi-square\ test)}, you may adjust the expected frequencies in each cell. Use this option if your H0 postulates a non-uniform (e.g.~gaussian) distribution. A table will appear, in which you must enter the expected frequencies according to \emph{H0} for each category or cell. By default, the values in this table are all equal, so that the default is equivalent to the ``equal proportions'' or uniform H0 in the first option.
+
+You may also check \texttt{Descriptives} and \texttt{Confidence\ interval} under the heading ``Additional Statistics'', and check \texttt{Descriptives\ plot} under ``Plots'', so as to gain better insight in the patterns in your data.
+
+\hypertarget{contingency-tables-preparation-1}{%
+\subsection{contingency tables: preparation}\label{contingency-tables-preparation-1}}
+
+The nominal data to investigate are typically coded as two or more ``long'' columns in the data file. Each observation (e.g.~each person on the Titanic, in Example 16.1) corresponds with a separate row in the data file, and the nominal variables are in columns in the data file (e.g.~\texttt{class} and \texttt{outcome}). We can use such a ``long'' data file for creating a contingency table in JASP, and for performing a \(\chi^2\) test on that contingency table --- see the end of the next subsection for further instructions.
+
+However, for performing a \(\chi^2\) test on a contingency table in JASP, the data do not necessarily have to be entered in this ``long'' fashion (with \(N\) rows); the data may also be in the form of a summary of numbers of observations (counts, frequency) per category of the nominal variable (with \(k\) rows, one row for each of \(k\) cells or combinations of categories).
+
+For example 16.1, the data would then look as follows:
+
+\begin{verbatim}
+class   outcome    count
+1st     died       122
+1st     survived   203
+2nd     died       167
+2nd     survived   118
+3rd     died       528
+3rd     survived   178
+crew    died       673
+crew    survived   212
+\end{verbatim}
+
+In order to enter these data in JASP, create a data file (using e.g.~Excel or any text editor) with the contents as listed above, including the column headers. Save the file in CSV format (\texttt{.csv}, not \texttt{.xlsx}) and open it in JASP.
+
+\hypertarget{contingency-tables-testing-1}{%
+\subsection{contingency tables: testing}\label{contingency-tables-testing-1}}
+
+The \(\chi^2\) test on a contingency table proceeds in the same way as described in
+§\ref{sec:Phi} for association between two nominal variables.
+
+In the top menu bar, choose:
+
+\begin{verbatim}
+Frequencies > Classical: Contingency Tables
+\end{verbatim}
+
+Select one nominal variable (\texttt{class}) in the ``Rows'' field, and the other nominal variable (\texttt{outcome}) in the ``Columns'' field, to set up the contingency table (Table \ref{tab:titanic}).
+Select the variable \texttt{count} into the ``Counts'' field; this specifies the numbers of observations for each cell.\\
+Open the \texttt{Statistics} section bar, and check the option \texttt{Chi-square} (\(\chi^2\)).
+
+The resulting value of the \(\chi^2\) test statistic is reported in the output under \textbf{Chi-Squared Tests}.
+
+If you have a ``long'' data sheet, with one observation per row, then you only need to select one nominal variable (\texttt{class}) in the ``Rows'' field, and the other nominal variable (\texttt{outcome}) in the ``Columns'' field, to set up the contingency table (Table \ref{tab:titanic}).\\
+Open the \texttt{Statistics} section bar, and check the option \texttt{Chi-square} (\(\chi^2\)).
+
+\hypertarget{r-16}{%
+\section{R}\label{r-16}}
+
+\hypertarget{goodness-of-fit-testing-2}{%
+\subsection{goodness of fit: testing}\label{goodness-of-fit-testing-2}}
 
 \begin{Shaded}
 \begin{Highlighting}[]

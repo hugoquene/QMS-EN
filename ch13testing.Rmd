@@ -633,7 +633,7 @@ Then
 \end{equation}
 
 If the samples do have **unequal variances**, and the fourth assumed
-sample above is thus violated, then Welch's version of the t-test is 
+sample above is thus violated, then Welch's version of the $t$ test is 
 used: 
 \begin{equation}
   (\#eq:sd-WS)
@@ -647,9 +647,7 @@ Then
 
 #### degrees of freedom {#freedomdegrees}
 
-The t-test is usually conducted by a computer program. There, 
-the following approximation of degrees of freedom is usually used
-($\nu$, see §\@ref(sec:ttest-freedomdegrees)).
+The $t$ test is usually conducted by a computer program, which typically uses the following approximation of degrees of freedom (symbol $\nu$, Greek "nu", see §\@ref(sec:ttest-freedomdegrees)).
 Firstly, $g_1=s^2_1/n_1$
 and $g_2=s^2_2/n_2$ are calculated. The number of degrees of freedom of $t$ is then
 \begin{equation}

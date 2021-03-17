@@ -319,8 +319,13 @@ goodness-of-fit-preparation
 goodness-of-fit-testing
 contingency-tables-preparation
 contingency-tables-testing
-r-16
+jasp-15
+goodness-of-fit-preparation-1
 goodness-of-fit-testing-1
+contingency-tables-preparation-1
+contingency-tables-testing-1
+r-16
+goodness-of-fit-testing-2
 contingency-table-preparation-and-testing
 effect-size-odds-ratio
 ch:other-nonpar-tests

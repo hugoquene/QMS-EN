@@ -439,7 +439,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="16.3" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#chi2-test-for-homogeneity-of-a-variable-in-multiple-samples"><i class="fa fa-check"></i><b>16.3</b> <span class="math inline">\(\chi^2\)</span> test for homogeneity of a variable in multiple samples</a></li>
 <li class="chapter" data-level="16.4" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#chi2-test-for-association-between-two-variables-in-single-sample"><i class="fa fa-check"></i><b>16.4</b> <span class="math inline">\(\chi^2\)</span> test for association between two variables in single sample</a></li>
 <li class="chapter" data-level="16.5" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#sec:chi2test-assumptions"><i class="fa fa-check"></i><b>16.5</b> assumptions</a></li>
-<li class="chapter" data-level="16.6" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#formula"><i class="fa fa-check"></i><b>16.6</b> formula</a></li>
+<li class="chapter" data-level="16.6" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#formulas-6"><i class="fa fa-check"></i><b>16.6</b> formulas</a></li>
 <li class="chapter" data-level="16.7" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#spss-14"><i class="fa fa-check"></i><b>16.7</b> SPSS</a>
 <ul>
 <li class="chapter" data-level="16.7.1" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#goodness-of-fit-preparation"><i class="fa fa-check"></i><b>16.7.1</b> goodness of fit: preparation</a></li>
@@ -693,8 +693,8 @@ of cells by merging bordering cells, and determine the expected
 frequencies again.</p></li>
 </ul>
 </div>
-<div id="formula" class="section level2" number="16.6">
-<h2><span class="header-section-number">16.6</span> formula</h2>
+<div id="formulas-6" class="section level2" number="16.6">
+<h2><span class="header-section-number">16.6</span> formulas</h2>
 <p>The test statistic <span class="math inline">\(\chi^2\)</span> is defined as
 <span class="math display" id="eq:chisquared">\[\begin{equation}
   \tag{16.1}
@@ -717,6 +717,13 @@ of degrees of freedom must be equal to the number of cells minus 1. For a
 <span class="math inline">\(\chi^2\)</span>-test with multiple samples (homogeneity) and/or with two variables
 (correlations), with respectively <span class="math inline">\(k\)</span> and <span class="math inline">\(m\)</span> categories, the number of
 degrees of freedom is equal to <span class="math inline">\((k-1)\times(m-1)\)</span>.</p>
+<p>For each cell of the frequency table, we can also compute the standardized residual:
+<span class="math display" id="eq:chi2-residu">\[\begin{equation}
+  \tag{16.2}
+  e = \frac{(O-E)}{\sqrt{E}}
+\end{equation}\]</span>
+If we square these residuals and then sum the squares, the result is the <span class="math inline">\(\chi^2\)</span> test statistic (given in Eq.<a href="ch-chi-square-tests.html#eq:chisquared">(16.1)</a>). The standardized residuals may also be interpreted as <span class="math inline">\(Z\)</span> scores, using the critical <span class="math inline">\(Z\)</span> values given in Appendix <a href="app-criticalZvalues.html#app:criticalZvalues">B</a>. If the standardized residual <span class="math inline">\(e&gt;2\)</span> then the observed count or observed frequency is significantly larger than the expected count or frequency (with <span class="math inline">\(\alpha=.05\)</span>); if the residual is smaller than <span class="math inline">\(-2\)</span> then the reverse holds. Hence the standardized residuals provide insight in the source of a significant outcome of the <span class="math inline">\(\chi^2\)</span> test.</p>
+<p>For the example given in §<a href="ch-chi-square-tests.html#sec:chi2gof">16.2</a> we find the following six standardized residuals for the six possible outcomes of the die: <span class="math inline">\((1.26, -0.32, +0.32, 0.00, 1.58, -2.58)\)</span>. The first five of these outcomes are observed approximately as frequently as expected, but the sixth of these outcomes is observed significantly less often than expected.</p>
 </div>
 <div id="spss-14" class="section level2" number="16.7">
 <h2><span class="header-section-number">16.7</span> SPSS</h2>
@@ -829,6 +836,7 @@ Select the variable containing the counts (frequencies) of each category, and pl
 If you choose <code>Equal proportions (multinomial test)</code>, a special version of the <span class="math inline">\(\chi^2\)</span> test will be performed, testing for a uniform distribution (as explained above, this means that the expected frequency is equal for each outcome category). In this example, this H0 implies that the die is honest, which is exactly what we want to test here.<br />
 If you choose <code>Expected proportions (chi-square test)</code>, you may adjust the expected frequencies in each cell. Use this option if your H0 postulates a non-uniform (e.g. gaussian) distribution. A table will appear, in which you must enter the expected frequencies according to <em>H0</em> for each category or cell. By default, the values in this table are all equal, so that the default is equivalent to the “equal proportions” or uniform H0 in the first option.</p>
 <p>You may also check <code>Descriptives</code> and <code>Confidence interval</code> under the heading “Additional Statistics”, and check <code>Descriptives plot</code> under “Plots”, so as to gain better insight in the patterns in your data.</p>
+<p>In JASP it is not possible to obtain the standardized residuals; however you can compute these manually from the observed and expected counts.</p>
 </div>
 <div id="contingency-tables-preparation-1" class="section level3" number="16.8.3">
 <h3><span class="header-section-number">16.8.3</span> contingency tables: preparation</h3>
@@ -854,44 +862,60 @@ crew    survived   212</code></pre>
 <pre><code>Frequencies &gt; Classical: Contingency Tables</code></pre>
 <p>Select one nominal variable (<code>class</code>) in the “Rows” field, and the other nominal variable (<code>outcome</code>) in the “Columns” field, to set up the contingency table (Table <a href="ch-chi-square-tests.html#tab:titanic">16.1</a>).
 Select the variable <code>count</code> into the “Counts” field; this specifies the numbers of observations for each cell.<br />
-Open the <code>Statistics</code> section bar, and check the option <code>Chi-square</code> (<span class="math inline">\(\chi^2\)</span>).</p>
+Open the <code>Statistics</code> section bar, and check the option <code>Chi-square</code> (<span class="math inline">\(\chi^2\)</span>).
+Open the <code>Cells</code> section bar, and check the option <code>Expected counts</code>.</p>
 <p>The resulting value of the <span class="math inline">\(\chi^2\)</span> test statistic is reported in the output under <strong>Chi-Squared Tests</strong>.</p>
 <p>If you have a “long” data sheet, with one observation per row, then you only need to select one nominal variable (<code>class</code>) in the “Rows” field, and the other nominal variable (<code>outcome</code>) in the “Columns” field, to set up the contingency table (Table <a href="ch-chi-square-tests.html#tab:titanic">16.1</a>).<br />
-Open the <code>Statistics</code> section bar, and check the option <code>Chi-square</code> (<span class="math inline">\(\chi^2\)</span>).</p>
+Open the <code>Statistics</code> section bar, and check the option <code>Chi-square</code> (<span class="math inline">\(\chi^2\)</span>).
+Open the <code>Cells</code> section bar, and check the option <code>Expected counts</code>.</p>
+<p>In JASP it is not possible to obtain the standardized residuals; however you can compute these manually from the observed and expected counts.</p>
 </div>
 </div>
 <div id="r-16" class="section level2" number="16.9">
 <h2><span class="header-section-number">16.9</span> R</h2>
 <div id="goodness-of-fit-testing-2" class="section level3" number="16.9.1">
 <h3><span class="header-section-number">16.9.1</span> goodness of fit: testing</h3>
-<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="ch-chi-square-tests.html#cb175-1" aria-hidden="true"></a><span class="kw">chisq.test</span>( <span class="kw">c</span>( <span class="dv">14</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">1</span> ) ) <span class="co"># die §16.1</span></span></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="ch-chi-square-tests.html#cb175-1" aria-hidden="true"></a><span class="kw">chisq.test</span>( <span class="kw">c</span>( <span class="dv">14</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">1</span> ) ) -&gt;<span class="st"> </span>dobbel.chi2.htest <span class="co"># die §16.2</span></span>
+<span id="cb175-2"><a href="ch-chi-square-tests.html#cb175-2" aria-hidden="true"></a><span class="kw">print</span>(dobbel.chi2.htest)</span></code></pre></div>
 <pre><code>## 
 ##  Chi-squared test for given probabilities
 ## 
 ## data:  c(14, 9, 11, 10, 15, 1)
 ## X-squared = 12.4, df = 5, p-value = 0.0297</code></pre>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="ch-chi-square-tests.html#cb177-1" aria-hidden="true"></a>dobbel.chi2.htest<span class="op">$</span>residuals <span class="co"># STANDARDIZED resid in ...$residuals</span></span></code></pre></div>
+<pre><code>## [1]  1.2649111 -0.3162278  0.3162278  0.0000000  1.5811388 -2.8460499</code></pre>
 </div>
 <div id="contingency-table-preparation-and-testing" class="section level3" number="16.9.2">
 <h3><span class="header-section-number">16.9.2</span> contingency table: preparation and testing</h3>
 <p>In R, the dataset <code>Titanic</code> is provided as a multidimensional matrix. We sum
 the observations and make a contingency table of the first dimension (class) and
 the fourth dimension (outcome).</p>
-<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="ch-chi-square-tests.html#cb177-1" aria-hidden="true"></a><span class="kw">apply</span>( Titanic, <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">4</span>), sum ) -&gt;<span class="st"> </span>Titanic.classoutcome</span></code></pre></div>
-<p>Next, we use the contingency table as the input for a <code>chisq.test</code>.</p>
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="ch-chi-square-tests.html#cb178-1" aria-hidden="true"></a><span class="kw">chisq.test</span>( Titanic.classoutcome )  <span class="co"># p&lt;.0001</span></span></code></pre></div>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="ch-chi-square-tests.html#cb179-1" aria-hidden="true"></a><span class="kw">apply</span>( Titanic, <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">4</span>), sum ) -&gt;<span class="st"> </span>Titanic.classoutcome</span></code></pre></div>
+<p>Next, we use the contingency (frequency) table as the input for a <code>chisq.test</code>.
+The resulting <code>chisq.htest</code> object is saved within R in order to inspect its residuals.</p>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="ch-chi-square-tests.html#cb180-1" aria-hidden="true"></a><span class="kw">chisq.test</span>( Titanic.classoutcome ) -&gt;<span class="st"> </span>Titanic.chisq.htest</span>
+<span id="cb180-2"><a href="ch-chi-square-tests.html#cb180-2" aria-hidden="true"></a><span class="kw">print</span>(Titanic.chisq.htest)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s Chi-squared test
 ## 
 ## data:  Titanic.classoutcome
 ## X-squared = 190.4, df = 3, p-value &lt; 2.2e-16</code></pre>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="ch-chi-square-tests.html#cb182-1" aria-hidden="true"></a>Titanic.chisq.htest<span class="op">$</span>residuals</span></code></pre></div>
+<pre><code>##       Survived
+## Class         No       Yes
+##   1st  -6.607873  9.565772
+##   2nd  -1.867159  2.702959
+##   3rd   2.289965 -3.315027
+##   Crew  3.018611 -4.369840</code></pre>
+<p>The residuals show the remarkably high number of survivors among the first class passengers, and the remarkably low number of survivors among the ship’s crew.</p>
 </div>
 </div>
 <div id="effect-size-odds-ratio" class="section level2" number="16.10">
 <h2><span class="header-section-number">16.10</span> Effect size: odds ratio</h2>
 <p>When using the <span class="math inline">\(\chi^2\)</span>-test, the effect size can be reported in the form
 of the so-called “odds ratio”. The ‘odds ratio’ is derived from the contingency
-table with frequencies per cell. We will explain all these matters
-using the following example.</p>
+table with frequencies per cell; the odds ratio is most commonly used with <span class="math inline">\(2 \times 2\)</span> contingency tables.
+We will explain all these matters using the following example of a <span class="math inline">\(2 \times 2\)</span> contingency table.</p>
 <hr />
 <blockquote>
 <p><em>Example 16.2</em>:

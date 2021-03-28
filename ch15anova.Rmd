@@ -445,7 +445,7 @@ variance in the *sample* can be assigned to the independent
 variable. 
 
 The second measure for effect size with analysis of variance is the so-called
-$\omega^2$ ("omega squared"): 
+$\omega^2$ ("omega squared") (@MD04, p.296): 
 \begin{equation}
   (\#eq:omegasq)
     \omega^2 = \frac{ \textrm{SS}_b - (k-1) \textrm{MS}_w} { \textrm{SS}_t + \textrm{MS}_w }

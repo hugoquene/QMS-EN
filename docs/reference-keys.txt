@@ -313,7 +313,7 @@ sec:chi2gof
 chi2-test-for-homogeneity-of-a-variable-in-multiple-samples
 chi2-test-for-association-between-two-variables-in-single-sample
 sec:chi2test-assumptions
-formula
+formulas-6
 spss-14
 goodness-of-fit-preparation
 goodness-of-fit-testing
@@ -333,13 +333,13 @@ sec:h17introduction
 paired-observations-single-sample
 sec:signtest
 sec:Wilcoxon-signed-rank
-formulas-6
+formulas-7
 independent-observations-multiple-samples
 median-test
 sec:wilcoxon-rank-sum
-formulas-7
+formulas-8
 kruskall-wallis-h-test
-formula-1
+formula
 app:randomnumbers
 app:criticalZvalues
 app:criticaltvalues

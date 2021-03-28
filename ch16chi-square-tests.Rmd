@@ -166,7 +166,7 @@ in one or more cells is/are less than 5, then reduce the number
 of cells by merging bordering cells, and determine the expected
 frequencies again. 
 
-## formula
+## formulas
 
 The test statistic $\chi^2$ is defined as 
 \begin{equation}
@@ -191,6 +191,15 @@ of degrees of freedom must be equal to the number of cells minus 1. For a
 $\chi^2$-test with multiple samples (homogeneity) and/or with two variables
 (correlations), with respectively $k$ and $m$ categories, the number of
 degrees of freedom is equal to $(k-1)\times(m-1)$.
+
+For each cell of the frequency table, we can also compute the standardized residual:
+\begin{equation}
+  (\#eq:chi2-residu)
+  e = \frac{(O-E)}{\sqrt{E}}
+\end{equation}
+If we square these residuals and then sum the squares, the result is the $\chi^2$ test statistic (given in Eq.\@ref(eq:chisquared)). The standardized residuals may also be interpreted as $Z$ scores, using the critical $Z$ values given in Appendix \@ref(app:criticalZvalues). If the standardized residual $e>2$ then the observed count or observed frequency is significantly larger than the expected count or frequency (with $\alpha=.05$); if the residual is smaller than $-2$ then the reverse holds. Hence the standardized residuals provide insight in the source of a significant outcome of the $\chi^2$ test. 
+
+For the example given in §\@ref(sec:chi2gof) we find the following six standardized residuals for the six possible outcomes of the die: $(1.26, -0.32, +0.32, 0.00, 1.58, -2.58)$. The first five of these outcomes are observed approximately as frequently as expected, but the sixth of these outcomes is observed significantly less often than expected.  
 
 ## SPSS
 
@@ -330,9 +339,11 @@ If you choose `Expected proportions (chi-square test)`, you may adjust the expec
 
 You may also check `Descriptives` and `Confidence interval` under the heading "Additional Statistics", and check `Descriptives plot` under "Plots", so as to gain better insight in the patterns in your data. 
 
+In JASP it is not possible to obtain the standardized residuals; however you can compute these manually from the observed and expected counts. 
+
 ### contingency tables: preparation
 
-The nominal data to investigate are typically coded as two or more "long" columns in the data file. Each observation (e.g. each person on the Titanic, in Example 16.1) corresponds with a separate row in the data file, and the nominal variables are in columns in the data file (e.g. `class` and `outcome`). We can use such a "long" data file for creating a contingency table in JASP, and for performing a $\chi^2$ test on that contingency table --- see the end of the next subsection for further instructions. 
+The nominal data to investigate are typically coded as two or more "long" columns in the data file. Each observation (e.g. each person on the Titanic, in Example 16.1) corresponds with a separate row in the data file, and the nominal variables are in columns in the data file (e.g. `class` and `outcome`). We can use such a "long" data file for creating a contingency table in JASP, and for performing a $\chi^2$ test on that contingency table --- see the end of the next subsection for further instructions.
 
 However, for performing a $\chi^2$ test on a contingency table in JASP, the data do not necessarily have to be entered in this "long" fashion (with $N$ rows); the data may also be in the form of a summary of numbers of observations (counts, frequency) per category of the nominal variable (with $k$ rows, one row for each of $k$ cells or combinations of categories). 
 
@@ -361,12 +372,16 @@ Frequencies > Classical: Contingency Tables
 ```
 Select one nominal variable (`class`) in the "Rows" field, and the other nominal variable (`outcome`) in the "Columns" field, to set up the contingency table (Table \@ref(tab:titanic)). 
 Select the variable `count` into the "Counts" field; this specifies the numbers of observations for each cell.\
-Open the `Statistics` section bar, and check the option `Chi-square` ($\chi^2$). 
+Open the `Statistics` section bar, and check the option `Chi-square` ($\chi^2$).
+Open the `Cells` section bar, and check the option `Expected counts`. 
 
 The resulting value of the $\chi^2$ test statistic is reported in the output under **Chi-Squared Tests**. 
 
 If you have a "long" data sheet, with one observation per row, then you only need to select one nominal variable (`class`) in the "Rows" field, and the other nominal variable (`outcome`) in the "Columns" field, to set up the contingency table (Table \@ref(tab:titanic)).\
 Open the `Statistics` section bar, and check the option `Chi-square` ($\chi^2$). 
+Open the `Cells` section bar, and check the option `Expected counts`. 
+
+In JASP it is not possible to obtain the standardized residuals; however you can compute these manually from the observed and expected counts. 
 
 
 ## R
@@ -374,7 +389,9 @@ Open the `Statistics` section bar, and check the option `Chi-square` ($\chi^2$).
 ### goodness of fit: testing
 
 ```{r}
-chisq.test( c( 14, 9, 11, 10, 15, 1 ) ) # die §16.1
+chisq.test( c( 14, 9, 11, 10, 15, 1 ) ) -> dobbel.chi2.htest # die §16.2
+print(dobbel.chi2.htest)
+dobbel.chi2.htest$residuals # STANDARDIZED resid in ...$residuals
 ```
 
 ### contingency table: preparation and testing
@@ -386,18 +403,23 @@ the fourth dimension (outcome).
 apply( Titanic, c(1,4), sum ) -> Titanic.classoutcome
 ```
 
-Next, we use the contingency table as the input for a `chisq.test`. 
+Next, we use the contingency (frequency) table as the input for a `chisq.test`. 
+The resulting `chisq.htest` object is saved within R in order to inspect its residuals. 
 ```{r}
-chisq.test( Titanic.classoutcome )  # p<.0001
+chisq.test( Titanic.classoutcome ) -> Titanic.chisq.htest
+print(Titanic.chisq.htest)
+Titanic.chisq.htest$residuals
 ```
+
+The residuals show the remarkably high number of survivors among the first class passengers, and the remarkably low number of survivors among the ship's crew. 
 
 
 ## Effect size: odds ratio
 
 When using the $\chi^2$-test, the effect size can be reported in the form
 of the so-called "odds ratio". The 'odds ratio' is derived from the contingency
-table with frequencies per cell. We will explain all these matters
-using the following example.
+table with frequencies per cell; the odds ratio is most commonly used with $2 \times 2$ contingency tables. 
+We will explain all these matters using the following example of a $2 \times 2$ contingency table. 
 
 ---
 

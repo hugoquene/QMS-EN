@@ -1,25 +1,25 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.10.22)  17 MAR 2021 21:22
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2021.3.28)  28 MAR 2021 11:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **QMS-EN.tex
 (./QMS-EN.tex
-LaTeX2e <2020-10-01> patch level 1
-L3 programming layer <2020-10-05> xparse <2020-03-03> (/Users/Hugo/Library/Tiny
-TeX/texmf-dist/tex/latex/base/book.cls
+LaTeX2e <2020-10-01> patch level 4
+L3 programming layer <2021-02-18> (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/l
+atex/base/book.cls
 Document Class: book 2020/04/10 v1.4m Standard LaTeX document class
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/base/bk10.clo
 File: bk10.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 )
-\c@part=\count171
-\c@chapter=\count172
-\c@section=\count173
-\c@subsection=\count174
-\c@subsubsection=\count175
-\c@paragraph=\count176
-\c@subparagraph=\count177
-\c@figure=\count178
-\c@table=\count179
+\c@part=\count175
+\c@chapter=\count176
+\c@section=\count177
+\c@subsection=\count178
+\c@subsubsection=\count179
+\c@paragraph=\count180
+\c@subparagraph=\count181
+\c@figure=\count182
+\c@table=\count183
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
@@ -83,13 +83,13 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 ) (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count180
+\inf@bad=\count184
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count181
-\leftroot@=\count182
+\uproot@=\count185
+\leftroot@=\count186
 LaTeX Info: Redefining \overline on input line 399.
-\classnum@=\count183
-\DOTSCASE@=\count184
+\classnum@=\count187
+\DOTSCASE@=\count188
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
@@ -98,15 +98,15 @@ LaTeX Info: Redefining \cdots on input line 620.
 \big@size=\dimen141
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count185
-\c@MaxMatrixCols=\count186
+\macc@depth=\count189
+\c@MaxMatrixCols=\count190
 \dotsspace@=\muskip16
-\c@parentequation=\count187
-\dspbrk@lvl=\count188
+\c@parentequation=\count191
+\dspbrk@lvl=\count192
 \tag@help=\toks17
-\row@=\count189
-\column@=\count190
-\maxfields@=\count191
+\row@=\count193
+\column@=\count194
+\maxfields@=\count195
 \andhelp@=\toks18
 \eqnshift@=\dimen142
 \alignsep@=\dimen143
@@ -129,14 +129,18 @@ Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 )
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/unicode-math/unicode-math.sty
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2020-10-05 L3 programming layer (loader) 
+Package: expl3 2021-02-18 L3 programming layer (loader) 
 
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
-File: l3backend-xetex.def 2020-09-24 L3 backend support: XeTeX
-\g__graphics_track_int=\count192
+File: l3backend-xetex.def 2021-03-18 L3 backend support: XeTeX
+(|extractbb --version)
+\c__kernel_sys_dvipdfmx_version_int=\count196
+\l__color_backend_stack_int=\count197
+\g__graphics_track_int=\count198
 \l__pdf_internal_box=\box49
-\g__pdf_backend_object_int=\count193
-\g__pdf_backend_annotation_int=\count194
+\g__pdf_backend_object_int=\count199
+\g__pdf_backend_annotation_int=\count266
+\g__pdf_backend_link_int=\count267
 ))
 Package: unicode-math 2020/01/31 v0.8q Unicode maths in XeLaTeX and LuaLaTeX
 
@@ -145,29 +149,29 @@ ex.sty
 Package: unicode-math-xetex 2020/01/31 v0.8q Unicode maths in XeLaTeX and LuaLa
 TeX
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
-Package: xparse 2020-10-05 L3 Experimental document command parser
-
+(/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse-2020
+-10-01.sty
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse-gene
-ric.tex))
+ric.tex)))
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.
 sty
-Package: l3keys2e 2020-10-05 LaTeX2e option processing using LaTeX3 keys
+Package: l3keys2e 2021-03-12 LaTeX2e option processing using LaTeX3 keys
 ) (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec.sty
 Package: fontspec 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTeX
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
 Package: fontspec-xetex 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTe
 X
-\l__fontspec_script_int=\count195
-\l__fontspec_language_int=\count196
-\l__fontspec_strnum_int=\count197
-\l__fontspec_tmp_int=\count198
-\l__fontspec_tmpa_int=\count199
-\l__fontspec_tmpb_int=\count266
-\l__fontspec_tmpc_int=\count267
-\l__fontspec_em_int=\count268
-\l__fontspec_emdef_int=\count269
-\l__fontspec_strong_int=\count270
-\l__fontspec_strongdef_int=\count271
+\l__fontspec_script_int=\count268
+\l__fontspec_language_int=\count269
+\l__fontspec_strnum_int=\count270
+\l__fontspec_tmp_int=\count271
+\l__fontspec_tmpa_int=\count272
+\l__fontspec_tmpb_int=\count273
+\l__fontspec_tmpc_int=\count274
+\l__fontspec_em_int=\count275
+\l__fontspec_emdef_int=\count276
+\l__fontspec_strong_int=\count277
+\l__fontspec_strongdef_int=\count278
 \l__fontspec_tmpa_dim=\dimen148
 \l__fontspec_tmpb_dim=\dimen149
 \l__fontspec_tmpc_dim=\dimen150
@@ -180,9 +184,9 @@ Package: fix-cm 2015/01/14 v1.1t fixes to LaTeX
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding TS1 on input line 47.
 ))
-\g__um_fam_int=\count272
-\g__um_fonts_used_int=\count273
-\l__um_primecount_int=\count274
+\g__um_fam_int=\count279
+\g__um_fonts_used_int=\count280
+\l__um_primecount_int=\count281
 \g__um_primekern_muskip=\muskip17
 
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/unicode-math/unicode-math-tab
@@ -209,7 +213,7 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 ) (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2020-05-15 v7.00e Hypertext links for LaTeX
+Package: hyperref 2021-02-27 v7.00k Hypertext links for LaTeX
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
 Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
 ) (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
@@ -242,33 +246,38 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 )
 \@linkdim=\dimen151
-\Hy@linkcounter=\count275
-\Hy@pagecounter=\count276
+\Hy@linkcounter=\count282
+\Hy@pagecounter=\count283
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2020-05-15 v7.00e Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2021-02-27 v7.00k Hyperref: PDFDocEncoding definition (HO)
+)
+(/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref-langpatches
+.def
+File: hyperref-langpatches.def 2021-02-27 v7.00k Hyperref: patches for babel la
+nguages
 ) (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 ) (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count277
-Package hyperref Info: Option `unicode' set `true' on input line 4338.
+\Hy@SavedSpaceFactor=\count284
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2020-05-15 v7.00e Hyperref: PDF Unicode definition (HO)
+File: puenc.def 2021-02-27 v7.00k Hyperref: PDF Unicode definition (HO)
 )
-Package hyperref Info: Hyper figures OFF on input line 4464.
-Package hyperref Info: Link nesting OFF on input line 4469.
-Package hyperref Info: Hyper index ON on input line 4472.
-Package hyperref Info: Plain pages OFF on input line 4479.
-Package hyperref Info: Backreferencing OFF on input line 4484.
+Package hyperref Info: Option `unicode' set `true' on input line 4073.
+Package hyperref Info: Hyper figures OFF on input line 4192.
+Package hyperref Info: Link nesting OFF on input line 4197.
+Package hyperref Info: Hyper index ON on input line 4200.
+Package hyperref Info: Plain pages OFF on input line 4207.
+Package hyperref Info: Backreferencing OFF on input line 4212.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4717.
-\c@Hy@tempcnt=\count278
+Package hyperref Info: Bookmarks ON on input line 4445.
+\c@Hy@tempcnt=\count285
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 5076.
+LaTeX Info: Redefining \url on input line 4804.
 \XeTeXLinkMargin=\dimen152
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -276,39 +285,39 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count279
+\Fld@menulength=\count286
 \Field@Width=\dimen153
 \Fld@charsize=\dimen154
-Package hyperref Info: Hyper figures OFF on input line 6347.
-Package hyperref Info: Link nesting OFF on input line 6352.
-Package hyperref Info: Hyper index ON on input line 6355.
-Package hyperref Info: backreferencing OFF on input line 6362.
-Package hyperref Info: Link coloring OFF on input line 6367.
-Package hyperref Info: Link coloring with OCG OFF on input line 6372.
-Package hyperref Info: PDF/A mode OFF on input line 6377.
-LaTeX Info: Redefining \ref on input line 6417.
-LaTeX Info: Redefining \pageref on input line 6421.
+Package hyperref Info: Hyper figures OFF on input line 6075.
+Package hyperref Info: Link nesting OFF on input line 6080.
+Package hyperref Info: Hyper index ON on input line 6083.
+Package hyperref Info: backreferencing OFF on input line 6090.
+Package hyperref Info: Link coloring OFF on input line 6095.
+Package hyperref Info: Link coloring with OCG OFF on input line 6100.
+Package hyperref Info: PDF/A mode OFF on input line 6105.
+LaTeX Info: Redefining \ref on input line 6145.
+LaTeX Info: Redefining \pageref on input line 6149.
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/base/atbegshi-ltx.sty
 Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packa
 ge
 with kernel methods
 )
-\Hy@abspage=\count280
-\c@Item=\count281
-\c@Hfootnote=\count282
+\Hy@abspage=\count287
+\c@Item=\count288
+\c@Hfootnote=\count289
 )
 Package hyperref Info: Driver (autodetected): hxetex.
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hxetex.def
-File: hxetex.def 2020-05-15 v7.00e Hyperref driver for XeTeX
+File: hxetex.def 2021-02-27 v7.00k Hyperref driver for XeTeX
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
 \pdfm@box=\box50
-\c@Hy@AnnotLevel=\count283
-\HyField@AnnotCount=\count284
-\Fld@listcount=\count285
-\c@bookmark@seq@number=\count286
+\c@Hy@AnnotLevel=\count290
+\HyField@AnnotCount=\count291
+\Fld@listcount=\count292
+\c@bookmark@seq@number=\count293
 
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck
 .sty
@@ -327,12 +336,12 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip52
 ) (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
-Package: fancyvrb 2020/05/03 v3.6 verbatim text (tvz,hv)
-\FV@CodeLineNo=\count287
+Package: fancyvrb 2021/01/20 v3.7 verbatim text (tvz,hv)
+\FV@CodeLineNo=\count294
 \FV@InFile=\read2
 \FV@TabBox=\box51
-\c@FancyVerbLine=\count288
-\FV@StepNumber=\count289
+\c@FancyVerbLine=\count295
+\FV@StepNumber=\count296
 \FV@OutFile=\write3
 ) (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/framed/framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
@@ -347,16 +356,16 @@ Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
 \LTright=\skip55
 \LTpre=\skip56
 \LTpost=\skip57
-\LTchunksize=\count290
+\LTchunksize=\count297
 \LTcapwidth=\dimen159
 \LT@head=\box52
 \LT@firsthead=\box53
 \LT@foot=\box54
 \LT@lastfoot=\box55
-\LT@cols=\count291
-\LT@rows=\count292
-\c@LT@tables=\count293
-\c@LT@chunks=\count294
+\LT@cols=\count298
+\LT@rows=\count299
+\c@LT@tables=\count300
+\c@LT@chunks=\count301
 \LT@p@ftn=\toks22
 ) (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
@@ -370,16 +379,16 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \cmidrulesep=\dimen167
 \cmidrulekern=\dimen168
 \defaultaddspace=\dimen169
-\@cmidla=\count295
-\@cmidlb=\count296
+\@cmidla=\count302
+\@cmidlb=\count303
 \@aboverulesep=\dimen170
 \@belowrulesep=\dimen171
-\@thisruleclass=\count297
-\@lastruleclass=\count298
+\@thisruleclass=\count304
+\@lastruleclass=\count305
 \@thisrulewidth=\dimen172
 ) (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count299
+\etb@tempcnta=\count306
 ) (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/mdwtools/footnote.sty
 Package: footnote 1997/01/28 1.13 Save footnotes around boxes
 \fn@notes=\box56
@@ -413,7 +422,7 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip61
 \bibsep=\skip62
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count300
+\c@NAT@ctr=\count307
 ) (./QMS-EN.aux
 
 LaTeX Warning: Label `eq:t-onesampleCI' multiply defined.
@@ -710,7 +719,7 @@ LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 t line 124.
 Package hyperref Info: Link coloring OFF on input line 124.
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
-Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
+Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
@@ -718,7 +727,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ng.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count301
+\c@section@level=\count308
 )
 LaTeX Info: Redefining \ref on input line 124.
 LaTeX Info: Redefining \pageref on input line 124.
@@ -1421,12 +1430,12 @@ LaTeX Warning: Reference `fig:colours-obs' on page 244 undefined on input line
 LaTeX Warning: Reference `fig:colours-obs' on page 247 undefined on input line 
 8042.
 
-[247]
+[247] [248]
 
-LaTeX Warning: Reference `fig:colours-obs' on page 248 undefined on input line 
+LaTeX Warning: Reference `fig:colours-obs' on page 249 undefined on input line 
 8103.
 
-[248] [249] [250] [251] [252] [253] [254] [255] [256]
+[249] [250] [251] [252] [253] [254] [255] [256]
 Overfull \hbox (69.75pt too wide) in paragraph at lines 8573--8573
 []\TU/lmtt/m/n/10 ## Warning in replications(paste("~", xx), data = mf): non-fa
 ctors ignored: sex[] 
@@ -1458,102 +1467,108 @@ GLE SAMPLE \TU/lmr/m/n/10 261
 Overfull \vbox (0.62584pt too high) has occurred while \output is active []
 
 [262] [263] [264] [265] [266] [267]
-Overfull \hbox (29.9901pt too wide) in alignment at lines 9086--9095
+Overfull \hbox (33.0pt too wide) in paragraph at lines 9061--9061
+[]\TU/lmtt/m/n/10 ## [1]  1.2649111 -0.3162278  0.3162278  0.0000000  1.5811388
+ -2.8460499[] 
+ []
+
+[268]
+Overfull \hbox (29.9901pt too wide) in alignment at lines 9131--9140
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (29.9901pt too wide) in alignment at lines 9095--9099
+Overfull \hbox (29.9901pt too wide) in alignment at lines 9140--9144
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (29.9901pt too wide) in alignment at lines 9099--9104
+Overfull \hbox (29.9901pt too wide) in alignment at lines 9144--9149
  [] [] [] [] [] [] [] 
  []
 
-[268] [269] [270
+[269] [270] [271] [272
 
 ]
 Chapter 17.
-[271] [272] [273] [274] [275] [276]
+[273] [274] [275] [276] [277] [278]
 Appendix A.
-[277
+[279
 
-] [278]
+] [280]
 Appendix B.
 File: QMS-EN_files/figure-latex/kritiekeZwaarden-hulpfiguur-1.pdf Graphic file 
 (type pdf)
 <use QMS-EN_files/figure-latex/kritiekeZwaarden-hulpfiguur-1.pdf>
-[279
+[281
 
-] [280]
+] [282]
 Appendix C.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 24.88pt on input line 9506.
+(Font)              scaled to size 24.88pt on input line 9551.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 20.74pt on input line 9506.
+(Font)              scaled to size 20.74pt on input line 9551.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 17.28pt on input line 9506.
+(Font)              scaled to size 17.28pt on input line 9551.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 24.88228pt on input line 9506.
+(Font)              scaled to size 24.88228pt on input line 9551.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 20.7419pt on input line 9506.
+(Font)              scaled to size 20.7419pt on input line 9551.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 17.28157pt on input line 9506.
+(Font)              scaled to size 17.28157pt on input line 9551.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 24.87733pt on input line 9506.
+(Font)              scaled to size 24.87733pt on input line 9551.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 20.73778pt on input line 9506.
+(Font)              scaled to size 20.73778pt on input line 9551.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 17.27815pt on input line 9506.
+(Font)              scaled to size 17.27815pt on input line 9551.
 File: QMS-EN_files/figure-latex/criticaltvalues-auxiliaryfigure-1.pdf Graphic f
 ile (type pdf)
 <use QMS-EN_files/figure-latex/criticaltvalues-auxiliaryfigure-1.pdf>
 
-Overfull \hbox (19.32014pt too wide) in paragraph at lines 9518--9563
+Overfull \hbox (19.32014pt too wide) in paragraph at lines 9563--9608
  [][] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[281
+[283
 
-] [282]
+] [284]
 Appendix D.
 File: QMS-EN_files/figure-latex/criticalchi2values-auxiliaryfigure-1.pdf Graphi
 c file (type pdf)
 <use QMS-EN_files/figure-latex/criticalchi2values-auxiliaryfigure-1.pdf>
 
-Overfull \hbox (17.80014pt too wide) in paragraph at lines 9574--9617
+Overfull \hbox (17.80014pt too wide) in paragraph at lines 9619--9662
  [][] 
  []
 
 (./QMS-EN.bbl
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[283
+[285
 
-] [284] [285
+] [286] [287
 
-] [286] [287] [288] [289]) [290] (./QMS-EN.aux)
-Package rerunfilecheck Info: File `QMS-EN.out' has not changed.
-(rerunfilecheck)             Checksum: 0325B38A7BA11FE862A5392F79BAD0E4;22893.
+] [288] [289] [290] [291]) [292] (./QMS-EN.aux)
 
 LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
+Package rerunfilecheck Info: File `QMS-EN.out' has not changed.
+(rerunfilecheck)             Checksum: D93E5DA96BAF8877ADB420CA42CB204D;22898.
  ) 
 Here is how much of TeX's memory you used:
- 18021 strings out of 479441
- 319333 string characters out of 5880450
- 812577 words of memory out of 5000000
- 37053 multiletter control sequences out of 15000+600000
- 545463 words of font info for 116 fonts, out of 8000000 for 9000
+ 17583 strings out of 478943
+ 315214 string characters out of 5866788
+ 832102 words of memory out of 5000000
+ 37105 multiletter control sequences out of 15000+600000
+ 413805 words of font info for 114 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 84i,10n,118p,1870b,577s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 98i,10n,122p,1870b,576s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on QMS-EN.pdf (290 pages).
+Output written on QMS-EN.pdf (292 pages).

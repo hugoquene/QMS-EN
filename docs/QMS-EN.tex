@@ -119,7 +119,7 @@
 
 \title{Quantitative Methods and Statistics}
 \author{true}
-\date{Version compiled 17 Mar 2021}
+\date{Version compiled 28 Mar 2021}
 
 \begin{document}
 \maketitle
@@ -7726,7 +7726,7 @@ variance in the \emph{sample} can be assigned to the independent
 variable.
 
 The second measure for effect size with analysis of variance is the so-called
-\(\omega^2\) (``omega squared''):
+\(\omega^2\) (``omega squared'') (\citet{MD04}, p.296):
 \begin{equation}
   \label{eq:omegasq}
     \omega^2 = \frac{ \textrm{SS}_b - (k-1) \textrm{MS}_w} { \textrm{SS}_t + \textrm{MS}_w }
@@ -8787,8 +8787,8 @@ in order to use the test.
   frequencies again.
 \end{itemize}
 
-\hypertarget{formula}{%
-\section{formula}\label{formula}}
+\hypertarget{formulas-6}{%
+\section{formulas}\label{formulas-6}}
 
 The test statistic \(\chi^2\) is defined as
 \begin{equation}
@@ -8813,6 +8813,15 @@ of degrees of freedom must be equal to the number of cells minus 1. For a
 \(\chi^2\)-test with multiple samples (homogeneity) and/or with two variables
 (correlations), with respectively \(k\) and \(m\) categories, the number of
 degrees of freedom is equal to \((k-1)\times(m-1)\).
+
+For each cell of the frequency table, we can also compute the standardized residual:
+\begin{equation}
+  \label{eq:chi2-residu}
+  e = \frac{(O-E)}{\sqrt{E}}
+\end{equation}
+If we square these residuals and then sum the squares, the result is the \(\chi^2\) test statistic (given in Eq.\eqref{eq:chisquared}). The standardized residuals may also be interpreted as \(Z\) scores, using the critical \(Z\) values given in Appendix \ref{app:criticalZvalues}. If the standardized residual \(e>2\) then the observed count or observed frequency is significantly larger than the expected count or frequency (with \(\alpha=.05\)); if the residual is smaller than \(-2\) then the reverse holds. Hence the standardized residuals provide insight in the source of a significant outcome of the \(\chi^2\) test.
+
+For the example given in §\ref{sec:chi2gof} we find the following six standardized residuals for the six possible outcomes of the die: \((1.26, -0.32, +0.32, 0.00, 1.58, -2.58)\). The first five of these outcomes are observed approximately as frequently as expected, but the sixth of these outcomes is observed significantly less often than expected.
 
 \hypertarget{spss-14}{%
 \section{SPSS}\label{spss-14}}
@@ -8970,6 +8979,8 @@ If you choose \texttt{Expected\ proportions\ (chi-square\ test)}, you may adjust
 
 You may also check \texttt{Descriptives} and \texttt{Confidence\ interval} under the heading ``Additional Statistics'', and check \texttt{Descriptives\ plot} under ``Plots'', so as to gain better insight in the patterns in your data.
 
+In JASP it is not possible to obtain the standardized residuals; however you can compute these manually from the observed and expected counts.
+
 \hypertarget{contingency-tables-preparation-1}{%
 \subsection{contingency tables: preparation}\label{contingency-tables-preparation-1}}
 
@@ -9008,11 +9019,15 @@ Frequencies > Classical: Contingency Tables
 Select one nominal variable (\texttt{class}) in the ``Rows'' field, and the other nominal variable (\texttt{outcome}) in the ``Columns'' field, to set up the contingency table (Table \ref{tab:titanic}).
 Select the variable \texttt{count} into the ``Counts'' field; this specifies the numbers of observations for each cell.\\
 Open the \texttt{Statistics} section bar, and check the option \texttt{Chi-square} (\(\chi^2\)).
+Open the \texttt{Cells} section bar, and check the option \texttt{Expected\ counts}.
 
 The resulting value of the \(\chi^2\) test statistic is reported in the output under \textbf{Chi-Squared Tests}.
 
 If you have a ``long'' data sheet, with one observation per row, then you only need to select one nominal variable (\texttt{class}) in the ``Rows'' field, and the other nominal variable (\texttt{outcome}) in the ``Columns'' field, to set up the contingency table (Table \ref{tab:titanic}).\\
 Open the \texttt{Statistics} section bar, and check the option \texttt{Chi-square} (\(\chi^2\)).
+Open the \texttt{Cells} section bar, and check the option \texttt{Expected\ counts}.
+
+In JASP it is not possible to obtain the standardized residuals; however you can compute these manually from the observed and expected counts.
 
 \hypertarget{r-16}{%
 \section{R}\label{r-16}}
@@ -9022,7 +9037,8 @@ Open the \texttt{Statistics} section bar, and check the option \texttt{Chi-squar
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{chisq.test}\NormalTok{( }\KeywordTok{c}\NormalTok{( }\DecValTok{14}\NormalTok{, }\DecValTok{9}\NormalTok{, }\DecValTok{11}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{15}\NormalTok{, }\DecValTok{1}\NormalTok{ ) ) }\CommentTok{\# die §16.1}
+\KeywordTok{chisq.test}\NormalTok{( }\KeywordTok{c}\NormalTok{( }\DecValTok{14}\NormalTok{, }\DecValTok{9}\NormalTok{, }\DecValTok{11}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{15}\NormalTok{, }\DecValTok{1}\NormalTok{ ) ) {-}\textgreater{}}\StringTok{ }\NormalTok{dobbel.chi2.htest }\CommentTok{\# die §16.2}
+\KeywordTok{print}\NormalTok{(dobbel.chi2.htest)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -9032,6 +9048,16 @@ Open the \texttt{Statistics} section bar, and check the option \texttt{Chi-squar
 ## 
 ## data:  c(14, 9, 11, 10, 15, 1)
 ## X-squared = 12.4, df = 5, p-value = 0.0297
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dobbel.chi2.htest}\OperatorTok{$}\NormalTok{residuals }\CommentTok{\# STANDARDIZED resid in ...$residuals}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  1.2649111 -0.3162278  0.3162278  0.0000000  1.5811388 -2.8460499
 \end{verbatim}
 
 \hypertarget{contingency-table-preparation-and-testing}{%
@@ -9047,11 +9073,13 @@ the fourth dimension (outcome).
 \end{Highlighting}
 \end{Shaded}
 
-Next, we use the contingency table as the input for a \texttt{chisq.test}.
+Next, we use the contingency (frequency) table as the input for a \texttt{chisq.test}.
+The resulting \texttt{chisq.htest} object is saved within R in order to inspect its residuals.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{chisq.test}\NormalTok{( Titanic.classoutcome )  }\CommentTok{\# p\textless{}.0001}
+\KeywordTok{chisq.test}\NormalTok{( Titanic.classoutcome ) {-}\textgreater{}}\StringTok{ }\NormalTok{Titanic.chisq.htest}
+\KeywordTok{print}\NormalTok{(Titanic.chisq.htest)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -9063,13 +9091,30 @@ Next, we use the contingency table as the input for a \texttt{chisq.test}.
 ## X-squared = 190.4, df = 3, p-value < 2.2e-16
 \end{verbatim}
 
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Titanic.chisq.htest}\OperatorTok{$}\NormalTok{residuals}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##       Survived
+## Class         No       Yes
+##   1st  -6.607873  9.565772
+##   2nd  -1.867159  2.702959
+##   3rd   2.289965 -3.315027
+##   Crew  3.018611 -4.369840
+\end{verbatim}
+
+The residuals show the remarkably high number of survivors among the first class passengers, and the remarkably low number of survivors among the ship's crew.
+
 \hypertarget{effect-size-odds-ratio}{%
 \section{Effect size: odds ratio}\label{effect-size-odds-ratio}}
 
 When using the \(\chi^2\)-test, the effect size can be reported in the form
 of the so-called ``odds ratio''. The `odds ratio' is derived from the contingency
-table with frequencies per cell. We will explain all these matters
-using the following example.
+table with frequencies per cell; the odds ratio is most commonly used with \(2 \times 2\) contingency tables.
+We will explain all these matters using the following example of a \(2 \times 2\) contingency table.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -9238,8 +9283,8 @@ Wilcoxon signed-rank is based on the (ordinal) \emph{ranking} of the
 differences, and the \emph{t}-test is based on the (interval) \emph{size} of the
 differences.
 
-\hypertarget{formulas-6}{%
-\subsubsection{formulas}\label{formulas-6}}
+\hypertarget{formulas-7}{%
+\subsubsection{formulas}\label{formulas-7}}
 
 We not only calculate \(W_+\) (or \(|W_-|\)) in the aforementioned manner, but also
 the corresponding value of \(z\) \citep{Ferg89}:
@@ -9355,8 +9400,8 @@ reject H0\footnote{If we do a two-sided test with \(\alpha=.10\), then we could 
   as this probability is smaller than \(\alpha=.05\), we would then indeed
   be able to reject H0.}.
 
-\hypertarget{formulas-7}{%
-\subsubsection{formulas}\label{formulas-7}}
+\hypertarget{formulas-8}{%
+\subsubsection{formulas}\label{formulas-8}}
 
 For the sums of the rankings, it is the case that
 \(W_1 + W_2 = (n_1+n_2) (n_1+n_2+1) / 2\).
@@ -9403,8 +9448,8 @@ observations. We calculate \(H\) as the test statistic based on the rankings
 of the observations in the \(k\) different
 groups.
 
-\hypertarget{formula-1}{%
-\subsubsection{formula}\label{formula-1}}
+\hypertarget{formula}{%
+\subsubsection{formula}\label{formula}}
 
 \begin{equation}
   \label{eq:kruskall-wallis-H}

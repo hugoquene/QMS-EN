@@ -173,33 +173,34 @@ The test statistic $\chi^2$ is defined as
   (\#eq:chisquared)
     \chi^2 = \sum \frac{(O-E)^2}{E}
 \end{equation}
-in which $O$ and $E$ the
-indicate the observed and expected numbers of observations for each
-cell of the frequency table [@Ferg89]. The expected
+in which $O$ and $E$ indicate the observed and expected numbers of observations for each cell of the frequency table [@Ferg89]. The expected
 numbers might also be rational numbers (e.g. $45/6$ for the 6 possible
 outcomes of an honest die, if we throw 
 $45\times$). The larger the difference $(O-E)$ in one or several cells,
-the larger also $\chi^2$ will be. Due to squaring, the test
+the larger also $\chi^2$ will be (see below). Due to squaring, the test
 statistic $\chi^2$ is always null or positive, and never negative
 [@Ferg89].
 
-The probability distribution of the test statistic $\chi^2$ is determined by
-the number of degrees of freedom (see
-§\@ref(sec:ttest-freedomdegrees) for explanation of this concept).
-For a $\chi^2$-test with one nominal variable ("goodness of fit"), the number
-of degrees of freedom must be equal to the number of cells minus 1. For a 
-$\chi^2$-test with multiple samples (homogeneity) and/or with two variables
-(correlations), with respectively $k$ and $m$ categories, the number of
-degrees of freedom is equal to $(k-1)\times(m-1)$.
+The probability distribution of the test statistic $\chi^2$ is determined by the number of degrees of freedom (see §\@ref(sec:ttest-freedomdegrees) for explanation of this concept).
+For a $\chi^2$-test with one nominal variable ("goodness of fit"), the number of degrees of freedom must be equal to the number of cells minus 1. For a  $\chi^2$-test with multiple samples (homogeneity) and/or with two variables (correlations), with respectively $k$ and $m$ categories, the number of degrees of freedom is equal to $(k-1)\times(m-1)$.
 
-For each cell of the frequency table, we can also compute the standardized residual:
+For each cell of the frequency table, in row $i$ and column $j$, we can also compute the standardized residual:
 \begin{equation}
-  (\#eq:chi2-residu)
-  e = \frac{(O-E)}{\sqrt{E}}
+  (\#eq:chi2-stdresidu)
+  e_{ij} = \frac{(O_{ij}-E_{ij})}{\sqrt{E_{ij}}}
 \end{equation}
-If we square these residuals and then sum the squares, the result is the $\chi^2$ test statistic (given in Eq.\@ref(eq:chisquared)). The standardized residuals may also be interpreted as $Z$ scores, using the critical $Z$ values given in Appendix \@ref(app:criticalZvalues). If the standardized residual $e>2$ then the observed count or observed frequency is significantly larger than the expected count or frequency (with $\alpha=.05$); if the residual is smaller than $-2$ then the reverse holds. Hence the standardized residuals provide insight in the source of a significant outcome of the $\chi^2$ test. 
+If we square these residuals and then sum the squares, the result is the $\chi^2$ test statistic (given in Eq.\@ref(eq:chisquared)). If the standardized residual $e>2$ then the observed count or observed frequency in that cell is conspicuously larger than the expected count or frequency (with $\alpha=.05$); if the residual is smaller than $-2$ then the reverse holds. Hence the standardized residuals provide insight in the source of a significant outcome of the $\chi^2$ test. 
 
-For the example given in §\@ref(sec:chi2gof) we find the following six standardized residuals for the six possible outcomes of the die: $(1.26, -0.32, +0.32, 0.00, 1.58, -2.58)$. The first five of these outcomes are observed approximately as frequently as expected, but the sixth of these outcomes is observed significantly less often than expected.  
+For each cell of the frequency table, we can also compute the *adjusted* standardized residual, which takes into account the variation among all residuals (by using row totals $R_i$, column totals $C_j$, and the grand total $N$):
+\begin{equation}
+  (\#eq:chi2-adjstdresidu)
+  e_{ij} = \frac{(O_{ij}-E_{ij})}{\sqrt{E_{ij}\times(1-\frac{R_i}{N})\times(1-\frac{C_j}{N})}}
+\end{equation}
+The adjusted standardized residuals may also be interpreted as $Z$ scores, using the critical $Z$ values given in Appendix \@ref(app:criticalZvalues). Hence the adjusted standardized residuals provide insight in the source of a significant outcome of the $\chi^2$ test, and they also allow us to assess the contribution of each cell to that outcome[^fn16-3]. 
+
+[^fn16-3]: If multiple comparisons are performed, then the critical value of $\alpha$ should be adjusted accordingly, in order to prevent Type I errors. With $k$ comparisons, a safe precaution is to use $\alpha/k$ instead of $\alpha$ (Bonferroni correction). See also §\@ref(sec:anova-oneway-posthoc). 
+
+For the example given in §\@ref(sec:chi2gof) we find the following six adjusted standardized residuals for the six possible outcomes of the die: $(1.39, -0.35, +0.35, 0.00, 1.73, -3.12)$. The first five of these outcomes are observed approximately as frequently as expected, but the sixth of these outcomes is observed significantly less often than expected.  
 
 ## SPSS
 
@@ -339,7 +340,7 @@ If you choose `Expected proportions (chi-square test)`, you may adjust the expec
 
 You may also check `Descriptives` and `Confidence interval` under the heading "Additional Statistics", and check `Descriptives plot` under "Plots", so as to gain better insight in the patterns in your data. 
 
-In JASP it is not possible to obtain the standardized residuals; however you can compute these manually from the observed and expected counts. 
+In JASP it is not possible to obtain the (adjusted) standardized residuals; however you can compute these manually from the observed and expected counts. 
 
 ### contingency tables: preparation
 
@@ -381,7 +382,7 @@ If you have a "long" data sheet, with one observation per row, then you only nee
 Open the `Statistics` section bar, and check the option `Chi-square` ($\chi^2$). 
 Open the `Cells` section bar, and check the option `Expected counts`. 
 
-In JASP it is not possible to obtain the standardized residuals; however you can compute these manually from the observed and expected counts. 
+In JASP it is not possible to obtain the (adjusted) standardized residuals; however you can compute these manually from the observed and expected counts. 
 
 
 ## R
@@ -391,7 +392,8 @@ In JASP it is not possible to obtain the standardized residuals; however you can
 ```{r}
 chisq.test( c( 14, 9, 11, 10, 15, 1 ) ) -> dobbel.chi2.htest # die §16.2
 print(dobbel.chi2.htest)
-dobbel.chi2.htest$residuals # STANDARDIZED resid in ...$residuals
+dobbel.chi2.htest$residuals # standardized residuals
+dobbel.chi2.htest$stdres # adjusted standardized residuals
 ```
 
 ### contingency table: preparation and testing
@@ -408,10 +410,11 @@ The resulting `chisq.htest` object is saved within R in order to inspect its res
 ```{r}
 chisq.test( Titanic.classoutcome ) -> Titanic.chisq.htest
 print(Titanic.chisq.htest)
-Titanic.chisq.htest$residuals
+# Titanic.chisq.htest$residuals # standardized residuals
+Titanic.chisq.htest$stdres # adjusted standardized residuals
 ```
 
-The residuals show the remarkably high number of survivors among the first class passengers, and the remarkably low number of survivors among the ship's crew. 
+The adjusted standardized residuals show the remarkably high number of survivors among the first class passengers, and the remarkably low number of survivors among the ship's crew. 
 
 
 ## Effect size: odds ratio
@@ -469,10 +472,6 @@ as great for the smokers as for the non-smokers. We report this as follows:
 > non-smokers.
 
 
-[^fn16-1]: The value found $\chi^2=12.44$ is slightly under the critical value for
-5 d.f. and $p=.025$, (there $(\chi^2)^*=12.83$), thus the corresponding probability
-of this value or a larger value is slightly greater than $0.025$.
+[^fn16-1]: The value found $\chi^2=12.44$ is slightly under the critical value for 5 d.f. and $p=.025$, (there $(\chi^2)^*=12.83$), thus the corresponding probability of this value or a larger value is slightly greater than $0.025$.
 
-[^fn16-2]: If one variable's observations are paired rather than independent (e.g.
-before/after treatment, passed/failed, etc.), then the McNemar test is a useful
-alternative.
+[^fn16-2]: If one variable's observations are paired rather than independent (e.g. before/after treatment, passed/failed, etc.), then the McNemar test is a useful alternative.

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2021.3.28)  28 MAR 2021 11:52
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2021.3.28)  29 MAR 2021 13:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1466,28 +1466,34 @@ GLE SAMPLE \TU/lmr/m/n/10 261
 [261]
 Overfull \vbox (0.62584pt too high) has occurred while \output is active []
 
-[262] [263] [264] [265] [266] [267]
-Overfull \hbox (33.0pt too wide) in paragraph at lines 9061--9061
+[262] [263] [264] [265] [266] [267] [268]
+Overfull \hbox (33.0pt too wide) in paragraph at lines 9056--9056
 []\TU/lmtt/m/n/10 ## [1]  1.2649111 -0.3162278  0.3162278  0.0000000  1.5811388
  -2.8460499[] 
  []
 
-[268]
-Overfull \hbox (29.9901pt too wide) in alignment at lines 9131--9140
+
+Overfull \hbox (33.0pt too wide) in paragraph at lines 9066--9066
+[]\TU/lmtt/m/n/10 ## [1]  1.3856406 -0.3464102  0.3464102  0.0000000  1.7320508
+ -3.1176915[] 
+ []
+
+[269]
+Overfull \hbox (29.9901pt too wide) in alignment at lines 9137--9146
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (29.9901pt too wide) in alignment at lines 9140--9144
+Overfull \hbox (29.9901pt too wide) in alignment at lines 9146--9150
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (29.9901pt too wide) in alignment at lines 9144--9149
+Overfull \hbox (29.9901pt too wide) in alignment at lines 9150--9155
  [] [] [] [] [] [] [] 
  []
 
-[269] [270] [271] [272
+[270] [271] [272
 
 ]
 Chapter 17.
@@ -1505,28 +1511,28 @@ File: QMS-EN_files/figure-latex/kritiekeZwaarden-hulpfiguur-1.pdf Graphic file
 ] [282]
 Appendix C.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 24.88pt on input line 9551.
+(Font)              scaled to size 24.88pt on input line 9557.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 20.74pt on input line 9551.
+(Font)              scaled to size 20.74pt on input line 9557.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 17.28pt on input line 9551.
+(Font)              scaled to size 17.28pt on input line 9557.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 24.88228pt on input line 9551.
+(Font)              scaled to size 24.88228pt on input line 9557.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 20.7419pt on input line 9551.
+(Font)              scaled to size 20.7419pt on input line 9557.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 17.28157pt on input line 9551.
+(Font)              scaled to size 17.28157pt on input line 9557.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 24.87733pt on input line 9551.
+(Font)              scaled to size 24.87733pt on input line 9557.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 20.73778pt on input line 9551.
+(Font)              scaled to size 20.73778pt on input line 9557.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 17.27815pt on input line 9551.
+(Font)              scaled to size 17.27815pt on input line 9557.
 File: QMS-EN_files/figure-latex/criticaltvalues-auxiliaryfigure-1.pdf Graphic f
 ile (type pdf)
 <use QMS-EN_files/figure-latex/criticaltvalues-auxiliaryfigure-1.pdf>
 
-Overfull \hbox (19.32014pt too wide) in paragraph at lines 9563--9608
+Overfull \hbox (19.32014pt too wide) in paragraph at lines 9569--9614
  [][] 
  []
 
@@ -1541,7 +1547,7 @@ File: QMS-EN_files/figure-latex/criticalchi2values-auxiliaryfigure-1.pdf Graphi
 c file (type pdf)
 <use QMS-EN_files/figure-latex/criticalchi2values-auxiliaryfigure-1.pdf>
 
-Overfull \hbox (17.80014pt too wide) in paragraph at lines 9619--9662
+Overfull \hbox (17.80014pt too wide) in paragraph at lines 9625--9668
  [][] 
  []
 
@@ -1563,10 +1569,10 @@ Package rerunfilecheck Info: File `QMS-EN.out' has not changed.
 (rerunfilecheck)             Checksum: D93E5DA96BAF8877ADB420CA42CB204D;22898.
  ) 
 Here is how much of TeX's memory you used:
- 17583 strings out of 478943
- 315214 string characters out of 5866788
- 832102 words of memory out of 5000000
- 37105 multiletter control sequences out of 15000+600000
+ 17584 strings out of 478943
+ 315239 string characters out of 5866788
+ 832144 words of memory out of 5000000
+ 37106 multiletter control sequences out of 15000+600000
  413805 words of font info for 114 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  98i,10n,122p,1870b,576s stack positions out of 5000i,500n,10000p,200000b,80000s

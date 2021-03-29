@@ -709,19 +709,19 @@ statistic <span class="math inline">\(\chi^2\)</span> is always null or positive
 <span class="citation">(Ferguson and Takane <a href="#ref-Ferg89" role="doc-biblioref">1989</a>)</span>.</p>
 <p>The probability distribution of the test statistic <span class="math inline">\(\chi^2\)</span> is determined by the number of degrees of freedom (see §<a href="ch-testing.html#sec:ttest-freedomdegrees">13.2.1</a> for explanation of this concept).
 For a <span class="math inline">\(\chi^2\)</span>-test with one nominal variable (“goodness of fit”), the number of degrees of freedom must be equal to the number of cells minus 1. For a <span class="math inline">\(\chi^2\)</span>-test with multiple samples (homogeneity) and/or with two variables (correlations), with respectively <span class="math inline">\(k\)</span> and <span class="math inline">\(m\)</span> categories, the number of degrees of freedom is equal to <span class="math inline">\((k-1)\times(m-1)\)</span>.</p>
-<p>For each cell of the frequency table, in row <span class="math inline">\(i\)</span> and column <span class="math inline">\(j\)</span>, we can also compute the standardized residual:
-<span class="math display" id="eq:chi2-stdresidu">\[\begin{equation}
+<p>For each cell of the frequency table, in row <span class="math inline">\(i\)</span> and column <span class="math inline">\(j\)</span>, we can also compute the raw residual:
+<span class="math display" id="eq:chi2-rawresidu">\[\begin{equation}
   \tag{16.2}
   e_{ij} = \frac{(O_{ij}-E_{ij})}{\sqrt{E_{ij}}}
 \end{equation}\]</span>
-If we square these residuals and then sum the squares, the result is the <span class="math inline">\(\chi^2\)</span> test statistic (given in Eq.<a href="ch-chi-square-tests.html#eq:chisquared">(16.1)</a>). If the standardized residual <span class="math inline">\(e&gt;2\)</span> then the observed count or observed frequency in that cell is conspicuously larger than the expected count or frequency (with <span class="math inline">\(\alpha=.05\)</span>); if the residual is smaller than <span class="math inline">\(-2\)</span> then the reverse holds. Hence the standardized residuals provide insight in the source of a significant outcome of the <span class="math inline">\(\chi^2\)</span> test.</p>
-<p>For each cell of the frequency table, we can also compute the <em>adjusted</em> standardized residual, which takes into account the variation among all residuals (by using row totals <span class="math inline">\(R_i\)</span>, column totals <span class="math inline">\(C_j\)</span>, and the grand total <span class="math inline">\(N\)</span>):
-<span class="math display" id="eq:chi2-adjstdresidu">\[\begin{equation}
+If we square these raw residuals and then sum the squares, the result is the <span class="math inline">\(\chi^2\)</span> test statistic given in Eq.<a href="ch-chi-square-tests.html#eq:chisquared">(16.1)</a> above.</p>
+<p>It is more insightful to compute the <em>standardized</em> residual for each cell of the frequency table <span class="citation">(Agresti <a href="#ref-Agre07" role="doc-biblioref">2007</a>, 38)</span>. The standardization means that the standard error of the residuals is taken into account (by using row totals <span class="math inline">\(R_i\)</span>, column totals <span class="math inline">\(C_j\)</span>, and the grand total <span class="math inline">\(N\)</span>):
+<span class="math display" id="eq:chi2-stdresidu">\[\begin{equation}
   \tag{16.3}
   e_{ij} = \frac{(O_{ij}-E_{ij})}{\sqrt{E_{ij}\times(1-\frac{R_i}{N})\times(1-\frac{C_j}{N})}}
 \end{equation}\]</span>
-The adjusted standardized residuals may also be interpreted as <span class="math inline">\(Z\)</span> scores, using the critical <span class="math inline">\(Z\)</span> values given in Appendix <a href="app-criticalZvalues.html#app:criticalZvalues">B</a>. Hence the adjusted standardized residuals provide insight in the source of a significant outcome of the <span class="math inline">\(\chi^2\)</span> test, and they also allow us to assess the contribution of each cell to that outcome<a href="#fn40" class="footnote-ref" id="fnref40"><sup>40</sup></a>.</p>
-<p>For the example given in §<a href="ch-chi-square-tests.html#sec:chi2gof">16.2</a> we find the following six adjusted standardized residuals for the six possible outcomes of the die: <span class="math inline">\((1.39, -0.35, +0.35, 0.00, 1.73, -3.12)\)</span>. The first five of these outcomes are observed approximately as frequently as expected, but the sixth of these outcomes is observed significantly less often than expected.</p>
+These standardized residuals may be interpreted as standard normal <span class="math inline">\(Z\)</span> scores, using the critical <span class="math inline">\(Z\)</span> values given in Appendix <a href="app-criticalZvalues.html#app:criticalZvalues">B</a>. Hence the adjusted standardized residuals provide insight in the source of a significant outcome of the <span class="math inline">\(\chi^2\)</span> test, and they also allow us to assess the contribution of each cell to that outcome<a href="#fn40" class="footnote-ref" id="fnref40"><sup>40</sup></a>.</p>
+<p>For the example given in §<a href="ch-chi-square-tests.html#sec:chi2gof">16.2</a> we find the following six standardized residuals for the six possible outcomes of the die: <span class="math inline">\((1.39, -0.35, +0.35, 0.00, 1.73, -3.12)\)</span>. The first five of these outcomes are observed approximately as frequently as expected, but the sixth of these outcomes is observed significantly less often than expected (<span class="math inline">\(p=.003\)</span>).</p>
 </div>
 <div id="spss-14" class="section level2" number="16.7">
 <h2><span class="header-section-number">16.7</span> SPSS</h2>
@@ -880,9 +880,11 @@ Open the <code>Cells</code> section bar, and check the option <code>Expected cou
 ## 
 ## data:  c(14, 9, 11, 10, 15, 1)
 ## X-squared = 12.4, df = 5, p-value = 0.0297</code></pre>
-<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="ch-chi-square-tests.html#cb177-1" aria-hidden="true"></a>dobbel.chi2.htest<span class="op">$</span>residuals <span class="co"># standardized residuals</span></span></code></pre></div>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="ch-chi-square-tests.html#cb177-1" aria-hidden="true"></a>dobbel.chi2.htest<span class="op">$</span>residuals <span class="co"># raw residuals</span></span></code></pre></div>
 <pre><code>## [1]  1.2649111 -0.3162278  0.3162278  0.0000000  1.5811388 -2.8460499</code></pre>
-<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="ch-chi-square-tests.html#cb179-1" aria-hidden="true"></a>dobbel.chi2.htest<span class="op">$</span>stdres <span class="co"># adjusted standardized residuals</span></span></code></pre></div>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="ch-chi-square-tests.html#cb179-1" aria-hidden="true"></a><span class="kw">sum</span>( (dobbel.chi2.htest<span class="op">$</span>residuals)<span class="op">^</span><span class="dv">2</span> ) <span class="co"># chi2 = sum of sq of raw resid</span></span></code></pre></div>
+<pre><code>## [1] 12.4</code></pre>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="ch-chi-square-tests.html#cb181-1" aria-hidden="true"></a>dobbel.chi2.htest<span class="op">$</span>stdres <span class="co"># standardized residuals</span></span></code></pre></div>
 <pre><code>## [1]  1.3856406 -0.3464102  0.3464102  0.0000000  1.7320508 -3.1176915</code></pre>
 </div>
 <div id="contingency-table-preparation-and-testing" class="section level3" number="16.9.2">
@@ -890,18 +892,17 @@ Open the <code>Cells</code> section bar, and check the option <code>Expected cou
 <p>In R, the dataset <code>Titanic</code> is provided as a multidimensional matrix. We sum
 the observations and make a contingency table of the first dimension (class) and
 the fourth dimension (outcome).</p>
-<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="ch-chi-square-tests.html#cb181-1" aria-hidden="true"></a><span class="kw">apply</span>( Titanic, <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">4</span>), sum ) -&gt;<span class="st"> </span>Titanic.classoutcome</span></code></pre></div>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="ch-chi-square-tests.html#cb183-1" aria-hidden="true"></a><span class="kw">apply</span>( Titanic, <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">4</span>), sum ) -&gt;<span class="st"> </span>Titanic.classoutcome</span></code></pre></div>
 <p>Next, we use the contingency (frequency) table as the input for a <code>chisq.test</code>.
 The resulting <code>chisq.htest</code> object is saved within R in order to inspect its residuals.</p>
-<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="ch-chi-square-tests.html#cb182-1" aria-hidden="true"></a><span class="kw">chisq.test</span>( Titanic.classoutcome ) -&gt;<span class="st"> </span>Titanic.chisq.htest</span>
-<span id="cb182-2"><a href="ch-chi-square-tests.html#cb182-2" aria-hidden="true"></a><span class="kw">print</span>(Titanic.chisq.htest)</span></code></pre></div>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="ch-chi-square-tests.html#cb184-1" aria-hidden="true"></a><span class="kw">chisq.test</span>( Titanic.classoutcome ) -&gt;<span class="st"> </span>Titanic.chisq.htest</span>
+<span id="cb184-2"><a href="ch-chi-square-tests.html#cb184-2" aria-hidden="true"></a><span class="kw">print</span>(Titanic.chisq.htest)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s Chi-squared test
 ## 
 ## data:  Titanic.classoutcome
 ## X-squared = 190.4, df = 3, p-value &lt; 2.2e-16</code></pre>
-<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="ch-chi-square-tests.html#cb184-1" aria-hidden="true"></a><span class="co"># Titanic.chisq.htest$residuals # standardized residuals</span></span>
-<span id="cb184-2"><a href="ch-chi-square-tests.html#cb184-2" aria-hidden="true"></a>Titanic.chisq.htest<span class="op">$</span>stdres <span class="co"># adjusted standardized residuals</span></span></code></pre></div>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="ch-chi-square-tests.html#cb186-1" aria-hidden="true"></a>Titanic.chisq.htest<span class="op">$</span>stdres <span class="co"># standardized residuals</span></span></code></pre></div>
 <pre><code>##       Survived
 ## Class          No       Yes
 ##   1st  -12.593038 12.593038
@@ -1003,6 +1004,9 @@ non-smokers.</p>
 </div>
 <h3>References</h3>
 <div id="refs" class="references">
+<div id="ref-Agre07">
+<p>Agresti, Alan. 2007. <em>Introduction to Categorical Data Analysis</em>. 2nd ed. Hoboken, NJ: Wiley.</p>
+</div>
 <div id="ref-DollHill1956">
 <p>Doll, Richard, and A. Bradford Hill. 1956. “Lung Cancer and Other Causes of Death in Relation to Smoking: A Second Report on the Mortality of British Doctors.” <em>British Medical Journal</em>, 1071–81. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2035864/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2035864/</a>.</p>
 </div>
@@ -1015,7 +1019,7 @@ non-smokers.</p>
 <ol start="38">
 <li id="fn38"><p>The value found <span class="math inline">\(\chi^2=12.44\)</span> is slightly under the critical value for 5 d.f. and <span class="math inline">\(p=.025\)</span>, (there <span class="math inline">\((\chi^2)^*=12.83\)</span>), thus the corresponding probability of this value or a larger value is slightly greater than <span class="math inline">\(0.025\)</span>.<a href="ch-chi-square-tests.html#fnref38" class="footnote-back">↩︎</a></p></li>
 <li id="fn39"><p>If one variable’s observations are paired rather than independent (e.g. before/after treatment, passed/failed, etc.), then the McNemar test is a useful alternative.<a href="ch-chi-square-tests.html#fnref39" class="footnote-back">↩︎</a></p></li>
-<li id="fn40"><p>If multiple comparisons are performed, then the critical value of <span class="math inline">\(\alpha\)</span> should be adjusted accordingly, in order to prevent Type I errors. With <span class="math inline">\(k\)</span> comparisons, a safe precaution is to use <span class="math inline">\(\alpha/k\)</span> instead of <span class="math inline">\(\alpha\)</span> (Bonferroni correction). See also §<a href="ch-anova.html#sec:anova-oneway-posthoc">15.3.5</a>.<a href="ch-chi-square-tests.html#fnref40" class="footnote-back">↩︎</a></p></li>
+<li id="fn40"><p>If multiple comparisons are performed, then the critical value of <span class="math inline">\(\alpha\)</span> should be adjusted accordingly, in order to prevent Type I errors. With <span class="math inline">\(k\)</span> cells and <span class="math inline">\(k\)</span> comparisons, a safe precaution is to use <span class="math inline">\(\alpha/k\)</span> instead of <span class="math inline">\(\alpha\)</span> – this is called Bonferroni’s correction of the <span class="math inline">\(\alpha\)</span> value. See also §<a href="ch-anova.html#sec:anova-oneway-posthoc">15.3.5</a>.<a href="ch-chi-square-tests.html#fnref40" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2021.3.28)  29 MAR 2021 13:35
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2021.3.28)  29 MAR 2021 23:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1473,23 +1473,23 @@ Overfull \hbox (33.0pt too wide) in paragraph at lines 9056--9056
  []
 
 
-Overfull \hbox (33.0pt too wide) in paragraph at lines 9066--9066
+Overfull \hbox (33.0pt too wide) in paragraph at lines 9076--9076
 []\TU/lmtt/m/n/10 ## [1]  1.3856406 -0.3464102  0.3464102  0.0000000  1.7320508
  -3.1176915[] 
  []
 
 [269]
-Overfull \hbox (29.9901pt too wide) in alignment at lines 9137--9146
+Overfull \hbox (29.9901pt too wide) in alignment at lines 9146--9155
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (29.9901pt too wide) in alignment at lines 9146--9150
+Overfull \hbox (29.9901pt too wide) in alignment at lines 9155--9159
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (29.9901pt too wide) in alignment at lines 9150--9155
+Overfull \hbox (29.9901pt too wide) in alignment at lines 9159--9164
  [] [] [] [] [] [] [] 
  []
 
@@ -1511,28 +1511,28 @@ File: QMS-EN_files/figure-latex/kritiekeZwaarden-hulpfiguur-1.pdf Graphic file
 ] [282]
 Appendix C.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 24.88pt on input line 9557.
+(Font)              scaled to size 24.88pt on input line 9566.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 20.74pt on input line 9557.
+(Font)              scaled to size 20.74pt on input line 9566.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 17.28pt on input line 9557.
+(Font)              scaled to size 17.28pt on input line 9566.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 24.88228pt on input line 9557.
+(Font)              scaled to size 24.88228pt on input line 9566.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 20.7419pt on input line 9557.
+(Font)              scaled to size 20.7419pt on input line 9566.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 17.28157pt on input line 9557.
+(Font)              scaled to size 17.28157pt on input line 9566.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 24.87733pt on input line 9557.
+(Font)              scaled to size 24.87733pt on input line 9566.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 20.73778pt on input line 9557.
+(Font)              scaled to size 20.73778pt on input line 9566.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 17.27815pt on input line 9557.
+(Font)              scaled to size 17.27815pt on input line 9566.
 File: QMS-EN_files/figure-latex/criticaltvalues-auxiliaryfigure-1.pdf Graphic f
 ile (type pdf)
 <use QMS-EN_files/figure-latex/criticaltvalues-auxiliaryfigure-1.pdf>
 
-Overfull \hbox (19.32014pt too wide) in paragraph at lines 9569--9614
+Overfull \hbox (19.32014pt too wide) in paragraph at lines 9578--9623
  [][] 
  []
 
@@ -1547,7 +1547,7 @@ File: QMS-EN_files/figure-latex/criticalchi2values-auxiliaryfigure-1.pdf Graphi
 c file (type pdf)
 <use QMS-EN_files/figure-latex/criticalchi2values-auxiliaryfigure-1.pdf>
 
-Overfull \hbox (17.80014pt too wide) in paragraph at lines 9625--9668
+Overfull \hbox (17.80014pt too wide) in paragraph at lines 9634--9677
  [][] 
  []
 
@@ -1569,12 +1569,12 @@ Package rerunfilecheck Info: File `QMS-EN.out' has not changed.
 (rerunfilecheck)             Checksum: D93E5DA96BAF8877ADB420CA42CB204D;22898.
  ) 
 Here is how much of TeX's memory you used:
- 17584 strings out of 478943
- 315239 string characters out of 5866788
- 832144 words of memory out of 5000000
- 37106 multiletter control sequences out of 15000+600000
+ 17587 strings out of 478943
+ 315278 string characters out of 5866788
+ 832171 words of memory out of 5000000
+ 37109 multiletter control sequences out of 15000+600000
  413805 words of font info for 114 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 98i,10n,122p,1870b,576s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 98i,10n,122p,1870b,578s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on QMS-EN.pdf (292 pages).

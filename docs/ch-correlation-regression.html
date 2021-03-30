@@ -617,7 +617,7 @@ i.e. is <em>significant</em>. We often see a small probability <span class="mat
 correlation <span class="math inline">\(r\)</span>. The correlation coefficient <span class="math inline">\(r\)</span> indicates the direction
 and strength of the relation, and the significance <span class="math inline">\(p\)</span> indicates the probability
 of finding this relation by chance if <span class="math inline">\(\rho=0\)</span> in the population. We report
-these findings as follows<a href="#fn24" class="footnote-ref" id="fnref24"><sup>24</sup></a>:</p>
+these findings as follows<a href="#fn25" class="footnote-ref" id="fnref25"><sup>25</sup></a>:</p>
 <hr />
 <blockquote>
 <p><em>Example 11.1:</em>
@@ -756,7 +756,7 @@ of <span class="math inline">\(X_i\)</span> and the linear relation between <spa
   \tag{11.2}
 \end{equation}\]</span><br />
 The straight line is described with
-two parameters, namely the intercept (or constant) <span class="math inline">\(a\)</span> and the slope <span class="math inline">\(b\)</span>.<a href="#fn25" class="footnote-ref" id="fnref25"><sup>25</sup></a> The straight line which describes the linear relation is often
+two parameters, namely the intercept (or constant) <span class="math inline">\(a\)</span> and the slope <span class="math inline">\(b\)</span>.<a href="#fn26" class="footnote-ref" id="fnref26"><sup>26</sup></a> The straight line which describes the linear relation is often
 referred to as the “regression line”;
 after all, we try to trace the observed values of <span class="math inline">\(Y\)</span> back to this linear
 function of the values of <span class="math inline">\(X\)</span>.</p>
@@ -1238,7 +1238,7 @@ However, for completeness, let us still see how you can construct such a variabl
 <h4><span class="header-section-number">11.6.3.1</span> construct new variable</h4>
 <p>First, create a new variable by clicking the <strong>+</strong> button which is to the right of the rightmost column header in the data sheet. A new panel “Create Computed Column” will appear, in which you can enter a name for the new variable, such as <code>UrbanRural2</code>.
 There are two methods to specify the new variable, using <code>R</code> commands or using a hand pointer sign (manual specification). Below we will explain for both options how to specify the new variable. You can also indicate the measurement level of the new variable; in this example we will use <code>Nominal</code>. Finally, click on <code>Create Column</code> to create the new variable, which will appear as a new empty column in the data sheet.</p>
-<p>If you chose the <code>R</code> command method to define a new variable, then a new panel will appear above the data sheet, with the text “#Enter your R code here :)”. You can enter some <code>R</code> commands and use <code>R</code> functions<a href="#fn26" class="footnote-ref" id="fnref26"><sup>26</sup></a> to define the new variable. Enter your <code>R</code> commands and click on <code>Compute column</code> to fill the empty variable with the new values.</p>
+<p>If you chose the <code>R</code> command method to define a new variable, then a new panel will appear above the data sheet, with the text “#Enter your R code here :)”. You can enter some <code>R</code> commands and use <code>R</code> functions<a href="#fn27" class="footnote-ref" id="fnref27"><sup>27</sup></a> to define the new variable. Enter your <code>R</code> commands and click on <code>Compute column</code> to fill the empty variable with the new values.</p>
 <p>For the new <code>UrbanRural2</code> variable in this example we may use this code:</p>
 <pre><code>ifelse(Leerling &lt;= 5, 1, 0) </code></pre>
 <p>This command means: <em>if</em> the value of ID variable <code>Leerling</code> (Pupil) is less than or equal to 5 (this if-condition is the first argument), then the new value will be 1 (the second argument), <em>else</em> the new value will be 0 (the third argument). In short: if Leerling <span class="math inline">\(\leq\)</span> 5, then 1, else 0.
@@ -1321,12 +1321,12 @@ Figure 11.4: <em>Correlation does not imply causation</em>, borrowed with permis
 </div>
 <div class="footnotes">
 <hr />
-<ol start="24">
-<li id="fn24"><p>When the correlation found <span class="math inline">\(r\)</span> is <em>not</em> significant, then this can thus be by chance,
+<ol start="25">
+<li id="fn25"><p>When the correlation found <span class="math inline">\(r\)</span> is <em>not</em> significant, then this can thus be by chance,
 and then we discount an interpretation of the correlation. We do then state in our report
-the correlation coefficient found and the established significance for it.<a href="ch-correlation-regression.html#fnref24" class="footnote-back">↩︎</a></p></li>
-<li id="fn25"><p>In some school books, this equation is described as <span class="math inline">\(Y = a X + b\)</span>, with <span class="math inline">\(a\)</span> as the slope and <span class="math inline">\(b\)</span> as the intercept; however, we keep to the conventional international notation here.<a href="ch-correlation-regression.html#fnref25" class="footnote-back">↩︎</a></p></li>
-<li id="fn26"><p>Only selected <code>R</code> functions from a so-called “whitelist” of functions are allowed.<a href="ch-correlation-regression.html#fnref26" class="footnote-back">↩︎</a></p></li>
+the correlation coefficient found and the established significance for it.<a href="ch-correlation-regression.html#fnref25" class="footnote-back">↩︎</a></p></li>
+<li id="fn26"><p>In some school books, this equation is described as <span class="math inline">\(Y = a X + b\)</span>, with <span class="math inline">\(a\)</span> as the slope and <span class="math inline">\(b\)</span> as the intercept; however, we keep to the conventional international notation here.<a href="ch-correlation-regression.html#fnref26" class="footnote-back">↩︎</a></p></li>
+<li id="fn27"><p>Only selected <code>R</code> functions from a so-called “whitelist” of functions are allowed.<a href="ch-correlation-regression.html#fnref27" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

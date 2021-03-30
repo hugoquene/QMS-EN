@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2021.3.28)  30 MAR 2021 11:13
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2021.3.28)  30 MAR 2021 16:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -831,43 +831,43 @@ Chapter 3.
 LaTeX Warning: Reference `ch:ontwerp' on page 43 undefined on input line 672.
 
 [43] [44]
-Underfull \hbox (badness 4739) in paragraph at lines 697--699
+Underfull \hbox (badness 4739) in paragraph at lines 698--700
 []\TU/lmr/m/n/10 The General Data Protection Regulation (GDPR), see []$[][][][]
 [] [] [] []
  []
 
 
-Overfull \hbox (22.79999pt too wide) in paragraph at lines 697--699
+Overfull \hbox (22.79999pt too wide) in paragraph at lines 698--700
 [][][][][][][][][][][][][][][][][][][][][][][][][][] [] [][] [] [][] [] [][][][
 ][][][][][][][] [] [][][] [][] [][][][][][][][] [][] [][][][][][][][][][][][][]
 [][][]$[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 699--700
+Underfull \hbox (badness 10000) in paragraph at lines 700--701
 []\TU/lmr/m/n/10 Wet Medisch-wetenschappelijk Onderzoek met mensen (WMO;
  []
 
 
-Underfull \hbox (badness 3138) in paragraph at lines 699--700
+Underfull \hbox (badness 3138) in paragraph at lines 700--701
 \TU/lmr/m/n/10 English: Medical Research Involving Human Subjects Act), see
  []
 
 
-Underfull \hbox (badness 4492) in paragraph at lines 699--700
+Underfull \hbox (badness 4492) in paragraph at lines 700--701
 []$[][][][][] [] [] [] [][][][][][] [] [][][][][][][][] [] [][] [] [][][][][][]
 [][][][][] [] [][][][] [][] [][] [][] [][]$[] \TU/lmr/m/n/10 (in Dutch) or
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 699--700
+Underfull \hbox (badness 10000) in paragraph at lines 700--701
 []$[][][][][] [] [] [] [][][][][][][] [] [][][][] [] [][] [] [][][][][][][][][]
 [][][][] [] [][][][][] [][] [][][][][][][][][] [][] [][][] [][] [][][][][][][] 
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 699--700
+Underfull \hbox (badness 10000) in paragraph at lines 700--701
 [][][][][][][][][][] [][] [][][][][][][][] [] [][][][] [] [][][][][][][] [][] [
 ][][][][][][][] [][] [][][][][][][][][] [][] [][][][][] [][] [][][][][][][][] [
 ][] [][][] [][]
@@ -875,10 +875,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 699--700
 
 [45]
 
-LaTeX Warning: Reference `sec:ontwerp' on page 46 undefined on input line 718.
+LaTeX Warning: Reference `sec:ontwerp' on page 46 undefined on input line 719.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [46] [47] [48] [49]
-Underfull \hbox (badness 10000) in paragraph at lines 792--793
+Underfull \hbox (badness 10000) in paragraph at lines 793--794
 [][]$[][][][][] [] [] [] [][][][][][][][] [] [][] [] [][] [] [][] [] [][][][][]
 [][][][] [][] [][][][][][][][][][][] [] [][][][][][][][] [][] [][][] [][]
  []
@@ -895,7 +898,7 @@ Chapter 5.
 Overfull \vbox (28.05089pt too high) has occurred while \output is active []
 
 [62] [63] [64] [65] [66]
-Underfull \hbox (badness 10000) in paragraph at lines 1054--1059
+Underfull \hbox (badness 10000) in paragraph at lines 1055--1060
 
  []
 
@@ -911,13 +914,13 @@ Chapter 7.
 [95
 
 ] [96] [97] [98] [99] [100]
-Underfull \hbox (badness 10000) in paragraph at lines 1637--1640
+Underfull \hbox (badness 10000) in paragraph at lines 1638--1641
 
  []
 
 [101]
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 1657.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 1658.
 [102] [103] [104
 
 ] [105] [106]
@@ -928,12 +931,12 @@ Chapter 8.
 Overfull \vbox (180.72635pt too high) has occurred while \output is active []
 
 [108] [109]
-Underfull \hbox (badness 10000) in paragraph at lines 1877--1881
+Underfull \hbox (badness 10000) in paragraph at lines 1878--1882
 
  []
 
 
-Overfull \hbox (883.5pt too wide) in paragraph at lines 1898--1898
+Overfull \hbox (883.5pt too wide) in paragraph at lines 1899--1899
 []\TU/lmtt/m/n/10 Select the variable(s) to summarize and place them into the f
 ield "Variables". Check the option []Frequency tables (nominal and ordinal vari
 ables)[] (below the field with Variables) to obtain frequency tables for all se
@@ -941,7 +944,7 @@ lected variables.[]
  []
 
 
-Overfull \hbox (1791.75pt too wide) in paragraph at lines 1898--1898
+Overfull \hbox (1791.75pt too wide) in paragraph at lines 1899--1899
 []\TU/lmtt/m/n/10 If a variable has higher measurement level ("Scale", i.e. int
 erval or ratio, Chapter \\ref{ch:levelsofmeasurement}), and you nevertheless wa
 nt a frequency table of that variable, then you need to adjust the measurement 
@@ -951,7 +954,7 @@ umn header in the data window.[]
  []
 
 
-Overfull \hbox (1125.0pt too wide) in paragraph at lines 1898--1898
+Overfull \hbox (1125.0pt too wide) in paragraph at lines 1899--1899
 []\TU/lmtt/m/n/10 You may also want to divide or "cut up" the continuous variab
 le into discrete intervals. This is achieved by first creating a new empty vari
 able, and subsequently filling that variable with the discrete interval values.
@@ -959,7 +962,7 @@ able, and subsequently filling that variable with the discrete interval values.
  []
 
 
-Overfull \hbox (3765.75pt too wide) in paragraph at lines 1898--1898
+Overfull \hbox (3765.75pt too wide) in paragraph at lines 1899--1899
 []\TU/lmtt/m/n/10 To create a new variable, click on the **+** button to the ri
 ght of the last column name in the data tab. A "Create Computed Column" panel a
 ppears, where you can enter a name for the new variable, e.g. []troon12_ordinal
@@ -974,7 +977,7 @@ able in the data set.[]
  []
 
 
-Overfull \hbox (1513.5pt too wide) in paragraph at lines 1898--1898
+Overfull \hbox (1513.5pt too wide) in paragraph at lines 1899--1899
 []\TU/lmtt/m/n/10 If the **R** option is chosen to define the new variable, a f
 ield with "#Enter your R code here :)" appears above the data. Here you can ent
 er R code that generates random numbers using R functions. Enter the R code (se
@@ -983,40 +986,40 @@ e below) and click on []Compute column[] at the bottom of the field to fill the
  []
 
 
-Overfull \hbox (400.5pt too wide) in paragraph at lines 1898--1898
+Overfull \hbox (400.5pt too wide) in paragraph at lines 1899--1899
 []\TU/lmtt/m/n/10 This snippet of R code cuts up the continuous variable []troo
 n12[] into the discrete intervals shown in Table \\ref{tab:queensspeech2012paus
 es}:[] 
  []
 
 
-Overfull \hbox (132.75pt too wide) in paragraph at lines 1908--1908
+Overfull \hbox (132.75pt too wide) in paragraph at lines 1909--1909
 []\TU/lmtt/m/n/10 (i) []seq[]: make a sequence from 0 to 5 (units, here: second
 s) in increments of 0.5 seconds,[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 1908--1908
+Overfull \hbox (75.0pt too wide) in paragraph at lines 1909--1909
 []\TU/lmtt/m/n/10 (ii) []cut[]: cut up the variable (troon2012) in intervals ba
 sed on this sequence.[] 
  []
 
 
-Overfull \hbox (537.0pt too wide) in paragraph at lines 1908--1908
+Overfull \hbox (537.0pt too wide) in paragraph at lines 1909--1909
 []\TU/lmtt/m/n/10 If you do not know the width and range of the intervals, but 
 instead you wish to obtain a particular number (say 10) of equal intervals, the
 n use the following snippet:[] 
  []
 
 
-Overfull \hbox (400.5pt too wide) in paragraph at lines 1929--1929
+Overfull \hbox (400.5pt too wide) in paragraph at lines 1930--1930
 []\TU/lmtt/m/n/10 The first interval starts at the lowest score, and the last i
 nterval ends at the highest value of []troon12[], yielding []10[] intervals in 
 total.[] 
  []
 
 
-Overfull \hbox (2931.0pt too wide) in paragraph at lines 1929--1929
+Overfull \hbox (2931.0pt too wide) in paragraph at lines 1930--1930
 []\TU/lmtt/m/n/10 If the **pointer** or **manual** option is chosen to define t
 he new variable, a work sheet will appear above the data. To the left of the wo
 rk sheet are the variables, above it are math symbols, and to the right of the 
@@ -1029,7 +1032,7 @@ nal values.\[]
  []
 
 
-Overfull \hbox (1482.0pt too wide) in paragraph at lines 1929--1929
+Overfull \hbox (1482.0pt too wide) in paragraph at lines 1930--1930
 []\TU/lmtt/m/n/10 In order to cut up a continuous variable into equal and discr
 ete intervals, pick the function []cut(y)[] from the right. Drag the input cont
 inuous variable to the "values" field and enter the number of resulting interva
@@ -1038,7 +1041,7 @@ ls yourself, then use the R code option (see above).[]
  []
 
 
-Overfull \hbox (1744.5pt too wide) in paragraph at lines 1929--1929
+Overfull \hbox (1744.5pt too wide) in paragraph at lines 1930--1930
 []\TU/lmtt/m/n/10 Now, at last, you can make the frequency table of the ordinal
  variable created above, as described in the first paragraph of this subsection
 . Select the newly created ordinal variable(s) to summarize and place them into
@@ -1059,7 +1062,7 @@ File: QMS-EN_files/figure-latex/troonrede2012-hist-1.pdf Graphic file (type pdf
 Underfull \vbox (badness 2096) has occurred while \output is active []
 
 [112]
-Underfull \hbox (badness 10000) in paragraph at lines 2026--2031
+Underfull \hbox (badness 10000) in paragraph at lines 2027--2032
 
  []
 
@@ -1078,40 +1081,40 @@ File: QMS-EN_files/figure-latex/centraltendencies-1.pdf Graphic file (type pdf)
 File: QMS-EN_files/figure-latex/cito-boxplot-1.pdf Graphic file (type pdf)
 <use QMS-EN_files/figure-latex/cito-boxplot-1.pdf>
 [123] [124] [125]
-Underfull \hbox (badness 1009) in paragraph at lines 2619--2630
+Underfull \hbox (badness 1009) in paragraph at lines 2620--2631
 \TU/lmr/m/n/10 standard deviation, amongst others because the MAD is less
  []
 
 [126]
 Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;!
 [127] [128] [129] [130]
-Underfull \hbox (badness 10000) in paragraph at lines 2907--2912
+Underfull \hbox (badness 10000) in paragraph at lines 2908--2913
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2913--2914
+Underfull \hbox (badness 10000) in paragraph at lines 2914--2915
 
  []
 
 
-Underfull \hbox (badness 3098) in paragraph at lines 2919--2924
+Underfull \hbox (badness 3098) in paragraph at lines 2920--2925
 \TU/lmr/m/n/10 Choose \TU/lmtt/m/n/10 Options\TU/lmr/m/n/10 ; tick: \TU/lmtt/m/
 n/10 Mean, Number of cases, Standard deviation,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2919--2924
+Underfull \hbox (badness 10000) in paragraph at lines 2920--2925
 
  []
 
 [131]
-Underfull \hbox (badness 10000) in paragraph at lines 2925--2926
+Underfull \hbox (badness 10000) in paragraph at lines 2926--2927
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2931--2935
+Underfull \hbox (badness 10000) in paragraph at lines 2932--2936
 
  []
 
@@ -1123,7 +1126,7 @@ df)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [134] [135]
-Overfull \hbox (33.0pt too wide) in paragraph at lines 3114--3114
+Overfull \hbox (33.0pt too wide) in paragraph at lines 3115--3115
 []\TU/lmtt/m/n/10 ## [1] -1.1575990  0.6776189  2.3716662 -0.3105753  0.1129365
  -0.7340872[] 
  []
@@ -1139,10 +1142,10 @@ e (type pdf)
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 3351.
+(amsmath)                 on input line 3352.
 
 [141]
-Underfull \hbox (badness 10000) in paragraph at lines 3357--3364
+Underfull \hbox (badness 10000) in paragraph at lines 3358--3365
 
  []
 
@@ -1158,7 +1161,7 @@ File: QMS-EN_files/figure-latex/curve.dnorm-1.pdf Graphic file (type pdf)
 <use QMS-EN_files/figure-latex/curve.dnorm-1.pdf>
 
 LaTeX Warning: Reference `fig:itunestimeshist' on page 149 undefined on input l
-ine 3724.
+ine 3725.
 
 [149]
 File: QMS-EN_files/figure-latex/itunestimeshist-1.pdf Graphic file (type pdf)
@@ -1168,7 +1171,7 @@ File: QMS-EN_files/figure-latex/itunestimesqqplot-1.pdf Graphic file (type pdf)
 <use QMS-EN_files/figure-latex/itunestimesqqplot-1.pdf>
 
 LaTeX Warning: Reference `fig:itunestimeshist' on page 150 undefined on input l
-ine 3759.
+ine 3760.
 
 [150]
 Overfull \hbox (42.53233pt too wide) has occurred while \output is active
@@ -1182,7 +1185,7 @@ File: QMS-EN_files/figure-latex/itunesmeanshist-1.pdf Graphic file (type pdf)
 [153]
 
 LaTeX Warning: Reference `sec:CentralLimitTheorem' on page 154 undefined on inp
-ut line 3918.
+ut line 3919.
 
 [154]
 File: QMS-EN_files/figure-latex/tprobabilitydistribution-1.pdf Graphic file (ty
@@ -1202,7 +1205,7 @@ File: QMS-EN_files/figure-latex/cito-scatter-1.pdf Graphic file (type pdf)
 File: QMS-EN_files/figure-latex/cor-scatter-1.pdf Graphic file (type pdf)
 <use QMS-EN_files/figure-latex/cor-scatter-1.pdf>
 [161] [162]
-Overfull \hbox (8.17702pt too wide) in paragraph at lines 4238--4242
+Overfull \hbox (8.17702pt too wide) in paragraph at lines 4239--4243
 []\TU/lmr/m/n/10 Choose \TU/lmtt/m/n/10 Pearsons \TU/lmr/m/n/10 correlation coe
 fficient, tick: \TU/lmtt/m/n/10 Flag significant correlations\TU/lmr/m/n/10 .
  []
@@ -1211,13 +1214,13 @@ fficient, tick: \TU/lmtt/m/n/10 Flag significant correlations\TU/lmr/m/n/10 .
 File: QMS-EN_files/figure-latex/cito-linearmodel-1.pdf Graphic file (type pdf)
 <use QMS-EN_files/figure-latex/cito-linearmodel-1.pdf>
 [165] [166] [167]
-Underfull \hbox (badness 10000) in paragraph at lines 4441--4451
+Underfull \hbox (badness 10000) in paragraph at lines 4442--4452
 []\TU/lmr/m/n/10 Choose \TU/lmtt/m/n/10 Dependent variable: Arithmetic \TU/lmr/
 m/n/10 and choose \TU/lmtt/m/n/10 Independent
  []
 
 
-Underfull \hbox (badness 2486) in paragraph at lines 4441--4451
+Underfull \hbox (badness 2486) in paragraph at lines 4442--4452
 \TU/lmtt/m/n/10 variable: Reading\TU/lmr/m/n/10 . Under the button \TU/lmtt/m/n
 /10 Statistics\TU/lmr/m/n/10 , tick \TU/lmtt/m/n/10 Model fit\TU/lmr/m/n/10 ,
  []
@@ -1226,19 +1229,19 @@ Underfull \hbox (badness 2486) in paragraph at lines 4441--4451
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [171]
-Underfull \hbox (badness 2426) in paragraph at lines 4657--4662
+Underfull \hbox (badness 2426) in paragraph at lines 4658--4663
 []\TU/lmr/m/n/10 Choose \TU/lmtt/m/n/10 Spearman \TU/lmr/m/n/10 rank correlatio
 n coefficient, tick: \TU/lmtt/m/n/10 Flag significant
  []
 
 [172]
-Overfull \hbox (75.0pt too wide) in paragraph at lines 4689--4689
+Overfull \hbox (75.0pt too wide) in paragraph at lines 4690--4690
 []\TU/lmtt/m/n/10 ## Warning in cor.test.default(Reading, Arithmetic, method = 
 "spearman"): Cannot[] 
  []
 
 [173] [174] [175] [176]
-Underfull \hbox (badness 2020) in paragraph at lines 4865--4867
+Underfull \hbox (badness 2020) in paragraph at lines 4866--4868
 \TU/lmtt/m/n/10 ifElse(Arithmetic < mean(Arithmetic), 0, 1)\TU/lmr/m/n/10 , and
  this expression is
  []
@@ -1247,7 +1250,7 @@ Underfull \hbox (badness 2020) in paragraph at lines 4865--4867
 File: figures/correlation.png Graphic file (type bmp)
 <figures/correlation.png>
 
-Overfull \hbox (5.00133pt too wide) in paragraph at lines 4960--4961
+Overfull \hbox (5.00133pt too wide) in paragraph at lines 4961--4962
  []\TU/lmr/m/n/10 {[] 
  []
 
@@ -1260,43 +1263,43 @@ Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;
 Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;!
 [184] [185] [186] [187] [188] [189] [190] [191] [192]
-Overfull \hbox (48.75pt too wide) in paragraph at lines 5606--5606
+Overfull \hbox (48.75pt too wide) in paragraph at lines 5607--5607
 []\TU/lmtt/m/n/10 ## Number of categories should be increased  in order to coun
 t frequencies.[] 
  []
 
 [193]
-Overfull \hbox (17.25pt too wide) in paragraph at lines 5630--5630
+Overfull \hbox (17.25pt too wide) in paragraph at lines 5631--5631
 []\TU/lmtt/m/n/10 ##   raw_alpha std.alpha G6(smc) average_r S/N  ase mean  sd 
 median_r[] 
  []
 
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 5630--5630
+Overfull \hbox (12.0pt too wide) in paragraph at lines 5631--5631
 []\TU/lmtt/m/n/10 ##       0.68      0.68    0.74      0.41 2.1 0.17   72 4.6  
    0.41[] 
  []
 
 
-Overfull \hbox (17.25pt too wide) in paragraph at lines 5630--5630
+Overfull \hbox (17.25pt too wide) in paragraph at lines 5631--5631
 []\TU/lmtt/m/n/10 ##    raw_alpha std.alpha G6(smc) average_r  S/N alpha se var
 .r med.r[] 
  []
 
 
-Overfull \hbox (17.25pt too wide) in paragraph at lines 5630--5630
+Overfull \hbox (17.25pt too wide) in paragraph at lines 5631--5631
 []\TU/lmtt/m/n/10 ## B1      0.15      0.16   0.088     0.088 0.19    0.497    
 NA 0.088[] 
  []
 
 
-Overfull \hbox (17.25pt too wide) in paragraph at lines 5630--5630
+Overfull \hbox (17.25pt too wide) in paragraph at lines 5631--5631
 []\TU/lmtt/m/n/10 ## B2      0.58      0.58   0.410     0.410 1.39    0.264    
 NA 0.410[] 
  []
 
 
-Overfull \hbox (17.25pt too wide) in paragraph at lines 5630--5630
+Overfull \hbox (17.25pt too wide) in paragraph at lines 5631--5631
 []\TU/lmtt/m/n/10 ## B3      0.84      0.85   0.745     0.745 5.84    0.095    
 NA 0.745[] 
  []
@@ -1313,11 +1316,11 @@ File: QMS-EN_files/figure-latex/gramm2013onesample-1.pdf Graphic file (type pdf
 <use QMS-EN_files/figure-latex/gramm2013onesample-1.pdf>
 [198]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 14.4pt on input line 5787.
+(Font)              scaled to size 14.4pt on input line 5788.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 14.4013pt on input line 5787.
+(Font)              scaled to size 14.4013pt on input line 5788.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 14.39845pt on input line 5787.
+(Font)              scaled to size 14.39845pt on input line 5788.
 [199] [200] [201] [202] [203] [204] [205]
 File: QMS-EN_files/figure-latex/gramm2013CIs-1.pdf Graphic file (type pdf)
 <use QMS-EN_files/figure-latex/gramm2013CIs-1.pdf>
@@ -1326,13 +1329,13 @@ Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;
 Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;!
 [209] [210] [211] [212]
-Overfull \hbox (17.25pt too wide) in paragraph at lines 6453--6453
+Overfull \hbox (17.25pt too wide) in paragraph at lines 6454--6454
 []\TU/lmtt/m/n/10 ## alternative hypothesis: true difference in means is not eq
 ual to 0[] 
  []
 
 [213] [214] [215] [216]
-Overfull \hbox (17.25pt too wide) in paragraph at lines 6626--6626
+Overfull \hbox (17.25pt too wide) in paragraph at lines 6627--6627
 []\TU/lmtt/m/n/10 ## alternative hypothesis: true difference in means is not eq
 ual to 0[] 
  []
@@ -1378,13 +1381,13 @@ f)
 [234] [235] [236]
 
 LaTeX Warning: Reference `fig:colours-obs' on page 237 undefined on input line 
-7523.
+7524.
 
 File: QMS-EN_files/figure-latex/colours-obs-1.pdf Graphic file (type pdf)
 <use QMS-EN_files/figure-latex/colours-obs-1.pdf>
 
 LaTeX Warning: Reference `fig:colours-obs' on page 237 undefined on input line 
-7535.
+7536.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1395,60 +1398,60 @@ Underfull \vbox (badness 6725) has occurred while \output is active []
 [238]
 
 LaTeX Warning: Reference `fig:colours-obs' on page 239 undefined on input line 
-7566.
+7567.
 
 [239]
 
 LaTeX Warning: Reference `fig:colours-obs' on page 240 undefined on input line 
-7684.
+7685.
 
 
 LaTeX Warning: Reference `fig:colours-obs' on page 240 undefined on input line 
-7684.
+7685.
 
 [240] [241]
 
 LaTeX Warning: Reference `fig:colours-obs' on page 242 undefined on input line 
-7757.
+7758.
 
 [242]
 
 LaTeX Warning: Reference `fig:colours-obs' on page 243 undefined on input line 
-7811.
+7812.
 
 
 LaTeX Warning: Reference `fig:colours-obs' on page 243 undefined on input line 
-7811.
+7812.
 
 [243]
 
 LaTeX Warning: Reference `fig:colours-obs' on page 244 undefined on input line 
-7914.
+7915.
 
 [244] [245] [246]
 
 LaTeX Warning: Reference `fig:colours-obs' on page 247 undefined on input line 
-8040.
+8041.
 
 [247] [248]
 
 LaTeX Warning: Reference `fig:colours-obs' on page 249 undefined on input line 
-8101.
+8102.
 
 [249] [250] [251] [252] [253] [254] [255] [256]
-Overfull \hbox (69.75pt too wide) in paragraph at lines 8571--8571
+Overfull \hbox (69.75pt too wide) in paragraph at lines 8572--8572
 []\TU/lmtt/m/n/10 ## Warning in replications(paste("~", xx), data = mf): non-fa
 ctors ignored: sex[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 8576--8576
+Overfull \hbox (90.75pt too wide) in paragraph at lines 8577--8577
 []\TU/lmtt/m/n/10 ## Warning in replications(paste("~", xx), data = mf): non-fa
 ctors ignored: region,[] 
  []
 
 [257]
-Overfull \hbox (38.25pt too wide) in paragraph at lines 8592--8592
+Overfull \hbox (38.25pt too wide) in paragraph at lines 8593--8593
 []\TU/lmtt/m/n/10 ## Fit: aov(formula = syldur ~ region * sex, data = talkers, 
 subset = ok)[] 
  []
@@ -1467,29 +1470,29 @@ GLE SAMPLE \TU/lmr/m/n/10 261
 Overfull \vbox (0.62584pt too high) has occurred while \output is active []
 
 [262] [263] [264] [265] [266] [267] [268]
-Overfull \hbox (33.0pt too wide) in paragraph at lines 9054--9054
+Overfull \hbox (33.0pt too wide) in paragraph at lines 9055--9055
 []\TU/lmtt/m/n/10 ## [1]  1.2649111 -0.3162278  0.3162278  0.0000000  1.5811388
  -2.8460499[] 
  []
 
 
-Overfull \hbox (33.0pt too wide) in paragraph at lines 9074--9074
+Overfull \hbox (33.0pt too wide) in paragraph at lines 9075--9075
 []\TU/lmtt/m/n/10 ## [1]  1.3856406 -0.3464102  0.3464102  0.0000000  1.7320508
  -3.1176915[] 
  []
 
 [269]
-Overfull \hbox (29.9901pt too wide) in alignment at lines 9144--9153
+Overfull \hbox (29.9901pt too wide) in alignment at lines 9145--9154
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (29.9901pt too wide) in alignment at lines 9153--9157
+Overfull \hbox (29.9901pt too wide) in alignment at lines 9154--9158
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (29.9901pt too wide) in alignment at lines 9157--9162
+Overfull \hbox (29.9901pt too wide) in alignment at lines 9158--9163
  [] [] [] [] [] [] [] 
  []
 
@@ -1511,28 +1514,28 @@ File: QMS-EN_files/figure-latex/kritiekeZwaarden-hulpfiguur-1.pdf Graphic file
 ] [282]
 Appendix C.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 24.88pt on input line 9564.
+(Font)              scaled to size 24.88pt on input line 9565.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 20.74pt on input line 9564.
+(Font)              scaled to size 20.74pt on input line 9565.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 17.28pt on input line 9564.
+(Font)              scaled to size 17.28pt on input line 9565.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 24.88228pt on input line 9564.
+(Font)              scaled to size 24.88228pt on input line 9565.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 20.7419pt on input line 9564.
+(Font)              scaled to size 20.7419pt on input line 9565.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 17.28157pt on input line 9564.
+(Font)              scaled to size 17.28157pt on input line 9565.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 24.87733pt on input line 9564.
+(Font)              scaled to size 24.87733pt on input line 9565.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 20.73778pt on input line 9564.
+(Font)              scaled to size 20.73778pt on input line 9565.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 17.27815pt on input line 9564.
+(Font)              scaled to size 17.27815pt on input line 9565.
 File: QMS-EN_files/figure-latex/criticaltvalues-auxiliaryfigure-1.pdf Graphic f
 ile (type pdf)
 <use QMS-EN_files/figure-latex/criticaltvalues-auxiliaryfigure-1.pdf>
 
-Overfull \hbox (19.32014pt too wide) in paragraph at lines 9576--9621
+Overfull \hbox (19.32014pt too wide) in paragraph at lines 9577--9622
  [][] 
  []
 
@@ -1547,7 +1550,7 @@ File: QMS-EN_files/figure-latex/criticalchi2values-auxiliaryfigure-1.pdf Graphi
 c file (type pdf)
 <use QMS-EN_files/figure-latex/criticalchi2values-auxiliaryfigure-1.pdf>
 
-Overfull \hbox (17.80014pt too wide) in paragraph at lines 9632--9675
+Overfull \hbox (17.80014pt too wide) in paragraph at lines 9633--9676
  [][] 
  []
 
@@ -1571,7 +1574,7 @@ Package rerunfilecheck Info: File `QMS-EN.out' has not changed.
 Here is how much of TeX's memory you used:
  17587 strings out of 478943
  315278 string characters out of 5866788
- 832171 words of memory out of 5000000
+ 832173 words of memory out of 5000000
  37109 multiletter control sequences out of 15000+600000
  413805 words of font info for 114 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191

@@ -555,7 +555,7 @@ with 5 degrees of freedom (see
 degrees of freedom), with <span class="math inline">\(p=.0297\)</span>. We usually use the computer to
 calculate this probability value, but we can also estimate this probability
 via a table with critical
-<span class="math inline">\(\chi^2\)</span>-values, see Appendix <a href="app-criticalchi2values.html#app:criticalchi2values">D</a>, and footnote<a href="#fn38" class="footnote-ref" id="fnref38"><sup>38</sup></a>).
+<span class="math inline">\(\chi^2\)</span>-values, see Appendix <a href="app-criticalchi2values.html#app:criticalchi2values">D</a>, and footnote<a href="#fn39" class="footnote-ref" id="fnref39"><sup>39</sup></a>).
 If H0 is true, then we have only 3% probability
 of finding this outcome (or an even more uneven distribution of outcomes).
 The significance <span class="math inline">\(p\)</span> found is smaller than <span class="math inline">\(\alpha=.05\)</span>, and we thus
@@ -685,7 +685,7 @@ on (a) random sample(s) of the population(s) (see
 §<a href="ch-samples.html#sec:random-samples">7.3</a>), or on random assignment of the elements
 from the sample to experimental conditions (randomisation, see
 §<a href="ch-validity.html#sec:internalvalidity">5.4</a>, point 5). Each element for the sample can thus only
-contribute one observation to one cell<a href="#fn39" class="footnote-ref" id="fnref39"><sup>39</sup></a>.</p></li>
+contribute one observation to one cell<a href="#fn40" class="footnote-ref" id="fnref40"><sup>40</sup></a>.</p></li>
 <li><p>The sample has to be large enough so that the expected frequency
 (<span class="math inline">\(E\)</span>) for each cell is at least 5. If the expected frequency or frequencies
 in one or more cells is/are less than 5, then reduce the number
@@ -720,7 +720,7 @@ If we square these raw residuals and then sum the squares, the result is the <sp
   \tag{16.3}
   e_{ij} = \frac{(O_{ij}-E_{ij})}{\sqrt{E_{ij}\times(1-\frac{R_i}{N})\times(1-\frac{C_j}{N})}}
 \end{equation}\]</span>
-These standardized residuals may be interpreted as standard normal <span class="math inline">\(Z\)</span> scores, using the critical <span class="math inline">\(Z\)</span> values given in Appendix <a href="app-criticalZvalues.html#app:criticalZvalues">B</a>. Hence the adjusted standardized residuals provide insight in the source of a significant outcome of the <span class="math inline">\(\chi^2\)</span> test, and they also allow us to assess the contribution of each cell to that outcome<a href="#fn40" class="footnote-ref" id="fnref40"><sup>40</sup></a>.</p>
+These standardized residuals may be interpreted as standard normal <span class="math inline">\(Z\)</span> scores, using the critical <span class="math inline">\(Z\)</span> values given in Appendix <a href="app-criticalZvalues.html#app:criticalZvalues">B</a>. Hence the adjusted standardized residuals provide insight in the source of a significant outcome of the <span class="math inline">\(\chi^2\)</span> test, and they also allow us to assess the contribution of each cell to that outcome<a href="#fn41" class="footnote-ref" id="fnref41"><sup>41</sup></a>.</p>
 <p>For the example given in §<a href="ch-chi-square-tests.html#sec:chi2gof">16.2</a> we find the following six standardized residuals for the six possible outcomes of the die: <span class="math inline">\((1.39, -0.35, +0.35, 0.00, 1.73, -3.12)\)</span>. The first five of these outcomes are observed approximately as frequently as expected, but the sixth of these outcomes is observed significantly less often than expected (<span class="math inline">\(p=.003\)</span>).</p>
 </div>
 <div id="spss-14" class="section level2" number="16.7">
@@ -1016,10 +1016,10 @@ non-smokers.</p>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="38">
-<li id="fn38"><p>The value found <span class="math inline">\(\chi^2=12.44\)</span> is slightly under the critical value for 5 d.f. and <span class="math inline">\(p=.025\)</span>, (there <span class="math inline">\((\chi^2)^*=12.83\)</span>), thus the corresponding probability of this value or a larger value is slightly greater than <span class="math inline">\(0.025\)</span>.<a href="ch-chi-square-tests.html#fnref38" class="footnote-back">↩︎</a></p></li>
-<li id="fn39"><p>If one variable’s observations are paired rather than independent (e.g. before/after treatment, passed/failed, etc.), then the McNemar test is a useful alternative.<a href="ch-chi-square-tests.html#fnref39" class="footnote-back">↩︎</a></p></li>
-<li id="fn40"><p>If multiple comparisons are performed, then the critical value of <span class="math inline">\(\alpha\)</span> should be adjusted accordingly, in order to prevent Type I errors somewhere among the comparisons. With <span class="math inline">\(k\)</span> cells and <span class="math inline">\(k\)</span> comparisons, a safe precaution is to use <span class="math inline">\(\alpha/k\)</span> instead of <span class="math inline">\(\alpha\)</span> for each comparison – this is called Bonferroni’s adjustement of the <span class="math inline">\(\alpha\)</span> value, or Dunn’s procedure <span class="citation">(Maxwell and Delaney <a href="#ref-MD04" role="doc-biblioref">2004</a>, 202)</span>. See also §<a href="ch-anova.html#sec:anova-oneway-posthoc">15.3.5</a>.<a href="ch-chi-square-tests.html#fnref40" class="footnote-back">↩︎</a></p></li>
+<ol start="39">
+<li id="fn39"><p>The value found <span class="math inline">\(\chi^2=12.44\)</span> is slightly under the critical value for 5 d.f. and <span class="math inline">\(p=.025\)</span>, (there <span class="math inline">\((\chi^2)^*=12.83\)</span>), thus the corresponding probability of this value or a larger value is slightly greater than <span class="math inline">\(0.025\)</span>.<a href="ch-chi-square-tests.html#fnref39" class="footnote-back">↩︎</a></p></li>
+<li id="fn40"><p>If one variable’s observations are paired rather than independent (e.g. before/after treatment, passed/failed, etc.), then the McNemar test is a useful alternative.<a href="ch-chi-square-tests.html#fnref40" class="footnote-back">↩︎</a></p></li>
+<li id="fn41"><p>If multiple comparisons are performed, then the critical value of <span class="math inline">\(\alpha\)</span> should be adjusted accordingly, in order to prevent Type I errors somewhere among the comparisons. With <span class="math inline">\(k\)</span> cells and <span class="math inline">\(k\)</span> comparisons, a safe precaution is to use <span class="math inline">\(\alpha/k\)</span> instead of <span class="math inline">\(\alpha\)</span> for each comparison – this is called Bonferroni’s adjustement of the <span class="math inline">\(\alpha\)</span> value, or Dunn’s procedure <span class="citation">(Maxwell and Delaney <a href="#ref-MD04" role="doc-biblioref">2004</a>, 202)</span>. See also §<a href="ch-anova.html#sec:anova-oneway-posthoc">15.3.5</a>.<a href="ch-chi-square-tests.html#fnref41" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

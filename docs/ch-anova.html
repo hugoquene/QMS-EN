@@ -1023,7 +1023,7 @@ in a planned way (1) whether the red group scores lower than the other two group
 (H0: <span class="math inline">\(\mu_\textrm{red} = (\mu_\textrm{grey}+\mu_\textrm{blue})/2\)</span>),
 and (2)
 whether the grey and blue groups differ from each other (H0:
-<span class="math inline">\(\mu_\textrm{grey} = \mu_\textrm{blue}\)</span>).<a href="#fn35" class="footnote-ref" id="fnref35"><sup>35</sup></a></p>
+<span class="math inline">\(\mu_\textrm{grey} = \mu_\textrm{blue}\)</span>).<a href="#fn36" class="footnote-ref" id="fnref36"><sup>36</sup></a></p>
 <p>The factor ‘group’ or ‘colour’ has 2 degrees of freedom, and that means that we
 can make precisely 2 of such planned comparisons or ‘contrasts’ which are
 independent of each other. Such independent contrasts
@@ -1456,7 +1456,7 @@ If the differences between the regions are different for men compared with
 women, or put differently, if the differences between men and women are
 different for the different regions then we speak of an interaction. By adding
 a second factor into the study, we thus have to deal with a third factor,
-namely the interaction between the first and second factor<a href="#fn36" class="footnote-ref" id="fnref36"><sup>36</sup></a>.</p>
+namely the interaction between the first and second factor<a href="#fn37" class="footnote-ref" id="fnref37"><sup>37</sup></a>.</p>
 <p>If a significant interaction is present then we can no longer make
 general statements about the main effect we are concerned with. After all, the
 impact of a main effect is also dependent on the interaction with
@@ -1660,7 +1660,7 @@ Under “Correction” check the option <code>Tukey</code>, and under “Display
 ## Residuals   71 0.04837 0.000681                     
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<p>The results are slightly different from those reported in Table <a href="ch-anova.html#tab:syldur2way-anova">15.5</a> above, because R computes the sums of squares somewhat differently<a href="#fn37" class="footnote-ref" id="fnref37"><sup>37</sup></a>.</p>
+<p>The results are slightly different from those reported in Table <a href="ch-anova.html#tab:syldur2way-anova">15.5</a> above, because R computes the sums of squares somewhat differently<a href="#fn38" class="footnote-ref" id="fnref38"><sup>38</sup></a>.</p>
 </div>
 <div id="effectsize" class="section level4" number="15.4.5.3">
 <h4><span class="header-section-number">15.4.5.3</span> Effect size</h4>
@@ -1719,15 +1719,15 @@ Under “Correction” check the option <code>Tukey</code>, and under “Display
 </div>
 <div class="footnotes">
 <hr />
-<ol start="35">
-<li id="fn35"><p>If (1) red does differ from grey and blue, and if (2) grey and blue
+<ol start="36">
+<li id="fn36"><p>If (1) red does differ from grey and blue, and if (2) grey and blue
 also differ from each other, then this implies that red differs from grey (a new
-finding) and that red differs from blue (we already knew that).<a href="ch-anova.html#fnref35" class="footnote-back">↩︎</a></p></li>
-<li id="fn36"><p>If we add more factors then the situation quickly becomes confusing.
+finding) and that red differs from blue (we already knew that).<a href="ch-anova.html#fnref36" class="footnote-back">↩︎</a></p></li>
+<li id="fn37"><p>If we add more factors then the situation quickly becomes confusing.
 With three main effects, there are already 3 two-way interactions plus 1 three-way
 interaction. With four main effects, there are already 6 two-way interactions, plus
-4 three-way interactions, plus 1 four-way interaction.<a href="ch-anova.html#fnref36" class="footnote-back">↩︎</a></p></li>
-<li id="fn37"><p>The default type of computing sums of squares in R (Type I) may be used in JASP by choosing: Model, Sum of squares: Type I. The default type of computing sums of squares in JASP (Type III) may be achieved in R by various workarounds, see e.g. <a href="https://www.r-bloggers.com/2011/03/anova-%E2%80%93-type-iiiiii-ss-explained" class="uri">https://www.r-bloggers.com/2011/03/anova-%E2%80%93-type-iiiiii-ss-explained</a>.<a href="ch-anova.html#fnref37" class="footnote-back">↩︎</a></p></li>
+4 three-way interactions, plus 1 four-way interaction.<a href="ch-anova.html#fnref37" class="footnote-back">↩︎</a></p></li>
+<li id="fn38"><p>The default type of computing sums of squares in R (Type I) may be used in JASP by choosing: Model, Sum of squares: Type I. The default type of computing sums of squares in JASP (Type III) may be achieved in R by various workarounds, see e.g. <a href="https://www.r-bloggers.com/2011/03/anova-%E2%80%93-type-iiiiii-ss-explained" class="uri">https://www.r-bloggers.com/2011/03/anova-%E2%80%93-type-iiiiii-ss-explained</a>.<a href="ch-anova.html#fnref38" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

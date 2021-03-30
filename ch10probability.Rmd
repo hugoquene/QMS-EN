@@ -283,10 +283,8 @@ are $$\begin{aligned}
 > *Example 10.6:*
 The binomial probability distribution for $x$ hits from $n=3$ draws with
 $p=.38$ probability of a hit is shown in 
-Figure \@ref(fig:binomprobabilitydistribution3). This binomial probability 
-distribution has an average $\mu=n \times p = 3 \times .38 = 1.14$, and a
-standard deviation
-$\sigma = \sqrt{n \times p \times (1-p)} = \sqrt{ 3 \times .38 \times .62} = 0.84$> 
+Figure \@ref(fig:binomprobabilitydistribution3). This binomial probabilitydistribution has an average $\mu=n \times p = 3 \times .38 = 1.14$, and a standard deviation
+$\sigma = \sqrt{n \times p \times (1-p)} = \sqrt{ 3 \times .38 \times .62} = 0.84$. 
 
 ---
 

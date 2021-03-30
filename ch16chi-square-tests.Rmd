@@ -198,7 +198,7 @@ It is more insightful to compute the *standardized* residual for each cell of th
 \end{equation}
 These standardized residuals may be interpreted as standard normal $Z$ scores, using the critical $Z$ values given in Appendix \@ref(app:criticalZvalues). Hence the adjusted standardized residuals provide insight in the source of a significant outcome of the $\chi^2$ test, and they also allow us to assess the contribution of each cell to that outcome[^fn16-3]. 
 
-[^fn16-3]: If multiple comparisons are performed, then the critical value of $\alpha$ should be adjusted accordingly, in order to prevent Type I errors. With $k$ cells and $k$ comparisons, a safe precaution is to use $\alpha/k$ instead of $\alpha$ -- this is called Bonferroni's correction of the $\alpha$ value. See also §\@ref(sec:anova-oneway-posthoc). 
+[^fn16-3]: If multiple comparisons are performed, then the critical value of $\alpha$ should be adjusted accordingly, in order to prevent Type I errors somewhere among the comparisons. With $k$ cells and $k$ comparisons, a safe precaution is to use $\alpha/k$ instead of $\alpha$ for each comparison -- this is called Bonferroni's adjustement of the $\alpha$ value, or Dunn's procedure [@MD04, p.202]. See also §\@ref(sec:anova-oneway-posthoc). 
 
 For the example given in §\@ref(sec:chi2gof) we find the following six  standardized residuals for the six possible outcomes of the die: $(1.39, -0.35, +0.35, 0.00, 1.73, -3.12)$. The first five of these outcomes are observed approximately as frequently as expected, but the sixth of these outcomes is observed significantly less often than expected ($p=.003$).  
 

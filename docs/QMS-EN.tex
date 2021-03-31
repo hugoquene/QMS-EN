@@ -119,7 +119,7 @@
 
 \title{Quantitative Methods and Statistics}
 \author{true}
-\date{Version compiled 30 Mar 2021}
+\date{Version compiled 31 Mar 2021}
 
 \begin{document}
 \maketitle
@@ -6154,7 +6154,7 @@ In the field ``Variables'', select the variable \emph{score} to be tested.
 Under ``Tests'', check \texttt{Student} (for Student's \(t\) test statistic), and as the \texttt{Test\ value} now enter \(0\) (zero).
 Under ``Additional Statistics'', check \texttt{Location\ parameter} and \texttt{Confidence\ interval} too. Here you can specify the confidence limits; the default value of 95\% is usually OK.
 
-The output reports the mean of \emph{score}, because observed scores are now compared to the \texttt{test\ value} which is set to \(0\), so that the \texttt{Mean\ Difference} of \((\textrm{score}-)\) is now equal to the mean value of \emph{score}. The same table also reports the \texttt{95\%\ CI\ for\ Mean\ Difference}, which is equivalent here with the confidence interval of the mean.
+The output reports the mean of \emph{score}, because observed scores are now compared to the \texttt{test\ value} which is set to \(0\), so that the \texttt{Mean\ Difference} of \texttt{score-0} is now equal to the mean value of \emph{score}. The same table also reports the \texttt{95\%\ CI\ for\ Mean\ Difference}, which is equivalent here with the confidence interval of the mean of \emph{score}.
 
 \hypertarget{r-12}{%
 \subsection{R}\label{r-12}}
@@ -6631,18 +6631,18 @@ The data from the above example can be found in the file \texttt{data/ujedata.cs
 
 Until now, we have mainly dealt with testing as a binary
 decision with regards to whether or not to reject H0, in the light
-of the observations. However, in addition to this, it is also of great importance
-to know how large the observed effect actually is: the \emph{effect size} (`ES')
-\citep{Cohen88, Thom02, Naka07}.
+of the observations. However, in addition to this, it is also of great importance to know how large the observed effect actually is: the \emph{effect size} (`ES') \citep{Cohen88, Thom02, Naka07}.
 
-In the formulas \eqref{eq:t-onesample} and \eqref{eq:t-pairedsamples}, it is expressed that the larger the effect gets, the larger \(t\) gets,
+In the formulas \eqref{eq:t-onesample} and \eqref{eq:t-pairedsamples}, it is expressed that the test statistic \(t\) increases,
+as the effect increases,
 i.e.~for a larger difference
 \((\overline{x}-\mu)\) or \((\overline{x_1}-\overline{x_2})\) or
-\((\overline{D}-\mu_D)\){]}, \emph{and.or} the larger the sample gets.
+\((\overline{D}-\mu_D)\),
+\emph{and/or} as the sample size increases.
 Put briefly \citep[ p.338, formula 11.10]{Rose08}:
 \begin{equation}
   \label{eq:Rose08}
-    \textrm{significance test} = 
+    \textrm{significance of test} = 
     \textrm{size of effect} \times \textrm{size of study}
 \end{equation}
 
@@ -6658,7 +6658,7 @@ a very small sample.
 \emph{Example 13.2:}
 In an investigation of the life times of inhabitants from Austria
 and Denmark \citep{Dobl99}, it appears that life times differ according to
-the week of birth. This is presumably because babies from ``summer pregnancies''
+the week of birth (within a calendar year). This is presumably because babies from ``summer pregnancies''
 are (or were) on average somewhat healthier than those
 from ``winter pregnancies''. In this investigation, the differences
 in life times were very small \(\pm 0.30\) year in Austria, \(\pm 0.15\) year

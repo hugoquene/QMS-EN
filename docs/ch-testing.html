@@ -909,7 +909,7 @@ So we conduct this test again and find the confidence interval of the mean in th
 <p>In the field “Variables”, select the variable <em>score</em> to be tested.
 Under “Tests”, check <code>Student</code> (for Student’s <span class="math inline">\(t\)</span> test statistic), and as the <code>Test value</code> now enter <span class="math inline">\(0\)</span> (zero).
 Under “Additional Statistics”, check <code>Location parameter</code> and <code>Confidence interval</code> too. Here you can specify the confidence limits; the default value of 95% is usually OK.</p>
-<p>The output reports the mean of <em>score</em>, because observed scores are now compared to the <code>test value</code> which is set to <span class="math inline">\(0\)</span>, so that the <code>Mean Difference</code> of <span class="math inline">\((\textrm{score}-)\)</span> is now equal to the mean value of <em>score</em>. The same table also reports the <code>95% CI for Mean Difference</code>, which is equivalent here with the confidence interval of the mean.</p>
+<p>The output reports the mean of <em>score</em>, because observed scores are now compared to the <code>test value</code> which is set to <span class="math inline">\(0\)</span>, so that the <code>Mean Difference</code> of <code>score-0</code> is now equal to the mean value of <em>score</em>. The same table also reports the <code>95% CI for Mean Difference</code>, which is equivalent here with the confidence interval of the mean of <em>score</em>.</p>
 </div>
 <div id="r-12" class="section level3" number="13.5.4">
 <h3><span class="header-section-number">13.5.4</span> R</h3>
@@ -1351,17 +1351,17 @@ If checked in the input, descriptive statistics and summary plots are also repor
 <h2><span class="header-section-number">13.8</span> Effect size</h2>
 <p>Until now, we have mainly dealt with testing as a binary
 decision with regards to whether or not to reject H0, in the light
-of the observations. However, in addition to this, it is also of great importance
-to know how large the observed effect actually is: the <em>effect size</em> (‘ES’)
-<span class="citation">(Cohen <a href="#ref-Cohen88" role="doc-biblioref">1988</a>; Thompson <a href="#ref-Thom02" role="doc-biblioref">2002</a>; Nakagawa and Cuthill <a href="#ref-Naka07" role="doc-biblioref">2007</a>)</span>.</p>
-<p>In the formulas <a href="ch-testing.html#eq:t-onesample">(13.1)</a> and <a href="ch-testing.html#eq:t-pairedsamples">(13.7)</a>, it is expressed that the larger the effect gets, the larger <span class="math inline">\(t\)</span> gets,
+of the observations. However, in addition to this, it is also of great importance to know how large the observed effect actually is: the <em>effect size</em> (‘ES’) <span class="citation">(Cohen <a href="#ref-Cohen88" role="doc-biblioref">1988</a>; Thompson <a href="#ref-Thom02" role="doc-biblioref">2002</a>; Nakagawa and Cuthill <a href="#ref-Naka07" role="doc-biblioref">2007</a>)</span>.</p>
+<p>In the formulas <a href="ch-testing.html#eq:t-onesample">(13.1)</a> and <a href="ch-testing.html#eq:t-pairedsamples">(13.7)</a>, it is expressed that the test statistic <span class="math inline">\(t\)</span> increases,
+as the effect increases,
 i.e. for a larger difference
 <span class="math inline">\((\overline{x}-\mu)\)</span> or <span class="math inline">\((\overline{x_1}-\overline{x_2})\)</span> or
-<span class="math inline">\((\overline{D}-\mu_D)\)</span>], <em>and.or</em> the larger the sample gets.
+<span class="math inline">\((\overline{D}-\mu_D)\)</span>,
+<em>and/or</em> as the sample size increases.
 Put briefly <span class="citation">(Rosenthal and Rosnow <a href="#ref-Rose08" role="doc-biblioref">2008</a>, 338, formula 11.10)</span>:
 <span class="math display" id="eq:Rose08">\[\begin{equation}
   \tag{13.8}
-    \textrm{significance test} = 
+    \textrm{significance of test} = 
     \textrm{size of effect} \times \textrm{size of study}
 \end{equation}\]</span></p>
 <p>This means
@@ -1374,7 +1374,7 @@ a very small sample.</p>
 <p><em>Example 13.2:</em>
 In an investigation of the life times of inhabitants from Austria
 and Denmark <span class="citation">(Doblhammer <a href="#ref-Dobl99" role="doc-biblioref">1999</a>)</span>, it appears that life times differ according to
-the week of birth. This is presumably because babies from “summer pregnancies”
+the week of birth (within a calendar year). This is presumably because babies from “summer pregnancies”
 are (or were) on average somewhat healthier than those
 from “winter pregnancies”. In this investigation, the differences
 in life times were very small <span class="math inline">\(\pm 0.30\)</span> year in Austria, <span class="math inline">\(\pm 0.15\)</span> year

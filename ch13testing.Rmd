@@ -511,7 +511,7 @@ In the field "Variables", select the variable *score* to be tested.
 Under "Tests", check `Student` (for Student's $t$ test statistic), and as the `Test value` now  enter $0$ (zero). 
 Under "Additional Statistics", check `Location parameter` and `Confidence interval` too. Here you can specify the confidence limits; the default value of 95% is usually OK.
 
-The output reports the mean of *score*, because observed scores are now compared to the `test value` which is set to $0$, so that the `Mean Difference` of $(\textrm{score}-)$ is now equal to the mean value of *score*. The same table also reports the `95% CI for Mean Difference`, which is equivalent here with the confidence interval of the mean. 
+The output reports the mean of *score*, because observed scores are now compared to the `test value` which is set to $0$, so that the `Mean Difference` of `score-0` is now equal to the mean value of *score*. The same table also reports the `95% CI for Mean Difference`, which is equivalent here with the confidence interval of the mean of *score*. 
 
 
 ### R
@@ -897,18 +897,18 @@ with(ujedata, t.test( cond.u, cond.je, paired=TRUE ) )
 
 Until now, we have mainly dealt with testing as a binary 
 decision with regards to whether or not to reject H0, in the light
-of the observations. However, in addition to this, it is also of great importance
-to know how large the observed effect actually is: the *effect size* ('ES')
-[@Cohen88; @Thom02; @Naka07].
+of the observations. However, in addition to this, it is also of great importance to know how large the observed effect actually is: the *effect size* ('ES') [@Cohen88; @Thom02; @Naka07].
 
-In the formulas \@ref(eq:t-onesample) and \@ref(eq:t-pairedsamples), it is expressed that the larger the effect gets, the larger $t$ gets,
+In the formulas \@ref(eq:t-onesample) and \@ref(eq:t-pairedsamples), it is expressed that the test statistic $t$ increases, 
+as the effect increases,
 i.e. for a larger difference
 $(\overline{x}-\mu)$ or $(\overline{x_1}-\overline{x_2})$ or
-$(\overline{D}-\mu_D)$\], *and.or* the larger the sample gets.
+$(\overline{D}-\mu_D)$, 
+*and/or* as the sample size increases.
 Put briefly [@Rose08 p.338, formula 11.10]: 
 \begin{equation}
   (\#eq:Rose08)
-    \textrm{significance test} = 
+    \textrm{significance of test} = 
     \textrm{size of effect} \times \textrm{size of study}
 \end{equation}
 
@@ -923,7 +923,7 @@ a very small sample.
 > *Example 13.2:*
 In an investigation of the life times of inhabitants from Austria
 and Denmark [@Dobl99], it appears that life times differ according to
-the week of birth. This is presumably because babies from "summer pregnancies"
+the week of birth (within a calendar year). This is presumably because babies from "summer pregnancies"
 are (or were) on average somewhat healthier than those
 from "winter pregnancies". In this investigation, the differences
 in life times were very small $\pm 0.30$ year in Austria, $\pm 0.15$ year

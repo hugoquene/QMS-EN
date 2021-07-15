@@ -1,0 +1,388 @@
+# Chi-square-tests {#ch:chi-square-tests}
+
+## Introduction {#sec:h16introduction}
+
+Earlier, we already saw that we cannot always make use of a 
+parametric test like the *t*-test or analysis of variance, because
+the collected data does not satisfy the assumptions. If the collected data 
+has been measured on an interval level of measurement (see Chapter 
+\@ref(ch:levelsofmeasurement)), or if the data's probability distribution
+is far from normal (see
+§\@ref(sec:whatisnotnormal)), then a non-parametric test should be 
+preferred over such a parametric test. If the collected data
+does satisfy the assumptions for a parametric test, then a non-parametric
+test is less sensitive (more conservative) than a parametric test, i.e. the 
+non-parametric test requires a larger effect and/or a larger sample, and generally
+has less power than a parametric test when seeking out an effect
+(see Chapter \@ref(ch:power)).
+
+In this Chapter, we discuss the most used non-parametric
+test: the $\chi^2$-test.
+
+
+## $\chi^2$-test for "goodness of fit" in single sample {#sec:chi2gof}
+
+Data of nominal level of measurement are often analysed with the so-called
+$\chi^2$-test (with the Greek letter "chi"). The number of dots on a dice
+is an example of a dependent variable of nominal level of measurement:
+there is no ordering between the six sides, and each side of a die has
+an equally high probability of appearing on the top. Imagine we throw
+a die $60\times$, and find the following frequencies
+of the six possible outcomes: $14, 9, 11, 10, 15, 1$. This can be 
+considered to be a sample of $n=60$ throws from an infinite
+population of possible throws, and the outcome frequencies reported here should
+be seen as a contingency table of 1 row and 6
+columns (i.e. 6 cells). How high is the probability of this distribution
+of outcomes? Is the die indeed honest?
+
+The $\chi^2$-test is based on the differences between the expected
+and observed frequencies. According to the null hypothesis (the die is honest),
+we expect 10 outcomes in each cell ($60/6=10$), i.e. the 
+expected frequency is identical for each cell (this is called
+a *uniform* distribution).
+The observed outcomes deviate from the expected frequencies of outcomes, 
+in particular because the outcome "six" barely occurs in this sample. This
+might of course also be chance. The $\chi^2$-test indicates how high the probability
+is of this "skewed" distribution of outcomes (or an even more skewed distribution),
+if H0 is true.
+The expected outcomes are thus deduced from a distribution of the outcomes
+according to H0, and we investigate how well the observed outcomes 
+fit the expected outcomes. This form of the $\chi^2$-test is thus also 
+referred to as a test of the 'goodness of fit'.
+
+For this example, we find the outcome of the testing $\chi^2=12.44$
+with 5 degrees of freedom (see
+§\@ref(sec:ttest-freedomdegrees) for explanation about
+degrees of freedom), with $p=.0297$. We usually get the computer to 
+calculate this probability value, but we can also estimate this probability
+via a table with critical
+$\chi^2$-values, see Appendix \@ref(app:criticalchi2values), and footnote
+[^fn16-1]). 
+If H0 is true, then we have only 3% probability
+of finding this outcome (or an even extremer distribution of outcomes).
+The significance $p$ found is smaller than $\alpha=.05$, and we thus
+reject H0. We conclude that this die is not honest: the distribution
+of outcomes found deviates significantly from the expected
+distribution according to H0. 
+
+## $\chi^2$-test for homogeneity of a variable in several samples
+
+The $\chi^2$-test can also be used for a research design with *one* nominal
+variable which we have observed in two or more samples. The
+question is then whether the distribution of the observations over the
+categories is equal for the different samples. This test is comparable with
+*t*-tests for two independent samples
+(§\@ref(sec:ttest-indep)). We usually then summarise the numbers of observations
+with a contingency table with multiple rows for the different samples,
+and multiple columns for the categories of the 
+nominal dependent variable (see also
+Table \@ref(tab:cito-contingency)).
+
+The $\chi^2$-test is again based on the differences between the expected and
+observed frequencies. According to the null hypothesis (there is no difference
+in distribution between the two samples), the distribution of observations
+across the columns should be approximately equal for all rows 
+(and vice versa).
+
+## $\chi^2$-test for correlation between two variables in single sample
+
+Finally, the $\chi^2$-test can equally well be used for a research design
+with *two* nominal variables, which we have observed in a single 
+sample. The question then is whether the distribution of observations
+over the second variable's categories is equal for the different
+categories of the first variable (and vice versa). We again summarise
+the numbers of observations in a contingency table with multiple rows for 
+the categories of the first nominal variable, and multiple columns
+for the categories of the second nominal variable.
+
+Here too, the $\chi^2$-test is based on the differences between the expected and
+observed frequencies. According to the null hypothesis (there is not a correlation
+between the two nominal variables), the distribution of observations across
+rows should be approximately equal for all columns, and vice versa. However, this
+does *not* mean that we expect the same frequency for all cells.
+This is illustrated in the following example. 
+
+---
+
+> *Example 16.1*: In the early morning of 15th April 1912, the *Titanic*
+sunk in the Atlantic Ocean. Many of those on board lost their lives.
+Those on board could be divided into four classes (1st/2nd/3rd class passengers, and crew). Was the outcome of the disaster (whether the individual survived the 
+disaster or not) approximately equal for persons of these four classes?
+The contingency table \@ref(tab:titanic) provides the distributions of
+outcomes. 
+
+Table: (#tab:titanic) Distribution of those on board the *Titanic* ($N=2201$), 
+according to passage
+and status (survived or not). Data taken from the dataset 
+`Titanic` in R. 
+                        
+  Class     Died   Survived   Total
+  -------- ------ ---------- --------
+  1st         122   203         325
+  2nd         167   118         285
+  3rd         528   178         706
+  Crew        673   212         885
+  Total      1490   711         2201
+
+> For the expected frequencies, we have to take into account
+the different numbers of those on board in the different classes,
+and the unequal distribution of outcomes (1490 non-survivors and 711 
+survivors). If there were no correlation between the class and the survival
+status, we would expect that there to be 22 non-survivors amongst the first class
+passengers [$(1490/2201) \times 325 = (325 \times 1490) / 2201 = 220$] 
+and 105 non-survivors [$(711/2201) \times 325 = (325 \times 711) / 2201$ =
+105]. As such, we can determine the expected frequencies for each cell,
+taking into account the totals at the edges. With the help of these 
+expected frequencies, we then calculate $\chi^2=190.4$, here with 3 d.f.,
+$p<.001$. The significance $p$ found is smaller than $\alpha=.001$, and
+we thus reject H0. We conclude that the outcome of the ship disaster
+((non-)survivors) was *unevenly* distributed for the four classes of those
+on board the *Titanic*.
+
+---
+
+For the analysis of contingency tables which consist of precisely
+$2\times2$ cells, the Phi coefficient is an effective alternative
+(see §\@ref(sec:Phi)).
+
+Reread and remember the warnings about correlation and causality
+(§\@ref(sec:correlationcausation))
+--- these are also applicable here. 
+
+## assumptions {#sec:chi2test-assumptions}
+
+The $\chi^2$-test requires three assumptions which must be satisfied
+in order to use the test.
+
+* The data have to be measured on a nominal level of measurement, or have
+to be simplified to nominal level (see Chapter \@ref(ch:levelsofmeasurement)).
+
+* All observations have to be independent of each other, and based
+on (a) random sample(s) of the population(s) (see
+§\@ref(sec:randomsample)), or on random assignment of the elements
+from the sample to experimental conditions (randomisation, see
+§\@ref(sec:internalvalidity), point 5). Each element for the sample can thus only
+contribute one observation to one cell[^fn16-2].
+
+* The sample has to be large enough so that the expected frequency
+($E$) for each cell is at least 5. If the expected frequency or frequencies
+in one or more cells is/are less than 5, then reduce the number
+of cells by merging bordering cells, and determining the expected
+frequencies again. 
+
+## formula
+
+The test statistic $\chi^2$ is defined as 
+\begin{equation}
+  (\#eq:chisquared)
+    \chi^2 = \sum \frac{(O-E)^2}{E}
+\end{equation}
+in which $O$ and $E$ the
+indicate the observed and expected numbers of observations for each
+cell of the frequency table [@Ferg89]. The expected
+numbers might also be rational numbers (e.g. $45/6$ for the 6 possible
+outcomes of an honest die, if we throw 
+$45\times$). The larger the difference $(O-E)$ in one or several cells,
+the larger also $\chi^2$ will be. Due to squaring, the test
+statistic $\chi^2$ is always null or positive, and never negative
+[@Ferg89].
+
+The probability distribution of the test statistic $\chi^2$ is determined by
+the number of degrees of freedom (see
+§\@ref(sec:ttest-freedomdegrees) for explanation of this concept).
+For a $\chi^2$-test with one nominal variable ("goodness of fit"), the number
+of degrees of freedom must be equal to the number of cells minus 1. For a 
+$\chi^2$-test with multiple samples (homogeneity) and/or with two variables
+(correlations), with respectively $k$ and $m$ categories, the number of
+degrees of freedom is equal to $(k-1)\times(m-1)$.
+
+## SPSS
+
+### goodness of fit: preparation
+
+If we want to investigate a nominal variable, then it must of course
+be marked as a column in the SPSS data file. Every observation
+forms a separate row in the data file, and the nominal independent
+variable is a column in the data file. 
+
+Sometimes, we do not have the separate observations (rows) but
+do have the table of numbers of observations per category of the nominal 
+variable. We can work further with these. Let us say that we have two columns,
+named `outcome` and `number`, as follows
+(see §\@ref(sec:chi2gof)):
+
+```
+Outcome Number
+ 1        14
+ 2         9
+ 3        11
+ 4        10
+ 5        15
+ 6         1
+```
+
+Next, each cell (row) has to get a weight that is as large as the
+`number` of observations, which is named here in the second column: the
+first cell (row) weighs $14\times$, the second cell (row) weighs
+$9\times$ etc. Thanks to this trick, we do not have to fill in $N=60$ rows
+(a row for each observation), but only 6 rows (a row for each cell). 
+```
+Data > Weigh Cases... 
+```
+Choose `Weigh cases by...` and select the variable `number` in
+entry field. Confirm with `OK`.
+
+Choose and select the variable `number` in
+input field. Confirm with `OK`.
+
+### goodness of fit: testing
+
+```
+Analyze > Nonparametric tests > Legacy Dialogs > Chi-square...
+```
+Select the variables `outcome` (in "Test variable list" panel) and
+indicate that we expect *equal* numbers of observations in each cell.
+(It is also possible to enter other expected frequencies here,
+if other, unequal frequencies are expected according to H0.)
+Confirm with `OK`.
+
+### contingency tables: preparation
+
+If we want to investigate two nominal variables, then they must
+both be marked as columns in the SPSS data file. Each observation
+forms a separate row in the data file, and the nominal variables
+are columns in the data file. For Example 16.1 above, we then use a "long"
+data file, consisting of $N=2201$ rows, with a separate row for each person
+on board, with at least two columns, for `class` and
+`survivor`.
+
+Sometimes, we do not have the separate observations (rows) but 
+do have the contingency table of numbers of observations for each
+combination of categories of the nominal variables. We can also
+work further with these. Let us say that we have three columns, named
+`class`, `survivor` and `number`, as follows:
+
+```
+Class  Survivor   Number
+1st     no         122
+1st     yes        203
+2nd     no         167
+2nd     yes        118
+3rd     no         528
+3rd     yes        178
+crew    no         673
+crew    yes        212
+```
+Next, each cell (row) has to get a weight which is as large as
+the `number` of observations, which is named in the third column: the
+first cell (row) weighs $122\times$, the second cell (row) weighs
+$203\times$, etc. With this trick, we do not have to enter $N=2201$ rows
+(a row for each observation), but only 8 rows (a row
+for each cell). 
+```
+Data > Weigh Cases... 
+```
+Choose `Weigh cases by...` and select the variable `number` in
+entry field. Confirm with `OK`.
+
+### contingency tables: testing
+
+The testing proceeds in the same way as described in 
+§\@ref(sec:Phi) for 
+the association between two nominal variables. 
+
+```
+Analyze > Descriptives > Crosstabs...
+```
+
+Select the variables `class` (in "Rows" panel) and `survivor` (in 
+"Columns" panel) for
+contingency table \@ref(tab:titanic).\
+Choose `Statistics…` and tick the option `Chi-square`. Confirm firstly with
+`Continue` and afterwards again with `OK`.
+
+## R
+
+### goodness of fit: testing
+
+```{r}
+chisq.test( c( 14, 9, 11, 10, 15, 1 ) ) # die §16.1
+```
+
+### contingency table: preparation and testing
+
+In R, the dataset `Titanic` is provided as a multidimensional matrix. We sum 
+the observations and make a contingency table of the first dimension (class) and
+the fourth dimension (outcome).
+```{r}
+apply( Titanic, c(1,4), sum ) -> Titanic.classoutcome
+```
+
+Next, we use the contingency table as the input for a `chisq.test`. 
+```{r}
+chisq.test( Titanic.classoutcome )  # p<.0001
+```
+
+
+## Effect size: odds ratio
+
+When using the $\chi^2$-test, the effect size can be reported in the form
+of the so-called "odds ratio". The 'odds ratio' is derived from the contingency
+table with frequencies per cell. We will explain all these matters
+using the following example.
+
+---
+
+> *Example 16.2*:
+@DollHill1956 investigated the relation between smoking
+and lung cancer. They first surveyed all British doctors about
+their age and smoking behaviour. Next, the researchers kept up over the years with
+the death notices and cause of death of all those surveyed. The first
+outcomes, after more than four years, are summarised in 
+Table \@ref(tab:dollhill).
+
+Table: (#tab:dollhill) Contingency table of $N=24354$ British doctors of 35 years 
+and older for the first survey, divided according to smoking behaviour (rows: (non-)
+smoker currently or previously) and according to death by lung cancer in the last
+4 years (columns), with letter indication for the numbers
+of observations. 
+
+  Smoking     No lung cancer             Lung cancer              Total
+  ---------- ---------------- ------- --------------- -------   --------  -----------
+  No (0)               3092   (A)                 1   (B)         3093     (A+B)
+  Yes (1)              21178   (C)                83   (D)        21261     (C+D)
+  Total                24270  (A+C)               84  (B+D)       24354   (A+B+C+D)
+
+> In the usual manner, we find $\chi^2=10.35$, df=1, $p<.01$. We conclude that
+there is a correlation between smoking behaviour and death from lung cancer. 
+
+---
+
+For the effect size, we firstly calculate the 'odds' of death from
+lung cancer for the smokers: D/C= $83/21178 =0.00392$. Amongst the smokers,
+there are 83 deaths from lung cancer, compared with 21178
+deaths not from lung cancer (the 'odds' of dying from
+lung cancer are 1 in 0.00392). For the non-smokers: 
+B/A=$1/3092 =0.00032$ (the 'odds' are 1 in 0.00032).
+
+We call the *ratio* of these two 'odds' for the two groups the
+'odds ratio' (abbreviated OR). In this example, we find (D/C) / (B/A) =
+AD/BC =
+$(3092 \times 83) / (1 \times 2178) = (0.00392)/(0.00032) = 12.1$. The
+'odds' of dying from lung cancer are thus more than $12\times$ 
+as great for the smokers as for the non-smokers. We report this as follows:
+
+> @DollHill1956 found a significant relation between
+> smoking behaviour and death from lung cancer,
+> $\chi^2(1)=10.35, p<.01, \textrm{OR}=12.1$. The 'odds' of dying from
+> lung cancer seemed to be more than $12\times$ as great for smokers as for 
+> non-smokers.
+
+
+[^fn16-1]: The value found $\chi^2=12.44$ is slightly under the critical value for
+5 d.f. and $p=.025$, (there $(\chi^2)^*=12.83$), thus the corresponding probability
+of this value or a larger value is slightly greater than $0.025$.
+
+[^fn16-2]: If one variable's observations are paired rather than independent (e.g.
+before/after treatment, passed/failed, etc.), then the McNemar test is a useful
+alternative.

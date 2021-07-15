@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3 Integrity | Quantitative Methods and Statistics</title>
   <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3 Integrity | Quantitative Methods and Statistics" />
   <meta property="og:type" content="book" />
@@ -31,7 +31,7 @@
   
 <link rel="prev" href="ch-research.html"/>
 <link rel="next" href="ch-levelsofmeasurement.html"/>
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,12 +49,15 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -113,6 +116,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -230,13 +256,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.2.1" data-path="ch-frequencies.html"><a href="ch-frequencies.html#sec:intervals"><i class="fa fa-check"></i><b>8.2.1</b> Intervals</a></li>
 <li class="chapter" data-level="8.2.2" data-path="ch-frequencies.html"><a href="ch-frequencies.html#spss-1"><i class="fa fa-check"></i><b>8.2.2</b> SPSS</a></li>
 <li class="chapter" data-level="8.2.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#jasp-1"><i class="fa fa-check"></i><b>8.2.3</b> JASP</a></li>
+<li class="chapter" data-level="8.2.4" data-path="ch-frequencies.html"><a href="ch-frequencies.html#r-1"><i class="fa fa-check"></i><b>8.2.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="8.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#sec:barcharts"><i class="fa fa-check"></i><b>8.3</b> Bar charts</a></li>
 <li class="chapter" data-level="8.4" data-path="ch-frequencies.html"><a href="ch-frequencies.html#sec:histograms"><i class="fa fa-check"></i><b>8.4</b> Histograms</a>
 <ul>
 <li class="chapter" data-level="8.4.1" data-path="ch-frequencies.html"><a href="ch-frequencies.html#spss-2"><i class="fa fa-check"></i><b>8.4.1</b> SPSS</a></li>
 <li class="chapter" data-level="8.4.2" data-path="ch-frequencies.html"><a href="ch-frequencies.html#jasp-2"><i class="fa fa-check"></i><b>8.4.2</b> JASP</a></li>
-<li class="chapter" data-level="8.4.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#r-1"><i class="fa fa-check"></i><b>8.4.3</b> R</a></li>
+<li class="chapter" data-level="8.4.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#r-2"><i class="fa fa-check"></i><b>8.4.3</b> R</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html"><i class="fa fa-check"></i><b>9</b> Centre and dispersion</a>
@@ -274,7 +301,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.8" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:standardscores"><i class="fa fa-check"></i><b>9.8</b> Standard scores</a></li>
 <li class="chapter" data-level="9.9" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#spss-3"><i class="fa fa-check"></i><b>9.9</b> SPSS</a></li>
 <li class="chapter" data-level="9.10" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#jasp-3"><i class="fa fa-check"></i><b>9.10</b> JASP</a></li>
-<li class="chapter" data-level="9.11" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#r-2"><i class="fa fa-check"></i><b>9.11</b> R</a></li>
+<li class="chapter" data-level="9.11" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#r-3"><i class="fa fa-check"></i><b>9.11</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html"><i class="fa fa-check"></i><b>10</b> Probability distributions</a>
 <ul>
@@ -283,18 +310,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="10.2.1" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#formulas"><i class="fa fa-check"></i><b>10.2.1</b> formulas</a></li>
 <li class="chapter" data-level="10.2.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#jasp-4"><i class="fa fa-check"></i><b>10.2.2</b> JASP</a></li>
-<li class="chapter" data-level="10.2.3" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-3"><i class="fa fa-check"></i><b>10.2.3</b> R</a></li>
+<li class="chapter" data-level="10.2.3" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-4"><i class="fa fa-check"></i><b>10.2.3</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="10.3" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:normaldistribution"><i class="fa fa-check"></i><b>10.3</b> Normal probability distribution</a>
 <ul>
 <li class="chapter" data-level="10.3.1" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#formulas-1"><i class="fa fa-check"></i><b>10.3.1</b> formulas</a></li>
 <li class="chapter" data-level="10.3.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#jasp-5"><i class="fa fa-check"></i><b>10.3.2</b> JASP</a></li>
-<li class="chapter" data-level="10.3.3" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-4"><i class="fa fa-check"></i><b>10.3.3</b> R</a></li>
+<li class="chapter" data-level="10.3.3" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-5"><i class="fa fa-check"></i><b>10.3.3</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="10.4" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:isvarnormaldistributed"><i class="fa fa-check"></i><b>10.4</b> Does my variable have a normal probability distribution?</a>
 <ul>
 <li class="chapter" data-level="10.4.1" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#spss-4"><i class="fa fa-check"></i><b>10.4.1</b> SPSS</a></li>
-<li class="chapter" data-level="10.4.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-5"><i class="fa fa-check"></i><b>10.4.2</b> R</a></li>
+<li class="chapter" data-level="10.4.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-6"><i class="fa fa-check"></i><b>10.4.2</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="10.5" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:whatifnotnormal"><i class="fa fa-check"></i><b>10.5</b> What if my variable is not normally distributed?</a></li>
 <li class="chapter" data-level="10.6" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:Centrallimittheorem"><i class="fa fa-check"></i><b>10.6</b> Probability distribution of average</a></li>
@@ -311,14 +338,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.2.1" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#formulas-3"><i class="fa fa-check"></i><b>11.2.1</b> Formulas</a></li>
 <li class="chapter" data-level="11.2.2" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#spss-5"><i class="fa fa-check"></i><b>11.2.2</b> SPSS</a></li>
 <li class="chapter" data-level="11.2.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#jasp-6"><i class="fa fa-check"></i><b>11.2.3</b> JASP</a></li>
-<li class="chapter" data-level="11.2.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-6"><i class="fa fa-check"></i><b>11.2.4</b> R</a></li>
+<li class="chapter" data-level="11.2.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-7"><i class="fa fa-check"></i><b>11.2.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="11.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:regression"><i class="fa fa-check"></i><b>11.3</b> Regression</a>
 <ul>
 <li class="chapter" data-level="11.3.1" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:regression-formulas"><i class="fa fa-check"></i><b>11.3.1</b> Formulas</a></li>
 <li class="chapter" data-level="11.3.2" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#spss-6"><i class="fa fa-check"></i><b>11.3.2</b> SPSS</a></li>
 <li class="chapter" data-level="11.3.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#jasp-7"><i class="fa fa-check"></i><b>11.3.3</b> JASP</a></li>
-<li class="chapter" data-level="11.3.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-7"><i class="fa fa-check"></i><b>11.3.4</b> R</a></li>
+<li class="chapter" data-level="11.3.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-8"><i class="fa fa-check"></i><b>11.3.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="11.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#influential-observations"><i class="fa fa-check"></i><b>11.4</b> Influential observations</a></li>
 <li class="chapter" data-level="11.5" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:Spearman"><i class="fa fa-check"></i><b>11.5</b> Spearman’s rank correlation coefficient</a>
@@ -326,14 +353,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.5.1" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#formulas-4"><i class="fa fa-check"></i><b>11.5.1</b> Formulas</a></li>
 <li class="chapter" data-level="11.5.2" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#spss-7"><i class="fa fa-check"></i><b>11.5.2</b> SPSS</a></li>
 <li class="chapter" data-level="11.5.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#jasp-8"><i class="fa fa-check"></i><b>11.5.3</b> JASP</a></li>
-<li class="chapter" data-level="11.5.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-8"><i class="fa fa-check"></i><b>11.5.4</b> R</a></li>
+<li class="chapter" data-level="11.5.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-9"><i class="fa fa-check"></i><b>11.5.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="11.6" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:Phi"><i class="fa fa-check"></i><b>11.6</b> Phi</a>
 <ul>
 <li class="chapter" data-level="11.6.1" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#formulas-5"><i class="fa fa-check"></i><b>11.6.1</b> Formulas</a></li>
 <li class="chapter" data-level="11.6.2" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#spss-8"><i class="fa fa-check"></i><b>11.6.2</b> SPSS</a></li>
 <li class="chapter" data-level="11.6.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#jasp-9"><i class="fa fa-check"></i><b>11.6.3</b> JASP</a></li>
-<li class="chapter" data-level="11.6.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-9"><i class="fa fa-check"></i><b>11.6.4</b> R</a></li>
+<li class="chapter" data-level="11.6.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-10"><i class="fa fa-check"></i><b>11.6.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="11.7" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:correlationcausation"><i class="fa fa-check"></i><b>11.7</b> Last but not least</a></li>
 </ul></li>
@@ -348,7 +375,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.7" data-path="ch-reliability.html"><a href="ch-reliability.html#reliability-and-construct-validity"><i class="fa fa-check"></i><b>12.7</b> Reliability and construct validity</a></li>
 <li class="chapter" data-level="12.8" data-path="ch-reliability.html"><a href="ch-reliability.html#spss-9"><i class="fa fa-check"></i><b>12.8</b> SPSS</a></li>
 <li class="chapter" data-level="12.9" data-path="ch-reliability.html"><a href="ch-reliability.html#jasp-10"><i class="fa fa-check"></i><b>12.9</b> JASP</a></li>
-<li class="chapter" data-level="12.10" data-path="ch-reliability.html"><a href="ch-reliability.html#r-10"><i class="fa fa-check"></i><b>12.10</b> R</a></li>
+<li class="chapter" data-level="12.10" data-path="ch-reliability.html"><a href="ch-reliability.html#r-11"><i class="fa fa-check"></i><b>12.10</b> R</a></li>
 </ul></li>
 <li class="part"><span><b>Part III: Inferential statistics</b></span></li>
 <li class="chapter" data-level="13" data-path="ch-testing.html"><a href="ch-testing.html"><i class="fa fa-check"></i><b>13</b> Testing hypotheses</a>
@@ -361,7 +388,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.2.3" data-path="ch-testing.html"><a href="ch-testing.html#sec:ttest-assumptions"><i class="fa fa-check"></i><b>13.2.3</b> assumptions</a></li>
 <li class="chapter" data-level="13.2.4" data-path="ch-testing.html"><a href="ch-testing.html#spss-10"><i class="fa fa-check"></i><b>13.2.4</b> SPSS</a></li>
 <li class="chapter" data-level="13.2.5" data-path="ch-testing.html"><a href="ch-testing.html#sec:jaspttestonesample"><i class="fa fa-check"></i><b>13.2.5</b> JASP</a></li>
-<li class="chapter" data-level="13.2.6" data-path="ch-testing.html"><a href="ch-testing.html#r-11"><i class="fa fa-check"></i><b>13.2.6</b> R</a></li>
+<li class="chapter" data-level="13.2.6" data-path="ch-testing.html"><a href="ch-testing.html#r-12"><i class="fa fa-check"></i><b>13.2.6</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="13.3" data-path="ch-testing.html"><a href="ch-testing.html#sec:plargerthannull"><i class="fa fa-check"></i><b>13.3</b> <span class="math inline">\(p\)</span>-value is always larger than zero</a></li>
 <li class="chapter" data-level="13.4" data-path="ch-testing.html"><a href="ch-testing.html#sec:ttest-onesidedtwosided"><i class="fa fa-check"></i><b>13.4</b> One-sided and two-sided tests</a></li>
@@ -370,7 +397,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.5.1" data-path="ch-testing.html"><a href="ch-testing.html#sec:formulas13-2"><i class="fa fa-check"></i><b>13.5.1</b> formulas</a></li>
 <li class="chapter" data-level="13.5.2" data-path="ch-testing.html"><a href="ch-testing.html#spss-11"><i class="fa fa-check"></i><b>13.5.2</b> SPSS</a></li>
 <li class="chapter" data-level="13.5.3" data-path="ch-testing.html"><a href="ch-testing.html#jasp-11"><i class="fa fa-check"></i><b>13.5.3</b> JASP</a></li>
-<li class="chapter" data-level="13.5.4" data-path="ch-testing.html"><a href="ch-testing.html#r-12"><i class="fa fa-check"></i><b>13.5.4</b> R</a></li>
+<li class="chapter" data-level="13.5.4" data-path="ch-testing.html"><a href="ch-testing.html#r-13"><i class="fa fa-check"></i><b>13.5.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="13.6" data-path="ch-testing.html"><a href="ch-testing.html#sec:ttest-indep"><i class="fa fa-check"></i><b>13.6</b> Independent samples <span class="math inline">\(t\)</span>-tests</a>
 <ul>
@@ -393,7 +420,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.8.1" data-path="ch-testing.html"><a href="ch-testing.html#sec:formulas13-5"><i class="fa fa-check"></i><b>13.8.1</b> formulas</a></li>
 <li class="chapter" data-level="13.8.2" data-path="ch-testing.html"><a href="ch-testing.html#spss-13-2"><i class="fa fa-check"></i><b>13.8.2</b> SPSS</a></li>
 <li class="chapter" data-level="13.8.3" data-path="ch-testing.html"><a href="ch-testing.html#jasp-12"><i class="fa fa-check"></i><b>13.8.3</b> JASP</a></li>
-<li class="chapter" data-level="13.8.4" data-path="ch-testing.html"><a href="ch-testing.html#r-13"><i class="fa fa-check"></i><b>13.8.4</b> R</a></li>
+<li class="chapter" data-level="13.8.4" data-path="ch-testing.html"><a href="ch-testing.html#r-14"><i class="fa fa-check"></i><b>13.8.4</b> R</a></li>
 <li class="chapter" data-level="13.8.5" data-path="ch-testing.html"><a href="ch-testing.html#sec:confint-effectsize"><i class="fa fa-check"></i><b>13.8.5</b> Confidence interval of the effect size</a></li>
 </ul></li>
 </ul></li>
@@ -421,7 +448,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.3.5" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-posthoc"><i class="fa fa-check"></i><b>15.3.5</b> Post-hoc comparisons</a></li>
 <li class="chapter" data-level="15.3.6" data-path="ch-anova.html"><a href="ch-anova.html#spss-12"><i class="fa fa-check"></i><b>15.3.6</b> SPSS</a></li>
 <li class="chapter" data-level="15.3.7" data-path="ch-anova.html"><a href="ch-anova.html#jasp-13"><i class="fa fa-check"></i><b>15.3.7</b> JASP</a></li>
-<li class="chapter" data-level="15.3.8" data-path="ch-anova.html"><a href="ch-anova.html#r-14"><i class="fa fa-check"></i><b>15.3.8</b> R</a></li>
+<li class="chapter" data-level="15.3.8" data-path="ch-anova.html"><a href="ch-anova.html#r-15"><i class="fa fa-check"></i><b>15.3.8</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="15.4" data-path="ch-anova.html"><a href="ch-anova.html#two-way-analysis-of-variance"><i class="fa fa-check"></i><b>15.4</b> Two-way analysis of variance</a>
 <ul>
@@ -429,7 +456,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.4.2" data-path="ch-anova.html"><a href="ch-anova.html#a-formal-explanation"><i class="fa fa-check"></i><b>15.4.2</b> A formal explanation</a></li>
 <li class="chapter" data-level="15.4.3" data-path="ch-anova.html"><a href="ch-anova.html#spss-13"><i class="fa fa-check"></i><b>15.4.3</b> SPSS</a></li>
 <li class="chapter" data-level="15.4.4" data-path="ch-anova.html"><a href="ch-anova.html#jasp-14"><i class="fa fa-check"></i><b>15.4.4</b> JASP</a></li>
-<li class="chapter" data-level="15.4.5" data-path="ch-anova.html"><a href="ch-anova.html#r-15"><i class="fa fa-check"></i><b>15.4.5</b> R</a></li>
+<li class="chapter" data-level="15.4.5" data-path="ch-anova.html"><a href="ch-anova.html#r-16"><i class="fa fa-check"></i><b>15.4.5</b> R</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="16" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html"><i class="fa fa-check"></i><b>16</b> Chi-square-tests</a>
@@ -454,7 +481,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="16.8.3" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#contingency-tables-preparation-1"><i class="fa fa-check"></i><b>16.8.3</b> contingency tables: preparation</a></li>
 <li class="chapter" data-level="16.8.4" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#contingency-tables-testing-1"><i class="fa fa-check"></i><b>16.8.4</b> contingency tables: testing</a></li>
 </ul></li>
-<li class="chapter" data-level="16.9" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#r-16"><i class="fa fa-check"></i><b>16.9</b> R</a>
+<li class="chapter" data-level="16.9" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#r-17"><i class="fa fa-check"></i><b>16.9</b> R</a>
 <ul>
 <li class="chapter" data-level="16.9.1" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#goodness-of-fit-testing-2"><i class="fa fa-check"></i><b>16.9.1</b> goodness of fit: testing</a></li>
 <li class="chapter" data-level="16.9.2" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#contingency-table-preparation-and-testing"><i class="fa fa-check"></i><b>16.9.2</b> contingency table: preparation and testing</a></li>
@@ -512,7 +539,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Example 3.1*: Sir Isaac Newton wrote of his scientific work: “If I have seen further it is by standing on [the] shoulders of Giants” (in a letter addressed to Robert Hooke, dated 5 Feb 1675)<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>. This metaphor can be traced back to the medieval scholar, Bernard de Chartres: “nos esse quasi nanos gigantum umeris insidentes” [that we are like dwarfs sat on giants’ shoulders] compared to scholars from the times of Antiquity. The aforementioned quote by Newton has also become Google Scholar’s motto (<a href="scholar.google.com">scholar.google.com</a>).</p>
 </blockquote>
 <hr />
-<p>In this chapter, we will discuss the ethical and moral aspects of scientific research. Science is done by human beings, and requires a well-developed sense of judgment on the part of the researchers. The <em>Netherlands Code of Conduct for Research Integrity</em> <span class="citation">(VSNU <a href="#ref-VSNU18" role="doc-biblioref">2018</a>)</span>
+<p>In this chapter, we will discuss the ethical and moral aspects of scientific research. Science is done by human beings, and requires a well-developed sense of judgment on the part of the researchers. The <em>Netherlands Code of Conduct for Research Integrity</em> <span class="citation">(<a href="#ref-VSNU18" role="doc-biblioref">VSNU 2018</a>)</span>
 (<a href="https://www.vsnu.nl/en_GB/research-integrity" class="uri">https://www.vsnu.nl/en_GB/research-integrity</a>) describes how researchers (and students) are to behave. According to this code of conduct, scientific research and teaching should be based on the following principles:</p>
 <ul>
 <li><p>honesty,</p></li>
@@ -526,7 +553,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="sec:design" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Design</h2>
 <p>To be sure, scientific research does bring us immeasurably great benefits, but this is balanced by considerable cost. This includes direct expenses, such as setting up and maintaining laboratories, equipment, and technical support, but also researchers’ salaries, financial compensation for informants and participants, travel expenses for access to libraries, archives, informants, and participants, etc. These direct expenses are usually subsidized by public funds held by universities and other academic institutions. In addition, there is an indirect cost, which is partially borne by informants and participants: time and effort that can no longer be spent on something else, loss of privacy, and possibly other risks we are not yet aware of. One often forgotten type of cost is loss of naïveté: a participant who has participated in an experiment learns from it, and, because of this, will possibly respond differently in a subsequent experiment (see §<a href="ch-validity.html#sec:internalvalidity">5.4</a>, under History). This means that any results obtained in this subsequent experiment will generalize less well to other participants who have a different history, and have not yet participated in a study.</p>
-<p>Given its great cost, research has to be thought through and designed in such a way that its expected benefits are reasonably balanced by its expected cost <span class="citation">(Rosenthal and Rosnow <a href="#ref-Rose08" role="doc-biblioref">2008</a>, Ch.3)</span>. If the chance that a study will yield valid conclusions is very low, it is better <em>not</em> to go ahead with this study, which will save on both direct expenses and indirect cost.</p>
+<p>Given its great cost, research has to be thought through and designed in such a way that its expected benefits are reasonably balanced by its expected cost <span class="citation">(<a href="#ref-Rose08" role="doc-biblioref">Rosenthal and Rosnow 2008, Ch.3</a>)</span>. If the chance that a study will yield valid conclusions is very low, it is better <em>not</em> to go ahead with this study, which will save on both direct expenses and indirect cost.</p>
 <hr />
 <blockquote>
 <p><em>Example 3.2</em>: Suppose that we would like to examine whether 4-year-old bilingual children might have a cognitive advantage over monolingual children of the same age. Based on earlier research, we expect a different of at least 2 points (on a 10 point scale) between both groups (with a “pooled standard deviation” <span class="math inline">\(s_p=4\)</span>, hence <span class="math inline">\(d=0.5\)</span>, §<a href="ch-testing.html#sec:ttest-formulas">13.6.2</a> and §<a href="ch-testing.html#sec:ttest-effectsize">13.8</a>).</p>
@@ -538,7 +565,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>However, if <span class="math inline">\(n = 30\)</span> children would participate in each of the two groups, and if there were indeed a 2 point difference between both groups (meaning, if the research hypothesis were true), then the power of the experiment would be .90. This means that bigger groups lead to a much better chance of confirming our study’s hypothesis. This elaborate research design will cost more (for the researchers and the children and their parents), but presumably it will also yield much more: a valid conclusion with great impact on society.</p>
 </blockquote>
 <hr />
-<p>A study’s design (see Chapter <a href="#ch:ontwerp"><strong>??</strong></a>) has to be as efficient as possible, and the researcher has to start thinking about it at an early stage. First of all, efficiency depends on choices regarding how the independent variables are manipulated. Is there a separate group of participants for each condition of the independent variable (meaning that conditions vary “between subjects”, like in example 3.2 above)? In a between-subjects design that involves two groups, we need about <span class="math inline">\(n = (5.6/d)^2\)</span> subjects in each group (for further explanation of this, see <span class="citation">Gelman and Hill (<a href="#ref-Gelm07" role="doc-biblioref">2007</a>)</span>, and see §<a href="ch-testing.html#sec:ttest-effectsize">13.8</a>). Or are all participants involved in all conditions (meaning that conditions vary “within subjects”)? A within-subjects design with two conditions requires only <span class="math inline">\(n = (2.8/d)^2\)</span> subjects in each condition, and the study will therefore also have lower expenses and indirect cost for a much smaller number of participants. In general, this means that, if possible, it is more efficient (and hence better) to manipulate independent variables within subjects than it is to vary them between subjects.This is not always possible, however, firstly because by definition, individual characteristics only differ between subjects (for example: female/male sex, multilingual/monolingual background, aphasia/no aphasia, etc.). Secondly, we must take proper care to recognize effects of so-called transfer between conditions, which threaten our study’s validity (for example: experience, learning, fatigue, maturation); we will discuss such effects further in §<a href="ch-validity.html#sec:validity">5.3</a>.
+<p>A study’s design (see Chapter <a href="#ch:ontwerp"><strong>??</strong></a>) has to be as efficient as possible, and the researcher has to start thinking about it at an early stage. First of all, efficiency depends on choices regarding how the independent variables are manipulated. Is there a separate group of participants for each condition of the independent variable (meaning that conditions vary “between subjects,” like in example 3.2 above)? In a between-subjects design that involves two groups, we need about <span class="math inline">\(n = (5.6/d)^2\)</span> subjects in each group (for further explanation of this, see <span class="citation"><a href="#ref-Gelm07" role="doc-biblioref">Gelman and Hill</a> (<a href="#ref-Gelm07" role="doc-biblioref">2007</a>)</span>, and see §<a href="ch-testing.html#sec:ttest-effectsize">13.8</a>). Or are all participants involved in all conditions (meaning that conditions vary “within subjects”)? A within-subjects design with two conditions requires only <span class="math inline">\(n = (2.8/d)^2\)</span> subjects in each condition, and the study will therefore also have lower expenses and indirect cost for a much smaller number of participants. In general, this means that, if possible, it is more efficient (and hence better) to manipulate independent variables within subjects than it is to vary them between subjects.This is not always possible, however, firstly because by definition, individual characteristics only differ between subjects (for example: female/male sex, multilingual/monolingual background, aphasia/no aphasia, etc.). Secondly, we must take proper care to recognize effects of so-called transfer between conditions, which threaten our study’s validity (for example: experience, learning, fatigue, maturation); we will discuss such effects further in §<a href="ch-validity.html#sec:validity">5.3</a>.
 The design choice of “between” vs “within” variation is further discussed in §<a href="ch-design.html#sec:betweenwithinparticipants">6.2</a> below.</p>
 <p>Being multilingual or being female are characteristics that may only vary between individuals. But other conditions may also vary within individuals, for instance, the day on which a cognitive measurement is taken. Suppose that we expect a difference of <span class="math inline">\(D = 2\)</span> points between cognitive measurements taken on Monday and on Friday, respectively (with <span class="math inline">\(s = 4\)</span> and <span class="math inline">\(d = 0.5\)</span>, see example 3.2). If we manipulate the day of measurement between subjects, meaning we make separate groups for children tested on Monday and those tested on Friday, this entails that we need <span class="math inline">\(n = (5.6/0.5)^2 = 126\)</span> children in each group, yielding a total of <span class="math inline">\(N = 252\)</span>. However, if we manipulate the day of measurement within subjects, meaning that we observe each participant on Monday and also on Friday, this entails that we need a total of just <span class="math inline">\(N = (2.8/0.5)^2 = 32\)</span> children. The within-subjects design means that far fewer children’s routines will need to be disturbed for our cognitive measurements. However, we must be properly aware of learning effects between the first and second measurement, and take appropriate precautionary measures. For instance, we can no longer use the same questionnaires in both conditions.</p>
 <p>A study’s efficiency also depends on the dependent variable, in particular, on the observations’ level of measurement (Chapter <a href="ch-levelsofmeasurement.html#ch:levelsofmeasurement">4</a>), accuracy, and reliability (Chapter <a href="ch-reliability.html#ch:reliability">12</a>). The lower the level of measurement, the lower also the study’s efficiency. As accuracy goes down, the study’s efficiency also goes down, and more participants (subjects) and observations will be needed to be able to draw valid conclusions.</p>
@@ -575,17 +602,17 @@ This ethics assessment is also compulsory for students and researchers in other 
 <hr />
 <blockquote>
 <p><em>Example 3.4</em>: The file found at &lt;<a href="http://tinyurl.com/nj4pjaq" class="uri">http://tinyurl.com/nj4pjaq</a>. contains data from 80 speakers of Dutch, partially taken from the Corpus of Spoken Dutch (Corpus Gesproken Nederlands or CGN). The first line contains the variable names. Each subsequent line corresponds to one speaker. The pieces of data on each line are separated by spaces. The first column contains the anonymized speaker ID code, as used in the CGN. In the fifth column, the speaker’s region of origin is coded with a single letter:
-<code>W</code> for Western region (Randstad), <code>M</code> Central (Mid), <code>N</code> North, <code>S</code> South) <span class="citation">(Quené <a href="#ref-Quene08" role="doc-biblioref">2008</a>)</span>. Because of the careful annotation, these data may still be used with no problem, even if they were collected over 20 years ago by fellow researchers.</p>
+<code>W</code> for Western region (Randstad), <code>M</code> Central (Mid), <code>N</code> North, <code>S</code> South) <span class="citation">(<a href="#ref-Quene08" role="doc-biblioref">H. Quené 2008</a>)</span>. Because of the careful annotation, these data may still be used with no problem, even if they were collected over 20 years ago by fellow researchers.</p>
 </blockquote>
 <hr />
 <p>Data remain the intellectual property of those who collected them. Use of other researchers’ data with no citation may be seen as theft or plagiarism.</p>
-<p>Data fraud (fabricating data, meaning, coming up with data out of thin air, instead of observing them) is obviously at odds with multiple principles in the code of conduct mentioned above <span class="citation">(VSNU <a href="#ref-VSNU18" role="doc-biblioref">2018</a>)</span>. Fraud harms the mutual trust on which science is based. It misleads other researchers who might be building on the fictional results, and any research funds allotted to a fraudulent line of research are taken away from other, non-fraudulent research – in other words, it is a mortal sin of academia. If you would like to discuss any questions or dilemmas around this topic, please contact
+<p>Data fraud (fabricating data, meaning, coming up with data out of thin air, instead of observing them) is obviously at odds with multiple principles in the code of conduct mentioned above <span class="citation">(<a href="#ref-VSNU18" role="doc-biblioref">VSNU 2018</a>)</span>. Fraud harms the mutual trust on which science is based. It misleads other researchers who might be building on the fictional results, and any research funds allotted to a fraudulent line of research are taken away from other, non-fraudulent research – in other words, it is a mortal sin of academia. If you would like to discuss any questions or dilemmas around this topic, please contact
 prof.dr. Christoph Baumgartner, confidential advisor on academic integrity for the Humanities at Utrecht University (<code>c.baumgartner@uu.nl</code>).</p>
 </div>
 <div id="writing" class="section level2" number="3.5">
 <h2><span class="header-section-number">3.5</span> Writing</h2>
 <p>Scientific research only really reaches its purpose once its results are being divulged. Research that is not reported on could as well <em>not</em> have been conducted at all, and the cost associated with this research was, basically, spent in vain. For this reason, reporting research results is an important part of academic work. Publications (as well as patents) form a very important part of the “output” of scientific research. Researchers are measured by the number of their publications and these publications’ “impact” (the number of times these publications are cited by others who build upon them). This great importance is one of the reasons we ought to be diligent in treating others’ writings, as well as our own.</p>
-<p>The researchers involved in a study must discuss amongst each other who will be listed as authors of a report or publication, and in which order. Those listed as co-authors of a research report have to satisfy three conditions <span class="citation">(Office of Research Integrity <a href="#ref-ORI12" role="doc-biblioref">2012</a>, Ch.10)</span>. Firstly, the must have made a substantial academic contribution to one or more phases of the study: think of the original idea, setting up and designing the study, collecting the data, or analysing and interpreting the data. Secondly, they must have been a part of writing up the report, either by doing part of the writing or by providing comments on it. Thirdly, they must have approved the final version of the report (most often implicitly, sometimes explicitly), and they must also have consented to being a co-author. It is best practice for the researchers to come to a mutual agreement on the order in which their names are listed. Usually, names are ordered by decreasing importance and extent of each author’s contribution. If the lead researcher is the main investigator and also a co-author, this person is often listed last.</p>
+<p>The researchers involved in a study must discuss amongst each other who will be listed as authors of a report or publication, and in which order. Those listed as co-authors of a research report have to satisfy three conditions <span class="citation">(<a href="#ref-ORI12" role="doc-biblioref">Office of Research Integrity 2012, Ch.10</a>)</span>. Firstly, the must have made a substantial academic contribution to one or more phases of the study: think of the original idea, setting up and designing the study, collecting the data, or analysing and interpreting the data. Secondly, they must have been a part of writing up the report, either by doing part of the writing or by providing comments on it. Thirdly, they must have approved the final version of the report (most often implicitly, sometimes explicitly), and they must also have consented to being a co-author. It is best practice for the researchers to come to a mutual agreement on the order in which their names are listed. Usually, names are ordered by decreasing importance and extent of each author’s contribution. If the lead researcher is the main investigator and also a co-author, this person is often listed last.</p>
 <hr />
 <blockquote>
 <p><em>Example 3.5</em>: A, a student research assistant, helped collect data, but has made no other contributions, and is not entirely sure what the research is about. This means that A need not be listed as a co-author on the report, but the authors do have to describe and acknowledge A’s contribution in their report.</p>
@@ -616,9 +643,9 @@ prof.dr. Christoph Baumgartner, confidential advisor on academic integrity for t
 <p><a href="https://students.uu.nl/en/practical-information/policies-and-procedures/fraud-and-plagiarism" class="uri">https://students.uu.nl/en/practical-information/policies-and-procedures/fraud-and-plagiarism</a></p>
 </blockquote>
 <p>In the case of self-plagiarism, the fragments or writing or thoughts in question are not taken from others, but from one of the authors. There are various schools of thought on self-plagiarism; however, it is advisable to be sure to cite the relevant source if one is to take ideas from one’s own work, building on the principles of diligence, reliability, transparency, and responsibility.</p>
-<p>A reference or citation is a shortened mention of a source in the body of the text; you might have seen these quite a few times in this syllabus already. At the end of the report or text, a full list of sources follows, which is usually given the heading, “Sources”, “Sources consulted”, “References”, “Literature”, or “Bibliography”. A mistake in the references may be seen as a form of plagiarism <span class="citation">(Universiteitsbibliotheek, Vrije Universiteit Amsterdam <a href="#ref-UBVU15" role="doc-biblioref">2015</a>)</span> because the reader is directed towards an incorrect source. For this reason, it is imperative that researchers cite their sources correctly. Various conventions, depending on the area of study, have been developed for this. Usually, instructors will indicate which style or convention is to be used for citing one’s sources. In this textbook, we have intended to follow the style described by the <span class="citation">American Psychological Association (<a href="#ref-APA10" role="doc-biblioref">2010</a>)</span>, a style commonly used in the social sciences and some disciplines within the humanities.
+<p>A reference or citation is a shortened mention of a source in the body of the text; you might have seen these quite a few times in this syllabus already. At the end of the report or text, a full list of sources follows, which is usually given the heading, “Sources,” “Sources consulted,” “References,” “Literature,” or “Bibliography.” A mistake in the references may be seen as a form of plagiarism <span class="citation">(<a href="#ref-UBVU15" role="doc-biblioref">Universiteitsbibliotheek, Vrije Universiteit Amsterdam 2015</a>)</span> because the reader is directed towards an incorrect source. For this reason, it is imperative that researchers cite their sources correctly. Various conventions, depending on the area of study, have been developed for this. Usually, instructors will indicate which style or convention is to be used for citing one’s sources. In this textbook, we have intended to follow the style described by the <span class="citation"><a href="#ref-APA10" role="doc-biblioref">American Psychological Association</a> (<a href="#ref-APA10" role="doc-biblioref">2010</a>)</span>, a style commonly used in the social sciences and some disciplines within the humanities.
 (For technical reasons, references may deviate slightly from the APA style.)</p>
-<p>The rules for citing sources may sometimes be complex. In addition, authors must make sure that the citations in the body of the text correspond to the list of full references at the end. These tasks are best performed by a so-called “reference manager”, a program that collects references or citations, and correctly inserts them into the body of the text. An overview of such programs can be found at
+<p>The rules for citing sources may sometimes be complex. In addition, authors must make sure that the citations in the body of the text correspond to the list of full references at the end. These tasks are best performed by a so-called “reference manager,” a program that collects references or citations, and correctly inserts them into the body of the text. An overview of such programs can be found at
 <a href="https://en.wikipedia.org/wiki/Comparison_of_reference_management_software" class="uri">https://en.wikipedia.org/wiki/Comparison_of_reference_management_software</a>.
 In writing this textbook we have used Zotero (<a href="https://www.zotero.org" class="uri">https://www.zotero.org</a>),
 combined with BibTeX (<a href="https://www.bibtex.org" class="uri">https://www.bibtex.org</a>).</p>
@@ -626,27 +653,27 @@ combined with BibTeX (<a href="https://www.bibtex.org" class="uri">https://www.b
 </div>
 </div>
 <h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-APA10">
-<p>American Psychological Association. 2010. <em>Publication Manual of the American Psychological Association</em>. 6th ed. Washington, D.C.: American Psychological Association.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-APA10" class="csl-entry">
+American Psychological Association. 2010. <em><span>P</span>ublication <span>M</span>anual of the <span>A</span>merican <span>P</span>sychological <span>A</span>ssociation</em>. 6th ed. Washington, D.C.: American Psychological Association.
 </div>
-<div id="ref-Gelm07">
-<p>Gelman, Andrew, and Jennifer Hill. 2007. <em>Data Analysis Using Regression and Multilevel/Hierarchical Models</em>. Cambridge: Cambridge University Press.</p>
+<div id="ref-Gelm07" class="csl-entry">
+Gelman, Andrew, and Jennifer Hill. 2007. <em>Data Analysis Using Regression and Multilevel/Hierarchical Models</em>. Cambridge: Cambridge University Press.
 </div>
-<div id="ref-ORI12">
-<p>Office of Research Integrity. 2012. “Responsible Conduct of Research Training.” <a href="http://ori.hhs.gov/education/products/wsu/rcr_training.html">http://ori.hhs.gov/education/products/wsu/rcr_training.html</a>.</p>
+<div id="ref-ORI12" class="csl-entry">
+Office of Research Integrity. 2012. <span>“Responsible Conduct of Research Training.”</span> <a href="http://ori.hhs.gov/education/products/wsu/rcr_training.html">http://ori.hhs.gov/education/products/wsu/rcr_training.html</a>.
 </div>
-<div id="ref-Quene08">
-<p>Quené, H. 2008. “Multilevel Modeling of Between-Speaker and Within-Speaker Variation in Spontaneous Speech Tempo.” <em>Journal of the Acoustical Society of America</em> 123 (2): 1104–13.</p>
+<div id="ref-Quene08" class="csl-entry">
+Quené, H. 2008. <span>“Multilevel Modeling of Between-Speaker and Within-Speaker Variation in Spontaneous Speech Tempo.”</span> <em>Journal of the Acoustical Society of America</em> 123 (2): 1104–13.
 </div>
-<div id="ref-Rose08">
-<p>Rosenthal, Robert, and Ralph L. Rosnow. 2008. <em>Essentials of Behavioral Research: Methods and Data Analysis</em>. 3e ed. Boston: McGraw Hill.</p>
+<div id="ref-Rose08" class="csl-entry">
+Rosenthal, Robert, and Ralph L. Rosnow. 2008. <em>Essentials of Behavioral Research: Methods and Data Analysis</em>. 3e ed. Boston: McGraw Hill.
 </div>
-<div id="ref-UBVU15">
-<p>Universiteitsbibliotheek, Vrije Universiteit Amsterdam. 2015. “Webcursus Informatievaardigheden - Algemeen - Niveau B.” <a href="http://webcursus.ubvu.vu.nl/cursus/default.asp?lettergr=klein&amp;cursus_id=131">http://webcursus.ubvu.vu.nl/cursus/default.asp?lettergr=klein&amp;cursus_id=131</a>.</p>
+<div id="ref-UBVU15" class="csl-entry">
+Universiteitsbibliotheek, Vrije Universiteit Amsterdam. 2015. <span>“Webcursus Informatievaardigheden - Algemeen - Niveau b.”</span> <a href="http://webcursus.ubvu.vu.nl/cursus/default.asp?lettergr=klein&amp;cursus_id=131">http://webcursus.ubvu.vu.nl/cursus/default.asp?lettergr=klein&amp;cursus_id=131</a>.
 </div>
-<div id="ref-VSNU18">
-<p>VSNU. 2018. “Nederlandse Gedragscode Wetenschappelijke Integriteit.” VSNU. <a href="https://www.vsnu.nl/wetenschappelijke_integriteit.html">https://www.vsnu.nl/wetenschappelijke_integriteit.html</a>.</p>
+<div id="ref-VSNU18" class="csl-entry">
+VSNU. 2018. <span>“Nederlandse Gedragscode Wetenschappelijke Integriteit.”</span> VSNU. <a href="https://www.vsnu.nl/wetenschappelijke_integriteit.html">https://www.vsnu.nl/wetenschappelijke_integriteit.html</a>.
 </div>
 </div>
 <div class="footnotes">
@@ -685,6 +712,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

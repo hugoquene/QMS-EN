@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>10 Probability distributions | Quantitative Methods and Statistics</title>
   <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="10 Probability distributions | Quantitative Methods and Statistics" />
   <meta property="og:type" content="book" />
@@ -31,7 +31,7 @@
   
 <link rel="prev" href="ch-centre-and-dispersion.html"/>
 <link rel="next" href="ch-correlation-regression.html"/>
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,12 +49,15 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -113,6 +116,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -230,13 +256,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.2.1" data-path="ch-frequencies.html"><a href="ch-frequencies.html#sec:intervals"><i class="fa fa-check"></i><b>8.2.1</b> Intervals</a></li>
 <li class="chapter" data-level="8.2.2" data-path="ch-frequencies.html"><a href="ch-frequencies.html#spss-1"><i class="fa fa-check"></i><b>8.2.2</b> SPSS</a></li>
 <li class="chapter" data-level="8.2.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#jasp-1"><i class="fa fa-check"></i><b>8.2.3</b> JASP</a></li>
+<li class="chapter" data-level="8.2.4" data-path="ch-frequencies.html"><a href="ch-frequencies.html#r-1"><i class="fa fa-check"></i><b>8.2.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="8.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#sec:barcharts"><i class="fa fa-check"></i><b>8.3</b> Bar charts</a></li>
 <li class="chapter" data-level="8.4" data-path="ch-frequencies.html"><a href="ch-frequencies.html#sec:histograms"><i class="fa fa-check"></i><b>8.4</b> Histograms</a>
 <ul>
 <li class="chapter" data-level="8.4.1" data-path="ch-frequencies.html"><a href="ch-frequencies.html#spss-2"><i class="fa fa-check"></i><b>8.4.1</b> SPSS</a></li>
 <li class="chapter" data-level="8.4.2" data-path="ch-frequencies.html"><a href="ch-frequencies.html#jasp-2"><i class="fa fa-check"></i><b>8.4.2</b> JASP</a></li>
-<li class="chapter" data-level="8.4.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#r-1"><i class="fa fa-check"></i><b>8.4.3</b> R</a></li>
+<li class="chapter" data-level="8.4.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#r-2"><i class="fa fa-check"></i><b>8.4.3</b> R</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html"><i class="fa fa-check"></i><b>9</b> Centre and dispersion</a>
@@ -274,7 +301,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.8" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:standardscores"><i class="fa fa-check"></i><b>9.8</b> Standard scores</a></li>
 <li class="chapter" data-level="9.9" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#spss-3"><i class="fa fa-check"></i><b>9.9</b> SPSS</a></li>
 <li class="chapter" data-level="9.10" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#jasp-3"><i class="fa fa-check"></i><b>9.10</b> JASP</a></li>
-<li class="chapter" data-level="9.11" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#r-2"><i class="fa fa-check"></i><b>9.11</b> R</a></li>
+<li class="chapter" data-level="9.11" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#r-3"><i class="fa fa-check"></i><b>9.11</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html"><i class="fa fa-check"></i><b>10</b> Probability distributions</a>
 <ul>
@@ -283,18 +310,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="10.2.1" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#formulas"><i class="fa fa-check"></i><b>10.2.1</b> formulas</a></li>
 <li class="chapter" data-level="10.2.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#jasp-4"><i class="fa fa-check"></i><b>10.2.2</b> JASP</a></li>
-<li class="chapter" data-level="10.2.3" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-3"><i class="fa fa-check"></i><b>10.2.3</b> R</a></li>
+<li class="chapter" data-level="10.2.3" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-4"><i class="fa fa-check"></i><b>10.2.3</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="10.3" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:normaldistribution"><i class="fa fa-check"></i><b>10.3</b> Normal probability distribution</a>
 <ul>
 <li class="chapter" data-level="10.3.1" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#formulas-1"><i class="fa fa-check"></i><b>10.3.1</b> formulas</a></li>
 <li class="chapter" data-level="10.3.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#jasp-5"><i class="fa fa-check"></i><b>10.3.2</b> JASP</a></li>
-<li class="chapter" data-level="10.3.3" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-4"><i class="fa fa-check"></i><b>10.3.3</b> R</a></li>
+<li class="chapter" data-level="10.3.3" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-5"><i class="fa fa-check"></i><b>10.3.3</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="10.4" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:isvarnormaldistributed"><i class="fa fa-check"></i><b>10.4</b> Does my variable have a normal probability distribution?</a>
 <ul>
 <li class="chapter" data-level="10.4.1" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#spss-4"><i class="fa fa-check"></i><b>10.4.1</b> SPSS</a></li>
-<li class="chapter" data-level="10.4.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-5"><i class="fa fa-check"></i><b>10.4.2</b> R</a></li>
+<li class="chapter" data-level="10.4.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-6"><i class="fa fa-check"></i><b>10.4.2</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="10.5" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:whatifnotnormal"><i class="fa fa-check"></i><b>10.5</b> What if my variable is not normally distributed?</a></li>
 <li class="chapter" data-level="10.6" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:Centrallimittheorem"><i class="fa fa-check"></i><b>10.6</b> Probability distribution of average</a></li>
@@ -311,14 +338,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.2.1" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#formulas-3"><i class="fa fa-check"></i><b>11.2.1</b> Formulas</a></li>
 <li class="chapter" data-level="11.2.2" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#spss-5"><i class="fa fa-check"></i><b>11.2.2</b> SPSS</a></li>
 <li class="chapter" data-level="11.2.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#jasp-6"><i class="fa fa-check"></i><b>11.2.3</b> JASP</a></li>
-<li class="chapter" data-level="11.2.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-6"><i class="fa fa-check"></i><b>11.2.4</b> R</a></li>
+<li class="chapter" data-level="11.2.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-7"><i class="fa fa-check"></i><b>11.2.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="11.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:regression"><i class="fa fa-check"></i><b>11.3</b> Regression</a>
 <ul>
 <li class="chapter" data-level="11.3.1" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:regression-formulas"><i class="fa fa-check"></i><b>11.3.1</b> Formulas</a></li>
 <li class="chapter" data-level="11.3.2" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#spss-6"><i class="fa fa-check"></i><b>11.3.2</b> SPSS</a></li>
 <li class="chapter" data-level="11.3.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#jasp-7"><i class="fa fa-check"></i><b>11.3.3</b> JASP</a></li>
-<li class="chapter" data-level="11.3.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-7"><i class="fa fa-check"></i><b>11.3.4</b> R</a></li>
+<li class="chapter" data-level="11.3.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-8"><i class="fa fa-check"></i><b>11.3.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="11.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#influential-observations"><i class="fa fa-check"></i><b>11.4</b> Influential observations</a></li>
 <li class="chapter" data-level="11.5" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:Spearman"><i class="fa fa-check"></i><b>11.5</b> Spearman’s rank correlation coefficient</a>
@@ -326,14 +353,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.5.1" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#formulas-4"><i class="fa fa-check"></i><b>11.5.1</b> Formulas</a></li>
 <li class="chapter" data-level="11.5.2" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#spss-7"><i class="fa fa-check"></i><b>11.5.2</b> SPSS</a></li>
 <li class="chapter" data-level="11.5.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#jasp-8"><i class="fa fa-check"></i><b>11.5.3</b> JASP</a></li>
-<li class="chapter" data-level="11.5.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-8"><i class="fa fa-check"></i><b>11.5.4</b> R</a></li>
+<li class="chapter" data-level="11.5.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-9"><i class="fa fa-check"></i><b>11.5.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="11.6" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:Phi"><i class="fa fa-check"></i><b>11.6</b> Phi</a>
 <ul>
 <li class="chapter" data-level="11.6.1" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#formulas-5"><i class="fa fa-check"></i><b>11.6.1</b> Formulas</a></li>
 <li class="chapter" data-level="11.6.2" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#spss-8"><i class="fa fa-check"></i><b>11.6.2</b> SPSS</a></li>
 <li class="chapter" data-level="11.6.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#jasp-9"><i class="fa fa-check"></i><b>11.6.3</b> JASP</a></li>
-<li class="chapter" data-level="11.6.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-9"><i class="fa fa-check"></i><b>11.6.4</b> R</a></li>
+<li class="chapter" data-level="11.6.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-10"><i class="fa fa-check"></i><b>11.6.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="11.7" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:correlationcausation"><i class="fa fa-check"></i><b>11.7</b> Last but not least</a></li>
 </ul></li>
@@ -348,7 +375,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.7" data-path="ch-reliability.html"><a href="ch-reliability.html#reliability-and-construct-validity"><i class="fa fa-check"></i><b>12.7</b> Reliability and construct validity</a></li>
 <li class="chapter" data-level="12.8" data-path="ch-reliability.html"><a href="ch-reliability.html#spss-9"><i class="fa fa-check"></i><b>12.8</b> SPSS</a></li>
 <li class="chapter" data-level="12.9" data-path="ch-reliability.html"><a href="ch-reliability.html#jasp-10"><i class="fa fa-check"></i><b>12.9</b> JASP</a></li>
-<li class="chapter" data-level="12.10" data-path="ch-reliability.html"><a href="ch-reliability.html#r-10"><i class="fa fa-check"></i><b>12.10</b> R</a></li>
+<li class="chapter" data-level="12.10" data-path="ch-reliability.html"><a href="ch-reliability.html#r-11"><i class="fa fa-check"></i><b>12.10</b> R</a></li>
 </ul></li>
 <li class="part"><span><b>Part III: Inferential statistics</b></span></li>
 <li class="chapter" data-level="13" data-path="ch-testing.html"><a href="ch-testing.html"><i class="fa fa-check"></i><b>13</b> Testing hypotheses</a>
@@ -361,7 +388,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.2.3" data-path="ch-testing.html"><a href="ch-testing.html#sec:ttest-assumptions"><i class="fa fa-check"></i><b>13.2.3</b> assumptions</a></li>
 <li class="chapter" data-level="13.2.4" data-path="ch-testing.html"><a href="ch-testing.html#spss-10"><i class="fa fa-check"></i><b>13.2.4</b> SPSS</a></li>
 <li class="chapter" data-level="13.2.5" data-path="ch-testing.html"><a href="ch-testing.html#sec:jaspttestonesample"><i class="fa fa-check"></i><b>13.2.5</b> JASP</a></li>
-<li class="chapter" data-level="13.2.6" data-path="ch-testing.html"><a href="ch-testing.html#r-11"><i class="fa fa-check"></i><b>13.2.6</b> R</a></li>
+<li class="chapter" data-level="13.2.6" data-path="ch-testing.html"><a href="ch-testing.html#r-12"><i class="fa fa-check"></i><b>13.2.6</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="13.3" data-path="ch-testing.html"><a href="ch-testing.html#sec:plargerthannull"><i class="fa fa-check"></i><b>13.3</b> <span class="math inline">\(p\)</span>-value is always larger than zero</a></li>
 <li class="chapter" data-level="13.4" data-path="ch-testing.html"><a href="ch-testing.html#sec:ttest-onesidedtwosided"><i class="fa fa-check"></i><b>13.4</b> One-sided and two-sided tests</a></li>
@@ -370,7 +397,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.5.1" data-path="ch-testing.html"><a href="ch-testing.html#sec:formulas13-2"><i class="fa fa-check"></i><b>13.5.1</b> formulas</a></li>
 <li class="chapter" data-level="13.5.2" data-path="ch-testing.html"><a href="ch-testing.html#spss-11"><i class="fa fa-check"></i><b>13.5.2</b> SPSS</a></li>
 <li class="chapter" data-level="13.5.3" data-path="ch-testing.html"><a href="ch-testing.html#jasp-11"><i class="fa fa-check"></i><b>13.5.3</b> JASP</a></li>
-<li class="chapter" data-level="13.5.4" data-path="ch-testing.html"><a href="ch-testing.html#r-12"><i class="fa fa-check"></i><b>13.5.4</b> R</a></li>
+<li class="chapter" data-level="13.5.4" data-path="ch-testing.html"><a href="ch-testing.html#r-13"><i class="fa fa-check"></i><b>13.5.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="13.6" data-path="ch-testing.html"><a href="ch-testing.html#sec:ttest-indep"><i class="fa fa-check"></i><b>13.6</b> Independent samples <span class="math inline">\(t\)</span>-tests</a>
 <ul>
@@ -393,7 +420,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.8.1" data-path="ch-testing.html"><a href="ch-testing.html#sec:formulas13-5"><i class="fa fa-check"></i><b>13.8.1</b> formulas</a></li>
 <li class="chapter" data-level="13.8.2" data-path="ch-testing.html"><a href="ch-testing.html#spss-13-2"><i class="fa fa-check"></i><b>13.8.2</b> SPSS</a></li>
 <li class="chapter" data-level="13.8.3" data-path="ch-testing.html"><a href="ch-testing.html#jasp-12"><i class="fa fa-check"></i><b>13.8.3</b> JASP</a></li>
-<li class="chapter" data-level="13.8.4" data-path="ch-testing.html"><a href="ch-testing.html#r-13"><i class="fa fa-check"></i><b>13.8.4</b> R</a></li>
+<li class="chapter" data-level="13.8.4" data-path="ch-testing.html"><a href="ch-testing.html#r-14"><i class="fa fa-check"></i><b>13.8.4</b> R</a></li>
 <li class="chapter" data-level="13.8.5" data-path="ch-testing.html"><a href="ch-testing.html#sec:confint-effectsize"><i class="fa fa-check"></i><b>13.8.5</b> Confidence interval of the effect size</a></li>
 </ul></li>
 </ul></li>
@@ -421,7 +448,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.3.5" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-posthoc"><i class="fa fa-check"></i><b>15.3.5</b> Post-hoc comparisons</a></li>
 <li class="chapter" data-level="15.3.6" data-path="ch-anova.html"><a href="ch-anova.html#spss-12"><i class="fa fa-check"></i><b>15.3.6</b> SPSS</a></li>
 <li class="chapter" data-level="15.3.7" data-path="ch-anova.html"><a href="ch-anova.html#jasp-13"><i class="fa fa-check"></i><b>15.3.7</b> JASP</a></li>
-<li class="chapter" data-level="15.3.8" data-path="ch-anova.html"><a href="ch-anova.html#r-14"><i class="fa fa-check"></i><b>15.3.8</b> R</a></li>
+<li class="chapter" data-level="15.3.8" data-path="ch-anova.html"><a href="ch-anova.html#r-15"><i class="fa fa-check"></i><b>15.3.8</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="15.4" data-path="ch-anova.html"><a href="ch-anova.html#two-way-analysis-of-variance"><i class="fa fa-check"></i><b>15.4</b> Two-way analysis of variance</a>
 <ul>
@@ -429,7 +456,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.4.2" data-path="ch-anova.html"><a href="ch-anova.html#a-formal-explanation"><i class="fa fa-check"></i><b>15.4.2</b> A formal explanation</a></li>
 <li class="chapter" data-level="15.4.3" data-path="ch-anova.html"><a href="ch-anova.html#spss-13"><i class="fa fa-check"></i><b>15.4.3</b> SPSS</a></li>
 <li class="chapter" data-level="15.4.4" data-path="ch-anova.html"><a href="ch-anova.html#jasp-14"><i class="fa fa-check"></i><b>15.4.4</b> JASP</a></li>
-<li class="chapter" data-level="15.4.5" data-path="ch-anova.html"><a href="ch-anova.html#r-15"><i class="fa fa-check"></i><b>15.4.5</b> R</a></li>
+<li class="chapter" data-level="15.4.5" data-path="ch-anova.html"><a href="ch-anova.html#r-16"><i class="fa fa-check"></i><b>15.4.5</b> R</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="16" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html"><i class="fa fa-check"></i><b>16</b> Chi-square-tests</a>
@@ -454,7 +481,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="16.8.3" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#contingency-tables-preparation-1"><i class="fa fa-check"></i><b>16.8.3</b> contingency tables: preparation</a></li>
 <li class="chapter" data-level="16.8.4" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#contingency-tables-testing-1"><i class="fa fa-check"></i><b>16.8.4</b> contingency tables: testing</a></li>
 </ul></li>
-<li class="chapter" data-level="16.9" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#r-16"><i class="fa fa-check"></i><b>16.9</b> R</a>
+<li class="chapter" data-level="16.9" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#r-17"><i class="fa fa-check"></i><b>16.9</b> R</a>
 <ul>
 <li class="chapter" data-level="16.9.1" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#goodness-of-fit-testing-2"><i class="fa fa-check"></i><b>16.9.1</b> goodness of fit: testing</a></li>
 <li class="chapter" data-level="16.9.2" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#contingency-table-preparation-and-testing"><i class="fa fa-check"></i><b>16.9.2</b> contingency table: preparation and testing</a></li>
@@ -506,7 +533,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">10</span> Probability distributions</h1>
 <div id="sec:probabilities" class="section level2" number="10.1">
 <h2><span class="header-section-number">10.1</span> Probabilities</h2>
-<p>Calling behind the wheel increases the chance of an accident <span class="citation">(Bhargava and Pathania <a href="#ref-Bhar13" role="doc-biblioref">2013</a>)</span>.
+<p>Calling behind the wheel increases the chance of an accident <span class="citation">(<a href="#ref-Bhar13" role="doc-biblioref">Bhargava and Pathania 2013</a>)</span>.
 The average chance of precipitation in the Netherlands is 7%. My order has a
 10% chance of being delivered a day later than promised. Chances and probabilities
 play an important role in our daily lives, and also in academic research. After all,
@@ -534,7 +561,7 @@ A probability can never be smaller than <span class="math inline">\(0\)</span> a
 of specific outcomes (numerator) and the total number of possible outcomes
 (denominator) (see
 formula <a href="ch-probability-distributions.html#eq:probability-scrabble-1-A">(10.1)</a>), where the numerator can never be larger
-than the denominator <span class="citation">(Schuurman and De Kluiver <a href="#ref-SK01" role="doc-biblioref">2001</a>)</span>.</p>
+than the denominator <span class="citation">(<a href="#ref-SK01" role="doc-biblioref">Schuurman and De Kluiver 2001</a>)</span>.</p>
 <p>When two outcomes mutually exclude each other, as is the case for
 the outcomes A or B in our Scrabble example, then we may <em>sum up</em>
 these outcomes (rule of sum, or addition principle, or <em>OR</em> rule).
@@ -975,12 +1002,12 @@ Figure <a href="ch-probability-distributions.html#fig:binomprobabilitydistributi
 In the “Binomial” input, there is an input panel <code>Show Distribution</code>. In that panel, enter the appropriate values for <span class="math inline">\(p\)</span> (under “free parameter”) and for <span class="math inline">\(n\)</span> (under “fixed parameter”). In the “Display” input, check option <code>Probability mass function</code>.
 The output panel now shows the binomial <em>Probability Mass Plot</em>.</p>
 </div>
-<div id="r-3" class="section level3" number="10.2.3">
+<div id="r-4" class="section level3" number="10.2.3">
 <h3><span class="header-section-number">10.2.3</span> R</h3>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="ch-probability-distributions.html#cb53-1" aria-hidden="true"></a><span class="kw">dbinom</span>( <span class="dv">0</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">size=</span><span class="dv">3</span>, <span class="dt">prob=</span>.<span class="dv">38</span> )</span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="ch-probability-distributions.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>( <span class="dv">0</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">size=</span><span class="dv">3</span>, <span class="at">prob=</span>.<span class="dv">38</span> )</span></code></pre></div>
 <pre><code>## [1] 0.238328 0.438216 0.268584 0.054872</code></pre>
 <p>The output is shown in Table <a href="ch-probability-distributions.html#tab:binomprobabilitydistribution3">10.2</a> below.</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="ch-probability-distributions.html#cb55-1" aria-hidden="true"></a>matrixcalc<span class="op">::</span><span class="kw">pascal.matrix</span>( <span class="dv">10</span> ) <span class="co"># left under diagonal is Pascal&#39;s triangle</span></span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="ch-probability-distributions.html#cb56-1" aria-hidden="true" tabindex="-1"></a>matrixcalc<span class="sc">::</span><span class="fu">pascal.matrix</span>( <span class="dv">10</span> ) <span class="co"># left under diagonal is Pascal&#39;s triangle</span></span></code></pre></div>
 <pre><code>##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
 ##  [1,]    1    0    0    0    0    0    0    0    0     0
 ##  [2,]    1    1    0    0    0    0    0    0    0     0
@@ -1009,7 +1036,7 @@ Figure 10.2: Probability distribution of a binomial variable x with n=50 (left) 
 </div>
 <p>With an even larger sample, the probability distribution becomes a fluid line.
 This probability distribution occurs so often, that it is called the
-<em>normal probability distribution</em> or ‘normal distribution’. The distribution
+<em>normal probability distribution</em> or ‘normal distribution.’ The distribution
 is also referred to as the Gaussian distribution (named after the mathematician
 Carl Friedrich Gauss, 1777–1855), or the ‘bell curve’ (after the shape). Many
 variables approximately follow this probability distribution:
@@ -1178,17 +1205,17 @@ standard deviation <span class="math inline">\(\sigma\)</span> is
 <pre><code>Distributions &gt; Continuous: Normal</code></pre>
 <p>If the <code>Distributions</code> option is not shown in the top bar, then you can add the option by clicking on the blue <strong>+</strong>-button in the top right corner, and checking option <code>Distributions</code>.<br />
 In the “Normal” input panel, there is an input panel <code>Show Distribution</code>. In that panel, the values of the <em>standard</em> normal distribution are entered by default, and option <code>Probability density function</code> is checked by default. The standard normal distribution is shown in the output under <em>Density Plot</em>.<br />
-For <em>other</em> normal density distributions, the values of <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span> may be adjusted, and you may specify the domain shown (under “Options”, then “range of x”).
-Note that, under the heading “Parameters”, you should select the option labeled “<span class="math inline">\(\mu\)</span>, <span class="math inline">\(\sigma\)</span>” if you enter the mean and standard deviation (the default option is “<span class="math inline">\(\mu\)</span>, <span class="math inline">\(\sigma^2\)</span>” using variance; for the <em>standard</em> normal distribution <span class="math inline">\(\sigma=\sigma^2=1\)</span>).</p>
+For <em>other</em> normal density distributions, the values of <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span> may be adjusted, and you may specify the domain shown (under “Options,” then “range of x”).
+Note that, under the heading “Parameters,” you should select the option labeled “<span class="math inline">\(\mu\)</span>, <span class="math inline">\(\sigma\)</span>” if you enter the mean and standard deviation (the default option is “<span class="math inline">\(\mu\)</span>, <span class="math inline">\(\sigma^2\)</span>” using variance; for the <em>standard</em> normal distribution <span class="math inline">\(\sigma=\sigma^2=1\)</span>).</p>
 </div>
-<div id="r-4" class="section level3" number="10.3.3">
+<div id="r-5" class="section level3" number="10.3.3">
 <h3><span class="header-section-number">10.3.3</span> R</h3>
 <p>The normal probability distribution in Figure <a href="ch-probability-distributions.html#fig:normalprobabilitydistribution">10.3</a> may be plotted in R using the command below. A <code>curve</code> is plotted, with <code>x</code> in the specified domain, and <code>y</code> being the function which computes the normal probability density using equation <a href="ch-probability-distributions.html#eq:prob-normal">(10.8)</a>:</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="ch-probability-distributions.html#cb58-1" aria-hidden="true"></a><span class="kw">curve</span>( <span class="kw">dnorm</span>( x, <span class="dt">mean=</span><span class="dv">0</span>, <span class="dt">sd=</span><span class="dv">1</span> ), <span class="co"># function specifying y values, normal density</span></span>
-<span id="cb58-2"><a href="ch-probability-distributions.html#cb58-2" aria-hidden="true"></a>       <span class="dt">from=</span><span class="op">-</span><span class="dv">5</span>, <span class="dt">to=</span><span class="op">+</span><span class="dv">5</span>, <span class="co"># domain of x</span></span>
-<span id="cb58-3"><a href="ch-probability-distributions.html#cb58-3" aria-hidden="true"></a>       <span class="dt">lwd=</span><span class="dv">4</span>, <span class="co"># line width is 4x default value</span></span>
-<span id="cb58-4"><a href="ch-probability-distributions.html#cb58-4" aria-hidden="true"></a>       <span class="dt">xlab=</span><span class="st">&quot;x&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;P(x)&quot;</span> <span class="co"># labels along x and y axes</span></span>
-<span id="cb58-5"><a href="ch-probability-distributions.html#cb58-5" aria-hidden="true"></a>       )</span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="ch-probability-distributions.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>( <span class="fu">dnorm</span>( x, <span class="at">mean=</span><span class="dv">0</span>, <span class="at">sd=</span><span class="dv">1</span> ), <span class="co"># function specifying y values, normal density</span></span>
+<span id="cb59-2"><a href="ch-probability-distributions.html#cb59-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">from=</span><span class="sc">-</span><span class="dv">5</span>, <span class="at">to=</span><span class="sc">+</span><span class="dv">5</span>, <span class="co"># domain of x</span></span>
+<span id="cb59-3"><a href="ch-probability-distributions.html#cb59-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">lwd=</span><span class="dv">4</span>, <span class="co"># line width is 4x default value</span></span>
+<span id="cb59-4"><a href="ch-probability-distributions.html#cb59-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">xlab=</span><span class="st">&quot;x&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;P(x)&quot;</span> <span class="co"># labels along x and y axes</span></span>
+<span id="cb59-5"><a href="ch-probability-distributions.html#cb59-5" aria-hidden="true" tabindex="-1"></a>       )</span></code></pre></div>
 <p><img src="QMS-EN_files/figure-html/curve.dnorm-1.png" width="672" /></p>
 <p>If used with the additional argument <code>curve( ..., add=TRUE )</code>, then the curve will be added to the most recent plot (see e.g. Figure <a href="ch-probability-distributions.html#fig:itunesmeanshist">10.6</a> below).</p>
 </div>
@@ -1248,7 +1275,7 @@ formula <a href="ch-probability-distributions.html#eq:normallydistributed">(10.7
 <p>Select the variable Time (drag to the Dependent List panel).<br />
 Choose the button <code>Plots</code>, and tick <code>Normality plots with tests</code>, which
 means ‘if you make a QQ-plot or Normality plot, you should also then conduct
-tests on normality’.
+tests on normality.’
 Confirm with <code>Continue</code> and afterwards with <code>OK</code>. The output contains
 firstly the results of the Shapiro-Wilks test and the
 Kolmogorov-Smirnov test. According to both tests, the probability of finding
@@ -1258,13 +1285,13 @@ warning in
 the lengths of music numbers are not normally distributed. After these
 test results, there is, amongst others, a Q-Q plot.</p>
 </div>
-<div id="r-5" class="section level3" number="10.4.2">
+<div id="r-6" class="section level3" number="10.4.2">
 <h3><span class="header-section-number">10.4.2</span> R</h3>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="ch-probability-distributions.html#cb60-1" aria-hidden="true"></a>itunes &lt;-<span class="st"> </span><span class="kw">read.table</span>( <span class="dt">file=</span><span class="st">&quot;data/itunestimes20120511.txt&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span> )</span>
-<span id="cb60-2"><a href="ch-probability-distributions.html#cb60-2" aria-hidden="true"></a><span class="co"># Size in bytes, Time in ms</span></span>
-<span id="cb60-3"><a href="ch-probability-distributions.html#cb60-3" aria-hidden="true"></a><span class="kw">qqnorm</span>(itunes<span class="op">$</span>Time<span class="op">/</span><span class="dv">60000</span>, <span class="dt">datax=</span>T, <span class="dt">plot.it=</span><span class="ot">FALSE</span>) <span class="co"># normally we&#39;d use plot.it=TRUE  </span></span>
-<span id="cb60-4"><a href="ch-probability-distributions.html#cb60-4" aria-hidden="true"></a><span class="co"># qqline(itunes$Time/60000, datax=T, col=&quot;purple&quot;, lwd=T) # see QQ-plot above</span></span></code></pre></div>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="ch-probability-distributions.html#cb61-1" aria-hidden="true"></a><span class="kw">shapiro.test</span>(itunes<span class="op">$</span>Time<span class="op">/</span><span class="dv">60000</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="ch-probability-distributions.html#cb61-1" aria-hidden="true" tabindex="-1"></a>itunes <span class="ot">&lt;-</span> <span class="fu">read.table</span>( <span class="at">file=</span><span class="st">&quot;data/itunestimes20120511.txt&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span> )</span>
+<span id="cb61-2"><a href="ch-probability-distributions.html#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Size in bytes, Time in ms</span></span>
+<span id="cb61-3"><a href="ch-probability-distributions.html#cb61-3" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(itunes<span class="sc">$</span>Time<span class="sc">/</span><span class="dv">60000</span>, <span class="at">datax=</span>T, <span class="at">plot.it=</span><span class="cn">FALSE</span>) <span class="co"># normally we&#39;d use plot.it=TRUE  </span></span>
+<span id="cb61-4"><a href="ch-probability-distributions.html#cb61-4" aria-hidden="true" tabindex="-1"></a><span class="co"># qqline(itunes$Time/60000, datax=T, col=&quot;purple&quot;, lwd=T) # see QQ-plot above</span></span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="ch-probability-distributions.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(itunes<span class="sc">$</span>Time<span class="sc">/</span><span class="dv">60000</span>)</span></code></pre></div>
 <pre><code>## 
 ##  Shapiro-Wilk normality test
 ## 
@@ -1349,7 +1376,7 @@ and
 \end{equation}\]</span>
 The standard deviation of the
 mean, <span class="math inline">\(s_{\bar{X}}\)</span>, is also known as the ‘standard error of
-the mean’. The same averages <span class="math inline">\(\bar{X}\)</span> have less dispersion than the separate
+the mean.’ The same averages <span class="math inline">\(\bar{X}\)</span> have less dispersion than the separate
 observations <span class="math inline">\(X\)</span>, and the averages also vary less when taken over a larger
 sample, as seems to be the case from formula <a href="ch-probability-distributions.html#eq:sem">(10.11)</a>. You can consider this
 standard error of the mean as the ‘margin of error’ in the estimation
@@ -1360,7 +1387,7 @@ probability distribution with
 <span class="math inline">\(\mu_{\bar{X}} = \mu_X\)</span> and <span class="math inline">\(s_{\bar{X}} = \frac{s}{\sqrt{n}}\)</span>. We can
 derive the probability distribution of the mean from only one sample of
 <span class="math inline">\(n\)</span> observations, with a sample mean <span class="math inline">\(\bar{X}\)</span> and one standard
-deviation <span class="citation">(Cumming <a href="#ref-Cumm12" role="doc-biblioref">2012</a>)</span>. Reread this paragraph carefully.</p>
+deviation <span class="citation">(<a href="#ref-Cumm12" role="doc-biblioref">Cumming 2012</a>)</span>. Reread this paragraph carefully.</p>
 </div>
 <div id="sec:confidenceinterval-mean" class="section level2" number="10.7">
 <h2><span class="header-section-number">10.7</span> Confidence interval of the mean</h2>
@@ -1410,7 +1437,7 @@ suffice.</p>
 Sometimes a researcher wants to know the speed or tempo with which Dutch is actually spoken,
 and how much variation in this speech rate or tempo there is between speakers.
 This variable, speech rate, is expressed as the number of seconds
-a syllable lasts (typically about <span class="math inline">\(0.2\)</span> second or <span class="math inline">\(200\)</span> milliseconds). Although <span class="citation">Quené (<a href="#ref-Quene08" role="doc-biblioref">2008</a>)</span>
+a syllable lasts (typically about <span class="math inline">\(0.2\)</span> second or <span class="math inline">\(200\)</span> milliseconds). Although <span class="citation"><a href="#ref-Quene08" role="doc-biblioref">H. Quené</a> (<a href="#ref-Quene08" role="doc-biblioref">2008</a>)</span>
 estimates that <span class="math inline">\(\mu=0.220\)</span> s and <span class="math inline">\(\sigma=0.0225\)</span> s, we act as if
 we do not know these population parameters — just like real
 researchers who usually do not know
@@ -1431,7 +1458,7 @@ between <span class="math inline">\(\overline{x}-2.05\times s_{\bar{x}}\)</span>
 or between <span class="math inline">\(0.215-2.05\times0.0037\)</span> and
 <span class="math inline">\(0.215+2.05\times0.0037\)</span>,
 or between <span class="math inline">\(0.208\)</span> and <span class="math inline">\(0.223\)</span> seconds.
-If the true value in the population is within these limits, then the observed sample value has a probability of 95% of occurring <span class="citation">(Spiegelhalter <a href="#ref-Spie19" role="doc-biblioref">2019</a>, 241)</span>.</p>
+If the true value in the population is within these limits, then the observed sample value has a probability of 95% of occurring <span class="citation">(<a href="#ref-Spie19" role="doc-biblioref">Spiegelhalter 2019, 241</a>)</span>.</p>
 </blockquote>
 <hr />
 <p>In Figure <a href="ch-probability-distributions.html#fig:tempo95CIs">10.8</a>, you can see the results of a
@@ -1463,21 +1490,24 @@ Appendix <a href="app-criticaltvalues.html#app:criticaltvalues">C</a>, see
 </div>
 </div>
 <h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-Bhar13">
-<p>Bhargava, Saurabh, and Vikram Pathania. 2013. “Driving Under the (Cellular) Influence.” <em>American Economic Journal: Economic Policy</em> 5 (3): 92–125.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Bhar13" class="csl-entry">
+Bhargava, Saurabh, and Vikram Pathania. 2013. <span>“Driving Under the (Cellular) Influence.”</span> <em>American Economic Journal: Economic Policy</em> 5 (3): 92–125.
 </div>
-<div id="ref-Cumm12">
-<p>Cumming, Geoff. 2012. <em>Understanding the New Statistics</em>. New York: Routledge.</p>
+<div id="ref-Cumm12" class="csl-entry">
+Cumming, Geoff. 2012. <em>Understanding the New Statistics</em>. New York: Routledge.
 </div>
-<div id="ref-Quene08">
-<p>Quené, H. 2008. “Multilevel Modeling of Between-Speaker and Within-Speaker Variation in Spontaneous Speech Tempo.” <em>Journal of the Acoustical Society of America</em> 123 (2): 1104–13.</p>
+<div id="ref-Quene08" class="csl-entry">
+Quené, H. 2008. <span>“Multilevel Modeling of Between-Speaker and Within-Speaker Variation in Spontaneous Speech Tempo.”</span> <em>Journal of the Acoustical Society of America</em> 123 (2): 1104–13.
 </div>
-<div id="ref-SK01">
-<p>Schuurman, Wouter, and Hans De Kluiver. 2001. <em>Kop of Munt: Kansrekening in Het Dagelijks Leven</em>. Amsterdam: Bert Bakker.</p>
+<div id="ref-SK01" class="csl-entry">
+Schuurman, Wouter, and Hans De Kluiver. 2001. <em>Kop of Munt: Kansrekening in Het Dagelijks Leven</em>. Amsterdam: Bert Bakker.
 </div>
-<div id="ref-Spie19">
-<p>Spiegelhalter, David. 2019. <em>The Art of Statistics: Learning from Data</em>. Pelican.</p>
+<div id="ref-Spie19" class="csl-entry">
+Spiegelhalter, David. 2019. <em>The Art of Statistics: Learning from Data</em>. Pelican.
+</div>
+<div id="ref-Weis15" class="csl-entry">
+Weisstein, Eric W. 2015. <span>“Pascal’s Formula.”</span> Wolfram. <a href="http://mathworld.wolfram.com/PascalsFormula.html">http://mathworld.wolfram.com/PascalsFormula.html</a>.
 </div>
 </div>
 <div class="footnotes">
@@ -1485,7 +1515,7 @@ Appendix <a href="app-criticaltvalues.html#app:criticaltvalues">C</a>, see
 <ol start="21">
 <li id="fn21"><p>However, two of the tiles are blank (without any letter); later in this section we will remove these blank tiles from the bag.<a href="ch-probability-distributions.html#fnref21" class="footnote-back">↩︎</a></p></li>
 <li id="fn22"><p>Roulette players can gamble on 36 of the 37 possible outcomes, so in the long term the casino receives a <span class="math inline">\(1/37\)</span> share of all bets.<a href="ch-probability-distributions.html#fnref22" class="footnote-back">↩︎</a></p></li>
-<li id="fn23"><p>Thus, <span class="math inline">\({n \choose x} = {n-1 \choose x} + {n-1 \choose x-1}\)</span> <span class="citation">(Weisstein <a href="#ref-Weis15" role="doc-biblioref">2015</a>)</span>.<a href="ch-probability-distributions.html#fnref23" class="footnote-back">↩︎</a></p></li>
+<li id="fn23"><p>Thus, <span class="math inline">\({n \choose x} = {n-1 \choose x} + {n-1 \choose x-1}\)</span> <span class="citation">(<a href="#ref-Weis15" role="doc-biblioref">Weisstein 2015</a>)</span>.<a href="ch-probability-distributions.html#fnref23" class="footnote-back">↩︎</a></p></li>
 <li id="fn24"><p>Estimations of parameters are indicated with a “circumflex” or “hat” above them.<a href="ch-probability-distributions.html#fnref24" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
@@ -1518,6 +1548,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

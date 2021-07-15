@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>16 Chi-square-tests | Quantitative Methods and Statistics</title>
   <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="16 Chi-square-tests | Quantitative Methods and Statistics" />
   <meta property="og:type" content="book" />
@@ -31,7 +31,7 @@
   
 <link rel="prev" href="ch-anova.html"/>
 <link rel="next" href="ch-other-nonpar-tests.html"/>
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,12 +49,15 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -113,6 +116,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -230,13 +256,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.2.1" data-path="ch-frequencies.html"><a href="ch-frequencies.html#sec:intervals"><i class="fa fa-check"></i><b>8.2.1</b> Intervals</a></li>
 <li class="chapter" data-level="8.2.2" data-path="ch-frequencies.html"><a href="ch-frequencies.html#spss-1"><i class="fa fa-check"></i><b>8.2.2</b> SPSS</a></li>
 <li class="chapter" data-level="8.2.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#jasp-1"><i class="fa fa-check"></i><b>8.2.3</b> JASP</a></li>
+<li class="chapter" data-level="8.2.4" data-path="ch-frequencies.html"><a href="ch-frequencies.html#r-1"><i class="fa fa-check"></i><b>8.2.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="8.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#sec:barcharts"><i class="fa fa-check"></i><b>8.3</b> Bar charts</a></li>
 <li class="chapter" data-level="8.4" data-path="ch-frequencies.html"><a href="ch-frequencies.html#sec:histograms"><i class="fa fa-check"></i><b>8.4</b> Histograms</a>
 <ul>
 <li class="chapter" data-level="8.4.1" data-path="ch-frequencies.html"><a href="ch-frequencies.html#spss-2"><i class="fa fa-check"></i><b>8.4.1</b> SPSS</a></li>
 <li class="chapter" data-level="8.4.2" data-path="ch-frequencies.html"><a href="ch-frequencies.html#jasp-2"><i class="fa fa-check"></i><b>8.4.2</b> JASP</a></li>
-<li class="chapter" data-level="8.4.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#r-1"><i class="fa fa-check"></i><b>8.4.3</b> R</a></li>
+<li class="chapter" data-level="8.4.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#r-2"><i class="fa fa-check"></i><b>8.4.3</b> R</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html"><i class="fa fa-check"></i><b>9</b> Centre and dispersion</a>
@@ -274,7 +301,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.8" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:standardscores"><i class="fa fa-check"></i><b>9.8</b> Standard scores</a></li>
 <li class="chapter" data-level="9.9" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#spss-3"><i class="fa fa-check"></i><b>9.9</b> SPSS</a></li>
 <li class="chapter" data-level="9.10" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#jasp-3"><i class="fa fa-check"></i><b>9.10</b> JASP</a></li>
-<li class="chapter" data-level="9.11" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#r-2"><i class="fa fa-check"></i><b>9.11</b> R</a></li>
+<li class="chapter" data-level="9.11" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#r-3"><i class="fa fa-check"></i><b>9.11</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html"><i class="fa fa-check"></i><b>10</b> Probability distributions</a>
 <ul>
@@ -283,18 +310,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="10.2.1" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#formulas"><i class="fa fa-check"></i><b>10.2.1</b> formulas</a></li>
 <li class="chapter" data-level="10.2.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#jasp-4"><i class="fa fa-check"></i><b>10.2.2</b> JASP</a></li>
-<li class="chapter" data-level="10.2.3" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-3"><i class="fa fa-check"></i><b>10.2.3</b> R</a></li>
+<li class="chapter" data-level="10.2.3" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-4"><i class="fa fa-check"></i><b>10.2.3</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="10.3" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:normaldistribution"><i class="fa fa-check"></i><b>10.3</b> Normal probability distribution</a>
 <ul>
 <li class="chapter" data-level="10.3.1" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#formulas-1"><i class="fa fa-check"></i><b>10.3.1</b> formulas</a></li>
 <li class="chapter" data-level="10.3.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#jasp-5"><i class="fa fa-check"></i><b>10.3.2</b> JASP</a></li>
-<li class="chapter" data-level="10.3.3" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-4"><i class="fa fa-check"></i><b>10.3.3</b> R</a></li>
+<li class="chapter" data-level="10.3.3" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-5"><i class="fa fa-check"></i><b>10.3.3</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="10.4" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:isvarnormaldistributed"><i class="fa fa-check"></i><b>10.4</b> Does my variable have a normal probability distribution?</a>
 <ul>
 <li class="chapter" data-level="10.4.1" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#spss-4"><i class="fa fa-check"></i><b>10.4.1</b> SPSS</a></li>
-<li class="chapter" data-level="10.4.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-5"><i class="fa fa-check"></i><b>10.4.2</b> R</a></li>
+<li class="chapter" data-level="10.4.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-6"><i class="fa fa-check"></i><b>10.4.2</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="10.5" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:whatifnotnormal"><i class="fa fa-check"></i><b>10.5</b> What if my variable is not normally distributed?</a></li>
 <li class="chapter" data-level="10.6" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:Centrallimittheorem"><i class="fa fa-check"></i><b>10.6</b> Probability distribution of average</a></li>
@@ -311,14 +338,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.2.1" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#formulas-3"><i class="fa fa-check"></i><b>11.2.1</b> Formulas</a></li>
 <li class="chapter" data-level="11.2.2" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#spss-5"><i class="fa fa-check"></i><b>11.2.2</b> SPSS</a></li>
 <li class="chapter" data-level="11.2.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#jasp-6"><i class="fa fa-check"></i><b>11.2.3</b> JASP</a></li>
-<li class="chapter" data-level="11.2.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-6"><i class="fa fa-check"></i><b>11.2.4</b> R</a></li>
+<li class="chapter" data-level="11.2.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-7"><i class="fa fa-check"></i><b>11.2.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="11.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:regression"><i class="fa fa-check"></i><b>11.3</b> Regression</a>
 <ul>
 <li class="chapter" data-level="11.3.1" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:regression-formulas"><i class="fa fa-check"></i><b>11.3.1</b> Formulas</a></li>
 <li class="chapter" data-level="11.3.2" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#spss-6"><i class="fa fa-check"></i><b>11.3.2</b> SPSS</a></li>
 <li class="chapter" data-level="11.3.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#jasp-7"><i class="fa fa-check"></i><b>11.3.3</b> JASP</a></li>
-<li class="chapter" data-level="11.3.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-7"><i class="fa fa-check"></i><b>11.3.4</b> R</a></li>
+<li class="chapter" data-level="11.3.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-8"><i class="fa fa-check"></i><b>11.3.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="11.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#influential-observations"><i class="fa fa-check"></i><b>11.4</b> Influential observations</a></li>
 <li class="chapter" data-level="11.5" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:Spearman"><i class="fa fa-check"></i><b>11.5</b> Spearman’s rank correlation coefficient</a>
@@ -326,14 +353,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.5.1" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#formulas-4"><i class="fa fa-check"></i><b>11.5.1</b> Formulas</a></li>
 <li class="chapter" data-level="11.5.2" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#spss-7"><i class="fa fa-check"></i><b>11.5.2</b> SPSS</a></li>
 <li class="chapter" data-level="11.5.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#jasp-8"><i class="fa fa-check"></i><b>11.5.3</b> JASP</a></li>
-<li class="chapter" data-level="11.5.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-8"><i class="fa fa-check"></i><b>11.5.4</b> R</a></li>
+<li class="chapter" data-level="11.5.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-9"><i class="fa fa-check"></i><b>11.5.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="11.6" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:Phi"><i class="fa fa-check"></i><b>11.6</b> Phi</a>
 <ul>
 <li class="chapter" data-level="11.6.1" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#formulas-5"><i class="fa fa-check"></i><b>11.6.1</b> Formulas</a></li>
 <li class="chapter" data-level="11.6.2" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#spss-8"><i class="fa fa-check"></i><b>11.6.2</b> SPSS</a></li>
 <li class="chapter" data-level="11.6.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#jasp-9"><i class="fa fa-check"></i><b>11.6.3</b> JASP</a></li>
-<li class="chapter" data-level="11.6.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-9"><i class="fa fa-check"></i><b>11.6.4</b> R</a></li>
+<li class="chapter" data-level="11.6.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-10"><i class="fa fa-check"></i><b>11.6.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="11.7" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:correlationcausation"><i class="fa fa-check"></i><b>11.7</b> Last but not least</a></li>
 </ul></li>
@@ -348,7 +375,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.7" data-path="ch-reliability.html"><a href="ch-reliability.html#reliability-and-construct-validity"><i class="fa fa-check"></i><b>12.7</b> Reliability and construct validity</a></li>
 <li class="chapter" data-level="12.8" data-path="ch-reliability.html"><a href="ch-reliability.html#spss-9"><i class="fa fa-check"></i><b>12.8</b> SPSS</a></li>
 <li class="chapter" data-level="12.9" data-path="ch-reliability.html"><a href="ch-reliability.html#jasp-10"><i class="fa fa-check"></i><b>12.9</b> JASP</a></li>
-<li class="chapter" data-level="12.10" data-path="ch-reliability.html"><a href="ch-reliability.html#r-10"><i class="fa fa-check"></i><b>12.10</b> R</a></li>
+<li class="chapter" data-level="12.10" data-path="ch-reliability.html"><a href="ch-reliability.html#r-11"><i class="fa fa-check"></i><b>12.10</b> R</a></li>
 </ul></li>
 <li class="part"><span><b>Part III: Inferential statistics</b></span></li>
 <li class="chapter" data-level="13" data-path="ch-testing.html"><a href="ch-testing.html"><i class="fa fa-check"></i><b>13</b> Testing hypotheses</a>
@@ -361,7 +388,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.2.3" data-path="ch-testing.html"><a href="ch-testing.html#sec:ttest-assumptions"><i class="fa fa-check"></i><b>13.2.3</b> assumptions</a></li>
 <li class="chapter" data-level="13.2.4" data-path="ch-testing.html"><a href="ch-testing.html#spss-10"><i class="fa fa-check"></i><b>13.2.4</b> SPSS</a></li>
 <li class="chapter" data-level="13.2.5" data-path="ch-testing.html"><a href="ch-testing.html#sec:jaspttestonesample"><i class="fa fa-check"></i><b>13.2.5</b> JASP</a></li>
-<li class="chapter" data-level="13.2.6" data-path="ch-testing.html"><a href="ch-testing.html#r-11"><i class="fa fa-check"></i><b>13.2.6</b> R</a></li>
+<li class="chapter" data-level="13.2.6" data-path="ch-testing.html"><a href="ch-testing.html#r-12"><i class="fa fa-check"></i><b>13.2.6</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="13.3" data-path="ch-testing.html"><a href="ch-testing.html#sec:plargerthannull"><i class="fa fa-check"></i><b>13.3</b> <span class="math inline">\(p\)</span>-value is always larger than zero</a></li>
 <li class="chapter" data-level="13.4" data-path="ch-testing.html"><a href="ch-testing.html#sec:ttest-onesidedtwosided"><i class="fa fa-check"></i><b>13.4</b> One-sided and two-sided tests</a></li>
@@ -370,7 +397,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.5.1" data-path="ch-testing.html"><a href="ch-testing.html#sec:formulas13-2"><i class="fa fa-check"></i><b>13.5.1</b> formulas</a></li>
 <li class="chapter" data-level="13.5.2" data-path="ch-testing.html"><a href="ch-testing.html#spss-11"><i class="fa fa-check"></i><b>13.5.2</b> SPSS</a></li>
 <li class="chapter" data-level="13.5.3" data-path="ch-testing.html"><a href="ch-testing.html#jasp-11"><i class="fa fa-check"></i><b>13.5.3</b> JASP</a></li>
-<li class="chapter" data-level="13.5.4" data-path="ch-testing.html"><a href="ch-testing.html#r-12"><i class="fa fa-check"></i><b>13.5.4</b> R</a></li>
+<li class="chapter" data-level="13.5.4" data-path="ch-testing.html"><a href="ch-testing.html#r-13"><i class="fa fa-check"></i><b>13.5.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="13.6" data-path="ch-testing.html"><a href="ch-testing.html#sec:ttest-indep"><i class="fa fa-check"></i><b>13.6</b> Independent samples <span class="math inline">\(t\)</span>-tests</a>
 <ul>
@@ -393,7 +420,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.8.1" data-path="ch-testing.html"><a href="ch-testing.html#sec:formulas13-5"><i class="fa fa-check"></i><b>13.8.1</b> formulas</a></li>
 <li class="chapter" data-level="13.8.2" data-path="ch-testing.html"><a href="ch-testing.html#spss-13-2"><i class="fa fa-check"></i><b>13.8.2</b> SPSS</a></li>
 <li class="chapter" data-level="13.8.3" data-path="ch-testing.html"><a href="ch-testing.html#jasp-12"><i class="fa fa-check"></i><b>13.8.3</b> JASP</a></li>
-<li class="chapter" data-level="13.8.4" data-path="ch-testing.html"><a href="ch-testing.html#r-13"><i class="fa fa-check"></i><b>13.8.4</b> R</a></li>
+<li class="chapter" data-level="13.8.4" data-path="ch-testing.html"><a href="ch-testing.html#r-14"><i class="fa fa-check"></i><b>13.8.4</b> R</a></li>
 <li class="chapter" data-level="13.8.5" data-path="ch-testing.html"><a href="ch-testing.html#sec:confint-effectsize"><i class="fa fa-check"></i><b>13.8.5</b> Confidence interval of the effect size</a></li>
 </ul></li>
 </ul></li>
@@ -421,7 +448,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.3.5" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-posthoc"><i class="fa fa-check"></i><b>15.3.5</b> Post-hoc comparisons</a></li>
 <li class="chapter" data-level="15.3.6" data-path="ch-anova.html"><a href="ch-anova.html#spss-12"><i class="fa fa-check"></i><b>15.3.6</b> SPSS</a></li>
 <li class="chapter" data-level="15.3.7" data-path="ch-anova.html"><a href="ch-anova.html#jasp-13"><i class="fa fa-check"></i><b>15.3.7</b> JASP</a></li>
-<li class="chapter" data-level="15.3.8" data-path="ch-anova.html"><a href="ch-anova.html#r-14"><i class="fa fa-check"></i><b>15.3.8</b> R</a></li>
+<li class="chapter" data-level="15.3.8" data-path="ch-anova.html"><a href="ch-anova.html#r-15"><i class="fa fa-check"></i><b>15.3.8</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="15.4" data-path="ch-anova.html"><a href="ch-anova.html#two-way-analysis-of-variance"><i class="fa fa-check"></i><b>15.4</b> Two-way analysis of variance</a>
 <ul>
@@ -429,7 +456,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.4.2" data-path="ch-anova.html"><a href="ch-anova.html#a-formal-explanation"><i class="fa fa-check"></i><b>15.4.2</b> A formal explanation</a></li>
 <li class="chapter" data-level="15.4.3" data-path="ch-anova.html"><a href="ch-anova.html#spss-13"><i class="fa fa-check"></i><b>15.4.3</b> SPSS</a></li>
 <li class="chapter" data-level="15.4.4" data-path="ch-anova.html"><a href="ch-anova.html#jasp-14"><i class="fa fa-check"></i><b>15.4.4</b> JASP</a></li>
-<li class="chapter" data-level="15.4.5" data-path="ch-anova.html"><a href="ch-anova.html#r-15"><i class="fa fa-check"></i><b>15.4.5</b> R</a></li>
+<li class="chapter" data-level="15.4.5" data-path="ch-anova.html"><a href="ch-anova.html#r-16"><i class="fa fa-check"></i><b>15.4.5</b> R</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="16" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html"><i class="fa fa-check"></i><b>16</b> Chi-square-tests</a>
@@ -454,7 +481,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="16.8.3" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#contingency-tables-preparation-1"><i class="fa fa-check"></i><b>16.8.3</b> contingency tables: preparation</a></li>
 <li class="chapter" data-level="16.8.4" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#contingency-tables-testing-1"><i class="fa fa-check"></i><b>16.8.4</b> contingency tables: testing</a></li>
 </ul></li>
-<li class="chapter" data-level="16.9" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#r-16"><i class="fa fa-check"></i><b>16.9</b> R</a>
+<li class="chapter" data-level="16.9" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#r-17"><i class="fa fa-check"></i><b>16.9</b> R</a>
 <ul>
 <li class="chapter" data-level="16.9.1" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#goodness-of-fit-testing-2"><i class="fa fa-check"></i><b>16.9.1</b> goodness of fit: testing</a></li>
 <li class="chapter" data-level="16.9.2" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#contingency-table-preparation-and-testing"><i class="fa fa-check"></i><b>16.9.2</b> contingency table: preparation and testing</a></li>
@@ -548,14 +575,14 @@ if H0 is true.
 The expected outcomes are thus deduced from a distribution of the outcomes
 according to H0, and we investigate how well the observed outcomes
 fit the expected outcomes. This form of the <span class="math inline">\(\chi^2\)</span> test is thus also
-referred to as a test of the ‘goodness of fit’.</p>
+referred to as a test of the ‘goodness of fit.’</p>
 <p>For this example, we find the outcome of the testing <span class="math inline">\(\chi^2=12.44\)</span>
 with 5 degrees of freedom (see
 §<a href="ch-testing.html#sec:ttest-freedomdegrees">13.2.1</a> for explanation about
 degrees of freedom), with <span class="math inline">\(p=.0297\)</span>. We usually use the computer to
 calculate this probability value, but we can also estimate this probability
 via a table with critical
-<span class="math inline">\(\chi^2\)</span>-values, see Appendix <a href="app-criticalchi2values.html#app:criticalchi2values">D</a>, and footnote<a href="#fn39" class="footnote-ref" id="fnref39"><sup>39</sup></a>).
+<span class="math inline">\(\chi^2\)</span>-values, see Appendix <a href="app-criticalchi2values.html#app:criticalchi2values">D</a>, and footnote).<a href="#fn39" class="footnote-ref" id="fnref39"><sup>39</sup></a>
 If H0 is true, then we have only 3% probability
 of finding this outcome (or an even more uneven distribution of outcomes).
 The significance <span class="math inline">\(p\)</span> found is smaller than <span class="math inline">\(\alpha=.05\)</span>, and we thus
@@ -700,13 +727,13 @@ frequencies again.</p></li>
   \tag{16.1}
     \chi^2 = \sum \frac{(O-E)^2}{E}
 \end{equation}\]</span>
-in which <span class="math inline">\(O\)</span> and <span class="math inline">\(E\)</span> indicate the observed and expected numbers of observations for each cell of the frequency table <span class="citation">(Ferguson and Takane <a href="#ref-Ferg89" role="doc-biblioref">1989</a>)</span>. The expected
+in which <span class="math inline">\(O\)</span> and <span class="math inline">\(E\)</span> indicate the observed and expected numbers of observations for each cell of the frequency table <span class="citation">(<a href="#ref-Ferg89" role="doc-biblioref">Ferguson and Takane 1989</a>)</span>. The expected
 numbers might also be rational numbers (e.g. <span class="math inline">\(45/6\)</span> for the 6 possible
 outcomes of an honest die, if we throw
 <span class="math inline">\(45\times\)</span>). The larger the difference <span class="math inline">\((O-E)\)</span> in one or several cells,
 the larger also <span class="math inline">\(\chi^2\)</span> will be (see below). Due to squaring, the test
 statistic <span class="math inline">\(\chi^2\)</span> is always null or positive, and never negative
-<span class="citation">(Ferguson and Takane <a href="#ref-Ferg89" role="doc-biblioref">1989</a>)</span>.</p>
+<span class="citation">(<a href="#ref-Ferg89" role="doc-biblioref">Ferguson and Takane 1989</a>)</span>.</p>
 <p>The probability distribution of the test statistic <span class="math inline">\(\chi^2\)</span> is determined by the number of degrees of freedom (see §<a href="ch-testing.html#sec:ttest-freedomdegrees">13.2.1</a> for explanation of this concept).
 For a <span class="math inline">\(\chi^2\)</span>-test with one nominal variable (“goodness of fit”), the number of degrees of freedom must be equal to the number of cells minus 1. For a <span class="math inline">\(\chi^2\)</span>-test with multiple samples (homogeneity) and/or with two variables (correlations), with respectively <span class="math inline">\(k\)</span> and <span class="math inline">\(m\)</span> categories, the number of degrees of freedom is equal to <span class="math inline">\((k-1)\times(m-1)\)</span>.</p>
 <p>For each cell of the frequency table, in row <span class="math inline">\(i\)</span> and column <span class="math inline">\(j\)</span>, we can also compute the raw residual:
@@ -715,7 +742,7 @@ For a <span class="math inline">\(\chi^2\)</span>-test with one nominal variable
   e_{ij} = \frac{(O_{ij}-E_{ij})}{\sqrt{E_{ij}}}
 \end{equation}\]</span>
 If we square these raw residuals and then sum the squares, the result is the <span class="math inline">\(\chi^2\)</span> test statistic given in Eq.<a href="ch-chi-square-tests.html#eq:chisquared">(16.1)</a> above.</p>
-<p>It is more insightful to compute the <em>standardized</em> residual for each cell of the frequency table <span class="citation">(Agresti <a href="#ref-Agre07" role="doc-biblioref">2007</a>, 38)</span>. The standardization means that the standard error of the residuals is taken into account (by using row totals <span class="math inline">\(R_i\)</span>, column totals <span class="math inline">\(C_j\)</span>, and the grand total <span class="math inline">\(N\)</span>):
+<p>It is more insightful to compute the <em>standardized</em> residual for each cell of the frequency table <span class="citation">(<a href="#ref-Agre07" role="doc-biblioref">Agresti 2007, 38</a>)</span>. The standardization means that the standard error of the residuals is taken into account (by using row totals <span class="math inline">\(R_i\)</span>, column totals <span class="math inline">\(C_j\)</span>, and the grand total <span class="math inline">\(N\)</span>):
 <span class="math display" id="eq:chi2-stdresidu">\[\begin{equation}
   \tag{16.3}
   e_{ij} = \frac{(O_{ij}-E_{ij})}{\sqrt{E_{ij}\times(1-\frac{R_i}{N})\times(1-\frac{C_j}{N})}}
@@ -828,12 +855,12 @@ Choose <code>Statistics…</code> and tick the option <code>Chi-square</code>. C
 <h3><span class="header-section-number">16.8.2</span> goodness of fit: testing</h3>
 <p>In the top menu bar, choose</p>
 <pre><code>Frequencies &gt; Classical: Multinomial Test</code></pre>
-<p>Select the variable containing the categories of the nominal variable, here <code>outcome</code>, and place it in the entry field “Factor”.
-Select the variable containing the counts (frequencies) of each category, and place it in the entry field “Count”.</p>
+<p>Select the variable containing the categories of the nominal variable, here <code>outcome</code>, and place it in the entry field “Factor.”
+Select the variable containing the counts (frequencies) of each category, and place it in the entry field “Count.”</p>
 <p>Under “Test Values” there are two options.<br />
 If you choose <code>Equal proportions (multinomial test)</code>, a special version of the <span class="math inline">\(\chi^2\)</span> test will be performed, testing for a uniform distribution (as explained above, this means that the expected frequency is equal for each outcome category). In this example, this H0 implies that the die is honest, which is exactly what we want to test here.<br />
 If you choose <code>Expected proportions (chi-square test)</code>, you may adjust the expected frequencies in each cell. Use this option if your H0 postulates a non-uniform (e.g. gaussian) distribution. A table will appear, in which you must enter the expected frequencies according to <em>H0</em> for each category or cell. By default, the values in this table are all equal, so that the default is equivalent to the “equal proportions” or uniform H0 in the first option.</p>
-<p>You may also check <code>Descriptives</code> and <code>Confidence interval</code> under the heading “Additional Statistics”, and check <code>Descriptives plot</code> under “Plots”, so as to gain better insight in the patterns in your data.</p>
+<p>You may also check <code>Descriptives</code> and <code>Confidence interval</code> under the heading “Additional Statistics,” and check <code>Descriptives plot</code> under “Plots,” so as to gain better insight in the patterns in your data.</p>
 <p>In JASP it is not possible to obtain the (adjusted) standardized residuals; however you can compute these manually from the observed and expected counts.</p>
 </div>
 <div id="contingency-tables-preparation-1" class="section level3" number="16.8.3">
@@ -869,22 +896,22 @@ Open the <code>Cells</code> section bar, and check the option <code>Expected cou
 <p>In JASP it is not possible to obtain the (adjusted) standardized residuals; however you can compute these manually from the observed and expected counts.</p>
 </div>
 </div>
-<div id="r-16" class="section level2" number="16.9">
+<div id="r-17" class="section level2" number="16.9">
 <h2><span class="header-section-number">16.9</span> R</h2>
 <div id="goodness-of-fit-testing-2" class="section level3" number="16.9.1">
 <h3><span class="header-section-number">16.9.1</span> goodness of fit: testing</h3>
-<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="ch-chi-square-tests.html#cb175-1" aria-hidden="true"></a><span class="kw">chisq.test</span>( <span class="kw">c</span>( <span class="dv">14</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">1</span> ) ) -&gt;<span class="st"> </span>dobbel.chi2.htest <span class="co"># die §16.2</span></span>
-<span id="cb175-2"><a href="ch-chi-square-tests.html#cb175-2" aria-hidden="true"></a><span class="kw">print</span>(dobbel.chi2.htest)</span></code></pre></div>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="ch-chi-square-tests.html#cb176-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>( <span class="fu">c</span>( <span class="dv">14</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">1</span> ) ) <span class="ot">-&gt;</span> dobbel.chi2.htest <span class="co"># die §16.2</span></span>
+<span id="cb176-2"><a href="ch-chi-square-tests.html#cb176-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(dobbel.chi2.htest)</span></code></pre></div>
 <pre><code>## 
 ##  Chi-squared test for given probabilities
 ## 
 ## data:  c(14, 9, 11, 10, 15, 1)
 ## X-squared = 12.4, df = 5, p-value = 0.0297</code></pre>
-<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="ch-chi-square-tests.html#cb177-1" aria-hidden="true"></a>dobbel.chi2.htest<span class="op">$</span>residuals <span class="co"># raw residuals</span></span></code></pre></div>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="ch-chi-square-tests.html#cb178-1" aria-hidden="true" tabindex="-1"></a>dobbel.chi2.htest<span class="sc">$</span>residuals <span class="co"># raw residuals</span></span></code></pre></div>
 <pre><code>## [1]  1.2649111 -0.3162278  0.3162278  0.0000000  1.5811388 -2.8460499</code></pre>
-<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="ch-chi-square-tests.html#cb179-1" aria-hidden="true"></a><span class="kw">sum</span>( (dobbel.chi2.htest<span class="op">$</span>residuals)<span class="op">^</span><span class="dv">2</span> ) <span class="co"># chi2 = sum of sq of raw resid</span></span></code></pre></div>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="ch-chi-square-tests.html#cb180-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>( (dobbel.chi2.htest<span class="sc">$</span>residuals)<span class="sc">^</span><span class="dv">2</span> ) <span class="co"># chi2 = sum of sq of raw resid</span></span></code></pre></div>
 <pre><code>## [1] 12.4</code></pre>
-<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="ch-chi-square-tests.html#cb181-1" aria-hidden="true"></a>dobbel.chi2.htest<span class="op">$</span>stdres <span class="co"># standardized residuals</span></span></code></pre></div>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="ch-chi-square-tests.html#cb182-1" aria-hidden="true" tabindex="-1"></a>dobbel.chi2.htest<span class="sc">$</span>stdres <span class="co"># standardized residuals</span></span></code></pre></div>
 <pre><code>## [1]  1.3856406 -0.3464102  0.3464102  0.0000000  1.7320508 -3.1176915</code></pre>
 </div>
 <div id="contingency-table-preparation-and-testing" class="section level3" number="16.9.2">
@@ -892,17 +919,17 @@ Open the <code>Cells</code> section bar, and check the option <code>Expected cou
 <p>In R, the dataset <code>Titanic</code> is provided as a multidimensional matrix. We sum
 the observations and make a contingency table of the first dimension (class) and
 the fourth dimension (outcome).</p>
-<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="ch-chi-square-tests.html#cb183-1" aria-hidden="true"></a><span class="kw">apply</span>( Titanic, <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">4</span>), sum ) -&gt;<span class="st"> </span>Titanic.classoutcome</span></code></pre></div>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="ch-chi-square-tests.html#cb184-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>( Titanic, <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>), sum ) <span class="ot">-&gt;</span> Titanic.classoutcome</span></code></pre></div>
 <p>Next, we use the contingency (frequency) table as the input for a <code>chisq.test</code>.
 The resulting <code>chisq.htest</code> object is saved within R in order to inspect its residuals.</p>
-<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="ch-chi-square-tests.html#cb184-1" aria-hidden="true"></a><span class="kw">chisq.test</span>( Titanic.classoutcome ) -&gt;<span class="st"> </span>Titanic.chisq.htest</span>
-<span id="cb184-2"><a href="ch-chi-square-tests.html#cb184-2" aria-hidden="true"></a><span class="kw">print</span>(Titanic.chisq.htest)</span></code></pre></div>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="ch-chi-square-tests.html#cb185-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>( Titanic.classoutcome ) <span class="ot">-&gt;</span> Titanic.chisq.htest</span>
+<span id="cb185-2"><a href="ch-chi-square-tests.html#cb185-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(Titanic.chisq.htest)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s Chi-squared test
 ## 
 ## data:  Titanic.classoutcome
 ## X-squared = 190.4, df = 3, p-value &lt; 2.2e-16</code></pre>
-<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="ch-chi-square-tests.html#cb186-1" aria-hidden="true"></a>Titanic.chisq.htest<span class="op">$</span>stdres <span class="co"># standardized residuals</span></span></code></pre></div>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="ch-chi-square-tests.html#cb187-1" aria-hidden="true" tabindex="-1"></a>Titanic.chisq.htest<span class="sc">$</span>stdres <span class="co"># standardized residuals</span></span></code></pre></div>
 <pre><code>##       Survived
 ## Class          No       Yes
 ##   1st  -12.593038 12.593038
@@ -915,13 +942,13 @@ The resulting <code>chisq.htest</code> object is saved within R in order to insp
 <div id="effect-size-odds-ratio" class="section level2" number="16.10">
 <h2><span class="header-section-number">16.10</span> Effect size: odds ratio</h2>
 <p>When using the <span class="math inline">\(\chi^2\)</span>-test, the effect size can be reported in the form
-of the so-called “odds ratio”. The ‘odds ratio’ is derived from the contingency
+of the so-called “odds ratio.” The ‘odds ratio’ is derived from the contingency
 table with frequencies per cell; the odds ratio is most commonly used with <span class="math inline">\(2 \times 2\)</span> contingency tables.
 We will explain all these matters using the following example of a <span class="math inline">\(2 \times 2\)</span> contingency table.</p>
 <hr />
 <blockquote>
 <p><em>Example 16.2</em>:
-<span class="citation">Doll and Hill (<a href="#ref-DollHill1956" role="doc-biblioref">1956</a>)</span> investigated the relation between smoking
+<span class="citation"><a href="#ref-DollHill1956" role="doc-biblioref">Doll and Hill</a> (<a href="#ref-DollHill1956" role="doc-biblioref">1956</a>)</span> investigated the relation between smoking
 and lung cancer. They first surveyed all British doctors about
 their age and smoking behaviour. Next, the researchers kept up over the years with
 the death notices and cause of death of all those surveyed. The first
@@ -993,7 +1020,7 @@ AD/BC =
 ‘odds’ of dying from lung cancer are thus more than <span class="math inline">\(12\times\)</span>
 as great for the smokers as for the non-smokers. We report this as follows:</p>
 <blockquote>
-<p><span class="citation">Doll and Hill (<a href="#ref-DollHill1956" role="doc-biblioref">1956</a>)</span> found a significant relation between
+<p><span class="citation"><a href="#ref-DollHill1956" role="doc-biblioref">Doll and Hill</a> (<a href="#ref-DollHill1956" role="doc-biblioref">1956</a>)</span> found a significant relation between
 smoking behaviour and death from lung cancer,
 <span class="math inline">\(\chi^2(1)=10.35, p&lt;.01, \textrm{OR}=12.1\)</span>. The ‘odds’ of dying from
 lung cancer seemed to be more than <span class="math inline">\(12\times\)</span> as great for smokers as for
@@ -1003,15 +1030,18 @@ non-smokers.</p>
 </div>
 </div>
 <h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-Agre07">
-<p>Agresti, Alan. 2007. <em>Introduction to Categorical Data Analysis</em>. 2nd ed. Hoboken, NJ: Wiley.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Agre07" class="csl-entry">
+Agresti, Alan. 2007. <em>Introduction to Categorical Data Analysis</em>. 2nd ed. Hoboken, NJ: Wiley.
 </div>
-<div id="ref-DollHill1956">
-<p>Doll, Richard, and A. Bradford Hill. 1956. “Lung Cancer and Other Causes of Death in Relation to Smoking: A Second Report on the Mortality of British Doctors.” <em>British Medical Journal</em>, 1071–81. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2035864/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2035864/</a>.</p>
+<div id="ref-DollHill1956" class="csl-entry">
+Doll, Richard, and A. Bradford Hill. 1956. <span>“Lung Cancer and Other Causes of Death in Relation to Smoking: <span>A</span> Second Report on the Mortality of <span>British</span> Doctors.”</span> <em>British Medical Journal</em>, 1071–81. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2035864/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2035864/</a>.
 </div>
-<div id="ref-Ferg89">
-<p>Ferguson, George A., and Yoshio Takane. 1989. <em>Statistical Analysis in Psychology and Education</em>. 6e ed. New York: McGraw-Hill.</p>
+<div id="ref-Ferg89" class="csl-entry">
+Ferguson, George A., and Yoshio Takane. 1989. <em>Statistical Analysis in Psychology and Education</em>. 6e ed. New York: McGraw-Hill.
+</div>
+<div id="ref-MD04" class="csl-entry">
+Maxwell, Scott E., and Harold D. Delaney. 2004. <em>Designing Experiments and Analyzing Data: A Model Comparison Perspective</em>. Book. 2nd ed. Mahwah, NJ: Lawrence Erlbaum Associates.
 </div>
 </div>
 <div class="footnotes">
@@ -1019,7 +1049,7 @@ non-smokers.</p>
 <ol start="39">
 <li id="fn39"><p>The value found <span class="math inline">\(\chi^2=12.44\)</span> is slightly under the critical value for 5 d.f. and <span class="math inline">\(p=.025\)</span>, (there <span class="math inline">\((\chi^2)^*=12.83\)</span>), thus the corresponding probability of this value or a larger value is slightly greater than <span class="math inline">\(0.025\)</span>.<a href="ch-chi-square-tests.html#fnref39" class="footnote-back">↩︎</a></p></li>
 <li id="fn40"><p>If one variable’s observations are paired rather than independent (e.g. before/after treatment, passed/failed, etc.), then the McNemar test is a useful alternative.<a href="ch-chi-square-tests.html#fnref40" class="footnote-back">↩︎</a></p></li>
-<li id="fn41"><p>If multiple comparisons are performed, then the critical value of <span class="math inline">\(\alpha\)</span> should be adjusted accordingly, in order to prevent Type I errors somewhere among the comparisons. With <span class="math inline">\(k\)</span> cells and <span class="math inline">\(k\)</span> comparisons, a safe precaution is to use <span class="math inline">\(\alpha/k\)</span> instead of <span class="math inline">\(\alpha\)</span> for each comparison – this is called Bonferroni’s adjustement of the <span class="math inline">\(\alpha\)</span> value, or Dunn’s procedure <span class="citation">(Maxwell and Delaney <a href="#ref-MD04" role="doc-biblioref">2004</a>, 202)</span>. See also §<a href="ch-anova.html#sec:anova-oneway-posthoc">15.3.5</a>.<a href="ch-chi-square-tests.html#fnref41" class="footnote-back">↩︎</a></p></li>
+<li id="fn41"><p>If multiple comparisons are performed, then the critical value of <span class="math inline">\(\alpha\)</span> should be adjusted accordingly, in order to prevent Type I errors somewhere among the comparisons. With <span class="math inline">\(k\)</span> cells and <span class="math inline">\(k\)</span> comparisons, a safe precaution is to use <span class="math inline">\(\alpha/k\)</span> instead of <span class="math inline">\(\alpha\)</span> for each comparison – this is called Bonferroni’s adjustement of the <span class="math inline">\(\alpha\)</span> value, or Dunn’s procedure <span class="citation">(<a href="#ref-MD04" role="doc-biblioref">Maxwell and Delaney 2004, 202</a>)</span>. See also §<a href="ch-anova.html#sec:anova-oneway-posthoc">15.3.5</a>.<a href="ch-chi-square-tests.html#fnref41" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -1051,6 +1081,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>12 Reliability | Quantitative Methods and Statistics</title>
   <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="12 Reliability | Quantitative Methods and Statistics" />
   <meta property="og:type" content="book" />
@@ -31,7 +31,7 @@
   
 <link rel="prev" href="ch-correlation-regression.html"/>
 <link rel="next" href="ch-testing.html"/>
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,12 +49,15 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -113,6 +116,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -230,13 +256,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.2.1" data-path="ch-frequencies.html"><a href="ch-frequencies.html#sec:intervals"><i class="fa fa-check"></i><b>8.2.1</b> Intervals</a></li>
 <li class="chapter" data-level="8.2.2" data-path="ch-frequencies.html"><a href="ch-frequencies.html#spss-1"><i class="fa fa-check"></i><b>8.2.2</b> SPSS</a></li>
 <li class="chapter" data-level="8.2.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#jasp-1"><i class="fa fa-check"></i><b>8.2.3</b> JASP</a></li>
+<li class="chapter" data-level="8.2.4" data-path="ch-frequencies.html"><a href="ch-frequencies.html#r-1"><i class="fa fa-check"></i><b>8.2.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="8.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#sec:barcharts"><i class="fa fa-check"></i><b>8.3</b> Bar charts</a></li>
 <li class="chapter" data-level="8.4" data-path="ch-frequencies.html"><a href="ch-frequencies.html#sec:histograms"><i class="fa fa-check"></i><b>8.4</b> Histograms</a>
 <ul>
 <li class="chapter" data-level="8.4.1" data-path="ch-frequencies.html"><a href="ch-frequencies.html#spss-2"><i class="fa fa-check"></i><b>8.4.1</b> SPSS</a></li>
 <li class="chapter" data-level="8.4.2" data-path="ch-frequencies.html"><a href="ch-frequencies.html#jasp-2"><i class="fa fa-check"></i><b>8.4.2</b> JASP</a></li>
-<li class="chapter" data-level="8.4.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#r-1"><i class="fa fa-check"></i><b>8.4.3</b> R</a></li>
+<li class="chapter" data-level="8.4.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#r-2"><i class="fa fa-check"></i><b>8.4.3</b> R</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html"><i class="fa fa-check"></i><b>9</b> Centre and dispersion</a>
@@ -274,7 +301,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.8" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:standardscores"><i class="fa fa-check"></i><b>9.8</b> Standard scores</a></li>
 <li class="chapter" data-level="9.9" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#spss-3"><i class="fa fa-check"></i><b>9.9</b> SPSS</a></li>
 <li class="chapter" data-level="9.10" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#jasp-3"><i class="fa fa-check"></i><b>9.10</b> JASP</a></li>
-<li class="chapter" data-level="9.11" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#r-2"><i class="fa fa-check"></i><b>9.11</b> R</a></li>
+<li class="chapter" data-level="9.11" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#r-3"><i class="fa fa-check"></i><b>9.11</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html"><i class="fa fa-check"></i><b>10</b> Probability distributions</a>
 <ul>
@@ -283,18 +310,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="10.2.1" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#formulas"><i class="fa fa-check"></i><b>10.2.1</b> formulas</a></li>
 <li class="chapter" data-level="10.2.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#jasp-4"><i class="fa fa-check"></i><b>10.2.2</b> JASP</a></li>
-<li class="chapter" data-level="10.2.3" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-3"><i class="fa fa-check"></i><b>10.2.3</b> R</a></li>
+<li class="chapter" data-level="10.2.3" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-4"><i class="fa fa-check"></i><b>10.2.3</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="10.3" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:normaldistribution"><i class="fa fa-check"></i><b>10.3</b> Normal probability distribution</a>
 <ul>
 <li class="chapter" data-level="10.3.1" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#formulas-1"><i class="fa fa-check"></i><b>10.3.1</b> formulas</a></li>
 <li class="chapter" data-level="10.3.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#jasp-5"><i class="fa fa-check"></i><b>10.3.2</b> JASP</a></li>
-<li class="chapter" data-level="10.3.3" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-4"><i class="fa fa-check"></i><b>10.3.3</b> R</a></li>
+<li class="chapter" data-level="10.3.3" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-5"><i class="fa fa-check"></i><b>10.3.3</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="10.4" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:isvarnormaldistributed"><i class="fa fa-check"></i><b>10.4</b> Does my variable have a normal probability distribution?</a>
 <ul>
 <li class="chapter" data-level="10.4.1" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#spss-4"><i class="fa fa-check"></i><b>10.4.1</b> SPSS</a></li>
-<li class="chapter" data-level="10.4.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-5"><i class="fa fa-check"></i><b>10.4.2</b> R</a></li>
+<li class="chapter" data-level="10.4.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-6"><i class="fa fa-check"></i><b>10.4.2</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="10.5" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:whatifnotnormal"><i class="fa fa-check"></i><b>10.5</b> What if my variable is not normally distributed?</a></li>
 <li class="chapter" data-level="10.6" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:Centrallimittheorem"><i class="fa fa-check"></i><b>10.6</b> Probability distribution of average</a></li>
@@ -311,14 +338,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.2.1" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#formulas-3"><i class="fa fa-check"></i><b>11.2.1</b> Formulas</a></li>
 <li class="chapter" data-level="11.2.2" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#spss-5"><i class="fa fa-check"></i><b>11.2.2</b> SPSS</a></li>
 <li class="chapter" data-level="11.2.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#jasp-6"><i class="fa fa-check"></i><b>11.2.3</b> JASP</a></li>
-<li class="chapter" data-level="11.2.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-6"><i class="fa fa-check"></i><b>11.2.4</b> R</a></li>
+<li class="chapter" data-level="11.2.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-7"><i class="fa fa-check"></i><b>11.2.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="11.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:regression"><i class="fa fa-check"></i><b>11.3</b> Regression</a>
 <ul>
 <li class="chapter" data-level="11.3.1" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:regression-formulas"><i class="fa fa-check"></i><b>11.3.1</b> Formulas</a></li>
 <li class="chapter" data-level="11.3.2" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#spss-6"><i class="fa fa-check"></i><b>11.3.2</b> SPSS</a></li>
 <li class="chapter" data-level="11.3.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#jasp-7"><i class="fa fa-check"></i><b>11.3.3</b> JASP</a></li>
-<li class="chapter" data-level="11.3.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-7"><i class="fa fa-check"></i><b>11.3.4</b> R</a></li>
+<li class="chapter" data-level="11.3.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-8"><i class="fa fa-check"></i><b>11.3.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="11.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#influential-observations"><i class="fa fa-check"></i><b>11.4</b> Influential observations</a></li>
 <li class="chapter" data-level="11.5" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:Spearman"><i class="fa fa-check"></i><b>11.5</b> Spearman’s rank correlation coefficient</a>
@@ -326,14 +353,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.5.1" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#formulas-4"><i class="fa fa-check"></i><b>11.5.1</b> Formulas</a></li>
 <li class="chapter" data-level="11.5.2" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#spss-7"><i class="fa fa-check"></i><b>11.5.2</b> SPSS</a></li>
 <li class="chapter" data-level="11.5.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#jasp-8"><i class="fa fa-check"></i><b>11.5.3</b> JASP</a></li>
-<li class="chapter" data-level="11.5.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-8"><i class="fa fa-check"></i><b>11.5.4</b> R</a></li>
+<li class="chapter" data-level="11.5.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-9"><i class="fa fa-check"></i><b>11.5.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="11.6" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:Phi"><i class="fa fa-check"></i><b>11.6</b> Phi</a>
 <ul>
 <li class="chapter" data-level="11.6.1" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#formulas-5"><i class="fa fa-check"></i><b>11.6.1</b> Formulas</a></li>
 <li class="chapter" data-level="11.6.2" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#spss-8"><i class="fa fa-check"></i><b>11.6.2</b> SPSS</a></li>
 <li class="chapter" data-level="11.6.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#jasp-9"><i class="fa fa-check"></i><b>11.6.3</b> JASP</a></li>
-<li class="chapter" data-level="11.6.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-9"><i class="fa fa-check"></i><b>11.6.4</b> R</a></li>
+<li class="chapter" data-level="11.6.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-10"><i class="fa fa-check"></i><b>11.6.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="11.7" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:correlationcausation"><i class="fa fa-check"></i><b>11.7</b> Last but not least</a></li>
 </ul></li>
@@ -348,7 +375,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.7" data-path="ch-reliability.html"><a href="ch-reliability.html#reliability-and-construct-validity"><i class="fa fa-check"></i><b>12.7</b> Reliability and construct validity</a></li>
 <li class="chapter" data-level="12.8" data-path="ch-reliability.html"><a href="ch-reliability.html#spss-9"><i class="fa fa-check"></i><b>12.8</b> SPSS</a></li>
 <li class="chapter" data-level="12.9" data-path="ch-reliability.html"><a href="ch-reliability.html#jasp-10"><i class="fa fa-check"></i><b>12.9</b> JASP</a></li>
-<li class="chapter" data-level="12.10" data-path="ch-reliability.html"><a href="ch-reliability.html#r-10"><i class="fa fa-check"></i><b>12.10</b> R</a></li>
+<li class="chapter" data-level="12.10" data-path="ch-reliability.html"><a href="ch-reliability.html#r-11"><i class="fa fa-check"></i><b>12.10</b> R</a></li>
 </ul></li>
 <li class="part"><span><b>Part III: Inferential statistics</b></span></li>
 <li class="chapter" data-level="13" data-path="ch-testing.html"><a href="ch-testing.html"><i class="fa fa-check"></i><b>13</b> Testing hypotheses</a>
@@ -361,7 +388,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.2.3" data-path="ch-testing.html"><a href="ch-testing.html#sec:ttest-assumptions"><i class="fa fa-check"></i><b>13.2.3</b> assumptions</a></li>
 <li class="chapter" data-level="13.2.4" data-path="ch-testing.html"><a href="ch-testing.html#spss-10"><i class="fa fa-check"></i><b>13.2.4</b> SPSS</a></li>
 <li class="chapter" data-level="13.2.5" data-path="ch-testing.html"><a href="ch-testing.html#sec:jaspttestonesample"><i class="fa fa-check"></i><b>13.2.5</b> JASP</a></li>
-<li class="chapter" data-level="13.2.6" data-path="ch-testing.html"><a href="ch-testing.html#r-11"><i class="fa fa-check"></i><b>13.2.6</b> R</a></li>
+<li class="chapter" data-level="13.2.6" data-path="ch-testing.html"><a href="ch-testing.html#r-12"><i class="fa fa-check"></i><b>13.2.6</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="13.3" data-path="ch-testing.html"><a href="ch-testing.html#sec:plargerthannull"><i class="fa fa-check"></i><b>13.3</b> <span class="math inline">\(p\)</span>-value is always larger than zero</a></li>
 <li class="chapter" data-level="13.4" data-path="ch-testing.html"><a href="ch-testing.html#sec:ttest-onesidedtwosided"><i class="fa fa-check"></i><b>13.4</b> One-sided and two-sided tests</a></li>
@@ -370,7 +397,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.5.1" data-path="ch-testing.html"><a href="ch-testing.html#sec:formulas13-2"><i class="fa fa-check"></i><b>13.5.1</b> formulas</a></li>
 <li class="chapter" data-level="13.5.2" data-path="ch-testing.html"><a href="ch-testing.html#spss-11"><i class="fa fa-check"></i><b>13.5.2</b> SPSS</a></li>
 <li class="chapter" data-level="13.5.3" data-path="ch-testing.html"><a href="ch-testing.html#jasp-11"><i class="fa fa-check"></i><b>13.5.3</b> JASP</a></li>
-<li class="chapter" data-level="13.5.4" data-path="ch-testing.html"><a href="ch-testing.html#r-12"><i class="fa fa-check"></i><b>13.5.4</b> R</a></li>
+<li class="chapter" data-level="13.5.4" data-path="ch-testing.html"><a href="ch-testing.html#r-13"><i class="fa fa-check"></i><b>13.5.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="13.6" data-path="ch-testing.html"><a href="ch-testing.html#sec:ttest-indep"><i class="fa fa-check"></i><b>13.6</b> Independent samples <span class="math inline">\(t\)</span>-tests</a>
 <ul>
@@ -393,7 +420,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.8.1" data-path="ch-testing.html"><a href="ch-testing.html#sec:formulas13-5"><i class="fa fa-check"></i><b>13.8.1</b> formulas</a></li>
 <li class="chapter" data-level="13.8.2" data-path="ch-testing.html"><a href="ch-testing.html#spss-13-2"><i class="fa fa-check"></i><b>13.8.2</b> SPSS</a></li>
 <li class="chapter" data-level="13.8.3" data-path="ch-testing.html"><a href="ch-testing.html#jasp-12"><i class="fa fa-check"></i><b>13.8.3</b> JASP</a></li>
-<li class="chapter" data-level="13.8.4" data-path="ch-testing.html"><a href="ch-testing.html#r-13"><i class="fa fa-check"></i><b>13.8.4</b> R</a></li>
+<li class="chapter" data-level="13.8.4" data-path="ch-testing.html"><a href="ch-testing.html#r-14"><i class="fa fa-check"></i><b>13.8.4</b> R</a></li>
 <li class="chapter" data-level="13.8.5" data-path="ch-testing.html"><a href="ch-testing.html#sec:confint-effectsize"><i class="fa fa-check"></i><b>13.8.5</b> Confidence interval of the effect size</a></li>
 </ul></li>
 </ul></li>
@@ -421,7 +448,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.3.5" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-posthoc"><i class="fa fa-check"></i><b>15.3.5</b> Post-hoc comparisons</a></li>
 <li class="chapter" data-level="15.3.6" data-path="ch-anova.html"><a href="ch-anova.html#spss-12"><i class="fa fa-check"></i><b>15.3.6</b> SPSS</a></li>
 <li class="chapter" data-level="15.3.7" data-path="ch-anova.html"><a href="ch-anova.html#jasp-13"><i class="fa fa-check"></i><b>15.3.7</b> JASP</a></li>
-<li class="chapter" data-level="15.3.8" data-path="ch-anova.html"><a href="ch-anova.html#r-14"><i class="fa fa-check"></i><b>15.3.8</b> R</a></li>
+<li class="chapter" data-level="15.3.8" data-path="ch-anova.html"><a href="ch-anova.html#r-15"><i class="fa fa-check"></i><b>15.3.8</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="15.4" data-path="ch-anova.html"><a href="ch-anova.html#two-way-analysis-of-variance"><i class="fa fa-check"></i><b>15.4</b> Two-way analysis of variance</a>
 <ul>
@@ -429,7 +456,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.4.2" data-path="ch-anova.html"><a href="ch-anova.html#a-formal-explanation"><i class="fa fa-check"></i><b>15.4.2</b> A formal explanation</a></li>
 <li class="chapter" data-level="15.4.3" data-path="ch-anova.html"><a href="ch-anova.html#spss-13"><i class="fa fa-check"></i><b>15.4.3</b> SPSS</a></li>
 <li class="chapter" data-level="15.4.4" data-path="ch-anova.html"><a href="ch-anova.html#jasp-14"><i class="fa fa-check"></i><b>15.4.4</b> JASP</a></li>
-<li class="chapter" data-level="15.4.5" data-path="ch-anova.html"><a href="ch-anova.html#r-15"><i class="fa fa-check"></i><b>15.4.5</b> R</a></li>
+<li class="chapter" data-level="15.4.5" data-path="ch-anova.html"><a href="ch-anova.html#r-16"><i class="fa fa-check"></i><b>15.4.5</b> R</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="16" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html"><i class="fa fa-check"></i><b>16</b> Chi-square-tests</a>
@@ -454,7 +481,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="16.8.3" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#contingency-tables-preparation-1"><i class="fa fa-check"></i><b>16.8.3</b> contingency tables: preparation</a></li>
 <li class="chapter" data-level="16.8.4" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#contingency-tables-testing-1"><i class="fa fa-check"></i><b>16.8.4</b> contingency tables: testing</a></li>
 </ul></li>
-<li class="chapter" data-level="16.9" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#r-16"><i class="fa fa-check"></i><b>16.9</b> R</a>
+<li class="chapter" data-level="16.9" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#r-17"><i class="fa fa-check"></i><b>16.9</b> R</a>
 <ul>
 <li class="chapter" data-level="16.9.1" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#goodness-of-fit-testing-2"><i class="fa fa-check"></i><b>16.9.1</b> goodness of fit: testing</a></li>
 <li class="chapter" data-level="16.9.2" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#contingency-table-preparation-and-testing"><i class="fa fa-check"></i><b>16.9.2</b> contingency table: preparation and testing</a></li>
@@ -557,7 +584,7 @@ and the measurements are thus less reliable.</p>
 of pupils in their final examinations, then we present them
 with a reading comprehension test with a number of accompanying questions.
 The degree to which the different questions measure <em>the same</em> construct, here the
-construct ‘reading ability’, is called reliability, precision or
+construct ‘reading ability,’ is called reliability, precision or
 homogeneity.</p>
 </blockquote>
 <hr />
@@ -616,13 +643,13 @@ the relatively high costs and relatively low benefits.</p>
 <hr />
 <blockquote>
 <p><em>Example 12.3:</em>
-<span class="citation">Lata-Caneda et al. (<a href="#ref-Lata09" role="doc-biblioref">2009</a>)</span> developed
+<span class="citation"><a href="#ref-Lata09" role="doc-biblioref">Lata-Caneda et al.</a> (<a href="#ref-Lata09" role="doc-biblioref">2009</a>)</span> developed
 a Spanish-language questionnaire consisting of 39 questions, intended
 for aphasia patients to determine their quality of life. The quality of life
 is described as “the patient perception about, either the
 effects of a given disease, or the application of a certain treatment on
 different aspects of life, especially regarding its consequences on the
-physical, emotional and social welfare” <span class="citation">(Lata-Caneda et al. <a href="#ref-Lata09" role="doc-biblioref">2009</a>, 379)</span>. The new questionnaire
+physical, emotional and social welfare” <span class="citation">(<a href="#ref-Lata09" role="doc-biblioref">Lata-Caneda et al. 2009, 379</a>)</span>. The new questionnaire
 was taken twice with a sample of 23
 Spanish-language patients with aphasia as a result of cerebral haemorrhage.
 The reported test-retest stability for this questionnaire was
@@ -634,7 +661,7 @@ coefficient with a value between <span class="math inline">\(0\)</span> and <spa
 do not occur). How should we interpret the reported
 coefficients? Generally, it is of course the case that the higher the coefficient is,
 the higher (better) the reliability. But how large should the reliability minimally be
-before we can call a test “reliable”? There are no clear rules for this.
+before we can call a test “reliable?” There are no clear rules for this.
 However, when considerations have to be made about people, then the test has to
 have a reliability of at least <span class="math inline">\(0.90\)</span> according to the <em>Nederlands
 Instituut van Psychologen</em> ‘Dutch Institute for Psychologists’ (NIP).
@@ -754,7 +781,7 @@ reliability, it is a good idea to pause on the different
 interpretations of reliability estimations.</p>
 <p>First, reliability can be interpreted as the proportion of
 true score variance (see formula <a href="ch-reliability.html#eq:rho-reliability">(12.5)</a>), or
-as the proportion of variance which is “systematic”.
+as the proportion of variance which is “systematic.”
 This is different from the proportion of variance resulting from the concept-as-defined,
 the “valid” variance (see Chapter <a href="ch-validity.html#ch:validity">5</a>).
 The variance resulting from the concept-as-defined is part of the proportion of
@@ -790,14 +817,14 @@ coefficient <span class="math inline">\(\rho\)</span> as the correlation between
 with the same instrument.</p>
 <p>Thirdly, reliability can be interpreted as the loss
 of efficiency in the estimation of the mean score <span class="math inline">\(\overline{X}\)</span>
-<span class="citation">(Ferguson and Takane <a href="#ref-Ferg89" role="doc-biblioref">1989</a>, 474)</span>. Imagine that we want to establish the mean score of a group of
+<span class="citation">(<a href="#ref-Ferg89" role="doc-biblioref">Ferguson and Takane 1989, 474</a>)</span>. Imagine that we want to establish the mean score of a group of
 <span class="math inline">\(n=50\)</span> participants, and for this we use a measurement instrument
 with reliability <span class="math inline">\(\rho_{xx}=0.8\)</span>. In this case, there is uncertainty in the estimation,
 which come from the chance deviations <span class="math inline">\(e_i\)</span> in the measurements.
 If the measurement instrument were perfectly reliable (<span class="math inline">\(\rho=1\)</span>), we would only
 need <span class="math inline">\(\rho_{xx}\times n = 0.8\times50=40\)</span> participants for the same accuracy in
 the estimation of <span class="math inline">\(\overline{X}\)</span>
-<span class="citation">(Ferguson and Takane <a href="#ref-Ferg89" role="doc-biblioref">1989</a>, 474)</span>. As such, we have, as it were, played away 10 participants
+<span class="citation">(<a href="#ref-Ferg89" role="doc-biblioref">Ferguson and Takane 1989, 474</a>)</span>. As such, we have, as it were, played away 10 participants
 to compensate for the unreliability of the measurement instrument.</p>
 <p>Above, we spoke about measurements with the help of measurement instruments,
 and below we will talk about ratings done
@@ -959,7 +986,7 @@ measurement errors of the two raters tend to cancel each other out
 (see formula <a href="ch-reliability.html#eq:normal-error">(12.2)</a>).
 Reread the last two sentences carefully.</p>
 <p>Reliability is often expressed as <em>Cronbach’s Alpha</em>
-<span class="citation">(Cortina <a href="#ref-Cort93" role="doc-biblioref">1993</a>)</span>. This number is a measure for the consistency or homogeneity
+<span class="citation">(<a href="#ref-Cort93" role="doc-biblioref">Cortina 1993</a>)</span>. This number is a measure for the consistency or homogeneity
 of the measurements, and thus also indicates the degree to which the two
 raters have rated the same construct. The simplest definition is
 based on <span class="math inline">\(\overline{r}\)</span>, the mean correlation between
@@ -975,11 +1002,11 @@ as Cronbach’s Alpha but also as the Spearman-Brown formula
 or the Kuder-Richardson formula 20 (KR=20)<a href="#fn32" class="footnote-ref" id="fnref32"><sup>32</sup></a>.</p>
 <p>The value of Cronbach’s Alpha found is a bit tricky to evaluate
 since it is also dependent on the number of instruments or raters or
-questions in the test <span class="citation">(Cortina <a href="#ref-Cort93" role="doc-biblioref">1993</a>; Gliner, Morgan, and Harmon <a href="#ref-Glin01" role="doc-biblioref">2001</a>)</span>. For academic research,
+questions in the test <span class="citation">(<a href="#ref-Cort93" role="doc-biblioref">Cortina 1993</a>; <a href="#ref-Glin01" role="doc-biblioref">Gliner, Morgan, and Harmon 2001</a>)</span>. For academic research,
 a lower limit of 0.75 or 0.80 is often used. If the result of the test or measurement
 is of great importance to the person concerned, as in the case of medical or
 psychological patient diagnosis, or when recruiting and selecting personnel, then
-an even higher reliability of <span class="math inline">\(\alpha=.9\)</span> is recommended <span class="citation">(Gliner, Morgan, and Harmon <a href="#ref-Glin01" role="doc-biblioref">2001</a>)</span>.</p>
+an even higher reliability of <span class="math inline">\(\alpha=.9\)</span> is recommended <span class="citation">(<a href="#ref-Glin01" role="doc-biblioref">Gliner, Morgan, and Harmon 2001</a>)</span>.</p>
 <p>If we want to increase reliability to <span class="math inline">\(\alpha=0.9\)</span> or higher, then
 we can achieve that in two ways. The first way is to expand the
 number of raters. If we combine more raters in the total score,
@@ -1096,7 +1123,7 @@ judgements in Table <a href="ch-reliability.html#tab:reliability">12.1</a>: in t
 </p>
 <pre><code>Reliability &gt; Classical: Single-Test Reliability Analysis</code></pre>
 <p>Perhaps the button for <code>Reliability</code> is not yet visible in the top menu bar; if so, you can add it yourself by clicking the huge blue <strong>+</strong> button at the righthand side of the top menu bar, and then check the <code>Reliability</code> module.</p>
-<p>Select those variables that presumably measure the same construct, in this example the three raters’ judgements, and put those in the field “Variables”. We regard the <span class="math inline">\(k=3\)</span> raters or judges as <em>items</em> (test questions) that measure the construct of “speaking skill” of 10 students.<br />
+<p>Select those variables that presumably measure the same construct, in this example the three raters’ judgements, and put those in the field “Variables.” We regard the <span class="math inline">\(k=3\)</span> raters or judges as <em>items</em> (test questions) that measure the construct of “speaking skill” of 10 students.<br />
 Open the menu bar <code>Single-Test Reliability</code>, and under “Scale Statistics” check <code>Cronbach's a</code> (see equation <a href="ch-reliability.html#eq:cronbach-corr">(12.7)</a>). Aso check the options for <code>Average interitem correlation</code>, <code>Mean</code> and <code>Standard deviation</code> to inspect these properties of the joint scale of speaking skill. (This joint scale is constructed by averaging the values of the three raters).<br />
 Under “Individual Item Statistics” check the options for <code>Cronbach's a (if item dropped)</code> and <code>Item-rest correlation</code>, as well as <code>Mean</code> and <code>Standard deviation</code> in order to obtain these values for the separate items (raters).</p>
 <p>The output table titled <strong>Frequentist Scale Reliability Statistics</strong> reports Cronbach’s Alpha.
@@ -1104,19 +1131,19 @@ The output table titled <strong>Frequentist Individual Item Reliability Statisti
 <p>The output does contain the average inter-item correlation (in the table <strong>Frequentist Scale Reliability Statistics</strong>), but not the correlations among all the individual items or raters.
 We need to obtain these correlations explicitly (see §<a href="ch-correlation-regression.html#sec:Pearson">11.2</a>), by going to the top menu bar and then choosing:</p>
 <pre><code>Regression &gt; Classical: Correlation</code></pre>
-<p>In the field “Variables”, select the variables of which you want to know the correlations (the three raters, in this example).
-Make sure that under “Sample Correlation Coefficient”, option <code>Pearson's r</code> is checked.
-Under “Additional Options”, check <code>Report significance</code>, <code>Flag significant correlations</code> and <code>Sample size</code>. You may also check the option <code>Display pairwise</code> to obtain simple table output. The output confirms that the inter-rater correlation between raters 1 and 2 is rather high (and significant), and that the inter-rater correlations involving rater 3 are rather low (and not significant).</p>
+<p>In the field “Variables,” select the variables of which you want to know the correlations (the three raters, in this example).
+Make sure that under “Sample Correlation Coefficient,” option <code>Pearson's r</code> is checked.
+Under “Additional Options,” check <code>Report significance</code>, <code>Flag significant correlations</code> and <code>Sample size</code>. You may also check the option <code>Display pairwise</code> to obtain simple table output. The output confirms that the inter-rater correlation between raters 1 and 2 is rather high (and significant), and that the inter-rater correlations involving rater 3 are rather low (and not significant).</p>
 </div>
-<div id="r-10" class="section level2" number="12.10">
+<div id="r-11" class="section level2" number="12.10">
 <h2><span class="header-section-number">12.10</span> R</h2>
 <p>For a reliability analysis of <span class="math inline">\(k=3\)</span> language proficiency
 judgements in Table <a href="ch-reliability.html#tab:reliability">12.1</a>:<br />
 </p>
-<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="ch-reliability.html#cb96-1" aria-hidden="true"></a>raters &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="dt">file=</span><span class="st">&quot;data/beoordelaars.txt&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>)</span>
-<span id="cb96-2"><a href="ch-reliability.html#cb96-2" aria-hidden="true"></a><span class="cf">if</span> (<span class="kw">require</span>(psych)) { <span class="co"># for psych::alpha</span></span>
-<span id="cb96-3"><a href="ch-reliability.html#cb96-3" aria-hidden="true"></a>  <span class="kw">alpha</span>( raters[,<span class="dv">2</span><span class="op">:</span><span class="dv">4</span>] ) <span class="co"># columns 2 to 4</span></span>
-<span id="cb96-4"><a href="ch-reliability.html#cb96-4" aria-hidden="true"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="ch-reliability.html#cb97-1" aria-hidden="true" tabindex="-1"></a>raters <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="at">file=</span><span class="st">&quot;data/beoordelaars.txt&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>)</span>
+<span id="cb97-2"><a href="ch-reliability.html#cb97-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">require</span>(psych)) { <span class="co"># for psych::alpha</span></span>
+<span id="cb97-3"><a href="ch-reliability.html#cb97-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">alpha</span>( raters[,<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>] ) <span class="co"># columns 2 to 4</span></span>
+<span id="cb97-4"><a href="ch-reliability.html#cb97-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <pre><code>## Number of categories should be increased  in order to count frequencies.</code></pre>
 <pre><code>## 
 ## Reliability analysis   
@@ -1146,7 +1173,7 @@ improve (from 0.68 to 0.84). Over all three raters,
 <code>average_r=0.41</code>.</p>
 <p>The output does contain the average inter-item correlation but not the correlations among all the individual items or raters.
 We need to obtain these correlations explicitly (see §<a href="ch-correlation-regression.html#sec:Pearson">11.2</a>):</p>
-<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="ch-reliability.html#cb99-1" aria-hidden="true"></a><span class="kw">cor</span>( raters[ ,<span class="kw">c</span>(<span class="st">&quot;B1&quot;</span>,<span class="st">&quot;B2&quot;</span>,<span class="st">&quot;B3&quot;</span>) ] ) <span class="co"># explicit column names</span></span></code></pre></div>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="ch-reliability.html#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>( raters[ ,<span class="fu">c</span>(<span class="st">&quot;B1&quot;</span>,<span class="st">&quot;B2&quot;</span>,<span class="st">&quot;B3&quot;</span>) ] ) <span class="co"># explicit column names</span></span></code></pre></div>
 <pre><code>##           B1         B2         B3
 ## B1 1.0000000 0.74494845 0.40979738
 ## B2 0.7449484 1.00000000 0.08845909
@@ -1160,18 +1187,18 @@ We need to obtain these correlations explicitly (see §<a href="ch-correlation-r
 
 
 <h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-Cort93">
-<p>Cortina, Jose M. 1993. “What Is Coefficient Alpha? An Examination of Theory and Applications.” <em>Journal of Applied Psychology</em> 78 (1): 98–104.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Cort93" class="csl-entry">
+Cortina, Jose M. 1993. <span>“What Is Coefficient Alpha? <span>A</span>n Examination of Theory and Applications.”</span> <em>Journal of Applied Psychology</em> 78 (1): 98–104.
 </div>
-<div id="ref-Ferg89">
-<p>Ferguson, George A., and Yoshio Takane. 1989. <em>Statistical Analysis in Psychology and Education</em>. 6e ed. New York: McGraw-Hill.</p>
+<div id="ref-Ferg89" class="csl-entry">
+Ferguson, George A., and Yoshio Takane. 1989. <em>Statistical Analysis in Psychology and Education</em>. 6e ed. New York: McGraw-Hill.
 </div>
-<div id="ref-Glin01">
-<p>Gliner, Jeffrey A., George A. Morgan, and Robert J. Harmon. 2001. “Measurement Reliability.” <em>Journal of the American Academy of Child and Adolescent Psychiatry</em> 40 (4): 486–88.</p>
+<div id="ref-Glin01" class="csl-entry">
+Gliner, Jeffrey A., George A. Morgan, and Robert J. Harmon. 2001. <span>“Measurement Reliability.”</span> <em>Journal of the American Academy of Child and Adolescent Psychiatry</em> 40 (4): 486–88.
 </div>
-<div id="ref-Lata09">
-<p>Lata-Caneda, M. C., M. Piñeiro-Temprano, I. García-Fraga, I. García-Armesto, J. R. Barrueco-Egido, and R. Meijide-Failde. 2009. “Spanish Adaptation of the Stroke and Aphasia Quality of Life Scale-39 (SAQOL-39).” <em>European Journal of Physical and Rehabilitation Medicine</em> 45 (3): 379–84. <a href="https://www.ncbi.nlm.nih.gov/pubmed/19156021%5D">https://www.ncbi.nlm.nih.gov/pubmed/19156021]</a>.</p>
+<div id="ref-Lata09" class="csl-entry">
+Lata-Caneda, M. C., M. Piñeiro-Temprano, I. García-Fraga, I. García-Armesto, J. R. Barrueco-Egido, and R. Meijide-Failde. 2009. <span>“Spanish Adaptation of the Stroke and Aphasia Quality of Life Scale-39 (<span>SAQOL-39</span>).”</span> <em>European Journal of Physical and Rehabilitation Medicine</em> 45 (3): 379–84. <a href="https://www.ncbi.nlm.nih.gov/pubmed/19156021]">https://www.ncbi.nlm.nih.gov/pubmed/19156021]</a>.
 </div>
 </div>
 <div class="footnotes">
@@ -1216,6 +1243,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

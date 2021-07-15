@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>1 Introduction | Quantitative Methods and Statistics</title>
   <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="1 Introduction | Quantitative Methods and Statistics" />
   <meta property="og:type" content="book" />
@@ -31,7 +31,7 @@
   
 <link rel="prev" href="index.html"/>
 <link rel="next" href="ch-research.html"/>
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,12 +49,15 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -113,6 +116,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -230,13 +256,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.2.1" data-path="ch-frequencies.html"><a href="ch-frequencies.html#sec:intervals"><i class="fa fa-check"></i><b>8.2.1</b> Intervals</a></li>
 <li class="chapter" data-level="8.2.2" data-path="ch-frequencies.html"><a href="ch-frequencies.html#spss-1"><i class="fa fa-check"></i><b>8.2.2</b> SPSS</a></li>
 <li class="chapter" data-level="8.2.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#jasp-1"><i class="fa fa-check"></i><b>8.2.3</b> JASP</a></li>
+<li class="chapter" data-level="8.2.4" data-path="ch-frequencies.html"><a href="ch-frequencies.html#r-1"><i class="fa fa-check"></i><b>8.2.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="8.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#sec:barcharts"><i class="fa fa-check"></i><b>8.3</b> Bar charts</a></li>
 <li class="chapter" data-level="8.4" data-path="ch-frequencies.html"><a href="ch-frequencies.html#sec:histograms"><i class="fa fa-check"></i><b>8.4</b> Histograms</a>
 <ul>
 <li class="chapter" data-level="8.4.1" data-path="ch-frequencies.html"><a href="ch-frequencies.html#spss-2"><i class="fa fa-check"></i><b>8.4.1</b> SPSS</a></li>
 <li class="chapter" data-level="8.4.2" data-path="ch-frequencies.html"><a href="ch-frequencies.html#jasp-2"><i class="fa fa-check"></i><b>8.4.2</b> JASP</a></li>
-<li class="chapter" data-level="8.4.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#r-1"><i class="fa fa-check"></i><b>8.4.3</b> R</a></li>
+<li class="chapter" data-level="8.4.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#r-2"><i class="fa fa-check"></i><b>8.4.3</b> R</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html"><i class="fa fa-check"></i><b>9</b> Centre and dispersion</a>
@@ -274,7 +301,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.8" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:standardscores"><i class="fa fa-check"></i><b>9.8</b> Standard scores</a></li>
 <li class="chapter" data-level="9.9" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#spss-3"><i class="fa fa-check"></i><b>9.9</b> SPSS</a></li>
 <li class="chapter" data-level="9.10" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#jasp-3"><i class="fa fa-check"></i><b>9.10</b> JASP</a></li>
-<li class="chapter" data-level="9.11" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#r-2"><i class="fa fa-check"></i><b>9.11</b> R</a></li>
+<li class="chapter" data-level="9.11" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#r-3"><i class="fa fa-check"></i><b>9.11</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html"><i class="fa fa-check"></i><b>10</b> Probability distributions</a>
 <ul>
@@ -283,18 +310,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="10.2.1" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#formulas"><i class="fa fa-check"></i><b>10.2.1</b> formulas</a></li>
 <li class="chapter" data-level="10.2.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#jasp-4"><i class="fa fa-check"></i><b>10.2.2</b> JASP</a></li>
-<li class="chapter" data-level="10.2.3" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-3"><i class="fa fa-check"></i><b>10.2.3</b> R</a></li>
+<li class="chapter" data-level="10.2.3" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-4"><i class="fa fa-check"></i><b>10.2.3</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="10.3" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:normaldistribution"><i class="fa fa-check"></i><b>10.3</b> Normal probability distribution</a>
 <ul>
 <li class="chapter" data-level="10.3.1" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#formulas-1"><i class="fa fa-check"></i><b>10.3.1</b> formulas</a></li>
 <li class="chapter" data-level="10.3.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#jasp-5"><i class="fa fa-check"></i><b>10.3.2</b> JASP</a></li>
-<li class="chapter" data-level="10.3.3" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-4"><i class="fa fa-check"></i><b>10.3.3</b> R</a></li>
+<li class="chapter" data-level="10.3.3" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-5"><i class="fa fa-check"></i><b>10.3.3</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="10.4" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:isvarnormaldistributed"><i class="fa fa-check"></i><b>10.4</b> Does my variable have a normal probability distribution?</a>
 <ul>
 <li class="chapter" data-level="10.4.1" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#spss-4"><i class="fa fa-check"></i><b>10.4.1</b> SPSS</a></li>
-<li class="chapter" data-level="10.4.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-5"><i class="fa fa-check"></i><b>10.4.2</b> R</a></li>
+<li class="chapter" data-level="10.4.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-6"><i class="fa fa-check"></i><b>10.4.2</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="10.5" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:whatifnotnormal"><i class="fa fa-check"></i><b>10.5</b> What if my variable is not normally distributed?</a></li>
 <li class="chapter" data-level="10.6" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:Centrallimittheorem"><i class="fa fa-check"></i><b>10.6</b> Probability distribution of average</a></li>
@@ -311,14 +338,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.2.1" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#formulas-3"><i class="fa fa-check"></i><b>11.2.1</b> Formulas</a></li>
 <li class="chapter" data-level="11.2.2" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#spss-5"><i class="fa fa-check"></i><b>11.2.2</b> SPSS</a></li>
 <li class="chapter" data-level="11.2.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#jasp-6"><i class="fa fa-check"></i><b>11.2.3</b> JASP</a></li>
-<li class="chapter" data-level="11.2.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-6"><i class="fa fa-check"></i><b>11.2.4</b> R</a></li>
+<li class="chapter" data-level="11.2.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-7"><i class="fa fa-check"></i><b>11.2.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="11.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:regression"><i class="fa fa-check"></i><b>11.3</b> Regression</a>
 <ul>
 <li class="chapter" data-level="11.3.1" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:regression-formulas"><i class="fa fa-check"></i><b>11.3.1</b> Formulas</a></li>
 <li class="chapter" data-level="11.3.2" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#spss-6"><i class="fa fa-check"></i><b>11.3.2</b> SPSS</a></li>
 <li class="chapter" data-level="11.3.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#jasp-7"><i class="fa fa-check"></i><b>11.3.3</b> JASP</a></li>
-<li class="chapter" data-level="11.3.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-7"><i class="fa fa-check"></i><b>11.3.4</b> R</a></li>
+<li class="chapter" data-level="11.3.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-8"><i class="fa fa-check"></i><b>11.3.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="11.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#influential-observations"><i class="fa fa-check"></i><b>11.4</b> Influential observations</a></li>
 <li class="chapter" data-level="11.5" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:Spearman"><i class="fa fa-check"></i><b>11.5</b> Spearman’s rank correlation coefficient</a>
@@ -326,14 +353,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.5.1" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#formulas-4"><i class="fa fa-check"></i><b>11.5.1</b> Formulas</a></li>
 <li class="chapter" data-level="11.5.2" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#spss-7"><i class="fa fa-check"></i><b>11.5.2</b> SPSS</a></li>
 <li class="chapter" data-level="11.5.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#jasp-8"><i class="fa fa-check"></i><b>11.5.3</b> JASP</a></li>
-<li class="chapter" data-level="11.5.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-8"><i class="fa fa-check"></i><b>11.5.4</b> R</a></li>
+<li class="chapter" data-level="11.5.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-9"><i class="fa fa-check"></i><b>11.5.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="11.6" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:Phi"><i class="fa fa-check"></i><b>11.6</b> Phi</a>
 <ul>
 <li class="chapter" data-level="11.6.1" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#formulas-5"><i class="fa fa-check"></i><b>11.6.1</b> Formulas</a></li>
 <li class="chapter" data-level="11.6.2" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#spss-8"><i class="fa fa-check"></i><b>11.6.2</b> SPSS</a></li>
 <li class="chapter" data-level="11.6.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#jasp-9"><i class="fa fa-check"></i><b>11.6.3</b> JASP</a></li>
-<li class="chapter" data-level="11.6.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-9"><i class="fa fa-check"></i><b>11.6.4</b> R</a></li>
+<li class="chapter" data-level="11.6.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-10"><i class="fa fa-check"></i><b>11.6.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="11.7" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:correlationcausation"><i class="fa fa-check"></i><b>11.7</b> Last but not least</a></li>
 </ul></li>
@@ -348,7 +375,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.7" data-path="ch-reliability.html"><a href="ch-reliability.html#reliability-and-construct-validity"><i class="fa fa-check"></i><b>12.7</b> Reliability and construct validity</a></li>
 <li class="chapter" data-level="12.8" data-path="ch-reliability.html"><a href="ch-reliability.html#spss-9"><i class="fa fa-check"></i><b>12.8</b> SPSS</a></li>
 <li class="chapter" data-level="12.9" data-path="ch-reliability.html"><a href="ch-reliability.html#jasp-10"><i class="fa fa-check"></i><b>12.9</b> JASP</a></li>
-<li class="chapter" data-level="12.10" data-path="ch-reliability.html"><a href="ch-reliability.html#r-10"><i class="fa fa-check"></i><b>12.10</b> R</a></li>
+<li class="chapter" data-level="12.10" data-path="ch-reliability.html"><a href="ch-reliability.html#r-11"><i class="fa fa-check"></i><b>12.10</b> R</a></li>
 </ul></li>
 <li class="part"><span><b>Part III: Inferential statistics</b></span></li>
 <li class="chapter" data-level="13" data-path="ch-testing.html"><a href="ch-testing.html"><i class="fa fa-check"></i><b>13</b> Testing hypotheses</a>
@@ -361,7 +388,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.2.3" data-path="ch-testing.html"><a href="ch-testing.html#sec:ttest-assumptions"><i class="fa fa-check"></i><b>13.2.3</b> assumptions</a></li>
 <li class="chapter" data-level="13.2.4" data-path="ch-testing.html"><a href="ch-testing.html#spss-10"><i class="fa fa-check"></i><b>13.2.4</b> SPSS</a></li>
 <li class="chapter" data-level="13.2.5" data-path="ch-testing.html"><a href="ch-testing.html#sec:jaspttestonesample"><i class="fa fa-check"></i><b>13.2.5</b> JASP</a></li>
-<li class="chapter" data-level="13.2.6" data-path="ch-testing.html"><a href="ch-testing.html#r-11"><i class="fa fa-check"></i><b>13.2.6</b> R</a></li>
+<li class="chapter" data-level="13.2.6" data-path="ch-testing.html"><a href="ch-testing.html#r-12"><i class="fa fa-check"></i><b>13.2.6</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="13.3" data-path="ch-testing.html"><a href="ch-testing.html#sec:plargerthannull"><i class="fa fa-check"></i><b>13.3</b> <span class="math inline">\(p\)</span>-value is always larger than zero</a></li>
 <li class="chapter" data-level="13.4" data-path="ch-testing.html"><a href="ch-testing.html#sec:ttest-onesidedtwosided"><i class="fa fa-check"></i><b>13.4</b> One-sided and two-sided tests</a></li>
@@ -370,7 +397,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.5.1" data-path="ch-testing.html"><a href="ch-testing.html#sec:formulas13-2"><i class="fa fa-check"></i><b>13.5.1</b> formulas</a></li>
 <li class="chapter" data-level="13.5.2" data-path="ch-testing.html"><a href="ch-testing.html#spss-11"><i class="fa fa-check"></i><b>13.5.2</b> SPSS</a></li>
 <li class="chapter" data-level="13.5.3" data-path="ch-testing.html"><a href="ch-testing.html#jasp-11"><i class="fa fa-check"></i><b>13.5.3</b> JASP</a></li>
-<li class="chapter" data-level="13.5.4" data-path="ch-testing.html"><a href="ch-testing.html#r-12"><i class="fa fa-check"></i><b>13.5.4</b> R</a></li>
+<li class="chapter" data-level="13.5.4" data-path="ch-testing.html"><a href="ch-testing.html#r-13"><i class="fa fa-check"></i><b>13.5.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="13.6" data-path="ch-testing.html"><a href="ch-testing.html#sec:ttest-indep"><i class="fa fa-check"></i><b>13.6</b> Independent samples <span class="math inline">\(t\)</span>-tests</a>
 <ul>
@@ -393,7 +420,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.8.1" data-path="ch-testing.html"><a href="ch-testing.html#sec:formulas13-5"><i class="fa fa-check"></i><b>13.8.1</b> formulas</a></li>
 <li class="chapter" data-level="13.8.2" data-path="ch-testing.html"><a href="ch-testing.html#spss-13-2"><i class="fa fa-check"></i><b>13.8.2</b> SPSS</a></li>
 <li class="chapter" data-level="13.8.3" data-path="ch-testing.html"><a href="ch-testing.html#jasp-12"><i class="fa fa-check"></i><b>13.8.3</b> JASP</a></li>
-<li class="chapter" data-level="13.8.4" data-path="ch-testing.html"><a href="ch-testing.html#r-13"><i class="fa fa-check"></i><b>13.8.4</b> R</a></li>
+<li class="chapter" data-level="13.8.4" data-path="ch-testing.html"><a href="ch-testing.html#r-14"><i class="fa fa-check"></i><b>13.8.4</b> R</a></li>
 <li class="chapter" data-level="13.8.5" data-path="ch-testing.html"><a href="ch-testing.html#sec:confint-effectsize"><i class="fa fa-check"></i><b>13.8.5</b> Confidence interval of the effect size</a></li>
 </ul></li>
 </ul></li>
@@ -421,7 +448,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.3.5" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-posthoc"><i class="fa fa-check"></i><b>15.3.5</b> Post-hoc comparisons</a></li>
 <li class="chapter" data-level="15.3.6" data-path="ch-anova.html"><a href="ch-anova.html#spss-12"><i class="fa fa-check"></i><b>15.3.6</b> SPSS</a></li>
 <li class="chapter" data-level="15.3.7" data-path="ch-anova.html"><a href="ch-anova.html#jasp-13"><i class="fa fa-check"></i><b>15.3.7</b> JASP</a></li>
-<li class="chapter" data-level="15.3.8" data-path="ch-anova.html"><a href="ch-anova.html#r-14"><i class="fa fa-check"></i><b>15.3.8</b> R</a></li>
+<li class="chapter" data-level="15.3.8" data-path="ch-anova.html"><a href="ch-anova.html#r-15"><i class="fa fa-check"></i><b>15.3.8</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="15.4" data-path="ch-anova.html"><a href="ch-anova.html#two-way-analysis-of-variance"><i class="fa fa-check"></i><b>15.4</b> Two-way analysis of variance</a>
 <ul>
@@ -429,7 +456,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.4.2" data-path="ch-anova.html"><a href="ch-anova.html#a-formal-explanation"><i class="fa fa-check"></i><b>15.4.2</b> A formal explanation</a></li>
 <li class="chapter" data-level="15.4.3" data-path="ch-anova.html"><a href="ch-anova.html#spss-13"><i class="fa fa-check"></i><b>15.4.3</b> SPSS</a></li>
 <li class="chapter" data-level="15.4.4" data-path="ch-anova.html"><a href="ch-anova.html#jasp-14"><i class="fa fa-check"></i><b>15.4.4</b> JASP</a></li>
-<li class="chapter" data-level="15.4.5" data-path="ch-anova.html"><a href="ch-anova.html#r-15"><i class="fa fa-check"></i><b>15.4.5</b> R</a></li>
+<li class="chapter" data-level="15.4.5" data-path="ch-anova.html"><a href="ch-anova.html#r-16"><i class="fa fa-check"></i><b>15.4.5</b> R</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="16" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html"><i class="fa fa-check"></i><b>16</b> Chi-square-tests</a>
@@ -454,7 +481,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="16.8.3" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#contingency-tables-preparation-1"><i class="fa fa-check"></i><b>16.8.3</b> contingency tables: preparation</a></li>
 <li class="chapter" data-level="16.8.4" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#contingency-tables-testing-1"><i class="fa fa-check"></i><b>16.8.4</b> contingency tables: testing</a></li>
 </ul></li>
-<li class="chapter" data-level="16.9" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#r-16"><i class="fa fa-check"></i><b>16.9</b> R</a>
+<li class="chapter" data-level="16.9" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#r-17"><i class="fa fa-check"></i><b>16.9</b> R</a>
 <ul>
 <li class="chapter" data-level="16.9.1" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#goodness-of-fit-testing-2"><i class="fa fa-check"></i><b>16.9.1</b> goodness of fit: testing</a></li>
 <li class="chapter" data-level="16.9.2" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#contingency-table-preparation-and-testing"><i class="fa fa-check"></i><b>16.9.2</b> contingency table: preparation and testing</a></li>
@@ -507,20 +534,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>In this textbook, we will discuss the fundamental concepts, methods, and analytic techniques used in empirical scientific inquiry, both in general and as applied to the broad domain of language and communication. We will look at questions such as: What is a good research question? Which methodology is best for answering a given research question? How can researchers draw meaningful and valid conclusions from (statistical analyses of) their data? In this textbook, we will restrict ourselves to the most important fundamental concepts, and to the most important research methodologies and analytical techniques. In this first chapter, we will provide an overview of various types and forms of scientific research. In the following chapters, we will focus most of our attention on scientific research methodologies in which empirical observations are expressed in terms of numbers (quantitative), which may be analysed using statistical techniques.</p>
 <div id="sec:scientific-research" class="section level2" number="1.1">
 <h2><span class="header-section-number">1.1</span> Scientific research</h2>
-<p>To begin, we have to ask a question that refers back to the very first sentence above: what exactly is scientific research? What is the difference between scientific and non-scientific research (e.g., by investigative journalists)? Research conducted by a scholar does not necessarily have to be scientific research. Nor is research by journalists non-scientific by definition just because it is conducted by a journalist. In this textbook, we will follow this definition <span class="citation">(Kerlinger and Lee <a href="#ref-KL00" role="doc-biblioref">2000</a>, 14)</span>:</p>
+<p>To begin, we have to ask a question that refers back to the very first sentence above: what exactly is scientific research? What is the difference between scientific and non-scientific research (e.g., by investigative journalists)? Research conducted by a scholar does not necessarily have to be scientific research. Nor is research by journalists non-scientific by definition just because it is conducted by a journalist. In this textbook, we will follow this definition <span class="citation">(<a href="#ref-KL00" role="doc-biblioref">Kerlinger and Lee 2000, 14</a>)</span>:</p>
 <blockquote>
 <p>“Scientific
 research is systematic, controlled, empirical, amoral, public, and
 critical investigation of natural phenomena. It is guided by theory and hypotheses about the presumed relations among such phenomena.”</p>
 </blockquote>
 <p>Scientific research is systematic and controlled. Scientific research is designed such that its conclusions may be believed, because these conclusions are well-motivated. A research study can be repeated by others, which will (hopefully) lead to the same results. This demand that research be replicable also means that scientific research is designed and conducted in highly controlled ways (see Chapters <a href="ch-integrity.html#ch:integrity">3</a> and <a href="ch-design.html#ch:design">6</a>).
-The strongest form of control is found in a scientific experiment: we will therefore devote considerable attention to experimental research (§<a href="ch-introduction.html#sec:experimental-research">1.5</a>). Any possible alternative explanations for the phenomenon studied are looked into one by one and excluded if possible, so that, in the end, we are left with one single explanation <span class="citation">(Kerlinger and Lee <a href="#ref-KL00" role="doc-biblioref">2000</a>)</span>. This explanation, then, forms our scientifically motivated conclusion on or theory of the phenomenon studied.</p>
+The strongest form of control is found in a scientific experiment: we will therefore devote considerable attention to experimental research (§<a href="ch-introduction.html#sec:experimental-research">1.5</a>). Any possible alternative explanations for the phenomenon studied are looked into one by one and excluded if possible, so that, in the end, we are left with one single explanation <span class="citation">(<a href="#ref-KL00" role="doc-biblioref">Kerlinger and Lee 2000</a>)</span>. This explanation, then, forms our scientifically motivated conclusion on or theory of the phenomenon studied.</p>
 <p>The definition above also states that scientific research is empirical. The conclusion a research draws about a phenomenon must ultimately be based on (systematic and controlled) observations of that phenomenon in reality – for example, on the observed content of a text or the behaviour observed in a participant. If such observation is absent, then any conclusion drawn from such research cannot be logically connected to reality, which means that it has no scientific value. Confidential data from an unknown source or insights gained from a dream or in a mystical experience are not empirically motivated, and, hence, may not form the basis of a scientific theory.</p>
 <div id="sec:theory" class="section level3" number="1.1.1">
 <h3><span class="header-section-number">1.1.1</span> Theory</h3>
-<p>The goal of all scientific research is to arrive at a theory of a part of reality. This theory can be seen as a coherent and consistent collection of “justified true beliefs” <span class="citation">(Morton <a href="#ref-Mort03" role="doc-biblioref">2003</a>)</span>. These beliefs as well as the theory they form abstract away from the complex reality of natural phenomena to an abstract mental <em>construct</em>, which in its very nature is not directly observable. Examples of similar constructs include: reading ability, intelligence, activation level, intelligibility, active vocabulary size, shoe size, length of commute, introversion, etc.</p>
+<p>The goal of all scientific research is to arrive at a theory of a part of reality. This theory can be seen as a coherent and consistent collection of “justified true beliefs” <span class="citation">(<a href="#ref-Mort03" role="doc-biblioref">Morton 2003</a>)</span>. These beliefs as well as the theory they form abstract away from the complex reality of natural phenomena to an abstract mental <em>construct</em>, which in its very nature is not directly observable. Examples of similar constructs include: reading ability, intelligence, activation level, intelligibility, active vocabulary size, shoe size, length of commute, introversion, etc.</p>
 <p>When building a theory, a researcher not only defines various constructs, but also specifies the <em>relationships</em> between these constructs. It is only when the constructs have been defined and the relationships between these constructs have been specified that a researcher can arrive at a systematic explanation of the phenomenon studied. This explanation or theory can, in turn, form the basis of a <em>prediction</em> about the phenomenon studied: the number of spoken languages will decrease in the 21st century; texts without overt conjunctions will be more difficult to understand than texts with overt conjunctions; children with a bilingual upbringing will perform no worse at school than monolingual children.</p>
-<p>Scientific research comes in many kinds and forms, which may be classified in various ways. In §<a href="ch-introduction.html#sec:paradigms">1.2</a>, we will discuss a classification based on paradigm: a researcher’s outlook on reality. Research can also be classified according to a continuum between ‘purely theoretical’ to ‘applied’. A third way of classifying research is oriented towards the type of research, for instance, instrument validation (§<a href="ch-introduction.html#sec:instrument-validation">1.3</a>), descriptive research (§<a href="ch-introduction.html#sec:descriptive-research">1.4</a>), and experimental research (§<a href="ch-introduction.html#sec:experimental-research">1.5</a>).</p>
+<p>Scientific research comes in many kinds and forms, which may be classified in various ways. In §<a href="ch-introduction.html#sec:paradigms">1.2</a>, we will discuss a classification based on paradigm: a researcher’s outlook on reality. Research can also be classified according to a continuum between ‘purely theoretical’ to ‘applied.’ A third way of classifying research is oriented towards the type of research, for instance, instrument validation (§<a href="ch-introduction.html#sec:instrument-validation">1.3</a>), descriptive research (§<a href="ch-introduction.html#sec:descriptive-research">1.4</a>), and experimental research (§<a href="ch-introduction.html#sec:experimental-research">1.5</a>).</p>
 </div>
 </div>
 <div id="sec:paradigms" class="section level2" number="1.2">
@@ -534,7 +561,7 @@ The strongest form of control is found in a scientific experiment: we will there
 </div>
 <div id="sec:instrument-validation" class="section level2" number="1.3">
 <h2><span class="header-section-number">1.3</span> Instrument validation</h2>
-<p>As stated above, research is a systematized and controlled way of collecting and interpreting empirical data. Researchers strive for insight into natural phenomena and into the way in which (constructs corresponding to) these phenomena are related to one another. One requirement for this is that the researcher be able to actually measure said phenomena, i.e., to express them in terms of an observation (preferable, in the form of a number). Instrument validation research is predominantly concerned with constructing instruments or methods to make phenomena, behaviour, ability, attitudes, etc. measurable. The development of good instruments for measurement is by no means an easy task: they truly have to be crafted by hand, and there are many pitfalls that have to be avoided. The process of making phenomena, behaviour, or constructs measurable is called <em>operationalization</em>. For instance, a specific reading test can be seen as an operationalization of the abstract construct of ‘reading ability’.</p>
+<p>As stated above, research is a systematized and controlled way of collecting and interpreting empirical data. Researchers strive for insight into natural phenomena and into the way in which (constructs corresponding to) these phenomena are related to one another. One requirement for this is that the researcher be able to actually measure said phenomena, i.e., to express them in terms of an observation (preferable, in the form of a number). Instrument validation research is predominantly concerned with constructing instruments or methods to make phenomena, behaviour, ability, attitudes, etc. measurable. The development of good instruments for measurement is by no means an easy task: they truly have to be crafted by hand, and there are many pitfalls that have to be avoided. The process of making phenomena, behaviour, or constructs measurable is called <em>operationalization</em>. For instance, a specific reading test can be seen as an operationalization of the abstract construct of ‘reading ability.’</p>
 <p>It is useful to make a distinction between the abstract theoretical construct and the construct as it is used for measurements, which means: a distinction between the concept-as-intended and the concept-as-defined. Naturally, the desired situation is for the concept-as-defined (the test or questionnaire or observation) to maximally approach the concept-as-intended (the theoretical construct). If the theoretical construct is given a good approximation, we speak of an adequate or valid measurement.</p>
 <p>When a concept-as-intended is operationalized, the amount of choices to be made is innumerable. For instance, the Dutch government institute that develops standardized tests for primary and secondary education, the CITO (Centraal instituut voor toetsontwikkeling, or Central Test Development Institute) must develop new reading comprehension tests each year to measure the reading ability exhibited by students taking the centralized final exams for secondary school students (eindexamens). For this purpose, the first step is to choose and possibly edit a text. This text cannot be too challenging for the target audience, but may also not be too easy. Furthermore, the topic of the text may not be too well-known – otherwise, some students’ general background knowledge may interfere with the opinions and standpoints brought forward in the text. At the next step, questions must be developed in such a way that the various parts of the text are all covered. In addition, the questions must be constructed in such a way that the theoretical concept of ‘reading ability’ is adequately operationalized. Finally, exams administered in previous years must also be taken into consideration, because this year’s exam may not differ too much from previous years’ exams.</p>
 <p>To sum up, a construct must be correctly operationalized in order to arrive at observations that are not only valid (a good approximation of the abstract construct, see Chapter <a href="ch-validity.html#ch:validity">5</a>) but also reliable (observations must be more or less identical when measurement is repeated, see Chapter <a href="ch-reliability.html#ch:reliability">12</a>). In each research study, the validity and reliability of any instance of measurement are crucial; because of this, we will spend two chapters on just these concepts. However, in instrument validation research, specifically, these concepts are absolutely essential, because this type of research itself is meant to yield valid and reliable instruments that are a good operationalization of the abstract construct-as-intended.</p>
@@ -544,7 +571,7 @@ The strongest form of control is found in a scientific experiment: we will there
 <p>Descriptive research refers to research predominantly geared towards describing a particular natural phenomenon in reality. This means that the researcher mostly aims for a description of the phenomenon: the current level of ability, the way in which a particular process or discussion proceeds, the way in which Dutch language classes in secondary education take shape, voters’ political preferences immediately before an election, the correlation between the number of hours a student spent on individual study and the final mark they received, etc. In short, the potential topics of descriptive research are also be very diverse.</p>
 <hr />
 <blockquote>
-<p><em>Example 1.1</em>: <span class="citation">Dingemanse, Torreira, and Enfield (<a href="#ref-DTE13" role="doc-biblioref">2013</a>)</span> made or chose recordings of conversations in 10 languages. Within these conversations, they took words used by a listener to seek “open clarification”: little words like <em>huh</em> (English), <em>hè</em> (Dutch), <em>ã?</em> (Siwu). They determined the sound shape and pitch contour of these words using acoustic measurements and phonetic transcriptions made by experts. One of the conclusions of this descriptive research is that these interjections in the various languages studied are much more alike (in terms of sound shape and pitch contour) than would be expected based on chance.</p>
+<p><em>Example 1.1</em>: <span class="citation"><a href="#ref-DTE13" role="doc-biblioref">Dingemanse, Torreira, and Enfield</a> (<a href="#ref-DTE13" role="doc-biblioref">2013</a>)</span> made or chose recordings of conversations in 10 languages. Within these conversations, they took words used by a listener to seek “open clarification”: little words like <em>huh</em> (English), <em>hè</em> (Dutch), <em>ã?</em> (Siwu). They determined the sound shape and pitch contour of these words using acoustic measurements and phonetic transcriptions made by experts. One of the conclusions of this descriptive research is that these interjections in the various languages studied are much more alike (in terms of sound shape and pitch contour) than would be expected based on chance.</p>
 </blockquote>
 <hr />
 <p>This example illustrates the fact that descriptive research does not stop when the data (sound shapes, pitch contours) have been described. Oftentimes, relationships between the data points gathered are also very interesting (see §<a href="ch-introduction.html#sec:scientific-research">1.1</a>). For instance, in opinion polls that investigate voting behaviour in elections, a connection is often made between the voting behaviour polled, on the one side, and age, sex, and level of education, on the other side. In the same way, research in education makes a connection between the number of hours spent studying, on the one side, and performance in educational assessment, on the other side. This type of descriptive research, in which a correlation is found between possible causes and possible effects, is otherwise also referred to as <em>correlational research</em>.</p>
@@ -552,18 +579,18 @@ The strongest form of control is found in a scientific experiment: we will there
 </div>
 <div id="sec:experimental-research" class="section level2" number="1.5">
 <h2><span class="header-section-number">1.5</span> Experimental research</h2>
-<p>Experimental research is characterized by the researcher’s systematically manipulating a particular aspect of the circumstances under which a study is conducted <span class="citation">(Shadish, Cook, and Campbell <a href="#ref-SCC02" role="doc-biblioref">2002</a>)</span>. The effect arising from this manipulation now becomes central in the research study. For instance, a researcher suspects that a particular new method of teaching will result in better student performance compared to the current teaching method. The researcher wants to test this hypothesis using experimental research. She or he manipulates the type of teaching: some groups of students are taught according to the novel, experimental teaching method, and other groups of students are taught according to the traditional method. The novel teaching method’s effect is evaluated by comparing both types of student groups’ performance after they have been ‘treated’ with the old vs. new teaching method.</p>
+<p>Experimental research is characterized by the researcher’s systematically manipulating a particular aspect of the circumstances under which a study is conducted <span class="citation">(<a href="#ref-SCC02" role="doc-biblioref">Shadish, Cook, and Campbell 2002</a>)</span>. The effect arising from this manipulation now becomes central in the research study. For instance, a researcher suspects that a particular new method of teaching will result in better student performance compared to the current teaching method. The researcher wants to test this hypothesis using experimental research. She or he manipulates the type of teaching: some groups of students are taught according to the novel, experimental teaching method, and other groups of students are taught according to the traditional method. The novel teaching method’s effect is evaluated by comparing both types of student groups’ performance after they have been ‘treated’ with the old vs. new teaching method.</p>
 <p>The advantage of experimental research is that we may usually interpret the research results as the consequence or effect of the experimental manipulation. Because the research systematically controls the study and varies just one aspect of it (in this case, the method of teaching), possible differences between the performance observed in the two categories can only be ascribed to the aspect that has been varied (the method of teaching). Logically speaking, this aspect that was varied is the only thing that could have cause the observed differences. Thus, experimental research is oriented towards evaluating causal relationships.</p>
-<p>This reasoning does require that participants (or groups of students, as in the example above) are assigned to experimental conditions (in our example, the old or the new method of teaching) at random. This random assignment is the best method to exclude any non-relevant differences between the conditions of treatment. Such an experiment with random assignment of participants to conditions is called a <em>randomized experiment</em> or <em>true experiment</em> <span class="citation">(Shadish, Cook, and Campbell <a href="#ref-SCC02" role="doc-biblioref">2002</a>)</span>. To remain with our example: if the researcher had used the old research method only with boys, and the new research method only with girls, then any difference in performance can no longer just be attributed to the manipulated factor (teaching method), but also to a non-manipulated but definitely relevant factor, in this case, the students’ sex. Such a possible disruptive factor is called a confound. In Chapter <a href="ch-design.html#ch:design">6</a>, we will discuss how we can neutralize such confounds by random assignment of participants (or groups of students) to experimental conditions, combined with other measures.</p>
-<p>There also exists experimental research in which a particular aspect (such as teaching method) is indeed systematically varied, but in which participants or groups of students are not randomly assigned to the experimental conditions; this is called <em>quasi-experimental research</em> <span class="citation">(Shadish, Cook, and Campbell <a href="#ref-SCC02" role="doc-biblioref">2002</a>)</span>. In the example above, this term would be applicable if teaching method were investigated using data from groups of students for which it was not the researcher, but their teacher who determined whether the old or new teaching method would be used. In addition, the teacher’s enthusiasm or teaching style might be a confound in this quasi-experiment. We will encounter various examples of quasi-experimental research in the remainder of this textbook.</p>
-<p>Within the type of experimental research, we can also make a further division: that between laboratory research and field research. In both types of experimental research, some aspect of reality is manipulated. The difference between both types of research lies in the degree to which the researcher is able to keep under control the various confounds present in reality. In laboratory research, the researcher can very precisely determine under which environmental conditions observations are made, which means that the researcher can keep many possible confounds (such as lighting, temperature, ambient noise, etc.) under control. In field research, this is not the case. When ‘out in the field’, the researcher is not able to keep all (possibly relevant) aspects of reality fully under control.</p>
+<p>This reasoning does require that participants (or groups of students, as in the example above) are assigned to experimental conditions (in our example, the old or the new method of teaching) at random. This random assignment is the best method to exclude any non-relevant differences between the conditions of treatment. Such an experiment with random assignment of participants to conditions is called a <em>randomized experiment</em> or <em>true experiment</em> <span class="citation">(<a href="#ref-SCC02" role="doc-biblioref">Shadish, Cook, and Campbell 2002</a>)</span>. To remain with our example: if the researcher had used the old research method only with boys, and the new research method only with girls, then any difference in performance can no longer just be attributed to the manipulated factor (teaching method), but also to a non-manipulated but definitely relevant factor, in this case, the students’ sex. Such a possible disruptive factor is called a confound. In Chapter <a href="ch-design.html#ch:design">6</a>, we will discuss how we can neutralize such confounds by random assignment of participants (or groups of students) to experimental conditions, combined with other measures.</p>
+<p>There also exists experimental research in which a particular aspect (such as teaching method) is indeed systematically varied, but in which participants or groups of students are not randomly assigned to the experimental conditions; this is called <em>quasi-experimental research</em> <span class="citation">(<a href="#ref-SCC02" role="doc-biblioref">Shadish, Cook, and Campbell 2002</a>)</span>. In the example above, this term would be applicable if teaching method were investigated using data from groups of students for which it was not the researcher, but their teacher who determined whether the old or new teaching method would be used. In addition, the teacher’s enthusiasm or teaching style might be a confound in this quasi-experiment. We will encounter various examples of quasi-experimental research in the remainder of this textbook.</p>
+<p>Within the type of experimental research, we can also make a further division: that between laboratory research and field research. In both types of experimental research, some aspect of reality is manipulated. The difference between both types of research lies in the degree to which the researcher is able to keep under control the various confounds present in reality. In laboratory research, the researcher can very precisely determine under which environmental conditions observations are made, which means that the researcher can keep many possible confounds (such as lighting, temperature, ambient noise, etc.) under control. In field research, this is not the case. When ‘out in the field,’ the researcher is not able to keep all (possibly relevant) aspects of reality fully under control.</p>
 <hr />
 <blockquote>
-<p><em>Example 1.2:</em> Margot van den Berg and colleagues from the Universities of Utrecht, Ghana and Lomé investigated how multilingual speakers use their languages when they have to name attributes like colour, size, and value in a so-called Director-Matcher task <span class="citation">(Van den Berg et al. <a href="#ref-BAEYT2017" role="doc-biblioref">2017</a>)</span>. In this task, one research participant (the ‘director’) gave clues to another participant (the ‘matcher’) to arrange a set of objects in a particular order. This allowed the researchers to collect many instances of attribute words in a short period of time (“Put the yellow car next to the red car, but above the small sandal”). The interactions were recorded, transcribed, en subsequently investigated for language choice, moment of language switch, and type of grammatical construction. In this type of fieldwork, however, various kinds of non-controlled aspects in the environment may influence the sound recordings and, thus, the data, including “clucking chickens, a neighbour who was repairing his motorbike and had to start it every other second while we were trying to record a conversation, pouring rain on top of the aluminium roof of the building where the interviews took place.” (Margot van den Berg, personal communication)</p>
+<p><em>Example 1.2:</em> Margot van den Berg and colleagues from the Universities of Utrecht, Ghana and Lomé investigated how multilingual speakers use their languages when they have to name attributes like colour, size, and value in a so-called Director-Matcher task <span class="citation">(<a href="#ref-BAEYT2017" role="doc-biblioref">Van den Berg et al. 2017</a>)</span>. In this task, one research participant (the ‘director’) gave clues to another participant (the ‘matcher’) to arrange a set of objects in a particular order. This allowed the researchers to collect many instances of attribute words in a short period of time (“Put the yellow car next to the red car, but above the small sandal”). The interactions were recorded, transcribed, en subsequently investigated for language choice, moment of language switch, and type of grammatical construction. In this type of fieldwork, however, various kinds of non-controlled aspects in the environment may influence the sound recordings and, thus, the data, including “clucking chickens, a neighbour who was repairing his motorbike and had to start it every other second while we were trying to record a conversation, pouring rain on top of the aluminium roof of the building where the interviews took place.” (Margot van den Berg, personal communication)</p>
 </blockquote>
 <hr />
 <blockquote>
-<p><em>Example 1.3</em>: When listening to spoken sentences, we can infer from a participant’s eye movements how these spoken sentences are processed. In a so-called ‘visual world’ task, listeners are presented with a spoken sentence (e.g., “Bert says that the rabbit has grown”), while they are looking at multiple images on the screen (usually 4 of them, e.g., a sea shell, a peacock, a saw, and a carrot). It turns out that listeners will predominantly be looking at the image associated with the word they are currently mentally processing: when they are processing <em>rabbit</em>, they will look at the carrot. A so-called ‘eye tracker’ device allows researchers to determine the position on the screen at which a participant is looking (through observation of their pupils). In this way, the researcher can therefore observe which word is mentally processed at which time <span class="citation">(Koring, Mak, and Reuland <a href="#ref-KMR12" role="doc-biblioref">2012</a>)</span>. Research of this kind is best conducted in a laboratory, where one can control background noise, lighting, and the position of participants’ eyes relative to the computer screen.</p>
+<p><em>Example 1.3</em>: When listening to spoken sentences, we can infer from a participant’s eye movements how these spoken sentences are processed. In a so-called ‘visual world’ task, listeners are presented with a spoken sentence (e.g., “Bert says that the rabbit has grown”), while they are looking at multiple images on the screen (usually 4 of them, e.g., a sea shell, a peacock, a saw, and a carrot). It turns out that listeners will predominantly be looking at the image associated with the word they are currently mentally processing: when they are processing <em>rabbit</em>, they will look at the carrot. A so-called ‘eye tracker’ device allows researchers to determine the position on the screen at which a participant is looking (through observation of their pupils). In this way, the researcher can therefore observe which word is mentally processed at which time <span class="citation">(<a href="#ref-KMR12" role="doc-biblioref">Koring, Mak, and Reuland 2012</a>)</span>. Research of this kind is best conducted in a laboratory, where one can control background noise, lighting, and the position of participants’ eyes relative to the computer screen.</p>
 </blockquote>
 <hr />
 <p>Both laboratory research and field research have advantages and disadvantages. The great advantage of laboratory research is, of course, the degree to which the researcher can keep all kinds of external matters under control. In a laboratory, the experiment is not likely to be disturbed by a starting engine or a downpour. However, this advantage of laboratory research also forms an important disadvantage, namely: the research takes place in a more or less artificial environment. It is not at all clear to what extent results obtained under artificial circumstances will also be true of everyday life outside the laboratory. Because of this, the latter forms a point to the advantage of field researcher: the research is conducted under circumstances that are natural. However, the disadvantage of field research is that many things can happen in the field that may influence the research results, but remain outside of the researcher’s control (see example 1.2). The choice between both types of experimental research that a researcher has to make is obviously strongly guided by their research question. Some questions are better suited to being investigated in laboratory situations, while others are better suited to being investigated field situations (as is illustrated by the examples above).</p>
@@ -584,34 +611,34 @@ JASP is freely available at <a href="https://jasp-stats.org" class="uri">https:/
 <li><p><strong>R</strong> (version 3.0 and later): a somewhat more challenging, but also much more powerful and versatile software package that is gaining popularity among researchers.<br />
 R is freely available at <a href="https://www.R-project.org" class="uri">https://www.R-project.org</a>.
 A brief introduction to R can be found at <a href="https://hugoquene.github.io/emlar2020/" class="uri">https://hugoquene.github.io/emlar2020/</a>.
-Longer introductions are available in <span class="citation">Dalgaard (<a href="#ref-Dalg02" role="doc-biblioref">2002</a>)</span> and in excellent web books; a list of recommended books is available at <a href="https://statisticalhorizons.com/resources/free-web-books-for-learning-r" class="uri">https://statisticalhorizons.com/resources/free-web-books-for-learning-r</a>.</p></li>
+Longer introductions are available in <span class="citation"><a href="#ref-Dalg02" role="doc-biblioref">Dalgaard</a> (<a href="#ref-Dalg02" role="doc-biblioref">2002</a>)</span> and in excellent web books; a list of recommended books is available at <a href="https://statisticalhorizons.com/resources/free-web-books-for-learning-r" class="uri">https://statisticalhorizons.com/resources/free-web-books-for-learning-r</a>.</p></li>
 </ul>
 <p>For students and employees at Utrecht University, these packages are pre-installed in <code>MyWorkPlace</code>.</p>
 
 </div>
 </div>
 <h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-Dalg02">
-<p>Dalgaard, Peter. 2002. <em>Introductory Statistics with R</em>. Springer.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Dalg02" class="csl-entry">
+Dalgaard, Peter. 2002. <em>Introductory Statistics with r</em>. Springer.
 </div>
-<div id="ref-DTE13">
-<p>Dingemanse, Mark, Francisco Torreira, and N. J. Enfield. 2013. “Is ‘Huh?’ A Universal Word? Conversational Infrastructure and the Convergent Evolution of Linguistic Items.” <em>PLOS One</em> 8 (11): e78273. <a href="http://dx.doi.org/10.1371/journal.pone.0078273">http://dx.doi.org/10.1371/journal.pone.0078273</a>.</p>
+<div id="ref-DTE13" class="csl-entry">
+Dingemanse, Mark, Francisco Torreira, and N. J. Enfield. 2013. <span>“Is <span>‘Huh?’</span> A Universal Word? Conversational Infrastructure and the Convergent Evolution of Linguistic Items.”</span> <em>PLOS One</em> 8 (11): e78273. <a href="http://dx.doi.org/10.1371/journal.pone.0078273">http://dx.doi.org/10.1371/journal.pone.0078273</a>.
 </div>
-<div id="ref-KL00">
-<p>Kerlinger, Fred N., and Howard B. Lee. 2000. <em>Foundations of Behavioral Research</em>. 4th ed. Fort Worth: Harcourt College Publishers.</p>
+<div id="ref-KL00" class="csl-entry">
+Kerlinger, Fred N., and Howard B. Lee. 2000. <em>Foundations of Behavioral Research</em>. 4th ed. Fort Worth: Harcourt College Publishers.
 </div>
-<div id="ref-KMR12">
-<p>Koring, Loes, Pim Mak, and Eric Reuland. 2012. “The Time Course of Argument Reactivation Revealed: Using the Visual World Paradigm.” <em>Cognition</em> 123 (3): 361–79.</p>
+<div id="ref-KMR12" class="csl-entry">
+Koring, Loes, Pim Mak, and Eric Reuland. 2012. <span>“The Time Course of Argument Reactivation Revealed: Using the Visual World Paradigm.”</span> <em>Cognition</em> 123 (3): 361–79.
 </div>
-<div id="ref-Mort03">
-<p>Morton, Adam. 2003. <em>A Guide Through the Theory of Knowledge</em>. 3e ed. Malden, MA: Blackwell.</p>
+<div id="ref-Mort03" class="csl-entry">
+Morton, Adam. 2003. <em>A Guide Through the Theory of Knowledge</em>. 3e ed. Malden, MA: Blackwell.
 </div>
-<div id="ref-SCC02">
-<p>Shadish, William R., Thomas D. Cook, and Donald T. Campbell. 2002. <em>Experimental and Quasi-Experimental Designs for Generalized Causal Inference</em>. Belmont, CA: Wadsworth.</p>
+<div id="ref-SCC02" class="csl-entry">
+Shadish, William R., Thomas D. Cook, and Donald T. Campbell. 2002. <em>Experimental and Quasi-Experimental Designs for Generalized Causal Inference</em>. Belmont, CA: Wadsworth.
 </div>
-<div id="ref-BAEYT2017">
-<p>Van den Berg, Margot, Evershed Kwasi Amuzu, Komlan Essizewa, Elvis Yevudey, and Kamaïloudini Tagba. 2017. “Crosslinguistic Effects in Adjectivization Strategies in Suriname, Ghana and Togo.” In <em>Language Contact in Africa and the African Diaspora in the Americas: In Honor of John V. Singler</em>, edited by Cecelia Cutler, Zvjezdana Vrzić, and Philipp Angermeyer, 343–62. s.l.: Benjamins.</p>
+<div id="ref-BAEYT2017" class="csl-entry">
+Van den Berg, Margot, Evershed Kwasi Amuzu, Komlan Essizewa, Elvis Yevudey, and Kamaïloudini Tagba. 2017. <span>“Crosslinguistic Effects in Adjectivization Strategies in <span>Suriname</span>, <span>Ghana</span> and <span>Togo</span>.”</span> In <em>Language Contact in <span>Africa</span> and the <span>African</span> Diaspora in the <span>Americas</span>: In Honor of <span>John V.</span> <span>Singler</span></em>, edited by Cecelia Cutler, Zvjezdana Vrzić, and Philipp Angermeyer, 343–62. s.l.: Benjamins.
 </div>
 </div>
 <div class="footnotes">
@@ -649,6 +676,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>5 Validity | Quantitative Methods and Statistics</title>
   <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="5 Validity | Quantitative Methods and Statistics" />
   <meta property="og:type" content="book" />
@@ -31,7 +31,7 @@
   
 <link rel="prev" href="ch-levelsofmeasurement.html"/>
 <link rel="next" href="ch-design.html"/>
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,12 +49,15 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -113,6 +116,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -230,13 +256,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.2.1" data-path="ch-frequencies.html"><a href="ch-frequencies.html#sec:intervals"><i class="fa fa-check"></i><b>8.2.1</b> Intervals</a></li>
 <li class="chapter" data-level="8.2.2" data-path="ch-frequencies.html"><a href="ch-frequencies.html#spss-1"><i class="fa fa-check"></i><b>8.2.2</b> SPSS</a></li>
 <li class="chapter" data-level="8.2.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#jasp-1"><i class="fa fa-check"></i><b>8.2.3</b> JASP</a></li>
+<li class="chapter" data-level="8.2.4" data-path="ch-frequencies.html"><a href="ch-frequencies.html#r-1"><i class="fa fa-check"></i><b>8.2.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="8.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#sec:barcharts"><i class="fa fa-check"></i><b>8.3</b> Bar charts</a></li>
 <li class="chapter" data-level="8.4" data-path="ch-frequencies.html"><a href="ch-frequencies.html#sec:histograms"><i class="fa fa-check"></i><b>8.4</b> Histograms</a>
 <ul>
 <li class="chapter" data-level="8.4.1" data-path="ch-frequencies.html"><a href="ch-frequencies.html#spss-2"><i class="fa fa-check"></i><b>8.4.1</b> SPSS</a></li>
 <li class="chapter" data-level="8.4.2" data-path="ch-frequencies.html"><a href="ch-frequencies.html#jasp-2"><i class="fa fa-check"></i><b>8.4.2</b> JASP</a></li>
-<li class="chapter" data-level="8.4.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#r-1"><i class="fa fa-check"></i><b>8.4.3</b> R</a></li>
+<li class="chapter" data-level="8.4.3" data-path="ch-frequencies.html"><a href="ch-frequencies.html#r-2"><i class="fa fa-check"></i><b>8.4.3</b> R</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html"><i class="fa fa-check"></i><b>9</b> Centre and dispersion</a>
@@ -274,7 +301,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.8" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#sec:standardscores"><i class="fa fa-check"></i><b>9.8</b> Standard scores</a></li>
 <li class="chapter" data-level="9.9" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#spss-3"><i class="fa fa-check"></i><b>9.9</b> SPSS</a></li>
 <li class="chapter" data-level="9.10" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#jasp-3"><i class="fa fa-check"></i><b>9.10</b> JASP</a></li>
-<li class="chapter" data-level="9.11" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#r-2"><i class="fa fa-check"></i><b>9.11</b> R</a></li>
+<li class="chapter" data-level="9.11" data-path="ch-centre-and-dispersion.html"><a href="ch-centre-and-dispersion.html#r-3"><i class="fa fa-check"></i><b>9.11</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html"><i class="fa fa-check"></i><b>10</b> Probability distributions</a>
 <ul>
@@ -283,18 +310,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="10.2.1" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#formulas"><i class="fa fa-check"></i><b>10.2.1</b> formulas</a></li>
 <li class="chapter" data-level="10.2.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#jasp-4"><i class="fa fa-check"></i><b>10.2.2</b> JASP</a></li>
-<li class="chapter" data-level="10.2.3" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-3"><i class="fa fa-check"></i><b>10.2.3</b> R</a></li>
+<li class="chapter" data-level="10.2.3" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-4"><i class="fa fa-check"></i><b>10.2.3</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="10.3" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:normaldistribution"><i class="fa fa-check"></i><b>10.3</b> Normal probability distribution</a>
 <ul>
 <li class="chapter" data-level="10.3.1" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#formulas-1"><i class="fa fa-check"></i><b>10.3.1</b> formulas</a></li>
 <li class="chapter" data-level="10.3.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#jasp-5"><i class="fa fa-check"></i><b>10.3.2</b> JASP</a></li>
-<li class="chapter" data-level="10.3.3" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-4"><i class="fa fa-check"></i><b>10.3.3</b> R</a></li>
+<li class="chapter" data-level="10.3.3" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-5"><i class="fa fa-check"></i><b>10.3.3</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="10.4" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:isvarnormaldistributed"><i class="fa fa-check"></i><b>10.4</b> Does my variable have a normal probability distribution?</a>
 <ul>
 <li class="chapter" data-level="10.4.1" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#spss-4"><i class="fa fa-check"></i><b>10.4.1</b> SPSS</a></li>
-<li class="chapter" data-level="10.4.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-5"><i class="fa fa-check"></i><b>10.4.2</b> R</a></li>
+<li class="chapter" data-level="10.4.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-6"><i class="fa fa-check"></i><b>10.4.2</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="10.5" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:whatifnotnormal"><i class="fa fa-check"></i><b>10.5</b> What if my variable is not normally distributed?</a></li>
 <li class="chapter" data-level="10.6" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:Centrallimittheorem"><i class="fa fa-check"></i><b>10.6</b> Probability distribution of average</a></li>
@@ -311,14 +338,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.2.1" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#formulas-3"><i class="fa fa-check"></i><b>11.2.1</b> Formulas</a></li>
 <li class="chapter" data-level="11.2.2" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#spss-5"><i class="fa fa-check"></i><b>11.2.2</b> SPSS</a></li>
 <li class="chapter" data-level="11.2.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#jasp-6"><i class="fa fa-check"></i><b>11.2.3</b> JASP</a></li>
-<li class="chapter" data-level="11.2.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-6"><i class="fa fa-check"></i><b>11.2.4</b> R</a></li>
+<li class="chapter" data-level="11.2.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-7"><i class="fa fa-check"></i><b>11.2.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="11.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:regression"><i class="fa fa-check"></i><b>11.3</b> Regression</a>
 <ul>
 <li class="chapter" data-level="11.3.1" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:regression-formulas"><i class="fa fa-check"></i><b>11.3.1</b> Formulas</a></li>
 <li class="chapter" data-level="11.3.2" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#spss-6"><i class="fa fa-check"></i><b>11.3.2</b> SPSS</a></li>
 <li class="chapter" data-level="11.3.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#jasp-7"><i class="fa fa-check"></i><b>11.3.3</b> JASP</a></li>
-<li class="chapter" data-level="11.3.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-7"><i class="fa fa-check"></i><b>11.3.4</b> R</a></li>
+<li class="chapter" data-level="11.3.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-8"><i class="fa fa-check"></i><b>11.3.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="11.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#influential-observations"><i class="fa fa-check"></i><b>11.4</b> Influential observations</a></li>
 <li class="chapter" data-level="11.5" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:Spearman"><i class="fa fa-check"></i><b>11.5</b> Spearman’s rank correlation coefficient</a>
@@ -326,14 +353,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.5.1" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#formulas-4"><i class="fa fa-check"></i><b>11.5.1</b> Formulas</a></li>
 <li class="chapter" data-level="11.5.2" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#spss-7"><i class="fa fa-check"></i><b>11.5.2</b> SPSS</a></li>
 <li class="chapter" data-level="11.5.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#jasp-8"><i class="fa fa-check"></i><b>11.5.3</b> JASP</a></li>
-<li class="chapter" data-level="11.5.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-8"><i class="fa fa-check"></i><b>11.5.4</b> R</a></li>
+<li class="chapter" data-level="11.5.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-9"><i class="fa fa-check"></i><b>11.5.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="11.6" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:Phi"><i class="fa fa-check"></i><b>11.6</b> Phi</a>
 <ul>
 <li class="chapter" data-level="11.6.1" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#formulas-5"><i class="fa fa-check"></i><b>11.6.1</b> Formulas</a></li>
 <li class="chapter" data-level="11.6.2" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#spss-8"><i class="fa fa-check"></i><b>11.6.2</b> SPSS</a></li>
 <li class="chapter" data-level="11.6.3" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#jasp-9"><i class="fa fa-check"></i><b>11.6.3</b> JASP</a></li>
-<li class="chapter" data-level="11.6.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-9"><i class="fa fa-check"></i><b>11.6.4</b> R</a></li>
+<li class="chapter" data-level="11.6.4" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#r-10"><i class="fa fa-check"></i><b>11.6.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="11.7" data-path="ch-correlation-regression.html"><a href="ch-correlation-regression.html#sec:correlationcausation"><i class="fa fa-check"></i><b>11.7</b> Last but not least</a></li>
 </ul></li>
@@ -348,7 +375,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.7" data-path="ch-reliability.html"><a href="ch-reliability.html#reliability-and-construct-validity"><i class="fa fa-check"></i><b>12.7</b> Reliability and construct validity</a></li>
 <li class="chapter" data-level="12.8" data-path="ch-reliability.html"><a href="ch-reliability.html#spss-9"><i class="fa fa-check"></i><b>12.8</b> SPSS</a></li>
 <li class="chapter" data-level="12.9" data-path="ch-reliability.html"><a href="ch-reliability.html#jasp-10"><i class="fa fa-check"></i><b>12.9</b> JASP</a></li>
-<li class="chapter" data-level="12.10" data-path="ch-reliability.html"><a href="ch-reliability.html#r-10"><i class="fa fa-check"></i><b>12.10</b> R</a></li>
+<li class="chapter" data-level="12.10" data-path="ch-reliability.html"><a href="ch-reliability.html#r-11"><i class="fa fa-check"></i><b>12.10</b> R</a></li>
 </ul></li>
 <li class="part"><span><b>Part III: Inferential statistics</b></span></li>
 <li class="chapter" data-level="13" data-path="ch-testing.html"><a href="ch-testing.html"><i class="fa fa-check"></i><b>13</b> Testing hypotheses</a>
@@ -361,7 +388,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.2.3" data-path="ch-testing.html"><a href="ch-testing.html#sec:ttest-assumptions"><i class="fa fa-check"></i><b>13.2.3</b> assumptions</a></li>
 <li class="chapter" data-level="13.2.4" data-path="ch-testing.html"><a href="ch-testing.html#spss-10"><i class="fa fa-check"></i><b>13.2.4</b> SPSS</a></li>
 <li class="chapter" data-level="13.2.5" data-path="ch-testing.html"><a href="ch-testing.html#sec:jaspttestonesample"><i class="fa fa-check"></i><b>13.2.5</b> JASP</a></li>
-<li class="chapter" data-level="13.2.6" data-path="ch-testing.html"><a href="ch-testing.html#r-11"><i class="fa fa-check"></i><b>13.2.6</b> R</a></li>
+<li class="chapter" data-level="13.2.6" data-path="ch-testing.html"><a href="ch-testing.html#r-12"><i class="fa fa-check"></i><b>13.2.6</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="13.3" data-path="ch-testing.html"><a href="ch-testing.html#sec:plargerthannull"><i class="fa fa-check"></i><b>13.3</b> <span class="math inline">\(p\)</span>-value is always larger than zero</a></li>
 <li class="chapter" data-level="13.4" data-path="ch-testing.html"><a href="ch-testing.html#sec:ttest-onesidedtwosided"><i class="fa fa-check"></i><b>13.4</b> One-sided and two-sided tests</a></li>
@@ -370,7 +397,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.5.1" data-path="ch-testing.html"><a href="ch-testing.html#sec:formulas13-2"><i class="fa fa-check"></i><b>13.5.1</b> formulas</a></li>
 <li class="chapter" data-level="13.5.2" data-path="ch-testing.html"><a href="ch-testing.html#spss-11"><i class="fa fa-check"></i><b>13.5.2</b> SPSS</a></li>
 <li class="chapter" data-level="13.5.3" data-path="ch-testing.html"><a href="ch-testing.html#jasp-11"><i class="fa fa-check"></i><b>13.5.3</b> JASP</a></li>
-<li class="chapter" data-level="13.5.4" data-path="ch-testing.html"><a href="ch-testing.html#r-12"><i class="fa fa-check"></i><b>13.5.4</b> R</a></li>
+<li class="chapter" data-level="13.5.4" data-path="ch-testing.html"><a href="ch-testing.html#r-13"><i class="fa fa-check"></i><b>13.5.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="13.6" data-path="ch-testing.html"><a href="ch-testing.html#sec:ttest-indep"><i class="fa fa-check"></i><b>13.6</b> Independent samples <span class="math inline">\(t\)</span>-tests</a>
 <ul>
@@ -393,7 +420,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.8.1" data-path="ch-testing.html"><a href="ch-testing.html#sec:formulas13-5"><i class="fa fa-check"></i><b>13.8.1</b> formulas</a></li>
 <li class="chapter" data-level="13.8.2" data-path="ch-testing.html"><a href="ch-testing.html#spss-13-2"><i class="fa fa-check"></i><b>13.8.2</b> SPSS</a></li>
 <li class="chapter" data-level="13.8.3" data-path="ch-testing.html"><a href="ch-testing.html#jasp-12"><i class="fa fa-check"></i><b>13.8.3</b> JASP</a></li>
-<li class="chapter" data-level="13.8.4" data-path="ch-testing.html"><a href="ch-testing.html#r-13"><i class="fa fa-check"></i><b>13.8.4</b> R</a></li>
+<li class="chapter" data-level="13.8.4" data-path="ch-testing.html"><a href="ch-testing.html#r-14"><i class="fa fa-check"></i><b>13.8.4</b> R</a></li>
 <li class="chapter" data-level="13.8.5" data-path="ch-testing.html"><a href="ch-testing.html#sec:confint-effectsize"><i class="fa fa-check"></i><b>13.8.5</b> Confidence interval of the effect size</a></li>
 </ul></li>
 </ul></li>
@@ -421,7 +448,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.3.5" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-posthoc"><i class="fa fa-check"></i><b>15.3.5</b> Post-hoc comparisons</a></li>
 <li class="chapter" data-level="15.3.6" data-path="ch-anova.html"><a href="ch-anova.html#spss-12"><i class="fa fa-check"></i><b>15.3.6</b> SPSS</a></li>
 <li class="chapter" data-level="15.3.7" data-path="ch-anova.html"><a href="ch-anova.html#jasp-13"><i class="fa fa-check"></i><b>15.3.7</b> JASP</a></li>
-<li class="chapter" data-level="15.3.8" data-path="ch-anova.html"><a href="ch-anova.html#r-14"><i class="fa fa-check"></i><b>15.3.8</b> R</a></li>
+<li class="chapter" data-level="15.3.8" data-path="ch-anova.html"><a href="ch-anova.html#r-15"><i class="fa fa-check"></i><b>15.3.8</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="15.4" data-path="ch-anova.html"><a href="ch-anova.html#two-way-analysis-of-variance"><i class="fa fa-check"></i><b>15.4</b> Two-way analysis of variance</a>
 <ul>
@@ -429,7 +456,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.4.2" data-path="ch-anova.html"><a href="ch-anova.html#a-formal-explanation"><i class="fa fa-check"></i><b>15.4.2</b> A formal explanation</a></li>
 <li class="chapter" data-level="15.4.3" data-path="ch-anova.html"><a href="ch-anova.html#spss-13"><i class="fa fa-check"></i><b>15.4.3</b> SPSS</a></li>
 <li class="chapter" data-level="15.4.4" data-path="ch-anova.html"><a href="ch-anova.html#jasp-14"><i class="fa fa-check"></i><b>15.4.4</b> JASP</a></li>
-<li class="chapter" data-level="15.4.5" data-path="ch-anova.html"><a href="ch-anova.html#r-15"><i class="fa fa-check"></i><b>15.4.5</b> R</a></li>
+<li class="chapter" data-level="15.4.5" data-path="ch-anova.html"><a href="ch-anova.html#r-16"><i class="fa fa-check"></i><b>15.4.5</b> R</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="16" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html"><i class="fa fa-check"></i><b>16</b> Chi-square-tests</a>
@@ -454,7 +481,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="16.8.3" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#contingency-tables-preparation-1"><i class="fa fa-check"></i><b>16.8.3</b> contingency tables: preparation</a></li>
 <li class="chapter" data-level="16.8.4" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#contingency-tables-testing-1"><i class="fa fa-check"></i><b>16.8.4</b> contingency tables: testing</a></li>
 </ul></li>
-<li class="chapter" data-level="16.9" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#r-16"><i class="fa fa-check"></i><b>16.9</b> R</a>
+<li class="chapter" data-level="16.9" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#r-17"><i class="fa fa-check"></i><b>16.9</b> R</a>
 <ul>
 <li class="chapter" data-level="16.9.1" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#goodness-of-fit-testing-2"><i class="fa fa-check"></i><b>16.9.1</b> goodness of fit: testing</a></li>
 <li class="chapter" data-level="16.9.2" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html#contingency-table-preparation-and-testing"><i class="fa fa-check"></i><b>16.9.2</b> contingency table: preparation and testing</a></li>
@@ -511,7 +538,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="sec:causality" class="section level2" number="5.2">
 <h2><span class="header-section-number">5.2</span> Causality</h2>
 <p>A causal relationship between two variables is distinct from ‘just’ a relationship or correlation between two variables. If two phenomena correlate with one another, one does not have to be the cause of the other. One example can be seen in the correlation between individuals height and their weight: tall people are, in general, heavier than short people (and vice versa: short people are generally lighter than tall people). Does this mean that we can speak of a causal relationship between height and weight? Is one property (partially) cause by the other? No: in this example, there is, indeed, a correlation, but no causal relationship between the properties: both height and weight are “caused” by other variables, including genetic properties and diet. A second example is the correlation between motivation and language ability in second language learners: highly motivated students learn to speak a new second language better and more fluently than those with low motivation do, but here, also, it is unclear which is the cause and which is the effect.</p>
-<p>A causal relationship is a specific type of correlation. A causal relationship is a correlation between two phenomena or properties, for which there are also certain additional requirements <span class="citation">(Shadish, Cook, and Campbell <a href="#ref-SCC02" role="doc-biblioref">2002</a>)</span>.
+<p>A causal relationship is a specific type of correlation. A causal relationship is a correlation between two phenomena or properties, for which there are also certain additional requirements <span class="citation">(<a href="#ref-SCC02" role="doc-biblioref">Shadish, Cook, and Campbell 2002</a>)</span>.
 Firstly, the cause has to precede the effect (it is after treatment that improvement occurs). Secondly, the effect should not occur if the cause is not there (no improvement without treatment).
 Moreover, the effect – at least, in theory – should always occur whenever the cause is present (treatment always results in improvement).
 Thirdly, we cannot find any plausible explanation for the effect’s occurrence, other than the possible cause we are considering. When we know the causal mechanism (we understand why treatment causes improvement), we are better able to exclude other plausible explanations. Unfortunately, however, this is very rarely the case in the behavioural sciences, which include linguistics. We do determine that a treatment results in improvement, but the theory that ties cause (treatment) and effect (improvement) together is rarely complete and has crucial gaps. This means that we must take appropriate precautionary measures in setting up our research methodology in order to exclude any possible alternative explanations of the effects we find.</p>
@@ -532,10 +559,10 @@ Thirdly, we cannot find any plausible explanation for the effect’s occurrence,
 <p>As you already know, it is our aim in an experimental study to exclude as many alternative explanations of our results as possible. After all, we must demonstrate that there is a causal relationship between two variables, X and Y, and this means keeping any confounding factors under control as much as possible. Let us take a look at example 5.1.</p>
 <hr />
 <blockquote>
-<p><em>Example 5.1</em>: <span class="citation">Verhoeven, De Pauw, and Kloots (<a href="#ref-Verh04" role="doc-biblioref">2004</a>)</span> investigated (among others) the hypothesis that older individuals (above 45 years old) speak more slowly than younger individuals (under 40 years old). To do this, they recorded speech from 160 speakers, divided equally between both age groups, in an interview that lasted about 15 minutes. After a phonetic analysis of their articulation rate, it turned out that the younger group spoke relatively fast at 4.78 syllables per second, while the older group spoke remarkably slower at 4.52 syllables per second <span class="citation">(Verhoeven, De Pauw, and Kloots <a href="#ref-Verh04" role="doc-biblioref">2004</a>, 302)</span>. We conclude that the latter group’s higher age is the <em>cause</em> of their lower rate of speaking – but is this conclusion justified?</p>
+<p><em>Example 5.1</em>: <span class="citation"><a href="#ref-Verh04" role="doc-biblioref">Verhoeven, De Pauw, and Kloots</a> (<a href="#ref-Verh04" role="doc-biblioref">2004</a>)</span> investigated (among others) the hypothesis that older individuals (above 45 years old) speak more slowly than younger individuals (under 40 years old). To do this, they recorded speech from 160 speakers, divided equally between both age groups, in an interview that lasted about 15 minutes. After a phonetic analysis of their articulation rate, it turned out that the younger group spoke relatively fast at 4.78 syllables per second, while the older group spoke remarkably slower at 4.52 syllables per second <span class="citation">(<a href="#ref-Verh04" role="doc-biblioref">Verhoeven, De Pauw, and Kloots 2004, 302</a>)</span>. We conclude that the latter group’s higher age is the <em>cause</em> of their lower rate of speaking – but is this conclusion justified?</p>
 </blockquote>
 <hr />
-<p>This question of a conclusion’s justification is a question about the study’s internal validity. Internal validity pertains to the relationships between variables that are measured or manipulated, and is not dependent on the (theoretical) constructs represented by the various variables (hence the name ‘internal validity’). In other words: the question of internal validity is one of possible alternative explanations of the research results that were found. Many of the possible alternative explanations can be pre-empted by the way in which the data are collected. In the following, we will discuss the most prominent threats to internal validity <span class="citation">(Shadish, Cook, and Campbell <a href="#ref-SCC02" role="doc-biblioref">2002</a>)</span>.</p>
+<p>This question of a conclusion’s justification is a question about the study’s internal validity. Internal validity pertains to the relationships between variables that are measured or manipulated, and is not dependent on the (theoretical) constructs represented by the various variables (hence the name ‘internal validity’). In other words: the question of internal validity is one of possible alternative explanations of the research results that were found. Many of the possible alternative explanations can be pre-empted by the way in which the data are collected. In the following, we will discuss the most prominent threats to internal validity <span class="citation">(<a href="#ref-SCC02" role="doc-biblioref">Shadish, Cook, and Campbell 2002</a>)</span>.</p>
 <ol style="list-style-type: decimal">
 <li><strong>History</strong> is a threat to internal validity. The concept of ‘history’ includes, among others, events that took place between (or during) pretest and posttest; here, ‘history’ refers to events that are not a part of an experimental manipulation (the independent variable), but that might influence the dependent variable. For instance, a heat wave can influence participants’ behaviour in a study.</li>
 </ol>
@@ -554,7 +581,7 @@ Thirdly, we cannot find any plausible explanation for the effect’s occurrence,
 </ol>
 <p>In many studies, observations are made both before a treatment and after. Identical tests could be used for this, but that might lead to a learning effect (see above). For this reason, researchers often use different tests between pretest and posttest. However, this might lead to an instrumentation effect. The researcher has to consider the possible advantages and disadvantages of each option.</p>
 <blockquote>
-<p><em>Example 5.3</em>: <span class="citation">Rijlaarsdam (<a href="#ref-Rijl86" role="doc-biblioref">1986</a>)</span> investigated the effect of peer evaluation on the quality of writing. The setup of his study was as follows (with some simplifications): first, students write an essay on topic A, followed by writing instruction that includes peer evaluation, after which the students write another essay – this time, on topic B. The writing done in the pretest and posttest is assessed, after which the researchers test whether average performance differs between both measurements.</p>
+<p><em>Example 5.3</em>: <span class="citation"><a href="#ref-Rijl86" role="doc-biblioref">Rijlaarsdam</a> (<a href="#ref-Rijl86" role="doc-biblioref">1986</a>)</span> investigated the effect of peer evaluation on the quality of writing. The setup of his study was as follows (with some simplifications): first, students write an essay on topic A, followed by writing instruction that includes peer evaluation, after which the students write another essay – this time, on topic B. The writing done in the pretest and posttest is assessed, after which the researchers test whether average performance differs between both measurements.</p>
 </blockquote>
 <blockquote>
 <p>In this study, it is not only the intervention (writing instruction) that forms a clear difference between the pretest and posttest: the writing assignment’s topic (A or B) differs, as well. It is doubtful whether both writing assignments measure the same thing. This difference of instrumentation threatens internal validity because it may well be that, at different moments, a (partially) different aspect of writing ability was measured. Instrumentation (here: the difference between the writing assignments’ topics) provides a plausible alternative explanation for the difference in writing ability, which may add to or replace the explanation given by the independent variable (here: the writing instruction provided between measurements).</p>
@@ -568,7 +595,7 @@ Thirdly, we cannot find any plausible explanation for the effect’s occurrence,
 <p><em>Example 5.4</em>: There is some controversy about the use of illustrations in children’s books. Some argue that books used to teach children how to read should contain no illustrations (or as few as possible): illustrations distract the child from features of words they should be learning. Others argue that illustrations may provide essential information: illustrations serve as an additional source of information.</p>
 </blockquote>
 <blockquote>
-<p><span class="citation">Donald (<a href="#ref-Dona83" role="doc-biblioref">1983</a>)</span> investigated how illustrations influenced the understanding of a text. The researcher selected 120 students (of a student body of 1868) from the 1st and 3rd year of primary/elementary education; 60 from each year. According to their performance on a reading test administered earlier, it turned out that, of the 60 students in each year, 30 could be classified as strong readers, and 30 could be classified as less strong readers. Each student was shown the same text, either with or without illustrations (independent variable), see Table <a href="ch-validity.html#tab:designDona83">5.1</a>.</p>
+<p><span class="citation"><a href="#ref-Dona83" role="doc-biblioref">Donald</a> (<a href="#ref-Dona83" role="doc-biblioref">1983</a>)</span> investigated how illustrations influenced the understanding of a text. The researcher selected 120 students (of a student body of 1868) from the 1st and 3rd year of primary/elementary education; 60 from each year. According to their performance on a reading test administered earlier, it turned out that, of the 60 students in each year, 30 could be classified as strong readers, and 30 could be classified as less strong readers. Each student was shown the same text, either with or without illustrations (independent variable), see Table <a href="ch-validity.html#tab:designDona83">5.1</a>.</p>
 </blockquote>
 <blockquote>
 <p>The results turned out to mainly support the second hypothesis: illustrations improve the understanding of a text, even with inexperienced readers. The illustrated text was better understood by the less strong readers, and younger readers, too, showed improvement when illustrations were added.</p>
@@ -637,7 +664,7 @@ Thirdly, we cannot find any plausible explanation for the effect’s occurrence,
 </table>
 <p>So, what is wrong with this study? The answer to this question can be found in how students were selected. Readers were classified as ‘strong’ or ‘less strong’ based on a reading ability test, but their performance on this test are always influenced by random factors that have nothing to do with reading ability: Tom was not feeling well and did not perform well on the test, Sarah was not able to concentrate, Nick was having knee troubles, Julie was extraordinarily motivated and outdid herself. In other words: the assessment of reading ability was not entirely reliable. This means that (1) the less strong readers who happened to have performed above their level were unjustly classified as strong readers instead of as less strong readers; and, conversely, (2) strong readers who happened to have performed below their level were unjustly deemed to be less strong readers. Thus, the group of less strong readers will always contain some readers that are not that bad at all, and the group of strong readers will always contain a few that are not so strong, after all.</p>
 <p>When the actually-strong readers that were unjustly classified as non-strong readers are given a second reading test (after having studied a text with or without illustrations), they will typically go back to performance at their usual, higher level. This means that a higher score on the second test (the posttest) might be an artefact of the method of selection. The same is true, with the necessary changes, for the actually-less-strong readers that have unjustly been selected as strong readers. When these students are given a second reading test, they, too, will typically go back to performance at their usual (lower) level. Thus, their score on the posttest will be lower than their score on the pretest.</p>
-<p>For the study by <span class="citation">Donald (<a href="#ref-Dona83" role="doc-biblioref">1983</a>)</span> used as an example here, this means that the difference found between strong and less strong readers is partially due to randomness. Even if the independent variable has no effect, the group of ‘strong’ readers will, on average, perform worse, while the group of ‘less strong’ readers will, on average, perform better. In other words: the difference between the two groups is smaller during the posttest than during the pretest, as a consequence of random variation: regression to the mean. As you may expect, research results may be muddled by this phenomenon. As we saw above, an experimental effect may be weakened or disappear as a consequence of regression to the mean; conversely, regression to the mean can be misidentified as an experimental effect (for extensive discussion, see <span class="citation">Retraction Watch (<a href="#ref-RMP18" role="doc-biblioref">2018</a>)</span>).</p>
+<p>For the study by <span class="citation"><a href="#ref-Dona83" role="doc-biblioref">Donald</a> (<a href="#ref-Dona83" role="doc-biblioref">1983</a>)</span> used as an example here, this means that the difference found between strong and less strong readers is partially due to randomness. Even if the independent variable has no effect, the group of ‘strong’ readers will, on average, perform worse, while the group of ‘less strong’ readers will, on average, perform better. In other words: the difference between the two groups is smaller during the posttest than during the pretest, as a consequence of random variation: regression to the mean. As you may expect, research results may be muddled by this phenomenon. As we saw above, an experimental effect may be weakened or disappear as a consequence of regression to the mean; conversely, regression to the mean can be misidentified as an experimental effect (for extensive discussion, see <span class="citation"><a href="#ref-RMP18" role="doc-biblioref">Retraction Watch</a> (<a href="#ref-RMP18" role="doc-biblioref">2018</a>)</span>).</p>
 <p>Generally speaking, regression to the mean may occur when a classification is made based on a pretest whose scores are correlated with the scores on the posttest (see Chapter <a href="ch-correlation-regression.html#ch:correlation-regression">11</a>). If there is no correlation at all between pretest and posttest, regression to the mean even plays the main role: in this case, any difference between pretest and posttest must be the consequence of regression to the mean. If there is a perfect correlation, regression to the mean does not play a role, but the pretest is also not informative, since (after the fact) it turned out to be completely predictable from the posttest.</p>
 <p>Regression to the mean may offer an alternative explanation for an alleged substantial score increase between pretest and posttest for a lower performing group (e.g., less strong readers) compared to a smaller increase for a higher performing group (e.g., strong readers). Conversely, it might also offer an alternative explanation for an alleged score decrease between pretest and posttest for a higher performing group (e.g., strong readers) compared to a lower performing group (e.g., less strong readers).</p>
 <p>It is better when groups are <em>not</em> composed according to one of the measurements (pretest or posttest), but, instead, on the basis of on some other, independent criterion. In the latter case, the participants in both groups will have a more or less average score on the pretest, which minimizes the effect of regression to the mean. Each group will have about equal numbers of participants whose scores fell out too high by accident and those whose scores fell out too low, both on the pretest and the posttest.</p>
@@ -650,7 +677,7 @@ Thirdly, we cannot find any plausible explanation for the effect’s occurrence,
 </blockquote>
 <hr />
 <p>Research in education often does not provide the opportunity to randomly assign students in different classes to various conditions, because this may lead to insurmountable organizational problems. These organizational problems involve more than just (randomly) splitting classes, even though the latter may already be difficult to put into practice. The researcher also has to account for possible transfer effects between conditions: students will talk to one another, and might even teach each other the essential characteristics of the experimental condition(s). This is at least one way in which the absence of an effect could be explained. Because of the problems sketched out here, it often occurs that entire classes are assigned to one of the conditions. However, classes consist of students that go to the same school. When students (and their parents) choose a school, self-selection takes place (in the Dutch education system), which leads to differences between conditions (that is, between classes within conditions) in terms of students’ initial performance. This means that any differences we find between conditions could also have been caused by students’ self-selection of schools.</p>
-<p>In the above, we have already indicated the most straightforward way to give different conditions the same initial level: assign students to conditions by chance, or, at random. This method is known as randomization <span class="citation">(Shadish, Cook, and Campbell <a href="#ref-SCC02" role="doc-biblioref">2002</a>, 294 ff)</span>. For instance, we might randomize participants’ assignment to conditions by giving each student a random number (see Appendix <a href="app-randomnumbers.html#app:randomnumbers">A</a>)), and then assigning ‘even students’ to one condition and ‘odd students’, to the other. If participants are randomly assigned to conditions, all differences between participants within the various conditions are based on chance, and are thus averaged out. In this way, it is most likely that there are no systematic differences between the groups or conditions distinguished. However, this is only true if the groups are sufficiently large.</p>
+<p>In the above, we have already indicated the most straightforward way to give different conditions the same initial level: assign students to conditions by chance, or, at random. This method is known as randomization <span class="citation">(<a href="#ref-SCC02" role="doc-biblioref">Shadish, Cook, and Campbell 2002, 294</a> ff)</span>. For instance, we might randomize participants’ assignment to conditions by giving each student a random number (see Appendix <a href="app-randomnumbers.html#app:randomnumbers">A</a>)), and then assigning ‘even students’ to one condition and ‘odd students,’ to the other. If participants are randomly assigned to conditions, all differences between participants within the various conditions are based on chance, and are thus averaged out. In this way, it is most likely that there are no systematic differences between the groups or conditions distinguished. However, this is only true if the groups are sufficiently large.</p>
 <p><em>Randomization</em>, or random assignment of participants to conditions, is to be distinguished from random sampling from a population (see §<a href="ch-samples.html#sec:random-samples">7.3</a>) below). In the case of random sampling, we randomly select participants from the population of possible participants to be included in our sample; our goal in this case is that the sample(s) resemble the population from which they are drawn (it is drawn). In the case of randomization, we randomly assign the participants within the sample to the various conditions in the study; our goal in this case is that the samples resemble each other.</p>
 <p>One alternative method to create two equal groups is <em>matching</em>. In the case of matching, participants are first measured on a number of relevant variables. After this, pairs are formed that have an equal score on these variables. Within each pair, one participant is assigned to one condition, and the other, to the other condition. However, matching has various drawbacks. Firstly, regression to the mean might play a role. Secondly, matching is very labour-intensive when participants have to be matched on multiple variables, and it requires a sizeable group of potential participants. Thirdly matching only reckons with variables that the researcher deems relevant, but not with other, unknown variables. Randomization does not only randomize these relevant variables, but also other properties that might potentially play a role without the researcher’s realizing this. In short, randomization, even if it is relatively simple, is far preferable to matching.</p>
 <ol start="6" style="list-style-type: decimal">
@@ -663,7 +690,7 @@ Thirdly, we cannot find any plausible explanation for the effect’s occurrence,
 <p>In an experimental study, an independent variable is manipulated. Depending on the research question, this may be done in many different ways. In the same manner, the way in which the dependent variable(s) is/are measured may take different shapes. The way in which the independent and dependent variables are formulated is called these variables’ <em>operationalization</em>. For instance, students’ reading ability may be operationalized as (a) their score on a reading comprehension test with open-ended questions; (b) their score on a reading comprehension test with multiple choice questions; (c) their score on a so-called cloze test (fill in the missing word); or (d) as the degree to which students can execute written instructions. In most cases, there are quite a few ways to operationalize a variable, and it is rarely the case that a theory would entail just one possible description for the way the independent or dependent variables must be operationalized. <em>Construct validity</em>, or <em>concept validity</em>, refers to the degree to which the operationalization of both the dependent variable(s) and the independent variable(s) adequately mirrors the theoretical constructs that the study focuses on. In other words: are the independent and dependent variables properly related to the theoretical concepts the study focuses on?</p>
 <hr />
 <blockquote>
-<p><em>Example 5.6</em>: Infants’ and toddlers’ language development is difficult to observe, especially in the case of auditory and perceptual development in these participants, who can barely speak, if at all. One often used method is the Head Turn Preference Paradigm <span class="citation">(Johnson and Zamuner <a href="#ref-John10" role="doc-biblioref">2010</a>)</span>. In this method, each trial starts by having the infant look at a green flashing light straight ahead. Once a child’s attention has thus been captured, the green light is extinguished, and a red light starts flashing at the participant’s left or right hand side. The child turns their head to be able to see the flashing light. A sound file containing speech is then played on a loudspeaker placed next to this peripheral flashing light. The dependent variable is the period of time during which the child keeps looking to the side (with less than 2 seconds of interruption). After this, a new trial is started. The time spent looking at the light is interpreted as indicating the degree to which the child prefers the spoken stimulus.</p>
+<p><em>Example 5.6</em>: Infants’ and toddlers’ language development is difficult to observe, especially in the case of auditory and perceptual development in these participants, who can barely speak, if at all. One often used method is the Head Turn Preference Paradigm <span class="citation">(<a href="#ref-John10" role="doc-biblioref">Johnson and Zamuner 2010</a>)</span>. In this method, each trial starts by having the infant look at a green flashing light straight ahead. Once a child’s attention has thus been captured, the green light is extinguished, and a red light starts flashing at the participant’s left or right hand side. The child turns their head to be able to see the flashing light. A sound file containing speech is then played on a loudspeaker placed next to this peripheral flashing light. The dependent variable is the period of time during which the child keeps looking to the side (with less than 2 seconds of interruption). After this, a new trial is started. The time spent looking at the light is interpreted as indicating the degree to which the child prefers the spoken stimulus.</p>
 </blockquote>
 <blockquote>
 <p>However, interpreting the looking times obtained is difficult, because children sometimes prefer new sound stimuli (e.g., sentences in an unknown language) and sometimes prefer familiar stimuli (e.g., grammatical vs. ungrammatical sentences). Even when the stimuli have been carefully adjusted to the participant’s level of development, it is still difficult to relate the dependent variable (looking time) to the intended theoretical construct (the child’s preference).</p>
@@ -687,11 +714,11 @@ d. Alexander Graham Bell <em>(general background)</em><br />
 <p>Of course, the problems with construct validity mentioned above arise not only for written questions or multiple choice questions, but also for questions one might ask participants orally.</p>
 <hr />
 <blockquote>
-<p><em>Example 5.8</em>: If we orally ask parents the question, How often do you read to your child?, this question in itself suggests to them that it is desirable to read to one’s child, and parents might overestimate how often they do this. This means that we are not only measuring the construct of ‘behaviour around reading to one’s child’, but also the construct of ‘propensity towards socially desirable answers’ (see below).</p>
+<p><em>Example 5.8</em>: If we orally ask parents the question, How often do you read to your child?, this question in itself suggests to them that it is desirable to read to one’s child, and parents might overestimate how often they do this. This means that we are not only measuring the construct of ‘behaviour around reading to one’s child,’ but also the construct of ‘propensity towards socially desirable answers’ (see below).</p>
 </blockquote>
 <hr />
-<p>A construct that is notably difficult to operationalize is that of <em>writing ability</em>. What is a good or bad product of writing? And what exactly is writing ability? Can writing ability be measured by counting relevant content elements in a text, should we count sentences or words, or perhaps mainly connectives (<em>therefore, because, since, although</em>, etc.), should we collect multiple judgments that readers have about the written text (regarding goal-orientedness, audience-orientedness, and style), or should we collect a single judgment from readers regarding the text’s global quality, should we count spelling errors, etc? The operationalization problems arise from the lack of a theory of writing ability, from which we might derive a definition of the quality of writing products <span class="citation">(Van den Bergh and Meuffels <a href="#ref-BM93" role="doc-biblioref">1993</a>)</span>. This makes it easy to criticize research into writing quality, but makes it difficult to formulate alternative operationalizations of the construct.</p>
-<p>Another difficult construct is the <em>intelligibility</em> of a spoken sentence. Intelligibility may be operationalized in various ways. The first option is that the researcher speak the words or sentences in question, and the participant repeat them out loud, with errors in reproduction being counted; one disadvantage of this is that there is hardly any control over the researcher’s model pronunciation. A second option is that the words or sentences be recorded in advance and the same procedure be followed for the rest; one disadvantage that remains is that responses are influenced by world knowledge, grammatical expectations, familiarity with the speaker or their use of language, etc. The most reliable method is that of the so-called ‘speech reception threshold’ <span class="citation">(Plomp and Mimpen <a href="#ref-Plomp79" role="doc-biblioref">1979</a>)</span>, which is described in the next example. However, this method does have the disadvantages of being time-consuming, being difficult to administer automatically, and requiring a great amount of stimulus material (speech recordings) for a single measurement.</p>
+<p>A construct that is notably difficult to operationalize is that of <em>writing ability</em>. What is a good or bad product of writing? And what exactly is writing ability? Can writing ability be measured by counting relevant content elements in a text, should we count sentences or words, or perhaps mainly connectives (<em>therefore, because, since, although</em>, etc.), should we collect multiple judgments that readers have about the written text (regarding goal-orientedness, audience-orientedness, and style), or should we collect a single judgment from readers regarding the text’s global quality, should we count spelling errors, etc? The operationalization problems arise from the lack of a theory of writing ability, from which we might derive a definition of the quality of writing products <span class="citation">(<a href="#ref-BM93" role="doc-biblioref">Van den Bergh and Meuffels 1993</a>)</span>. This makes it easy to criticize research into writing quality, but makes it difficult to formulate alternative operationalizations of the construct.</p>
+<p>Another difficult construct is the <em>intelligibility</em> of a spoken sentence. Intelligibility may be operationalized in various ways. The first option is that the researcher speak the words or sentences in question, and the participant repeat them out loud, with errors in reproduction being counted; one disadvantage of this is that there is hardly any control over the researcher’s model pronunciation. A second option is that the words or sentences be recorded in advance and the same procedure be followed for the rest; one disadvantage that remains is that responses are influenced by world knowledge, grammatical expectations, familiarity with the speaker or their use of language, etc. The most reliable method is that of the so-called ‘speech reception threshold’ <span class="citation">(<a href="#ref-Plomp79" role="doc-biblioref">Plomp and Mimpen 1979</a>)</span>, which is described in the next example. However, this method does have the disadvantages of being time-consuming, being difficult to administer automatically, and requiring a great amount of stimulus material (speech recordings) for a single measurement.</p>
 <hr />
 <blockquote>
 <p><em>Example 5.9</em>: We present a list of 13 spoken sentences masked with noise. The speech-to-noise ratio (SNR) is expressed in dB. A SNR of 0 dB means that speech and noise are equally loud, a SNR of +3 dB means that the speech is 3 dB <em>louder</em> than the noise, while a SNR of -2 dB means that the speech is 2 dB <em>less loud</em> than the noise, etc. After each sentence, the listener has to repeat the sentence he or she just heard. If this is done correctly, then the SNR for the next sentence is decreased by 2 dB (less speech, more noise); if the response had a error, the SNR for the next sentence is increased by 2 dB (more speech, less noise). After a few sentences, we see little variation in the SNR, which starts swinging back and forth around an optimal value. The average SNR over the last 10 sentences played to the participant is the so-called ‘speech reception threshold’ (SRT). This SRT may also be interpreted as the SNR under which half of the sentences was understood correctly.</p>
@@ -707,7 +734,7 @@ d. Alexander Graham Bell <em>(general background)</em><br />
 <p>Thus, we observe the Hawthorne effect when a change in behaviour does not correlate with the manipulation of any independent variable, but this change in behaviour is the consequence of a psychological phenomenon: participants who know they are being observed are more eager to show (what they think is) the desired behaviour.</p>
 <hr />
 <blockquote>
-<p><em>Example 5.11</em>: <span class="citation">Richardson et al. (<a href="#ref-RDCPW78" role="doc-biblioref">1978</a>)</span> compared the effectiveness of two methods for improving reading ability in less strong readers. Students were selected based on their scores on three tests. The 72 students selected were randomly assigned to one of two method conditions (structured teaching of reading skills versus programmed instruction). In the first condition, the structured teaching was delivered by four instructors, who taught a small group (of four students). This, in fact, leads to a student-teacher of 1 : 1. In the second condition (programmed instruction), the teachers left the students to their own devices as much as possible. The experiment ran for 75 sessions of 45 minutes each. After the second observation, it turned out that the students who were taught according to the first (structured) method had made more progress than the students taught using the second method (programmed instruction).</p>
+<p><em>Example 5.11</em>: <span class="citation"><a href="#ref-RDCPW78" role="doc-biblioref">Richardson et al.</a> (<a href="#ref-RDCPW78" role="doc-biblioref">1978</a>)</span> compared the effectiveness of two methods for improving reading ability in less strong readers. Students were selected based on their scores on three tests. The 72 students selected were randomly assigned to one of two method conditions (structured teaching of reading skills versus programmed instruction). In the first condition, the structured teaching was delivered by four instructors, who taught a small group (of four students). This, in fact, leads to a student-teacher of 1 : 1. In the second condition (programmed instruction), the teachers left the students to their own devices as much as possible. The experiment ran for 75 sessions of 45 minutes each. After the second observation, it turned out that the students who were taught according to the first (structured) method had made more progress than the students taught using the second method (programmed instruction).</p>
 </blockquote>
 <blockquote>
 <p>So far, there are no problems with this study. However, a problem does arise if we concluded that the structured method is better than the programmed instruction. An alternative explanation, one that cannot be excluded in this study, is that the effect found does not (exclusively) follow from the method used, but (also) from the greater individual attention in the first condition (structured teaching).</p>
@@ -723,20 +750,20 @@ d. Alexander Graham Bell <em>(general background)</em><br />
 </ol>
 <hr />
 <blockquote>
-<p><em>Example 5.12</em>: Clever Hans (in German: Kluger Hans) was a horse with alleged arithmetic skills. When Clever Hans was asked, <em>how much is 4 + 4?</em>, the horse stomped its right front hoof 8 times, and when asked, <em>how much is 3 – 1?</em>, Hans stomped his front hoof twice. Clever Hans caused quite a stir and became the object of various studies. In 1904, a committee determined that Clever Hans was, indeed, able to do arithmetic (and communicate with humans). Later, however, Carl Stumpf, a member of the research committee, together with his assistant, Oskar Pfungst, established that “the horse fails to solve the problem posed when the solution is not known to any of those present” <span class="citation">(Pfungst <a href="#ref-Pfung07" role="doc-biblioref">1907</a>, 185, vert. AN)</span>, or when the horse cannot see the person who does know the solution. “Thus, [the horse] required optical help” (idem). After careful observation, it turned out that Clever Hans’ owner (and any other people present) showed very slight signs of relaxation as soon as Hans had stomped his right front leg the correct number of times. This unintentional sign was a sufficient incentive for Clever Hans to stop stomping (i.e., to keep his front hoof down), in order to receive his reward of carrots and bread <span class="citation">(Pfungst <a href="#ref-Pfung07" role="doc-biblioref">1907</a>)</span> <span class="citation">(Watzlawick <a href="#ref-Watz77" role="doc-biblioref">1977</a>, 38–47)</span>.</p>
+<p><em>Example 5.12</em>: Clever Hans (in German: Kluger Hans) was a horse with alleged arithmetic skills. When Clever Hans was asked, <em>how much is 4 + 4?</em>, the horse stomped its right front hoof 8 times, and when asked, <em>how much is 3 – 1?</em>, Hans stomped his front hoof twice. Clever Hans caused quite a stir and became the object of various studies. In 1904, a committee determined that Clever Hans was, indeed, able to do arithmetic (and communicate with humans). Later, however, Carl Stumpf, a member of the research committee, together with his assistant, Oskar Pfungst, established that “the horse fails to solve the problem posed when the solution is not known to any of those present” <span class="citation">(<a href="#ref-Pfung07" role="doc-biblioref">Pfungst 1907, 185</a>, vert. AN)</span>, or when the horse cannot see the person who does know the solution. “Thus, [the horse] required optical help” (idem). After careful observation, it turned out that Clever Hans’ owner (and any other people present) showed very slight signs of relaxation as soon as Hans had stomped his right front leg the correct number of times. This unintentional sign was a sufficient incentive for Clever Hans to stop stomping (i.e., to keep his front hoof down), in order to receive his reward of carrots and bread <span class="citation">(<a href="#ref-Pfung07" role="doc-biblioref">Pfungst 1907</a>)</span> <span class="citation">(<a href="#ref-Watz77" role="doc-biblioref">Watzlawick 1977, 38–47</a>)</span>.</p>
 </blockquote>
 <blockquote>
-<p>A more recent, perhaps comparable case is that of Alex, a parrot with extraordinary cognitive skills, see, a.o., <span class="citation">Boswall (<a href="#ref-BLLB14" role="doc-biblioref">n.d.</a>)</span> and <span class="citation">(“Alex Foundation” <a href="#ref-Alex15" role="doc-biblioref">2015</a>)</span>.</p>
+<p>A more recent, perhaps comparable case is that of Alex, a parrot with extraordinary cognitive skills, see, a.o., <span class="citation"><a href="#ref-BLLB14" role="doc-biblioref">Boswall</a> (<a href="#ref-BLLB14" role="doc-biblioref">z.j.</a>)</span> and <span class="citation"><a href="#ref-Alex15" role="doc-biblioref"><span>“<span>A</span>lex <span>F</span>oundation”</span></a> (<a href="#ref-Alex15" role="doc-biblioref">2015</a>)</span>.</p>
 </blockquote>
 <hr />
-<p>This famous example illustrates how subtle a researcher’s or experimenter’s<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a> influence on the object of study can be. It goes without saying that this influence threatens construct validity. For this reason, it is better when the researcher does not also function as the experimenter. Studies in which the researcher also is the one who administers the treatment or teaches the students or judges performance may be criticized, because researcher (and their expectations) may influence the outcome, which threatens the independent variable’s construct validity. Researchers may, however, defend themselves against this ‘experimenter bias’. For instance, in the Head Turn Preference Paradigm (example 5.6), it is customary that the experimenter does not know which group a participant belongs to, and does not hear which sound file is being played <span class="citation">(Johnson and Zamuner <a href="#ref-John10" role="doc-biblioref">2010</a>, 74)</span>.</p>
+<p>This famous example illustrates how subtle a researcher’s or experimenter’s<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a> influence on the object of study can be. It goes without saying that this influence threatens construct validity. For this reason, it is better when the researcher does not also function as the experimenter. Studies in which the researcher also is the one who administers the treatment or teaches the students or judges performance may be criticized, because researcher (and their expectations) may influence the outcome, which threatens the independent variable’s construct validity. Researchers may, however, defend themselves against this ‘experimenter bias.’ For instance, in the Head Turn Preference Paradigm (example 5.6), it is customary that the experimenter does not know which group a participant belongs to, and does not hear which sound file is being played <span class="citation">(<a href="#ref-John10" role="doc-biblioref">Johnson and Zamuner 2010, 74</a>)</span>.</p>
 <ol start="3" style="list-style-type: decimal">
 <li><p>Another threat to construct validity may be summarized by the term <strong>motivation</strong>. There are at least two facets to the validity threat of motivation. If (at least) one of the conditions in a study is very taxing or unpleasant, participants may lose motivation and put in less effort into their tasks. Their performance will be less strong, but this is an effect of (a lack of) motivation, rather than a direct effect of the independent variable (here: condition). This means that the effect is not necessarily caused by manipulation of the intended construct, but may (also) be caused by unintentional manipulation of participants’ <em>motivation.</em> The opposite situation could, of course, also be a threat to construct validity. If one of the conditions is particularly motivating for the participants, any potential effect may be attributed to matters of motivation. In this case, we may also be looking at an effect of an unintentionally manipulated variable.</p></li>
-<li><p>Yet another threat to validity has to do with the choice of the range of values of an independent variable, i.e., its <strong>‘dosage’</strong>, that will be considered. If the independent variable is ‘the number of times participants are allowed to read a poem silently before reading it aloud’, the researcher has to determine which values of the variable will be included: one time, two, three times, more times? If the independent variable is ‘the time participants may spend studying’, the researcher must choose how long each group of participants will be allowed to study: five minutes, fifteen minutes, two hours? The researcher makes a choice out of the possible dosages of the independent variable, ‘study time’. On the basis of this dosage, the researcher might conclude that the dependent variable is not influenced by the independent variable. In fact, however, the researcher should conclude that there seems to be no correlation between the dependent variable and the <em>chosen dosage of</em> the independent variable. A possible effect might be concealed by the choice of dosage (values) of the independent variable.</p></li>
+<li><p>Yet another threat to validity has to do with the choice of the range of values of an independent variable, i.e., its <strong>‘dosage’</strong>, that will be considered. If the independent variable is ‘the number of times participants are allowed to read a poem silently before reading it aloud,’ the researcher has to determine which values of the variable will be included: one time, two, three times, more times? If the independent variable is ‘the time participants may spend studying,’ the researcher must choose how long each group of participants will be allowed to study: five minutes, fifteen minutes, two hours? The researcher makes a choice out of the possible dosages of the independent variable, ‘study time.’ On the basis of this dosage, the researcher might conclude that the dependent variable is not influenced by the independent variable. In fact, however, the researcher should conclude that there seems to be no correlation between the dependent variable and the <em>chosen dosage of</em> the independent variable. A possible effect might be concealed by the choice of dosage (values) of the independent variable.</p></li>
 </ol>
 <hr />
 <blockquote>
-<p><em>Example 5.12</em>: If a passenger car and a pedestrian collide, there is a risk of this being fatal to the pedestrian. This risk of pedestrian fatality is relatively small (less than 20%) when the speed of collision is smaller than about 50 km/h (about 31 mph). If we limited our research into the relationship between speed of collision and risk of pedestrian fatality to such small ‘dosages’ of collision speed, we might conclude that collision speed has no influence on the risk of pedestrian fatality. This would be an erroneous conclusion (which type of error?), because, at higher speeds of collision, the risk of pedestrian fatality increases to almost 100% <span class="citation">(Rosén, Stigson, and Sander <a href="#ref-Rosen11" role="doc-biblioref">2011</a>; SWOV <a href="#ref-SWOV12" role="doc-biblioref">2012</a>)</span>.</p>
+<p><em>Example 5.12</em>: If a passenger car and a pedestrian collide, there is a risk of this being fatal to the pedestrian. This risk of pedestrian fatality is relatively small (less than 20%) when the speed of collision is smaller than about 50 km/h (about 31 mph). If we limited our research into the relationship between speed of collision and risk of pedestrian fatality to such small ‘dosages’ of collision speed, we might conclude that collision speed has no influence on the risk of pedestrian fatality. This would be an erroneous conclusion (which type of error?), because, at higher speeds of collision, the risk of pedestrian fatality increases to almost 100% <span class="citation">(<a href="#ref-Rosen11" role="doc-biblioref">Rosén, Stigson, and Sander 2011</a>; <a href="#ref-SWOV12" role="doc-biblioref">SWOV 2012</a>)</span>.</p>
 </blockquote>
 <hr />
 <ol start="5" style="list-style-type: decimal">
@@ -757,7 +784,7 @@ for a design that takes this possibility into account).</li>
 </ol>
 <hr />
 <blockquote>
-<p><em>Example 5.15</em>: In opinion polls before elections, respondents are prone to giving socially desirable answers, which is also true for the question of whether the respondent is planning on actually casting their vote <span class="citation">(Karp and Brockington <a href="#ref-Karp05" role="doc-biblioref">2005</a>)</span>. Respondents show a stronger inclination towards the socially desirable answer (“yes, I will vote”) with increasing level of education, which leads to overestimation of the turnout rate for higher-educated voters compared to lower-educated ones. This, in turn, has consequences for the poll results for the various parties, because political parties’ popularity differs between voters of different levels of education.</p>
+<p><em>Example 5.15</em>: In opinion polls before elections, respondents are prone to giving socially desirable answers, which is also true for the question of whether the respondent is planning on actually casting their vote <span class="citation">(<a href="#ref-Karp05" role="doc-biblioref">Karp and Brockington 2005</a>)</span>. Respondents show a stronger inclination towards the socially desirable answer (“yes, I will vote”) with increasing level of education, which leads to overestimation of the turnout rate for higher-educated voters compared to lower-educated ones. This, in turn, has consequences for the poll results for the various parties, because political parties’ popularity differs between voters of different levels of education.</p>
 </blockquote>
 <hr />
 <p>This effect was partially responsible for the overestimation of the number of Clinton votes and underestimation of the number of Trump votes in the opinion polls prior to the 2016 US presidential election.</p>
@@ -769,7 +796,7 @@ for a design that takes this possibility into account).</li>
 <div id="sec:externalvalidity" class="section level2" number="5.6">
 <h2><span class="header-section-number">5.6</span> External validity</h2>
 <p>Based on the data collected, a researcher – barring any unexpected problems – may draw the conclusion: <em>in this study, XYZ is true</em>. However, it is rarely a researcher’s goal to draw conclusions that are true just for one study. A researcher would not just like to show that being bilingual has a positive influence on language development <em>in the sample of children studied</em>. A researcher would like to draw conclusions such as: being bilingual has a positive influence on language development <em>in children</em>. The researcher would like to generalize. The same holds for daily life: we might taste a single spoonful of soup from an entire pot, and then express a judgment on the entire pot of soup. We assume that our findings based on the one spoonful may be generalized to the entire pot, and that it is not necessary to eat the entire pot before we can form a judgment.</p>
-<p>The question of whether a researcher may generalize their results is the question of a study’s external validity <span class="citation">(Shadish, Cook, and Campbell <a href="#ref-SCC02" role="doc-biblioref">2002</a>)</span>. The aspects of a study generalization pertains to include:</p>
+<p>The question of whether a researcher may generalize their results is the question of a study’s external validity <span class="citation">(<a href="#ref-SCC02" role="doc-biblioref">Shadish, Cook, and Campbell 2002</a>)</span>. The aspects of a study generalization pertains to include:</p>
 <ul>
 <li><p>units: are the results also true for other elements (e.g., schools, individuals, texts) from the population that did not take part in the study?</p></li>
 <li><p>treatment: are the results also true for other types of treatment that are similar to the specific conditions in this study?</p></li>
@@ -779,7 +806,7 @@ for a design that takes this possibility into account).</li>
 <p>For external validity, we distinguish between (1) generalization <em>to</em> a specific intended population, situation, and time, and (2) generalization <em>over</em> other populations, situations, and times. Generalizing <em>to</em> and <em>over</em> are two aspects of external validity that must be carefully separated. Generalizing <em>to</em> a population (of individuals, or often, of language material) has to do with how representative the sample used is: to which extent does the sample properly mirror the population (of individuals, words, or relevant possible sentences)? Thus, “generalizing to” is tied directly to the goals of the study; a study’s goals cannot be reached unless it is possible to generalize to the populations defined. Generalizing <em>over</em> populations has to do with the degree to which the conclusions we formulate are true for sub-populations we may recognize. Let us illustrate this with an example.</p>
 <hr />
 <blockquote>
-<p><em>Example 5.16</em>: <span class="citation">Lev-Ari and Keysar (<a href="#ref-LevA10" role="doc-biblioref">2010</a>)</span> looked into whether listeners found speakers with a foreign accent in their English pronunciation to be less credible. The stimuli were made by having speakers with no accent, a light accent, or a strong accent pronounce various sentences (e.g., <em>A giraffe can hold more water than a camel</em>). Listeners (all native speakers of English) indicated to which extent they thought the sentence was true. The results showed that the listeners judged the sentences to be true to a lesser extent when the sentence had been spoken by a speaker with a stronger foreign accent.</p>
+<p><em>Example 5.16</em>: <span class="citation"><a href="#ref-LevA10" role="doc-biblioref">Lev-Ari and Keysar</a> (<a href="#ref-LevA10" role="doc-biblioref">2010</a>)</span> looked into whether listeners found speakers with a foreign accent in their English pronunciation to be less credible. The stimuli were made by having speakers with no accent, a light accent, or a strong accent pronounce various sentences (e.g., <em>A giraffe can hold more water than a camel</em>). Listeners (all native speakers of English) indicated to which extent they thought the sentence was true. The results showed that the listeners judged the sentences to be true to a lesser extent when the sentence had been spoken by a speaker with a stronger foreign accent.</p>
 </blockquote>
 <hr />
 <p>We may assume that this outcome can be generalized <em>to</em> the intended population, namely, all native listeners of American English. This generalization can be made despite the possibility that various listeners were perhaps influenced by the speaker’s foreign accent to different degrees.</p>
@@ -789,57 +816,57 @@ for a design that takes this possibility into account).</li>
 </div>
 </div>
 <h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-Alex15">
-<p>“Alex Foundation.” 2015. <a href="http://alexfoundation.org/">http://alexfoundation.org/</a>.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Alex15" class="csl-entry">
+<span>“<span>A</span>lex <span>F</span>oundation.”</span> 2015. <a href="http://alexfoundation.org/">http://alexfoundation.org/</a>.
 </div>
-<div id="ref-BLLB14">
-<p>Boswall, Jeffery. n.d. “Alex, the Talking Parrot.” British Library. <a href="http://www.bl.uk/listentonature/specialinterestlang/langofbirds14.html">http://www.bl.uk/listentonature/specialinterestlang/langofbirds14.html</a>.</p>
+<div id="ref-BLLB14" class="csl-entry">
+Boswall, Jeffery. z.j. <span>“Alex, the Talking Parrot.”</span> British Library. <a href="http://www.bl.uk/listentonature/specialinterestlang/langofbirds14.html">http://www.bl.uk/listentonature/specialinterestlang/langofbirds14.html</a>.
 </div>
-<div id="ref-Dona83">
-<p>Donald, D. R. 1983. “THE Use and Value of Illustrations as Contextual Information for Readers at Different Progress and Developmental Levels.” <em>British Journal of Educational Psychology</em> 53 (2): 175–85.</p>
+<div id="ref-Dona83" class="csl-entry">
+Donald, D. R. 1983. <span>“THE USE AND VALUE OF ILLUSTRATIONS AS CONTEXTUAL INFORMATION FOR READERS AT DIFFERENT PROGRESS AND DEVELOPMENTAL LEVELS.”</span> <em>British Journal of Educational Psychology</em> 53 (2): 175–85.
 </div>
-<div id="ref-John10">
-<p>Johnson, Elizabeth K., and Tania Zamuner. 2010. “Using Infant and Toddler Testing Methods in Language Acquisition Research.” In <em>Experimental Methods in Language Acquisition Research</em>, edited by Elma Blom and Sharon Unsworth, 73–93. Amsterdam: John Benjamins.</p>
+<div id="ref-John10" class="csl-entry">
+Johnson, Elizabeth K., and Tania Zamuner. 2010. <span>“Using Infant and Toddler Testing Methods in Language Acquisition Research.”</span> In <em>Experimental Methods in Language Acquisition Research</em>, edited by Elma Blom and Sharon Unsworth, 73–93. Amsterdam: John Benjamins.
 </div>
-<div id="ref-Karp05">
-<p>Karp, J. A., and D. Brockington. 2005. “Social Desirability and Response Validity: A Comparative Analysis of Overreporting Voter Turnout in Five Countries.” <em>Journal of Politics</em> 67 (3): 825–40.</p>
+<div id="ref-Karp05" class="csl-entry">
+Karp, J. A., and D. Brockington. 2005. <span>“Social Desirability and Response Validity: A Comparative Analysis of Overreporting Voter Turnout in Five Countries.”</span> <em>Journal of Politics</em> 67 (3): 825–40.
 </div>
-<div id="ref-LevA10">
-<p>Lev-Ari, Shiri, and Boaz Keysar. 2010. “Why Don’t We Believe Non-Native Speakers? The Influence of Accent on Credibility.” <em>Journal of Experimental Social Psychology</em> 46 (6): 1093–6.</p>
+<div id="ref-LevA10" class="csl-entry">
+Lev-Ari, Shiri, and Boaz Keysar. 2010. <span>“Why Don’t We Believe Non-Native Speakers? <span>T</span>he Influence of Accent on Credibility.”</span> <em>Journal of Experimental Social Psychology</em> 46 (6): 1093–96.
 </div>
-<div id="ref-Pfung07">
-<p>Pfungst, Oskar. 1907. <em>Das Pferd Des Herrn von Osten (Der Kluge Hans): Ein Beitrag Zur Experimentellen Tier- Und Menschen-Psychologie</em>. Leipzig: J. A. Barth. <a href="https://archive.org/details/daspferddesherr00stumgoog">https://archive.org/details/daspferddesherr00stumgoog</a>.</p>
+<div id="ref-Pfung07" class="csl-entry">
+Pfungst, Oskar. 1907. <em>Das <span>P</span>ferd Des <span>H</span>errn von <span>O</span>sten (<span>D</span>er Kluge <span>H</span>ans): <span>E</span>in <span>B</span>eitrag Zur Experimentellen <span>T</span>ier- Und <span>M</span>enschen-<span>P</span>sychologie</em>. Leipzig: J. A. Barth. <a href="https://archive.org/details/daspferddesherr00stumgoog">https://archive.org/details/daspferddesherr00stumgoog</a>.
 </div>
-<div id="ref-Plomp79">
-<p>Plomp, R., and A. M. Mimpen. 1979. “Improving the Reliability of Testing the Speech Reception Threshold for Sentences.” <em>International Journal of Audiology</em> 18 (1): 43–52.</p>
+<div id="ref-Plomp79" class="csl-entry">
+Plomp, R., and A. M. Mimpen. 1979. <span>“Improving the Reliability of Testing the Speech Reception Threshold for Sentences.”</span> <em>International Journal of Audiology</em> 18 (1): 43–52.
 </div>
-<div id="ref-RMP18">
-<p>Retraction Watch. 2018. “The ‘Regression to the Mean Project:’ What Researchers Should Know About a Mistake Many Make.” <a href="http://retractionwatch.com/2018/10/30/the-regression-to-the-mean-project-what-researchers-should-know-about-a-mistake-many-make/">http://retractionwatch.com/2018/10/30/the-regression-to-the-mean-project-what-researchers-should-know-about-a-mistake-many-make/</a>.</p>
+<div id="ref-RMP18" class="csl-entry">
+Retraction Watch. 2018. <span>“The <span>‘Regression to the Mean Project:’</span> What Researchers Should Know about a Mistake Many Make.”</span> <a href="http://retractionwatch.com/2018/10/30/the-regression-to-the-mean-project-what-researchers-should-know-about-a-mistake-many-make/">http://retractionwatch.com/2018/10/30/the-regression-to-the-mean-project-what-researchers-should-know-about-a-mistake-many-make/</a>.
 </div>
-<div id="ref-RDCPW78">
-<p>Richardson, Ellis, Barbara DiBenedetto, Adolph Christ, Mark Press, and Bertrand G. Winsberg. 1978. “An Assessment of Two Methods for Remediating Reading Deficiencies.” <em>Reading Improvement</em> 15 (2): 82.</p>
+<div id="ref-RDCPW78" class="csl-entry">
+Richardson, Ellis, Barbara DiBenedetto, Adolph Christ, Mark Press, and Bertrand G. Winsberg. 1978. <span>“An Assessment of Two Methods for Remediating Reading Deficiencies.”</span> <em>Reading Improvement</em> 15 (2): 82.
 </div>
-<div id="ref-Rijl86">
-<p>Rijlaarsdam, G. 1986. “Effecten van Leerlingrespons Op Aspecten van Stelvaardigheid.” PhD thesis.</p>
+<div id="ref-Rijl86" class="csl-entry">
+Rijlaarsdam, G. 1986. <span>“Effecten van Leerlingrespons Op Aspecten van Stelvaardigheid.”</span> PhD thesis.
 </div>
-<div id="ref-Rosen11">
-<p>Rosén, Erik, Helena Stigson, and Ulrich Sander. 2011. “Literature Review of Pedestrian Fatality Risk as a Function of Car Impact Speed.” <em>Accident Analysis and Prevention</em> 43 (1): 25–33. <a href="http://dx.doi.org/10.1016/j.aap.2010.04.003">http://dx.doi.org/10.1016/j.aap.2010.04.003</a>.</p>
+<div id="ref-Rosen11" class="csl-entry">
+Rosén, Erik, Helena Stigson, and Ulrich Sander. 2011. <span>“Literature Review of Pedestrian Fatality Risk as a Function of Car Impact Speed.”</span> <em>Accident Analysis and Prevention</em> 43 (1): 25–33. <a href="http://dx.doi.org/10.1016/j.aap.2010.04.003">http://dx.doi.org/10.1016/j.aap.2010.04.003</a>.
 </div>
-<div id="ref-SCC02">
-<p>Shadish, William R., Thomas D. Cook, and Donald T. Campbell. 2002. <em>Experimental and Quasi-Experimental Designs for Generalized Causal Inference</em>. Belmont, CA: Wadsworth.</p>
+<div id="ref-SCC02" class="csl-entry">
+Shadish, William R., Thomas D. Cook, and Donald T. Campbell. 2002. <em>Experimental and Quasi-Experimental Designs for Generalized Causal Inference</em>. Belmont, CA: Wadsworth.
 </div>
-<div id="ref-SWOV12">
-<p>SWOV. 2012. “De Relatie Tussen Snelheid En Ongevallen.” SWOV. <a href="http://www.swov.nl/rapport/Factsheets/NL/Factsheet_Snelheid.pdf">http://www.swov.nl/rapport/Factsheets/NL/Factsheet_Snelheid.pdf</a>.</p>
+<div id="ref-SWOV12" class="csl-entry">
+SWOV. 2012. <span>“De Relatie Tussen Snelheid En Ongevallen.”</span> SWOV. <a href="http://www.swov.nl/rapport/Factsheets/NL/Factsheet_Snelheid.pdf">http://www.swov.nl/rapport/Factsheets/NL/Factsheet_Snelheid.pdf</a>.
 </div>
-<div id="ref-BM93">
-<p>Van den Bergh, Huub, and Bert Meuffels. 1993. “Schrijfvaardigheid.” In <em>Taalbeheersing Als Tekstwetenschap: Terreinen En Trends</em>, edited by A. Braet and J. Van de Gein. Dordrecht: ICG.</p>
+<div id="ref-BM93" class="csl-entry">
+Van den Bergh, Huub, and Bert Meuffels. 1993. <span>“Schrijfvaardigheid.”</span> In <em>Taalbeheersing Als Tekstwetenschap: Terreinen En Trends</em>, edited by A. Braet and J. Van de Gein. Dordrecht: ICG.
 </div>
-<div id="ref-Verh04">
-<p>Verhoeven, Jo, Guy De Pauw, and Hanne Kloots. 2004. “Speech Rate in a Pluricentric Language: A Comparison Between Dutch in Belgium and the Netherlands.” <em>Language and Speech</em> 47 (3): 297–308.</p>
+<div id="ref-Verh04" class="csl-entry">
+Verhoeven, Jo, Guy De Pauw, and Hanne Kloots. 2004. <span>“Speech Rate in a Pluricentric Language: A Comparison Between <span>D</span>utch in <span>B</span>elgium and the <span>N</span>etherlands.”</span> <em>Language and Speech</em> 47 (3): 297–308.
 </div>
-<div id="ref-Watz77">
-<p>Watzlawick, Paul. 1977. <em>Is “Werkelijk” Waar? Spraakverwarring, Zinsbegoocheling En Onvoorstelbare Werkelijkheid</em>. Deventer: Van Loghum Slaterus.</p>
+<div id="ref-Watz77" class="csl-entry">
+Watzlawick, Paul. 1977. <em>Is <span>‘Werkelijk’</span> Waar? <span>S</span>praakverwarring, Zinsbegoocheling En Onvoorstelbare Werkelijkheid</em>. Deventer: Van Loghum Slaterus.
 </div>
 </div>
 <div class="footnotes">
@@ -878,6 +905,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

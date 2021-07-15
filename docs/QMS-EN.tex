@@ -4,8 +4,8 @@
 %
 \documentclass[
 ]{book}
+\usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
@@ -80,7 +80,8 @@
 \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
 \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\usepackage{longtable,booktabs}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
 \makeatletter
@@ -114,12 +115,15 @@
   \thm@postskip=\thm@preskip
 }
 \makeatother
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
 
 \title{Quantitative Methods and Statistics}
 \author{true}
-\date{Version compiled 31 Mar 2021}
+\date{Version compiled 15 Jul 2021}
 
 \begin{document}
 \maketitle
@@ -362,20 +366,20 @@ Many empirical studies pursue the goal of establishing connections between (supp
 \begin{longtable}[]{@{}lll@{}}
 \caption{\label{tab:causeeffect} Possible causes and possible effects.}\tabularnewline
 \toprule
-Domain & Supposed cause & Supposed effect\tabularnewline
+Domain & Supposed cause & Supposed effect \\
 \midrule
 \endfirsthead
 \toprule
-Domain & Supposed cause & Supposed effect\tabularnewline
+Domain & Supposed cause & Supposed effect \\
 \midrule
 \endhead
-trade & outside temperature & units of ice cream sold\tabularnewline
-healthcare & type of treatment & degree of recovery\tabularnewline
-eduction & method of instruction & performance on test\tabularnewline
-language & age at which L2 learning satrts & degree of proficiency\tabularnewline
-education & class size & general performance in school\tabularnewline
-healthcare & altitude & rate of malaria infection\tabularnewline
-language & age & speaking rate (speech tempo)\tabularnewline
+trade & outside temperature & units of ice cream sold \\
+healthcare & type of treatment & degree of recovery \\
+eduction & method of instruction & performance on test \\
+language & age at which L2 learning satrts & degree of proficiency \\
+education & class size & general performance in school \\
+healthcare & altitude & rate of malaria infection \\
+language & age & speaking rate (speech tempo) \\
 \bottomrule
 \end{longtable}
 
@@ -556,22 +560,22 @@ Each form of testing also involves the risk of making the opposite mistake, i.e.
 \begin{longtable}[]{@{}lcl@{}}
 \caption{\label{tab:H0H1outcomes} Possible outcomes of the decision procedure.}\tabularnewline
 \toprule
-Reality & Decision &\tabularnewline
+Reality & Decision & \\
 \midrule
 \endfirsthead
 \toprule
-Reality & Decision &\tabularnewline
+Reality & Decision & \\
 \midrule
 \endhead
-& \textbf{Reject H0} & \textbf{Maintain H0}\tabularnewline
-H0 is true (H1 false) & Type I error (\(\alpha\)) & correct\tabularnewline
-H0 is false (H1 true) & correct & Type II error (\(\beta\))\tabularnewline
-& \textbf{Convict defendant} & \textbf{Acquit defendant}\tabularnewline
-defendant is innocent (H0) & Type I error & correct\tabularnewline
-defendant is guilty & correct & Type I error\tabularnewline
-& \textbf{Discard message} & \textbf{Allow message}\tabularnewline
-message is OK (H0) & Type I error & correct\tabularnewline
-message is spam & correct & Type II error\tabularnewline
+& \textbf{Reject H0} & \textbf{Maintain H0} \\
+H0 is true (H1 false) & Type I error (\(\alpha\)) & correct \\
+H0 is false (H1 true) & correct & Type II error (\(\beta\)) \\
+& \textbf{Convict defendant} & \textbf{Acquit defendant} \\
+defendant is innocent (H0) & Type I error & correct \\
+defendant is guilty & correct & Type I error \\
+& \textbf{Discard message} & \textbf{Allow message} \\
+message is OK (H0) & Type I error & correct \\
+message is spam & correct & Type II error \\
 \bottomrule
 \end{longtable}
 
@@ -966,21 +970,21 @@ The results turned out to mainly support the second hypothesis: illustrations im
 \begin{longtable}[]{@{}cccc@{}}
 \caption{\label{tab:designDona83} Conditions in the study by Donald (1983).}\tabularnewline
 \toprule
-group & reading ability & condition & \(n\)\tabularnewline
+group & reading ability & condition & \(n\) \\
 \midrule
 \endfirsthead
 \toprule
-group & reading ability & condition & \(n\)\tabularnewline
+group & reading ability & condition & \(n\) \\
 \midrule
 \endhead
-1 & weak & without & 15\tabularnewline
-1 & weak & with & 15\tabularnewline
-1 & strong & without & 15\tabularnewline
-1 & strong & with & 15\tabularnewline
-3 & weak & without & 15\tabularnewline
-3 & weak & with & 15\tabularnewline
-3 & strong & without & 15\tabularnewline
-3 & strong & with & 15\tabularnewline
+1 & weak & without & 15 \\
+1 & weak & with & 15 \\
+1 & strong & without & 15 \\
+1 & strong & with & 15 \\
+3 & weak & without & 15 \\
+3 & weak & with & 15 \\
+3 & strong & without & 15 \\
+3 & strong & with & 15 \\
 \bottomrule
 \end{longtable}
 
@@ -1655,8 +1659,8 @@ We may provide a starting value (called a ``seed'') for the random number genera
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{set.seed}\NormalTok{(}\DecValTok{20200912}\NormalTok{) }\CommentTok{\# reproducible example, number is date on which this chunk was added}
-\KeywordTok{round}\NormalTok{ ( }\KeywordTok{runif}\NormalTok{( }\DataTypeTok{n=}\DecValTok{5}\NormalTok{, }\DataTypeTok{min=}\DecValTok{0}\NormalTok{, }\DataTypeTok{max=}\DecValTok{9999}\NormalTok{ ) ) }\CommentTok{\# similar to Appendix A}
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{20200912}\NormalTok{) }\CommentTok{\# reproducible example, number is date on which this chunk was added}
+\FunctionTok{round}\NormalTok{ ( }\FunctionTok{runif}\NormalTok{( }\AttributeTok{n=}\DecValTok{5}\NormalTok{, }\AttributeTok{min=}\DecValTok{0}\NormalTok{, }\AttributeTok{max=}\DecValTok{9999}\NormalTok{ ) ) }\CommentTok{\# similar to Appendix A}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1709,7 +1713,7 @@ Sometimes it is also possible to analyse the very same data (e.g.~
 interviews) both qualitatively and quantitatively. The major
 advantages of quantitative methods are that the data can be summarised
 relatively straightforwardly (this is the subject of this part of the
-syllabus), and that it is relatively simple to draw meaningful conclusions
+textbook), and that it is relatively simple to draw meaningful conclusions
 on the basis of the observations.
 
 \hypertarget{sec:frequencies}{%
@@ -1785,8 +1789,8 @@ of first year students (Example 8.1).
 \caption{\label{tab:shoesize} Frequency distribution of the self-reported shoe sizes of \(N=50\) students in a first year course (see Example 8.1 above).}\tabularnewline
 \toprule
 \endhead
-Shoe size & 36 & 37 & 38 & 39 & 40 & 41 & 42 & 43 & 44 & ??\tabularnewline
-Number & 2 & 6 & 6 & 19 & 6 & 5 & 2 & 2 & 1 & 1\tabularnewline
+Shoe size & 36 & 37 & 38 & 39 & 40 & 41 & 42 & 43 & 44 & ?? \\
+Number & 2 & 6 & 6 & 19 & 6 & 5 & 2 & 2 & 1 & 1 \\
 \bottomrule
 \end{longtable}
 
@@ -1812,23 +1816,23 @@ Table \ref{tab:queensspeech2012pauses}.
 in the Queen's Speech of 18th September 2012, given by Queen Beatrix of the Netherlands
 \((N=305)\).}\tabularnewline
 \toprule
-Interval & Number\tabularnewline
+Interval & Number \\
 \midrule
 \endfirsthead
 \toprule
-Interval & Number\tabularnewline
+Interval & Number \\
 \midrule
 \endhead
-4.50--4.99 & 1\tabularnewline
-4.00--4.49 & 0\tabularnewline
-3.50--3.99 & 2\tabularnewline
-3.00--3.49 & 7\tabularnewline
-2.50--2.99 & 4\tabularnewline
-2.00--2.49 & 25\tabularnewline
-1.50--1.99 & 32\tabularnewline
-1.00--1.49 & 16\tabularnewline
-0.50--0.99 & 67\tabularnewline
-0.00--0.49 & 151\tabularnewline
+4.50--4.99 & 1 \\
+4.00--4.49 & 0 \\
+3.50--3.99 & 2 \\
+3.00--3.49 & 7 \\
+2.50--2.99 & 4 \\
+2.00--2.49 & 25 \\
+1.50--1.99 & 32 \\
+1.00--1.49 & 16 \\
+0.50--0.99 & 67 \\
+0.00--0.49 & 151 \\
 \bottomrule
 \end{longtable}
 
@@ -1886,55 +1890,59 @@ Confirm with \texttt{OK}.\\
 From the top bar, choose
 
 \begin{verbatim}
-Select the variable(s) to summarize and place them into the field "Variables". Check the option `Frequency tables (nominal and ordinal variables)` (below the field with Variables) to obtain frequency tables for all selected variables. 
-
-If a variable has higher measurement level ("Scale", i.e. interval or ratio, Chapter \\ref{ch:levelsofmeasurement}), and you nevertheless want a frequency table of that variable, then you need to adjust the measurement level of that variable to "Nominal" or "Ordinal". In JASP, you can do so by clicking on the icon for measurement level, preceding the variable name in the column header in the data window. 
-
-You may also want to divide or "cut up" the continuous variable into discrete intervals. This is achieved by first creating a new empty variable, and subsequently filling that variable with the discrete interval values. The resulting variable will be of ordinal measurement level. 
-
-To create a new variable, click on the **+** button to the right of the last column name in the data tab. A "Create Computed Column" panel appears, where you can enter a name for the new variable, e.g. `troon12_ordinal`. You can also choose between `R` and a pointer. These are the two options in JASP to define formulas with which the new (empty) variable is filled; using `R` code, or manually using JASP. The paragraphs below explain how to create an interval variable using these two options. Finally, you can check which measurement level the new variable should be (see Chapter \\ref{ch:levelsofmeasurement}), this should be `Ordinal`. Next, click on `Create Column` to create the new variable. The new variable (empty column) appears as the rightmost variable in the data set. 
-
-If the **R** option is chosen to define the new variable, a field with "#Enter your R code here :)" appears above the data. Here you can enter R code that generates random numbers using R functions. Enter the R code (see below) and click on `Compute column` at the bottom of the field to fill the empty variable with the numbers generated by the R code.\
-This snippet of R code cuts up the continuous variable `troon12` into the discrete intervals shown in Table \\ref{tab:queensspeech2012pauses}:
+Descriptives
 \end{verbatim}
 
-cut( troon2012, breaks = seq(0, 5, 0.5) )
+Select the variable(s) to summarize and place them into the field ``Variables''. Check the option \texttt{Frequency\ tables\ (nominal\ and\ ordinal\ variables)} (below the field with Variables) to obtain frequency tables for all selected variables.
+
+If a variable has higher measurement level (``Scale'', i.e.~interval or ratio, Chapter \ref{ch:levelsofmeasurement}), and you nevertheless want a frequency table of that variable, then you need to adjust the measurement level of that variable to ``Nominal'' or ``Ordinal''. In JASP, you can do so by clicking on the icon for measurement level, preceding the variable name in the column header in the data window.
+
+You may also want to divide or ``cut up'' the continuous variable into discrete intervals. This is achieved by first creating a new empty variable, and subsequently filling that variable with the discrete interval values. The resulting variable will be of ordinal measurement level.
+
+To create a new variable, click on the \textbf{+} button to the right of the last column name in the data tab. A ``Create Computed Column'' panel appears, where you can enter a name for the new variable, e.g.~\texttt{troon12\_ordinal}. You can also choose between \texttt{R} and a pointer. These are the two options in JASP to define formulas with which the new (empty) variable is filled; using \texttt{R} code, or manually using JASP. The paragraphs below explain how to create an interval variable using these two options. Finally, you can check which measurement level the new variable should be (see Chapter \ref{ch:levelsofmeasurement}), this should be \texttt{Ordinal}. Next, click on \texttt{Create\ Column} to create the new variable. The new variable (empty column) appears as the rightmost variable in the data set.
+
+If the \textbf{R} option is chosen to define the new variable, a field with ``\#Enter your R code here :)'' appears above the data. Here you can enter R code that generates random numbers using R functions. Enter the R code (see below) and click on \texttt{Compute\ column} at the bottom of the field to fill the empty variable with the numbers generated by the R code.\\
+This snippet of R code cuts up the continuous variable \texttt{troon2012} into the discrete intervals shown in Table \ref{tab:queensspeech2012pauses}:
 
 \begin{verbatim}
+cut( troon2012, breaks = seq(0, 5, 0.5) ) 
+\end{verbatim}
+
 Parse this snippet from the innermost brackets outwards:
-(i) `seq`: make a sequence from 0 to 5 (units, here: seconds) in increments of 0.5 seconds, 
-(ii) `cut`: cut up the variable (troon2012) in intervals based on this sequence. 
+(i) \texttt{seq}: make a sequence from 0 to 5 (units, here: seconds) in increments of 0.5 seconds,
+(ii) \texttt{cut}: cut up the variable (troon2012) in intervals based on this sequence.
 
-If you do not know the width and range of the intervals, but instead you wish to obtain a particular number (say 10) of equal intervals, then use the following snippet: 
-\end{verbatim}
-
-cut( troon2012, 10 )
+If you do not know the width and range of the intervals, but instead you wish to obtain a particular number (say 10) of equal intervals, then use the following snippet:
 
 \begin{verbatim}
-The first interval starts at the lowest score, and the last interval ends at the highest value of `troon12`, yielding `10` intervals in total.  
-
-If the **pointer** or **manual** option is chosen to define the new variable, a work sheet will appear above the data. To the left of the work sheet are the variables, above it are math symbols, and to the right of the work sheet are several functions. From those functions you can pick one to generate your random numbers. If something goes wrong, items on the work sheet can be erased by dragging them to the trash bin on the lower right bottom. After you have completed the specification on the work sheet, then click on the button `Compute column` under the work sheet, to fill the new variable with the ordinal values.\
-In order to cut up a continuous variable into equal and discrete intervals, pick the function `cut(y)` from the right. Drag the input continuous variable to the "values" field and enter the number of resulting intervals as "numBreaks" value. If you want to specify the width and number of intervals yourself, then use the R code option (see above). 
-
-Now, at last, you can make the frequency table of the ordinal variable created above, as described in the first paragraph of this subsection. Select the newly created ordinal variable(s) to summarize and place them into the field "Variables". Check the option `Frequency tables (nominal and ordinal variables)` (below the field with Variables) to obtain frequency tables for all selected variables. 
-
-
-### R
-
-
-```r
-enq2011 <- read.table( 
-    file=url("http://www.hugoquene.nl/R/enq2011.txt"), 
-    header=TRUE )
-table( enq2011$shoe, useNA="ifany" ) 
+cut( troon2012, 10 ) 
 \end{verbatim}
+
+The first interval starts at the lowest score, and the last interval ends at the highest value of \texttt{troon12}, yielding \texttt{10} intervals in total.
+
+If the \textbf{pointer} or \textbf{manual} option is chosen to define the new variable, a work sheet will appear above the data. To the left of the work sheet are the variables, above it are math symbols, and to the right of the work sheet are several functions. From those functions you can pick one to generate your random numbers. If something goes wrong, items on the work sheet can be erased by dragging them to the trash bin on the lower right bottom. After you have completed the specification on the work sheet, then click on the button \texttt{Compute\ column} under the work sheet, to fill the new variable with the ordinal values.\\
+In order to cut up a continuous variable into equal and discrete intervals, pick the function \texttt{cut(y)} from the right. Drag the input continuous variable to the ``values'' field and enter the number of resulting intervals as ``numBreaks'' value. If you want to specify the width and number of intervals yourself, then use the R code option (see above).
+
+Now, at last, you can make the frequency table of the ordinal variable created above, as described in the first paragraph of this subsection. Select the newly created ordinal variable(s) to summarize and place them into the field ``Variables''. Check the option \texttt{Frequency\ tables\ (nominal\ and\ ordinal\ variables)} (below the field with Variables) to obtain frequency tables for all selected variables.
+
+\hypertarget{r-1}{%
+\subsection{R}\label{r-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{enq2011 }\OtherTok{\textless{}{-}} \FunctionTok{read.table}\NormalTok{( }
+    \AttributeTok{file=}\FunctionTok{url}\NormalTok{(}\StringTok{"http://www.hugoquene.nl/R/enq2011.txt"}\NormalTok{), }
+    \AttributeTok{header=}\ConstantTok{TRUE}\NormalTok{ )}
+\FunctionTok{table}\NormalTok{( enq2011}\SpecialCharTok{$}\NormalTok{shoe, }\AttributeTok{useNA=}\StringTok{"ifany"}\NormalTok{ ) }
+\end{Highlighting}
+\end{Shaded}
 
 The output of the above \texttt{table} command is shown in Table \ref{tab:shoesize}.
 The code \texttt{NA} (Not Available) is used in R to indicate missing data.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{table}\NormalTok{( }\KeywordTok{cut}\NormalTok{( troon2012, }\DataTypeTok{breaks=}\KeywordTok{seq}\NormalTok{(}\DataTypeTok{from=}\DecValTok{0}\NormalTok{,}\DataTypeTok{to=}\DecValTok{5}\NormalTok{,}\DataTypeTok{by=}\FloatTok{0.5}\NormalTok{) ) )}
+\FunctionTok{table}\NormalTok{( }\FunctionTok{cut}\NormalTok{( troon2012, }\AttributeTok{breaks=}\FunctionTok{seq}\NormalTok{(}\AttributeTok{from=}\DecValTok{0}\NormalTok{,}\AttributeTok{to=}\DecValTok{5}\NormalTok{,}\AttributeTok{by=}\FloatTok{0.5}\NormalTok{) ) )}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1999,7 +2007,7 @@ along the horizontal axis.
 \caption{\label{fig:troonrede2012-hist}Histogram for the lengths of pauses (in seconds) in the Queen's Speech of 18 September 2012, read by Queen Beatrix (N=305).}
 \end{figure}
 
-A histogram helps up to determine at a glance the most important distributional characteristics
+A histogram helps us to determine at a glance the most important distributional characteristics
 of a continuous variable: the most characteristic
 (most frequently occurring) value, the degree of dispersion, the
 number of peaks in the frequency distribution, the position of the peaks,
@@ -2043,8 +2051,8 @@ Select the variable(s) to summarize and place them into the field ``Variables''.
 
 JASP will automatically make a bar chart if the variable is discrete (nominal or ordinal), and it will make a histogram if the variable is a scalar, i.e., numerical and continuous (interval or ratio). Ensure that the correct measurement level is specified for your variables. In JASP, you can set the measurement level by clicking on the icon for measurement level, which precedes the variable name in the column header in the data window.
 
-\hypertarget{r-1}{%
-\subsection{R}\label{r-1}}
+\hypertarget{r-2}{%
+\subsection{R}\label{r-2}}
 
 You can make a bar chart like Figure \ref{fig:klankfreq-barplot} in R with the
 following commands:
@@ -2052,17 +2060,17 @@ following commands:
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# read data}
-\NormalTok{klankfreq \textless{}{-}}\StringTok{ }\KeywordTok{read.table}\NormalTok{( }\DataTypeTok{file=}\StringTok{"data/klankfreq.txt"}\NormalTok{, }\DataTypeTok{header=}\NormalTok{T )}
+\NormalTok{klankfreq }\OtherTok{\textless{}{-}} \FunctionTok{read.table}\NormalTok{( }\AttributeTok{file=}\StringTok{"data/klankfreq.txt"}\NormalTok{, }\AttributeTok{header=}\NormalTok{T )}
 \CommentTok{\# 20201130 column names in English}
-\KeywordTok{dimnames}\NormalTok{(klankfreq)[[}\DecValTok{2}\NormalTok{]] \textless{}{-}}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"main.class"}\NormalTok{,}\StringTok{"sub.class"}\NormalTok{,}\StringTok{"count"}\NormalTok{)}
+\FunctionTok{dimnames}\NormalTok{(klankfreq)[[}\DecValTok{2}\NormalTok{]] }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"main.class"}\NormalTok{,}\StringTok{"sub.class"}\NormalTok{,}\StringTok{"count"}\NormalTok{)}
 \CommentTok{\# make barplot from column \textasciigrave{}count\textasciigrave{} in dataset \textasciigrave{}klankfreq\textasciigrave{}}
-\KeywordTok{with}\NormalTok{( klankfreq, }\KeywordTok{barplot}\NormalTok{( count, }\DataTypeTok{beside=}\NormalTok{T, }
-                          \DataTypeTok{ylab=}\StringTok{"Frequency"}\NormalTok{,}
-                          \DataTypeTok{main=}\StringTok{"Frequencies of speech sounds in Dutch (N=2968220)"}\NormalTok{,}
-                          \DataTypeTok{col=}\KeywordTok{ifelse}\NormalTok{(klankfreq[,}\DecValTok{1}\NormalTok{]}\OperatorTok{==}\StringTok{"V"}\NormalTok{,}\StringTok{"grey40"}\NormalTok{,}\StringTok{"grey20"}\NormalTok{) ) ) {-}\textgreater{}}\StringTok{ }\NormalTok{klankfreq\_barplot}
+\FunctionTok{with}\NormalTok{( klankfreq, }\FunctionTok{barplot}\NormalTok{( count, }\AttributeTok{beside=}\NormalTok{T, }
+                          \AttributeTok{ylab=}\StringTok{"Frequency"}\NormalTok{,}
+                          \AttributeTok{main=}\StringTok{"Frequencies of speech sounds in Dutch (N=2968220)"}\NormalTok{,}
+                          \AttributeTok{col=}\FunctionTok{ifelse}\NormalTok{(klankfreq[,}\DecValTok{1}\NormalTok{]}\SpecialCharTok{==}\StringTok{"V"}\NormalTok{,}\StringTok{"grey40"}\NormalTok{,}\StringTok{"grey20"}\NormalTok{) ) ) }\OtherTok{{-}\textgreater{}}\NormalTok{ klankfreq\_barplot}
 \CommentTok{\# make labels along the bottommost horizontal axis}
-\KeywordTok{axis}\NormalTok{(}\DataTypeTok{side=}\DecValTok{1}\NormalTok{, }\DataTypeTok{at=}\NormalTok{klankfreq\_barplot, }\DataTypeTok{labels=}\NormalTok{klankfreq}\OperatorTok{$}\NormalTok{main.class)}
-\KeywordTok{axis}\NormalTok{(}\DataTypeTok{side=}\DecValTok{1}\NormalTok{, }\DataTypeTok{at=}\NormalTok{klankfreq\_barplot, }\DataTypeTok{tick=}\NormalTok{F, }\DataTypeTok{line=}\DecValTok{1}\NormalTok{, }\DataTypeTok{labels=}\NormalTok{klankfreq}\OperatorTok{$}\NormalTok{sub.class )}
+\FunctionTok{axis}\NormalTok{(}\AttributeTok{side=}\DecValTok{1}\NormalTok{, }\AttributeTok{at=}\NormalTok{klankfreq\_barplot, }\AttributeTok{labels=}\NormalTok{klankfreq}\SpecialCharTok{$}\NormalTok{main.class)}
+\FunctionTok{axis}\NormalTok{(}\AttributeTok{side=}\DecValTok{1}\NormalTok{, }\AttributeTok{at=}\NormalTok{klankfreq\_barplot, }\AttributeTok{tick=}\NormalTok{F, }\AttributeTok{line=}\DecValTok{1}\NormalTok{, }\AttributeTok{labels=}\NormalTok{klankfreq}\SpecialCharTok{$}\NormalTok{sub.class )}
 \CommentTok{\# or simpler: with(klankfreq, barplot(count) ) \# all defaults }
 \end{Highlighting}
 \end{Shaded}
@@ -2073,15 +2081,15 @@ in R with the follow commands:
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# read dataset }
-\KeywordTok{load}\NormalTok{(}\DataTypeTok{file=}\StringTok{"data/pauses6.Rda"}\NormalTok{)}
+\FunctionTok{load}\NormalTok{(}\AttributeTok{file=}\StringTok{"data/pauses6.Rda"}\NormalTok{)}
 \CommentTok{\# extract pause lengths (columns 12) for the year 2012, into a separate dataset \textasciigrave{}troon2012\textasciigrave{}}
-\NormalTok{troon2012 \textless{}{-}}\StringTok{ }\NormalTok{pauses6[ pauses6}\OperatorTok{$}\NormalTok{jaar}\OperatorTok{==}\DecValTok{2012}\NormalTok{, }\DecValTok{12}\NormalTok{ ] }\CommentTok{\# save col\_12 as single vector}
+\NormalTok{troon2012 }\OtherTok{\textless{}{-}}\NormalTok{ pauses6[ pauses6}\SpecialCharTok{$}\NormalTok{jaar}\SpecialCharTok{==}\DecValTok{2012}\NormalTok{, }\DecValTok{12}\NormalTok{ ] }\CommentTok{\# save col\_12 as single vector}
 \CommentTok{\# make histogram}
-\KeywordTok{hist}\NormalTok{( troon2012, }
-      \DataTypeTok{breaks=}\KeywordTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DataTypeTok{by=}\FloatTok{0.25}\NormalTok{),}
-      \DataTypeTok{col=}\StringTok{"grey80"}\NormalTok{,}
-      \DataTypeTok{xlab=}\StringTok{"Length of pause (s)"}\NormalTok{, }\DataTypeTok{ylab=}\StringTok{"Frequency"}\NormalTok{, }
-      \DataTypeTok{main=}\StringTok{"Queen\textquotesingle{}s Speech 2012 (N=305 pauses)"}\NormalTok{ ) {-}\textgreater{}}\StringTok{ }\NormalTok{troonrede2012pauzes\_hist}
+\FunctionTok{hist}\NormalTok{( troon2012, }
+      \AttributeTok{breaks=}\FunctionTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{5}\NormalTok{, }\AttributeTok{by=}\FloatTok{0.25}\NormalTok{),}
+      \AttributeTok{col=}\StringTok{"grey80"}\NormalTok{,}
+      \AttributeTok{xlab=}\StringTok{"Length of pause (s)"}\NormalTok{, }\AttributeTok{ylab=}\StringTok{"Frequency"}\NormalTok{, }
+      \AttributeTok{main=}\StringTok{"Queen\textquotesingle{}s Speech 2012 (N=305 pauses)"}\NormalTok{ ) }\OtherTok{{-}\textgreater{}}\NormalTok{ troonrede2012pauzes\_hist}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2427,25 +2435,25 @@ To illustrate, we use the fictive reading test scores shown in Table
 \caption{\label{tab:cito} The scores of N=10 pupils on three sections of the CITO test,
 taken in the final year of primary school in the Netherlands.}\tabularnewline
 \toprule
-Pupil & Reading & Arithmetic & Geography\tabularnewline
+Pupil & Reading & Arithmetic & Geography \\
 \midrule
 \endfirsthead
 \toprule
-Pupil & Reading & Arithmetic & Geography\tabularnewline
+Pupil & Reading & Arithmetic & Geography \\
 \midrule
 \endhead
-1 & 18 & 22 & 55\tabularnewline
-2 & 32 & 36 & 55\tabularnewline
-3 & 45 & 34 & 38\tabularnewline
-4 & 25 & 25 & 40\tabularnewline
-5 & 27 & 29 & 48\tabularnewline
-6 & 23 & 20 & 44\tabularnewline
-7 & 29 & 27 & 49\tabularnewline
-8 & 26 & 25 & 42\tabularnewline
-9 & 20 & 25 & 57\tabularnewline
-10 & 25 & 27 & 47\tabularnewline
-\(\sum x\) & 270 & 270 & 475\tabularnewline
-\(\overline{x}\) & 27.0 & 27.0 & 47.5\tabularnewline
+1 & 18 & 22 & 55 \\
+2 & 32 & 36 & 55 \\
+3 & 45 & 34 & 38 \\
+4 & 25 & 25 & 40 \\
+5 & 27 & 29 & 48 \\
+6 & 23 & 20 & 44 \\
+7 & 29 & 27 & 49 \\
+8 & 26 & 25 & 42 \\
+9 & 20 & 25 & 57 \\
+10 & 25 & 27 & 47 \\
+\(\sum x\) & 270 & 270 & 475 \\
+\(\overline{x}\) & 27.0 & 27.0 & 47.5 \\
 \bottomrule
 \end{longtable}
 
@@ -2468,13 +2476,10 @@ uppermost half is \(Q_3=29\). The interquartile range is
 \hypertarget{sec:outliers}{%
 \subsection{Outliers}\label{sec:outliers}}
 
-In the reading scores in Table \ref{tab:cito}, we encounter one extreme value, namely the score
-45, which differs markedly from the mean. A marked value like this is referred to as an
-``outlier''. The limit for what we consider to be an outlier
+In the reading scores in Table \ref{tab:cito}, we encounter one extreme value, namely the score 45, which differs markedly from the mean. A marked value like this is referred to as an``outlier''. The limit for what we consider to be an outlier
 generally lies at \(1.5 \times \textrm{IQR}\). If a value is more than
-\(1.5 \times \textrm{IQR}\) above or under \(Q_1\), we consider that
-observation to be an outlier. Check these observations again (recall the principle of
-diligence, see §\ref{sec:integrity-introduction}).
+\(1.5 \times \textrm{IQR}\) below \(Q_1\) or above \(Q_3\), we consider that
+observation to be an outlier. Check these observations again (recall the principle of diligence, see §\ref{sec:integrity-introduction}).
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -2598,7 +2603,7 @@ which is normally distributed (see §\ref{sec:normaldistribution}, and
 
 Besides standard deviation, there is also a robust counterpart
 which does not use the mean. This measure is therefore less
-sensitive for outliers (robuster), which is sometimes useful.
+sensitive for outliers (more robust), which is sometimes useful.
 
 For this, we look for the deviation of every observation from
 the median (not the mean). We then take the absolute value
@@ -2652,17 +2657,17 @@ Table \ref{tab:signiffiguresmean}.
 \caption{\label{tab:signiffiguresmean} The number of significant figures in the reported mean is
 equal to the number of significant figures of the number of observations.}\tabularnewline
 \toprule
-Num.obs. & Num.signif.figures & example mean & reported as\tabularnewline
+Num.obs. & Num.signif.figures & example mean & reported as \\
 \midrule
 \endfirsthead
 \toprule
-Num.obs. & Num.signif.figures & example mean & reported as\tabularnewline
+Num.obs. & Num.signif.figures & example mean & reported as \\
 \midrule
 \endhead
-\(1\dots9\) & 1 & 21/8 = 2.625 & 3\tabularnewline
-\(10\dots99\) & 2 & 57/21 = 2.714286 & 2.7\tabularnewline
-\(100\dots999\) & 3 & 317/120 = 2.641667 & 2.64\tabularnewline
-\(1000\dots9999\) & 4 & 3179/1234 = 2.576175 & 2.576\tabularnewline
+\(1\dots9\) & 1 & 21/8 = 2.625 & 3 \\
+\(10\dots99\) & 2 & 57/21 = 2.714286 & 2.7 \\
+\(100\dots999\) & 3 & 317/120 = 2.641667 & 2.64 \\
+\(1000\dots9999\) & 4 & 3179/1234 = 2.576175 & 2.576 \\
 \bottomrule
 \end{longtable}
 
@@ -2714,17 +2719,17 @@ see Table \ref{tab:signiffigurepercentage}.
 proportion (or percentage) is related to the number of significant figures of the number
 of observations in the denominator of the fraction.}\tabularnewline
 \toprule
-num.obs.(denominator) & num.signif.figures & example fraction & report as\tabularnewline
+num.obs.(denominator) & num.signif.figures & example fraction & report as \\
 \midrule
 \endfirsthead
 \toprule
-num.obs.(denominator) & num.signif.figures & example fraction & report as\tabularnewline
+num.obs.(denominator) & num.signif.figures & example fraction & report as \\
 \midrule
 \endhead
-\(1\dots9\) & 1 & 3/8 = 0.4 & 3/8\tabularnewline
-\(10\dots99\) & 2 & 21/57 = 0.36 & 21/57\tabularnewline
-\(100\dots999\) & 3 & 120/317 = 0.378 & 38\%\tabularnewline
-\(1000\dots9999\) & 4 12 & 34/3179 = 0.3882 & 38.8\%\tabularnewline
+\(1\dots9\) & 1 & 3/8 = 0.4 & 3/8 \\
+\(10\dots99\) & 2 & 21/57 = 0.36 & 21/57 \\
+\(100\dots999\) & 3 & 120/317 = 0.378 & 38\% \\
+\(1000\dots9999\) & 4 12 & 34/3179 = 0.3882 & 38.8\% \\
 \bottomrule
 \end{longtable}
 
@@ -2800,16 +2805,16 @@ as in Table \ref{tab:centredispersionmeasures}.
 \begin{longtable}[]{@{}lcc@{}}
 \caption{\label{tab:centredispersionmeasures} Overview of discussed centre measures and dispersion measures. For assumptions abbreviated to \emph{(a \& b \& c)}, see text below table.}\tabularnewline
 \toprule
-Distribution & Centre measure & Dispersion measure\tabularnewline
+Distribution & Centre measure & Dispersion measure \\
 \midrule
 \endfirsthead
 \toprule
-Distribution & Centre measure & Dispersion measure\tabularnewline
+Distribution & Centre measure & Dispersion measure \\
 \midrule
 \endhead
-all & median & quartiles, IQR, MAD\tabularnewline
-\ldots{} & trimmed or wins. mean & trimmed or wins.std.dev.\tabularnewline
-(a \& b \& c) & mean & standard deviation\tabularnewline
+all & median & quartiles, IQR, MAD \\
+\ldots{} & trimmed or wins. mean & trimmed or wins.std.dev. \\
+(a \& b \& c) & mean & standard deviation \\
 \bottomrule
 \end{longtable}
 
@@ -2979,19 +2984,19 @@ Pick the function \(\sigma\)\_y from the right and drag it to the denominator pa
 Eventually the definition of standard scores (here for variable named \texttt{Lezen}) should look like this: \[\frac{(Lezen-mean(Lezen))}{\sigma (Lezen)}\]\\
 Click on the button \texttt{Compute\ column} below the work sheet to fill the empty variable with the newly computed standard scores.
 
-\hypertarget{r-2}{%
-\section{R}\label{r-2}}
+\hypertarget{r-3}{%
+\section{R}\label{r-3}}
 
 For \textbf{quartiles and boxplot} like Figure \ref{fig:cito-boxplot}, we use the commands \texttt{fivenum}, \texttt{quantile}, and \texttt{boxplot}:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{require}\NormalTok{(foreign) }\CommentTok{\# for foreign::read.spss}
-\NormalTok{cito \textless{}{-}}\StringTok{ }\KeywordTok{read.spss}\NormalTok{(}\StringTok{"data/cito.sav"}\NormalTok{)}
+\FunctionTok{require}\NormalTok{(foreign) }\CommentTok{\# for foreign::read.spss}
+\NormalTok{cito }\OtherTok{\textless{}{-}} \FunctionTok{read.spss}\NormalTok{(}\StringTok{"data/cito.sav"}\NormalTok{)}
 \CommentTok{\# Columns in \textasciigrave{}cito.sav\textasciigrave{} have Dutch names:}
 \CommentTok{\# in Dutch: Leerling Lezen Rekenen Wereldorientatie stadplat rek.f}
 \CommentTok{\# in English: Pupil Reading Arithmetic Geography UrbRural Arith.factor}
-\KeywordTok{fivenum}\NormalTok{(cito}\OperatorTok{$}\NormalTok{Lezen) }\CommentTok{\# minimum, Q1, median, Q3, maximum}
+\FunctionTok{fivenum}\NormalTok{(cito}\SpecialCharTok{$}\NormalTok{Lezen) }\CommentTok{\# minimum, Q1, median, Q3, maximum}
 \end{Highlighting}
 \end{Shaded}
 
@@ -3001,7 +3006,7 @@ For \textbf{quartiles and boxplot} like Figure \ref{fig:cito-boxplot}, we use th
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{quantile}\NormalTok{(cito}\OperatorTok{$}\NormalTok{Lezen, }\KeywordTok{c}\NormalTok{( }\DecValTok{1}\OperatorTok{/}\DecValTok{4}\NormalTok{, }\DecValTok{3}\OperatorTok{/}\DecValTok{4}\NormalTok{ ) ) }\CommentTok{\# Q1 and Q3, calculated differently }
+\FunctionTok{quantile}\NormalTok{(cito}\SpecialCharTok{$}\NormalTok{Lezen, }\FunctionTok{c}\NormalTok{( }\DecValTok{1}\SpecialCharTok{/}\DecValTok{4}\NormalTok{, }\DecValTok{3}\SpecialCharTok{/}\DecValTok{4}\NormalTok{ ) ) }\CommentTok{\# Q1 and Q3, calculated differently }
 \end{Highlighting}
 \end{Shaded}
 
@@ -3012,14 +3017,14 @@ For \textbf{quartiles and boxplot} like Figure \ref{fig:cito-boxplot}, we use th
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{op \textless{}{-}}\StringTok{ }\KeywordTok{par}\NormalTok{(}\DataTypeTok{mar=}\KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{)}\OperatorTok{+}\FloatTok{0.1}\NormalTok{) }\CommentTok{\# smaller margins}
-\KeywordTok{with}\NormalTok{(cito, }
-  \KeywordTok{boxplot}\NormalTok{(Lezen, Rekenen, }\DataTypeTok{col=}\StringTok{"grey80"}\NormalTok{, }\DataTypeTok{lwd=}\DecValTok{2}\NormalTok{, }\DataTypeTok{lty=}\DecValTok{1}\NormalTok{, }\DataTypeTok{ylab=}\StringTok{"Score"}\NormalTok{, }\DataTypeTok{ylim=}\KeywordTok{c}\NormalTok{(}\DecValTok{17}\NormalTok{,}\DecValTok{45}\NormalTok{) )}
+\NormalTok{op }\OtherTok{\textless{}{-}} \FunctionTok{par}\NormalTok{(}\AttributeTok{mar=}\FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{)}\SpecialCharTok{+}\FloatTok{0.1}\NormalTok{) }\CommentTok{\# smaller margins}
+\FunctionTok{with}\NormalTok{(cito, }
+  \FunctionTok{boxplot}\NormalTok{(Lezen, Rekenen, }\AttributeTok{col=}\StringTok{"grey80"}\NormalTok{, }\AttributeTok{lwd=}\DecValTok{2}\NormalTok{, }\AttributeTok{lty=}\DecValTok{1}\NormalTok{, }\AttributeTok{ylab=}\StringTok{"Score"}\NormalTok{, }\AttributeTok{ylim=}\FunctionTok{c}\NormalTok{(}\DecValTok{17}\NormalTok{,}\DecValTok{45}\NormalTok{) )}
 \NormalTok{)}
-\KeywordTok{axis}\NormalTok{(}\DataTypeTok{side=}\DecValTok{1}\NormalTok{, }\DataTypeTok{at=}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{), }\DataTypeTok{labels=}\KeywordTok{c}\NormalTok{(}\StringTok{"Reading"}\NormalTok{,}\StringTok{"Arithmetic"}\NormalTok{) )}
-\NormalTok{plotrix}\OperatorTok{::}\KeywordTok{axis.break}\NormalTok{(}\DataTypeTok{axis=}\DecValTok{2}\NormalTok{) }\CommentTok{\# break in left Y{-}aixs}
-\KeywordTok{rug}\NormalTok{(cito}\OperatorTok{$}\NormalTok{Lezen, }\DataTypeTok{side=}\DecValTok{2}\NormalTok{) }\CommentTok{\# markings on left Y{-}axis}
-\KeywordTok{rug}\NormalTok{(cito}\OperatorTok{$}\NormalTok{rekenen, }\DataTypeTok{side=}\DecValTok{4}\NormalTok{) }\CommentTok{\# markings on right Y{-}axis}
+\FunctionTok{axis}\NormalTok{(}\AttributeTok{side=}\DecValTok{1}\NormalTok{, }\AttributeTok{at=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{), }\AttributeTok{labels=}\FunctionTok{c}\NormalTok{(}\StringTok{"Reading"}\NormalTok{,}\StringTok{"Arithmetic"}\NormalTok{) )}
+\NormalTok{plotrix}\SpecialCharTok{::}\FunctionTok{axis.break}\NormalTok{(}\AttributeTok{axis=}\DecValTok{2}\NormalTok{) }\CommentTok{\# break in left Y{-}aixs}
+\FunctionTok{rug}\NormalTok{(cito}\SpecialCharTok{$}\NormalTok{Lezen, }\AttributeTok{side=}\DecValTok{2}\NormalTok{) }\CommentTok{\# markings on left Y{-}axis}
+\FunctionTok{rug}\NormalTok{(cito}\SpecialCharTok{$}\NormalTok{rekenen, }\AttributeTok{side=}\DecValTok{4}\NormalTok{) }\CommentTok{\# markings on right Y{-}axis}
 \end{Highlighting}
 \end{Shaded}
 
@@ -3029,7 +3034,7 @@ Many \textbf{central tendencies} are pre-programmed as functions in R:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{mean}\NormalTok{(cito}\OperatorTok{$}\NormalTok{Lezen) }\CommentTok{\# mean}
+\FunctionTok{mean}\NormalTok{(cito}\SpecialCharTok{$}\NormalTok{Lezen) }\CommentTok{\# mean}
 \end{Highlighting}
 \end{Shaded}
 
@@ -3039,7 +3044,7 @@ Many \textbf{central tendencies} are pre-programmed as functions in R:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{psych}\OperatorTok{::}\KeywordTok{winsor.mean}\NormalTok{(cito}\OperatorTok{$}\NormalTok{Lezen, }\DataTypeTok{trim=}\NormalTok{.}\DecValTok{1}\NormalTok{) }\CommentTok{\# winsorized mean, from psych package}
+\NormalTok{psych}\SpecialCharTok{::}\FunctionTok{winsor.mean}\NormalTok{(cito}\SpecialCharTok{$}\NormalTok{Lezen, }\AttributeTok{trim=}\NormalTok{.}\DecValTok{1}\NormalTok{) }\CommentTok{\# winsorized mean, from psych package}
 \end{Highlighting}
 \end{Shaded}
 
@@ -3049,7 +3054,7 @@ Many \textbf{central tendencies} are pre-programmed as functions in R:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{mean}\NormalTok{(cito}\OperatorTok{$}\NormalTok{Lezen, }\DataTypeTok{trim=}\NormalTok{.}\DecValTok{1}\NormalTok{) }\CommentTok{\# trimmed mean}
+\FunctionTok{mean}\NormalTok{(cito}\SpecialCharTok{$}\NormalTok{Lezen, }\AttributeTok{trim=}\NormalTok{.}\DecValTok{1}\NormalTok{) }\CommentTok{\# trimmed mean}
 \end{Highlighting}
 \end{Shaded}
 
@@ -3059,7 +3064,7 @@ Many \textbf{central tendencies} are pre-programmed as functions in R:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{median}\NormalTok{(cito}\OperatorTok{$}\NormalTok{Lezen)   }\CommentTok{\# median}
+\FunctionTok{median}\NormalTok{(cito}\SpecialCharTok{$}\NormalTok{Lezen)   }\CommentTok{\# median}
 \end{Highlighting}
 \end{Shaded}
 
@@ -3071,7 +3076,7 @@ Various \textbf{dispersion measures} are also pre-programmed:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{var}\NormalTok{(cito}\OperatorTok{$}\NormalTok{Lezen)  }\CommentTok{\# variance}
+\FunctionTok{var}\NormalTok{(cito}\SpecialCharTok{$}\NormalTok{Lezen)  }\CommentTok{\# variance}
 \end{Highlighting}
 \end{Shaded}
 
@@ -3081,7 +3086,7 @@ Various \textbf{dispersion measures} are also pre-programmed:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{sd}\NormalTok{(cito}\OperatorTok{$}\NormalTok{Lezen)   }\CommentTok{\# standard deviation, sd(x) = sqrt(var(x))}
+\FunctionTok{sd}\NormalTok{(cito}\SpecialCharTok{$}\NormalTok{Lezen)   }\CommentTok{\# standard deviation, sd(x) = sqrt(var(x))}
 \end{Highlighting}
 \end{Shaded}
 
@@ -3091,7 +3096,7 @@ Various \textbf{dispersion measures} are also pre-programmed:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{mad}\NormalTok{(cito}\OperatorTok{$}\NormalTok{Lezen)  }\CommentTok{\# MAD}
+\FunctionTok{mad}\NormalTok{(cito}\SpecialCharTok{$}\NormalTok{Lezen)  }\CommentTok{\# MAD}
 \end{Highlighting}
 \end{Shaded}
 
@@ -3105,8 +3110,8 @@ new variable, called here \texttt{zReading} (note the parentheses in the first c
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# standardized (or z) reading scores}
-\NormalTok{zReading \textless{}{-}}\StringTok{ }\NormalTok{(cito}\OperatorTok{$}\NormalTok{Lezen}\OperatorTok{{-}}\KeywordTok{mean}\NormalTok{(cito}\OperatorTok{$}\NormalTok{Lezen)) }\OperatorTok{/}\StringTok{ }\KeywordTok{sd}\NormalTok{(cito}\OperatorTok{$}\NormalTok{Lezen) }
-\KeywordTok{head}\NormalTok{(zReading) }\CommentTok{\# first few observations of variable zReading}
+\NormalTok{zReading }\OtherTok{\textless{}{-}}\NormalTok{ (cito}\SpecialCharTok{$}\NormalTok{Lezen}\SpecialCharTok{{-}}\FunctionTok{mean}\NormalTok{(cito}\SpecialCharTok{$}\NormalTok{Lezen)) }\SpecialCharTok{/} \FunctionTok{sd}\NormalTok{(cito}\SpecialCharTok{$}\NormalTok{Lezen) }
+\FunctionTok{head}\NormalTok{(zReading) }\CommentTok{\# first few observations of variable zReading}
 \end{Highlighting}
 \end{Shaded}
 
@@ -3289,21 +3294,21 @@ Table \ref{tab:vowelprobabilities}.
 \caption{\label{tab:vowelprobabilities} Probabilities of possible outcomes of \(n=3\)
 vowel draws, \(p=.38\), with replacement (see text).}\tabularnewline
 \toprule
-Outcome & Number of vowels & Probabilitiy\tabularnewline
+Outcome & Number of vowels & Probabilitiy \\
 \midrule
 \endfirsthead
 \toprule
-Outcome & Number of vowels & Probabilitiy\tabularnewline
+Outcome & Number of vowels & Probabilitiy \\
 \midrule
 \endhead
-CCC & 0 & \(qqq = q^3\)\tabularnewline
-VCC & 1 & \(pqq = pq^2\)\tabularnewline
-CVC & 1 & \(qpq = pq^2\)\tabularnewline
-CCV & 1 & \(qqp = pq^2\)\tabularnewline
-VVC & 2 & \(ppq = p^2q\)\tabularnewline
-VCV & 2 & \(pqp = p^2q\)\tabularnewline
-CVV & 2 & \(qpp = p^2q\)\tabularnewline
-VVV & 3 & \(ppp = p^3\)\tabularnewline
+CCC & 0 & \(qqq = q^3\) \\
+VCC & 1 & \(pqq = pq^2\) \\
+CVC & 1 & \(qpq = pq^2\) \\
+CCV & 1 & \(qqp = pq^2\) \\
+VVC & 2 & \(ppq = p^2q\) \\
+VCV & 2 & \(pqp = p^2q\) \\
+CVV & 2 & \(qpp = p^2q\) \\
+VVV & 3 & \(ppp = p^3\) \\
 \bottomrule
 \end{longtable}
 
@@ -3318,18 +3323,18 @@ In such a probability distribution, we can see, for each possible outcome of \(x
 \caption{\label{tab:binomprobabilitydistribution3} Probability distribution of a
 binomial variable with \(n=3\) and \(p=.38\).}\tabularnewline
 \toprule
-Number of vowels & Probability & Probability\tabularnewline
+Number of vowels & Probability & Probability \\
 \midrule
 \endfirsthead
 \toprule
-Number of vowels & Probability & Probability\tabularnewline
+Number of vowels & Probability & Probability \\
 \midrule
 \endhead
-0 & \(1 q^3\) & = .2383\tabularnewline
-1 & \(3 p q^2\) & = .4383\tabularnewline
-2 & \(3 p^2 q\) & = .2686\tabularnewline
-3 & \(1 p^3\) & = .0549\tabularnewline
-total & \((p+q)^3\) & = 1.0000\tabularnewline
+0 & \(1 q^3\) & = .2383 \\
+1 & \(3 p q^2\) & = .4383 \\
+2 & \(3 p^2 q\) & = .2686 \\
+3 & \(1 p^3\) & = .0549 \\
+total & \((p+q)^3\) & = 1.0000 \\
 \bottomrule
 \end{longtable}
 
@@ -3404,14 +3409,14 @@ to the cell.
 number of possible orderings for a combination of \(x\) elements from \(n\) (see text).}\tabularnewline
 \toprule
 \endhead
-\(n= 0\): & & & & & & & & 1 & & & & & & &\tabularnewline
-\(n= 1\): & & & & & & & 1 & & 1 & & & & & &\tabularnewline
-\(n= 2\): & & & & & & 1 & & 2 & & 1 & & & & &\tabularnewline
-\(n= 3\): & & & & & 1 & & 3 & & 3 & & 1 & & & &\tabularnewline
-\(n= 4\): & & & & 1 & & 4 & & 6 & & 4 & & 1 & & &\tabularnewline
-\(n= 5\): & & & 1 & & 5 & & 10 & & 10 & & 5 & & 1 & &\tabularnewline
-\(n= 6\): & & 1 & & 6 & & 15 & & 20 & & 15 & & 6 & & 1 &\tabularnewline
-\(n= 7\): & 1 & & 7 & & 21 & & 35 & & 35 & & 21 & & 7 & & 1\tabularnewline
+\(n= 0\): & & & & & & & & 1 & & & & & & & \\
+\(n= 1\): & & & & & & & 1 & & 1 & & & & & & \\
+\(n= 2\): & & & & & & 1 & & 2 & & 1 & & & & & \\
+\(n= 3\): & & & & & 1 & & 3 & & 3 & & 1 & & & & \\
+\(n= 4\): & & & & 1 & & 4 & & 6 & & 4 & & 1 & & & \\
+\(n= 5\): & & & 1 & & 5 & & 10 & & 10 & & 5 & & 1 & & \\
+\(n= 6\): & & 1 & & 6 & & 15 & & 20 & & 15 & & 6 & & 1 & \\
+\(n= 7\): & 1 & & 7 & & 21 & & 35 & & 35 & & 21 & & 7 & & 1 \\
 \bottomrule
 \end{longtable}
 
@@ -3445,12 +3450,12 @@ If the \texttt{Distributions} option is not shown in the top bar, then you can a
 In the ``Binomial'' input, there is an input panel \texttt{Show\ Distribution}. In that panel, enter the appropriate values for \(p\) (under ``free parameter'') and for \(n\) (under ``fixed parameter''). In the ``Display'' input, check option \texttt{Probability\ mass\ function}.
 The output panel now shows the binomial \emph{Probability Mass Plot}.
 
-\hypertarget{r-3}{%
-\subsection{R}\label{r-3}}
+\hypertarget{r-4}{%
+\subsection{R}\label{r-4}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{dbinom}\NormalTok{( }\DecValTok{0}\OperatorTok{:}\DecValTok{3}\NormalTok{, }\DataTypeTok{size=}\DecValTok{3}\NormalTok{, }\DataTypeTok{prob=}\NormalTok{.}\DecValTok{38}\NormalTok{ )}
+\FunctionTok{dbinom}\NormalTok{( }\DecValTok{0}\SpecialCharTok{:}\DecValTok{3}\NormalTok{, }\AttributeTok{size=}\DecValTok{3}\NormalTok{, }\AttributeTok{prob=}\NormalTok{.}\DecValTok{38}\NormalTok{ )}
 \end{Highlighting}
 \end{Shaded}
 
@@ -3462,7 +3467,7 @@ The output is shown in Table \ref{tab:binomprobabilitydistribution3} below.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{matrixcalc}\OperatorTok{::}\KeywordTok{pascal.matrix}\NormalTok{( }\DecValTok{10}\NormalTok{ ) }\CommentTok{\# left under diagonal is Pascal\textquotesingle{}s triangle}
+\NormalTok{matrixcalc}\SpecialCharTok{::}\FunctionTok{pascal.matrix}\NormalTok{( }\DecValTok{10}\NormalTok{ ) }\CommentTok{\# left under diagonal is Pascal\textquotesingle{}s triangle}
 \end{Highlighting}
 \end{Shaded}
 
@@ -3697,17 +3702,17 @@ In the ``Normal'' input panel, there is an input panel \texttt{Show\ Distributio
 For \emph{other} normal density distributions, the values of \(\mu\) and \(\sigma\) may be adjusted, and you may specify the domain shown (under ``Options'', then ``range of x'').
 Note that, under the heading ``Parameters'', you should select the option labeled ``\(\mu\), \(\sigma\)'' if you enter the mean and standard deviation (the default option is ``\(\mu\), \(\sigma^2\)'' using variance; for the \emph{standard} normal distribution \(\sigma=\sigma^2=1\)).
 
-\hypertarget{r-4}{%
-\subsection{R}\label{r-4}}
+\hypertarget{r-5}{%
+\subsection{R}\label{r-5}}
 
 The normal probability distribution in Figure \ref{fig:normalprobabilitydistribution} may be plotted in R using the command below. A \texttt{curve} is plotted, with \texttt{x} in the specified domain, and \texttt{y} being the function which computes the normal probability density using equation \eqref{eq:prob-normal}:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{curve}\NormalTok{( }\KeywordTok{dnorm}\NormalTok{( x, }\DataTypeTok{mean=}\DecValTok{0}\NormalTok{, }\DataTypeTok{sd=}\DecValTok{1}\NormalTok{ ), }\CommentTok{\# function specifying y values, normal density}
-       \DataTypeTok{from=}\OperatorTok{{-}}\DecValTok{5}\NormalTok{, }\DataTypeTok{to=}\OperatorTok{+}\DecValTok{5}\NormalTok{, }\CommentTok{\# domain of x}
-       \DataTypeTok{lwd=}\DecValTok{4}\NormalTok{, }\CommentTok{\# line width is 4x default value}
-       \DataTypeTok{xlab=}\StringTok{"x"}\NormalTok{, }\DataTypeTok{ylab=}\StringTok{"P(x)"} \CommentTok{\# labels along x and y axes}
+\FunctionTok{curve}\NormalTok{( }\FunctionTok{dnorm}\NormalTok{( x, }\AttributeTok{mean=}\DecValTok{0}\NormalTok{, }\AttributeTok{sd=}\DecValTok{1}\NormalTok{ ), }\CommentTok{\# function specifying y values, normal density}
+       \AttributeTok{from=}\SpecialCharTok{{-}}\DecValTok{5}\NormalTok{, }\AttributeTok{to=}\SpecialCharTok{+}\DecValTok{5}\NormalTok{, }\CommentTok{\# domain of x}
+       \AttributeTok{lwd=}\DecValTok{4}\NormalTok{, }\CommentTok{\# line width is 4x default value}
+       \AttributeTok{xlab=}\StringTok{"x"}\NormalTok{, }\AttributeTok{ylab=}\StringTok{"P(x)"} \CommentTok{\# labels along x and y axes}
 \NormalTok{       )}
 \end{Highlighting}
 \end{Shaded}
@@ -3787,21 +3792,21 @@ warning in
 the lengths of music numbers are not normally distributed. After these
 test results, there is, amongst others, a Q-Q plot.
 
-\hypertarget{r-5}{%
-\subsection{R}\label{r-5}}
+\hypertarget{r-6}{%
+\subsection{R}\label{r-6}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{itunes \textless{}{-}}\StringTok{ }\KeywordTok{read.table}\NormalTok{( }\DataTypeTok{file=}\StringTok{"data/itunestimes20120511.txt"}\NormalTok{, }\DataTypeTok{header=}\OtherTok{TRUE}\NormalTok{ )}
+\NormalTok{itunes }\OtherTok{\textless{}{-}} \FunctionTok{read.table}\NormalTok{( }\AttributeTok{file=}\StringTok{"data/itunestimes20120511.txt"}\NormalTok{, }\AttributeTok{header=}\ConstantTok{TRUE}\NormalTok{ )}
 \CommentTok{\# Size in bytes, Time in ms}
-\KeywordTok{qqnorm}\NormalTok{(itunes}\OperatorTok{$}\NormalTok{Time}\OperatorTok{/}\DecValTok{60000}\NormalTok{, }\DataTypeTok{datax=}\NormalTok{T, }\DataTypeTok{plot.it=}\OtherTok{FALSE}\NormalTok{) }\CommentTok{\# normally we\textquotesingle{}d use plot.it=TRUE  }
+\FunctionTok{qqnorm}\NormalTok{(itunes}\SpecialCharTok{$}\NormalTok{Time}\SpecialCharTok{/}\DecValTok{60000}\NormalTok{, }\AttributeTok{datax=}\NormalTok{T, }\AttributeTok{plot.it=}\ConstantTok{FALSE}\NormalTok{) }\CommentTok{\# normally we\textquotesingle{}d use plot.it=TRUE  }
 \CommentTok{\# qqline(itunes$Time/60000, datax=T, col="purple", lwd=T) \# see QQ{-}plot above}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{shapiro.test}\NormalTok{(itunes}\OperatorTok{$}\NormalTok{Time}\OperatorTok{/}\DecValTok{60000}\NormalTok{)}
+\FunctionTok{shapiro.test}\NormalTok{(itunes}\SpecialCharTok{$}\NormalTok{Time}\SpecialCharTok{/}\DecValTok{60000}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -4175,16 +4180,16 @@ of all pairs of correlations are reported.
 \caption{\label{tab:cito-correlations} Correlations between the three parts of the CITO
 test, as summarised in Table \ref{tab:cito}, with the accompanying significance level between brackets.}\tabularnewline
 \toprule
-& Reading & Arithmetic & Geography\tabularnewline
+& Reading & Arithmetic & Geography \\
 \midrule
 \endfirsthead
 \toprule
-& Reading & Arithmetic & Geography\tabularnewline
+& Reading & Arithmetic & Geography \\
 \midrule
 \endhead
-Reading & 1.00 & &\tabularnewline
-Arithmetic & 0.79 (.007) & 1.00 &\tabularnewline
-Geography & -0.51 (.131) & -0.01 (.970) & 1.00\tabularnewline
+Reading & 1.00 & & \\
+Arithmetic & 0.79 (.007) & 1.00 & \\
+Geography & -0.51 (.131) & -0.01 (.970) & 1.00 \\
 \bottomrule
 \end{longtable}
 
@@ -4255,16 +4260,16 @@ Make sure that under ``Sample Correlation Coefficient'', option \texttt{Pearson\
 Under ``Additional Options'', check \texttt{Report\ significance}, \texttt{Flag\ significant\ correlations} and \texttt{Sample\ size}. You may also check the option \texttt{Display\ pairwise} to obtain simple table output.
 Note that with or without this option checked, the output table does not adhere to APA guidelines for reporting such tables; hence you'll need to revise the table or create your own using the JASP output.
 
-\hypertarget{r-6}{%
-\subsection{R}\label{r-6}}
+\hypertarget{r-7}{%
+\subsection{R}\label{r-7}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{cito \textless{}{-}}\StringTok{ }\KeywordTok{read.table}\NormalTok{(}\DataTypeTok{file=}\StringTok{"data/cito.txt"}\NormalTok{, }\DataTypeTok{header=}\OtherTok{TRUE}\NormalTok{)}
+\NormalTok{cito }\OtherTok{\textless{}{-}} \FunctionTok{read.table}\NormalTok{(}\AttributeTok{file=}\StringTok{"data/cito.txt"}\NormalTok{, }\AttributeTok{header=}\ConstantTok{TRUE}\NormalTok{)}
 \CommentTok{\# variable names are Lezen=Reading, Rekenen=Arithmetic, WO=Geography, ...}
-\KeywordTok{dimnames}\NormalTok{(cito)[[}\DecValTok{2}\NormalTok{]] \textless{}{-}}\StringTok{ }\KeywordTok{c}\NormalTok{( }\StringTok{"Pupil"}\NormalTok{, }\StringTok{"Reading"}\NormalTok{, }\StringTok{"Arithmetic"}\NormalTok{, }\StringTok{"Geography"}\NormalTok{,}
+\FunctionTok{dimnames}\NormalTok{(cito)[[}\DecValTok{2}\NormalTok{]] }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{( }\StringTok{"Pupil"}\NormalTok{, }\StringTok{"Reading"}\NormalTok{, }\StringTok{"Arithmetic"}\NormalTok{, }\StringTok{"Geography"}\NormalTok{,}
                           \StringTok{"UrbanRural"}\NormalTok{, }\StringTok{"Arith.2cat"}\NormalTok{ )}
-\KeywordTok{cor}\NormalTok{( cito[,}\DecValTok{2}\OperatorTok{:}\DecValTok{4}\NormalTok{] ) }\CommentTok{\# correlation matrix of columns 2,3,4}
+\FunctionTok{cor}\NormalTok{( cito[,}\DecValTok{2}\SpecialCharTok{:}\DecValTok{4}\NormalTok{] ) }\CommentTok{\# correlation matrix of columns 2,3,4}
 \end{Highlighting}
 \end{Shaded}
 
@@ -4277,7 +4282,7 @@ Note that with or without this option checked, the output table does not adhere 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{with}\NormalTok{( cito, }\KeywordTok{cor.test}\NormalTok{( Reading, Arithmetic ) )}
+\FunctionTok{with}\NormalTok{( cito, }\FunctionTok{cor.test}\NormalTok{( Reading, Arithmetic ) )}
 \end{Highlighting}
 \end{Shaded}
 
@@ -4482,12 +4487,12 @@ The table titled \textbf{Model Summary} reports the correlation coefficient, her
 The table titled \textbf{Coefficients} contains the regression coefficients. The row with indication \texttt{(Intercept)} reports the constant \(a=13.25\); the row with indication \texttt{Reading} reports the slope or regression coefficient \(b=0.51\).\\
 The table titled \textbf{Residual Statistics} provides information about the predicted values and residuals. Inspect whether the mean of the residuals is approximately zero (it should be). We also see here (row 2, column 4) that the standard deviation of the residuals is \(3.212\).
 
-\hypertarget{r-7}{%
-\subsection{R}\label{r-7}}
+\hypertarget{r-8}{%
+\subsection{R}\label{r-8}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{summary}\NormalTok{( m1 \textless{}{-}}\StringTok{ }\KeywordTok{lm}\NormalTok{( Arithmetic}\OperatorTok{\textasciitilde{}}\NormalTok{Reading, }\DataTypeTok{data=}\NormalTok{cito ) )}
+\FunctionTok{summary}\NormalTok{( m1 }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{( Arithmetic}\SpecialCharTok{\textasciitilde{}}\NormalTok{Reading, }\AttributeTok{data=}\NormalTok{cito ) )}
 \end{Highlighting}
 \end{Shaded}
 
@@ -4520,7 +4525,7 @@ saved as an object called \texttt{m1}, and that is used again directly as an arg
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{sd}\NormalTok{( }\KeywordTok{resid}\NormalTok{( m1 ) ) }\CommentTok{\# s.d. of residuals according to \textasciigrave{}m1\textasciigrave{}}
+\FunctionTok{sd}\NormalTok{( }\FunctionTok{resid}\NormalTok{( m1 ) ) }\CommentTok{\# s.d. of residuals according to \textasciigrave{}m1\textasciigrave{}}
 \end{Highlighting}
 \end{Shaded}
 
@@ -4593,16 +4598,16 @@ and Arithmetic, ordered here according to the ranks for Reading.
 \caption{\label{tab:cito-ranks} Ranks for the scores of 10 pupils on parts of a test, as summarised in
 Table \ref{tab:cito}, with difference \(v_i\) between the two ranks per pupil.}\tabularnewline
 \toprule
-Pupil & 1 & 9 & 6 & 4 & 10 & 8 & 5 & 7 & 2 & 3\tabularnewline
+Pupil & 1 & 9 & 6 & 4 & 10 & 8 & 5 & 7 & 2 & 3 \\
 \midrule
 \endfirsthead
 \toprule
-Pupil & 1 & 9 & 6 & 4 & 10 & 8 & 5 & 7 & 2 & 3\tabularnewline
+Pupil & 1 & 9 & 6 & 4 & 10 & 8 & 5 & 7 & 2 & 3 \\
 \midrule
 \endhead
-Reading & 1 & 2 & 3 & 4.5 & 4.5 & 6 & 7 & 8 & 9 & 10\tabularnewline
-Arithmetic & 2 & 4 & 1 & 4 & 6.5 & 4 & 8 & 6.5 & 10 & 9\tabularnewline
-Difference \(v_i\) & -1 & -2 & 1 & 0.5 & -2 & 2 & -1 & 1.5 & -1 & 1\tabularnewline
+Reading & 1 & 2 & 3 & 4.5 & 4.5 & 6 & 7 & 8 & 9 & 10 \\
+Arithmetic & 2 & 4 & 1 & 4 & 6.5 & 4 & 8 & 6.5 & 10 & 9 \\
+Difference \(v_i\) & -1 & -2 & 1 & 0.5 & -2 & 2 & -1 & 1.5 & -1 & 1 \\
 \bottomrule
 \end{longtable}
 
@@ -4675,12 +4680,12 @@ Make sure that under ``Sample Correlation Coefficient'', option \texttt{Spearman
 Under ``Additional Options'', check \texttt{Report\ significance}, \texttt{Flag\ significant\ correlations} and \texttt{Sample\ size}. You may also check the option \texttt{Display\ pairwise} to obtain simple table output.
 Note that with or without this option checked, the output table does not adhere to APA guidelines for reporting such tables; hence you'll need to revise the table or create your own using the JASP output.
 
-\hypertarget{r-8}{%
-\subsection{R}\label{r-8}}
+\hypertarget{r-9}{%
+\subsection{R}\label{r-9}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{with}\NormalTok{(cito, }\KeywordTok{cor.test}\NormalTok{( Reading,Arithmetic, }\DataTypeTok{method=}\StringTok{"spearman"}\NormalTok{ ) )}
+\FunctionTok{with}\NormalTok{(cito, }\FunctionTok{cor.test}\NormalTok{( Reading,Arithmetic, }\AttributeTok{method=}\StringTok{"spearman"}\NormalTok{ ) )}
 \end{Highlighting}
 \end{Shaded}
 
@@ -4736,16 +4741,16 @@ to origin (urban=1, rural=0) and according to category of score for the Arithmet
 the CITO test (`mean split', low=0, high=1), with letter designations for the number
 of observations; see text.}\tabularnewline
 \toprule
-Origin & Low (0) & High (1) & Total\tabularnewline
+Origin & Low (0) & High (1) & Total \\
 \midrule
 \endfirsthead
 \toprule
-Origin & Low (0) & High (1) & Total\tabularnewline
+Origin & Low (0) & High (1) & Total \\
 \midrule
 \endhead
-Rural (0) & 5 (A) & 0 (B) & 5 (A+B)\tabularnewline
-Urban (1) & 2 (C) & 3 (D) & 5 (C+D)\tabularnewline
-Total & 7 (A+C) & 3 (B+D) & 10 (A+B+C+D)\tabularnewline
+Rural (0) & 5 (A) & 0 (B) & 5 (A+B) \\
+Urban (1) & 2 (C) & 3 (D) & 5 (C+D) \\
+Total & 7 (A+C) & 3 (B+D) & 10 (A+B+C+D) \\
 \bottomrule
 \end{longtable}
 
@@ -4879,8 +4884,8 @@ Select the variables \texttt{UrbanRural2} (for the ``Rows'' panel) and \texttt{A
 Open the \texttt{Statistics} menu bar, and under ``Nominal'' check \texttt{Phi\ and\ Cramer’s\ V}.
 The value of \(r_\Phi\) is reported in the output under the heading \textbf{Phi coefficient}.
 
-\hypertarget{r-9}{%
-\subsection{R}\label{r-9}}
+\hypertarget{r-10}{%
+\subsection{R}\label{r-10}}
 
 The dataset \texttt{cito} already contains a variable \texttt{UrbanRural} which indicates the pupils' origins.
 However, for completeness, let us still see how you can construct such a variable for yourself.
@@ -4890,8 +4895,8 @@ However, for completeness, let us still see how you can construct such a variabl
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{UrbanRural2 \textless{}{-}}\StringTok{ }\KeywordTok{ifelse}\NormalTok{( cito}\OperatorTok{$}\NormalTok{Pupil}\OperatorTok{\textless{}}\DecValTok{6}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{) }\CommentTok{\# 1=urban, 0=rural}
-\NormalTok{Arithmetic2 \textless{}{-}}\StringTok{ }\KeywordTok{ifelse}\NormalTok{( cito}\OperatorTok{$}\NormalTok{Arithmetic}\OperatorTok{\textgreater{}}\KeywordTok{mean}\NormalTok{(cito}\OperatorTok{$}\NormalTok{Arithmetic), }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{ ) }\CommentTok{\# 1=high, 0=low}
+\NormalTok{UrbanRural2 }\OtherTok{\textless{}{-}} \FunctionTok{ifelse}\NormalTok{( cito}\SpecialCharTok{$}\NormalTok{Pupil}\SpecialCharTok{\textless{}}\DecValTok{6}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{) }\CommentTok{\# 1=urban, 0=rural}
+\NormalTok{Arithmetic2 }\OtherTok{\textless{}{-}} \FunctionTok{ifelse}\NormalTok{( cito}\SpecialCharTok{$}\NormalTok{Arithmetic}\SpecialCharTok{\textgreater{}}\FunctionTok{mean}\NormalTok{(cito}\SpecialCharTok{$}\NormalTok{Arithmetic), }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{ ) }\CommentTok{\# 1=high, 0=low}
 \end{Highlighting}
 \end{Shaded}
 
@@ -4905,7 +4910,7 @@ In R, we also start by making a contingency table (Table \ref{tab:cito-contingen
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{print}\NormalTok{( }\KeywordTok{table}\NormalTok{(UrbanRural2,Arithmetic2) {-}\textgreater{}}\StringTok{ }\NormalTok{citocontingencytable ) }
+\FunctionTok{print}\NormalTok{( }\FunctionTok{table}\NormalTok{(UrbanRural2,Arithmetic2) }\OtherTok{{-}\textgreater{}}\NormalTok{ citocontingencytable ) }
 \end{Highlighting}
 \end{Shaded}
 
@@ -4919,8 +4924,8 @@ In R, we also start by making a contingency table (Table \ref{tab:cito-contingen
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# make and store a contingency table}
-\ControlFlowTok{if}\NormalTok{ (}\KeywordTok{require}\NormalTok{(psych)) \{ }\CommentTok{\# for psych::phi}
-  \KeywordTok{phi}\NormalTok{(citocontingencytable) }\CommentTok{\# contingency table made earlier is input here!}
+\ControlFlowTok{if}\NormalTok{ (}\FunctionTok{require}\NormalTok{(psych)) \{ }\CommentTok{\# for psych::phi}
+  \FunctionTok{phi}\NormalTok{(citocontingencytable) }\CommentTok{\# contingency table made earlier is input here!}
 \NormalTok{\}}
 \end{Highlighting}
 \end{Shaded}
@@ -5372,25 +5377,25 @@ the mean of the judgements from the first and second rater.
 \caption{\label{tab:reliability} Judgements about language proficiency
 from \(n = 10\) students (rows) by \(k = 3\) raters (columns).}\tabularnewline
 \toprule
-Student & B1 & B2 & B3\tabularnewline
+Student & B1 & B2 & B3 \\
 \midrule
 \endfirsthead
 \toprule
-Student & B1 & B2 & B3\tabularnewline
+Student & B1 & B2 & B3 \\
 \midrule
 \endhead
-1 & 67 & 64 & 70\tabularnewline
-2 & 72 & 75 & 74\tabularnewline
-3 & 83 & 89 & 73\tabularnewline
-4 & 68 & 72 & 61\tabularnewline
-5 & 75 & 72 & 77\tabularnewline
-6 & 73 & 73 & 78\tabularnewline
-7 & 73 & 76 & 72\tabularnewline
-8 & 65 & 73 & 72\tabularnewline
-9 & 64 & 68 & 71\tabularnewline
-10 & 70 & 82 & 69\tabularnewline
-\(\overline{x_i}\) & 71.0 & 74.4 & 71.7\tabularnewline
-\(s_i\) & 5.6 & 7.0 & 4.7\tabularnewline
+1 & 67 & 64 & 70 \\
+2 & 72 & 75 & 74 \\
+3 & 83 & 89 & 73 \\
+4 & 68 & 72 & 61 \\
+5 & 75 & 72 & 77 \\
+6 & 73 & 73 & 78 \\
+7 & 73 & 76 & 72 \\
+8 & 65 & 73 & 72 \\
+9 & 64 & 68 & 71 \\
+10 & 70 & 82 & 69 \\
+\(\overline{x_i}\) & 71.0 & 74.4 & 71.7 \\
+\(s_i\) & 5.6 & 7.0 & 4.7 \\
 \bottomrule
 \end{longtable}
 
@@ -5587,17 +5592,17 @@ In the field ``Variables'', select the variables of which you want to know the c
 Make sure that under ``Sample Correlation Coefficient'', option \texttt{Pearson\textquotesingle{}s\ r} is checked.
 Under ``Additional Options'', check \texttt{Report\ significance}, \texttt{Flag\ significant\ correlations} and \texttt{Sample\ size}. You may also check the option \texttt{Display\ pairwise} to obtain simple table output. The output confirms that the inter-rater correlation between raters 1 and 2 is rather high (and significant), and that the inter-rater correlations involving rater 3 are rather low (and not significant).
 
-\hypertarget{r-10}{%
-\section{R}\label{r-10}}
+\hypertarget{r-11}{%
+\section{R}\label{r-11}}
 
 For a reliability analysis of \(k=3\) language proficiency
 judgements in Table \ref{tab:reliability}:\\
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{raters \textless{}{-}}\StringTok{ }\KeywordTok{read.table}\NormalTok{(}\DataTypeTok{file=}\StringTok{"data/beoordelaars.txt"}\NormalTok{, }\DataTypeTok{header=}\OtherTok{TRUE}\NormalTok{)}
-\ControlFlowTok{if}\NormalTok{ (}\KeywordTok{require}\NormalTok{(psych)) \{ }\CommentTok{\# for psych::alpha}
-  \KeywordTok{alpha}\NormalTok{( raters[,}\DecValTok{2}\OperatorTok{:}\DecValTok{4}\NormalTok{] ) }\CommentTok{\# columns 2 to 4}
+\NormalTok{raters }\OtherTok{\textless{}{-}} \FunctionTok{read.table}\NormalTok{(}\AttributeTok{file=}\StringTok{"data/beoordelaars.txt"}\NormalTok{, }\AttributeTok{header=}\ConstantTok{TRUE}\NormalTok{)}
+\ControlFlowTok{if}\NormalTok{ (}\FunctionTok{require}\NormalTok{(psych)) \{ }\CommentTok{\# for psych::alpha}
+  \FunctionTok{alpha}\NormalTok{( raters[,}\DecValTok{2}\SpecialCharTok{:}\DecValTok{4}\NormalTok{] ) }\CommentTok{\# columns 2 to 4}
 \NormalTok{\}}
 \end{Highlighting}
 \end{Shaded}
@@ -5641,7 +5646,7 @@ We need to obtain these correlations explicitly (see §\ref{sec:Pearson}):
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{cor}\NormalTok{( raters[ ,}\KeywordTok{c}\NormalTok{(}\StringTok{"B1"}\NormalTok{,}\StringTok{"B2"}\NormalTok{,}\StringTok{"B3"}\NormalTok{) ] ) }\CommentTok{\# explicit column names}
+\FunctionTok{cor}\NormalTok{( raters[ ,}\FunctionTok{c}\NormalTok{(}\StringTok{"B1"}\NormalTok{,}\StringTok{"B2"}\NormalTok{,}\StringTok{"B3"}\NormalTok{) ] ) }\CommentTok{\# explicit column names}
 \end{Highlighting}
 \end{Shaded}
 
@@ -5963,18 +5968,18 @@ The table titled \textbf{Assumption Checks} reports the Shapiro-Wilk test of nor
 
 Note that we have activated a filter to select only the students of Linguistics, and this filter remains in effect until it is deactivated. You can de-activate the filter by navigating to the data sheet, go to the top left corner, go to the filter working panel, and double-click on the trash can or waste bin symbol in the lower right corner. A confirmation text ``Filter cleared'' should appear, and all observations (rows) in the data sheet should be un-greyed and active.
 
-\hypertarget{r-11}{%
-\subsection{R}\label{r-11}}
+\hypertarget{r-12}{%
+\subsection{R}\label{r-12}}
 
 Our hypothesis discussed above can be tested with the following commands:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{gramm2013 \textless{}{-}}\StringTok{ }\KeywordTok{read.csv}\NormalTok{( }\DataTypeTok{file=}\StringTok{"data/grammaticatoets2013.csv"}\NormalTok{,}\DataTypeTok{header=}\NormalTok{F)}
-\KeywordTok{dimnames}\NormalTok{(gramm2013)[[}\DecValTok{2}\NormalTok{]] \textless{}{-}}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"score"}\NormalTok{,}\StringTok{"progr"}\NormalTok{)}
+\NormalTok{gramm2013 }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{( }\AttributeTok{file=}\StringTok{"data/grammaticatoets2013.csv"}\NormalTok{,}\AttributeTok{header=}\NormalTok{F)}
+\FunctionTok{dimnames}\NormalTok{(gramm2013)[[}\DecValTok{2}\NormalTok{]] }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"score"}\NormalTok{,}\StringTok{"progr"}\NormalTok{)}
 \CommentTok{\# program levels have Dutch labels: TW=Linguistics}
-\KeywordTok{with}\NormalTok{( gramm2013,}
-      \KeywordTok{t.test}\NormalTok{( score[progr}\OperatorTok{==}\StringTok{"TW"}\NormalTok{], }\DataTypeTok{mu=}\DecValTok{73}\NormalTok{, }\DataTypeTok{alt=}\StringTok{"greater"}\NormalTok{ ) )}
+\FunctionTok{with}\NormalTok{( gramm2013,}
+      \FunctionTok{t.test}\NormalTok{( score[progr}\SpecialCharTok{==}\StringTok{"TW"}\NormalTok{], }\AttributeTok{mu=}\DecValTok{73}\NormalTok{, }\AttributeTok{alt=}\StringTok{"greater"}\NormalTok{ ) )}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6156,8 +6161,8 @@ Under ``Additional Statistics'', check \texttt{Location\ parameter} and \texttt{
 
 The output reports the mean of \emph{score}, because observed scores are now compared to the \texttt{test\ value} which is set to \(0\), so that the \texttt{Mean\ Difference} of \texttt{score-0} is now equal to the mean value of \emph{score}. The same table also reports the \texttt{95\%\ CI\ for\ Mean\ Difference}, which is equivalent here with the confidence interval of the mean of \emph{score}.
 
-\hypertarget{r-12}{%
-\subsection{R}\label{r-12}}
+\hypertarget{r-13}{%
+\subsection{R}\label{r-13}}
 
 R states the confidence interval of the mean (with self-specifiable
 confidence level) for a \(t\)-test. We thus again conduct a \(t\)-test
@@ -6166,7 +6171,7 @@ output.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{with}\NormalTok{( gramm2013, }\KeywordTok{t.test}\NormalTok{( score[progr}\OperatorTok{==}\StringTok{"TW"}\NormalTok{] ) )}
+\FunctionTok{with}\NormalTok{( gramm2013, }\FunctionTok{t.test}\NormalTok{( score[progr}\SpecialCharTok{==}\StringTok{"TW"}\NormalTok{] ) )}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6432,10 +6437,10 @@ If checked in the input, descriptive statistics and summary plots are also repor
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{require}\NormalTok{(hqmisc)}
-\KeywordTok{data}\NormalTok{(talkers)}
-\KeywordTok{with}\NormalTok{(talkers, }\KeywordTok{t.test}\NormalTok{( syldur[region}\OperatorTok{==}\StringTok{"W"}\NormalTok{], syldur[region}\OperatorTok{==}\StringTok{"N"}\NormalTok{], }
-            \DataTypeTok{paired=}\NormalTok{F, }\DataTypeTok{var.equal=}\NormalTok{T ) )}
+\FunctionTok{require}\NormalTok{(hqmisc)}
+\FunctionTok{data}\NormalTok{(talkers)}
+\FunctionTok{with}\NormalTok{(talkers, }\FunctionTok{t.test}\NormalTok{( syldur[region}\SpecialCharTok{==}\StringTok{"W"}\NormalTok{], syldur[region}\SpecialCharTok{==}\StringTok{"N"}\NormalTok{], }
+            \AttributeTok{paired=}\NormalTok{F, }\AttributeTok{var.equal=}\NormalTok{T ) )}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6480,24 +6485,24 @@ respondents are summarised.
 \caption{\label{tab:data-uje-paired} Fictional judgements of a webpage
 with \emph{U} or \emph{je} as the forms of addressed, by \(N=10\) respondents.}\tabularnewline
 \toprule
-ID & \emph{U} Condition & \emph{je} Condition & \(D\)\tabularnewline
+ID & \emph{U} Condition & \emph{je} Condition & \(D\) \\
 \midrule
 \endfirsthead
 \toprule
-ID & \emph{U} Condition & \emph{je} Condition & \(D\)\tabularnewline
+ID & \emph{U} Condition & \emph{je} Condition & \(D\) \\
 \midrule
 \endhead
-1 & 8 & 9 & -1\tabularnewline
-2 & 5 & 6 & -1\tabularnewline
-3 & 6 & 9 & -3\tabularnewline
-4 & 6 & 8 & -2\tabularnewline
-5 & 5 & 8 & -3\tabularnewline
-6 & 4 & 6 & -2\tabularnewline
-7 & 4 & 8 & -4\tabularnewline
-8 & 7 & 10 & -3\tabularnewline
-9 & 7 & 9 & -2\tabularnewline
-10 & 6 & 7 & -1\tabularnewline
-& & & \(\overline{D}\)=-2.2\tabularnewline
+1 & 8 & 9 & -1 \\
+2 & 5 & 6 & -1 \\
+3 & 6 & 9 & -3 \\
+4 & 6 & 8 & -2 \\
+5 & 5 & 8 & -3 \\
+6 & 4 & 6 & -2 \\
+7 & 4 & 8 & -4 \\
+8 & 7 & 10 & -3 \\
+9 & 7 & 9 & -2 \\
+10 & 6 & 7 & -1 \\
+& & & \(\overline{D}\)=-2.2 \\
 \bottomrule
 \end{longtable}
 
@@ -6607,8 +6612,8 @@ The data from the above example can be found in the file \texttt{data/ujedata.cs
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{ujedata \textless{}{-}}\StringTok{ }\KeywordTok{read.table}\NormalTok{( }\DataTypeTok{file=}\StringTok{"data/ujedata.csv"}\NormalTok{, }\DataTypeTok{header=}\OtherTok{TRUE}\NormalTok{, }\DataTypeTok{sep=}\StringTok{";"}\NormalTok{ )}
-\KeywordTok{with}\NormalTok{(ujedata, }\KeywordTok{t.test}\NormalTok{( cond.u, cond.je, }\DataTypeTok{paired=}\OtherTok{TRUE}\NormalTok{ ) )}
+\NormalTok{ujedata }\OtherTok{\textless{}{-}} \FunctionTok{read.table}\NormalTok{( }\AttributeTok{file=}\StringTok{"data/ujedata.csv"}\NormalTok{, }\AttributeTok{header=}\ConstantTok{TRUE}\NormalTok{, }\AttributeTok{sep=}\StringTok{";"}\NormalTok{ )}
+\FunctionTok{with}\NormalTok{(ujedata, }\FunctionTok{t.test}\NormalTok{( cond.u, cond.je, }\AttributeTok{paired=}\ConstantTok{TRUE}\NormalTok{ ) )}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6867,20 +6872,20 @@ In JASP, the effect size can be requested when conducting the \(t\) tests, just 
 
 The output of the \(t\) test will report Cohen's \(d\) as measure for the effect size. You can also ask for the \texttt{Confidence\ interval} of the effect size, which will typically report the 95\% confidence interval of the effect size (see §\ref{sec:confint-effectsize} below).
 
-\hypertarget{r-13}{%
-\subsection{R}\label{r-13}}
+\hypertarget{r-14}{%
+\subsection{R}\label{r-14}}
 
 For a single sample
 (formula~\eqref{eq:d-onesample}):\\
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{gramm2013 \textless{}{-}}\StringTok{ }\KeywordTok{read.csv}\NormalTok{( }\DataTypeTok{file=}\StringTok{"data/grammaticatoets2013.csv"}\NormalTok{,}\DataTypeTok{header=}\NormalTok{F)}
-\KeywordTok{dimnames}\NormalTok{(gramm2013)[[}\DecValTok{2}\NormalTok{]] \textless{}{-}}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"score"}\NormalTok{,}\StringTok{"progr"}\NormalTok{)}
+\NormalTok{gramm2013 }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{( }\AttributeTok{file=}\StringTok{"data/grammaticatoets2013.csv"}\NormalTok{,}\AttributeTok{header=}\NormalTok{F)}
+\FunctionTok{dimnames}\NormalTok{(gramm2013)[[}\DecValTok{2}\NormalTok{]] }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"score"}\NormalTok{,}\StringTok{"progr"}\NormalTok{)}
 \CommentTok{\# programs have Dutch labels, TW=Linguistics}
-\KeywordTok{with}\NormalTok{(gramm2013, score[progr}\OperatorTok{==}\StringTok{"TW"}\NormalTok{]) {-}\textgreater{}}\StringTok{ }\NormalTok{score.ling}
+\FunctionTok{with}\NormalTok{(gramm2013, score[progr}\SpecialCharTok{==}\StringTok{"TW"}\NormalTok{]) }\OtherTok{{-}\textgreater{}}\NormalTok{ score.ling}
 \CommentTok{\# auxiliary variable}
-\NormalTok{( }\KeywordTok{mean}\NormalTok{(score.ling)}\OperatorTok{{-}}\DecValTok{73}\NormalTok{ ) }\OperatorTok{/}\StringTok{ }\KeywordTok{sd}\NormalTok{(score.ling) }
+\NormalTok{( }\FunctionTok{mean}\NormalTok{(score.ling)}\SpecialCharTok{{-}}\DecValTok{73}\NormalTok{ ) }\SpecialCharTok{/} \FunctionTok{sd}\NormalTok{(score.ling) }
 \end{Highlighting}
 \end{Shaded}
 
@@ -6893,7 +6898,7 @@ student (of which we assume that \(\mu=84.4\) and \(s=8.4\)):
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\DecValTok{1} \OperatorTok{{-}}\StringTok{ }\KeywordTok{pnorm}\NormalTok{( }\DecValTok{73}\NormalTok{, }\DataTypeTok{mean=}\FloatTok{84.4}\NormalTok{, }\DataTypeTok{sd=}\FloatTok{8.4}\NormalTok{ ) }
+\DecValTok{1} \SpecialCharTok{{-}} \FunctionTok{pnorm}\NormalTok{( }\DecValTok{73}\NormalTok{, }\AttributeTok{mean=}\FloatTok{84.4}\NormalTok{, }\AttributeTok{sd=}\FloatTok{8.4}\NormalTok{ ) }
 \end{Highlighting}
 \end{Shaded}
 
@@ -6912,7 +6917,7 @@ an argument (power = \(1-\beta\); see
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{power.t.test}\NormalTok{( }\DataTypeTok{n=}\DecValTok{122}\NormalTok{, }\DataTypeTok{sig=}\NormalTok{.}\DecValTok{05}\NormalTok{, }\DataTypeTok{power=}\NormalTok{.}\DecValTok{90}\NormalTok{, }\DataTypeTok{type=}\StringTok{"two.sample"}\NormalTok{ )}
+\FunctionTok{power.t.test}\NormalTok{( }\AttributeTok{n=}\DecValTok{122}\NormalTok{, }\AttributeTok{sig=}\NormalTok{.}\DecValTok{05}\NormalTok{, }\AttributeTok{power=}\NormalTok{.}\DecValTok{90}\NormalTok{, }\AttributeTok{type=}\StringTok{"two.sample"}\NormalTok{ )}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6938,8 +6943,8 @@ For a single sample with two paired observations
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{ujedata \textless{}{-}}\StringTok{ }\KeywordTok{read.table}\NormalTok{( }\DataTypeTok{file=}\StringTok{"data/ujedata.csv"}\NormalTok{, }\DataTypeTok{header=}\OtherTok{TRUE}\NormalTok{, }\DataTypeTok{sep=}\StringTok{";"}\NormalTok{ )}
-\KeywordTok{with}\NormalTok{( ujedata, }\KeywordTok{mean}\NormalTok{(cond.u}\OperatorTok{{-}}\NormalTok{cond.je) }\OperatorTok{/}\StringTok{ }\KeywordTok{sd}\NormalTok{(cond.u}\OperatorTok{{-}}\NormalTok{cond.je) )}
+\NormalTok{ujedata }\OtherTok{\textless{}{-}} \FunctionTok{read.table}\NormalTok{( }\AttributeTok{file=}\StringTok{"data/ujedata.csv"}\NormalTok{, }\AttributeTok{header=}\ConstantTok{TRUE}\NormalTok{, }\AttributeTok{sep=}\StringTok{";"}\NormalTok{ )}
+\FunctionTok{with}\NormalTok{( ujedata, }\FunctionTok{mean}\NormalTok{(cond.u}\SpecialCharTok{{-}}\NormalTok{cond.je) }\SpecialCharTok{/} \FunctionTok{sd}\NormalTok{(cond.u}\SpecialCharTok{{-}}\NormalTok{cond.je) )}
 \end{Highlighting}
 \end{Shaded}
 
@@ -7361,17 +7366,17 @@ study is necessary; we will return to this later.
 of speakers, divided according to region of origin of the speaker (see Example
 15.1).}\tabularnewline
 \toprule
-Region & Mean & s.d. & n\tabularnewline
+Region & Mean & s.d. & n \\
 \midrule
 \endfirsthead
 \toprule
-Region & Mean & s.d. & n\tabularnewline
+Region & Mean & s.d. & n \\
 \midrule
 \endhead
-Middle & 0.253 & 0.028 & 20\tabularnewline
-North & 0.269 & 0.029 & 20\tabularnewline
-South & 0.260 & 0.030 & 19\tabularnewline
-West & 0.235 & 0.028 & 20\tabularnewline
+Middle & 0.253 & 0.028 & 20 \\
+North & 0.269 & 0.029 & 20 \\
+South & 0.260 & 0.030 & 19 \\
+West & 0.235 & 0.028 & 20 \\
 \bottomrule
 \end{longtable}
 
@@ -7435,21 +7440,21 @@ regions). We call the latter differences the `interaction' between the two facto
 numbers of speakers, divided according to gender and the speaker's region of origin
 (see Example 15.1).}\tabularnewline
 \toprule
-Gender & Region & Mean & s.d. & n\tabularnewline
+Gender & Region & Mean & s.d. & n \\
 \midrule
 \endfirsthead
 \toprule
-Gender & Region & Mean & s.d. & n\tabularnewline
+Gender & Region & Mean & s.d. & n \\
 \midrule
 \endhead
-Woman & Middle & 0.271 & 0.021 & 10\tabularnewline
-Woman & North & 0.285 & 0.025 & 10\tabularnewline
-Woman & South & 0.269 & 0.028 & 9\tabularnewline
-Woman & West & 0.238 & 0.028 & 10\tabularnewline
-Man & Middle & 0.235 & 0.022 & 10\tabularnewline
-Man & North & 0.253 & 0.025 & 10\tabularnewline
-Man & South & 0.252 & 0.030 & 10\tabularnewline
-Man & West & 0.232 & 0.028 & 10\tabularnewline
+Woman & Middle & 0.271 & 0.021 & 10 \\
+Woman & North & 0.285 & 0.025 & 10 \\
+Woman & South & 0.269 & 0.028 & 9 \\
+Woman & West & 0.238 & 0.028 & 10 \\
+Man & Middle & 0.235 & 0.022 & 10 \\
+Man & North & 0.253 & 0.025 & 10 \\
+Man & South & 0.252 & 0.030 & 10 \\
+Man & West & 0.232 & 0.028 & 10 \\
 \bottomrule
 \end{longtable}
 
@@ -7684,15 +7689,15 @@ one sentence, see Example 15.2.
 \begin{longtable}[]{@{}lccccc@{}}
 \caption{\label{tab:colours-anova} Summary of analysis of variance of the observations in Figure \ref{fig:colours-obs}.}\tabularnewline
 \toprule
-Variance Source & df & SS & MS & \(F\) & \(p\)\tabularnewline
+Variance Source & df & SS & MS & \(F\) & \(p\) \\
 \midrule
 \endfirsthead
 \toprule
-Variance Source & df & SS & MS & \(F\) & \(p\)\tabularnewline
+Variance Source & df & SS & MS & \(F\) & \(p\) \\
 \midrule
 \endhead
-Group & 2 & 14.50 & 7.248 & 9.356 & 0.0004\tabularnewline
-(within) & 42 & 32.54 & 0.775 & &\tabularnewline
+Group & 2 & 14.50 & 7.248 & 9.356 & 0.0004 \\
+(within) & 42 & 32.54 & 0.775 & & \\
 \bottomrule
 \end{longtable}
 
@@ -7811,17 +7816,17 @@ grey group and than the blue group.
 \begin{longtable}[]{@{}lccccc@{}}
 \caption{\label{tab:colours-anova-contrast} Summary of analysis of variance of the observations in Figure \ref{fig:colours-obs}, with planned contrasts between groups.}\tabularnewline
 \toprule
-Variance source & df & SS & MS & \(F\) & \(p\)\tabularnewline
+Variance source & df & SS & MS & \(F\) & \(p\) \\
 \midrule
 \endfirsthead
 \toprule
-Variance source & df & SS & MS & \(F\) & \(p\)\tabularnewline
+Variance source & df & SS & MS & \(F\) & \(p\) \\
 \midrule
 \endhead
-Group & 2 & 14.50 & 7.248 & 9.356 & 0.0004\tabularnewline
-~~Group, contrast 1 & 1 & 14.31 & 14.308 & 18.470 & 0.0001\tabularnewline
-~~Group, contrast 2 & 1 & 0.19 & 0.188 & 0.243 & 0.6248\tabularnewline
-(within) & 42 & 32.54 & 0.775 & &\tabularnewline
+Group & 2 & 14.50 & 7.248 & 9.356 & 0.0004 \\
+~~Group, contrast 1 & 1 & 14.31 & 14.308 & 18.470 & 0.0001 \\
+~~Group, contrast 2 & 1 & 0.19 & 0.188 & 0.243 & 0.6248 \\
+(within) & 42 & 32.54 & 0.775 & & \\
 \bottomrule
 \end{longtable}
 
@@ -7841,12 +7846,12 @@ in the form of the following weights:
 
 \begin{longtable}[]{@{}ccc@{}}
 \toprule
-Condition & Contrast 1 & Contrast 2\tabularnewline
+Condition & Contrast 1 & Contrast 2 \\
 \midrule
 \endhead
-~~Red & -1 & 0\tabularnewline
-~~Grey & +0.5 & -1\tabularnewline
-~~Blue & +0.5 & +1\tabularnewline
+~~Red & -1 & 0 \\
+~~Grey & +0.5 & -1 \\
+~~Blue & +0.5 & +1 \\
 \bottomrule
 \end{longtable}
 
@@ -8093,8 +8098,8 @@ Under ``Correction'' check the option \texttt{Tukey}, and under ``Display'' chec
 
 The output of the \emph{Post Hoc Tests} shows for each pairwise comparison the difference, the standard error, and the 95\% confidence interval of the difference. If the interval does \emph{not} contain zero, then the scores are probably different between the two groups. For each pairwise comparison JASP reports a \(t\) test with its adjusted \(p\) value. We see that red differs from blue, that red differs from grey, and that scores do not differ between the blue and grey groups. Report that you have used Tukey's HSD test, and report the \(p\) values for each comparison, as in Example 15.4 above.
 
-\hypertarget{r-14}{%
-\subsection{R}\label{r-14}}
+\hypertarget{r-15}{%
+\subsection{R}\label{r-15}}
 
 \hypertarget{preparation-3}{%
 \subsubsection{preparation}\label{preparation-3}}
@@ -8104,8 +8109,8 @@ We will use the data in the file \texttt{data/kleurgroepen.txt}; these data are 
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# same data as used in Fig.15.2}
-\NormalTok{colourgroups \textless{}{-}}\StringTok{ }\KeywordTok{read.table}\NormalTok{( }\StringTok{"data/kleurgroepen.txt"}\NormalTok{, }
-                            \DataTypeTok{header=}\OtherTok{TRUE}\NormalTok{, }\DataTypeTok{stringsAsFactors=}\OtherTok{TRUE}\NormalTok{ )}
+\NormalTok{colourgroups }\OtherTok{\textless{}{-}} \FunctionTok{read.table}\NormalTok{( }\StringTok{"data/kleurgroepen.txt"}\NormalTok{, }
+                            \AttributeTok{header=}\ConstantTok{TRUE}\NormalTok{, }\AttributeTok{stringsAsFactors=}\ConstantTok{TRUE}\NormalTok{ )}
 \end{Highlighting}
 \end{Shaded}
 
@@ -8120,7 +8125,7 @@ test this H0 using Bartlett's test.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{bartlett.test}\NormalTok{( }\DataTypeTok{x=}\NormalTok{colourgroups}\OperatorTok{$}\NormalTok{score, }\DataTypeTok{g=}\NormalTok{colourgroups}\OperatorTok{$}\NormalTok{kleur )}
+\FunctionTok{bartlett.test}\NormalTok{( }\AttributeTok{x=}\NormalTok{colourgroups}\SpecialCharTok{$}\NormalTok{score, }\AttributeTok{g=}\NormalTok{colourgroups}\SpecialCharTok{$}\NormalTok{kleur )}
 \end{Highlighting}
 \end{Shaded}
 
@@ -8137,7 +8142,7 @@ test this H0 using Bartlett's test.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{summary}\NormalTok{( }\KeywordTok{aov}\NormalTok{( score}\OperatorTok{\textasciitilde{}}\NormalTok{kleur, }\DataTypeTok{data=}\NormalTok{colourgroups) {-}\textgreater{}}\StringTok{ }\NormalTok{m01 ) }\CommentTok{\# see Table 15.3}
+\FunctionTok{summary}\NormalTok{( }\FunctionTok{aov}\NormalTok{( score}\SpecialCharTok{\textasciitilde{}}\NormalTok{kleur, }\AttributeTok{data=}\NormalTok{colourgroups) }\OtherTok{{-}\textgreater{}}\NormalTok{ m01 ) }\CommentTok{\# see Table 15.3}
 \end{Highlighting}
 \end{Shaded}
 
@@ -8156,14 +8161,14 @@ test this H0 using Bartlett's test.
 \begin{Highlighting}[]
 \CommentTok{\# own function to calculate omega2, see comparison (15.7) in the main text,}
 \CommentTok{\# for effect called \textasciigrave{}term\textasciigrave{} in summary(\textasciigrave{}model\textasciigrave{})}
-\NormalTok{omegasq \textless{}{-}}\StringTok{ }\ControlFlowTok{function}\NormalTok{ ( model, term ) \{   }
-\NormalTok{     mtab \textless{}{-}}\StringTok{ }\KeywordTok{anova}\NormalTok{(model)}
-\NormalTok{     rterm \textless{}{-}}\StringTok{ }\KeywordTok{dim}\NormalTok{(mtab)[}\DecValTok{1}\NormalTok{] }\CommentTok{\# resid term}
-     \KeywordTok{return}\NormalTok{( (mtab[term,}\DecValTok{2}\NormalTok{]}\OperatorTok{{-}}\NormalTok{mtab[term,}\DecValTok{1}\NormalTok{]}\OperatorTok{*}\NormalTok{mtab[rterm,}\DecValTok{3}\NormalTok{]) }\OperatorTok{/}\StringTok{ }
-\StringTok{             }\NormalTok{(mtab[rterm,}\DecValTok{3}\NormalTok{]}\OperatorTok{+}\KeywordTok{sum}\NormalTok{(mtab[,}\DecValTok{2}\NormalTok{])) )}
+\NormalTok{omegasq }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{ ( model, term ) \{   }
+\NormalTok{     mtab }\OtherTok{\textless{}{-}} \FunctionTok{anova}\NormalTok{(model)}
+\NormalTok{     rterm }\OtherTok{\textless{}{-}} \FunctionTok{dim}\NormalTok{(mtab)[}\DecValTok{1}\NormalTok{] }\CommentTok{\# resid term}
+     \FunctionTok{return}\NormalTok{( (mtab[term,}\DecValTok{2}\NormalTok{]}\SpecialCharTok{{-}}\NormalTok{mtab[term,}\DecValTok{1}\NormalTok{]}\SpecialCharTok{*}\NormalTok{mtab[rterm,}\DecValTok{3}\NormalTok{]) }\SpecialCharTok{/} 
+\NormalTok{             (mtab[rterm,}\DecValTok{3}\NormalTok{]}\SpecialCharTok{+}\FunctionTok{sum}\NormalTok{(mtab[,}\DecValTok{2}\NormalTok{])) )}
 \NormalTok{\}}
 \CommentTok{\# variable kleur=colour is the term to inspect}
-\KeywordTok{omegasq}\NormalTok{( m01, }\StringTok{"kleur"}\NormalTok{ ) }\CommentTok{\# call function with 2 arguments}
+\FunctionTok{omegasq}\NormalTok{( m01, }\StringTok{"kleur"}\NormalTok{ ) }\CommentTok{\# call function with 2 arguments}
 \end{Highlighting}
 \end{Shaded}
 
@@ -8181,10 +8186,10 @@ When specifying the contrasts, we have to take into account the
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# make matrix of two orthogonal contrasts (per column, not per row) }
-\NormalTok{conmat \textless{}{-}}\StringTok{ }\KeywordTok{matrix}\NormalTok{( }\KeywordTok{c}\NormalTok{(.}\DecValTok{5}\NormalTok{,.}\DecValTok{5}\NormalTok{,}\OperatorTok{{-}}\DecValTok{1}\NormalTok{, }\OperatorTok{+}\DecValTok{1}\NormalTok{,}\OperatorTok{{-}}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{), }\DataTypeTok{byrow=}\NormalTok{F, }\DataTypeTok{nrow=}\DecValTok{3}\NormalTok{ )}
-\KeywordTok{dimnames}\NormalTok{(conmat)[[}\DecValTok{2}\NormalTok{]] \textless{}{-}}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{".R.GB"}\NormalTok{,}\StringTok{".0G.B"}\NormalTok{) }\CommentTok{\# (1) R vs G+B, (2) G vs B }
-\KeywordTok{contrasts}\NormalTok{(colourgroups}\OperatorTok{$}\NormalTok{kleur) \textless{}{-}}\StringTok{ }\NormalTok{conmat }\CommentTok{\# assign contrasts to factor}
-\KeywordTok{summary}\NormalTok{( }\KeywordTok{aov}\NormalTok{( score}\OperatorTok{\textasciitilde{}}\NormalTok{kleur, }\DataTypeTok{data=}\NormalTok{colourgroups) {-}\textgreater{}}\StringTok{ }\NormalTok{m02 ) }
+\NormalTok{conmat }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{( }\FunctionTok{c}\NormalTok{(.}\DecValTok{5}\NormalTok{,.}\DecValTok{5}\NormalTok{,}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{, }\SpecialCharTok{+}\DecValTok{1}\NormalTok{,}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{), }\AttributeTok{byrow=}\NormalTok{F, }\AttributeTok{nrow=}\DecValTok{3}\NormalTok{ )}
+\FunctionTok{dimnames}\NormalTok{(conmat)[[}\DecValTok{2}\NormalTok{]] }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{".R.GB"}\NormalTok{,}\StringTok{".0G.B"}\NormalTok{) }\CommentTok{\# (1) R vs G+B, (2) G vs B }
+\FunctionTok{contrasts}\NormalTok{(colourgroups}\SpecialCharTok{$}\NormalTok{kleur) }\OtherTok{\textless{}{-}}\NormalTok{ conmat }\CommentTok{\# assign contrasts to factor}
+\FunctionTok{summary}\NormalTok{( }\FunctionTok{aov}\NormalTok{( score}\SpecialCharTok{\textasciitilde{}}\NormalTok{kleur, }\AttributeTok{data=}\NormalTok{colourgroups) }\OtherTok{{-}\textgreater{}}\NormalTok{ m02 ) }
 \end{Highlighting}
 \end{Shaded}
 
@@ -8200,7 +8205,7 @@ When specifying the contrasts, we have to take into account the
 \begin{Highlighting}[]
 \CommentTok{\# output is necessary for omega2}
 \CommentTok{\# see https://blogs.uoregon.edu/rclub/2015/11/03/anova{-}contrasts{-}in{-}r/}
-\KeywordTok{summary.aov}\NormalTok{( m02, }\DataTypeTok{split=}\KeywordTok{list}\NormalTok{(}\DataTypeTok{kleur=}\KeywordTok{list}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{)) )}
+\FunctionTok{summary.aov}\NormalTok{( m02, }\AttributeTok{split=}\FunctionTok{list}\NormalTok{(}\AttributeTok{kleur=}\FunctionTok{list}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{)) )}
 \end{Highlighting}
 \end{Shaded}
 
@@ -8218,7 +8223,7 @@ When we have planned contrasts, the previously constructed function \texttt{omeg
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{(}\FloatTok{14.308}\DecValTok{{-}1}\OperatorTok{*}\FloatTok{0.775}\NormalTok{)}\OperatorTok{/}\NormalTok{(}\FloatTok{0.775+14.308+0.19+32.54}\NormalTok{) }\CommentTok{\# 0.2830402}
+\NormalTok{(}\FloatTok{14.308}\DecValTok{{-}1}\SpecialCharTok{*}\FloatTok{0.775}\NormalTok{)}\SpecialCharTok{/}\NormalTok{(}\FloatTok{0.775+14.308+0.19+32.54}\NormalTok{) }\CommentTok{\# 0.2830402}
 \end{Highlighting}
 \end{Shaded}
 
@@ -8228,7 +8233,7 @@ When we have planned contrasts, the previously constructed function \texttt{omeg
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{(}\FloatTok{0.188}\DecValTok{{-}1}\OperatorTok{*}\FloatTok{0.775}\NormalTok{)}\OperatorTok{/}\NormalTok{(}\FloatTok{0.775+14.308+0.19+32.54}\NormalTok{) }\CommentTok{\# rounded off 0.00}
+\NormalTok{(}\FloatTok{0.188}\DecValTok{{-}1}\SpecialCharTok{*}\FloatTok{0.775}\NormalTok{)}\SpecialCharTok{/}\NormalTok{(}\FloatTok{0.775+14.308+0.19+32.54}\NormalTok{) }\CommentTok{\# rounded off 0.00}
 \end{Highlighting}
 \end{Shaded}
 
@@ -8241,7 +8246,7 @@ When we have planned contrasts, the previously constructed function \texttt{omeg
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{TukeyHSD}\NormalTok{(m02)}
+\FunctionTok{TukeyHSD}\NormalTok{(m02)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -8380,17 +8385,17 @@ pairwise differences between regions were not significant.
 \caption{\label{tab:syldur2way-anova} Summary of two-way analysis of variance of the speech
 tempos in Table~\ref{tab:sylduration2way}.}\tabularnewline
 \toprule
-Source of variance & df & SS & MS & \(F\) & \(p\)\tabularnewline
+Source of variance & df & SS & MS & \(F\) & \(p\) \\
 \midrule
 \endfirsthead
 \toprule
-Source of variance & df & SS & MS & \(F\) & \(p\)\tabularnewline
+Source of variance & df & SS & MS & \(F\) & \(p\) \\
 \midrule
 \endhead
-(i) Regio & 3 & 0.0124 & 0.0041 & 6.09 & \textless.001\tabularnewline
-(ii) Sex & 1 & 0.0102 & 0.0102 & 15.03 & \textless.001\tabularnewline
-(iii) Region \(\times\) Sex & 3 & 0.0029 & 0.0010 & 1.41 & .248\tabularnewline
-within & 71 & 0.0484 & 0.0007 & &\tabularnewline
+(i) Regio & 3 & 0.0124 & 0.0041 & 6.09 & \textless.001 \\
+(ii) Sex & 1 & 0.0102 & 0.0102 & 15.03 & \textless.001 \\
+(iii) Region \(\times\) Sex & 3 & 0.0029 & 0.0010 & 1.41 & .248 \\
+within & 71 & 0.0484 & 0.0007 & & \\
 \bottomrule
 \end{longtable}
 
@@ -8474,19 +8479,19 @@ Under ``Correction'' check the option \texttt{Tukey}, and under ``Display'' chec
 
 The output of the \emph{Post Hoc Tests} shows for each pairwise comparison the difference, the standard error, and the 95\% confidence interval of the difference. If the interval does \emph{not} contain zero, then the scores are probably different between the two groups. For each pairwise comparison JASP reports a \(t\) test with its adjusted \(p\) value using Tukey's correction. We see that speakers from the North and West regions differ, as do speakers from the South and West, with large effect sizes for these two differences. The other differences among regions are not significant.
 
-\hypertarget{r-15}{%
-\subsection{R}\label{r-15}}
+\hypertarget{r-16}{%
+\subsection{R}\label{r-16}}
 
 \hypertarget{preparation-6}{%
 \subsubsection{preparation}\label{preparation-6}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{require}\NormalTok{(hqmisc) }\CommentTok{\# for hqmisc::talkers data set}
-\KeywordTok{data}\NormalTok{(talkers)}
-\NormalTok{ok \textless{}{-}}\StringTok{ }\NormalTok{talkers}\OperatorTok{$}\NormalTok{syldur}\OperatorTok{\textless{}}\FloatTok{0.4} \CommentTok{\# TRUE for 79 of 80 talkers}
+\FunctionTok{require}\NormalTok{(hqmisc) }\CommentTok{\# for hqmisc::talkers data set}
+\FunctionTok{data}\NormalTok{(talkers)}
+\NormalTok{ok }\OtherTok{\textless{}{-}}\NormalTok{ talkers}\SpecialCharTok{$}\NormalTok{syldur}\SpecialCharTok{\textless{}}\FloatTok{0.4} \CommentTok{\# TRUE for 79 of 80 talkers}
 \CommentTok{\# table of means, see Table 15.2 in main text}
-\KeywordTok{with}\NormalTok{(talkers, }\KeywordTok{tapply}\NormalTok{( syldur[ok], }\KeywordTok{list}\NormalTok{(region[ok],sex[ok]), mean ))}
+\FunctionTok{with}\NormalTok{(talkers, }\FunctionTok{tapply}\NormalTok{( syldur[ok], }\FunctionTok{list}\NormalTok{(region[ok],sex[ok]), mean ))}
 \end{Highlighting}
 \end{Shaded}
 
@@ -8504,7 +8509,7 @@ The output of the \emph{Post Hoc Tests} shows for each pairwise comparison the d
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# approximately similar to Table 15.5 in main text, but R uses Type I SS}
-\KeywordTok{summary}\NormalTok{( }\KeywordTok{aov}\NormalTok{(syldur}\OperatorTok{\textasciitilde{}}\NormalTok{region}\OperatorTok{*}\NormalTok{sex, }\DataTypeTok{data=}\NormalTok{talkers, }\DataTypeTok{subset=}\NormalTok{ok) {-}\textgreater{}}\StringTok{ }\NormalTok{m03 )}
+\FunctionTok{summary}\NormalTok{( }\FunctionTok{aov}\NormalTok{(syldur}\SpecialCharTok{\textasciitilde{}}\NormalTok{region}\SpecialCharTok{*}\NormalTok{sex, }\AttributeTok{data=}\NormalTok{talkers, }\AttributeTok{subset=}\NormalTok{ok) }\OtherTok{{-}\textgreater{}}\NormalTok{ m03 )}
 \end{Highlighting}
 \end{Shaded}
 
@@ -8528,7 +8533,7 @@ In order to assess effect size, we will use the previously programmed function \
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{omegasq}\NormalTok{(m03, }\StringTok{"region"}\NormalTok{)      }\CommentTok{\# [1] 0.1380875}
+\FunctionTok{omegasq}\NormalTok{(m03, }\StringTok{"region"}\NormalTok{)      }\CommentTok{\# [1] 0.1380875}
 \end{Highlighting}
 \end{Shaded}
 
@@ -8538,7 +8543,7 @@ In order to assess effect size, we will use the previously programmed function \
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{omegasq}\NormalTok{(m03, }\StringTok{"sex"}\NormalTok{)         }\CommentTok{\# [1] 0.1291232}
+\FunctionTok{omegasq}\NormalTok{(m03, }\StringTok{"sex"}\NormalTok{)         }\CommentTok{\# [1] 0.1291232}
 \end{Highlighting}
 \end{Shaded}
 
@@ -8548,7 +8553,7 @@ In order to assess effect size, we will use the previously programmed function \
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{omegasq}\NormalTok{(m03, }\StringTok{"region:sex"}\NormalTok{)  }\CommentTok{\# [1] 0.01112131}
+\FunctionTok{omegasq}\NormalTok{(m03, }\StringTok{"region:sex"}\NormalTok{)  }\CommentTok{\# [1] 0.01112131}
 \end{Highlighting}
 \end{Shaded}
 
@@ -8563,7 +8568,7 @@ These results too differ slighly from those reported in the main text above, bec
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{TukeyHSD}\NormalTok{(}\DataTypeTok{x=}\NormalTok{m03, }\DataTypeTok{which=}\StringTok{"region"}\NormalTok{)}
+\FunctionTok{TukeyHSD}\NormalTok{(}\AttributeTok{x=}\NormalTok{m03, }\AttributeTok{which=}\StringTok{"region"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -8717,18 +8722,18 @@ according to passage
 and status (survived or not). Data taken from the dataset
 \texttt{Titanic} in R.}\tabularnewline
 \toprule
-Class & Died & Survived & Total\tabularnewline
+Class & Died & Survived & Total \\
 \midrule
 \endfirsthead
 \toprule
-Class & Died & Survived & Total\tabularnewline
+Class & Died & Survived & Total \\
 \midrule
 \endhead
-1st & 122 & 203 & 325\tabularnewline
-2nd & 167 & 118 & 285\tabularnewline
-3rd & 528 & 178 & 706\tabularnewline
-Crew & 673 & 212 & 885\tabularnewline
-Total & 1490 & 711 & 2201\tabularnewline
+1st & 122 & 203 & 325 \\
+2nd & 167 & 118 & 285 \\
+3rd & 528 & 178 & 706 \\
+Crew & 673 & 212 & 885 \\
+Total & 1490 & 711 & 2201 \\
 \bottomrule
 \end{longtable}
 
@@ -9023,16 +9028,16 @@ Open the \texttt{Cells} section bar, and check the option \texttt{Expected\ coun
 
 In JASP it is not possible to obtain the (adjusted) standardized residuals; however you can compute these manually from the observed and expected counts.
 
-\hypertarget{r-16}{%
-\section{R}\label{r-16}}
+\hypertarget{r-17}{%
+\section{R}\label{r-17}}
 
 \hypertarget{goodness-of-fit-testing-2}{%
 \subsection{goodness of fit: testing}\label{goodness-of-fit-testing-2}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{chisq.test}\NormalTok{( }\KeywordTok{c}\NormalTok{( }\DecValTok{14}\NormalTok{, }\DecValTok{9}\NormalTok{, }\DecValTok{11}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{15}\NormalTok{, }\DecValTok{1}\NormalTok{ ) ) {-}\textgreater{}}\StringTok{ }\NormalTok{dobbel.chi2.htest }\CommentTok{\# die §16.2}
-\KeywordTok{print}\NormalTok{(dobbel.chi2.htest)}
+\FunctionTok{chisq.test}\NormalTok{( }\FunctionTok{c}\NormalTok{( }\DecValTok{14}\NormalTok{, }\DecValTok{9}\NormalTok{, }\DecValTok{11}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{15}\NormalTok{, }\DecValTok{1}\NormalTok{ ) ) }\OtherTok{{-}\textgreater{}}\NormalTok{ dobbel.chi2.htest }\CommentTok{\# die §16.2}
+\FunctionTok{print}\NormalTok{(dobbel.chi2.htest)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -9046,7 +9051,7 @@ In JASP it is not possible to obtain the (adjusted) standardized residuals; howe
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{dobbel.chi2.htest}\OperatorTok{$}\NormalTok{residuals }\CommentTok{\# raw residuals}
+\NormalTok{dobbel.chi2.htest}\SpecialCharTok{$}\NormalTok{residuals }\CommentTok{\# raw residuals}
 \end{Highlighting}
 \end{Shaded}
 
@@ -9056,7 +9061,7 @@ In JASP it is not possible to obtain the (adjusted) standardized residuals; howe
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{sum}\NormalTok{( (dobbel.chi2.htest}\OperatorTok{$}\NormalTok{residuals)}\OperatorTok{\^{}}\DecValTok{2}\NormalTok{ ) }\CommentTok{\# chi2 = sum of sq of raw resid}
+\FunctionTok{sum}\NormalTok{( (dobbel.chi2.htest}\SpecialCharTok{$}\NormalTok{residuals)}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{ ) }\CommentTok{\# chi2 = sum of sq of raw resid}
 \end{Highlighting}
 \end{Shaded}
 
@@ -9066,7 +9071,7 @@ In JASP it is not possible to obtain the (adjusted) standardized residuals; howe
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{dobbel.chi2.htest}\OperatorTok{$}\NormalTok{stdres }\CommentTok{\# standardized residuals}
+\NormalTok{dobbel.chi2.htest}\SpecialCharTok{$}\NormalTok{stdres }\CommentTok{\# standardized residuals}
 \end{Highlighting}
 \end{Shaded}
 
@@ -9083,7 +9088,7 @@ the fourth dimension (outcome).
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{apply}\NormalTok{( Titanic, }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{4}\NormalTok{), sum ) {-}\textgreater{}}\StringTok{ }\NormalTok{Titanic.classoutcome}
+\FunctionTok{apply}\NormalTok{( Titanic, }\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{4}\NormalTok{), sum ) }\OtherTok{{-}\textgreater{}}\NormalTok{ Titanic.classoutcome}
 \end{Highlighting}
 \end{Shaded}
 
@@ -9092,8 +9097,8 @@ The resulting \texttt{chisq.htest} object is saved within R in order to inspect 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{chisq.test}\NormalTok{( Titanic.classoutcome ) {-}\textgreater{}}\StringTok{ }\NormalTok{Titanic.chisq.htest}
-\KeywordTok{print}\NormalTok{(Titanic.chisq.htest)}
+\FunctionTok{chisq.test}\NormalTok{( Titanic.classoutcome ) }\OtherTok{{-}\textgreater{}}\NormalTok{ Titanic.chisq.htest}
+\FunctionTok{print}\NormalTok{(Titanic.chisq.htest)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -9107,7 +9112,7 @@ The resulting \texttt{chisq.htest} object is saved within R in order to inspect 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{Titanic.chisq.htest}\OperatorTok{$}\NormalTok{stdres }\CommentTok{\# standardized residuals}
+\NormalTok{Titanic.chisq.htest}\SpecialCharTok{$}\NormalTok{stdres }\CommentTok{\# standardized residuals}
 \end{Highlighting}
 \end{Shaded}
 
@@ -9149,16 +9154,16 @@ smoker currently or previously) and according to death by lung cancer in the las
 4 years (columns), with letter indication for the numbers
 of observations.}\tabularnewline
 \toprule
-Smoking & No lung cancer & & Lung cancer & & Total &\tabularnewline
+Smoking & No lung cancer & & Lung cancer & & Total & \\
 \midrule
 \endfirsthead
 \toprule
-Smoking & No lung cancer & & Lung cancer & & Total &\tabularnewline
+Smoking & No lung cancer & & Lung cancer & & Total & \\
 \midrule
 \endhead
-No (0) & 3092 & (A) & 1 & (B) & 3093 & (A+B)\tabularnewline
-Yes (1) & 21178 & (C) & 83 & (D) & 21261 & (C+D)\tabularnewline
-Total & 24270 & (A+C) & 84 & (B+D) & 24354 & (A+B+C+D)\tabularnewline
+No (0) & 3092 & (A) & 1 & (B) & 3093 & (A+B) \\
+Yes (1) & 21178 & (C) & 83 & (D) & 21261 & (C+D) \\
+Total & 24270 & (A+C) & 84 & (B+D) & 24354 & (A+B+C+D) \\
 \bottomrule
 \end{longtable}
 
@@ -9364,15 +9369,15 @@ in valuation between the two conditions.
 \caption{\label{tab:data-originalrewritten} Judgements of \(N=19\) participants on
 the original and rewritten versions of a text.}\tabularnewline
 \toprule
-Condition & & & & & & & & & &\tabularnewline
+Condition & & & & & & & & & & \\
 \midrule
 \endfirsthead
 \toprule
-Condition & & & & & & & & & &\tabularnewline
+Condition & & & & & & & & & & \\
 \midrule
 \endhead
-Original & 10 & 17 & 35 & 2 & 19 & 4 & 18 & 28 & 24 & --\tabularnewline
-Rewritten & 15 & 22 & 8 & 48 & 29 & 25 & 27 & 39 & 31 & 36\tabularnewline
+Original & 10 & 17 & 35 & 2 & 19 & 4 & 18 & 28 & 24 & -- \\
+Rewritten & 15 & 22 & 8 & 48 & 29 & 25 & 27 & 39 & 31 & 36 \\
 \bottomrule
 \end{longtable}
 

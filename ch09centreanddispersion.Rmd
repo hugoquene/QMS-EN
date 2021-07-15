@@ -377,13 +377,10 @@ $\textrm{IQR}=29-23=6$.
 
 ### Outliers {#sec:outliers}
 
-In the reading scores in Table \@ref(tab:cito), we encounter one extreme value, namely the score
-45, which differs markedly from the mean. A marked value like this is referred to as an 
-"outlier". The limit for what we consider to be an outlier
+In the reading scores in Table \@ref(tab:cito), we encounter one extreme value, namely the score 45, which differs markedly from the mean. A marked value like this is referred to as an"outlier". The limit for what we consider to be an outlier
 generally lies at $1.5 \times \textrm{IQR}$. If a value is more than 
-$1.5 \times \textrm{IQR}$ above or under $Q_1$, we consider that
-observation to be an outlier. Check these observations again (recall the principle of
-diligence, see §\@ref(sec:integrity-introduction)).
+$1.5 \times \textrm{IQR}$ below $Q_1$ or above $Q_3$, we consider that
+observation to be an outlier. Check these observations again (recall the principle of diligence, see §\@ref(sec:integrity-introduction)).
 
 ---
 
@@ -508,7 +505,7 @@ which is normally distributed (see §\@ref(sec:normaldistribution), and
 
 Besides standard deviation, there is also a robust counterpart
 which does not use the mean. This measure is therefore less
-sensitive for outliers (robuster), which is sometimes useful. 
+sensitive for outliers (more robust), which is sometimes useful. 
 
 For this, we look for the deviation of every observation from
 the median (not the mean). We then take the absolute value

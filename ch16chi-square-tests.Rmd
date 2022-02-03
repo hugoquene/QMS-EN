@@ -1,4 +1,4 @@
-# Chi-square-tests {#ch:chi-square-tests}
+# Chi-square-tests {#ch-chi-square-tests}
 
 ## Introduction {#sec:ch16introduction}
 
@@ -6,7 +6,7 @@ Earlier, we already saw that we cannot always make use of a
 parametric test such as the *t* test or analysis of variance, because
 the collected data do not satisfy the assumptions. If the collected data 
 have been measured on an interval level of measurement (see Chapter 
-\@ref(ch:levelsofmeasurement)), or if the probability distribution
+\@ref(ch-levelsofmeasurement)), or if the probability distribution
 of the data is far from normal (see
 §\@ref(sec:whatifnotnormal)), then a non-parametric test is to be 
 preferred over such a parametric test. If the collected data
@@ -14,7 +14,7 @@ do satisfy the assumptions for a parametric test, then a non-parametric
 test is less sensitive (more conservative) than a parametric test, i.e. the 
 non-parametric test requires a larger effect and/or a larger sample, and generally
 has less power than a parametric test when seeking out an effect
-(see Chapter \@ref(ch:power)).
+(see Chapter \@ref(ch-power)).
 
 In this Chapter, we discuss the most used non-parametric
 test: the so-called $\chi^2$ test, pronounced as "chi-square-test" (with the greek letter "chi"). 
@@ -54,7 +54,7 @@ with 5 degrees of freedom (see
 degrees of freedom), with $p=.0297$. We usually use the computer to 
 calculate this probability value, but we can also estimate this probability
 via a table with critical
-$\chi^2$-values, see Appendix \@ref(app:criticalchi2values), and footnote
+$\chi^2$-values, see Appendix \@ref(app-criticalchi2values), and footnote
 [^fn16-1]). 
 If H0 is true, then we have only 3% probability
 of finding this outcome (or an even more uneven distribution of outcomes).
@@ -151,7 +151,7 @@ The $\chi^2$-test requires three assumptions which must be satisfied
 in order to use the test.
 
 * The data have to be measured on a nominal level of measurement, or have
-to be simplified to nominal level (see Chapter \@ref(ch:levelsofmeasurement)).
+to be simplified to nominal level (see Chapter \@ref(ch-levelsofmeasurement)).
 
 * All observations have to be independent of each other, and based
 on (a) random sample(s) of the population(s) (see
@@ -196,7 +196,7 @@ It is more insightful to compute the *standardized* residual for each cell of th
   (\#eq:chi2-stdresidu)
   e_{ij} = \frac{(O_{ij}-E_{ij})}{\sqrt{E_{ij}\times(1-\frac{R_i}{N})\times(1-\frac{C_j}{N})}}
 \end{equation}
-These standardized residuals may be interpreted as standard normal $Z$ scores, using the critical $Z$ values given in Appendix \@ref(app:criticalZvalues). Hence the adjusted standardized residuals provide insight in the source of a significant outcome of the $\chi^2$ test, and they also allow us to assess the contribution of each cell to that outcome[^fn16-3]. 
+These standardized residuals may be interpreted as standard normal $Z$ scores, using the critical $Z$ values given in Appendix \@ref(app-criticalZvalues). Hence the adjusted standardized residuals provide insight in the source of a significant outcome of the $\chi^2$ test, and they also allow us to assess the contribution of each cell to that outcome[^fn16-3]. 
 
 [^fn16-3]: If multiple comparisons are performed, then the critical value of $\alpha$ should be adjusted accordingly, in order to prevent Type I errors somewhere among the comparisons. With $k$ cells and $k$ comparisons, a safe precaution is to use $\alpha/k$ instead of $\alpha$ for each comparison -- this is called Bonferroni's adjustement of the $\alpha$ value, or Dunn's procedure [@MD04, p.202]. See also §\@ref(sec:anova-oneway-posthoc). 
 

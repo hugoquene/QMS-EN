@@ -1,11 +1,11 @@
-#  Other nonparametric tests {#ch:other-nonpar-tests}
+# Other nonparametric tests {#ch-other-nonpar-tests}
 
 ## Introduction {#sec:h17introduction}
 
 In this chapter, we discuss different nonparametric tests.
 These tests can be used when the data is not
 measured on an interval level of measurement (see Chapter
-\@ref(ch:levelsofmeasurement)), or if the probability distribution of the
+\@ref(ch-levelsofmeasurement)), or if the probability distribution of the
 data deviates from the normal distribution (see 
 §\@ref(sec:whatifnotnormal)). The nonparametric tests do not make
 assumptions about the parameters of the probability distribution of the data. 
@@ -260,7 +260,7 @@ multiple groups.)
 The test statistic $H$ has a probability distribution which resembles that of
 $\chi^2$, with $k-1$ degrees of freedom. The significance of the
 test statistic $H$ is thus determined via the probability distribution of
-$\chi^2$ (see Appendix \@ref(app:criticalchi2values)).
+$\chi^2$ (see Appendix \@ref(app-criticalchi2values)).
 This approximation via $\chi^2$ however only works if $k\ge3$ 
 and $n_j\ge5$ for the smallest group [@Ferg89]. 
 If $k=2$ or $n_j<5$ then the probability $P(H)$ is calculated exactly.

@@ -94,6 +94,9 @@ HQ is professor in the Quantitative Methods of Empirical Research in the Humanit
 # automatically create a bib database for R packages
 require(lattice)
 require(nnet)
+# added 20220203
+require(hqmisc)
+# require(MASS)
 knitr::write_bib( c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown'
 ), 'packages.bib')

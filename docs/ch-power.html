@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>14 Power | Quantitative Methods and Statistics</title>
   <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="14 Power | Quantitative Methods and Statistics" />
   <meta property="og:type" content="book" />
@@ -31,8 +31,9 @@
   
 <link rel="prev" href="ch-testing.html"/>
 <link rel="next" href="ch-anova.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -40,7 +41,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -445,7 +445,7 @@ div.csl-indent {
 <li class="chapter" data-level="15.3.2" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-formal"><i class="fa fa-check"></i><b>15.3.2</b> A formal explanation</a></li>
 <li class="chapter" data-level="15.3.3" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-effectsize"><i class="fa fa-check"></i><b>15.3.3</b> Effect size</a></li>
 <li class="chapter" data-level="15.3.4" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-planned"><i class="fa fa-check"></i><b>15.3.4</b> Planned comparisons</a></li>
-<li class="chapter" data-level="15.3.5" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-posthoc"><i class="fa fa-check"></i><b>15.3.5</b> Post-hoc comparisons</a></li>
+<li class="chapter" data-level="15.3.5" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-posthoc"><i class="fa fa-check"></i><b>15.3.5</b> Post hoc comparisons</a></li>
 <li class="chapter" data-level="15.3.6" data-path="ch-anova.html"><a href="ch-anova.html#spss-12"><i class="fa fa-check"></i><b>15.3.6</b> SPSS</a></li>
 <li class="chapter" data-level="15.3.7" data-path="ch-anova.html"><a href="ch-anova.html#jasp-13"><i class="fa fa-check"></i><b>15.3.7</b> JASP</a></li>
 <li class="chapter" data-level="15.3.8" data-path="ch-anova.html"><a href="ch-anova.html#r-15"><i class="fa fa-check"></i><b>15.3.8</b> R</a></li>
@@ -454,9 +454,10 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="15.4.1" data-path="ch-anova.html"><a href="ch-anova.html#an-intuitive-explanation"><i class="fa fa-check"></i><b>15.4.1</b> An intuitive explanation</a></li>
 <li class="chapter" data-level="15.4.2" data-path="ch-anova.html"><a href="ch-anova.html#a-formal-explanation"><i class="fa fa-check"></i><b>15.4.2</b> A formal explanation</a></li>
-<li class="chapter" data-level="15.4.3" data-path="ch-anova.html"><a href="ch-anova.html#spss-13"><i class="fa fa-check"></i><b>15.4.3</b> SPSS</a></li>
-<li class="chapter" data-level="15.4.4" data-path="ch-anova.html"><a href="ch-anova.html#jasp-14"><i class="fa fa-check"></i><b>15.4.4</b> JASP</a></li>
-<li class="chapter" data-level="15.4.5" data-path="ch-anova.html"><a href="ch-anova.html#r-16"><i class="fa fa-check"></i><b>15.4.5</b> R</a></li>
+<li class="chapter" data-level="15.4.3" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-twoway-posthoc"><i class="fa fa-check"></i><b>15.4.3</b> Post hoc comparisons</a></li>
+<li class="chapter" data-level="15.4.4" data-path="ch-anova.html"><a href="ch-anova.html#spss-13"><i class="fa fa-check"></i><b>15.4.4</b> SPSS</a></li>
+<li class="chapter" data-level="15.4.5" data-path="ch-anova.html"><a href="ch-anova.html#jasp-14"><i class="fa fa-check"></i><b>15.4.5</b> JASP</a></li>
+<li class="chapter" data-level="15.4.6" data-path="ch-anova.html"><a href="ch-anova.html#r-16"><i class="fa fa-check"></i><b>15.4.6</b> R</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="16" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html"><i class="fa fa-check"></i><b>16</b> Chi-square-tests</a>
@@ -529,7 +530,7 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ch:power" class="section level1" number="14">
+<div id="ch-power" class="section level1" number="14">
 <h1><span class="header-section-number">14</span> Power</h1>
 <div id="sec:power-introduction" class="section level2" number="14.1">
 <h2><span class="header-section-number">14.1</span> Introduction</h2>
@@ -538,7 +539,7 @@ observed differences or effects (or of even larger differences or effects
 than observed) if H0 were true, and thus if
 the observed difference had to be attributed solely to chance
 (see §<a href="ch-research.html#sec:empiricalcycle">2.5</a> and
-Chapter <a href="ch-testing.html#ch:testing">13</a>). If the probability <span class="math inline">\(P\)</span> is very small, then
+Chapter <a href="ch-testing.html#ch-testing">13</a>). If the probability <span class="math inline">\(P\)</span> is very small, then
 we have thus found results which are very improbable if H0 were true.
 We then conclude that H0 is presumably <em>not true</em> and we thus reject
 H0. We then call the difference or effect found, the “significant”
@@ -559,7 +560,7 @@ they are in fact singing
 groups do not differ when an important difference does in fact exist
 between the two groups. The probability of a Type II error is referred to
 with the symbol <span class="math inline">\(\beta\)</span>.</p>
-<p>If H0 is in fact not true (there is a difference, the message is ‘spam,’
+<p>If H0 is in fact not true (there is a difference, the message is ‘spam’,
 birds are singing, etc.), then H0 should be rejected, and
 <span class="math inline">\(\beta\)</span> should thus be as small as possible. The probability of <em>rightly</em>
 rejecting H0 is then <span class="math inline">\((1-\beta)\)</span> (see complement rule <a href="ch-probability-distributions.html#eq:complementrule">(10.3)</a>);
@@ -590,13 +591,13 @@ for a <em>t</em>-test for independent samples
 (§<a href="ch-testing.html#sec:ttest-indep">13.6</a>) with two-sided testing.
 The relations discussed below also apply to other statistical
 tests.</p>
-<div class="figure"><span id="fig:powercontours-alpha01"></span>
+<div class="figure"><span style="display:block;" id="fig:powercontours-alpha01"></span>
 <img src="QMS-EN_files/figure-html/powercontours-alpha01-1.png" alt="Power expressed in contours (see shading), dependent on the standardised effect size (d) and sample size according to a two-sided t-test for unpaired, independent observations, with two-sided significance level alpha=.01." width="672" />
 <p class="caption">
 Figure 14.1: Power expressed in contours (see shading), dependent on the standardised effect size (d) and sample size according to a two-sided t-test for unpaired, independent observations, with two-sided significance level alpha=.01.
 </p>
 </div>
-<div class="figure"><span id="fig:powercontours-alpha05"></span>
+<div class="figure"><span style="display:block;" id="fig:powercontours-alpha05"></span>
 <img src="QMS-EN_files/figure-html/powercontours-alpha05-1.png" alt="Power expressed in contours (see graduation), dependent on the standardised effect size (d) and the sample size (n), according to a two-sided t-test for unpaired, independent observations with significance level alpha=.05." width="672" />
 <p class="caption">
 Figure 14.2: Power expressed in contours (see graduation), dependent on the standardised effect size (d) and the sample size (n), according to a two-sided t-test for unpaired, independent observations with significance level alpha=.05.
@@ -642,7 +643,7 @@ with this, a lower power with the statistical testing.</p>
 the power will be, and how large the sample should be (see below).
 For this we need an estimation of the smallest effect size <span class="math inline">\(d\)</span>
 which we still want to detect
-(§<a href="ch-testing.html#sec:ttest-effectsize">13.8</a>) <span class="citation">(<a href="#ref-Quene10" role="doc-biblioref">Hugo Quené 2010</a>)</span>. To estimate the effect size, firstly,
+(§<a href="ch-testing.html#sec:ttest-effectsize">13.8</a>) <span class="citation">(<a href="#ref-Quene10" role="doc-biblioref">Quené 2010</a>)</span>. To estimate the effect size, firstly,
 an estimate of the raw difference <span class="math inline">\(D\)</span> between the groups or conditions is needed.
 Secondly, an estimation is needed of the variability <span class="math inline">\(s\)</span>
 in the observations. These estimations can be largely deduced from
@@ -666,7 +667,7 @@ The increase is steeper (power increases more quickly) with larger
 effects (right-hand side) than with smaller effects (left-hand side). Put differently:
 with small effects, the sample is actually always too small to detect
 these small effects with sufficient power. We already saw that in
-Example 13.3 (Chapter <a href="ch-testing.html#ch:testing">13</a>).</p>
+Example 13.3 (Chapter <a href="ch-testing.html#ch-testing">13</a>).</p>
 <p>The two figures <a href="ch-power.html#fig:powercontours-alpha01">14.1</a> and
 <a href="ch-power.html#fig:powercontours-alpha05">14.2</a> are based on the comparison between two groups which are equally large, each with
 precisely half of the observations (<span class="math inline">\(n_1=n_2=N/2\)</span>). That is also most efficient.
@@ -708,14 +709,14 @@ two types of errors.</p>
 <p>Unfortunately, many examples can be found of ‘underpowered’ research
 in the domain of language and communication. This research has a too small
 probability of rejecting H0 when the investigated effect indeed
-exists (H0 is not true). Why is that bad <span class="citation">(<a href="#ref-Quene10" role="doc-biblioref">Hugo Quené 2010</a>)</span>?</p>
+exists (H0 is not true). Why is that bad <span class="citation">(<a href="#ref-Quene10" role="doc-biblioref">Quené 2010</a>)</span>?</p>
 <p>Firstly, the Type II error which occurs here can have serious consequences:
 a treatment method which is actually better is not recognised as such,
 a patient is not or wrongly diagnosed, a useful innovation is wrongly pushed
 aside. This error hinders the growth of our knowledge and our insight, and hinders
 scientific progress (see also
-Example 3.2 in Chapter <a href="ch-integrity.html#ch:integrity">3</a>).</p>
-<div class="figure"><span id="fig:underpoweredeffectsizes"></span>
+Example 3.2 in Chapter <a href="ch-integrity.html#ch-integrity">3</a>).</p>
+<div class="figure"><span style="display:block;" id="fig:underpoweredeffectsizes"></span>
 <img src="QMS-EN_files/figure-html/underpoweredeffectsizes-1.png" alt="Effect sizes (along the horizontal axis) found in simulated experiments (two-sided t-test for independent observations, alpha=.05), broken down according to sample size (left $n=20$, right $n=80$) and according to testing result (dark symbols: significant; light symbols: not significant). The true effect size between groups is always $d=0.5$, indicated by the grey dashed line. The mean effect size found from the significant outcomes is referred to with the black dashed line. For each sample size, 100 simulations have been carried out (long vertical axis)." width="672" />
 <p class="caption">
 Figure 14.3: Effect sizes (along the horizontal axis) found in simulated experiments (two-sided t-test for independent observations, alpha=.05), broken down according to sample size (left <span class="math inline">\(n=20\)</span>, right <span class="math inline">\(n=80\)</span>) and according to testing result (dark symbols: significant; light symbols: not significant). The true effect size between groups is always <span class="math inline">\(d=0.5\)</span>, indicated by the grey dashed line. The mean effect size found from the significant outcomes is referred to with the black dashed line. For each sample size, 100 simulations have been carried out (long vertical axis).
@@ -737,13 +738,13 @@ instruments? All that follow up research is <em>superfluous</em> though: the mix
 picture from these studies can be explained by the small
 power of each study. The needless and superfluous follow up research
 costs much time and money (and indirect costs,
-see Chapter <a href="ch-integrity.html#ch:integrity">3</a>), and comes at the cost of other, more useful
+see Chapter <a href="ch-integrity.html#ch-integrity">3</a>), and comes at the cost of other, more useful
 research <span class="citation">(<a href="#ref-Schm96" role="doc-biblioref">Schmidt 1996, 118</a>)</span>. Put otherwise: one well designed study
 with power which is more than sufficient can avoid many needless follow up studies.</p>
 <p>The third disadvantage is based on the experience that studies in which
 a significant effect is found (dark symbols) have a higher probability
 of being reported; this phenomenon is called
-‘publication bias’ or the ‘file drawer problem.’ After all, a positive result
+‘publication bias’ or the ‘file drawer problem’. After all, a positive result
 often does get published, whilst a negative result often disappears
 into a file drawer. With small power, that leads to the third disadvantage,
 namely an overestimation or ‘bias’ of the reported effect size.
@@ -752,7 +753,7 @@ must be quite large to be found. In the leftmost panel, we can see that
 a significant effect has only been found <span class="math inline">\(31\times\)</span>. The average effect size of these
 31 significant outcomes is <span class="math inline">\(\overline{d_{\textrm{signif}}}=0.90\)</span> (black dashed line), i.e.
 a distortion or ‘bias’ of <span class="math inline">\(0.40\)</span> relative to the actual
-<span class="math inline">\(d=0.50\)</span> (grey dashed line)<a href="#fn35" class="footnote-ref" id="fnref35"><sup>35</sup></a>. In the rightmost panel, we can see that
+<span class="math inline">\(d=0.50\)</span> (grey dashed line)<a href="references.html#fn35" class="footnote-ref" id="fnref35"><sup>35</sup></a>. In the rightmost panel, we can see that
 a significant effect has been found <span class="math inline">\(91\times\)</span> (thus the power here is sufficient).
 The mean effect size of these 91 significant outcomes hardly deviates
 from the actual <span class="math inline">\(d\)</span>. Moreover, the standard deviation of the reported
@@ -786,7 +787,7 @@ Aron, Arthur, Eliot J. Coups, and Elaine N. Aron. 2011. <em>Statistics for the B
 Peck, Roxy, and Jay Devore. 2008. <em>Statistics: The Exploration and Analysis of Data</em>. 6e ed. Belmont, CA: Thomsom/Cole.
 </div>
 <div id="ref-Quene10" class="csl-entry">
-Quené, Hugo. 2010. <span>“How to Design and Analyze Language Acquisition Studies.”</span> In <em>Experimental Methods in Language Acquisition Research</em>, edited by Elma Blom and Sharon Unsworth, 269–87. Amsterdam: Benjamins.
+———. 2010. <span>“How to Design and Analyze Language Acquisition Studies.”</span> In <em>Experimental Methods in Language Acquisition Research</em>, edited by Elma Blom and Sharon Unsworth, 269–87. Amsterdam: Benjamins.
 </div>
 <div id="ref-Rose08" class="csl-entry">
 Rosenthal, Robert, and Ralph L. Rosnow. 2008. <em>Essentials of Behavioral Research: Methods and Data Analysis</em>. 3e ed. Boston: McGraw Hill.
@@ -798,15 +799,6 @@ Schmidt, Frank L. 1996. <span>“Statistical Significance Testing and Cumulative
 Van Kolfschooten, Frank. 1993. <em>Valse Vooruitgang: Bedrog in de <span>N</span>ederlandse Wetenschap</em>. Amsterdam: L.J. Veen.
 </div>
 </div>
-<div class="footnotes">
-<hr />
-<ol start="35">
-<li id="fn35"><p>A replication study which does have sufficient power, thus typically finds a smaller effect than the
-original ‘underpowered’ study. The smaller effect found in the replication study is then typically also not
-significant. We then say that the replication study “fails to replicate” the effect that was significant in
-the original study - but that was actually a spurious finding.<a href="ch-power.html#fnref35" class="footnote-back">↩︎</a></p></li>
-</ol>
-</div>
             </section>
 
           </div>
@@ -817,7 +809,6 @@ the original study - but that was actually a spurious finding.<a href="ch-power.
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -857,6 +848,10 @@ gitbook.start({
 "text": null
 },
 "download": ["QMS-EN.pdf", "QMS-EN.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

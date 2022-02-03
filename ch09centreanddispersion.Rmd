@@ -1,4 +1,4 @@
-# Centre and dispersion {#ch:centre-and-dispersion}
+# Centre and dispersion {#ch-centre-and-dispersion}
 
 ## Introduction
 
@@ -741,7 +741,7 @@ are in fact measured on the same scale (for example, a scale of
 $1 \dots 100$), but which nevertheless have different means and/or
 standard deviations, like the scores in 
 Tabel \@ref(tab:cito).
-In Chapter \@ref(ch:probability-distributions), we will work more with z-scores.
+In Chapter \@ref(ch-probability-distributions), we will work more with z-scores.
 
 The standard score or z-score has two useful characteristics which you
 should remember. Firstly, the mean is always equal to zero:
@@ -823,7 +823,7 @@ For summaries of central tendency and dispersion, check the options (under the h
 
 In JASP, a column of **standard scores** can be created by first creating a new variable (column) and subsequently filling that column with standard scores.  
 
-To create a new variable, click on the **+** button to the right of the last column name in the data tab. A "Create Computed Column" panel appears, where you can enter a name for the new variable, e.g. `Lezen_Z`. You can also choose between `R` and a pointer. These are the two options in JASP to define formulas with which the new (empty) variable is filled; using `R` code, or manually using JASP. The paragraphs below explain how standard scores can be computed using these two options. Finally, you can check which measurement level the new variable should be (see Chapter \@ref(ch:levelsofmeasurement)). For standard scores, you can leave this at `Scale`. Next, click on `Create Column` to create the new variable. The new variable (empty column) appears as the rightmost variable in the data set. 
+To create a new variable, click on the **+** button to the right of the last column name in the data tab. A "Create Computed Column" panel appears, where you can enter a name for the new variable, e.g. `Lezen_Z`. You can also choose between `R` and a pointer. These are the two options in JASP to define formulas with which the new (empty) variable is filled; using `R` code, or manually using JASP. The paragraphs below explain how standard scores can be computed using these two options. Finally, you can check which measurement level the new variable should be (see Chapter \@ref(ch-levelsofmeasurement)). For standard scores, you can leave this at `Scale`. Next, click on `Create Column` to create the new variable. The new variable (empty column) appears as the rightmost variable in the data set. 
 
 If the **R** option is chosen to define the new variable, a field with "#Enter your R code here :)" appears above the data. Here you can enter R code (see below) that produces standardized values. \
 This snippet of R code produces standard scores of the variable `Lezen`: 

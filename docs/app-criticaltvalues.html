@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>C Critical values for \(t\)-distribution | Quantitative Methods and Statistics</title>
   <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="C Critical values for \(t\)-distribution | Quantitative Methods and Statistics" />
   <meta property="og:type" content="book" />
@@ -31,8 +31,9 @@
   
 <link rel="prev" href="app-criticalZvalues.html"/>
 <link rel="next" href="app-criticalchi2values.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -40,7 +41,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -445,7 +445,7 @@ div.csl-indent {
 <li class="chapter" data-level="15.3.2" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-formal"><i class="fa fa-check"></i><b>15.3.2</b> A formal explanation</a></li>
 <li class="chapter" data-level="15.3.3" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-effectsize"><i class="fa fa-check"></i><b>15.3.3</b> Effect size</a></li>
 <li class="chapter" data-level="15.3.4" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-planned"><i class="fa fa-check"></i><b>15.3.4</b> Planned comparisons</a></li>
-<li class="chapter" data-level="15.3.5" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-posthoc"><i class="fa fa-check"></i><b>15.3.5</b> Post-hoc comparisons</a></li>
+<li class="chapter" data-level="15.3.5" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-posthoc"><i class="fa fa-check"></i><b>15.3.5</b> Post hoc comparisons</a></li>
 <li class="chapter" data-level="15.3.6" data-path="ch-anova.html"><a href="ch-anova.html#spss-12"><i class="fa fa-check"></i><b>15.3.6</b> SPSS</a></li>
 <li class="chapter" data-level="15.3.7" data-path="ch-anova.html"><a href="ch-anova.html#jasp-13"><i class="fa fa-check"></i><b>15.3.7</b> JASP</a></li>
 <li class="chapter" data-level="15.3.8" data-path="ch-anova.html"><a href="ch-anova.html#r-15"><i class="fa fa-check"></i><b>15.3.8</b> R</a></li>
@@ -454,9 +454,10 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="15.4.1" data-path="ch-anova.html"><a href="ch-anova.html#an-intuitive-explanation"><i class="fa fa-check"></i><b>15.4.1</b> An intuitive explanation</a></li>
 <li class="chapter" data-level="15.4.2" data-path="ch-anova.html"><a href="ch-anova.html#a-formal-explanation"><i class="fa fa-check"></i><b>15.4.2</b> A formal explanation</a></li>
-<li class="chapter" data-level="15.4.3" data-path="ch-anova.html"><a href="ch-anova.html#spss-13"><i class="fa fa-check"></i><b>15.4.3</b> SPSS</a></li>
-<li class="chapter" data-level="15.4.4" data-path="ch-anova.html"><a href="ch-anova.html#jasp-14"><i class="fa fa-check"></i><b>15.4.4</b> JASP</a></li>
-<li class="chapter" data-level="15.4.5" data-path="ch-anova.html"><a href="ch-anova.html#r-16"><i class="fa fa-check"></i><b>15.4.5</b> R</a></li>
+<li class="chapter" data-level="15.4.3" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-twoway-posthoc"><i class="fa fa-check"></i><b>15.4.3</b> Post hoc comparisons</a></li>
+<li class="chapter" data-level="15.4.4" data-path="ch-anova.html"><a href="ch-anova.html#spss-13"><i class="fa fa-check"></i><b>15.4.4</b> SPSS</a></li>
+<li class="chapter" data-level="15.4.5" data-path="ch-anova.html"><a href="ch-anova.html#jasp-14"><i class="fa fa-check"></i><b>15.4.5</b> JASP</a></li>
+<li class="chapter" data-level="15.4.6" data-path="ch-anova.html"><a href="ch-anova.html#r-16"><i class="fa fa-check"></i><b>15.4.6</b> R</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="16" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html"><i class="fa fa-check"></i><b>16</b> Chi-square-tests</a>
@@ -529,7 +530,7 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="app:criticaltvalues" class="section level1" number="20">
+<div id="app-criticaltvalues" class="section level1" number="20">
 <h1><span class="header-section-number">C</span> Critical values for <span class="math inline">\(t\)</span>-distribution</h1>
 <p><img src="QMS-EN_files/figure-html/criticaltvalues-auxiliaryfigure-1.png" width="672" /></p>
 <p>The critical boundary value <span class="math inline">\(t^*\)</span> given below has a critical probability <span class="math inline">\(p\)</span>
@@ -539,6 +540,18 @@ value between <span class="math inline">\((-t^*, +t^*)\)</span>. The <span class
 <p>The table below provides the critical boundary values <span class="math inline">\(t^*\)</span> for much used critical probabilities <span class="math inline">\(p\)</span> and
 confidence intervals <span class="math inline">\(B\)</span>, for the degrees of freedom indicated in the first column.</p>
 <table>
+<colgroup>
+<col width="6%" />
+<col width="4%" />
+<col width="11%" />
+<col width="9%" />
+<col width="9%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="12%" />
+<col width="12%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="center"></th>
@@ -964,7 +977,6 @@ confidence intervals <span class="math inline">\(B\)</span>, for the degrees of 
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -1004,6 +1016,10 @@ gitbook.start({
 "text": null
 },
 "download": ["QMS-EN.pdf", "QMS-EN.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

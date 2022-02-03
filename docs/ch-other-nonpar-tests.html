@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>17 Other nonparametric tests | Quantitative Methods and Statistics</title>
   <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="17 Other nonparametric tests | Quantitative Methods and Statistics" />
   <meta property="og:type" content="book" />
@@ -31,8 +31,9 @@
   
 <link rel="prev" href="ch-chi-square-tests.html"/>
 <link rel="next" href="app-randomnumbers.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -40,7 +41,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -445,7 +445,7 @@ div.csl-indent {
 <li class="chapter" data-level="15.3.2" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-formal"><i class="fa fa-check"></i><b>15.3.2</b> A formal explanation</a></li>
 <li class="chapter" data-level="15.3.3" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-effectsize"><i class="fa fa-check"></i><b>15.3.3</b> Effect size</a></li>
 <li class="chapter" data-level="15.3.4" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-planned"><i class="fa fa-check"></i><b>15.3.4</b> Planned comparisons</a></li>
-<li class="chapter" data-level="15.3.5" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-posthoc"><i class="fa fa-check"></i><b>15.3.5</b> Post-hoc comparisons</a></li>
+<li class="chapter" data-level="15.3.5" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-posthoc"><i class="fa fa-check"></i><b>15.3.5</b> Post hoc comparisons</a></li>
 <li class="chapter" data-level="15.3.6" data-path="ch-anova.html"><a href="ch-anova.html#spss-12"><i class="fa fa-check"></i><b>15.3.6</b> SPSS</a></li>
 <li class="chapter" data-level="15.3.7" data-path="ch-anova.html"><a href="ch-anova.html#jasp-13"><i class="fa fa-check"></i><b>15.3.7</b> JASP</a></li>
 <li class="chapter" data-level="15.3.8" data-path="ch-anova.html"><a href="ch-anova.html#r-15"><i class="fa fa-check"></i><b>15.3.8</b> R</a></li>
@@ -454,9 +454,10 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="15.4.1" data-path="ch-anova.html"><a href="ch-anova.html#an-intuitive-explanation"><i class="fa fa-check"></i><b>15.4.1</b> An intuitive explanation</a></li>
 <li class="chapter" data-level="15.4.2" data-path="ch-anova.html"><a href="ch-anova.html#a-formal-explanation"><i class="fa fa-check"></i><b>15.4.2</b> A formal explanation</a></li>
-<li class="chapter" data-level="15.4.3" data-path="ch-anova.html"><a href="ch-anova.html#spss-13"><i class="fa fa-check"></i><b>15.4.3</b> SPSS</a></li>
-<li class="chapter" data-level="15.4.4" data-path="ch-anova.html"><a href="ch-anova.html#jasp-14"><i class="fa fa-check"></i><b>15.4.4</b> JASP</a></li>
-<li class="chapter" data-level="15.4.5" data-path="ch-anova.html"><a href="ch-anova.html#r-16"><i class="fa fa-check"></i><b>15.4.5</b> R</a></li>
+<li class="chapter" data-level="15.4.3" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-twoway-posthoc"><i class="fa fa-check"></i><b>15.4.3</b> Post hoc comparisons</a></li>
+<li class="chapter" data-level="15.4.4" data-path="ch-anova.html"><a href="ch-anova.html#spss-13"><i class="fa fa-check"></i><b>15.4.4</b> SPSS</a></li>
+<li class="chapter" data-level="15.4.5" data-path="ch-anova.html"><a href="ch-anova.html#jasp-14"><i class="fa fa-check"></i><b>15.4.5</b> JASP</a></li>
+<li class="chapter" data-level="15.4.6" data-path="ch-anova.html"><a href="ch-anova.html#r-16"><i class="fa fa-check"></i><b>15.4.6</b> R</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="16" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html"><i class="fa fa-check"></i><b>16</b> Chi-square-tests</a>
@@ -529,14 +530,14 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ch:other-nonpar-tests" class="section level1" number="17">
+<div id="ch-other-nonpar-tests" class="section level1" number="17">
 <h1><span class="header-section-number">17</span> Other nonparametric tests</h1>
 <div id="sec:h17introduction" class="section level2" number="17.1">
 <h2><span class="header-section-number">17.1</span> Introduction</h2>
 <p>In this chapter, we discuss different nonparametric tests.
 These tests can be used when the data is not
 measured on an interval level of measurement (see Chapter
-<a href="ch-levelsofmeasurement.html#ch:levelsofmeasurement">4</a>), or if the probability distribution of the
+<a href="ch-levelsofmeasurement.html#ch-levelsofmeasurement">4</a>), or if the probability distribution of the
 data deviates from the normal distribution (see
 §<a href="ch-probability-distributions.html#sec:whatifnotnormal">10.5</a>). The nonparametric tests do not make
 assumptions about the parameters of the probability distribution of the data.</p>
@@ -751,14 +752,14 @@ significance.</p>
 in the first condition (original version), i.e. that the text in this condition
 received lower judgements. The sum of the rankings for this
 smallest condition is the test statistic <span class="math inline">\(W_1=67\)</span>. In some versions of the
-test<a href="#fn42" class="footnote-ref" id="fnref42"><sup>42</sup></a>, this raw sum is used to calculate the significance.
-In other test versions<a href="#fn43" class="footnote-ref" id="fnref43"><sup>43</sup></a>, this raw sum is firstly corrected for the
+test<a href="references.html#fn42" class="footnote-ref" id="fnref42"><sup>42</sup></a>, this raw sum is used to calculate the significance.
+In other test versions<a href="references.html#fn43" class="footnote-ref" id="fnref43"><sup>43</sup></a>, this raw sum is firstly corrected for the
 minimal value of <span class="math inline">\(W_1\)</span> (see the formulas below): the test statistic
 is then <span class="math inline">\(U=W_1 - \textrm{min}(W_1) = 67-45=22\)</span>. Afterwards, the significance
 of <span class="math inline">\(W_1=67\)</span> or of <span class="math inline">\(U=22\)</span> is calculated. We find that <span class="math inline">\(p=.0653\)</span>. If we do a
 two-sided test (H0: judgements in conditions 2 are no higher and no lower
 than those in condition 1) with <span class="math inline">\(\alpha=.05\)</span>, then there is no reason to
-reject H0<a href="#fn44" class="footnote-ref" id="fnref44"><sup>44</sup></a>.</p>
+reject H0<a href="references.html#fn44" class="footnote-ref" id="fnref44"><sup>44</sup></a>.</p>
 <div id="formulas-8" class="section level4" number="17.3.2.1">
 <h4><span class="header-section-number">17.3.2.1</span> formulas</h4>
 <p>For the sums of the rankings, it is the case that
@@ -816,7 +817,7 @@ multiple groups.)</p>
 <p>The test statistic <span class="math inline">\(H\)</span> has a probability distribution which resembles that of
 <span class="math inline">\(\chi^2\)</span>, with <span class="math inline">\(k-1\)</span> degrees of freedom. The significance of the
 test statistic <span class="math inline">\(H\)</span> is thus determined via the probability distribution of
-<span class="math inline">\(\chi^2\)</span> (see Appendix <a href="app-criticalchi2values.html#app:criticalchi2values">D</a>).
+<span class="math inline">\(\chi^2\)</span> (see Appendix <a href="app-criticalchi2values.html#app-criticalchi2values">D</a>).
 This approximation via <span class="math inline">\(\chi^2\)</span> however only works if <span class="math inline">\(k\ge3\)</span>
 and <span class="math inline">\(n_j\ge5\)</span> for the smallest group <span class="citation">(<a href="#ref-Ferg89" role="doc-biblioref">Ferguson and Takane 1989</a>)</span>.
 If <span class="math inline">\(k=2\)</span> or <span class="math inline">\(n_j&lt;5\)</span> then the probability <span class="math inline">\(P(H)\)</span> is calculated exactly.</p>
@@ -837,19 +838,6 @@ Ferguson, George A., and Yoshio Takane. 1989. <em>Statistical Analysis in Psycho
 Rosenthal, Robert. 1991. <em>Meta-Analytic Procedures for Social Research</em>. 2nd ed. Newbury Park, CA: Sage.
 </div>
 </div>
-<div class="footnotes">
-<hr />
-<ol start="42">
-<li id="fn42"><p>Wilcoxon rank sum test in SPSS.<a href="ch-other-nonpar-tests.html#fnref42" class="footnote-back">↩︎</a></p></li>
-<li id="fn43"><p>Mann-Whitney test in SPSS and in R, and Wilcoxon rank sum test in R.<a href="ch-other-nonpar-tests.html#fnref43" class="footnote-back">↩︎</a></p></li>
-<li id="fn44"><p>If we do a two-sided test with <span class="math inline">\(\alpha=.10\)</span>, then we could indeed
-reject H0. If we do a one-sided test (H0: judgements in condition 2 are not higher
-than in condition 1), then we may halve the calculated <span class="math inline">\(p\)</span>, since the calculated
-<span class="math inline">\(p\)</span> assumes two-sided testing. We would then find <span class="math inline">\(p=.0653/2=.0326\)</span>, and,
-as this probability is smaller than <span class="math inline">\(\alpha=.05\)</span>, we would then indeed
-be able to reject H0.<a href="ch-other-nonpar-tests.html#fnref44" class="footnote-back">↩︎</a></p></li>
-</ol>
-</div>
             </section>
 
           </div>
@@ -860,7 +848,6 @@ be able to reject H0.<a href="ch-other-nonpar-tests.html#fnref44" class="footnot
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -900,6 +887,10 @@ gitbook.start({
 "text": null
 },
 "download": ["QMS-EN.pdf", "QMS-EN.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

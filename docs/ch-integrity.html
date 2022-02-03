@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3 Integrity | Quantitative Methods and Statistics</title>
   <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3 Integrity | Quantitative Methods and Statistics" />
   <meta property="og:type" content="book" />
@@ -31,8 +31,9 @@
   
 <link rel="prev" href="ch-research.html"/>
 <link rel="next" href="ch-levelsofmeasurement.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -40,7 +41,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -445,7 +445,7 @@ div.csl-indent {
 <li class="chapter" data-level="15.3.2" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-formal"><i class="fa fa-check"></i><b>15.3.2</b> A formal explanation</a></li>
 <li class="chapter" data-level="15.3.3" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-effectsize"><i class="fa fa-check"></i><b>15.3.3</b> Effect size</a></li>
 <li class="chapter" data-level="15.3.4" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-planned"><i class="fa fa-check"></i><b>15.3.4</b> Planned comparisons</a></li>
-<li class="chapter" data-level="15.3.5" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-posthoc"><i class="fa fa-check"></i><b>15.3.5</b> Post-hoc comparisons</a></li>
+<li class="chapter" data-level="15.3.5" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-posthoc"><i class="fa fa-check"></i><b>15.3.5</b> Post hoc comparisons</a></li>
 <li class="chapter" data-level="15.3.6" data-path="ch-anova.html"><a href="ch-anova.html#spss-12"><i class="fa fa-check"></i><b>15.3.6</b> SPSS</a></li>
 <li class="chapter" data-level="15.3.7" data-path="ch-anova.html"><a href="ch-anova.html#jasp-13"><i class="fa fa-check"></i><b>15.3.7</b> JASP</a></li>
 <li class="chapter" data-level="15.3.8" data-path="ch-anova.html"><a href="ch-anova.html#r-15"><i class="fa fa-check"></i><b>15.3.8</b> R</a></li>
@@ -454,9 +454,10 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="15.4.1" data-path="ch-anova.html"><a href="ch-anova.html#an-intuitive-explanation"><i class="fa fa-check"></i><b>15.4.1</b> An intuitive explanation</a></li>
 <li class="chapter" data-level="15.4.2" data-path="ch-anova.html"><a href="ch-anova.html#a-formal-explanation"><i class="fa fa-check"></i><b>15.4.2</b> A formal explanation</a></li>
-<li class="chapter" data-level="15.4.3" data-path="ch-anova.html"><a href="ch-anova.html#spss-13"><i class="fa fa-check"></i><b>15.4.3</b> SPSS</a></li>
-<li class="chapter" data-level="15.4.4" data-path="ch-anova.html"><a href="ch-anova.html#jasp-14"><i class="fa fa-check"></i><b>15.4.4</b> JASP</a></li>
-<li class="chapter" data-level="15.4.5" data-path="ch-anova.html"><a href="ch-anova.html#r-16"><i class="fa fa-check"></i><b>15.4.5</b> R</a></li>
+<li class="chapter" data-level="15.4.3" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-twoway-posthoc"><i class="fa fa-check"></i><b>15.4.3</b> Post hoc comparisons</a></li>
+<li class="chapter" data-level="15.4.4" data-path="ch-anova.html"><a href="ch-anova.html#spss-13"><i class="fa fa-check"></i><b>15.4.4</b> SPSS</a></li>
+<li class="chapter" data-level="15.4.5" data-path="ch-anova.html"><a href="ch-anova.html#jasp-14"><i class="fa fa-check"></i><b>15.4.5</b> JASP</a></li>
+<li class="chapter" data-level="15.4.6" data-path="ch-anova.html"><a href="ch-anova.html#r-16"><i class="fa fa-check"></i><b>15.4.6</b> R</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="16" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html"><i class="fa fa-check"></i><b>16</b> Chi-square-tests</a>
@@ -529,14 +530,14 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ch:integrity" class="section level1" number="3">
+<div id="ch-integrity" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> Integrity</h1>
 <div id="sec:integrity-introduction" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Introduction</h2>
 <p>Scientific research has brought humanity immeasurably great benefits, such as reliable computing technology, high-quality medical care, and an understanding of languages and cultures that are not our own. All these assets are based on scientifically motivated knowledge. Researchers produce knowledge, whose progress and growth comes about because researchers build upon their predecessors’ experience and insights.</p>
 <hr />
 <blockquote>
-<p>Example 3.1*: Sir Isaac Newton wrote of his scientific work: “If I have seen further it is by standing on [the] shoulders of Giants” (in a letter addressed to Robert Hooke, dated 5 Feb 1675)<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>. This metaphor can be traced back to the medieval scholar, Bernard de Chartres: “nos esse quasi nanos gigantum umeris insidentes” [that we are like dwarfs sat on giants’ shoulders] compared to scholars from the times of Antiquity. The aforementioned quote by Newton has also become Google Scholar’s motto (<a href="scholar.google.com">scholar.google.com</a>).</p>
+<p>Example 3.1*: Sir Isaac Newton wrote of his scientific work: “If I have seen further it is by standing on [the] shoulders of Giants” (in a letter addressed to Robert Hooke, dated 5 Feb 1675)<a href="references.html#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>. This metaphor can be traced back to the medieval scholar, Bernard de Chartres: “nos esse quasi nanos gigantum umeris insidentes” [that we are like dwarfs sat on giants’ shoulders] compared to scholars from the times of Antiquity. The aforementioned quote by Newton has also become Google Scholar’s motto (<a href="scholar.google.com">scholar.google.com</a>).</p>
 </blockquote>
 <hr />
 <p>In this chapter, we will discuss the ethical and moral aspects of scientific research. Science is done by human beings, and requires a well-developed sense of judgment on the part of the researchers. The <em>Netherlands Code of Conduct for Research Integrity</em> <span class="citation">(<a href="#ref-VSNU18" role="doc-biblioref">VSNU 2018</a>)</span>
@@ -559,16 +560,16 @@ div.csl-indent {
 <p><em>Example 3.2</em>: Suppose that we would like to examine whether 4-year-old bilingual children might have a cognitive advantage over monolingual children of the same age. Based on earlier research, we expect a different of at least 2 points (on a 10 point scale) between both groups (with a “pooled standard deviation” <span class="math inline">\(s_p=4\)</span>, hence <span class="math inline">\(d=0.5\)</span>, §<a href="ch-testing.html#sec:ttest-formulas">13.6.2</a> and §<a href="ch-testing.html#sec:ttest-effectsize">13.8</a>).</p>
 </blockquote>
 <blockquote>
-<p>We then compare two group of <span class="math inline">\(n = 4\)</span> children each. Even if there were actually a difference of 2 points between both groups (meaning, if the hypothesis were true), this study would still have a mere 51% chance of yielding a significant difference: the power of the experiment is only .51 (Chapter <a href="ch-power.html#ch:power">14</a>), because the two groups contain so few participants. It would be better for the four-year-olds and their parents to do engage in other activities (at school, at home, or at work) instead of participating in this study.</p>
+<p>We then compare two group of <span class="math inline">\(n = 4\)</span> children each. Even if there were actually a difference of 2 points between both groups (meaning, if the hypothesis were true), this study would still have a mere 51% chance of yielding a significant difference: the power of the experiment is only .51 (Chapter <a href="ch-power.html#ch-power">14</a>), because the two groups contain so few participants. It would be better for the four-year-olds and their parents to do engage in other activities (at school, at home, or at work) instead of participating in this study.</p>
 </blockquote>
 <blockquote>
 <p>However, if <span class="math inline">\(n = 30\)</span> children would participate in each of the two groups, and if there were indeed a 2 point difference between both groups (meaning, if the research hypothesis were true), then the power of the experiment would be .90. This means that bigger groups lead to a much better chance of confirming our study’s hypothesis. This elaborate research design will cost more (for the researchers and the children and their parents), but presumably it will also yield much more: a valid conclusion with great impact on society.</p>
 </blockquote>
 <hr />
-<p>A study’s design (see Chapter <a href="#ch:ontwerp"><strong>??</strong></a>) has to be as efficient as possible, and the researcher has to start thinking about it at an early stage. First of all, efficiency depends on choices regarding how the independent variables are manipulated. Is there a separate group of participants for each condition of the independent variable (meaning that conditions vary “between subjects,” like in example 3.2 above)? In a between-subjects design that involves two groups, we need about <span class="math inline">\(n = (5.6/d)^2\)</span> subjects in each group (for further explanation of this, see <span class="citation"><a href="#ref-Gelm07" role="doc-biblioref">Gelman and Hill</a> (<a href="#ref-Gelm07" role="doc-biblioref">2007</a>)</span>, and see §<a href="ch-testing.html#sec:ttest-effectsize">13.8</a>). Or are all participants involved in all conditions (meaning that conditions vary “within subjects”)? A within-subjects design with two conditions requires only <span class="math inline">\(n = (2.8/d)^2\)</span> subjects in each condition, and the study will therefore also have lower expenses and indirect cost for a much smaller number of participants. In general, this means that, if possible, it is more efficient (and hence better) to manipulate independent variables within subjects than it is to vary them between subjects.This is not always possible, however, firstly because by definition, individual characteristics only differ between subjects (for example: female/male sex, multilingual/monolingual background, aphasia/no aphasia, etc.). Secondly, we must take proper care to recognize effects of so-called transfer between conditions, which threaten our study’s validity (for example: experience, learning, fatigue, maturation); we will discuss such effects further in §<a href="ch-validity.html#sec:validity">5.3</a>.
+<p>A study’s design (see Chapter <a href="ch-design.html#ch-design">6</a>) has to be as efficient as possible, and the researcher has to start thinking about it at an early stage. First of all, efficiency depends on choices regarding how the independent variables are manipulated. Is there a separate group of participants for each condition of the independent variable (meaning that conditions vary “between subjects”, like in example 3.2 above)? In a between-subjects design that involves two groups, we need about <span class="math inline">\(n = (5.6/d)^2\)</span> subjects in each group (for further explanation of this, see <span class="citation">Gelman and Hill (<a href="#ref-Gelm07" role="doc-biblioref">2007</a>)</span>, and see §<a href="ch-testing.html#sec:ttest-effectsize">13.8</a>). Or are all participants involved in all conditions (meaning that conditions vary “within subjects”)? A within-subjects design with two conditions requires only <span class="math inline">\(n = (2.8/d)^2\)</span> subjects in each condition, and the study will therefore also have lower expenses and indirect cost for a much smaller number of participants. In general, this means that, if possible, it is more efficient (and hence better) to manipulate independent variables within subjects than it is to vary them between subjects.This is not always possible, however, firstly because by definition, individual characteristics only differ between subjects (for example: female/male sex, multilingual/monolingual background, aphasia/no aphasia, etc.). Secondly, we must take proper care to recognize effects of so-called transfer between conditions, which threaten our study’s validity (for example: experience, learning, fatigue, maturation); we will discuss such effects further in §<a href="ch-validity.html#sec:validity">5.3</a>.
 The design choice of “between” vs “within” variation is further discussed in §<a href="ch-design.html#sec:betweenwithinparticipants">6.2</a> below.</p>
 <p>Being multilingual or being female are characteristics that may only vary between individuals. But other conditions may also vary within individuals, for instance, the day on which a cognitive measurement is taken. Suppose that we expect a difference of <span class="math inline">\(D = 2\)</span> points between cognitive measurements taken on Monday and on Friday, respectively (with <span class="math inline">\(s = 4\)</span> and <span class="math inline">\(d = 0.5\)</span>, see example 3.2). If we manipulate the day of measurement between subjects, meaning we make separate groups for children tested on Monday and those tested on Friday, this entails that we need <span class="math inline">\(n = (5.6/0.5)^2 = 126\)</span> children in each group, yielding a total of <span class="math inline">\(N = 252\)</span>. However, if we manipulate the day of measurement within subjects, meaning that we observe each participant on Monday and also on Friday, this entails that we need a total of just <span class="math inline">\(N = (2.8/0.5)^2 = 32\)</span> children. The within-subjects design means that far fewer children’s routines will need to be disturbed for our cognitive measurements. However, we must be properly aware of learning effects between the first and second measurement, and take appropriate precautionary measures. For instance, we can no longer use the same questionnaires in both conditions.</p>
-<p>A study’s efficiency also depends on the dependent variable, in particular, on the observations’ level of measurement (Chapter <a href="ch-levelsofmeasurement.html#ch:levelsofmeasurement">4</a>), accuracy, and reliability (Chapter <a href="ch-reliability.html#ch:reliability">12</a>). The lower the level of measurement, the lower also the study’s efficiency. As accuracy goes down, the study’s efficiency also goes down, and more participants (subjects) and observations will be needed to be able to draw valid conclusions.</p>
+<p>A study’s efficiency also depends on the dependent variable, in particular, on the observations’ level of measurement (Chapter <a href="ch-levelsofmeasurement.html#ch-levelsofmeasurement">4</a>), accuracy, and reliability (Chapter <a href="ch-reliability.html#ch-reliability">12</a>). The lower the level of measurement, the lower also the study’s efficiency. As accuracy goes down, the study’s efficiency also goes down, and more participants (subjects) and observations will be needed to be able to draw valid conclusions.</p>
 <hr />
 <blockquote>
 <p><em>Example 3.3</em>: Suppose that we would like to examine a difference between two within-subjects conditions, and suppose that the actual difference between them is 2 points (which yields <span class="math inline">\(s_D = 4\)</span> and <span class="math inline">\(d = 0.5\)</span>, see example 3.2). However, suppose that we decide to look only at the <em>direction</em> and not at the size of the difference between the two observations for each participant: does the participant have a positive or negative difference between the first and second condition? This binomial dependent variable contains less information than the original point score (it contains just the direction and not the size of the difference), making the study less efficient. For this specific example, this means we would need 59 instead of 34 participants.</p>
@@ -596,13 +597,13 @@ This ethics assessment is also compulsory for students and researchers in other 
 <div id="data" class="section level2" number="3.4">
 <h2><span class="header-section-number">3.4</span> Data</h2>
 <p>The data collected form the motivation and empirical basis for the conclusion drawn from scientific research. These data therefore have an essential importance: no data means no valid conclusions. Moreover, as we saw above (§<a href="#sec:ontwerp"><strong>??</strong></a>), these data are very costly (in terms of time, money, privacy, etc.). This means that we should treat them very diligently. We must be able to convince others of our conclusions’ validity based on these data, and we must be able to share the underlying data with other researchers, if asked.</p>
-<p>Thus, diligence requires, at the very least, making a sufficient number of backup copies as soon as possible. Think of what might happen if a fire or flood would completely destroy the place where you work or live, or if your laptop would be stolen during your thesis project (this actually happened to one of our students!). If so, would proper and recent copies of the data be stored in other locations? For storing backup copies, a sufficiently secured cloud service<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> is a good option.</p>
+<p>Thus, diligence requires, at the very least, making a sufficient number of backup copies as soon as possible. Think of what might happen if a fire or flood would completely destroy the place where you work or live, or if your laptop would be stolen during your thesis project (this actually happened to one of our students!). If so, would proper and recent copies of the data be stored in other locations? For storing backup copies, a sufficiently secured cloud service<a href="references.html#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> is a good option.</p>
 <p>Diligence also requires a proper record of what the data stand for, and how they were collected. Data without a matching description are practically useless for scientific research. Charles Darwin carefully noted down which bird found on which of the Galapagos Islands had which beak shape, and these observations later formed (a part of) the motivation for his theory of evolution. In the same way, we strongly encourage you to keep a log (on paper or digitally) of all steps of your research study, including motivations for these steps, if needed. Also note the brand, type, and settings used for any equipment you use, and note the version and settings for any software used. Keep a record of which processing steps were applied to the data, and why, and which file contains which data.</p>
 <p>If you are working with digitized data (e.g., in Excel, or SPSS, or R), make sure to carefully keep track of which variable is stored in which column, using which unit of measurement and which coding scheme.</p>
 <hr />
 <blockquote>
 <p><em>Example 3.4</em>: The file found at &lt;<a href="http://tinyurl.com/nj4pjaq" class="uri">http://tinyurl.com/nj4pjaq</a>. contains data from 80 speakers of Dutch, partially taken from the Corpus of Spoken Dutch (Corpus Gesproken Nederlands or CGN). The first line contains the variable names. Each subsequent line corresponds to one speaker. The pieces of data on each line are separated by spaces. The first column contains the anonymized speaker ID code, as used in the CGN. In the fifth column, the speaker’s region of origin is coded with a single letter:
-<code>W</code> for Western region (Randstad), <code>M</code> Central (Mid), <code>N</code> North, <code>S</code> South) <span class="citation">(<a href="#ref-Quene08" role="doc-biblioref">H. Quené 2008</a>)</span>. Because of the careful annotation, these data may still be used with no problem, even if they were collected over 20 years ago by fellow researchers.</p>
+<code>W</code> for Western region (Randstad), <code>M</code> Central (Mid), <code>N</code> North, <code>S</code> South) <span class="citation">(<a href="#ref-Quene08" role="doc-biblioref">Quené 2008</a>)</span>. Because of the careful annotation, these data may still be used with no problem, even if they were collected over 20 years ago by fellow researchers.</p>
 </blockquote>
 <hr />
 <p>Data remain the intellectual property of those who collected them. Use of other researchers’ data with no citation may be seen as theft or plagiarism.</p>
@@ -643,9 +644,9 @@ prof.dr. Christoph Baumgartner, confidential advisor on academic integrity for t
 <p><a href="https://students.uu.nl/en/practical-information/policies-and-procedures/fraud-and-plagiarism" class="uri">https://students.uu.nl/en/practical-information/policies-and-procedures/fraud-and-plagiarism</a></p>
 </blockquote>
 <p>In the case of self-plagiarism, the fragments or writing or thoughts in question are not taken from others, but from one of the authors. There are various schools of thought on self-plagiarism; however, it is advisable to be sure to cite the relevant source if one is to take ideas from one’s own work, building on the principles of diligence, reliability, transparency, and responsibility.</p>
-<p>A reference or citation is a shortened mention of a source in the body of the text; you might have seen these quite a few times in this syllabus already. At the end of the report or text, a full list of sources follows, which is usually given the heading, “Sources,” “Sources consulted,” “References,” “Literature,” or “Bibliography.” A mistake in the references may be seen as a form of plagiarism <span class="citation">(<a href="#ref-UBVU15" role="doc-biblioref">Universiteitsbibliotheek, Vrije Universiteit Amsterdam 2015</a>)</span> because the reader is directed towards an incorrect source. For this reason, it is imperative that researchers cite their sources correctly. Various conventions, depending on the area of study, have been developed for this. Usually, instructors will indicate which style or convention is to be used for citing one’s sources. In this textbook, we have intended to follow the style described by the <span class="citation"><a href="#ref-APA10" role="doc-biblioref">American Psychological Association</a> (<a href="#ref-APA10" role="doc-biblioref">2010</a>)</span>, a style commonly used in the social sciences and some disciplines within the humanities.
+<p>A reference or citation is a shortened mention of a source in the body of the text; you might have seen these quite a few times in this syllabus already. At the end of the report or text, a full list of sources follows, which is usually given the heading, “Sources”, “Sources consulted”, “References”, “Literature”, or “Bibliography”. A mistake in the references may be seen as a form of plagiarism <span class="citation">(<a href="#ref-UBVU15" role="doc-biblioref">Universiteitsbibliotheek, Vrije Universiteit Amsterdam 2015</a>)</span> because the reader is directed towards an incorrect source. For this reason, it is imperative that researchers cite their sources correctly. Various conventions, depending on the area of study, have been developed for this. Usually, instructors will indicate which style or convention is to be used for citing one’s sources. In this textbook, we have intended to follow the style described by the <span class="citation">American Psychological Association (<a href="#ref-APA10" role="doc-biblioref">2010</a>)</span>, a style commonly used in the social sciences and some disciplines within the humanities.
 (For technical reasons, references may deviate slightly from the APA style.)</p>
-<p>The rules for citing sources may sometimes be complex. In addition, authors must make sure that the citations in the body of the text correspond to the list of full references at the end. These tasks are best performed by a so-called “reference manager,” a program that collects references or citations, and correctly inserts them into the body of the text. An overview of such programs can be found at
+<p>The rules for citing sources may sometimes be complex. In addition, authors must make sure that the citations in the body of the text correspond to the list of full references at the end. These tasks are best performed by a so-called “reference manager”, a program that collects references or citations, and correctly inserts them into the body of the text. An overview of such programs can be found at
 <a href="https://en.wikipedia.org/wiki/Comparison_of_reference_management_software" class="uri">https://en.wikipedia.org/wiki/Comparison_of_reference_management_software</a>.
 In writing this textbook we have used Zotero (<a href="https://www.zotero.org" class="uri">https://www.zotero.org</a>),
 combined with BibTeX (<a href="https://www.bibtex.org" class="uri">https://www.bibtex.org</a>).</p>
@@ -664,7 +665,7 @@ Gelman, Andrew, and Jennifer Hill. 2007. <em>Data Analysis Using Regression and 
 Office of Research Integrity. 2012. <span>“Responsible Conduct of Research Training.”</span> <a href="http://ori.hhs.gov/education/products/wsu/rcr_training.html">http://ori.hhs.gov/education/products/wsu/rcr_training.html</a>.
 </div>
 <div id="ref-Quene08" class="csl-entry">
-Quené, H. 2008. <span>“Multilevel Modeling of Between-Speaker and Within-Speaker Variation in Spontaneous Speech Tempo.”</span> <em>Journal of the Acoustical Society of America</em> 123 (2): 1104–13.
+Quené, Hugo. 2008. <span>“Multilevel Modeling of Between-Speaker and Within-Speaker Variation in Spontaneous Speech Tempo.”</span> <em>Journal of the Acoustical Society of America</em> 123 (2): 1104–13.
 </div>
 <div id="ref-Rose08" class="csl-entry">
 Rosenthal, Robert, and Ralph L. Rosnow. 2008. <em>Essentials of Behavioral Research: Methods and Data Analysis</em>. 3e ed. Boston: McGraw Hill.
@@ -676,13 +677,6 @@ Universiteitsbibliotheek, Vrije Universiteit Amsterdam. 2015. <span>“Webcursus
 VSNU. 2018. <span>“Nederlandse Gedragscode Wetenschappelijke Integriteit.”</span> VSNU. <a href="https://www.vsnu.nl/wetenschappelijke_integriteit.html">https://www.vsnu.nl/wetenschappelijke_integriteit.html</a>.
 </div>
 </div>
-<div class="footnotes">
-<hr />
-<ol start="4">
-<li id="fn4"><p>A copy of this letter may be found at <a href="https://digitallibrary.hsp.org/index.php/Detail/objects/9792" class="uri">https://digitallibrary.hsp.org/index.php/Detail/objects/9792</a>; for some background information, see <a href="http://www.bbc.co.uk/worldservice/learningenglish/movingwords/shortlist/newton.shtml" class="uri">http://www.bbc.co.uk/worldservice/learningenglish/movingwords/shortlist/newton.shtml</a>.<a href="ch-integrity.html#fnref4" class="footnote-back">↩︎</a></p></li>
-<li id="fn5"><p>Students and employees of most Dutch educational institutions can use SurfDrive (<a href="https://www.surfdrive.nl" class="uri">https://www.surfdrive.nl</a>) for easy data storage on secured servers.<a href="ch-integrity.html#fnref5" class="footnote-back">↩︎</a></p></li>
-</ol>
-</div>
             </section>
 
           </div>
@@ -693,7 +687,6 @@ VSNU. 2018. <span>“Nederlandse Gedragscode Wetenschappelijke Integriteit.”</
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -733,6 +726,10 @@ gitbook.start({
 "text": null
 },
 "download": ["QMS-EN.pdf", "QMS-EN.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

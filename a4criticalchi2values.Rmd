@@ -1,4 +1,4 @@
-# Critical values for $\chi^2$-distribution {#app:criticalchi2values}
+# Critical values for $\chi^2$-distribution {#app-criticalchi2values}
 
 ```{r criticalchi2values-auxiliaryfigure, echo=FALSE, fig.height=2}
 # adapted from `kritieketwaarden_hulpfiguur.R`

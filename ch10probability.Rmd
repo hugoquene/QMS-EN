@@ -1,4 +1,4 @@
-# Probability distributions {#ch:probability-distributions}
+# Probability distributions {#ch-probability-distributions}
 
 ## Probabilities {#sec:probabilities}
 
@@ -7,7 +7,7 @@ The average chance of precipitation in the Netherlands is 7%. My order has a
 10% chance of being delivered a day later than promised. Chances and probabilities 
 play an important role in our daily lives, and also in academic research. After all,
 many hypotheses are probabilistic in nature (see Chapter 
-\@ref(ch:research)): hypotheses make statements about a 
+\@ref(ch-research)): hypotheses make statements about a 
 difference in the *chances* of outcomes. To be able to draw conclusions with
 respect to these probabilistic hypotheses, we need to know something about
 probabilities and 
@@ -404,7 +404,7 @@ You could calculate the probability distribution of a normally distributed
 variable $X$ yourself with the help of the formula
 \@ref(eq:prob-normal) below. However, it is more convenient to
 use a table for it; this can be found in 
-Appendix \@ref(app:criticalZvalues).
+Appendix \@ref(app-criticalZvalues).
 Explained in graphical form, the tables provide you, for 
 different areas or probabilities $p$ on the right-hand side under the curve,
 the positive value of $Z^*$ which constitutes the left-hand limit of the area.
@@ -424,7 +424,7 @@ probability to the aforementioned Empirical Rule).
 
 ---
 
-In Appendix \@ref(app:criticalZvalues), you can find for convenience not one but two
+In Appendix \@ref(app-criticalZvalues), you can find for convenience not one but two
 tables, each consisting of several column designations and 
 and a row of cells. The first table provides you, for different 'rounded'
 probabilities $p$ (columns), the critical values $Z^*$ (cells), for which the 
@@ -468,7 +468,7 @@ and the other 2.5% is on the right-hand side. Which boundary value $Z^*$
 corresponds with this p-value $p=0.025$?
 
 > In
-Appendix \@ref(app:criticalZvalues), we take the first subtable. In the column
+Appendix \@ref(app-criticalZvalues), we take the first subtable. In the column
 for p-value $p=0.025$, we find boundary value
 $Z^*=1.960$. If we find an observation with $Z \ge 1.960$ or with
 $Z \le -1.960$, then we consider that to be an extreme, rare
@@ -494,12 +494,12 @@ have to achieve an IQ score of 131 points or higher.
 
 > *Example 10.10:* 
 Verify the aforementioned Empirical Rule with the help of
-Appendix \@ref(app:criticalZvalues).
+Appendix \@ref(app-criticalZvalues).
 
 ---
 
 <!-- 
-The second table in Appendix \@ref{app:criticalZvalues} provides you also
+The second table in Appendix \@ref{app-criticalZvalues} provides you also
 with different positive values from that 
 lower boundary $Z^*$, the precise probability $p$ of finding a value of $Z$
 which is equally large as or larger than this lower boundary $Z^*$. We call
@@ -659,8 +659,8 @@ distributed.
 ## What if my variable is not normally distributed? {#sec:whatifnotnormal}
 
 In Part III, we will discuss various statistical tests.
-The tests which we discuss in Chapters \@ref(ch:testing) and \@ref(ch:power) and
-\@ref(ch:anova) however require that the independent
+The tests which we discuss in Chapters \@ref(ch-testing) and \@ref(ch-power) and
+\@ref(ch-anova) however require that the independent
 variable has a normal probability distribution. If a variable does *not* have
 a (approximately) normal probability distribution, then the variable cannot
 simply be used for statistical testing with the statistical tests 
@@ -680,11 +680,11 @@ the transformation performed!
 Secondly, it is sometimes possible to use another statistical test which does
 not require that the dependent variable is normally distributed. Those are called
 nonparametric tests. We will look at these in more detail in the chapters
-\@ref(ch:chi-square-tests) and
-\@ref(ch:other-nonpar-tests). 
+\@ref(ch-chi-square-tests) and
+\@ref(ch-other-nonpar-tests). 
 A disadvantage of those tests is nevertheless that they have less
 statistical power (for a discussion of power,
-see Chapter \@ref(ch:power)): they are less sensitive, and thus require larger
+see Chapter \@ref(ch-power)): they are less sensitive, and thus require larger
 samples to establish an effect.
 
 ## Probability distribution of average {#sec:Centrallimittheorem}
@@ -827,7 +827,7 @@ $\hat{\mu}=0.215$ and
 $\hat{\sigma}=0.0203$. Since $\sigma$ is not known, we use
 the *t*-distribution to determine the confidence interval. We
 use the *t*-distribution for $n=30$ and find a critical value 
-$t^*=2.05$ (see Appendix \@ref(app:criticaltvalues), for $B=95$%). 
+$t^*=2.05$ (see Appendix \@ref(app-criticaltvalues), for $B=95$%). 
 According to formula \@ref(eq:t-onesampleCI), we know with 95% 
 confidence that the unknown population mean $\mu$ lies 
 between $\overline{x}-2.05\times s_{\bar{x}}$ and $\overline{x}+2.05\times s_{\bar{x}}$,
@@ -869,7 +869,7 @@ for (i in 1:nsim) {
 	lb <- mean(aux)-crit*se(aux)
 	ub <- mean(aux)+crit*se(aux)
 	results <- append( results, c(mean(aux),se(aux),lb,ub) )
-	hits[i] <- is.inrange( mu, c(lb,ub) )
+	hits[i] <- hqmisc::is.inrange( mu, c(lb,ub) ) # 20220203 added hqmisc::
 	lines( x=c(lb,ub), y=rep(i,2), type="l",lwd=2,
 	       col=ifelse(hits[i],"black","red") )
 	points( x=mean(aux), y=i, pch=20, cex=.5 ) # added 20090319
@@ -898,7 +898,7 @@ average is
   (\#eq:t-onesampleCI)
 \end{equation}
 in which $t^*$ with $n-1$ degrees of freedom is found with the help of
-Appendix \@ref(app:criticaltvalues), see
+Appendix \@ref(app-criticaltvalues), see
 §\@ref(sec:ttest-freedomdegrees) for more explanation about this.
 
 [^fn10-1]: However, two of the tiles are blank (without any letter); later in this section we will remove these blank tiles from the bag.

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>13 Testing hypotheses | Quantitative Methods and Statistics</title>
   <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="13 Testing hypotheses | Quantitative Methods and Statistics" />
   <meta property="og:type" content="book" />
@@ -31,8 +31,9 @@
   
 <link rel="prev" href="ch-reliability.html"/>
 <link rel="next" href="ch-power.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -40,7 +41,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -445,7 +445,7 @@ div.csl-indent {
 <li class="chapter" data-level="15.3.2" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-formal"><i class="fa fa-check"></i><b>15.3.2</b> A formal explanation</a></li>
 <li class="chapter" data-level="15.3.3" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-effectsize"><i class="fa fa-check"></i><b>15.3.3</b> Effect size</a></li>
 <li class="chapter" data-level="15.3.4" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-planned"><i class="fa fa-check"></i><b>15.3.4</b> Planned comparisons</a></li>
-<li class="chapter" data-level="15.3.5" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-posthoc"><i class="fa fa-check"></i><b>15.3.5</b> Post-hoc comparisons</a></li>
+<li class="chapter" data-level="15.3.5" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-posthoc"><i class="fa fa-check"></i><b>15.3.5</b> Post hoc comparisons</a></li>
 <li class="chapter" data-level="15.3.6" data-path="ch-anova.html"><a href="ch-anova.html#spss-12"><i class="fa fa-check"></i><b>15.3.6</b> SPSS</a></li>
 <li class="chapter" data-level="15.3.7" data-path="ch-anova.html"><a href="ch-anova.html#jasp-13"><i class="fa fa-check"></i><b>15.3.7</b> JASP</a></li>
 <li class="chapter" data-level="15.3.8" data-path="ch-anova.html"><a href="ch-anova.html#r-15"><i class="fa fa-check"></i><b>15.3.8</b> R</a></li>
@@ -454,9 +454,10 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="15.4.1" data-path="ch-anova.html"><a href="ch-anova.html#an-intuitive-explanation"><i class="fa fa-check"></i><b>15.4.1</b> An intuitive explanation</a></li>
 <li class="chapter" data-level="15.4.2" data-path="ch-anova.html"><a href="ch-anova.html#a-formal-explanation"><i class="fa fa-check"></i><b>15.4.2</b> A formal explanation</a></li>
-<li class="chapter" data-level="15.4.3" data-path="ch-anova.html"><a href="ch-anova.html#spss-13"><i class="fa fa-check"></i><b>15.4.3</b> SPSS</a></li>
-<li class="chapter" data-level="15.4.4" data-path="ch-anova.html"><a href="ch-anova.html#jasp-14"><i class="fa fa-check"></i><b>15.4.4</b> JASP</a></li>
-<li class="chapter" data-level="15.4.5" data-path="ch-anova.html"><a href="ch-anova.html#r-16"><i class="fa fa-check"></i><b>15.4.5</b> R</a></li>
+<li class="chapter" data-level="15.4.3" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-twoway-posthoc"><i class="fa fa-check"></i><b>15.4.3</b> Post hoc comparisons</a></li>
+<li class="chapter" data-level="15.4.4" data-path="ch-anova.html"><a href="ch-anova.html#spss-13"><i class="fa fa-check"></i><b>15.4.4</b> SPSS</a></li>
+<li class="chapter" data-level="15.4.5" data-path="ch-anova.html"><a href="ch-anova.html#jasp-14"><i class="fa fa-check"></i><b>15.4.5</b> JASP</a></li>
+<li class="chapter" data-level="15.4.6" data-path="ch-anova.html"><a href="ch-anova.html#r-16"><i class="fa fa-check"></i><b>15.4.6</b> R</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="16" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html"><i class="fa fa-check"></i><b>16</b> Chi-square-tests</a>
@@ -529,19 +530,19 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ch:testing" class="section level1" number="13">
+<div id="ch-testing" class="section level1" number="13">
 <h1><span class="header-section-number">13</span> Testing hypotheses</h1>
 <div id="sec:testing-introduction" class="section level2" number="13.1">
 <h2><span class="header-section-number">13.1</span> Introduction</h2>
 <p>From this chapter onwards, we will be concerned with the testing of
 research hypotheses and, in particular, with null hypothesis significance testing (NHST),
-as explained in Chapter <a href="ch-research.html#ch:research">2</a>.</p>
+as explained in Chapter <a href="ch-research.html#ch-research">2</a>.</p>
 <p>Over the course of the years, a large number of techniques have been developed
 for tests like this. The tests with which we will concern ourselves
 are the most used and can be divided into parametric
 and non-parametric tests. Parametric tests assume that the dependent
 variable is (at least) measured on an interval level of measurement (see
-Chapter <a href="ch-levelsofmeasurement.html#ch:levelsofmeasurement">4</a>), and that the measured outcomes or
+Chapter <a href="ch-levelsofmeasurement.html#ch-levelsofmeasurement">4</a>), and that the measured outcomes or
 scores are normally distributed (see
 §<a href="ch-probability-distributions.html#sec:normaldistribution">10.3</a> and §<a href="ch-probability-distributions.html#sec:whatifnotnormal">10.5</a>).
 For non-parametric tests, dependent on the technique,
@@ -551,13 +552,13 @@ distribution free tests. The consequence is that the testing
 is a little less ‘sensitive’ under otherwise equal circumstances, i.e.
 that the null hypothesis can be rejected less often in
 otherwise equal circumstances. These tests therefore have less power (see
-Chapter <a href="ch-power.html#ch:power">14</a>). Researchers thus usually prefer parametric
+Chapter <a href="ch-power.html#ch-power">14</a>). Researchers thus usually prefer parametric
 tests.</p>
 <p>We already discussed the general principle of testing briefly in
 §<a href="ch-research.html#sec:falsification">2.4</a> and §<a href="ch-research.html#sec:empiricalcycle">2.5</a>.
 We will illustrate this again here
 with an example. We investigate the statement H1:<br />
-‘Linguistics students master traditional grammar <em>better</em> than the average language student.’ As a measurement instrument, we use the so-called “grammar test”<a href="#fn33" class="footnote-ref" id="fnref33"><sup>33</sup></a> which is compulsory
+‘Linguistics students master traditional grammar <em>better</em> than the average language student’. As a measurement instrument, we use the so-called “grammar test”<a href="references.html#fn33" class="footnote-ref" id="fnref33"><sup>33</sup></a> which is compulsory
 for most students
 in language programs at Utrecht University. On the basis of previous cohorts (year groups),
 we expect a mean score of 73 on this test; this is the mean number of good answers
@@ -581,8 +582,8 @@ data, whilst H0 is true:
 In this example, the probability <span class="math inline">\(P\)</span> is very small.</p>
 <p>For the argumentation, it is essential that the data are valid and
 reliable — this is precisely the reason why we discussed validity
-(Chapter <a href="ch-validity.html#ch:validity">5</a>) and reliability
-(Chapter <a href="ch-reliability.html#ch:reliability">12</a>). If we have done everything properly,
+(Chapter <a href="ch-validity.html#ch-validity">5</a>) and reliability
+(Chapter <a href="ch-reliability.html#ch-reliability">12</a>). If we have done everything properly,
 we can, after all, trust the data obtained.
 We are then <em>not</em> reasonably able to attribute the low probability of the data according
 to H0 to errors in operationalisation, or measurement errors, or other deviations in the data.
@@ -597,7 +598,7 @@ probability <span class="math inline">\(P\)</span> that rejecting H0 is an unjus
 §<a href="ch-research.html#sec:empiricalcycle">2.5</a>). After all, there is the probability <span class="math inline">\(P\)</span> that
 we find these data when H0 is in fact true (in this example: when the linguists
 on average do not score better than <span class="math inline">\(\mu=73\)</span>).</p>
-<div class="figure"><span id="fig:gramm2013onesample"></span>
+<div class="figure"><span style="display:block;" id="fig:gramm2013onesample"></span>
 <img src="QMS-EN_files/figure-html/gramm2013onesample-1.png" alt="Probability distribution of the mean score from a sample (n=34) with a population mean 73 and population s.d. 14. The coloured area covers 5% of the total area under the curve; outcomes along the X-axis of this area thus have a probability of at most 5% of occurring if H0 is true." width="672" />
 <p class="caption">
 Figure 13.1: Probability distribution of the mean score from a sample (n=34) with a population mean 73 and population s.d. 14. The coloured area covers 5% of the total area under the curve; outcomes along the X-axis of this area thus have a probability of at most 5% of occurring if H0 is true.
@@ -633,7 +634,7 @@ evidence of absence” <span class="citation">(<a href="#ref-Sagan96" role="doc-
 <hr />
 <blockquote>
 <p><em>Example 13.1:</em>
-Assume H0: ‘birds do not sing.’ Write
+Assume H0: ‘birds do not sing’. Write
 down at least 4 reasons why I do not hear birds singing, even
 if there are in fact birds singing (H0 is untrue). If I do not reject H0,
 what type of error will I be making?</p>
@@ -665,15 +666,15 @@ If <span class="math inline">\(\overline{x}=84.4, s=8.4, n=34\)</span>, then the
 is <span class="math inline">\(t=7.9\)</span> according to formula <a href="ch-testing.html#eq:t-onesample">(13.1)</a> below.</p>
 <p>The probability distribution of test statistic <span class="math inline">\(t\)</span> under H0 is known;
 you can find the boundary value <span class="math inline">\(t^*\)</span> in
-Appendix <a href="app-criticaltvalues.html#app:criticaltvalues">C</a>. Put otherwise, if the test statistic <span class="math inline">\(t\)</span>
+Appendix <a href="app-criticaltvalues.html#app-criticaltvalues">C</a>. Put otherwise, if the test statistic <span class="math inline">\(t\)</span>
 is larger than the boundary value <span class="math inline">\(t^*\)</span> which is stated in the table then
 <span class="math inline">\(P(t|\textrm{H0})&lt;\alpha\)</span>. To be able to use the table in Appendix
-<a href="app-criticaltvalues.html#app:criticaltvalues">C</a>, we still have to introduce a new term,
+<a href="app-criticaltvalues.html#app-criticaltvalues">C</a>, we still have to introduce a new term,
 namely the number of degrees of freedom. That term is
 explained in
 §<a href="ch-testing.html#sec:ttest-freedomdegrees">13.2.1</a> below.</p>
 <p>With the number of degrees of freedom, you can look in Appendix
-<a href="app-criticaltvalues.html#app:criticaltvalues">C</a> to see which boundary value <span class="math inline">\(t^*\)</span> is needed
+<a href="app-criticaltvalues.html#app-criticaltvalues">C</a> to see which boundary value <span class="math inline">\(t^*\)</span> is needed
 to achieve a certain p-value for the established test statistic
 <span class="math inline">\(t=7.9\)</span>. Let us see what the p-value is for the established
 test statistic <span class="math inline">\(t=7.9\)</span>. We firstly look for the degrees of freedom (‘d.f.’) in the left column.
@@ -736,7 +737,7 @@ number of observations <span class="math inline">\(N-1\)</span>. In the above di
 must be satisfied in order to be able to use the test.</p>
 <ul>
 <li><p>The data must have been measured on an interval level of measurement (see
-Chapter <a href="ch-levelsofmeasurement.html#ch:levelsofmeasurement">4</a>).</p></li>
+Chapter <a href="ch-levelsofmeasurement.html#ch-levelsofmeasurement">4</a>).</p></li>
 <li><p>All the observations have to be independent of each other.</p></li>
 <li><p>The scores must be normally distributed (see
 §<a href="ch-probability-distributions.html#sec:normaldistribution">10.3</a>).</p></li>
@@ -772,10 +773,10 @@ Select the variable <code>progr</code> from the lefthand menu, so that it moves 
 Next click on the button <code>Apply pass-through filter</code> below the working panel in order to apply this filter. In the data sheet, you should see immediately that the rows of excluded data (students of other programs than Linguistics) are greyed out. Those rows (observations) will no longer be used, until you cancel the selection (which is explained below).</p>
 <p>To conduct the one sample <span class="math inline">\(t\)</span> test, choose from the top menu bar:</p>
 <pre><code>T-Tests &gt; Classical: One Sample T-Test</code></pre>
-<p>In the field “Variables,” select the variable <em>score</em> to be tested.
-Under “Tests,” check <code>Student</code> (for Student’s <span class="math inline">\(t\)</span> test statistic), and as the <code>Test value</code> enter the value of <span class="math inline">\(\mu\)</span> to use in the test; for this example, enter <code>73</code>. Under “Alt. Hypothesis,” select <code>&gt; Test value</code> for a one-sided <span class="math inline">\(t\)</span> test; here we test H1: <span class="math inline">\(\mu&gt;73\)</span> (see §<a href="ch-testing.html#sec:ttest-onesidedtwosided">13.4</a>).<br />
-Under “Additional Statistics,” you may check <code>Descriptives</code> and <code>Descriptive Plots</code> to learn more about the dependent variable. Also check the option <code>Effect size</code> (see §<a href="ch-testing.html#sec:ttest-effectsize">13.8</a> below).<br />
-Under the heading “Assumption checks,” finally, check the option <code>Normality</code> (see §<a href="ch-probability-distributions.html#sec:isvarnormaldistributed">10.4</a>).</p>
+<p>In the field “Variables”, select the variable <em>score</em> to be tested.
+Under “Tests”, check <code>Student</code> (for Student’s <span class="math inline">\(t\)</span> test statistic), and as the <code>Test value</code> enter the value of <span class="math inline">\(\mu\)</span> to use in the test; for this example, enter <code>73</code>. Under “Alt. Hypothesis”, select <code>&gt; Test value</code> for a one-sided <span class="math inline">\(t\)</span> test; here we test H1: <span class="math inline">\(\mu&gt;73\)</span> (see §<a href="ch-testing.html#sec:ttest-onesidedtwosided">13.4</a>).<br />
+Under “Additional Statistics”, you may check <code>Descriptives</code> and <code>Descriptive Plots</code> to learn more about the dependent variable. Also check the option <code>Effect size</code> (see §<a href="ch-testing.html#sec:ttest-effectsize">13.8</a> below).<br />
+Under the heading “Assumption checks”, finally, check the option <code>Normality</code> (see §<a href="ch-probability-distributions.html#sec:isvarnormaldistributed">10.4</a>).</p>
 <p>The output reports the one-sided <span class="math inline">\(t\)</span> test, including its effect size.
 The table titled <strong>Assumption Checks</strong> reports the Shapiro-Wilk test of normality. If checked in the input, descriptive statistics and summary plots are also reported. This visualises the test value (here: 73) relative to the scores of the students of Linguistics.</p>
 <p>Note that we have activated a filter to select only the students of Linguistics, and this filter remains in effect until it is deactivated. You can de-activate the filter by navigating to the data sheet, go to the top left corner, go to the filter working panel, and double-click on the trash can or waste bin symbol in the lower right corner. A confirmation text “Filter cleared” should appear, and all observations (rows) in the data sheet should be un-greyed and active.</p>
@@ -783,11 +784,11 @@ The table titled <strong>Assumption Checks</strong> reports the Shapiro-Wilk tes
 <div id="r-12" class="section level3" number="13.2.6">
 <h3><span class="header-section-number">13.2.6</span> R</h3>
 <p>Our hypothesis discussed above can be tested with the following commands:</p>
-<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="ch-testing.html#cb105-1" aria-hidden="true" tabindex="-1"></a>gramm2013 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>( <span class="at">file=</span><span class="st">&quot;data/grammaticatoets2013.csv&quot;</span>,<span class="at">header=</span>F)</span>
-<span id="cb105-2"><a href="ch-testing.html#cb105-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dimnames</span>(gramm2013)[[<span class="dv">2</span>]] <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;score&quot;</span>,<span class="st">&quot;progr&quot;</span>)</span>
-<span id="cb105-3"><a href="ch-testing.html#cb105-3" aria-hidden="true" tabindex="-1"></a><span class="co"># program levels have Dutch labels: TW=Linguistics</span></span>
-<span id="cb105-4"><a href="ch-testing.html#cb105-4" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>( gramm2013,</span>
-<span id="cb105-5"><a href="ch-testing.html#cb105-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">t.test</span>( score[progr<span class="sc">==</span><span class="st">&quot;TW&quot;</span>], <span class="at">mu=</span><span class="dv">73</span>, <span class="at">alt=</span><span class="st">&quot;greater&quot;</span> ) )</span></code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="ch-testing.html#cb104-1" aria-hidden="true" tabindex="-1"></a>gramm2013 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>( <span class="at">file=</span><span class="st">&quot;data/grammaticatoets2013.csv&quot;</span>,<span class="at">header=</span>F)</span>
+<span id="cb104-2"><a href="ch-testing.html#cb104-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dimnames</span>(gramm2013)[[<span class="dv">2</span>]] <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;score&quot;</span>,<span class="st">&quot;progr&quot;</span>)</span>
+<span id="cb104-3"><a href="ch-testing.html#cb104-3" aria-hidden="true" tabindex="-1"></a><span class="co"># program levels have Dutch labels: TW=Linguistics</span></span>
+<span id="cb104-4"><a href="ch-testing.html#cb104-4" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>( gramm2013,</span>
+<span id="cb104-5"><a href="ch-testing.html#cb104-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">t.test</span>( score[progr<span class="sc">==</span><span class="st">&quot;TW&quot;</span>], <span class="at">mu=</span><span class="dv">73</span>, <span class="at">alt=</span><span class="st">&quot;greater&quot;</span> ) )</span></code></pre></div>
 <pre><code>## 
 ##  One Sample t-test
 ## 
@@ -835,13 +836,13 @@ say <span class="math inline">\(\overline{x}=68\)</span>, then we would not even
 the H0 simply still stands. It is only when we find a difference
 in the hypothesised direction that it is meaningful to inspect whether
 this difference is significant. When you look now at the figure in
-Appendix <a href="app-criticaltvalues.html#app:criticaltvalues">C</a>, then this is also the case. The <span class="math inline">\(p\)</span>-value
+Appendix <a href="app-criticaltvalues.html#app-criticaltvalues">C</a>, then this is also the case. The <span class="math inline">\(p\)</span>-value
 corresponds with the area of the coloured region.</p>
 <p>If the alternative hypothesis H1 does <em>not</em> specify the direction of the
 difference, then a complication arises. Differences in any of the two possible directions
 are relevant. We speak then of two-sided tests or two-tailed tests.<br />
 To calculate the two-sided p-value, we multiply the <span class="math inline">\(p\)</span>-value from
-Appendix <a href="app-criticaltvalues.html#app:criticaltvalues">C</a> by <span class="math inline">\(2\)</span> (because we are now looking at two
+Appendix <a href="app-criticaltvalues.html#app-criticaltvalues">C</a> by <span class="math inline">\(2\)</span> (because we are now looking at two
 coloured regions, on the lower and upper sides of the probability distribution).</p>
 <p>In the grammar test example, let us now use a two-sided test. We
 then operationalise the alternative hypothesis as H1: <span class="math inline">\(\mu \ne 73\)</span>.
@@ -895,13 +896,13 @@ value 73 <span class="citation">(<a href="#ref-Cumm12" role="doc-biblioref">Cumm
 </blockquote>
 <p>In Figure <a href="ch-testing.html#fig:gramm2013CIs">13.2</a>, you can see the results of
 a computer simulation to illustrate this. This figure is made in the same way as Figure
-<a href="ch-probability-distributions.html#fig:tempo95CIs">10.8</a> in Chapter <a href="ch-probability-distributions.html#ch:probability-distributions">10</a> and
+<a href="ch-probability-distributions.html#fig:tempo95CIs">10.8</a> in Chapter <a href="ch-probability-distributions.html#ch-probability-distributions">10</a> and
 illustrates the same point. We have drawn <span class="math inline">\(100\times\)</span> samples from Linguistics students,
 with <span class="math inline">\(\mu=84.4\)</span> and <span class="math inline">\(\sigma=8.4\)</span> (see §<a href="ch-centre-and-dispersion.html#sec:standarddeviation">9.5.2</a>) and <span class="math inline">\(N=34\)</span>.
 For each sample, we have drawn the 95%
 confidence interval. For 95 of the 100 samples, the population mean <span class="math inline">\(\mu=84.4\)</span>
 is indeed within the interval, but for 5 of the 100 samples the confidence interval does not contain the population mean (these are marked along the right hand side).</p>
-<div class="figure"><span id="fig:gramm2013CIs"></span>
+<div class="figure"><span style="display:block;" id="fig:gramm2013CIs"></span>
 <img src="QMS-EN_files/figure-html/gramm2013CIs-1.png" alt="95% confidence interval and sample means, over 100 simulated samples (n=34) from a population with population mean 84.4, population-s.d. 8.4." width="672" />
 <p class="caption">
 Figure 13.2: 95% confidence interval and sample means, over 100 simulated samples (n=34) from a population with population mean 84.4, population-s.d. 8.4.
@@ -933,9 +934,9 @@ So we conduct this test again and find the confidence interval of the mean in th
 <p>For the example discussed above, make sure that the proper selection is used so that only observations about students of Linguistics will be included in the analysis (see §<a href="ch-testing.html#sec:jaspttestonesample">13.2.5</a> for how to filter observations).</p>
 <p>Next, from the top menu bar, choose:</p>
 <pre><code>T-Tests &gt; Classical: One Sample T-Test</code></pre>
-<p>In the field “Variables,” select the variable <em>score</em> to be tested.
-Under “Tests,” check <code>Student</code> (for Student’s <span class="math inline">\(t\)</span> test statistic), and as the <code>Test value</code> now enter <span class="math inline">\(0\)</span> (zero).
-Under “Additional Statistics,” check <code>Location parameter</code> and <code>Confidence interval</code> too. Here you can specify the confidence limits; the default value of 95% is usually OK.</p>
+<p>In the field “Variables”, select the variable <em>score</em> to be tested.
+Under “Tests”, check <code>Student</code> (for Student’s <span class="math inline">\(t\)</span> test statistic), and as the <code>Test value</code> now enter <span class="math inline">\(0\)</span> (zero).
+Under “Additional Statistics”, check <code>Location parameter</code> and <code>Confidence interval</code> too. Here you can specify the confidence limits; the default value of 95% is usually OK.</p>
 <p>The output reports the mean of <em>score</em>, because observed scores are now compared to the <code>test value</code> which is set to <span class="math inline">\(0\)</span>, so that the <code>Mean Difference</code> of <code>score-0</code> is now equal to the mean value of <em>score</em>. The same table also reports the <code>95% CI for Mean Difference</code>, which is equivalent here with the confidence interval of the mean of <em>score</em>.</p>
 </div>
 <div id="r-13" class="section level3" number="13.5.4">
@@ -944,7 +945,7 @@ Under “Additional Statistics,” check <code>Location parameter</code> and <co
 confidence level) for a <span class="math inline">\(t\)</span>-test. We thus again conduct a <span class="math inline">\(t\)</span>-test
 and find the confidence interval of the mean in the
 output.</p>
-<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="ch-testing.html#cb109-1" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>( gramm2013, <span class="fu">t.test</span>( score[progr<span class="sc">==</span><span class="st">&quot;TW&quot;</span>] ) )</span></code></pre></div>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="ch-testing.html#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>( gramm2013, <span class="fu">t.test</span>( score[progr<span class="sc">==</span><span class="st">&quot;TW&quot;</span>] ) )</span></code></pre></div>
 <pre><code>## 
 ##  One Sample t-test
 ## 
@@ -983,7 +984,7 @@ of <span class="math inline">\(\overline{x_1}=95\)</span> words (<span class="ma
 test statistic <span class="math inline">\(t\)</span> according to the formula
 <a href="ch-testing.html#eq:t-homoskedastic">(13.3)</a>, resulting in <span class="math inline">\(t=0.88\)</span> with 122 d.f. We look for the
 accompanying critical value <span class="math inline">\(t^*\)</span> again in Appendix
-<a href="app-criticaltvalues.html#app:criticaltvalues">C</a>. In the row for 100 d.f. (after rounding down),
+<a href="app-criticaltvalues.html#app-criticaltvalues">C</a>. In the row for 100 d.f. (after rounding down),
 we find <span class="math inline">\(t^*=1.984\)</span> in the fourth column. For two-sample testing
 we have to double the p-value which belongs to this column
 (see §<a href="ch-testing.html#sec:ttest-onesidedtwosided">13.4</a>), resulting in <span class="math inline">\(p=.05\)</span>. The
@@ -1000,7 +1001,7 @@ words (<span class="math inline">\(s=82\)</span>), and boys on average 85 differ
 of speakers, namely originating from the West (first group) and
 from the North (second group) of the Netherlands. The speech tempo
 is expressed here as the mean duration of a spoken syllable, in seconds,
-over an interview of ca. 15 minutes (see Example <a href="ch-anova.html#ch:anova">15</a>.1).
+over an interview of ca. 15 minutes (see Example <a href="ch-anova.html#ch-anova">15</a>.1).
 We investigate H0: <span class="math inline">\(\mu_W = \mu_N\)</span> with
 two-sample testing. From the results, it appears that those from the West
 (<span class="math inline">\(n=20\)</span>) have a mean syllable duration of
@@ -1009,7 +1010,7 @@ two-sample testing. From the results, it appears that those from the West
 we again determine the test statistic <span class="math inline">\(t\)</span> according to the formula
 <a href="ch-testing.html#eq:t-homoskedastic">(13.3)</a>, resulting in <span class="math inline">\(t=-3.76\)</span> with 38 d.f. We look for
 the accompanying critical value again in Appendix
-<a href="app-criticaltvalues.html#app:criticaltvalues">C</a>. The correct d.f. are not stated in the table
+<a href="app-criticaltvalues.html#app-criticaltvalues">C</a>. The correct d.f. are not stated in the table
 so we round them down (i.e. in the conservative direction) to
 30 d.f. In the row, we find <span class="math inline">\(t^*=2.042\)</span> in the fourth column.
 For two-sample testing, we have to double the p-value corresponding to
@@ -1075,12 +1076,12 @@ Then
 </div>
 <div id="freedomdegrees" class="section level4" number="13.6.2.2">
 <h4><span class="header-section-number">13.6.2.2</span> degrees of freedom</h4>
-<p>The <span class="math inline">\(t\)</span> test is usually conducted by a computer program, which typically uses the following approximation of degrees of freedom (symbol <span class="math inline">\(\nu\)</span>, Greek “nu,” see §<a href="ch-testing.html#sec:ttest-freedomdegrees">13.2.1</a>).
+<p>The <span class="math inline">\(t\)</span> test is usually conducted by a computer program, which typically uses the following approximation of degrees of freedom (symbol <span class="math inline">\(\nu\)</span>, Greek “nu”, see §<a href="ch-testing.html#sec:ttest-freedomdegrees">13.2.1</a>).
 Firstly, <span class="math inline">\(g_1=s^2_1/n_1\)</span>
 and <span class="math inline">\(g_2=s^2_2/n_2\)</span> are calculated. The number of degrees of freedom of <span class="math inline">\(t\)</span> is then
 <span class="math display" id="eq:df-WS">\[\begin{equation}
   \tag{13.6}
-  \nu_\textrm{WS} = 
+  \nu_\textrm{WS} =
         \frac {(g_1+g_2)^2} {g^2_1/(n_1-1) + g^2_2/(n_2-1)}
 \end{equation}\]</span></p>
 <p>According to this approximation, the number of degrees of freedom has as its liberal
@@ -1094,7 +1095,7 @@ limit.</p>
 an estimation of <span class="math inline">\(37.99 \approx 38\)</span> d.f. The conservative lower limit is
 <span class="math inline">\(n_1-1 = n_2-1 = 19\)</span>. The liberal upper limit is <span class="math inline">\(n_1+n_2 -2 = 38\)</span>.</p>
 <p>When using the table with critical values <span class="math inline">\(t*\)</span>, in
-Appendix <a href="app-criticaltvalues.html#app:criticaltvalues">C</a>, it is usually advisable to use the table row
+Appendix <a href="app-criticaltvalues.html#app-criticaltvalues">C</a>, it is usually advisable to use the table row
 with the rounded <em>down</em> degrees of freedom, i.e. first-following <em>smaller</em> d.f..
 Hence, for this example, you would use <span class="math inline">\(t*\)</span> critical values in the row with <span class="math inline">\(30\)</span> d.f.
 (see also §<a href="ch-testing.html#sec:ttest-onesample">13.2</a> above).</p>
@@ -1144,11 +1145,11 @@ and report <span class="math inline">\(t(38)=-3.765, p=.001\)</span>.</p>
 <h4><span class="header-section-number">13.6.4.2</span> <em>t</em> test</h4>
 <p>After filtering the observations, choose from the top menu bar:</p>
 <pre><code>T-Tests &gt; Classical: Independent Samples T-Test</code></pre>
-<p>In the field “Variables,” select the variable <em>syldur</em> to be tested.
-In the field “Grouping Variable,” select the independent variable <em>region</em>. (If the independent variable has more than two groups, JASP will report an error. To avoid this problem, we have filtered the independent variable, so that only two groups remain.)</p>
-<p>Under “Tests,” check <code>Student</code> (for Student’s <span class="math inline">\(t\)</span> test statistic). Under “Alt. Hypothesis,” select the first option (groups are not the same) for a two-sided <span class="math inline">\(t\)</span> test.
-Under “Additional Statistics,” you may check <code>Descriptives</code> and <code>Descriptive Plots</code> to learn more about the dependent variable. Also check the option <code>Effect size</code> (see §<a href="ch-testing.html#sec:ttest-effectsize">13.8</a> below).</p>
-<p>Under the heading “Assumption checks,” check the options <code>Normality</code> (see
+<p>In the field “Variables”, select the variable <em>syldur</em> to be tested.
+In the field “Grouping Variable”, select the independent variable <em>region</em>. (If the independent variable has more than two groups, JASP will report an error. To avoid this problem, we have filtered the independent variable, so that only two groups remain.)</p>
+<p>Under “Tests”, check <code>Student</code> (for Student’s <span class="math inline">\(t\)</span> test statistic). Under “Alt. Hypothesis”, select the first option (groups are not the same) for a two-sided <span class="math inline">\(t\)</span> test.
+Under “Additional Statistics”, you may check <code>Descriptives</code> and <code>Descriptive Plots</code> to learn more about the dependent variable. Also check the option <code>Effect size</code> (see §<a href="ch-testing.html#sec:ttest-effectsize">13.8</a> below).</p>
+<p>Under the heading “Assumption checks”, check the options <code>Normality</code> (see
 §<a href="ch-testing.html#sec:ttest-unpaired-assumptions">13.6.1</a>, third assumption, see also<br />
 §<a href="ch-probability-distributions.html#sec:isvarnormaldistributed">10.4</a>) and <code>Equality of variances</code> too (see §<a href="ch-testing.html#sec:ttest-unpaired-assumptions">13.6.1</a>, fourth assumption).</p>
 <p>The output reports the two-sided <span class="math inline">\(t\)</span> test for two independent samples, including its effect size.</p>
@@ -1162,10 +1163,10 @@ If Levene’s test reports a high value of <span class="math inline">\(F\)</span
 </div>
 <div id="sec:R-ttest-unpaired" class="section level3" number="13.6.5">
 <h3><span class="header-section-number">13.6.5</span> R</h3>
-<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="ch-testing.html#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(hqmisc)</span>
-<span id="cb113-2"><a href="ch-testing.html#cb113-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(talkers)</span>
-<span id="cb113-3"><a href="ch-testing.html#cb113-3" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(talkers, <span class="fu">t.test</span>( syldur[region<span class="sc">==</span><span class="st">&quot;W&quot;</span>], syldur[region<span class="sc">==</span><span class="st">&quot;N&quot;</span>], </span>
-<span id="cb113-4"><a href="ch-testing.html#cb113-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">paired=</span>F, <span class="at">var.equal=</span>T ) )</span></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="ch-testing.html#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(hqmisc)</span>
+<span id="cb112-2"><a href="ch-testing.html#cb112-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(talkers)</span>
+<span id="cb112-3"><a href="ch-testing.html#cb112-3" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(talkers, <span class="fu">t.test</span>( syldur[region<span class="sc">==</span><span class="st">&quot;W&quot;</span>], syldur[region<span class="sc">==</span><span class="st">&quot;N&quot;</span>], </span>
+<span id="cb112-4"><a href="ch-testing.html#cb112-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">paired=</span>F, <span class="at">var.equal=</span>T ) )</span></code></pre></div>
 <pre><code>## 
 ##  Two Sample t-test
 ## 
@@ -1183,7 +1184,7 @@ If Levene’s test reports a high value of <span class="math inline">\(F\)</span
 <h2><span class="header-section-number">13.7</span> <span class="math inline">\(t\)</span>-test for paired observations</h2>
 <p>The Student’s <span class="math inline">\(t\)</span>-test is also used to investigate a difference between the
 means of two dependent or paired observations. This is the case if we only draw
-one sample (see Chapter <a href="ch-samples.html#ch:samples">7</a>), and then collect two observations
+one sample (see Chapter <a href="ch-samples.html#ch-samples">7</a>), and then collect two observations
 from the members of this sample,
 namely one observation under each of the conditions. The two
 observations are then paired, i.e. related to each other,
@@ -1191,7 +1192,7 @@ and these observations are thus not independent (since they come
 from the same member of the sample). With this, one of the assumptions of
 the <span class="math inline">\(t\)</span>-test is violated.</p>
 <p>As an example, we take an imaginary investigation of the use of the
-Dutch second person pronouns <em>U</em> (formal “you,” like French “vous”) and <em>je</em> (informal “you,” like French “tu”) as forms of address on a website. The researcher makes two versions
+Dutch second person pronouns <em>U</em> (formal “you”, like French “vous”) and <em>je</em> (informal “you”, like French “tu”) as forms of address on a website. The researcher makes two versions
 of a website, one with <em>U</em> and the other with <em>je</em>. Each
 respondent has to judge both versions on a scale from 1 to 10. (For validity
 reasons, the order of the two versions is varied between respondents;
@@ -1293,14 +1294,14 @@ in the usual manner (see
 standard deviation to calculate the test statistic <span class="math inline">\(t\)</span> via formula
 <a href="ch-testing.html#eq:t-pairedsamples">(13.7)</a>, with <span class="math inline">\((N-1)\)</span> degrees of freedom. Finally,
 we again use
-Appendix <a href="app-criticaltvalues.html#app:criticaltvalues">C</a> to determine the critical value.
+Appendix <a href="app-criticaltvalues.html#app-criticaltvalues">C</a> to determine the critical value.
 and with it, the p-value <span class="math inline">\(p\)</span> for the value of the sample size
 <span class="math inline">\(t\)</span> under H0.</p>
 <p>For the above example with <em>U</em> or <em>je</em> as forms of address,
 we thus find <span class="math inline">\(\overline{D}=-2.2\)</span> and <span class="math inline">\(s_D=1.0\)</span>. If we put this into
 formula <a href="ch-testing.html#eq:t-pairedsamples">(13.7)</a>, we find <span class="math inline">\(t=-6.74\)</span> with <span class="math inline">\(N-1=9\)</span> d.f.
 We again look for the corresponding critical value <span class="math inline">\(t^*\)</span>
-in Appendix <a href="app-criticaltvalues.html#app:criticaltvalues">C</a>. Thereby, we ignore the sign of <span class="math inline">\(t\)</span>,
+in Appendix <a href="app-criticaltvalues.html#app-criticaltvalues">C</a>. Thereby, we ignore the sign of <span class="math inline">\(t\)</span>,
 because, after all, the probability distribution of <span class="math inline">\(t\)</span> is symmetric.
 In the row for 9 d.f., we find <span class="math inline">\(t^*=4.297\)</span> in the last column.
 For two-sided testing, we have to double the p-value corresponding to this
@@ -1348,10 +1349,10 @@ the same panel under Variable2. Confirm with <code>OK</code>.</p>
 <p>The data for the above example can be found in the file <code>data/ujedata.csv</code>.</p>
 <p>In the top menu bar, choose</p>
 <pre><code>T-Tests &gt; Classical: Paired Samples T-Test</code></pre>
-<p>In the field “Variable pairs,” select the two variables to be compared. Here we select the variables <em>cond.U</em> and <em>cond.je</em>.<br />
-Under “Tests,” check <code>Student</code> (for Student’s <span class="math inline">\(t\)</span> test statistic). Under “Alt. Hypothesis,” select the first option (observations on the two variables are not the same) for a two-sided <span class="math inline">\(t\)</span> test.
-Under “Additional Statistics,” you may check <code>Descriptives</code> and <code>Descriptive Plots</code> to learn more about the two dependent variables and their difference. Also check the option <code>Effect size</code> (see §<a href="ch-testing.html#sec:ttest-effectsize">13.8</a> below).<br />
-Under the heading “Assumption checks,” finally, check the option <code>Normality</code> (see §<a href="ch-probability-distributions.html#sec:isvarnormaldistributed">10.4</a>).</p>
+<p>In the field “Variable pairs”, select the two variables to be compared. Here we select the variables <em>cond.U</em> and <em>cond.je</em>.<br />
+Under “Tests”, check <code>Student</code> (for Student’s <span class="math inline">\(t\)</span> test statistic). Under “Alt. Hypothesis”, select the first option (observations on the two variables are not the same) for a two-sided <span class="math inline">\(t\)</span> test.
+Under “Additional Statistics”, you may check <code>Descriptives</code> and <code>Descriptive Plots</code> to learn more about the two dependent variables and their difference. Also check the option <code>Effect size</code> (see §<a href="ch-testing.html#sec:ttest-effectsize">13.8</a> below).<br />
+Under the heading “Assumption checks”, finally, check the option <code>Normality</code> (see §<a href="ch-probability-distributions.html#sec:isvarnormaldistributed">10.4</a>).</p>
 <p>The output reports the two-sided <span class="math inline">\(t\)</span> test for paired observations, including its effect size. The output table shows that the difference being analysed is between “Measure 1” (<em>cond.u</em>) and “Measure 2” (<em>cond.je</em>).<br />
 The table titled <strong>Assumption Checks</strong> reports the Shapiro-Wilk test of normality of the difference.<br />
 If checked in the input, descriptive statistics and summary plots are also reported. These provides insights into how the scores on the two variables differ.</p>
@@ -1359,13 +1360,13 @@ If checked in the input, descriptive statistics and summary plots are also repor
 <div id="sec:R-ttest-paired" class="section level3" number="13.7.5">
 <h3><span class="header-section-number">13.7.5</span> R</h3>
 <p>The data from the above example can be found in the file <code>data/ujedata.csv</code>.</p>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="ch-testing.html#cb117-1" aria-hidden="true" tabindex="-1"></a>ujedata <span class="ot">&lt;-</span> <span class="fu">read.table</span>( <span class="at">file=</span><span class="st">&quot;data/ujedata.csv&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">sep=</span><span class="st">&quot;;&quot;</span> )</span>
-<span id="cb117-2"><a href="ch-testing.html#cb117-2" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(ujedata, <span class="fu">t.test</span>( cond.u, cond.je, <span class="at">paired=</span><span class="cn">TRUE</span> ) )</span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="ch-testing.html#cb116-1" aria-hidden="true" tabindex="-1"></a>ujedata <span class="ot">&lt;-</span> <span class="fu">read.table</span>( <span class="at">file=</span><span class="st">&quot;data/ujedata.csv&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">sep=</span><span class="st">&quot;;&quot;</span> )</span>
+<span id="cb116-2"><a href="ch-testing.html#cb116-2" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(ujedata, <span class="fu">t.test</span>( cond.u, cond.je, <span class="at">paired=</span><span class="cn">TRUE</span> ) )</span></code></pre></div>
 <pre><code>## 
 ##  Paired t-test
 ## 
 ## data:  cond.u and cond.je
-## t = -6.7361, df = 9, p-value = 0.00008498
+## t = -6.7361, df = 9, p-value = 8.498e-05
 ## alternative hypothesis: true difference in means is not equal to 0
 ## 95 percent confidence interval:
 ##  -2.938817 -1.461183
@@ -1388,7 +1389,7 @@ i.e. for a larger difference
 Put briefly <span class="citation">(<a href="#ref-Rose08" role="doc-biblioref">Rosenthal and Rosnow 2008, 338</a>, formula 11.10)</span>:
 <span class="math display" id="eq:Rose08">\[\begin{equation}
   \tag{13.8}
-    \textrm{significance of test} = 
+    \textrm{significance of test} =
     \textrm{size of effect} \times \textrm{size of study}
 \end{equation}\]</span></p>
 <p>This means
@@ -1403,7 +1404,7 @@ In an investigation of the life times of inhabitants from Austria
 and Denmark <span class="citation">(<a href="#ref-Dobl99" role="doc-biblioref">Doblhammer 1999</a>)</span>, it appears that life times differ according to
 the week of birth (within a calendar year). This is presumably because babies from “summer pregnancies”
 are (or were) on average somewhat healthier than those
-from “winter pregnancies.” In this investigation, the differences
+from “winter pregnancies”. In this investigation, the differences
 in life times were very small <span class="math inline">\(\pm 0.30\)</span> year in Austria, <span class="math inline">\(\pm 0.15\)</span> year
 in Denmark), but the number of observations (deceased persons) was very large.</p>
 </blockquote>
@@ -1418,7 +1419,7 @@ differences, i.e. usually large differences. We have to appreciate
 that studies also entail costs in terms of money, time,
 effort, privacy, and loss of naïveté for other studies
 (see Chapter
-<a href="ch-integrity.html#ch:integrity">3</a>). We thus do not what to want to perform studies
+<a href="ch-integrity.html#ch-integrity">3</a>). We thus do not what to want to perform studies
 on trivial effects needlessly. A researcher should thus determine in advance
 what the smallest effect is that he/she wants to be able to detect, e.g.
 1 point difference in the score of the grammar test. Differences smaller than
@@ -1438,7 +1439,7 @@ of the raw score. In §<a href="ch-testing.html#sec:ttest-indep">13.6</a>, we fo
 in vocabulary of <span class="math inline">\(D=95-85=10\)</span> between boys and girls.</p>
 <p>However, we mainly use the standardised effect size (see
 the formulas below), where we take into account the distribution in
-the observations, e.g. in the form of “pooled standard deviation” <span class="math inline">\(s_p\)</span>.<a href="#fn34" class="footnote-ref" id="fnref34"><sup>34</sup></a>
+the observations, e.g. in the form of “pooled standard deviation” <span class="math inline">\(s_p\)</span> <a href="references.html#fn34" class="footnote-ref" id="fnref34"><sup>34</sup></a>.
 In this way, we find a standardised effect size of
 <span class="math display" id="eq:d-standardized">\[\begin{equation}
   \tag{13.9}
@@ -1477,7 +1478,7 @@ the North of the Netherlands.</p>
 <p>If <span class="math inline">\(d\)</span> is around 0.2, we speak of a small effect. We call an effect size
 <span class="math inline">\(d\)</span> of around 0.5 a medium effect, and we call one
 of around 0.8 or larger a large effect <span class="citation">(<a href="#ref-Cohen88" role="doc-biblioref">Cohen 1988</a>; <a href="#ref-Rose08" role="doc-biblioref">Rosenthal and Rosnow 2008</a>)</span>.</p>
-<div class="figure"><span id="fig:smallestsignifdifference"></span>
+<div class="figure"><span style="display:block;" id="fig:smallestsignifdifference"></span>
 <img src="QMS-EN_files/figure-html/smallestsignifdifference-1.png" alt="Relation between the sample size and the smallest effect (d) that is significant according to a *t*-test for unpaired, independent observations, with errors probabilities alpha=.05 and beta=.10." width="672" />
 <p class="caption">
 Figure 13.3: Relation between the sample size and the smallest effect (d) that is significant according to a <em>t</em>-test for unpaired, independent observations, with errors probabilities alpha=.05 and beta=.10.
@@ -1576,7 +1577,7 @@ The information is in the output of the pairwise <span class="math inline">\(t\)
 </div>
 <div id="jasp-12" class="section level3" number="13.8.3">
 <h3><span class="header-section-number">13.8.3</span> JASP</h3>
-<p>In JASP, the effect size can be requested when conducting the <span class="math inline">\(t\)</span> tests, just by checking the option <code>Effect size</code> under “Additional Statistics.” For more detailed instructions on how to specify this using JASP, see the respective subsections for conducting a <span class="math inline">\(t\)</span> test for a single sample (§<a href="ch-testing.html#sec:jaspttestonesample">13.2.5</a>), a <span class="math inline">\(t\)</span> test for two independent groups (§<a href="ch-testing.html#sec:JASP-ttest-unpaired">13.6.4</a>), and a <span class="math inline">\(t\)</span> test for paired observations (§<a href="ch-testing.html#sec:JASP-ttest-paired">13.7.4</a>).</p>
+<p>In JASP, the effect size can be requested when conducting the <span class="math inline">\(t\)</span> tests, just by checking the option <code>Effect size</code> under “Additional Statistics”. For more detailed instructions on how to specify this using JASP, see the respective subsections for conducting a <span class="math inline">\(t\)</span> test for a single sample (§<a href="ch-testing.html#sec:jaspttestonesample">13.2.5</a>), a <span class="math inline">\(t\)</span> test for two independent groups (§<a href="ch-testing.html#sec:JASP-ttest-unpaired">13.6.4</a>), and a <span class="math inline">\(t\)</span> test for paired observations (§<a href="ch-testing.html#sec:JASP-ttest-paired">13.7.4</a>).</p>
 <p>The output of the <span class="math inline">\(t\)</span> test will report Cohen’s <span class="math inline">\(d\)</span> as measure for the effect size. You can also ask for the <code>Confidence interval</code> of the effect size, which will typically report the 95% confidence interval of the effect size (see §<a href="ch-testing.html#sec:confint-effectsize">13.8.5</a> below).</p>
 </div>
 <div id="r-14" class="section level3" number="13.8.4">
@@ -1584,16 +1585,16 @@ The information is in the output of the pairwise <span class="math inline">\(t\)
 <p>For a single sample
 (formula <a href="ch-testing.html#eq:d-onesample">(13.10)</a>):<br />
 </p>
-<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="ch-testing.html#cb120-1" aria-hidden="true" tabindex="-1"></a>gramm2013 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>( <span class="at">file=</span><span class="st">&quot;data/grammaticatoets2013.csv&quot;</span>,<span class="at">header=</span>F)</span>
-<span id="cb120-2"><a href="ch-testing.html#cb120-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dimnames</span>(gramm2013)[[<span class="dv">2</span>]] <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;score&quot;</span>,<span class="st">&quot;progr&quot;</span>)</span>
-<span id="cb120-3"><a href="ch-testing.html#cb120-3" aria-hidden="true" tabindex="-1"></a><span class="co"># programs have Dutch labels, TW=Linguistics</span></span>
-<span id="cb120-4"><a href="ch-testing.html#cb120-4" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(gramm2013, score[progr<span class="sc">==</span><span class="st">&quot;TW&quot;</span>]) <span class="ot">-&gt;</span> score.ling</span>
-<span id="cb120-5"><a href="ch-testing.html#cb120-5" aria-hidden="true" tabindex="-1"></a><span class="co"># auxiliary variable</span></span>
-<span id="cb120-6"><a href="ch-testing.html#cb120-6" aria-hidden="true" tabindex="-1"></a>( <span class="fu">mean</span>(score.ling)<span class="sc">-</span><span class="dv">73</span> ) <span class="sc">/</span> <span class="fu">sd</span>(score.ling) </span></code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="ch-testing.html#cb119-1" aria-hidden="true" tabindex="-1"></a>gramm2013 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>( <span class="at">file=</span><span class="st">&quot;data/grammaticatoets2013.csv&quot;</span>,<span class="at">header=</span>F)</span>
+<span id="cb119-2"><a href="ch-testing.html#cb119-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dimnames</span>(gramm2013)[[<span class="dv">2</span>]] <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;score&quot;</span>,<span class="st">&quot;progr&quot;</span>)</span>
+<span id="cb119-3"><a href="ch-testing.html#cb119-3" aria-hidden="true" tabindex="-1"></a><span class="co"># programs have Dutch labels, TW=Linguistics</span></span>
+<span id="cb119-4"><a href="ch-testing.html#cb119-4" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(gramm2013, score[progr<span class="sc">==</span><span class="st">&quot;TW&quot;</span>]) <span class="ot">-&gt;</span> score.ling</span>
+<span id="cb119-5"><a href="ch-testing.html#cb119-5" aria-hidden="true" tabindex="-1"></a><span class="co"># auxiliary variable</span></span>
+<span id="cb119-6"><a href="ch-testing.html#cb119-6" aria-hidden="true" tabindex="-1"></a>( <span class="fu">mean</span>(score.ling)<span class="sc">-</span><span class="dv">73</span> ) <span class="sc">/</span> <span class="fu">sd</span>(score.ling) </span></code></pre></div>
 <pre><code>## [1] 1.359783</code></pre>
 <p>The probability of a score larger than the population mean (the test value) <code>73</code> for a random Linguistics
 student (of which we assume that <span class="math inline">\(\mu=84.4\)</span> and <span class="math inline">\(s=8.4\)</span>):</p>
-<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="ch-testing.html#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>( <span class="dv">73</span>, <span class="at">mean=</span><span class="fl">84.4</span>, <span class="at">sd=</span><span class="fl">8.4</span> ) </span></code></pre></div>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="ch-testing.html#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>( <span class="dv">73</span>, <span class="at">mean=</span><span class="fl">84.4</span>, <span class="at">sd=</span><span class="fl">8.4</span> ) </span></code></pre></div>
 <pre><code>## [1] 0.9126321</code></pre>
 <p>For unpaired, independent observations, we can calculate the smallest
 significant effect (see also
@@ -1603,7 +1604,7 @@ also used to construct Fig.<a href="ch-testing.html#fig:smallestsignifdifference
 With this function, you have to set the desired <code>power</code> as
 an argument (power = <span class="math inline">\(1-\beta\)</span>; see
 §<a href="ch-power.html#sec:power-introduction">14.1</a>).</p>
-<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="ch-testing.html#cb124-1" aria-hidden="true" tabindex="-1"></a><span class="fu">power.t.test</span>( <span class="at">n=</span><span class="dv">122</span>, <span class="at">sig=</span>.<span class="dv">05</span>, <span class="at">power=</span>.<span class="dv">90</span>, <span class="at">type=</span><span class="st">&quot;two.sample&quot;</span> )</span></code></pre></div>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="ch-testing.html#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="fu">power.t.test</span>( <span class="at">n=</span><span class="dv">122</span>, <span class="at">sig=</span>.<span class="dv">05</span>, <span class="at">power=</span>.<span class="dv">90</span>, <span class="at">type=</span><span class="st">&quot;two.sample&quot;</span> )</span></code></pre></div>
 <pre><code>## 
 ##      Two-sample t test power calculation 
 ## 
@@ -1619,8 +1620,8 @@ an argument (power = <span class="math inline">\(1-\beta\)</span>; see
 Example 13.3 above.</p>
 <p>For a single sample with two paired observations
 (formula<a href="ch-testing.html#eq:d-paired">(13.12)</a>):</p>
-<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="ch-testing.html#cb126-1" aria-hidden="true" tabindex="-1"></a>ujedata <span class="ot">&lt;-</span> <span class="fu">read.table</span>( <span class="at">file=</span><span class="st">&quot;data/ujedata.csv&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">sep=</span><span class="st">&quot;;&quot;</span> )</span>
-<span id="cb126-2"><a href="ch-testing.html#cb126-2" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>( ujedata, <span class="fu">mean</span>(cond.u<span class="sc">-</span>cond.je) <span class="sc">/</span> <span class="fu">sd</span>(cond.u<span class="sc">-</span>cond.je) )</span></code></pre></div>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="ch-testing.html#cb125-1" aria-hidden="true" tabindex="-1"></a>ujedata <span class="ot">&lt;-</span> <span class="fu">read.table</span>( <span class="at">file=</span><span class="st">&quot;data/ujedata.csv&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">sep=</span><span class="st">&quot;;&quot;</span> )</span>
+<span id="cb125-2"><a href="ch-testing.html#cb125-2" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>( ujedata, <span class="fu">mean</span>(cond.u<span class="sc">-</span>cond.je) <span class="sc">/</span> <span class="fu">sd</span>(cond.u<span class="sc">-</span>cond.je) )</span></code></pre></div>
 <pre><code>## [1] -2.130141</code></pre>
 </div>
 <div id="sec:confint-effectsize" class="section level3" number="13.8.5">
@@ -1673,11 +1674,11 @@ formula <a href="ch-testing.html#eq:d-paired-se">(13.13)</a>.</p>
 effect size:
 <span class="math display" id="eq:d-paired-CI">\[\begin{equation}
    \tag{13.14}
-    d \pm t^*_{n-1} \times \textrm{se}_d 
+    d \pm t^*_{n-1} \times \textrm{se}_d
 \end{equation}\]</span>
 (see the correspond
 formula <a href="ch-probability-distributions.html#eq:t-onesampleCI">(10.12)</a>).</p>
-<p>After substituting <span class="math inline">\(t^*_9=2.262\)</span> (see Appendix <a href="app-criticaltvalues.html#app:criticaltvalues">C</a>) and
+<p>After substituting <span class="math inline">\(t^*_9=2.262\)</span> (see Appendix <a href="app-criticaltvalues.html#app-criticaltvalues">C</a>) and
 <span class="math inline">\(\textrm{se}_d = 0.519\)</span>, we eventually find a 95% confidence interval of <span class="math inline">\((-3.30,-0.96)\)</span>.
 We thus
 know with 95% confidence that the unknown effect size in the population
@@ -1729,14 +1730,6 @@ Sagan, Carl. 1996. <em>The Demon-Haunted World: Science as a Candle in the Dark<
 Thompson, Bruce. 2002. <span>“<span>‘<span>S</span>tatistical,’</span> <span>‘Practical,’</span> and <span>‘Clinical’</span>: <span>H</span>ow Many Kinds of Significance Do Counselors Need to Consider?”</span> <em>Journal of Counseling and Development</em> 80 (1): 64–71.
 </div>
 </div>
-<div class="footnotes">
-<hr />
-<ol start="33">
-<li id="fn33"><p>We would like to thank Els Rose for making these data available.<a href="ch-testing.html#fnref33" class="footnote-back">↩︎</a></p></li>
-<li id="fn34"><p>In this case, we use <span class="math inline">\(s_p = \sqrt{ \frac{122\times82^2+128\times98^2} {122+128} } = 90.5\)</span>, see formulas
-<a href="ch-testing.html#eq:sd-pooled">(13.2)</a> and <a href="ch-testing.html#eq:d-homoskedastic">(13.11)</a>.<a href="ch-testing.html#fnref34" class="footnote-back">↩︎</a></p></li>
-</ol>
-</div>
             </section>
 
           </div>
@@ -1747,7 +1740,6 @@ Thompson, Bruce. 2002. <span>“<span>‘<span>S</span>tatistical,’</span> <sp
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -1787,6 +1779,10 @@ gitbook.start({
 "text": null
 },
 "download": ["QMS-EN.pdf", "QMS-EN.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

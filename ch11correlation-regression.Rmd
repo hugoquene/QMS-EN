@@ -1,4 +1,4 @@
-# Correlation and regression {#ch:correlation-regression}
+# Correlation and regression {#ch-correlation-regression}
 
 ## Introduction
 
@@ -10,7 +10,7 @@ look in more detail at the distinct ways of establishing whether a "significant"
 the independent and dependent variables. In addition, the researcher might be 
 interested in the associations between several dependent variables,
 for example the associations between the judgements of several
-raters or judges (see also Chapter \@ref(ch:reliability)).
+raters or judges (see also Chapter \@ref(ch-reliability)).
 
 In quasi-experimental research, the difference between
 independent and dependent variables is usually less clear. Several
@@ -101,7 +101,7 @@ tol <- .005 # tolerance between intended and simulated correlation coef
 for (i in c(.9,.7,.5,.3) ) {
 	Sigma <- matrix( c(1,i,i,1), ncol=2 )
 	repeat {
-		aux <- mvrnorm( n=50, mu=c(0,3), Sigma=Sigma )
+		aux <- MASS::mvrnorm( n=50, mu=c(0,3), Sigma=Sigma )
 		thisr <- sqrt(summary(lm(aux[,2]~aux[,1]))[[8]]) * sign(coef(lm(aux[,2]~aux[,1]))[[2]])
 		if (abs(thisr-i)<=tol) {break}
 	}
@@ -117,7 +117,7 @@ for (i in c(.9,.7,.5,.3) ) {
 for (i in c(-.9,-.7,-.5,-.3) ) {
 	Sigma <- matrix( c(1,i,i,1), ncol=2 )
 	repeat {
-		aux <- mvrnorm( n=50, mu=c(0,3), Sigma=Sigma )
+		aux <- MASS::mvrnorm( n=50, mu=c(0,3), Sigma=Sigma )
 		thisr <- sqrt(summary(lm(aux[,2]~aux[,1]))[[8]]) * sign(coef(lm(aux[,2]~aux[,1]))[[2]])
 		if (abs(thisr-i)<=tol) {break}
 	}
@@ -149,7 +149,7 @@ on the other part). We can estimate what the probability $p$ is
 of finding this correlation of $r=0.79$ or stronger in a sample of
 $n=10$ students, if the association in the population is actually
 nil (i.e. if $\rho=0$). We call this probability $p$ the 
-*significance* of the correlation coefficient; in Chapter \@ref(ch:testing),
+*significance* of the correlation coefficient; in Chapter \@ref(ch-testing),
 we will look in more detail at this term 'significance'. 
 In anticipation of this: if this probability $p$ is smaller than
 $.05$, then we assume that the correlation found $r$ is *not by chance*,
@@ -608,7 +608,7 @@ with(cito, cor.test( Reading,Arithmetic, method="spearman" ) )
 
 ## Phi {#sec:Phi}
 The two variables for which we want to investigate the association are themselves
-not always expressed on an ordinal level of measurement (Chapter \@ref(ch:levelsofmeasurement)).
+not always expressed on an ordinal level of measurement (Chapter \@ref(ch-levelsofmeasurement)).
 Even if both of the variables are measured only on a nominal level of measurement,
 then a correlation can still be calculated, namely the phi correlation coefficient 
 (symbol $r_\Phi$, with Greek letter "Phi"). This correlation coefficient can also be used
@@ -797,10 +797,10 @@ that there is a causal relation between the variables, in other words
 a correlation does not mean that one variable (e.g. treatment) is the consequence of 
 the other variable (e.g. cure).
 The common saying for this is "correlation does not imply
-causation," see also Example 6.1 (Chapter \@ref(ch:design)) 
-and accompanying Figure \@ref(fig:xkcd552).
+causation," see also Example 6.1 (Chapter \@ref(ch-design)) 
+and accompanying Figure \@ref(fig:xkcd552) (borrowed with permission from http://xkcd.com/552 ).
 
-```{r xkcd552, echo=FALSE, fig.cap="_Correlation does not imply causation_, borrowed with permission from <http://xkcd.com/552>.", fig.align="center"}
+```{r xkcd552, echo=FALSE, fig.cap="Correlation does not imply causation", fig.align="center"}
 knitr::include_graphics("figures/correlation.png")
 ```
 

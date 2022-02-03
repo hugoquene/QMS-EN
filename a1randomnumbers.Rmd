@@ -1,6 +1,6 @@
 # (APPENDIX) Appendices {-}
 
-# Random numbers {#app:randomnumbers}
+# Random numbers {#app-randomnumbers}
 
 ```{r A1, echo=FALSE}
 set.seed(20140314) # date of initial version

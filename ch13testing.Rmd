@@ -1,19 +1,19 @@
 # (PART\*) Part III: Inferential statistics {-}
 
-# Testing hypotheses {#ch:testing}
+# Testing hypotheses {#ch-testing}
 
 ## Introduction {#sec:testing-introduction}
 
 From this chapter onwards, we will be concerned with the testing of 
 research hypotheses and, in particular, with null hypothesis significance testing (NHST),
-as explained in Chapter \@ref(ch:research). 
+as explained in Chapter \@ref(ch-research). 
 
 Over the course of the years, a large number of techniques have been developed
 for tests like this. The tests with which we will concern ourselves 
 are the most used and can be divided into parametric
 and non-parametric tests. Parametric tests assume that the dependent
 variable is (at least) measured on an interval level of measurement (see
-Chapter \@ref(ch:levelsofmeasurement)), and that the measured outcomes or
+Chapter \@ref(ch-levelsofmeasurement)), and that the measured outcomes or
 scores are normally distributed (see
 §\@ref(sec:normaldistribution) and §\@ref(sec:whatifnotnormal)). 
 For non-parametric tests, dependent on the technique,
@@ -23,7 +23,7 @@ distribution free tests. The consequence is that the testing
 is a little less 'sensitive' under otherwise equal circumstances, i.e.
 that the null hypothesis can be rejected less often in 
 otherwise equal circumstances. These tests therefore have less power (see
-Chapter \@ref(ch:power)). Researchers thus usually prefer parametric
+Chapter \@ref(ch-power)). Researchers thus usually prefer parametric
 tests.
 
 We already discussed the general principle of testing briefly in
@@ -56,8 +56,8 @@ In this example, the probability $P$ is very small.
 
 For the argumentation, it is essential that the data are valid and
 reliable --- this is precisely the reason why we discussed validity 
-(Chapter \@ref(ch:validity)) and reliability 
-(Chapter \@ref(ch:reliability)). If we have done everything properly,
+(Chapter \@ref(ch-validity)) and reliability 
+(Chapter \@ref(ch-reliability)). If we have done everything properly,
 we can, after all, trust the data obtained. 
 We are then *not* reasonably able to attribute the low probability of the data according 
 to H0 to errors in operationalisation, or measurement errors, or other deviations in the data.
@@ -172,16 +172,16 @@ is $t=7.9$ according to formula \@ref(eq:t-onesample) below.
 
 The probability distribution of test statistic $t$ under H0 is known;
 you can find the boundary value $t^*$ in
-Appendix \@ref(app:criticaltvalues). Put otherwise, if the test statistic $t$
+Appendix \@ref(app-criticaltvalues). Put otherwise, if the test statistic $t$
 is larger than the boundary value $t^*$ which is stated in the table then 
 $P(t|\textrm{H0})<\alpha$. To be able to use the table in Appendix
-\@ref(app:criticaltvalues), we still have to introduce a new term,
+\@ref(app-criticaltvalues), we still have to introduce a new term,
 namely the number of degrees of freedom. That term is
 explained in 
 §\@ref(sec:ttest-freedomdegrees) below.
 
 With the number of degrees of freedom, you can look in Appendix
-\@ref(app:criticaltvalues) to see which boundary value $t^*$ is needed
+\@ref(app-criticaltvalues) to see which boundary value $t^*$ is needed
 to achieve a certain p-value for the established test statistic 
 $t=7.9$. Let us see what the p-value is for the established 
 test statistic $t=7.9$. We firstly look for the degrees of freedom ('d.f.') in the left column.
@@ -247,7 +247,7 @@ The $t$-test for a single sample requires three assumptions which
 must be satisfied in order to be able to use the test. 
 
 * The data must have been measured on an interval level of measurement (see
-Chapter \@ref(ch:levelsofmeasurement)).
+Chapter \@ref(ch-levelsofmeasurement)).
 
 * All the observations have to be independent of each other. 
 
@@ -357,14 +357,14 @@ say $\overline{x}=68$, then we would not even conceive of statistical testing:
 the H0 simply still stands. It is only when we find a difference
 in the hypothesised direction that it is meaningful to inspect whether
 this difference is significant. When you look now at the figure in
-Appendix \@ref(app:criticaltvalues), then this is also the case. The $p$-value
+Appendix \@ref(app-criticaltvalues), then this is also the case. The $p$-value
 corresponds with the area of the coloured region. 
 
 If the alternative hypothesis H1 does *not* specify the direction of the 
 difference, then a complication arises. Differences in any of the two possible directions
 are relevant. We speak then of two-sided tests or two-tailed tests.   
 To calculate the two-sided p-value, we multiply the $p$-value from
-Appendix \@ref(app:criticaltvalues) by $2$ (because we are now looking at two
+Appendix \@ref(app-criticaltvalues) by $2$ (because we are now looking at two
 coloured regions, on the lower and upper sides of the probability distribution).
 
 In the grammar test example, let us now use a two-sided test. We
@@ -421,7 +421,7 @@ value 73 [@Cumm12]. We report this as follows:
 
 In Figure \@ref(fig:gramm2013CIs), you can see the results of 
 a computer simulation to illustrate this. This figure is made in the same way as Figure
-\@ref(fig:tempo95CIs) in Chapter \@ref(ch:probability-distributions) and 
+\@ref(fig:tempo95CIs) in Chapter \@ref(ch-probability-distributions) and 
 illustrates the same point. We have drawn $100\times$ samples from Linguistics students,
 with $\mu=84.4$ and $\sigma=8.4$ (see §\@ref(sec:standarddeviation)) and $N=34$. 
 For each sample, we have drawn the 95%
@@ -450,7 +450,7 @@ for (i in 1:nsim) {
 	lb <- mean(aux)-crit*se(aux)
 	ub <- mean(aux)+crit*se(aux)
 	results <- append( results, c(mean(aux),se(aux),lb,ub) )
-	hits[i] <- is.inrange( mu, c(lb,ub) )
+	hits[i] <- hqmisc::is.inrange( mu, c(lb,ub) ) # 20220203 added hqmisc::
 	lines( x=c(lb,ub), y=rep(i,2), type="l",lwd=2,
 	       col=ifelse(hits[i],"black","red") )
 	points( x=mean(aux), y=i, pch=20, cex=.5 ) # added 20090319
@@ -550,7 +550,7 @@ $\overline{x_2}=85$ words ($s_2=98$). With these data, we determine the
 test statistic $t$ according to the formula 
 \@ref(eq:t-homoskedastic), resulting in $t=0.88$ with 122 d.f. We look for the
 accompanying critical value $t^*$ again in Appendix
-\@ref(app:criticaltvalues). In the row for 100 d.f. (after rounding down),
+\@ref(app-criticaltvalues). In the row for 100 d.f. (after rounding down),
 we find $t^*=1.984$ in the fourth column. For two-sample testing
 we have to double the p-value which belongs to this column
 (see §\@ref(sec:ttest-onesidedtwosided)), resulting in $p=.05$. The
@@ -567,7 +567,7 @@ As a second example, we take a study of the speech tempo of two groups
 of speakers, namely originating from the West (first group) and
 from the North (second group) of the Netherlands. The speech tempo
 is expressed here as the mean duration of a spoken syllable, in seconds, 
-over an interview of ca. 15 minutes (see Example \@ref(ch:anova).1).
+over an interview of ca. 15 minutes (see Example \@ref(ch-anova).1).
 We investigate H0: $\mu_W = \mu_N$ with
 two-sample testing. From the results, it appears that those from the West
 ($n=20$) have a mean syllable duration of
@@ -576,7 +576,7 @@ $n=20$) that is $\overline{x_N}=0.269$ s ($s=0.029$). With these data,
 we again determine the test statistic $t$ according to the formula
 \@ref(eq:t-homoskedastic), resulting in $t=-3.76$ with 38 d.f. We look for
 the accompanying critical value again in Appendix
-\@ref(app:criticaltvalues). The correct d.f. are not stated in the table
+\@ref(app-criticaltvalues). The correct d.f. are not stated in the table
 so we round them down (i.e. in the conservative direction) to
 30 d.f. In the row, we find $t^*=2.042$ in the fourth column. 
 For two-sample testing, we have to double the p-value corresponding to
@@ -669,7 +669,7 @@ an estimation of $37.99 \approx 38$ d.f. The conservative lower limit is
 $n_1-1 = n_2-1 = 19$. The liberal upper limit is $n_1+n_2 -2 = 38$. 
 
 When using the table with critical values $t*$, in
-Appendix \@ref(app:criticaltvalues), it is usually advisable to use the table row 
+Appendix \@ref(app-criticaltvalues), it is usually advisable to use the table row 
 with the rounded *down* degrees of freedom, i.e. first-following *smaller* d.f.. 
 Hence, for this example, you would use $t*$ critical values in the row with $30$ d.f.
 (see also §\@ref(sec:ttest-onesample) above).
@@ -762,7 +762,7 @@ with(talkers, t.test( syldur[region=="W"], syldur[region=="N"],
 
 The Student's $t$-test is also used to investigate a difference between the
 means of two dependent or paired observations. This is the case if we only draw
-one sample (see Chapter \@ref(ch:samples)), and then collect two observations 
+one sample (see Chapter \@ref(ch-samples)), and then collect two observations 
 from the members of this sample,
 namely one observation under each of the conditions. The two
 observations are then paired, i.e. related to each other,
@@ -813,7 +813,7 @@ in the usual manner (see
 standard deviation to calculate the test statistic $t$ via formula 
 \@ref(eq:t-pairedsamples), with $(N-1)$ degrees of freedom. Finally,
 we again use
-Appendix \@ref(app:criticaltvalues) to determine the critical value. 
+Appendix \@ref(app-criticaltvalues) to determine the critical value. 
 and with it, the p-value $p$ for the value of the sample size
 $t$ under H0.
 
@@ -821,7 +821,7 @@ For the above example with *U* or *je* as forms of address,
 we thus find $\overline{D}=-2.2$ and $s_D=1.0$. If we put this into
 formula \@ref(eq:t-pairedsamples), we find $t=-6.74$ with $N-1=9$ d.f.
 We again look for the corresponding critical value $t^*$ 
-in Appendix \@ref(app:criticaltvalues). Thereby, we ignore the sign of $t$, 
+in Appendix \@ref(app-criticaltvalues). Thereby, we ignore the sign of $t$, 
 because, after all, the probability distribution of $t$ is symmetric.
 In the row for 9 d.f., we find $t^*=4.297$ in the last column.
 For two-sided testing, we have to double the p-value corresponding to this
@@ -940,7 +940,7 @@ differences, i.e. usually large differences. We have to appreciate
 that studies also entail costs in terms of money, time,
 effort, privacy, and loss of naïveté for other studies
 (see Chapter 
-\@ref(ch:integrity)). We thus do not what to want to perform studies
+\@ref(ch-integrity)). We thus do not what to want to perform studies
 on trivial effects needlessly. A researcher should thus determine in advance
 what the smallest effect is that he/she wants to be able to detect, e.g.
 1 point difference in the score of the grammar test. Differences smaller than
@@ -1249,7 +1249,7 @@ effect size:
 (see the correspond 
 formula \@ref(eq:t-onesampleCI)). 
 
-After substituting $t^*_9=2.262$ (see Appendix \@ref(app:criticaltvalues)) and 
+After substituting $t^*_9=2.262$ (see Appendix \@ref(app-criticaltvalues)) and 
 $\textrm{se}_d = 0.519$, we eventually find a 95% confidence interval of $(-3.30,-0.96)$. 
 We thus
 know with 95% confidence that the unknown effect size in the population
@@ -1263,7 +1263,6 @@ than the binary decision of whether or not there is an effect (whether or not
 to reject H0) [@Cumm12].
 
 [^fn13-1]: We would like to thank Els Rose for making these data available.
-
 
 [^fn13-2]: In this case, we use $s_p = \sqrt{ \frac{122\times82^2+128\times98^2} {122+128} } = 90.5$, see formulas
 \@ref(eq:sd-pooled) and \@ref(eq:d-homoskedastic).

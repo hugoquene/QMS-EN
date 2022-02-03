@@ -1,4 +1,4 @@
-# Power {#ch:power}
+# Power {#ch-power}
 
 ## Introduction {#sec:power-introduction}
 
@@ -7,7 +7,7 @@ observed differences or effects (or of even larger differences or effects
 than observed) if H0 were true, and thus if 
 the observed difference had to be attributed solely to chance
 (see §\@ref(sec:empiricalcycle) and
-Chapter \@ref(ch:testing)). If the probability $P$ is very small, then
+Chapter \@ref(ch-testing)). If the probability $P$ is very small, then
 we have thus found results which are very improbable if H0 were true.
 We then conclude that H0 is presumably *not true* and we thus reject
 H0. We then call the difference or effect found, the "significant"
@@ -170,7 +170,7 @@ The increase is steeper (power increases more quickly) with larger
 effects (right-hand side) than with smaller effects (left-hand side). Put differently: 
 with small effects, the sample is actually always too small to detect 
 these small effects with sufficient power. We already saw that in
-Example 13.3 (Chapter \@ref(ch:testing)).
+Example 13.3 (Chapter \@ref(ch-testing)).
 
 The two figures \@ref(fig:powercontours-alpha01) and
 \@ref(fig:powercontours-alpha05) are based on the comparison between two groups which are equally large, each with
@@ -222,7 +222,7 @@ a treatment method which is actually better is not recognised as such,
 a patient is not or wrongly diagnosed, a useful innovation is wrongly pushed
 aside. This error hinders the growth of our knowledge and our insight, and hinders
 scientific progress (see also
-Example 3.2 in Chapter \@ref(ch:integrity)).
+Example 3.2 in Chapter \@ref(ch-integrity)).
 
 ```{r underpoweredeffectsizes, echo=FALSE, fig.cap="Effect sizes (along the horizontal axis) found in simulated experiments (two-sided t-test for independent observations, alpha=.05), broken down according to sample size (left $n=20$, right $n=80$) and according to testing result (dark symbols: significant; light symbols: not significant). The true effect size between groups is always $d=0.5$, indicated by the grey dashed line. The mean effect size found from the significant outcomes is referred to with the black dashed line. For each sample size, 100 simulations have been carried out (long vertical axis)."}
 # adapted from plot.underpoweredeffectsizes.20170225.R
@@ -293,7 +293,7 @@ instruments? All that follow up research is *superfluous* though: the mixed
 picture from these studies can be explained by the small
 power of each study. The needless and superfluous follow up research
 costs much time and money (and indirect costs,
-see Chapter \@ref(ch:integrity)), and comes at the cost of other, more useful
+see Chapter \@ref(ch-integrity)), and comes at the cost of other, more useful
 research [@Schm96, p.118]. Put otherwise: one well designed study
 with power which is more than sufficient can avoid many needless follow up studies. 
 

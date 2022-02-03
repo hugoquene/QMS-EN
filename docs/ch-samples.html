@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>7 Samples | Quantitative Methods and Statistics</title>
   <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="7 Samples | Quantitative Methods and Statistics" />
   <meta property="og:type" content="book" />
@@ -31,8 +31,9 @@
   
 <link rel="prev" href="ch-design.html"/>
 <link rel="next" href="ch-frequencies.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -40,7 +41,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -445,7 +445,7 @@ div.csl-indent {
 <li class="chapter" data-level="15.3.2" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-formal"><i class="fa fa-check"></i><b>15.3.2</b> A formal explanation</a></li>
 <li class="chapter" data-level="15.3.3" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-effectsize"><i class="fa fa-check"></i><b>15.3.3</b> Effect size</a></li>
 <li class="chapter" data-level="15.3.4" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-planned"><i class="fa fa-check"></i><b>15.3.4</b> Planned comparisons</a></li>
-<li class="chapter" data-level="15.3.5" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-posthoc"><i class="fa fa-check"></i><b>15.3.5</b> Post-hoc comparisons</a></li>
+<li class="chapter" data-level="15.3.5" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-posthoc"><i class="fa fa-check"></i><b>15.3.5</b> Post hoc comparisons</a></li>
 <li class="chapter" data-level="15.3.6" data-path="ch-anova.html"><a href="ch-anova.html#spss-12"><i class="fa fa-check"></i><b>15.3.6</b> SPSS</a></li>
 <li class="chapter" data-level="15.3.7" data-path="ch-anova.html"><a href="ch-anova.html#jasp-13"><i class="fa fa-check"></i><b>15.3.7</b> JASP</a></li>
 <li class="chapter" data-level="15.3.8" data-path="ch-anova.html"><a href="ch-anova.html#r-15"><i class="fa fa-check"></i><b>15.3.8</b> R</a></li>
@@ -454,9 +454,10 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="15.4.1" data-path="ch-anova.html"><a href="ch-anova.html#an-intuitive-explanation"><i class="fa fa-check"></i><b>15.4.1</b> An intuitive explanation</a></li>
 <li class="chapter" data-level="15.4.2" data-path="ch-anova.html"><a href="ch-anova.html#a-formal-explanation"><i class="fa fa-check"></i><b>15.4.2</b> A formal explanation</a></li>
-<li class="chapter" data-level="15.4.3" data-path="ch-anova.html"><a href="ch-anova.html#spss-13"><i class="fa fa-check"></i><b>15.4.3</b> SPSS</a></li>
-<li class="chapter" data-level="15.4.4" data-path="ch-anova.html"><a href="ch-anova.html#jasp-14"><i class="fa fa-check"></i><b>15.4.4</b> JASP</a></li>
-<li class="chapter" data-level="15.4.5" data-path="ch-anova.html"><a href="ch-anova.html#r-16"><i class="fa fa-check"></i><b>15.4.5</b> R</a></li>
+<li class="chapter" data-level="15.4.3" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-twoway-posthoc"><i class="fa fa-check"></i><b>15.4.3</b> Post hoc comparisons</a></li>
+<li class="chapter" data-level="15.4.4" data-path="ch-anova.html"><a href="ch-anova.html#spss-13"><i class="fa fa-check"></i><b>15.4.4</b> SPSS</a></li>
+<li class="chapter" data-level="15.4.5" data-path="ch-anova.html"><a href="ch-anova.html#jasp-14"><i class="fa fa-check"></i><b>15.4.5</b> JASP</a></li>
+<li class="chapter" data-level="15.4.6" data-path="ch-anova.html"><a href="ch-anova.html#r-16"><i class="fa fa-check"></i><b>15.4.6</b> R</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="16" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html"><i class="fa fa-check"></i><b>16</b> Chi-square-tests</a>
@@ -529,13 +530,13 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ch:samples" class="section level1" number="7">
+<div id="ch-samples" class="section level1" number="7">
 <h1><span class="header-section-number">7</span> Samples</h1>
 <p>In generalizing the outcome of a study to the population or the sample, the quality of the sample is all-important. Does the sample adequately reflect the population? To give an extreme example of this: if a sample consists of girls in the last year of primary education, we cannot properly generalize the results to the population of students in primary education, because the sample does not form a good reflection of this population (which consists of boys and girls in all years of the curriculum).</p>
 <p>Depending on the method used by the researchers to select participants, many kinds of samples may be distinguished. In this chapter, we make a rough distinction between: (1) convenience samples, (2) systematically drawn samples, and (3) samples drawn at random. For further discussion of the way in which samples may be drawn and the problems that play a role in this, we refer the reader to standard reference works on this topic <span class="citation">(<a href="#ref-Coch77" role="doc-biblioref">Cochran 1977</a>; <a href="#ref-Thom12" role="doc-biblioref">S. K. Thompson 2012</a>)</span>.</p>
 <div id="sec:convenience-samples" class="section level2" number="7.1">
 <h2><span class="header-section-number">7.1</span> Convenience samples</h2>
-<p>Work in the social sciences often uses samples that happen to present themselves to the researcher, so-called <em>convenience samples</em>. The researcher carries out the experiment with individuals that happen to be available to them more or less by chance. Some studies use paid or unpaid volunteers. In other studies, students are recruited, who are required to log some number of hours as participants as a part of their studies, or, sometimes, a colleague of the researcher"s sends their own students to participate in the study. A sample of this kind is not without its dangers. The researcher has no control whatsoever over the degree to which results can be generalized to the population. Of course, the researcher does have a population in mind, and will exclude participants that do not form a part of the intended population (such as non-native speakers) from the study, but the researcher cannot say anything about how representative the sample is.</p>
+<p>Work in the social sciences often uses samples that happen to present themselves to the researcher, so-called <em>convenience samples</em>. The researcher carries out the experiment with individuals that happen to be available to them more or less by chance. Some studies use paid or unpaid volunteers. In other studies, students are recruited, who are required to log some number of hours as participants as a part of their studies, or, sometimes, a colleague of the researcher”s sends their own students to participate in the study. A sample of this kind is not without its dangers. The researcher has no control whatsoever over the degree to which results can be generalized to the population. Of course, the researcher does have a population in mind, and will exclude participants that do not form a part of the intended population (such as non-native speakers) from the study, but the researcher cannot say anything about how representative the sample is.</p>
 <p>It is especially in psychology that this convenience sampling has led to heated discussion. For instance, a survey showed that 67% of samples used in published studies in psychology performed in the US was exclusively composed of undergraduate students enrolled in Psychology courses at American universities <span class="citation">(<a href="#ref-Henr10" role="doc-biblioref">Henrich, Heine, and Norenzayan 2010</a>)</span>. Naturally, samples like this are hardly representative. As a consequence, the theories based on these data have but a limited scope: they are likely to apply predominantly to the type of individuals (first world, young, highly educated, white) that are also highly represented in the samples <span class="citation">(<a href="#ref-Henr10" role="doc-biblioref">Henrich, Heine, and Norenzayan 2010</a>)</span>. Research in linguistics often also uses a convenience sample. Children that participate as participants often have highly educated parents (who often tend to have a linguistics background themselves, which likely means that they have above-average verbal skills), and adult participants are often students from the researchers’ environment, who, therefore, also have above-average levels of education and verbal skill.</p>
 <p>Despite the valid objections raised against this type of sample, practical considerations often force researchers to use a convenience sample that presents itself. In such cases, we recommend keeping track of the extent to which this convenience sample distinguishes itself from the population over which the researcher would like to generalize. To conclude this discussion of samples that present themselves naturally, we provide an example of the dangers this type of sample carries.</p>
 <hr />
@@ -559,10 +560,10 @@ div.csl-indent {
 <div id="sec:random-samples" class="section level2" number="7.3">
 <h2><span class="header-section-number">7.3</span> Random samples</h2>
 <p>The disruptive trend effect described above can be avoided by <em>random sampling</em>. Random sampling may happen in various ways, of which we will discuss three.</p>
-<p>The first type is simple random sampling: in this procedure, all elements of the population have an equal chance of being drawn. This may, for instance, be realized by giving all elements a <em>random</em> number and, depending on the size of the sample, selecting each <span class="math inline">\(n\)</span>-th element. For choosing random numbers, researchers can make use of tables of random numbers (see Appendix <a href="app-randomnumbers.html#app:randomnumbers">A</a>). Random numbers can also be generated by calculators, computers, spreadsheet programs, etc. (Using this type of random numbers is advisable, since a “random” order created by humans is not truly random.) However, one condition for applying this method is that the elements of the population (sampling space) are registered in advance, so that they may all be given numbers in some way.</p>
+<p>The first type is simple random sampling: in this procedure, all elements of the population have an equal chance of being drawn. This may, for instance, be realized by giving all elements a <em>random</em> number and, depending on the size of the sample, selecting each <span class="math inline">\(n\)</span>-th element. For choosing random numbers, researchers can make use of tables of random numbers (see Appendix <a href="app-randomnumbers.html#app-randomnumbers">A</a>). Random numbers can also be generated by calculators, computers, spreadsheet programs, etc. (Using this type of random numbers is advisable, since a “random” order created by humans is not truly random.) However, one condition for applying this method is that the elements of the population (sampling space) are registered in advance, so that they may all be given numbers in some way.</p>
 <hr />
 <blockquote>
-<p><em>Example 7.3</em>: We would like to draw a sample of n = 400 primary schools, which is about 4% of the population of primary schools in the Netherlands. To do this, we request from the Dutch Ministry of Education, Culture, and Science a list of all 9,000 primary schools; this list is the sampling space. After this, we number all schools with subsequent numbers <span class="math inline">\((1, 2, 3 \ldots, 9000)\)</span>. Finally, we select all primary schools whose number happen to end in 36, 43, 59, or 70 (see Appendix <a href="app-randomnumbers.html#app:randomnumbers">A</a>, first column, last two digits). Using this procedure, we randomly select 4 of 100 possible last-two-digit combinations, or 4% of all schools.</p>
+<p><em>Example 7.3</em>: We would like to draw a sample of n = 400 primary schools, which is about 4% of the population of primary schools in the Netherlands. To do this, we request from the Dutch Ministry of Education, Culture, and Science a list of all 9,000 primary schools; this list is the sampling space. After this, we number all schools with subsequent numbers <span class="math inline">\((1, 2, 3 \ldots, 9000)\)</span>. Finally, we select all primary schools whose number happen to end in 36, 43, 59, or 70 (see Appendix <a href="app-randomnumbers.html#app-randomnumbers">A</a>, first column, last two digits). Using this procedure, we randomly select 4 of 100 possible last-two-digit combinations, or 4% of all schools.</p>
 </blockquote>
 <hr />
 <p>The second type of random sampling is <em>stratified random sampling</em>. We are dealing with this type of sampling when we know the value of a particular characteristic (e.g., religious denomination) for each element of the population, and we make sure that elements within the sample are divided equally according to this characteristic. To do this, we divide the sample into so-called ‘strata’ or layers (Lat. <em>stratum</em>, ‘cover, layer,’ related to English <em>street</em>, originally meaning ‘paved road’). Let us return to our primary school example to clarify a few things. Suppose that, for whatever reason, we are now interested in making the sample (still 4% of the population of primary schools) such that public, catholic, and protestant schools are represented in equal amounts. We therefore devise three lists, a separate one for each type of school. Within each list, we proceed just like for simple random sampling. Eventually, our three sub-samples from the three strata are combined.</p>
@@ -572,7 +573,7 @@ div.csl-indent {
 <p>In order to create a column containing random numbers;</p>
 <pre><code>Transform &gt; Compute...</code></pre>
 <p>Select an existing variable (drag to Variables panel) or enter the name of a new variable.
-From the panel “Function Group,” choose “Random numbers,” and choose <code>RV.UNIFORM</code>.
+From the panel “Function Group”, choose “Random numbers”, and choose <code>RV.UNIFORM</code>.
 This function samples <strong>r</strong>andom <strong>v</strong>alues from a flat or <strong>uniform</strong> probability distribution, meaning that each number between the lower and upper limit has an equal chance of being sampled.
 Enter <code>0</code> as lower limit and <code>9999</code> as upper limit, or use other limits as appropriate.
 Confirm with <code>OK</code>.
@@ -580,30 +581,30 @@ This results in a (new or overwritten existing) column with random numbers.</p>
 <p>If you wish to sample random numbers from a normal density distribution (see §<a href="ch-probability-distributions.html#sec:normaldistribution">10.3</a>), then use the function <code>RV.NORMAL(mean,stdev)</code>.</p>
 <p>We may provide a starting value for the random number generator, in order to make reproducible analyses (and examples):</p>
 <pre><code>Transform &gt; Random Number Generators...</code></pre>
-<p>In the panel “Active Generator Initialization,” check the option <code>Set Starting Point</code>, and enter a starting value, such as your favourite number. Confirm with <code>OK</code>.</p>
+<p>In the panel “Active Generator Initialization”, check the option <code>Set Starting Point</code>, and enter a starting value, such as your favourite number. Confirm with <code>OK</code>.</p>
 <p>You can use the resulting random numbers for randomly selecting units (e.g. participants, stimuli) for a sample, and also for randomly assigning the selected units to conditions, treatments, groups, etc.</p>
 </div>
 <div id="jasp" class="section level3" number="7.3.2">
 <h3><span class="header-section-number">7.3.2</span> JASP</h3>
 <p>In JASP, a column of random numbers can be created by first creating a new variable (column) and subsequently filling that column with random numbers.</p>
-<p>To create a new variable, click on the <strong>+</strong> button to the right of the last column name in the data tab. A “Create Computed Column” panel appears, where you can enter a name for the new variable. You can also choose between <code>R</code> and a pointer. These are the two options in JASP to define formulas with which the new (empty) variable is filled; using <code>R</code> code, or manually using JASP. The paragraphs below explain how random numbers can be generated using these two options. Finally, you can check which measurement level the new variable should be (see Chapter <a href="ch-levelsofmeasurement.html#ch:levelsofmeasurement">4</a>). For random numbers, you can leave this at <code>Scale</code>. Next, click on <code>Create Column</code> to create the new variable. The new variable (empty column) appears as the rightmost variable in the data set.</p>
+<p>To create a new variable, click on the <strong>+</strong> button to the right of the last column name in the data tab. A “Create Computed Column” panel appears, where you can enter a name for the new variable. You can also choose between <code>R</code> and a pointer. These are the two options in JASP to define formulas with which the new (empty) variable is filled; using <code>R</code> code, or manually using JASP. The paragraphs below explain how random numbers can be generated using these two options. Finally, you can check which measurement level the new variable should be (see Chapter <a href="ch-levelsofmeasurement.html#ch-levelsofmeasurement">4</a>). For random numbers, you can leave this at <code>Scale</code>. Next, click on <code>Create Column</code> to create the new variable. The new variable (empty column) appears as the rightmost variable in the data set.</p>
 <p>If the <strong>R</strong> option is chosen to define the new variable, a field with “#Enter your R code here :)” appears above the data. Here you can enter R code that generates random numbers using R functions. Enter the R code (see below) and click on <code>Compute column</code> at the bottom of the field to fill the empty variable with the numbers generated by this R code.<br />
 The predefined R function <code>runif</code> may be used to generate <strong>r</strong>andom values from a flat or <strong>unif</strong>orm probability distribution, meaning that each number between the lower and upper limit has an equal chance of being sampled. The default limits are <span class="math inline">\((0,1)\)</span>. You may round off the resulting random values to integer numbers, using the predefined R function <code>round</code>.
 This snippet of R code generates 5 integer numbers between 0 and 9999:</p>
 <pre><code>round( runif(5, 0, 9999) )</code></pre>
 <p>If you wish to sample <strong>r</strong>andom numbers from a <strong>norm</strong>al density distribution (see §<a href="ch-probability-distributions.html#sec:normaldistribution">10.3</a>), then use the predefined R function <code>rnorm(n,mean,sd)</code>.<br />
-Setting the initial value of the “random number generator,” in order to perform reproducible analyses, is not possible in JASP. Each run of the R code snippet will generate fresh random numbers.</p>
+Setting the initial value of the “random number generator”, in order to perform reproducible analyses, is not possible in JASP. Each run of the R code snippet will generate fresh random numbers.</p>
 <p>If the <strong>pointer</strong> or <strong>manual</strong> option is chosen to define the new variable, a work sheet will appear above the data. To the left of the work sheet are the variables, above it are math symbols, and to the right of the work sheet are several functions. From those functions you can pick one to generate your random numbers. If something goes wrong, items on the work sheet can be erased by dragging them to the trash bin on the lower right bottom. After you have completed the specification on the work sheet, then click on the button <code>Compute column</code> under the work sheet, to fill the new variable with the generated numbers.<br />
 In order to generate random values from a flat or <strong>unif</strong>orm probability <strong>dist</strong>ribution (meaning that each number between the lower and upper limit has an equal chance of being sampled), pick the function named <code>unifDist()</code> from the list of functions on the right. Replace <code>min</code> and <code>max</code> by your limits to the generated numbers. You may round off the resulting random values to integer numbers, by picking function <code>round()</code> with <code>n=0</code> decimal digits. Eventually the work sheet should contain the instruction `<code>round(unifDist(0,9999),0)</code>; this will generate integer numbers between 0 and 9999.<br />
 If you wish to sample random numbers from a <strong>normal</strong> probability <strong>dist</strong>ribution (see §<a href="ch-probability-distributions.html#sec:normaldistribution">10.3</a>), then pick the function <code>normalDist</code> from the list of functions on the right, and replace <code>mean</code> and <code>sd</code> by your values.<br />
 </p>
-<p>Setting the initial value of the “random number generator,” in order to perform reproducible analyses, is not possible in JASP. Each time you press on the <code>Create column</code> button, fresh random numbers will be generated.</p>
+<p>Setting the initial value of the “random number generator”, in order to perform reproducible analyses, is not possible in JASP. Each time you press on the <code>Create column</code> button, fresh random numbers will be generated.</p>
 <p>You can use the resulting random numbers for randomly selecting units (e.g. participants, stimuli) for a sample, and also for randomly assigning the selected units to conditions, treatments, groups, etc.</p>
 </div>
 <div id="r" class="section level3" number="7.3.3">
 <h3><span class="header-section-number">7.3.3</span> R</h3>
 <p>In R we may generate random numbers using the predefined function <code>runif</code>.
-This function samples <strong>r</strong>andom values from a flat or <strong>unif</strong>orm probability distribution, meaning that each number between the lower and upper limit has an equal chance of being sampled. The default limits are <span class="math inline">\((0,1)\)</span>. You may round off the resulting random values to integer numbers, as was done in Appendix <a href="app-randomnumbers.html#app:randomnumbers">A</a>.</p>
+This function samples <strong>r</strong>andom values from a flat or <strong>unif</strong>orm probability distribution, meaning that each number between the lower and upper limit has an equal chance of being sampled. The default limits are <span class="math inline">\((0,1)\)</span>. You may round off the resulting random values to integer numbers, as was done in Appendix <a href="app-randomnumbers.html#app-randomnumbers">A</a>.</p>
 <p>If you wish to sample random numbers from a normal density distribution (see §<a href="ch-probability-distributions.html#sec:normaldistribution">10.3</a>), then use the function <code>rnorm(n,mean,sd)</code>.</p>
 <p>We may provide a starting value (called a “seed”) for the random number generator, in order to make reproducible analyses (and examples), using the predefined function <code>set.seed</code>:</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="ch-samples.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">20200912</span>) <span class="co"># reproducible example, number is date on which this chunk was added</span></span>
@@ -652,7 +653,6 @@ Thompson, Steven K. 2012. <em>Sampling</em>. 3e ed. Wiley Series in Probability 
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -692,6 +692,10 @@ gitbook.start({
 "text": null
 },
 "download": ["QMS-EN.pdf", "QMS-EN.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

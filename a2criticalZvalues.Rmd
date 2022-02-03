@@ -1,4 +1,4 @@
-# Standard normal probability distribution {#app:criticalZvalues}
+# Standard normal probability distribution {#app-criticalZvalues}
 
 <!-- kritiekeZwaarden_hulpfiguur.R, no caption, no labels -->
 ```{r kritiekeZwaarden-hulpfiguur, echo=FALSE, fig.height=2}

@@ -1,4 +1,4 @@
-# Critical values for $t$-distribution {#app:criticaltvalues}
+# Critical values for $t$-distribution {#app-criticaltvalues}
 
 ```{r criticaltvalues-auxiliaryfigure, echo=FALSE, fig.height=2}
 # adapted from `kritieketwaarden_hulpfiguur.R`

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>10 Probability distributions | Quantitative Methods and Statistics</title>
   <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="10 Probability distributions | Quantitative Methods and Statistics" />
   <meta property="og:type" content="book" />
@@ -31,8 +31,9 @@
   
 <link rel="prev" href="ch-centre-and-dispersion.html"/>
 <link rel="next" href="ch-correlation-regression.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -40,7 +41,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -445,7 +445,7 @@ div.csl-indent {
 <li class="chapter" data-level="15.3.2" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-formal"><i class="fa fa-check"></i><b>15.3.2</b> A formal explanation</a></li>
 <li class="chapter" data-level="15.3.3" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-effectsize"><i class="fa fa-check"></i><b>15.3.3</b> Effect size</a></li>
 <li class="chapter" data-level="15.3.4" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-planned"><i class="fa fa-check"></i><b>15.3.4</b> Planned comparisons</a></li>
-<li class="chapter" data-level="15.3.5" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-posthoc"><i class="fa fa-check"></i><b>15.3.5</b> Post-hoc comparisons</a></li>
+<li class="chapter" data-level="15.3.5" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-oneway-posthoc"><i class="fa fa-check"></i><b>15.3.5</b> Post hoc comparisons</a></li>
 <li class="chapter" data-level="15.3.6" data-path="ch-anova.html"><a href="ch-anova.html#spss-12"><i class="fa fa-check"></i><b>15.3.6</b> SPSS</a></li>
 <li class="chapter" data-level="15.3.7" data-path="ch-anova.html"><a href="ch-anova.html#jasp-13"><i class="fa fa-check"></i><b>15.3.7</b> JASP</a></li>
 <li class="chapter" data-level="15.3.8" data-path="ch-anova.html"><a href="ch-anova.html#r-15"><i class="fa fa-check"></i><b>15.3.8</b> R</a></li>
@@ -454,9 +454,10 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="15.4.1" data-path="ch-anova.html"><a href="ch-anova.html#an-intuitive-explanation"><i class="fa fa-check"></i><b>15.4.1</b> An intuitive explanation</a></li>
 <li class="chapter" data-level="15.4.2" data-path="ch-anova.html"><a href="ch-anova.html#a-formal-explanation"><i class="fa fa-check"></i><b>15.4.2</b> A formal explanation</a></li>
-<li class="chapter" data-level="15.4.3" data-path="ch-anova.html"><a href="ch-anova.html#spss-13"><i class="fa fa-check"></i><b>15.4.3</b> SPSS</a></li>
-<li class="chapter" data-level="15.4.4" data-path="ch-anova.html"><a href="ch-anova.html#jasp-14"><i class="fa fa-check"></i><b>15.4.4</b> JASP</a></li>
-<li class="chapter" data-level="15.4.5" data-path="ch-anova.html"><a href="ch-anova.html#r-16"><i class="fa fa-check"></i><b>15.4.5</b> R</a></li>
+<li class="chapter" data-level="15.4.3" data-path="ch-anova.html"><a href="ch-anova.html#sec:anova-twoway-posthoc"><i class="fa fa-check"></i><b>15.4.3</b> Post hoc comparisons</a></li>
+<li class="chapter" data-level="15.4.4" data-path="ch-anova.html"><a href="ch-anova.html#spss-13"><i class="fa fa-check"></i><b>15.4.4</b> SPSS</a></li>
+<li class="chapter" data-level="15.4.5" data-path="ch-anova.html"><a href="ch-anova.html#jasp-14"><i class="fa fa-check"></i><b>15.4.5</b> JASP</a></li>
+<li class="chapter" data-level="15.4.6" data-path="ch-anova.html"><a href="ch-anova.html#r-16"><i class="fa fa-check"></i><b>15.4.6</b> R</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="16" data-path="ch-chi-square-tests.html"><a href="ch-chi-square-tests.html"><i class="fa fa-check"></i><b>16</b> Chi-square-tests</a>
@@ -529,7 +530,7 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ch:probability-distributions" class="section level1" number="10">
+<div id="ch-probability-distributions" class="section level1" number="10">
 <h1><span class="header-section-number">10</span> Probability distributions</h1>
 <div id="sec:probabilities" class="section level2" number="10.1">
 <h2><span class="header-section-number">10.1</span> Probabilities</h2>
@@ -538,19 +539,20 @@ The average chance of precipitation in the Netherlands is 7%. My order has a
 10% chance of being delivered a day later than promised. Chances and probabilities
 play an important role in our daily lives, and also in academic research. After all,
 many hypotheses are probabilistic in nature (see Chapter
-<a href="ch-research.html#ch:research">2</a>): hypotheses make statements about a
+<a href="ch-research.html#ch-research">2</a>): hypotheses make statements about a
 difference in the <em>chances</em> of outcomes. To be able to draw conclusions with
 respect to these probabilistic hypotheses, we need to know something about
 probabilities and
 probability distributions. This is the subject of the present chapter.</p>
 <p>As an introduction, let us take a look at a Dutch <em>Scrabble</em> game.
-The game contains a bag with 102 tiles inside, each of which has a letter on it.<a href="#fn21" class="footnote-ref" id="fnref21"><sup>21</sup></a> Of the 102 tiles, 6 have the letter A on them. If I take one tile from a
+The game contains a bag with 102 tiles inside, each of which has a letter on it
+<a href="references.html#fn21" class="footnote-ref" id="fnref21"><sup>21</sup></a>. Of the 102 tiles, 6 have the letter A on them. If I take one tile from a
 full and well-mixed bag, what is the chance that I draw the letter A? The
 probability-of-the-outcome-A is referred to as <span class="math inline">\(P(\textrm{A})\)</span>, with the <span class="math inline">\(P\)</span> of
 <em>Probabilitas</em> (Lat. “chance, probability”), and can be determined as
 <span class="math display" id="eq:probability-scrabble-1-A">\[\begin{equation}
     P(\textrm{A})=
-    \frac{\textrm{number of A&#39;s}}{\textrm{total number of tiles}}= 
+    \frac{\textrm{number of A&#39;s}}{\textrm{total number of tiles}}=
     \frac{6}{102} = 0.0588
   \tag{10.1}
 \end{equation}\]</span></p>
@@ -671,7 +673,7 @@ letter bag, or the hand of the person drawing tiles does not have any memory. At
 <em>each</em> draw, the probability of a hit is <span class="math inline">\(p=.38\)</span>, even if a vowel
 has just been drawn <span class="math inline">\(100\times\)</span> or $1000. The same is the case
 for consecutive outcomes with roulette: in <em>each</em> round, the probability
-of a hit is <span class="math inline">\(1/37\)</span>, even if the ball has just landed on the same number <span class="math inline">\(100\times\)</span><a href="#fn22" class="footnote-ref" id="fnref22"><sup>22</sup></a>.</p>
+of a hit is <span class="math inline">\(1/37\)</span>, even if the ball has just landed on the same number <span class="math inline">\(100\times\)</span><a href="references.html#fn22" class="footnote-ref" id="fnref22"><sup>22</sup></a>.</p>
 <p>With the aforementioned changes, let us now conduct <span class="math inline">\(n=3\)</span> draws
 (with replacement, see above), and for each possible outcome determine
 the probability of the outcome, see
@@ -773,7 +775,7 @@ binomial variable with <span class="math inline">\(n=3\)</span> and <span class=
 </tr>
 </tbody>
 </table>
-<div class="figure"><span id="fig:binomprobabilitydistribution3"></span>
+<div class="figure"><span style="display:block;" id="fig:binomprobabilitydistribution3"></span>
 <img src="QMS-EN_files/figure-html/binomprobabilitydistribution3-1.png" alt="Probability distribution of a binomial variable with $n=3$ and $p=.38$." width="384" />
 <p class="caption">
 Figure 10.1: Probability distribution of a binomial variable with <span class="math inline">\(n=3\)</span> and <span class="math inline">\(p=.38\)</span>.
@@ -826,7 +828,7 @@ orderings of <span class="math inline">\(x=2\)</span> persons over <span class="
 The uppermost row is that for <span class="math inline">\(n=0\)</span>. The fifth row is that for <span class="math inline">\(n=4\)</span> and we
 can see the binomial coefficients for <span class="math inline">\(x= 0, 1, 2, 3, 4\)</span> there one after another.
 For <span class="math inline">\({4 \choose 2}\)</span>, we find there the binomial coefficient <span class="math inline">\(6\)</span>.
-Every coefficient is the total of the two coefficients above<a href="#fn23" class="footnote-ref" id="fnref23"><sup>23</sup></a>, and
+Every coefficient is the total of the two coefficients above<a href="references.html#fn23" class="footnote-ref" id="fnref23"><sup>23</sup></a>, and
 every coefficient can be understood as the number of possible
 routes descending from the top of the triangle
 to the cell.</p>
@@ -1004,10 +1006,10 @@ The output panel now shows the binomial <em>Probability Mass Plot</em>.</p>
 </div>
 <div id="r-4" class="section level3" number="10.2.3">
 <h3><span class="header-section-number">10.2.3</span> R</h3>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="ch-probability-distributions.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>( <span class="dv">0</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">size=</span><span class="dv">3</span>, <span class="at">prob=</span>.<span class="dv">38</span> )</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="ch-probability-distributions.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>( <span class="dv">0</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">size=</span><span class="dv">3</span>, <span class="at">prob=</span>.<span class="dv">38</span> )</span></code></pre></div>
 <pre><code>## [1] 0.238328 0.438216 0.268584 0.054872</code></pre>
 <p>The output is shown in Table <a href="ch-probability-distributions.html#tab:binomprobabilitydistribution3">10.2</a> below.</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="ch-probability-distributions.html#cb56-1" aria-hidden="true" tabindex="-1"></a>matrixcalc<span class="sc">::</span><span class="fu">pascal.matrix</span>( <span class="dv">10</span> ) <span class="co"># left under diagonal is Pascal&#39;s triangle</span></span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="ch-probability-distributions.html#cb57-1" aria-hidden="true" tabindex="-1"></a>matrixcalc<span class="sc">::</span><span class="fu">pascal.matrix</span>( <span class="dv">10</span> ) <span class="co"># left under diagonal is Pascal&#39;s triangle</span></span></code></pre></div>
 <pre><code>##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
 ##  [1,]    1    0    0    0    0    0    0    0    0     0
 ##  [2,]    1    1    0    0    0    0    0    0    0     0
@@ -1028,7 +1030,7 @@ The output panel now shows the binomial <em>Probability Mass Plot</em>.</p>
 distribution will move up, and the more fluid the probability
 distribution will become, as is shown in
 Figure <a href="ch-probability-distributions.html#fig:binomprobabilitydistribution50n500">10.2</a>.</p>
-<div class="figure"><span id="fig:binomprobabilitydistribution50n500"></span>
+<div class="figure"><span style="display:block;" id="fig:binomprobabilitydistribution50n500"></span>
 <img src="QMS-EN_files/figure-html/binomprobabilitydistribution50n500-1.png" alt="Probability distribution of a binomial variable x with n=50 (left) and n=500 (right) and p=.38." width="672" />
 <p class="caption">
 Figure 10.2: Probability distribution of a binomial variable x with n=50 (left) and n=500 (right) and p=.38.
@@ -1036,7 +1038,7 @@ Figure 10.2: Probability distribution of a binomial variable x with n=50 (left) 
 </div>
 <p>With an even larger sample, the probability distribution becomes a fluid line.
 This probability distribution occurs so often, that it is called the
-<em>normal probability distribution</em> or ‘normal distribution.’ The distribution
+<em>normal probability distribution</em> or ‘normal distribution’. The distribution
 is also referred to as the Gaussian distribution (named after the mathematician
 Carl Friedrich Gauss, 1777–1855), or the ‘bell curve’ (after the shape). Many
 variables approximately follow this probability distribution:
@@ -1045,7 +1047,7 @@ of milk, length of a telephone conversation, etc. etc. For all of these variable
 observations close to the average have a high probability of occurring, and
 observations which deviate greatly from the average are relatively rare (low
 probability).</p>
-<div class="figure"><span id="fig:normalprobabilitydistribution"></span>
+<div class="figure"><span style="display:block;" id="fig:normalprobabilitydistribution"></span>
 <img src="QMS-EN_files/figure-html/normalprobabilitydistribution-1.png" alt="Normal probability distribution of a variable x with average 0 and standard deviation 1." width="672" />
 <p class="caption">
 Figure 10.3: Normal probability distribution of a variable x with average 0 and standard deviation 1.
@@ -1083,7 +1085,7 @@ probability distribution of <span class="math inline">\(Z\)</span>, or the proba
 variable <span class="math inline">\(X\)</span> yourself with the help of the formula
 <a href="ch-probability-distributions.html#eq:prob-normal">(10.8)</a> below. However, it is more convenient to
 use a table for it; this can be found in
-Appendix <a href="app-criticalZvalues.html#app:criticalZvalues">B</a>.
+Appendix <a href="app-criticalZvalues.html#app-criticalZvalues">B</a>.
 Explained in graphical form, the tables provide you, for
 different areas or probabilities <span class="math inline">\(p\)</span> on the right-hand side under the curve,
 the positive value of <span class="math inline">\(Z^*\)</span> which constitutes the left-hand limit of the area.
@@ -1099,7 +1101,7 @@ under the curve. This area renders the probability that
 probability to the aforementioned Empirical Rule).</p>
 </blockquote>
 <hr />
-<p>In Appendix <a href="app-criticalZvalues.html#app:criticalZvalues">B</a>, you can find for convenience not one but two
+<p>In Appendix <a href="app-criticalZvalues.html#app-criticalZvalues">B</a>, you can find for convenience not one but two
 tables, each consisting of several column designations and
 and a row of cells. The first table provides you, for different ‘rounded’
 probabilities <span class="math inline">\(p\)</span> (columns), the critical values <span class="math inline">\(Z^*\)</span> (cells), for which the
@@ -1140,7 +1142,7 @@ corresponds with this p-value <span class="math inline">\(p=0.025\)</span>?</p>
 </blockquote>
 <blockquote>
 <p>In
-Appendix <a href="app-criticalZvalues.html#app:criticalZvalues">B</a>, we take the first subtable. In the column
+Appendix <a href="app-criticalZvalues.html#app-criticalZvalues">B</a>, we take the first subtable. In the column
 for p-value <span class="math inline">\(p=0.025\)</span>, we find boundary value
 <span class="math inline">\(Z^*=1.960\)</span>. If we find an observation with <span class="math inline">\(Z \ge 1.960\)</span> or with
 <span class="math inline">\(Z \le -1.960\)</span>, then we consider that to be an extreme, rare
@@ -1167,11 +1169,11 @@ have to achieve an IQ score of 131 points or higher.</p>
 <blockquote>
 <p><em>Example 10.10:</em>
 Verify the aforementioned Empirical Rule with the help of
-Appendix <a href="app-criticalZvalues.html#app:criticalZvalues">B</a>.</p>
+Appendix <a href="app-criticalZvalues.html#app-criticalZvalues">B</a>.</p>
 </blockquote>
 <hr />
 <!-- 
-The second table in Appendix \@ref{app:criticalZvalues} provides you also
+The second table in Appendix \@ref{app-criticalZvalues} provides you also
 with different positive values from that 
 lower boundary $Z^*$, the precise probability $p$ of finding a value of $Z$
 which is equally large as or larger than this lower boundary $Z^*$. We call
@@ -1205,17 +1207,17 @@ standard deviation <span class="math inline">\(\sigma\)</span> is
 <pre><code>Distributions &gt; Continuous: Normal</code></pre>
 <p>If the <code>Distributions</code> option is not shown in the top bar, then you can add the option by clicking on the blue <strong>+</strong>-button in the top right corner, and checking option <code>Distributions</code>.<br />
 In the “Normal” input panel, there is an input panel <code>Show Distribution</code>. In that panel, the values of the <em>standard</em> normal distribution are entered by default, and option <code>Probability density function</code> is checked by default. The standard normal distribution is shown in the output under <em>Density Plot</em>.<br />
-For <em>other</em> normal density distributions, the values of <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span> may be adjusted, and you may specify the domain shown (under “Options,” then “range of x”).
-Note that, under the heading “Parameters,” you should select the option labeled “<span class="math inline">\(\mu\)</span>, <span class="math inline">\(\sigma\)</span>” if you enter the mean and standard deviation (the default option is “<span class="math inline">\(\mu\)</span>, <span class="math inline">\(\sigma^2\)</span>” using variance; for the <em>standard</em> normal distribution <span class="math inline">\(\sigma=\sigma^2=1\)</span>).</p>
+For <em>other</em> normal density distributions, the values of <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span> may be adjusted, and you may specify the domain shown (under “Options”, then “range of x”).
+Note that, under the heading “Parameters”, you should select the option labeled “<span class="math inline">\(\mu\)</span>, <span class="math inline">\(\sigma\)</span>” if you enter the mean and standard deviation (the default option is “<span class="math inline">\(\mu\)</span>, <span class="math inline">\(\sigma^2\)</span>” using variance; for the <em>standard</em> normal distribution <span class="math inline">\(\sigma=\sigma^2=1\)</span>).</p>
 </div>
 <div id="r-5" class="section level3" number="10.3.3">
 <h3><span class="header-section-number">10.3.3</span> R</h3>
 <p>The normal probability distribution in Figure <a href="ch-probability-distributions.html#fig:normalprobabilitydistribution">10.3</a> may be plotted in R using the command below. A <code>curve</code> is plotted, with <code>x</code> in the specified domain, and <code>y</code> being the function which computes the normal probability density using equation <a href="ch-probability-distributions.html#eq:prob-normal">(10.8)</a>:</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="ch-probability-distributions.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>( <span class="fu">dnorm</span>( x, <span class="at">mean=</span><span class="dv">0</span>, <span class="at">sd=</span><span class="dv">1</span> ), <span class="co"># function specifying y values, normal density</span></span>
-<span id="cb59-2"><a href="ch-probability-distributions.html#cb59-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">from=</span><span class="sc">-</span><span class="dv">5</span>, <span class="at">to=</span><span class="sc">+</span><span class="dv">5</span>, <span class="co"># domain of x</span></span>
-<span id="cb59-3"><a href="ch-probability-distributions.html#cb59-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">lwd=</span><span class="dv">4</span>, <span class="co"># line width is 4x default value</span></span>
-<span id="cb59-4"><a href="ch-probability-distributions.html#cb59-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">xlab=</span><span class="st">&quot;x&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;P(x)&quot;</span> <span class="co"># labels along x and y axes</span></span>
-<span id="cb59-5"><a href="ch-probability-distributions.html#cb59-5" aria-hidden="true" tabindex="-1"></a>       )</span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="ch-probability-distributions.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>( <span class="fu">dnorm</span>( x, <span class="at">mean=</span><span class="dv">0</span>, <span class="at">sd=</span><span class="dv">1</span> ), <span class="co"># function specifying y values, normal density</span></span>
+<span id="cb60-2"><a href="ch-probability-distributions.html#cb60-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">from=</span><span class="sc">-</span><span class="dv">5</span>, <span class="at">to=</span><span class="sc">+</span><span class="dv">5</span>, <span class="co"># domain of x</span></span>
+<span id="cb60-3"><a href="ch-probability-distributions.html#cb60-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">lwd=</span><span class="dv">4</span>, <span class="co"># line width is 4x default value</span></span>
+<span id="cb60-4"><a href="ch-probability-distributions.html#cb60-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">xlab=</span><span class="st">&quot;x&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;P(x)&quot;</span> <span class="co"># labels along x and y axes</span></span>
+<span id="cb60-5"><a href="ch-probability-distributions.html#cb60-5" aria-hidden="true" tabindex="-1"></a>       )</span></code></pre></div>
 <p><img src="QMS-EN_files/figure-html/curve.dnorm-1.png" width="672" /></p>
 <p>If used with the additional argument <code>curve( ..., add=TRUE )</code>, then the curve will be added to the most recent plot (see e.g. Figure <a href="ch-probability-distributions.html#fig:itunesmeanshist">10.6</a> below).</p>
 </div>
@@ -1226,7 +1228,7 @@ Note that, under the heading “Parameters,” you should select the option labe
 minutes (it’s a piece of classical Indian music, a ‘morning raga’).
 A histogram of all music number lengths is shown in
 Figure <a href="ch-probability-distributions.html#fig:itunestimeshist">10.4</a>.</p>
-<div class="figure"><span id="fig:itunestimeshist"></span>
+<div class="figure"><span style="display:block;" id="fig:itunestimeshist"></span>
 <img src="QMS-EN_files/figure-html/itunestimeshist-1.png" alt="Histogram of the lengths of music numbers in my digital music library." width="672" />
 <p class="caption">
 Figure 10.4: Histogram of the lengths of music numbers in my digital music library.
@@ -1251,7 +1253,7 @@ corresponding
 along the other axis. A figure like this is called a quantile-quantile plot or
 Q-Q plot; the Q-Q plot for the lengths in my music library are shown in
 Figure <a href="ch-probability-distributions.html#fig:itunestimesqqplot">10.5</a>.</p>
-<div class="figure"><span id="fig:itunestimesqqplot"></span>
+<div class="figure"><span style="display:block;" id="fig:itunestimesqqplot"></span>
 <img src="QMS-EN_files/figure-html/itunestimesqqplot-1.png" alt="Quantile-quantile plot of the lengths of music numbers in my digital library." width="672" />
 <p class="caption">
 Figure 10.5: Quantile-quantile plot of the lengths of music numbers in my digital library.
@@ -1275,7 +1277,7 @@ formula <a href="ch-probability-distributions.html#eq:normallydistributed">(10.7
 <p>Select the variable Time (drag to the Dependent List panel).<br />
 Choose the button <code>Plots</code>, and tick <code>Normality plots with tests</code>, which
 means ‘if you make a QQ-plot or Normality plot, you should also then conduct
-tests on normality.’
+tests on normality’.
 Confirm with <code>Continue</code> and afterwards with <code>OK</code>. The output contains
 firstly the results of the Shapiro-Wilks test and the
 Kolmogorov-Smirnov test. According to both tests, the probability of finding
@@ -1287,11 +1289,11 @@ test results, there is, amongst others, a Q-Q plot.</p>
 </div>
 <div id="r-6" class="section level3" number="10.4.2">
 <h3><span class="header-section-number">10.4.2</span> R</h3>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="ch-probability-distributions.html#cb61-1" aria-hidden="true" tabindex="-1"></a>itunes <span class="ot">&lt;-</span> <span class="fu">read.table</span>( <span class="at">file=</span><span class="st">&quot;data/itunestimes20120511.txt&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span> )</span>
-<span id="cb61-2"><a href="ch-probability-distributions.html#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Size in bytes, Time in ms</span></span>
-<span id="cb61-3"><a href="ch-probability-distributions.html#cb61-3" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(itunes<span class="sc">$</span>Time<span class="sc">/</span><span class="dv">60000</span>, <span class="at">datax=</span>T, <span class="at">plot.it=</span><span class="cn">FALSE</span>) <span class="co"># normally we&#39;d use plot.it=TRUE  </span></span>
-<span id="cb61-4"><a href="ch-probability-distributions.html#cb61-4" aria-hidden="true" tabindex="-1"></a><span class="co"># qqline(itunes$Time/60000, datax=T, col=&quot;purple&quot;, lwd=T) # see QQ-plot above</span></span></code></pre></div>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="ch-probability-distributions.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(itunes<span class="sc">$</span>Time<span class="sc">/</span><span class="dv">60000</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="ch-probability-distributions.html#cb62-1" aria-hidden="true" tabindex="-1"></a>itunes <span class="ot">&lt;-</span> <span class="fu">read.table</span>( <span class="at">file=</span><span class="st">&quot;data/itunestimes20120511.txt&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span> )</span>
+<span id="cb62-2"><a href="ch-probability-distributions.html#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Size in bytes, Time in ms</span></span>
+<span id="cb62-3"><a href="ch-probability-distributions.html#cb62-3" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(itunes<span class="sc">$</span>Time<span class="sc">/</span><span class="dv">60000</span>, <span class="at">datax=</span>T, <span class="at">plot.it=</span><span class="cn">FALSE</span>) <span class="co"># normally we&#39;d use plot.it=TRUE  </span></span>
+<span id="cb62-4"><a href="ch-probability-distributions.html#cb62-4" aria-hidden="true" tabindex="-1"></a><span class="co"># qqline(itunes$Time/60000, datax=T, col=&quot;purple&quot;, lwd=T) # see QQ-plot above</span></span></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="ch-probability-distributions.html#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(itunes<span class="sc">$</span>Time<span class="sc">/</span><span class="dv">60000</span>)</span></code></pre></div>
 <pre><code>## 
 ##  Shapiro-Wilk normality test
 ## 
@@ -1307,8 +1309,8 @@ distributed.</p>
 <div id="sec:whatifnotnormal" class="section level2" number="10.5">
 <h2><span class="header-section-number">10.5</span> What if my variable is not normally distributed?</h2>
 <p>In Part III, we will discuss various statistical tests.
-The tests which we discuss in Chapters <a href="ch-testing.html#ch:testing">13</a> and <a href="ch-power.html#ch:power">14</a> and
-<a href="ch-anova.html#ch:anova">15</a> however require that the independent
+The tests which we discuss in Chapters <a href="ch-testing.html#ch-testing">13</a> and <a href="ch-power.html#ch-power">14</a> and
+<a href="ch-anova.html#ch-anova">15</a> however require that the independent
 variable has a normal probability distribution. If a variable does <em>not</em> have
 a (approximately) normal probability distribution, then the variable cannot
 simply be used for statistical testing with the statistical tests
@@ -1326,11 +1328,11 @@ the transformation performed!</p>
 <p>Secondly, it is sometimes possible to use another statistical test which does
 not require that the dependent variable is normally distributed. Those are called
 nonparametric tests. We will look at these in more detail in the chapters
-<a href="ch-chi-square-tests.html#ch:chi-square-tests">16</a> and
-<a href="ch-other-nonpar-tests.html#ch:other-nonpar-tests">17</a>.
+<a href="ch-chi-square-tests.html#ch-chi-square-tests">16</a> and
+<a href="ch-other-nonpar-tests.html#ch-other-nonpar-tests">17</a>.
 A disadvantage of those tests is nevertheless that they have less
 statistical power (for a discussion of power,
-see Chapter <a href="ch-power.html#ch:power">14</a>): they are less sensitive, and thus require larger
+see Chapter <a href="ch-power.html#ch-power">14</a>): they are less sensitive, and thus require larger
 samples to establish an effect.</p>
 </div>
 <div id="sec:Centrallimittheorem" class="section level2" number="10.6">
@@ -1346,7 +1348,7 @@ We repeat this operation
 <span class="math inline">\(250\times\)</span>: in this way, we get 250 sample averages. The
 frequency distribution of these 250 sample averages are shown in
 Figure <a href="ch-probability-distributions.html#fig:itunesmeanshist">10.6</a>.</p>
-<div class="figure"><span id="fig:itunesmeanshist"></span>
+<div class="figure"><span style="display:block;" id="fig:itunesmeanshist"></span>
 <img src="QMS-EN_files/figure-html/itunesmeanshist-1.png" alt="Frequency distribution of 250 averages, each over a random sample of $n=50$ music numbers (the dependent variable is the length of a music number, in minutes). The matching normal distribution is shown as a fluid curve." width="672" />
 <p class="caption">
 Figure 10.6: Frequency distribution of 250 averages, each over a random sample of <span class="math inline">\(n=50\)</span> music numbers (the dependent variable is the length of a music number, in minutes). The matching normal distribution is shown as a fluid curve.
@@ -1376,7 +1378,7 @@ and
 \end{equation}\]</span>
 The standard deviation of the
 mean, <span class="math inline">\(s_{\bar{X}}\)</span>, is also known as the ‘standard error of
-the mean.’ The same averages <span class="math inline">\(\bar{X}\)</span> have less dispersion than the separate
+the mean’. The same averages <span class="math inline">\(\bar{X}\)</span> have less dispersion than the separate
 observations <span class="math inline">\(X\)</span>, and the averages also vary less when taken over a larger
 sample, as seems to be the case from formula <a href="ch-probability-distributions.html#eq:sem">(10.11)</a>. You can consider this
 standard error of the mean as the ‘margin of error’ in the estimation
@@ -1420,7 +1422,7 @@ can be deviations which mean that there is somewhat more probability of
 finding a mean which deviates from the population mean.
 As we have already seen, the larger <span class="math inline">\(n\)</span> is, the better the estimation of <span class="math inline">\(\mu\)</span>:
 the t-distribution then approximates the standard normal probability distribution.</p>
-<div class="figure"><span id="fig:tprobabilitydistribution"></span>
+<div class="figure"><span style="display:block;" id="fig:tprobabilitydistribution"></span>
 <img src="QMS-EN_files/figure-html/tprobabilitydistribution-1.png" alt="Probability distribution according to the t-distribution of a variable $x$ with mean 0 and standard deviation 1, for n=600 and n=6." width="672" />
 <p class="caption">
 Figure 10.7: Probability distribution according to the t-distribution of a variable <span class="math inline">\(x\)</span> with mean 0 and standard deviation 1, for n=600 and n=6.
@@ -1437,7 +1439,7 @@ suffice.</p>
 Sometimes a researcher wants to know the speed or tempo with which Dutch is actually spoken,
 and how much variation in this speech rate or tempo there is between speakers.
 This variable, speech rate, is expressed as the number of seconds
-a syllable lasts (typically about <span class="math inline">\(0.2\)</span> second or <span class="math inline">\(200\)</span> milliseconds). Although <span class="citation"><a href="#ref-Quene08" role="doc-biblioref">H. Quené</a> (<a href="#ref-Quene08" role="doc-biblioref">2008</a>)</span>
+a syllable lasts (typically about <span class="math inline">\(0.2\)</span> second or <span class="math inline">\(200\)</span> milliseconds). Although <span class="citation">Quené (<a href="#ref-Quene08" role="doc-biblioref">2008</a>)</span>
 estimates that <span class="math inline">\(\mu=0.220\)</span> s and <span class="math inline">\(\sigma=0.0225\)</span> s, we act as if
 we do not know these population parameters — just like real
 researchers who usually do not know
@@ -1446,12 +1448,12 @@ the population parameters.</p>
 <blockquote>
 <p>For a sample of <span class="math inline">\(n=30\)</span> speakers, we find <span class="math inline">\(\overline{x}=0.215\)</span>
 and
-<span class="math inline">\(s=0.0203\)</span> seconds. From this, we estimate<a href="#fn24" class="footnote-ref" id="fnref24"><sup>24</sup></a>
+<span class="math inline">\(s=0.0203\)</span> seconds. From this, we estimate <a href="references.html#fn24" class="footnote-ref" id="fnref24"><sup>24</sup></a>
 <span class="math inline">\(\hat{\mu}=0.215\)</span> and
 <span class="math inline">\(\hat{\sigma}=0.0203\)</span>. Since <span class="math inline">\(\sigma\)</span> is not known, we use
 the <em>t</em>-distribution to determine the confidence interval. We
 use the <em>t</em>-distribution for <span class="math inline">\(n=30\)</span> and find a critical value
-<span class="math inline">\(t^*=2.05\)</span> (see Appendix <a href="app-criticaltvalues.html#app:criticaltvalues">C</a>, for <span class="math inline">\(B=95\)</span>%).
+<span class="math inline">\(t^*=2.05\)</span> (see Appendix <a href="app-criticaltvalues.html#app-criticaltvalues">C</a>, for <span class="math inline">\(B=95\)</span>%).
 According to formula <a href="ch-probability-distributions.html#eq:t-onesampleCI">(10.12)</a>, we know with 95%
 confidence that the unknown population mean <span class="math inline">\(\mu\)</span> lies
 between <span class="math inline">\(\overline{x}-2.05\times s_{\bar{x}}\)</span> and <span class="math inline">\(\overline{x}+2.05\times s_{\bar{x}}\)</span>,
@@ -1468,7 +1470,7 @@ speech tempo of these speakers. For each sample, we have drawn
 the 95% confidence interval. For 95 of the 100 samples, the population
 mean <span class="math inline">\(\mu=0.220\)</span> indeed falls within the interval.
 But for 5 out of 100 samples, from a population with <span class="math inline">\(\mu=0.220\)</span>, the sample’s confidence interval does not contain the population mean (these are marked along the right hand side).</p>
-<div class="figure"><span id="fig:tempo95CIs"></span>
+<div class="figure"><span style="display:block;" id="fig:tempo95CIs"></span>
 <img src="QMS-EN_files/figure-html/tempo95CIs-1.png" alt="95% confidence intervals and sample means, over 100 simulated samples (n=30) out of a population with mean 0.220 and s.d. 0.0225; see text." width="672" />
 <p class="caption">
 Figure 10.8: 95% confidence intervals and sample means, over 100 simulated samples (n=30) out of a population with mean 0.220 and s.d. 0.0225; see text.
@@ -1483,7 +1485,7 @@ average is
   \tag{10.12}
 \end{equation}\]</span>
 in which <span class="math inline">\(t^*\)</span> with <span class="math inline">\(n-1\)</span> degrees of freedom is found with the help of
-Appendix <a href="app-criticaltvalues.html#app:criticaltvalues">C</a>, see
+Appendix <a href="app-criticaltvalues.html#app-criticaltvalues">C</a>, see
 §<a href="ch-testing.html#sec:ttest-freedomdegrees">13.2.1</a> for more explanation about this.</p>
 
 </div>
@@ -1498,7 +1500,7 @@ Bhargava, Saurabh, and Vikram Pathania. 2013. <span>“Driving Under the (Cellul
 Cumming, Geoff. 2012. <em>Understanding the New Statistics</em>. New York: Routledge.
 </div>
 <div id="ref-Quene08" class="csl-entry">
-Quené, H. 2008. <span>“Multilevel Modeling of Between-Speaker and Within-Speaker Variation in Spontaneous Speech Tempo.”</span> <em>Journal of the Acoustical Society of America</em> 123 (2): 1104–13.
+Quené, Hugo. 2008. <span>“Multilevel Modeling of Between-Speaker and Within-Speaker Variation in Spontaneous Speech Tempo.”</span> <em>Journal of the Acoustical Society of America</em> 123 (2): 1104–13.
 </div>
 <div id="ref-SK01" class="csl-entry">
 Schuurman, Wouter, and Hans De Kluiver. 2001. <em>Kop of Munt: Kansrekening in Het Dagelijks Leven</em>. Amsterdam: Bert Bakker.
@@ -1506,18 +1508,6 @@ Schuurman, Wouter, and Hans De Kluiver. 2001. <em>Kop of Munt: Kansrekening in H
 <div id="ref-Spie19" class="csl-entry">
 Spiegelhalter, David. 2019. <em>The Art of Statistics: Learning from Data</em>. Pelican.
 </div>
-<div id="ref-Weis15" class="csl-entry">
-Weisstein, Eric W. 2015. <span>“Pascal’s Formula.”</span> Wolfram. <a href="http://mathworld.wolfram.com/PascalsFormula.html">http://mathworld.wolfram.com/PascalsFormula.html</a>.
-</div>
-</div>
-<div class="footnotes">
-<hr />
-<ol start="21">
-<li id="fn21"><p>However, two of the tiles are blank (without any letter); later in this section we will remove these blank tiles from the bag.<a href="ch-probability-distributions.html#fnref21" class="footnote-back">↩︎</a></p></li>
-<li id="fn22"><p>Roulette players can gamble on 36 of the 37 possible outcomes, so in the long term the casino receives a <span class="math inline">\(1/37\)</span> share of all bets.<a href="ch-probability-distributions.html#fnref22" class="footnote-back">↩︎</a></p></li>
-<li id="fn23"><p>Thus, <span class="math inline">\({n \choose x} = {n-1 \choose x} + {n-1 \choose x-1}\)</span> <span class="citation">(<a href="#ref-Weis15" role="doc-biblioref">Weisstein 2015</a>)</span>.<a href="ch-probability-distributions.html#fnref23" class="footnote-back">↩︎</a></p></li>
-<li id="fn24"><p>Estimations of parameters are indicated with a “circumflex” or “hat” above them.<a href="ch-probability-distributions.html#fnref24" class="footnote-back">↩︎</a></p></li>
-</ol>
 </div>
             </section>
 
@@ -1529,7 +1519,6 @@ Weisstein, Eric W. 2015. <span>“Pascal’s Formula.”</span> Wolfram. <a href
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -1569,6 +1558,10 @@ gitbook.start({
 "text": null
 },
 "download": ["QMS-EN.pdf", "QMS-EN.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

@@ -6,8 +6,8 @@
 ]{book}
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{ifxetex,ifluatex}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage{iftex}
+\ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
@@ -115,7 +115,7 @@
   \thm@postskip=\thm@preskip
 }
 \makeatother
-\ifluatex
+\ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
 \usepackage[]{natbib}
@@ -123,7 +123,7 @@
 
 \title{Quantitative Methods and Statistics}
 \author{true}
-\date{Version compiled 15 Jul 2021}
+\date{Version compiled 03 Feb 2022}
 
 \begin{document}
 \maketitle
@@ -223,8 +223,8 @@ HQ is professor in the Quantitative Methods of Empirical Research in the Humanit
 \part*{Part I: Methodology}\label{part-part-i-methodology}}
 \addcontentsline{toc}{part}{Part I: Methodology}
 
-\hypertarget{ch:introduction}{%
-\chapter{Introduction}\label{ch:introduction}}
+\hypertarget{ch-introduction}{%
+\chapter{Introduction}\label{ch-introduction}}
 
 In this textbook, we will discuss the fundamental concepts, methods, and analytic techniques used in empirical scientific inquiry, both in general and as applied to the broad domain of language and communication. We will look at questions such as: What is a good research question? Which methodology is best for answering a given research question? How can researchers draw meaningful and valid conclusions from (statistical analyses of) their data? In this textbook, we will restrict ourselves to the most important fundamental concepts, and to the most important research methodologies and analytical techniques. In this first chapter, we will provide an overview of various types and forms of scientific research. In the following chapters, we will focus most of our attention on scientific research methodologies in which empirical observations are expressed in terms of numbers (quantitative), which may be analysed using statistical techniques.
 
@@ -239,7 +239,7 @@ research is systematic, controlled, empirical, amoral, public, and
 critical investigation of natural phenomena. It is guided by theory and hypotheses about the presumed relations among such phenomena.''
 \end{quote}
 
-Scientific research is systematic and controlled. Scientific research is designed such that its conclusions may be believed, because these conclusions are well-motivated. A research study can be repeated by others, which will (hopefully) lead to the same results. This demand that research be replicable also means that scientific research is designed and conducted in highly controlled ways (see Chapters \ref{ch:integrity} and \ref{ch:design}).
+Scientific research is systematic and controlled. Scientific research is designed such that its conclusions may be believed, because these conclusions are well-motivated. A research study can be repeated by others, which will (hopefully) lead to the same results. This demand that research be replicable also means that scientific research is designed and conducted in highly controlled ways (see Chapters \ref{ch-integrity} and \ref{ch-design}).
 The strongest form of control is found in a scientific experiment: we will therefore devote considerable attention to experimental research (§\ref{sec:experimental-research}). Any possible alternative explanations for the phenomenon studied are looked into one by one and excluded if possible, so that, in the end, we are left with one single explanation \citep{KL00}. This explanation, then, forms our scientifically motivated conclusion on or theory of the phenomenon studied.
 
 The definition above also states that scientific research is empirical. The conclusion a research draws about a phenomenon must ultimately be based on (systematic and controlled) observations of that phenomenon in reality -- for example, on the observed content of a text or the behaviour observed in a participant. If such observation is absent, then any conclusion drawn from such research cannot be logically connected to reality, which means that it has no scientific value. Confidential data from an unknown source or insights gained from a dream or in a mystical experience are not empirically motivated, and, hence, may not form the basis of a scientific theory.
@@ -277,7 +277,7 @@ It is useful to make a distinction between the abstract theoretical construct an
 
 When a concept-as-intended is operationalized, the amount of choices to be made is innumerable. For instance, the Dutch government institute that develops standardized tests for primary and secondary education, the CITO (Centraal instituut voor toetsontwikkeling, or Central Test Development Institute) must develop new reading comprehension tests each year to measure the reading ability exhibited by students taking the centralized final exams for secondary school students (eindexamens). For this purpose, the first step is to choose and possibly edit a text. This text cannot be too challenging for the target audience, but may also not be too easy. Furthermore, the topic of the text may not be too well-known -- otherwise, some students' general background knowledge may interfere with the opinions and standpoints brought forward in the text. At the next step, questions must be developed in such a way that the various parts of the text are all covered. In addition, the questions must be constructed in such a way that the theoretical concept of `reading ability' is adequately operationalized. Finally, exams administered in previous years must also be taken into consideration, because this year's exam may not differ too much from previous years' exams.
 
-To sum up, a construct must be correctly operationalized in order to arrive at observations that are not only valid (a good approximation of the abstract construct, see Chapter \ref{ch:validity}) but also reliable (observations must be more or less identical when measurement is repeated, see Chapter \ref{ch:reliability}). In each research study, the validity and reliability of any instance of measurement are crucial; because of this, we will spend two chapters on just these concepts. However, in instrument validation research, specifically, these concepts are absolutely essential, because this type of research itself is meant to yield valid and reliable instruments that are a good operationalization of the abstract construct-as-intended.
+To sum up, a construct must be correctly operationalized in order to arrive at observations that are not only valid (a good approximation of the abstract construct, see Chapter \ref{ch-validity}) but also reliable (observations must be more or less identical when measurement is repeated, see Chapter \ref{ch-reliability}). In each research study, the validity and reliability of any instance of measurement are crucial; because of this, we will spend two chapters on just these concepts. However, in instrument validation research, specifically, these concepts are absolutely essential, because this type of research itself is meant to yield valid and reliable instruments that are a good operationalization of the abstract construct-as-intended.
 
 \hypertarget{sec:descriptive-research}{%
 \section{Descriptive research}\label{sec:descriptive-research}}
@@ -303,7 +303,7 @@ Experimental research is characterized by the researcher's systematically manipu
 
 The advantage of experimental research is that we may usually interpret the research results as the consequence or effect of the experimental manipulation. Because the research systematically controls the study and varies just one aspect of it (in this case, the method of teaching), possible differences between the performance observed in the two categories can only be ascribed to the aspect that has been varied (the method of teaching). Logically speaking, this aspect that was varied is the only thing that could have cause the observed differences. Thus, experimental research is oriented towards evaluating causal relationships.
 
-This reasoning does require that participants (or groups of students, as in the example above) are assigned to experimental conditions (in our example, the old or the new method of teaching) at random. This random assignment is the best method to exclude any non-relevant differences between the conditions of treatment. Such an experiment with random assignment of participants to conditions is called a \emph{randomized experiment} or \emph{true experiment} \citep{SCC02}. To remain with our example: if the researcher had used the old research method only with boys, and the new research method only with girls, then any difference in performance can no longer just be attributed to the manipulated factor (teaching method), but also to a non-manipulated but definitely relevant factor, in this case, the students' sex. Such a possible disruptive factor is called a confound. In Chapter \ref{ch:design}, we will discuss how we can neutralize such confounds by random assignment of participants (or groups of students) to experimental conditions, combined with other measures.
+This reasoning does require that participants (or groups of students, as in the example above) are assigned to experimental conditions (in our example, the old or the new method of teaching) at random. This random assignment is the best method to exclude any non-relevant differences between the conditions of treatment. Such an experiment with random assignment of participants to conditions is called a \emph{randomized experiment} or \emph{true experiment} \citep{SCC02}. To remain with our example: if the researcher had used the old research method only with boys, and the new research method only with girls, then any difference in performance can no longer just be attributed to the manipulated factor (teaching method), but also to a non-manipulated but definitely relevant factor, in this case, the students' sex. Such a possible disruptive factor is called a confound. In Chapter \ref{ch-design}, we will discuss how we can neutralize such confounds by random assignment of participants (or groups of students) to experimental conditions, combined with other measures.
 
 There also exists experimental research in which a particular aspect (such as teaching method) is indeed systematically varied, but in which participants or groups of students are not randomly assigned to the experimental conditions; this is called \emph{quasi-experimental research} \citep{SCC02}. In the example above, this term would be applicable if teaching method were investigated using data from groups of students for which it was not the researcher, but their teacher who determined whether the old or new teaching method would be used. In addition, the teacher's enthusiasm or teaching style might be a confound in this quasi-experiment. We will encounter various examples of quasi-experimental research in the remainder of this textbook.
 
@@ -355,13 +355,13 @@ In separate subsections, we will also provide instructions on how you can perfor
 
 For students and employees at Utrecht University, these packages are pre-installed in \texttt{MyWorkPlace}.
 
-\hypertarget{ch:research}{%
-\chapter{Hypothesis testing research}\label{ch:research}}
+\hypertarget{ch-research}{%
+\chapter{Hypothesis testing research}\label{ch-research}}
 
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
 
-Many empirical studies pursue the goal of establishing connections between (supposed) causes and their (supposed) effects or consequences. The researcher would like to know whether one variable has an influence on another. Their research tests the hypothesis that there is a connection between the supposed cause and the supposed effect (see Table \ref{tab:causeeffect}). The best way to establish such a connection, and, thus, to test this hypothesis, is an experiment. An experiment that has been set up properly and is well executed is the `gold standard' in many academic disciplines, because it offers significant guarantees concerning the validity of the conclusions drawn from it (see Chapter \ref{ch:validity}). Put differently: the outcome of a good experiment forms the strongest possible evidence for a connection between the variables investigated. As we discussed in Chapter \ref{ch:introduction}, there are also many other forms of research, and hypotheses can also be investigated in other ways and according to other paradigms, but we will limit ourselves here to experimental research.
+Many empirical studies pursue the goal of establishing connections between (supposed) causes and their (supposed) effects or consequences. The researcher would like to know whether one variable has an influence on another. Their research tests the hypothesis that there is a connection between the supposed cause and the supposed effect (see Table \ref{tab:causeeffect}). The best way to establish such a connection, and, thus, to test this hypothesis, is an experiment. An experiment that has been set up properly and is well executed is the `gold standard' in many academic disciplines, because it offers significant guarantees concerning the validity of the conclusions drawn from it (see Chapter \ref{ch-validity}). Put differently: the outcome of a good experiment forms the strongest possible evidence for a connection between the variables investigated. As we discussed in Chapter \ref{ch-introduction}, there are also many other forms of research, and hypotheses can also be investigated in other ways and according to other paradigms, but we will limit ourselves here to experimental research.
 
 \begin{longtable}[]{@{}lll@{}}
 \caption{\label{tab:causeeffect} Possible causes and possible effects.}\tabularnewline
@@ -414,7 +414,7 @@ In hypothesis testing research, we distinguish two types of variables: dependent
 
 The second type of variable is the dependent variable. The \emph{dependent} variable is the variable for which we expect the supposed effect to take place. This means that the independent variable possibly cause an effect on the dependent variable, or: it is presumed that the dependent variable's value depends on the independent variable's value - hence their names. An observed value for the dependent variable is also called a \emph{response} or \emph{score}; oftentimes, the dependent variable itself may also be given these names. In our example where an experiment conducted to evaluate the effect a new teaching method has on students' performance, the student's performance is the dependent variable. Other examples of possible dependent variables include speaking rate, score on a questionnaire, or the rate at which a product is sold (see Table \ref{tab:causeeffect}). In short, any variable could be used as the dependent variable, in principle. It is mainly the research question that determines which dependent variable is chosen, and how it is measured.
 
-This being said, it must be stressed that independent and dependent variables themselves must not be interpreted as `cause' and `effect', respectively. This is because the study has as its goal to convincingly demonstrate the existence of a (causal) connection between the independent and the dependent variable. However, Chapter \ref{ch:validity} will show us how complex this can be.
+This being said, it must be stressed that independent and dependent variables themselves must not be interpreted as `cause' and `effect', respectively. This is because the study has as its goal to convincingly demonstrate the existence of a (causal) connection between the independent and the dependent variable. However, Chapter \ref{ch-validity} will show us how complex this can be.
 
 The researcher varies the independent variable and observes whether this results in differences observed in the dependent variable. If the dependent variable's values differ before and after manipulating the independent variable, we may assume that this is an effect that the manipulation has on the independent variable. We may speak of a relationship between both variables. If the dependent variable's value does not differ under the influence of the independent variable's values, then there is no connection between the two variables.
 
@@ -434,12 +434,12 @@ The goal of scientific research is to arrive at a coherent collection of ``justi
 
 We will illustrate the problem inherent in this generalization or induction step with the belief that `all swans are white'. If I had observed 10 swans that are all white, I might consider this as a motivation for this belief. However, this generalization might be unjustified: perhaps swans also exist in different colours, even if I might not have seen these. The same problem of induction remains even if I had seen 100 or 1000 white swans. However, what if I had seen a single black swan? In that case, I will know immediately and with certainty that the belief of all swans being white is false. This principle is also used in scientific research.
 
-Let us return to our earlier example in which we presumed that a new teaching method will work better than an older teaching method; this belief is called H1. Let us now set this reasoning on its head, and base ourselves on the complementary belief that the new method is \emph{not} better than the old one\footnote{Two beliefs are complementary when they mutually exclude each other, like H1 and H0 in this example.}; this belief is called the null hypothesis or H0. This belief that `all methods have an equal effect' is analogous to the belief that `all swans are white' from the example given in the previous paragraph. How can we then test whether the belief or hypothesis called H0 is true? For this, let us draw a representative sample of students (see Chapter \ref{ch:samples}) and randomly assign students to the new or old teaching method (values of the independent variable); we then observe all participating students' performance (dependent variable), following the same protocol in all cases. For the time being, we presume that H0 is true. This means that we expect no difference between the student groups' performance. If, despite this, the students taught by the new method turn out to perform much better than the students taught by the old method, then this observed difference forms the metaphorical black swan: the observed difference (which contradicts H0) makes it unlikely that H0 is true (provided that the study was valid; see Chapter \ref{ch:validity} for more on this). Because H0 and H1 exclude each other, this means that it is very likely that H1 is indeed true. And because we based our motivation upon H0 and not H1, sceptics cannot accuse us of being biased: after all, we did try to show that there was indeed no difference between the performance exhibited by the students in each group.
+Let us return to our earlier example in which we presumed that a new teaching method will work better than an older teaching method; this belief is called H1. Let us now set this reasoning on its head, and base ourselves on the complementary belief that the new method is \emph{not} better than the old one\footnote{Two beliefs are complementary when they mutually exclude each other, like H1 and H0 in this example.}; this belief is called the null hypothesis or H0. This belief that `all methods have an equal effect' is analogous to the belief that `all swans are white' from the example given in the previous paragraph. How can we then test whether the belief or hypothesis called H0 is true? For this, let us draw a representative sample of students (see Chapter \ref{ch-samples}) and randomly assign students to the new or old teaching method (values of the independent variable); we then observe all participating students' performance (dependent variable), following the same protocol in all cases. For the time being, we presume that H0 is true. This means that we expect no difference between the student groups' performance. If, despite this, the students taught by the new method turn out to perform much better than the students taught by the old method, then this observed difference forms the metaphorical black swan: the observed difference (which contradicts H0) makes it unlikely that H0 is true (provided that the study was valid; see Chapter \ref{ch-validity} for more on this). Because H0 and H1 exclude each other, this means that it is very likely that H1 is indeed true. And because we based our motivation upon H0 and not H1, sceptics cannot accuse us of being biased: after all, we did try to show that there was indeed no difference between the performance exhibited by the students in each group.
 
 The method just described is called falsification, because we gain knowledge by rejecting (falsifying) hypotheses, and not by accepting (verifying) hypotheses. This method was developed by philosopher of science Karl Popper \citep{Popp35, Popp59, Popp63}. The falsification method has interesting similarities to the theory of evolution. Through variation between individual organisms, some can successfully reproduce, while many others die prematurely and/or do not reproduce. Analogously, some tentative statements cannot be refuted, allowing them to `survive' and `reproduce', while many other statements are indeed refuted, through which they `die'. In the words by \citet{Popp63} (p.51, italics removed):
 
 \begin{quote}
-" \ldots{} to explain (the world) \ldots{} as far as possible, with the help of laws and explanatory theories \ldots there is no more rational procedure than the method of trial and error --- of conjecture and refutation: of boldly proposing theories; of trying our best to show that these are erroneous; and of accepting them tentatively if our critical efforts are unsuccessful."
+'' \ldots{} to explain (the world) \ldots{} as far as possible, with the help of laws and explanatory theories \ldots there is no more rational procedure than the method of trial and error --- of conjecture and refutation: of boldly proposing theories; of trying our best to show that these are erroneous; and of accepting them tentatively if our critical efforts are unsuccessful.''
 \end{quote}
 
 Thus, a proper scientific statement or theory ought to be falsifiable or refutable or testable \citep{Popp63}. In other words, it must be possible to prove this statement or theory wrong. A testable statement's scientific motivation, and, therefore, its plausibility increases with each time this statement proves to be immune to falsification, and with each new set of circumstances under which this happens. `Earth's climate is warming up' is a good example of a statement that is becoming increasingly immune to falsification, and, therefore, is becoming increasingly stronger.
@@ -485,7 +485,7 @@ During the induction phase, the presumption voiced in the observation phase is g
 
 For instance, from the observation made in their own social circle that women speak more than men do (more minutes per day, and more words per day), a researcher may induce a general hypothesis: H1: women talk more than men do (see Example 2.2; this hypothesis may be further restricted as to time and location).
 
-In addition, the hypothesis' empirical content must be clearly described, which is to say: the type or class of observations must be properly described. Are we talking about all women and men? Or just speakers of Dutch (or English)? And what about multilingual speakers? And children that are still acquiring their language? This clearly defined content is needed to test the hypothesis (see the subsection on testing below, and see Chapter \ref{ch:testing}).
+In addition, the hypothesis' empirical content must be clearly described, which is to say: the type or class of observations must be properly described. Are we talking about all women and men? Or just speakers of Dutch (or English)? And what about multilingual speakers? And children that are still acquiring their language? This clearly defined content is needed to test the hypothesis (see the subsection on testing below, and see Chapter \ref{ch-testing}).
 
 Finally, a hypothesis also has to be logically coherent: the hypothesis has to be consistent with other theories or hypotheses. If a hypothesis is not logically coherent, it follows by definition that it cannot be unambiguously related to the empirical realm, which means that it is not properly testable. From this, we can conclude that a hypothesis may not have multiple interpretations: within an experiment, a hypothesis, by itself, must predict one single outcome, and no more than one.
 In general, three types of hypotheses are distinguished \citep{Groot61}:
@@ -517,7 +517,7 @@ In practice, the terms ``hypothesis'' and ``prediction'' are often used intercha
 \hypertarget{testing}{%
 \subsection{testing}\label{testing}}
 
-During this phase, we collect empirical observations and compare these to the worked-out predictions made ``under H0'', i.e., the predictions made if H0 were to be true. In Chapter \ref{ch:testing}, we will talk more about this type of testing. Here, we will merely introduce the general principle.
+During this phase, we collect empirical observations and compare these to the worked-out predictions made ``under H0'', i.e., the predictions made if H0 were to be true. In Chapter \ref{ch-testing}, we will talk more about this type of testing. Here, we will merely introduce the general principle.
 (In addition to the conventional ``frequentist'' approach described here, we may also test hypotheses and compare models using a newer ``Bayesian'' approach; however, this latter method of testing is outside the scope of this textbook).
 
 If the observations made are extremely unlikely under H0, there are two possibilities.
@@ -579,7 +579,7 @@ message is spam & correct & Type II error \\
 \bottomrule
 \end{longtable}
 
-If we set the level of significance to a higher value, e.g., \(\alpha = .20\), this also means that the chance of rejecting H0 is much higher. In the testing phase, we would reject H0 if the probability of observing these data (or any more extreme data) were smaller than 20\%. This would mean that 8 times heads within 10 coin tosses would be enough to reject H0 (i.e., judging the coin as unfair). Thus, more outcomes are possible that lead to rejecting H0. Consequently, this higher level of significance entails a greater risk of a Type 1 error, and, at the same time, a smaller risk of a Type II error. The balance between the two type of error depends on the exact circumstances under which the study is conducted, and on the consequences that each of the two types of error might have. Which type of error is worse: throwing away an innocent email, or letting a spam message through? The probability of making a Type I error (the level of significance) is controlled by the researcher themselves. The probability of a Type II error depends on three factors and is difficult to gauge. Chapter \ref{ch:power} will discuss this in more detail.
+If we set the level of significance to a higher value, e.g., \(\alpha = .20\), this also means that the chance of rejecting H0 is much higher. In the testing phase, we would reject H0 if the probability of observing these data (or any more extreme data) were smaller than 20\%. This would mean that 8 times heads within 10 coin tosses would be enough to reject H0 (i.e., judging the coin as unfair). Thus, more outcomes are possible that lead to rejecting H0. Consequently, this higher level of significance entails a greater risk of a Type 1 error, and, at the same time, a smaller risk of a Type II error. The balance between the two type of error depends on the exact circumstances under which the study is conducted, and on the consequences that each of the two types of error might have. Which type of error is worse: throwing away an innocent email, or letting a spam message through? The probability of making a Type I error (the level of significance) is controlled by the researcher themselves. The probability of a Type II error depends on three factors and is difficult to gauge. Chapter \ref{ch-power} will discuss this in more detail.
 
 \hypertarget{evaluation}{%
 \subsection{evaluation}\label{evaluation}}
@@ -604,9 +604,9 @@ During the next phase, the first methodological problems start appearing: the re
 
 If a problem has been successfully formulated and operationalized, a further exploration of the literature follows. This second bout of literature study is much more focussed on the research question that has been worked out by this point, compared to the broad exploration of the literature mentioned earlier. On the grounds of earlier publications, the researcher might reconsider their original formulation of the problem. Not only does one have to look at the literature in terms of theoretical content, but one should also pay attention to examples of how core concepts are operationalized. Have these concepts been properly operationalized, and if there might be different ways of operationalizing them, what is the reason behind these differences? In addition, would it be possible to operationalize the core concepts in such a way that the distance between the concept-as-intended and the concept-as-defined become (even) smaller (§\ref{sec:instrumentation-research})? The pointers given above with regard to searching for academic literature are useful here, as well. After this, the research is to (once again) reflect upon the purpose of the study. Depending on the problem under consideration, questions such as the following should be asked: does the study contribute to our knowledge within a certain domain, does the study create solutions for known stumbling blocks or problems, or does the study contribute to the potential development of such solutions? Does the research question still cover the original problem (or question) identified by superiors or sponsors? Are the available facilities, funds, and practical circumstances sufficient to conduct the study?
 
-During the next step, the researcher must specify how data will be collected. This is an essential step, which influences the rest of the study; for this reason, we will devote an entire chapter to it (Chapter \ref{ch:sampling}). What constitutes the population: language users? Students? Bilingual infants? Speech errors involving consonants? Sentences? And what is the best way to draw a representative sample (or samples) from this population (or populations)? What sample size is best? In addition, this phase involves choosing a method of analysis. Moreover, it is advisable to design a plan of analysis at this stage. Which analyses will be performed, what ways of exploring the data are envisioned?
+During the next step, the researcher must specify how data will be collected. This is an essential step, which influences the rest of the study; for this reason, we will devote an entire chapter to it (Chapter \ref{ch-sampling}). What constitutes the population: language users? Students? Bilingual infants? Speech errors involving consonants? Sentences? And what is the best way to draw a representative sample (or samples) from this population (or populations)? What sample size is best? In addition, this phase involves choosing a method of analysis. Moreover, it is advisable to design a plan of analysis at this stage. Which analyses will be performed, what ways of exploring the data are envisioned?
 
-All the choices mentioned so far are not yet sufficient for finishing one's preparations. One must also choose one's instruments: which devices, recording tools, questionnaires, etc., will be used to make observations? Do suitable instruments already exist? If so, are these easily accessible and does the researcher have permission to use them? If not, instruments must be developed first (§\ref{sec:instrumentatie-onderzoek}). However, in this latter case, the researcher must also take the task upon themselves to first test these instruments: to check whether the data obtained with these instruments conform to the quality standards that are either set by the researcher or that may be generally expected of instruments used in scientific research (in terms of reliability and validity, see Chapters \ref{ch:validity} and \ref{ch:reliability}).
+All the choices mentioned so far are not yet sufficient for finishing one's preparations. One must also choose one's instruments: which devices, recording tools, questionnaires, etc., will be used to make observations? Do suitable instruments already exist? If so, are these easily accessible and does the researcher have permission to use them? If not, instruments must be developed first (§\ref{sec:instrumentatie-onderzoek}). However, in this latter case, the researcher must also take the task upon themselves to first test these instruments: to check whether the data obtained with these instruments conform to the quality standards that are either set by the researcher or that may be generally expected of instruments used in scientific research (in terms of reliability and validity, see Chapters \ref{ch-validity} and \ref{ch-reliability}).
 
 It is only when the instruments, too, have been prepared that the actual empirical study begins: the selected type of data is collected within the selected sample in the selected manner using the selected instruments. During this phase, also, there are various, often practical problems the researcher might encounter. An example from actual practice: three days after a researcher had sent out their questionnaire by mail, a nationwide mail workers' strike was declared, which lasted for two weeks. Unfortunately, the researcher had also given the respondents two weeks' notice to respond by mail. This means that, once the strike was over, the time frame the participants were given to respond had already passed. What was the researcher to do? Lacking any alternatives, our protagonist decided to approach each of the 1020 respondents by phone, asking them to fill out the questionnaire regardless and return it at their earliest convenience.
 
@@ -616,8 +616,8 @@ Finally, the researcher must also report on their study. Without an (adequate) r
 
 This concludes a brief overview of the choices researchers have to make when doing research. Each empirical study consists of a chain of problems, choices, and decisions. The most important choices have been made before the researcher starts collecting data.
 
-\hypertarget{ch:integrity}{%
-\chapter{Integrity}\label{ch:integrity}}
+\hypertarget{ch-integrity}{%
+\chapter{Integrity}\label{ch-integrity}}
 
 \hypertarget{sec:integrity-introduction}{%
 \section{Introduction}\label{sec:integrity-introduction}}
@@ -664,7 +664,7 @@ Given its great cost, research has to be thought through and designed in such a 
 \end{quote}
 
 \begin{quote}
-We then compare two group of \(n = 4\) children each. Even if there were actually a difference of 2 points between both groups (meaning, if the hypothesis were true), this study would still have a mere 51\% chance of yielding a significant difference: the power of the experiment is only .51 (Chapter \ref{ch:power}), because the two groups contain so few participants. It would be better for the four-year-olds and their parents to do engage in other activities (at school, at home, or at work) instead of participating in this study.
+We then compare two group of \(n = 4\) children each. Even if there were actually a difference of 2 points between both groups (meaning, if the hypothesis were true), this study would still have a mere 51\% chance of yielding a significant difference: the power of the experiment is only .51 (Chapter \ref{ch-power}), because the two groups contain so few participants. It would be better for the four-year-olds and their parents to do engage in other activities (at school, at home, or at work) instead of participating in this study.
 \end{quote}
 
 \begin{quote}
@@ -673,12 +673,12 @@ However, if \(n = 30\) children would participate in each of the two groups, and
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-A study's design (see Chapter \ref{ch:ontwerp}) has to be as efficient as possible, and the researcher has to start thinking about it at an early stage. First of all, efficiency depends on choices regarding how the independent variables are manipulated. Is there a separate group of participants for each condition of the independent variable (meaning that conditions vary ``between subjects'', like in example 3.2 above)? In a between-subjects design that involves two groups, we need about \(n = (5.6/d)^2\) subjects in each group (for further explanation of this, see \citet{Gelm07}, and see §\ref{sec:ttest-effectsize}). Or are all participants involved in all conditions (meaning that conditions vary ``within subjects'')? A within-subjects design with two conditions requires only \(n = (2.8/d)^2\) subjects in each condition, and the study will therefore also have lower expenses and indirect cost for a much smaller number of participants. In general, this means that, if possible, it is more efficient (and hence better) to manipulate independent variables within subjects than it is to vary them between subjects.This is not always possible, however, firstly because by definition, individual characteristics only differ between subjects (for example: female/male sex, multilingual/monolingual background, aphasia/no aphasia, etc.). Secondly, we must take proper care to recognize effects of so-called transfer between conditions, which threaten our study's validity (for example: experience, learning, fatigue, maturation); we will discuss such effects further in §\ref{sec:validity}.
+A study's design (see Chapter \ref{ch-design}) has to be as efficient as possible, and the researcher has to start thinking about it at an early stage. First of all, efficiency depends on choices regarding how the independent variables are manipulated. Is there a separate group of participants for each condition of the independent variable (meaning that conditions vary ``between subjects'', like in example 3.2 above)? In a between-subjects design that involves two groups, we need about \(n = (5.6/d)^2\) subjects in each group (for further explanation of this, see \citet{Gelm07}, and see §\ref{sec:ttest-effectsize}). Or are all participants involved in all conditions (meaning that conditions vary ``within subjects'')? A within-subjects design with two conditions requires only \(n = (2.8/d)^2\) subjects in each condition, and the study will therefore also have lower expenses and indirect cost for a much smaller number of participants. In general, this means that, if possible, it is more efficient (and hence better) to manipulate independent variables within subjects than it is to vary them between subjects.This is not always possible, however, firstly because by definition, individual characteristics only differ between subjects (for example: female/male sex, multilingual/monolingual background, aphasia/no aphasia, etc.). Secondly, we must take proper care to recognize effects of so-called transfer between conditions, which threaten our study's validity (for example: experience, learning, fatigue, maturation); we will discuss such effects further in §\ref{sec:validity}.
 The design choice of ``between'' vs ``within'' variation is further discussed in §\ref{sec:betweenwithinparticipants} below.
 
 Being multilingual or being female are characteristics that may only vary between individuals. But other conditions may also vary within individuals, for instance, the day on which a cognitive measurement is taken. Suppose that we expect a difference of \(D = 2\) points between cognitive measurements taken on Monday and on Friday, respectively (with \(s = 4\) and \(d = 0.5\), see example 3.2). If we manipulate the day of measurement between subjects, meaning we make separate groups for children tested on Monday and those tested on Friday, this entails that we need \(n = (5.6/0.5)^2 = 126\) children in each group, yielding a total of \(N = 252\). However, if we manipulate the day of measurement within subjects, meaning that we observe each participant on Monday and also on Friday, this entails that we need a total of just \(N = (2.8/0.5)^2 = 32\) children. The within-subjects design means that far fewer children's routines will need to be disturbed for our cognitive measurements. However, we must be properly aware of learning effects between the first and second measurement, and take appropriate precautionary measures. For instance, we can no longer use the same questionnaires in both conditions.
 
-A study's efficiency also depends on the dependent variable, in particular, on the observations' level of measurement (Chapter \ref{ch:levelsofmeasurement}), accuracy, and reliability (Chapter \ref{ch:reliability}). The lower the level of measurement, the lower also the study's efficiency. As accuracy goes down, the study's efficiency also goes down, and more participants (subjects) and observations will be needed to be able to draw valid conclusions.
+A study's efficiency also depends on the dependent variable, in particular, on the observations' level of measurement (Chapter \ref{ch-levelsofmeasurement}), accuracy, and reliability (Chapter \ref{ch-reliability}). The lower the level of measurement, the lower also the study's efficiency. As accuracy goes down, the study's efficiency also goes down, and more participants (subjects) and observations will be needed to be able to draw valid conclusions.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -807,13 +807,13 @@ The rules for citing sources may sometimes be complex. In addition, authors must
 In writing this textbook we have used Zotero (\url{https://www.zotero.org}),
 combined with BibTeX (\url{https://www.bibtex.org}).
 
-\hypertarget{ch:levelsofmeasurement}{%
-\chapter{Levels of measurement}\label{ch:levelsofmeasurement}}
+\hypertarget{ch-levelsofmeasurement}{%
+\chapter{Levels of measurement}\label{ch-levelsofmeasurement}}
 
 \hypertarget{introduction-1}{%
 \section{Introduction}\label{introduction-1}}
 
-In Chapter \ref{ch:research}, we were already introduced to variables: properties that can take different values. As we know, a variable's value is a way of indicating a property or quality of an object or person. If we are dealing of a dependent variable, this value may also be called a \emph{score} or \emph{response}, often represented with the symbol \(Y\). The way in which a property is expressed in a measurable value is called the variable's \emph{level of measurement}; thus, level of measurement is an inherent property of the variable itself! We distinguish four levels of measurement, in order of increasing informativeness: nominal, ordinal, interval, ratio. For the former two levels of measurement, only discrete categories are distinguished, with or without ordering. The latter two levels of measurement use numerical values, with or without a zero point. We will discuss the levels of measurement in more detail below. Insight into a variable's level of measurement is important for interpreting scores for that variable, and -- as we will see later -- for choosing the correct statistical test to answer a research question.
+In Chapter \ref{ch-research}, we were already introduced to variables: properties that can take different values. As we know, a variable's value is a way of indicating a property or quality of an object or person. If we are dealing of a dependent variable, this value may also be called a \emph{score} or \emph{response}, often represented with the symbol \(Y\). The way in which a property is expressed in a measurable value is called the variable's \emph{level of measurement}; thus, level of measurement is an inherent property of the variable itself! We distinguish four levels of measurement, in order of increasing informativeness: nominal, ordinal, interval, ratio. For the former two levels of measurement, only discrete categories are distinguished, with or without ordering. The latter two levels of measurement use numerical values, with or without a zero point. We will discuss the levels of measurement in more detail below. Insight into a variable's level of measurement is important for interpreting scores for that variable, and -- as we will see later -- for choosing the correct statistical test to answer a research question.
 
 \hypertarget{sec:nominal}{%
 \section{Nominal}\label{sec:nominal}}
@@ -844,8 +844,8 @@ It is always possible to reinterpret data measured at a high level of measuremen
 
 Of course, the opposite is not possible: a variable at a low level of measurement cannot be reinterpreted at a higher level. We would have to add, after the fact, information that we did not collect during the original measurement of this variable. It is therefore imperative to observe the relevant variables at the correct level of measurement. Supposed we wanted to compare body height in adult men and women. If we measure body height at an ordinal level (having defined three categories, \emph{short, medium, and tall}, equally for all individuals), this means that we cannot calculate the average body length, and we can also not use any statistical test that would refer to the average body length. This does not have to be a problem, but it is a good idea to think through the consequences of using a particular level of measurement in advance of the actual measurement.
 
-\hypertarget{ch:validity}{%
-\chapter{Validity}\label{ch:validity}}
+\hypertarget{ch-validity}{%
+\chapter{Validity}\label{ch-validity}}
 
 \hypertarget{introduction-2}{%
 \section{Introduction}\label{introduction-2}}
@@ -994,7 +994,7 @@ When the actually-strong readers that were unjustly classified as non-strong rea
 
 For the study by \citet{Dona83} used as an example here, this means that the difference found between strong and less strong readers is partially due to randomness. Even if the independent variable has no effect, the group of `strong' readers will, on average, perform worse, while the group of `less strong' readers will, on average, perform better. In other words: the difference between the two groups is smaller during the posttest than during the pretest, as a consequence of random variation: regression to the mean. As you may expect, research results may be muddled by this phenomenon. As we saw above, an experimental effect may be weakened or disappear as a consequence of regression to the mean; conversely, regression to the mean can be misidentified as an experimental effect (for extensive discussion, see \citet{RMP18}).
 
-Generally speaking, regression to the mean may occur when a classification is made based on a pretest whose scores are correlated with the scores on the posttest (see Chapter \ref{ch:correlation-regression}). If there is no correlation at all between pretest and posttest, regression to the mean even plays the main role: in this case, any difference between pretest and posttest must be the consequence of regression to the mean. If there is a perfect correlation, regression to the mean does not play a role, but the pretest is also not informative, since (after the fact) it turned out to be completely predictable from the posttest.
+Generally speaking, regression to the mean may occur when a classification is made based on a pretest whose scores are correlated with the scores on the posttest (see Chapter \ref{ch-correlation-regression}). If there is no correlation at all between pretest and posttest, regression to the mean even plays the main role: in this case, any difference between pretest and posttest must be the consequence of regression to the mean. If there is a perfect correlation, regression to the mean does not play a role, but the pretest is also not informative, since (after the fact) it turned out to be completely predictable from the posttest.
 
 Regression to the mean may offer an alternative explanation for an alleged substantial score increase between pretest and posttest for a lower performing group (e.g., less strong readers) compared to a smaller increase for a higher performing group (e.g., strong readers). Conversely, it might also offer an alternative explanation for an alleged score decrease between pretest and posttest for a higher performing group (e.g., strong readers) compared to a lower performing group (e.g., less strong readers).
 
@@ -1018,7 +1018,7 @@ It is better when groups are \emph{not} composed according to one of the measure
 
 Research in education often does not provide the opportunity to randomly assign students in different classes to various conditions, because this may lead to insurmountable organizational problems. These organizational problems involve more than just (randomly) splitting classes, even though the latter may already be difficult to put into practice. The researcher also has to account for possible transfer effects between conditions: students will talk to one another, and might even teach each other the essential characteristics of the experimental condition(s). This is at least one way in which the absence of an effect could be explained. Because of the problems sketched out here, it often occurs that entire classes are assigned to one of the conditions. However, classes consist of students that go to the same school. When students (and their parents) choose a school, self-selection takes place (in the Dutch education system), which leads to differences between conditions (that is, between classes within conditions) in terms of students' initial performance. This means that any differences we find between conditions could also have been caused by students' self-selection of schools.
 
-In the above, we have already indicated the most straightforward way to give different conditions the same initial level: assign students to conditions by chance, or, at random. This method is known as randomization \citep[p.294 ff]{SCC02}. For instance, we might randomize participants' assignment to conditions by giving each student a random number (see Appendix \ref{app:randomnumbers})), and then assigning `even students' to one condition and `odd students', to the other. If participants are randomly assigned to conditions, all differences between participants within the various conditions are based on chance, and are thus averaged out. In this way, it is most likely that there are no systematic differences between the groups or conditions distinguished. However, this is only true if the groups are sufficiently large.
+In the above, we have already indicated the most straightforward way to give different conditions the same initial level: assign students to conditions by chance, or, at random. This method is known as randomization \citep[p.294 ff]{SCC02}. For instance, we might randomize participants' assignment to conditions by giving each student a random number (see Appendix \ref{app-randomnumbers})), and then assigning `even students' to one condition and `odd students', to the other. If participants are randomly assigned to conditions, all differences between participants within the various conditions are based on chance, and are thus averaged out. In this way, it is most likely that there are no systematic differences between the groups or conditions distinguished. However, this is only true if the groups are sufficiently large.
 
 \emph{Randomization}, or random assignment of participants to conditions, is to be distinguished from random sampling from a population (see §\ref{sec:random-samples}) below). In the case of random sampling, we randomly select participants from the population of possible participants to be included in our sample; our goal in this case is that the sample(s) resemble the population from which they are drawn (it is drawn). In the case of randomization, we randomly assign the participants within the sample to the various conditions in the study; our goal in this case is that the samples resemble each other.
 
@@ -1173,7 +1173,7 @@ This famous example illustrates how subtle a researcher's or experimenter's\foot
 \tightlist
 \item
   A further threat to construct validity is caused by the \textbf{guiding influence of pretests}. In many studies, the independent variable is measured repeatedly, both before and after manipulation of the dependent variable: the so-called pretest and posttest. However, the nature and content of the pretest can leave an imprint upon participants. In this manner, a participant may lose his/her naïveté, which lessens the effect of the independent variable (e.g., treatment). Any difference in scores between experimental conditions can thus be explained in several ways. This is because we may be purely dealing with an effect of the independent variable, but we may also be dealing with an effect of the pretest and the independent variable combined. Moreover, sometimes we can explain the lack of an effect by the fact that a pretest has been performed
-  (see the Solomon four group design, in Chapter \ref{ch:design},
+  (see the Solomon four group design, in Chapter \ref{ch-design},
   for a design that takes this possibility into account).
 \end{enumerate}
 
@@ -1249,15 +1249,15 @@ We may assume that this outcome can be generalized \emph{to} the intended popula
 
 Perhaps a later analysis might show that there is a difference between female and male listeners. It is not impossible that women and men might differ in their sensitivity to the speaker's accent. Such an (imagined) outcome would show that we may not generalize \emph{over} sub-populations within our population, even though we may still generalize \emph{to} the target population.
 
-In (applied) linguistic research, researchers often attempt to \emph{simultaneously} generalize \emph{to} two populations of units, namely, \emph{individuals} (or schools, or families) and \emph{stimuli} (words, sentences, texts, etc.). We want to show that the results are true not just for the language users we studied, but for other language users, as well. At the same time, we also want to show that the results are true not just for the stimuli we investigated, but also for other, similar language material in the population from which we drew our sample of stimuli. This simultaneous generalization requires studies to have a complex design, because we see repeated observations both within participants (multiple judgments from the same participant) and within stimuli (multiple judgments on the same stimulus). After the observations have been made, the stimuli, participants, and conditions are combined in a clever way to protect internal validity as best as possible. Naturally, generalization to other language material does require that the stimuli be randomly selected from the (sometimes infinitely large) population of all possible language material (see Chapter \ref{ch:samples}).
+In (applied) linguistic research, researchers often attempt to \emph{simultaneously} generalize \emph{to} two populations of units, namely, \emph{individuals} (or schools, or families) and \emph{stimuli} (words, sentences, texts, etc.). We want to show that the results are true not just for the language users we studied, but for other language users, as well. At the same time, we also want to show that the results are true not just for the stimuli we investigated, but also for other, similar language material in the population from which we drew our sample of stimuli. This simultaneous generalization requires studies to have a complex design, because we see repeated observations both within participants (multiple judgments from the same participant) and within stimuli (multiple judgments on the same stimulus). After the observations have been made, the stimuli, participants, and conditions are combined in a clever way to protect internal validity as best as possible. Naturally, generalization to other language material does require that the stimuli be randomly selected from the (sometimes infinitely large) population of all possible language material (see Chapter \ref{ch-samples}).
 
-\hypertarget{ch:design}{%
-\chapter{Design}\label{ch:design}}
+\hypertarget{ch-design}{%
+\chapter{Design}\label{ch-design}}
 
 \hypertarget{sec:design-introduction}{%
 \section{Introduction}\label{sec:design-introduction}}
 
-Many of the problems around validity discussed in Chapter \ref{ch:validity} can be avoided by properly collecting high-quality data. A study's \emph{design} indicates which schema or plan will be used to collect the required data. Using a proper and strong design allows us to neutralize many of the possible threats to validity, which increases our study's strength. Therefore, it is a good idea to spend a good amount of time thinking through your study's design in advance! Naturally, a study's design must be closely coordinated with the research question at hand: after all, the data obtained in the study must allow the researcher to give a valid answer to the research question.
+Many of the problems around validity discussed in Chapter \ref{ch-validity} can be avoided by properly collecting high-quality data. A study's \emph{design} indicates which schema or plan will be used to collect the required data. Using a proper and strong design allows us to neutralize many of the possible threats to validity, which increases our study's strength. Therefore, it is a good idea to spend a good amount of time thinking through your study's design in advance! Naturally, a study's design must be closely coordinated with the research question at hand: after all, the data obtained in the study must allow the researcher to give a valid answer to the research question.
 
 The research designs discussed in this chapter are but a limited selection of all possible designs. Some designs will be discussed predominantly to indicate what can go wrong with a ``weak'' design; conversely, other designs are popular because they enable us to make our research relatively ``strong''.
 
@@ -1361,7 +1361,7 @@ Summarizing, we can say that this pretest-posttest control group design allows u
 
 It must be said that not all aspects of construct validity have repercussions for a study's design. Some aspects that concern manner of operationalization, such as convergent and divergent validity, are irrelevant to choosing a research design. However, other aspects are, indeed, relevant: the researcher's expectations, attention, motivation, and the guiding influence of pretests.
 
-The pretest-posttest control group research design does not provide adequate guarantees for any of these four threats to construct validity. The researcher's \emph{expectations} may play a role both in the experimental and control conditions, even if it is a different role. This because there are two measurements at two points in time. Moreover, any difference between \texttt{(O2\ –\ O1)} and \texttt{(O4\ –\ O3)} might be attributable to the (additional) \emph{attention} given to the experimental condition: the so-called Hawthorne effect (see example 5.10 in Chapter \ref{ch:validity}). This effect plays a role predominantly if participants in one condition (group) receive more attention compared to the other condition (group), as is the case in the Hawthorne effect.
+The pretest-posttest control group research design does not provide adequate guarantees for any of these four threats to construct validity. The researcher's \emph{expectations} may play a role both in the experimental and control conditions, even if it is a different role. This because there are two measurements at two points in time. Moreover, any difference between \texttt{(O2\ –\ O1)} and \texttt{(O4\ –\ O3)} might be attributable to the (additional) \emph{attention} given to the experimental condition: the so-called Hawthorne effect (see example 5.10 in Chapter \ref{ch-validity}). This effect plays a role predominantly if participants in one condition (group) receive more attention compared to the other condition (group), as is the case in the Hawthorne effect.
 
 A third threat to construct validity is formed by \emph{motivation.} Sometimes, one of the conditions can be so demoralizing that participants in this condition stop seriously participating in the study. Just like in the case of attention, the crucial factor is not so much the appeal of a particular condition, but any differences between conditions in terms of their appeal.
 
@@ -1426,7 +1426,7 @@ So far, we have talked about experimental designs in which one single independen
 
 \begin{figure}
 
-{\centering \includegraphics{figures/DrakeBenElHeni2003Fig2} 
+{\centering \includegraphics[width=48.71in]{figures/DrakeBenElHeni2003Fig2} 
 
 }
 
@@ -1452,7 +1452,7 @@ It is difficult to schematize a factorial research design, because it features m
 
 Combining many factors into one big factorial design may often seem seductive: why not investigate how all these factors interact with one another? However, the most sensible option is not to do this, and, instead, limit the number of factors. Firstly, as we will see later, the number of observation has to keep up with the number of possible combinations of factors. Adding more factors means that many more participants (or other units) are needed. Secondly, it is more difficult to guarantee that all combinations of factors are perfectly comparable \citep[p.266]{SCC02}: may we reasonably compare Tunisian participants listening to Tunisian music in Tunisian with French participants listening to French music in France? The more combinations of factors are featured in the study, the trickier it becomes to ensure that these combinations are comparable. Thirdly, interactions are notoriously difficult to interpret, which also becomes trickier as interactions become more complex and span a greater number of factors. For all of these reasons, it is better to study the effects of multiple factors in separate individual studies \citep{Quene10}.
 
-We will come back later to the analysis and interpretation of data from factorial experimental designs (Chapter \ref{ch:anova}).
+We will come back later to the analysis and interpretation of data from factorial experimental designs (Chapter \ref{ch-anova}).
 In the meantime, we will concentrate on designs that have just one independent variable.
 
 \hypertarget{sec:within-subject-designs}{%
@@ -1465,7 +1465,7 @@ However, some independent variables may also be manipulated within participants.
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{quote}
-\emph{Example 6.6}: \citet{JGSH13} investigated the fluency of participants' speech in their native language (Turkish) and in a non-native language (Dutch). The participants first performed a number of speech production tasks in their native language, a few weeks after which they did the same for Dutch. One of the dependent variables was the number of filled pauses (e.g., \emph{uh, uhm}) per second of speech: the greater the prevalence of pauses, the lesser the degree of fluency. As we might expect, the speakers did turn out to produce more pauses (i.e., speak less fluently) in the non-native language compared to their native language. However, one of the goals of this study was to investigate to which extent we may trace back individual fluency differences in the non-native language to individual fluency differences in the native language. These two measurements turned out to be highly correlated (\(r = 0.73\); see Chapter \ref{ch:correlation-regression} for more on this). Speakers who produce many pauses in their non-native language tend to have many pauses in their native language too. The researchers argue that we must take this correlation into account when teaching and testing speaking ability in a non-native language.
+\emph{Example 6.6}: \citet{JGSH13} investigated the fluency of participants' speech in their native language (Turkish) and in a non-native language (Dutch). The participants first performed a number of speech production tasks in their native language, a few weeks after which they did the same for Dutch. One of the dependent variables was the number of filled pauses (e.g., \emph{uh, uhm}) per second of speech: the greater the prevalence of pauses, the lesser the degree of fluency. As we might expect, the speakers did turn out to produce more pauses (i.e., speak less fluently) in the non-native language compared to their native language. However, one of the goals of this study was to investigate to which extent we may trace back individual fluency differences in the non-native language to individual fluency differences in the native language. These two measurements turned out to be highly correlated (\(r = 0.73\); see Chapter \ref{ch-correlation-regression} for more on this). Speakers who produce many pauses in their non-native language tend to have many pauses in their native language too. The researchers argue that we must take this correlation into account when teaching and testing speaking ability in a non-native language.
 \end{quote}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -1531,8 +1531,8 @@ Despite all the books, manuals, websites, and other instructional materials that
   Once you are collecting data, do \emph{not} make any changes to your research plan. Keep to this plan and the schedule you made. Analyse your data in the way specified in the (previously adjusted) research plan. Do discuss in your report any problems that arose during the study. If serious problems occur, halt your project, and consider starting anew with an improved version of your study.
 \end{enumerate}
 
-\hypertarget{ch:samples}{%
-\chapter{Samples}\label{ch:samples}}
+\hypertarget{ch-samples}{%
+\chapter{Samples}\label{ch-samples}}
 
 In generalizing the outcome of a study to the population or the sample, the quality of the sample is all-important. Does the sample adequately reflect the population? To give an extreme example of this: if a sample consists of girls in the last year of primary education, we cannot properly generalize the results to the population of students in primary education, because the sample does not form a good reflection of this population (which consists of boys and girls in all years of the curriculum).
 
@@ -1541,7 +1541,7 @@ Depending on the method used by the researchers to select participants, many kin
 \hypertarget{sec:convenience-samples}{%
 \section{Convenience samples}\label{sec:convenience-samples}}
 
-Work in the social sciences often uses samples that happen to present themselves to the researcher, so-called \emph{convenience samples}. The researcher carries out the experiment with individuals that happen to be available to them more or less by chance. Some studies use paid or unpaid volunteers. In other studies, students are recruited, who are required to log some number of hours as participants as a part of their studies, or, sometimes, a colleague of the researcher"s sends their own students to participate in the study. A sample of this kind is not without its dangers. The researcher has no control whatsoever over the degree to which results can be generalized to the population. Of course, the researcher does have a population in mind, and will exclude participants that do not form a part of the intended population (such as non-native speakers) from the study, but the researcher cannot say anything about how representative the sample is.
+Work in the social sciences often uses samples that happen to present themselves to the researcher, so-called \emph{convenience samples}. The researcher carries out the experiment with individuals that happen to be available to them more or less by chance. Some studies use paid or unpaid volunteers. In other studies, students are recruited, who are required to log some number of hours as participants as a part of their studies, or, sometimes, a colleague of the researcher''s sends their own students to participate in the study. A sample of this kind is not without its dangers. The researcher has no control whatsoever over the degree to which results can be generalized to the population. Of course, the researcher does have a population in mind, and will exclude participants that do not form a part of the intended population (such as non-native speakers) from the study, but the researcher cannot say anything about how representative the sample is.
 
 It is especially in psychology that this convenience sampling has led to heated discussion. For instance, a survey showed that 67\% of samples used in published studies in psychology performed in the US was exclusively composed of undergraduate students enrolled in Psychology courses at American universities \citep{Henr10}. Naturally, samples like this are hardly representative. As a consequence, the theories based on these data have but a limited scope: they are likely to apply predominantly to the type of individuals (first world, young, highly educated, white) that are also highly represented in the samples \citep{Henr10}. Research in linguistics often also uses a convenience sample. Children that participate as participants often have highly educated parents (who often tend to have a linguistics background themselves, which likely means that they have above-average verbal skills), and adult participants are often students from the researchers' environment, who, therefore, also have above-average levels of education and verbal skill.
 
@@ -1579,12 +1579,12 @@ The second factor that may influence whether a systematic sample is representati
 
 The disruptive trend effect described above can be avoided by \emph{random sampling}. Random sampling may happen in various ways, of which we will discuss three.
 
-The first type is simple random sampling: in this procedure, all elements of the population have an equal chance of being drawn. This may, for instance, be realized by giving all elements a \emph{random} number and, depending on the size of the sample, selecting each \(n\)-th element. For choosing random numbers, researchers can make use of tables of random numbers (see Appendix \ref{app:randomnumbers}). Random numbers can also be generated by calculators, computers, spreadsheet programs, etc. (Using this type of random numbers is advisable, since a ``random'' order created by humans is not truly random.) However, one condition for applying this method is that the elements of the population (sampling space) are registered in advance, so that they may all be given numbers in some way.
+The first type is simple random sampling: in this procedure, all elements of the population have an equal chance of being drawn. This may, for instance, be realized by giving all elements a \emph{random} number and, depending on the size of the sample, selecting each \(n\)-th element. For choosing random numbers, researchers can make use of tables of random numbers (see Appendix \ref{app-randomnumbers}). Random numbers can also be generated by calculators, computers, spreadsheet programs, etc. (Using this type of random numbers is advisable, since a ``random'' order created by humans is not truly random.) However, one condition for applying this method is that the elements of the population (sampling space) are registered in advance, so that they may all be given numbers in some way.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{quote}
-\emph{Example 7.3}: We would like to draw a sample of n = 400 primary schools, which is about 4\% of the population of primary schools in the Netherlands. To do this, we request from the Dutch Ministry of Education, Culture, and Science a list of all 9,000 primary schools; this list is the sampling space. After this, we number all schools with subsequent numbers \((1, 2, 3 \ldots, 9000)\). Finally, we select all primary schools whose number happen to end in 36, 43, 59, or 70 (see Appendix \ref{app:randomnumbers}, first column, last two digits). Using this procedure, we randomly select 4 of 100 possible last-two-digit combinations, or 4\% of all schools.
+\emph{Example 7.3}: We would like to draw a sample of n = 400 primary schools, which is about 4\% of the population of primary schools in the Netherlands. To do this, we request from the Dutch Ministry of Education, Culture, and Science a list of all 9,000 primary schools; this list is the sampling space. After this, we number all schools with subsequent numbers \((1, 2, 3 \ldots, 9000)\). Finally, we select all primary schools whose number happen to end in 36, 43, 59, or 70 (see Appendix \ref{app-randomnumbers}, first column, last two digits). Using this procedure, we randomly select 4 of 100 possible last-two-digit combinations, or 4\% of all schools.
 \end{quote}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -1626,7 +1626,7 @@ You can use the resulting random numbers for randomly selecting units (e.g.~part
 
 In JASP, a column of random numbers can be created by first creating a new variable (column) and subsequently filling that column with random numbers.
 
-To create a new variable, click on the \textbf{+} button to the right of the last column name in the data tab. A ``Create Computed Column'' panel appears, where you can enter a name for the new variable. You can also choose between \texttt{R} and a pointer. These are the two options in JASP to define formulas with which the new (empty) variable is filled; using \texttt{R} code, or manually using JASP. The paragraphs below explain how random numbers can be generated using these two options. Finally, you can check which measurement level the new variable should be (see Chapter \ref{ch:levelsofmeasurement}). For random numbers, you can leave this at \texttt{Scale}. Next, click on \texttt{Create\ Column} to create the new variable. The new variable (empty column) appears as the rightmost variable in the data set.
+To create a new variable, click on the \textbf{+} button to the right of the last column name in the data tab. A ``Create Computed Column'' panel appears, where you can enter a name for the new variable. You can also choose between \texttt{R} and a pointer. These are the two options in JASP to define formulas with which the new (empty) variable is filled; using \texttt{R} code, or manually using JASP. The paragraphs below explain how random numbers can be generated using these two options. Finally, you can check which measurement level the new variable should be (see Chapter \ref{ch-levelsofmeasurement}). For random numbers, you can leave this at \texttt{Scale}. Next, click on \texttt{Create\ Column} to create the new variable. The new variable (empty column) appears as the rightmost variable in the data set.
 
 If the \textbf{R} option is chosen to define the new variable, a field with ``\#Enter your R code here :)'' appears above the data. Here you can enter R code that generates random numbers using R functions. Enter the R code (see below) and click on \texttt{Compute\ column} at the bottom of the field to fill the empty variable with the numbers generated by this R code.\\
 The predefined R function \texttt{runif} may be used to generate \textbf{r}andom values from a flat or \textbf{unif}orm probability distribution, meaning that each number between the lower and upper limit has an equal chance of being sampled. The default limits are \((0,1)\). You may round off the resulting random values to integer numbers, using the predefined R function \texttt{round}.
@@ -1651,7 +1651,7 @@ You can use the resulting random numbers for randomly selecting units (e.g.~part
 \subsection{R}\label{r}}
 
 In R we may generate random numbers using the predefined function \texttt{runif}.
-This function samples \textbf{r}andom values from a flat or \textbf{unif}orm probability distribution, meaning that each number between the lower and upper limit has an equal chance of being sampled. The default limits are \((0,1)\). You may round off the resulting random values to integer numbers, as was done in Appendix \ref{app:randomnumbers}.
+This function samples \textbf{r}andom values from a flat or \textbf{unif}orm probability distribution, meaning that each number between the lower and upper limit has an equal chance of being sampled. The default limits are \((0,1)\). You may round off the resulting random values to integer numbers, as was done in Appendix \ref{app-randomnumbers}.
 
 If you wish to sample random numbers from a normal density distribution (see §\ref{sec:normaldistribution}), then use the function \texttt{rnorm(n,mean,sd)}.
 
@@ -1695,8 +1695,8 @@ After all these recommendations that are worth taking to heart, it is now time t
 \part*{Part II: Descriptive statistics}\label{part-part-ii-descriptive-statistics}}
 \addcontentsline{toc}{part}{Part II: Descriptive statistics}
 
-\hypertarget{ch:frequencies}{%
-\chapter{Frequencies}\label{ch:frequencies}}
+\hypertarget{ch-frequencies}{%
+\chapter{Frequencies}\label{ch-frequencies}}
 
 \hypertarget{introduction-3}{%
 \section{Introduction}\label{introduction-3}}
@@ -1895,11 +1895,11 @@ Descriptives
 
 Select the variable(s) to summarize and place them into the field ``Variables''. Check the option \texttt{Frequency\ tables\ (nominal\ and\ ordinal\ variables)} (below the field with Variables) to obtain frequency tables for all selected variables.
 
-If a variable has higher measurement level (``Scale'', i.e.~interval or ratio, Chapter \ref{ch:levelsofmeasurement}), and you nevertheless want a frequency table of that variable, then you need to adjust the measurement level of that variable to ``Nominal'' or ``Ordinal''. In JASP, you can do so by clicking on the icon for measurement level, preceding the variable name in the column header in the data window.
+If a variable has higher measurement level (``Scale'', i.e.~interval or ratio, Chapter \ref{ch-levelsofmeasurement}), and you nevertheless want a frequency table of that variable, then you need to adjust the measurement level of that variable to ``Nominal'' or ``Ordinal''. In JASP, you can do so by clicking on the icon for measurement level, preceding the variable name in the column header in the data window.
 
 You may also want to divide or ``cut up'' the continuous variable into discrete intervals. This is achieved by first creating a new empty variable, and subsequently filling that variable with the discrete interval values. The resulting variable will be of ordinal measurement level.
 
-To create a new variable, click on the \textbf{+} button to the right of the last column name in the data tab. A ``Create Computed Column'' panel appears, where you can enter a name for the new variable, e.g.~\texttt{troon12\_ordinal}. You can also choose between \texttt{R} and a pointer. These are the two options in JASP to define formulas with which the new (empty) variable is filled; using \texttt{R} code, or manually using JASP. The paragraphs below explain how to create an interval variable using these two options. Finally, you can check which measurement level the new variable should be (see Chapter \ref{ch:levelsofmeasurement}), this should be \texttt{Ordinal}. Next, click on \texttt{Create\ Column} to create the new variable. The new variable (empty column) appears as the rightmost variable in the data set.
+To create a new variable, click on the \textbf{+} button to the right of the last column name in the data tab. A ``Create Computed Column'' panel appears, where you can enter a name for the new variable, e.g.~\texttt{troon12\_ordinal}. You can also choose between \texttt{R} and a pointer. These are the two options in JASP to define formulas with which the new (empty) variable is filled; using \texttt{R} code, or manually using JASP. The paragraphs below explain how to create an interval variable using these two options. Finally, you can check which measurement level the new variable should be (see Chapter \ref{ch-levelsofmeasurement}), this should be \texttt{Ordinal}. Next, click on \texttt{Create\ Column} to create the new variable. The new variable (empty column) appears as the rightmost variable in the data set.
 
 If the \textbf{R} option is chosen to define the new variable, a field with ``\#Enter your R code here :)'' appears above the data. Here you can enter R code that generates random numbers using R functions. Enter the R code (see below) and click on \texttt{Compute\ column} at the bottom of the field to fill the empty variable with the numbers generated by the R code.\\
 This snippet of R code cuts up the continuous variable \texttt{troon2012} into the discrete intervals shown in Table \ref{tab:queensspeech2012pauses}:
@@ -2093,8 +2093,8 @@ in R with the follow commands:
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{ch:centre-and-dispersion}{%
-\chapter{Centre and dispersion}\label{ch:centre-and-dispersion}}
+\hypertarget{ch-centre-and-dispersion}{%
+\chapter{Centre and dispersion}\label{ch-centre-and-dispersion}}
 
 \hypertarget{introduction-4}{%
 \section{Introduction}\label{introduction-4}}
@@ -2476,7 +2476,7 @@ uppermost half is \(Q_3=29\). The interquartile range is
 \hypertarget{sec:outliers}{%
 \subsection{Outliers}\label{sec:outliers}}
 
-In the reading scores in Table \ref{tab:cito}, we encounter one extreme value, namely the score 45, which differs markedly from the mean. A marked value like this is referred to as an``outlier''. The limit for what we consider to be an outlier
+In the reading scores in Table \ref{tab:cito}, we encounter one extreme value, namely the score 45, which differs markedly from the mean. A marked value like this is referred to as an''outlier''. The limit for what we consider to be an outlier
 generally lies at \(1.5 \times \textrm{IQR}\). If a value is more than
 \(1.5 \times \textrm{IQR}\) below \(Q_1\) or above \(Q_3\), we consider that
 observation to be an outlier. Check these observations again (recall the principle of diligence, see §\ref{sec:integrity-introduction}).
@@ -2505,6 +2505,10 @@ median, \(Q_3\), and maximum value. These five characteristics are represented g
 in a so-called ``boxplot'', see
 Figure \ref{fig:cito-boxplot}
 for an example \citep[ §2C]{Tukey77}.
+
+\begin{verbatim}
+## Loading required package: foreign
+\end{verbatim}
 
 \begin{figure}
 \centering
@@ -2874,7 +2878,7 @@ are in fact measured on the same scale (for example, a scale of
 \(1 \dots 100\)), but which nevertheless have different means and/or
 standard deviations, like the scores in
 Tabel \ref{tab:cito}.
-In Chapter \ref{ch:probability-distributions}, we will work more with z-scores.
+In Chapter \ref{ch-probability-distributions}, we will work more with z-scores.
 
 The standard score or z-score has two useful characteristics which you
 should remember. Firstly, the mean is always equal to zero:
@@ -2966,7 +2970,7 @@ For summaries of central tendency and dispersion, check the options (under the h
 
 In JASP, a column of \textbf{standard scores} can be created by first creating a new variable (column) and subsequently filling that column with standard scores.
 
-To create a new variable, click on the \textbf{+} button to the right of the last column name in the data tab. A ``Create Computed Column'' panel appears, where you can enter a name for the new variable, e.g.~\texttt{Lezen\_Z}. You can also choose between \texttt{R} and a pointer. These are the two options in JASP to define formulas with which the new (empty) variable is filled; using \texttt{R} code, or manually using JASP. The paragraphs below explain how standard scores can be computed using these two options. Finally, you can check which measurement level the new variable should be (see Chapter \ref{ch:levelsofmeasurement}). For standard scores, you can leave this at \texttt{Scale}. Next, click on \texttt{Create\ Column} to create the new variable. The new variable (empty column) appears as the rightmost variable in the data set.
+To create a new variable, click on the \textbf{+} button to the right of the last column name in the data tab. A ``Create Computed Column'' panel appears, where you can enter a name for the new variable, e.g.~\texttt{Lezen\_Z}. You can also choose between \texttt{R} and a pointer. These are the two options in JASP to define formulas with which the new (empty) variable is filled; using \texttt{R} code, or manually using JASP. The paragraphs below explain how standard scores can be computed using these two options. Finally, you can check which measurement level the new variable should be (see Chapter \ref{ch-levelsofmeasurement}). For standard scores, you can leave this at \texttt{Scale}. Next, click on \texttt{Create\ Column} to create the new variable. The new variable (empty column) appears as the rightmost variable in the data set.
 
 If the \textbf{R} option is chosen to define the new variable, a field with ``\#Enter your R code here :)'' appears above the data. Here you can enter R code (see below) that produces standardized values.\\
 This snippet of R code produces standard scores of the variable \texttt{Lezen}:
@@ -3119,8 +3123,8 @@ new variable, called here \texttt{zReading} (note the parentheses in the first c
 ## [1] -1.1575990  0.6776189  2.3716662 -0.3105753  0.1129365 -0.7340872
 \end{verbatim}
 
-\hypertarget{ch:probability-distributions}{%
-\chapter{Probability distributions}\label{ch:probability-distributions}}
+\hypertarget{ch-probability-distributions}{%
+\chapter{Probability distributions}\label{ch-probability-distributions}}
 
 \hypertarget{sec:probabilities}{%
 \section{Probabilities}\label{sec:probabilities}}
@@ -3130,7 +3134,7 @@ The average chance of precipitation in the Netherlands is 7\%. My order has a
 10\% chance of being delivered a day later than promised. Chances and probabilities
 play an important role in our daily lives, and also in academic research. After all,
 many hypotheses are probabilistic in nature (see Chapter
-\ref{ch:research}): hypotheses make statements about a
+\ref{ch-research}): hypotheses make statements about a
 difference in the \emph{chances} of outcomes. To be able to draw conclusions with
 respect to these probabilistic hypotheses, we need to know something about
 probabilities and
@@ -3561,7 +3565,7 @@ You could calculate the probability distribution of a normally distributed
 variable \(X\) yourself with the help of the formula
 \eqref{eq:prob-normal} below. However, it is more convenient to
 use a table for it; this can be found in
-Appendix \ref{app:criticalZvalues}.
+Appendix \ref{app-criticalZvalues}.
 Explained in graphical form, the tables provide you, for
 different areas or probabilities \(p\) on the right-hand side under the curve,
 the positive value of \(Z^*\) which constitutes the left-hand limit of the area.
@@ -3581,7 +3585,7 @@ probability to the aforementioned Empirical Rule).
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-In Appendix \ref{app:criticalZvalues}, you can find for convenience not one but two
+In Appendix \ref{app-criticalZvalues}, you can find for convenience not one but two
 tables, each consisting of several column designations and
 and a row of cells. The first table provides you, for different `rounded'
 probabilities \(p\) (columns), the critical values \(Z^*\) (cells), for which the
@@ -3627,7 +3631,7 @@ corresponds with this p-value \(p=0.025\)?
 
 \begin{quote}
 In
-Appendix \ref{app:criticalZvalues}, we take the first subtable. In the column
+Appendix \ref{app-criticalZvalues}, we take the first subtable. In the column
 for p-value \(p=0.025\), we find boundary value
 \(Z^*=1.960\). If we find an observation with \(Z \ge 1.960\) or with
 \(Z \le -1.960\), then we consider that to be an extreme, rare
@@ -3659,7 +3663,7 @@ have to achieve an IQ score of 131 points or higher.
 \begin{quote}
 \emph{Example 10.10:}
 Verify the aforementioned Empirical Rule with the help of
-Appendix \ref{app:criticalZvalues}.
+Appendix \ref{app-criticalZvalues}.
 \end{quote}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -3828,8 +3832,8 @@ distributed.
 \section{What if my variable is not normally distributed?}\label{sec:whatifnotnormal}}
 
 In Part III, we will discuss various statistical tests.
-The tests which we discuss in Chapters \ref{ch:testing} and \ref{ch:power} and
-\ref{ch:anova} however require that the independent
+The tests which we discuss in Chapters \ref{ch-testing} and \ref{ch-power} and
+\ref{ch-anova} however require that the independent
 variable has a normal probability distribution. If a variable does \emph{not} have
 a (approximately) normal probability distribution, then the variable cannot
 simply be used for statistical testing with the statistical tests
@@ -3849,11 +3853,11 @@ the transformation performed!
 Secondly, it is sometimes possible to use another statistical test which does
 not require that the dependent variable is normally distributed. Those are called
 nonparametric tests. We will look at these in more detail in the chapters
-\ref{ch:chi-square-tests} and
-\ref{ch:other-nonpar-tests}.
+\ref{ch-chi-square-tests} and
+\ref{ch-other-nonpar-tests}.
 A disadvantage of those tests is nevertheless that they have less
 statistical power (for a discussion of power,
-see Chapter \ref{ch:power}): they are less sensitive, and thus require larger
+see Chapter \ref{ch-power}): they are less sensitive, and thus require larger
 samples to establish an effect.
 
 \hypertarget{sec:Centrallimittheorem}{%
@@ -3984,7 +3988,7 @@ and
 \(\hat{\sigma}=0.0203\). Since \(\sigma\) is not known, we use
 the \emph{t}-distribution to determine the confidence interval. We
 use the \emph{t}-distribution for \(n=30\) and find a critical value
-\(t^*=2.05\) (see Appendix \ref{app:criticaltvalues}, for \(B=95\)\%).
+\(t^*=2.05\) (see Appendix \ref{app-criticaltvalues}, for \(B=95\)\%).
 According to formula \eqref{eq:t-onesampleCI}, we know with 95\%
 confidence that the unknown population mean \(\mu\) lies
 between \(\overline{x}-2.05\times s_{\bar{x}}\) and \(\overline{x}+2.05\times s_{\bar{x}}\),
@@ -4020,11 +4024,11 @@ average is
   \label{eq:t-onesampleCI}
 \end{equation}
 in which \(t^*\) with \(n-1\) degrees of freedom is found with the help of
-Appendix \ref{app:criticaltvalues}, see
+Appendix \ref{app-criticaltvalues}, see
 §\ref{sec:ttest-freedomdegrees} for more explanation about this.
 
-\hypertarget{ch:correlation-regression}{%
-\chapter{Correlation and regression}\label{ch:correlation-regression}}
+\hypertarget{ch-correlation-regression}{%
+\chapter{Correlation and regression}\label{ch-correlation-regression}}
 
 \hypertarget{introduction-5}{%
 \section{Introduction}\label{introduction-5}}
@@ -4037,7 +4041,7 @@ look in more detail at the distinct ways of establishing whether a ``significant
 the independent and dependent variables. In addition, the researcher might be
 interested in the associations between several dependent variables,
 for example the associations between the judgements of several
-raters or judges (see also Chapter \ref{ch:reliability}).
+raters or judges (see also Chapter \ref{ch-reliability}).
 
 In quasi-experimental research, the difference between
 independent and dependent variables is usually less clear. Several
@@ -4144,7 +4148,7 @@ on the other part). We can estimate what the probability \(p\) is
 of finding this correlation of \(r=0.79\) or stronger in a sample of
 \(n=10\) students, if the association in the population is actually
 nil (i.e.~if \(\rho=0\)). We call this probability \(p\) the
-\emph{significance} of the correlation coefficient; in Chapter \ref{ch:testing},
+\emph{significance} of the correlation coefficient; in Chapter \ref{ch-testing},
 we will look in more detail at this term `significance'.
 In anticipation of this: if this probability \(p\) is smaller than
 \(.05\), then we assume that the correlation found \(r\) is \emph{not by chance},
@@ -4440,9 +4444,11 @@ The best estimation for \(a\) is \[a = \overline{y} - b \overline{x}\]
 
 For linear regression:
 
-\begin{verbatim}
-Analyze > Regression > Linear...
-\end{verbatim}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Analyze \textgreater{} Regression \textgreater{} Linear...}
+\end{Highlighting}
+\end{Shaded}
 
 Choose \texttt{Dependent\ variable:\ Arithmetic} and choose
 \texttt{Independent\ variable:\ Reading}. Under the button \texttt{Statistics}, tick
@@ -4710,7 +4716,7 @@ Note that with or without this option checked, the output table does not adhere 
 \section{Phi}\label{sec:Phi}}
 
 The two variables for which we want to investigate the association are themselves
-not always expressed on an ordinal level of measurement (Chapter \ref{ch:levelsofmeasurement}).
+not always expressed on an ordinal level of measurement (Chapter \ref{ch-levelsofmeasurement}).
 Even if both of the variables are measured only on a nominal level of measurement,
 then a correlation can still be calculated, namely the phi correlation coefficient
 (symbol \(r_\Phi\), with Greek letter ``Phi''). This correlation coefficient can also be used
@@ -4820,7 +4826,7 @@ Analyze > Descriptives > Crosstabs...
 Select the variables \texttt{UrbanRural2} (in the ``Rows'' panel) and \texttt{Arithmetic2}
 (in the ``Columns'' panel) for
 contingency table @ref(tab: cito-contingency-table).\\
-Choose \texttt{Statistics\ldots{}} and tick the option \texttt{Phi\ and\ Cramer’s\ V}!\\
+Choose \texttt{Statistics…} and tick the option \texttt{Phi\ and\ Cramer’s\ V}!\\
 Confirm firstly with \texttt{Continue} and then again with \texttt{OK}.
 
 \hypertarget{jasp-9}{%
@@ -4935,17 +4941,6 @@ In R, we also start by making a contingency table (Table \ref{tab:cito-contingen
 \end{verbatim}
 
 \begin{verbatim}
-## 
-## Attaching package: 'psych'
-\end{verbatim}
-
-\begin{verbatim}
-## The following objects are masked from '.hqenv':
-## 
-##     harmonic.mean, logit
-\end{verbatim}
-
-\begin{verbatim}
 ## [1] 0.65
 \end{verbatim}
 
@@ -4958,25 +4953,25 @@ that there is a causal relation between the variables, in other words
 a correlation does not mean that one variable (e.g.~treatment) is the consequence of
 the other variable (e.g.~cure).
 The common saying for this is ``correlation does not imply
-causation,'' see also Example 6.1 (Chapter \ref{ch:design})
-and accompanying Figure \ref{fig:xkcd552}.
+causation,'' see also Example 6.1 (Chapter \ref{ch-design})
+and accompanying Figure \ref{fig:xkcd552} (borrowed with permission from \url{http://xkcd.com/552} ).
 
-\textbackslash begin\{figure\}
+\begin{figure}
 
-\{\centering \includegraphics{figures/correlation}
+{\centering \includegraphics[width=6.38in]{figures/correlation} 
 
-\}
+}
 
-\textbackslash caption\{\emph{Correlation does not imply causation}, borrowed with permission from \url{http://xkcd.com/552}.\}\label{fig:xkcd552}
-\textbackslash end\{figure\}
+\caption{Correlation does not imply causation}\label{fig:xkcd552}
+\end{figure}
 
-\hypertarget{ch:reliability}{%
-\chapter{Reliability}\label{ch:reliability}}
+\hypertarget{ch-reliability}{%
+\chapter{Reliability}\label{ch-reliability}}
 
 \hypertarget{introduction-6}{%
 \section{Introduction}\label{introduction-6}}
 
-In Chapter \ref{ch:validity}, we talked about, amongst other matters,
+In Chapter \ref{ch-validity}, we talked about, amongst other matters,
 construct validity, the distance between the intended (theoretical)
 concept or construct on the one hand, and the independent or dependent variable
 on the other hand. In this Chapter, we will look at another very important
@@ -4989,7 +4984,7 @@ Often validity and reliability are mentioned in the same breath, and discussed i
 chapters. There is something to be said for this, since both concepts are about how you define and
 operationalise your variables. Nevertheless, we have chosen a different ordering here. Reliability
 will only be discussed following our discussion of correlation (Chapter
-\ref{ch:correlation-regression}), since reliability is based on the relation or correlation
+\ref{ch-correlation-regression}), since reliability is based on the relation or correlation
 between observations.
 
 \hypertarget{what-is-reliability}{%
@@ -5059,7 +5054,7 @@ measurement is stable: five minutes later, the same weighing scale with the same
 person under the same circumstances will also yield (almost)
 the same measurement. Stability is often expressed in a so-called
 correlation coefficient (a measurement for association, see Chapter
-\ref{ch:correlation-regression}). This correlation coefficient can assume all
+\ref{ch-correlation-regression}). This correlation coefficient can assume all
 values between \(+1\) and \(-1\). The more similar the first and second measurement,
 the higher the correlation is, and the higher the association between the first and second
 measurement. Conversely, the lower the association between the first and second
@@ -5261,7 +5256,7 @@ First, reliability can be interpreted as the proportion of
 true score variance (see formula \eqref{eq:rho-reliability}), or
 as the proportion of variance which is ``systematic''.
 This is different from the proportion of variance resulting from the concept-as-defined,
-the ``valid'' variance (see Chapter \ref{ch:validity}).
+the ``valid'' variance (see Chapter \ref{ch-validity}).
 The variance resulting from the concept-as-defined is part of the proportion of
 true score variance.
 However, many other factors may systematically influence
@@ -5491,7 +5486,7 @@ When a measurement is reliable, then ``something'' has been measured reliably.
 But this still does not show \emph{what} has been measured! There is a
 relation between reliability (how measurements are made) and construct
 validity (what is measured, see
-Chapter \ref{ch:validity}), but these two terms are not identical.
+Chapter \ref{ch-validity}), but these two terms are not identical.
 Sufficient reliability is a requirement for validity, but
 is not a sufficient condition for it. Put otherwise: a test which
 is not reliable can also not be valid (since this test also measures noise),\\
@@ -5547,7 +5542,7 @@ As Scale label, fill in an indication of the construct, e.g.
 \texttt{language\ proficiency}.\\
 As a method, choose \texttt{Alpha} for Cronbach's Alpha (see formula
 \eqref{eq:cronbach-corr})\\
-Choose \texttt{Statistics\ldots{}}, tick: Descriptives for
+Choose \texttt{Statistics…}, tick: Descriptives for
 \texttt{Item,\ Scale,\ Scale\ if\ item\ deleted}, Inter-Item \texttt{Correlations},
 Summaries \texttt{Means,\ Variances}, and confirm with \texttt{Continue} and again
 with \texttt{OK}.
@@ -5665,22 +5660,22 @@ The output confirms that the inter-rater correlation between raters 1 and 2 is r
 \part*{Part III: Inferential statistics}\label{part-part-iii-inferential-statistics}}
 \addcontentsline{toc}{part}{Part III: Inferential statistics}
 
-\hypertarget{ch:testing}{%
-\chapter{Testing hypotheses}\label{ch:testing}}
+\hypertarget{ch-testing}{%
+\chapter{Testing hypotheses}\label{ch-testing}}
 
 \hypertarget{sec:testing-introduction}{%
 \section{Introduction}\label{sec:testing-introduction}}
 
 From this chapter onwards, we will be concerned with the testing of
 research hypotheses and, in particular, with null hypothesis significance testing (NHST),
-as explained in Chapter \ref{ch:research}.
+as explained in Chapter \ref{ch-research}.
 
 Over the course of the years, a large number of techniques have been developed
 for tests like this. The tests with which we will concern ourselves
 are the most used and can be divided into parametric
 and non-parametric tests. Parametric tests assume that the dependent
 variable is (at least) measured on an interval level of measurement (see
-Chapter~\ref{ch:levelsofmeasurement}), and that the measured outcomes or
+Chapter~\ref{ch-levelsofmeasurement}), and that the measured outcomes or
 scores are normally distributed (see
 §\ref{sec:normaldistribution} and §\ref{sec:whatifnotnormal}).
 For non-parametric tests, dependent on the technique,
@@ -5690,7 +5685,7 @@ distribution free tests. The consequence is that the testing
 is a little less `sensitive' under otherwise equal circumstances, i.e.
 that the null hypothesis can be rejected less often in
 otherwise equal circumstances. These tests therefore have less power (see
-Chapter \ref{ch:power}). Researchers thus usually prefer parametric
+Chapter \ref{ch-power}). Researchers thus usually prefer parametric
 tests.
 
 We already discussed the general principle of testing briefly in
@@ -5723,8 +5718,8 @@ In this example, the probability \(P\) is very small.
 
 For the argumentation, it is essential that the data are valid and
 reliable --- this is precisely the reason why we discussed validity
-(Chapter \ref{ch:validity}) and reliability
-(Chapter~\ref{ch:reliability}). If we have done everything properly,
+(Chapter \ref{ch-validity}) and reliability
+(Chapter~\ref{ch-reliability}). If we have done everything properly,
 we can, after all, trust the data obtained.
 We are then \emph{not} reasonably able to attribute the low probability of the data according
 to H0 to errors in operationalisation, or measurement errors, or other deviations in the data.
@@ -5818,16 +5813,16 @@ is \(t=7.9\) according to formula \eqref{eq:t-onesample} below.
 
 The probability distribution of test statistic \(t\) under H0 is known;
 you can find the boundary value \(t^*\) in
-Appendix \ref{app:criticaltvalues}. Put otherwise, if the test statistic \(t\)
+Appendix \ref{app-criticaltvalues}. Put otherwise, if the test statistic \(t\)
 is larger than the boundary value \(t^*\) which is stated in the table then
 \(P(t|\textrm{H0})<\alpha\). To be able to use the table in Appendix
-\ref{app:criticaltvalues}, we still have to introduce a new term,
+\ref{app-criticaltvalues}, we still have to introduce a new term,
 namely the number of degrees of freedom. That term is
 explained in
 §\ref{sec:ttest-freedomdegrees} below.
 
 With the number of degrees of freedom, you can look in Appendix
-\ref{app:criticaltvalues} to see which boundary value \(t^*\) is needed
+\ref{app-criticaltvalues} to see which boundary value \(t^*\) is needed
 to achieve a certain p-value for the established test statistic
 \(t=7.9\). Let us see what the p-value is for the established
 test statistic \(t=7.9\). We firstly look for the degrees of freedom (`d.f.') in the left column.
@@ -5900,7 +5895,7 @@ must be satisfied in order to be able to use the test.
 \begin{itemize}
 \item
   The data must have been measured on an interval level of measurement (see
-  Chapter \ref{ch:levelsofmeasurement}).
+  Chapter \ref{ch-levelsofmeasurement}).
 \item
   All the observations have to be independent of each other.
 \item
@@ -6035,14 +6030,14 @@ say \(\overline{x}=68\), then we would not even conceive of statistical testing:
 the H0 simply still stands. It is only when we find a difference
 in the hypothesised direction that it is meaningful to inspect whether
 this difference is significant. When you look now at the figure in
-Appendix \ref{app:criticaltvalues}, then this is also the case. The \(p\)-value
+Appendix \ref{app-criticaltvalues}, then this is also the case. The \(p\)-value
 corresponds with the area of the coloured region.
 
 If the alternative hypothesis H1 does \emph{not} specify the direction of the
 difference, then a complication arises. Differences in any of the two possible directions
 are relevant. We speak then of two-sided tests or two-tailed tests.\\
 To calculate the two-sided p-value, we multiply the \(p\)-value from
-Appendix \ref{app:criticaltvalues} by \(2\) (because we are now looking at two
+Appendix \ref{app-criticaltvalues} by \(2\) (because we are now looking at two
 coloured regions, on the lower and upper sides of the probability distribution).
 
 In the grammar test example, let us now use a two-sided test. We
@@ -6104,7 +6099,7 @@ The mean score of Linguistics students (class of 2013) is
 
 In Figure \ref{fig:gramm2013CIs}, you can see the results of
 a computer simulation to illustrate this. This figure is made in the same way as Figure
-\ref{fig:tempo95CIs} in Chapter \ref{ch:probability-distributions} and
+\ref{fig:tempo95CIs} in Chapter \ref{ch-probability-distributions} and
 illustrates the same point. We have drawn \(100\times\) samples from Linguistics students,
 with \(\mu=84.4\) and \(\sigma=8.4\) (see §\ref{sec:standarddeviation}) and \(N=34\).
 For each sample, we have drawn the 95\%
@@ -6216,7 +6211,7 @@ of \(\overline{x_1}=95\) words (\(s_1=82\)), and for the boys it is
 test statistic \(t\) according to the formula
 \eqref{eq:t-homoskedastic}, resulting in \(t=0.88\) with 122 d.f. We look for the
 accompanying critical value \(t^*\) again in Appendix
-\ref{app:criticaltvalues}. In the row for 100 d.f. (after rounding down),
+\ref{app-criticaltvalues}. In the row for 100 d.f. (after rounding down),
 we find \(t^*=1.984\) in the fourth column. For two-sample testing
 we have to double the p-value which belongs to this column
 (see §\ref{sec:ttest-onesidedtwosided}), resulting in \(p=.05\). The
@@ -6235,7 +6230,7 @@ As a second example, we take a study of the speech tempo of two groups
 of speakers, namely originating from the West (first group) and
 from the North (second group) of the Netherlands. The speech tempo
 is expressed here as the mean duration of a spoken syllable, in seconds,
-over an interview of ca. 15 minutes (see Example \ref{ch:anova}.1).
+over an interview of ca. 15 minutes (see Example \ref{ch-anova}.1).
 We investigate H0: \(\mu_W = \mu_N\) with
 two-sample testing. From the results, it appears that those from the West
 (\(n=20\)) have a mean syllable duration of
@@ -6244,7 +6239,7 @@ two-sample testing. From the results, it appears that those from the West
 we again determine the test statistic \(t\) according to the formula
 \eqref{eq:t-homoskedastic}, resulting in \(t=-3.76\) with 38 d.f. We look for
 the accompanying critical value again in Appendix
-\ref{app:criticaltvalues}. The correct d.f. are not stated in the table
+\ref{app-criticaltvalues}. The correct d.f. are not stated in the table
 so we round them down (i.e.~in the conservative direction) to
 30 d.f. In the row, we find \(t^*=2.042\) in the fourth column.
 For two-sample testing, we have to double the p-value corresponding to
@@ -6345,7 +6340,7 @@ an estimation of \(37.99 \approx 38\) d.f. The conservative lower limit is
 \(n_1-1 = n_2-1 = 19\). The liberal upper limit is \(n_1+n_2 -2 = 38\).
 
 When using the table with critical values \(t*\), in
-Appendix \ref{app:criticaltvalues}, it is usually advisable to use the table row
+Appendix \ref{app-criticaltvalues}, it is usually advisable to use the table row
 with the rounded \emph{down} degrees of freedom, i.e.~first-following \emph{smaller} d.f..
 Hence, for this example, you would use \(t*\) critical values in the row with \(30\) d.f.
 (see also §\ref{sec:ttest-onesample} above).
@@ -6463,7 +6458,7 @@ If checked in the input, descriptive statistics and summary plots are also repor
 
 The Student's \(t\)-test is also used to investigate a difference between the
 means of two dependent or paired observations. This is the case if we only draw
-one sample (see Chapter \ref{ch:samples}), and then collect two observations
+one sample (see Chapter \ref{ch-samples}), and then collect two observations
 from the members of this sample,
 namely one observation under each of the conditions. The two
 observations are then paired, i.e.~related to each other,
@@ -6521,7 +6516,7 @@ in the usual manner (see
 standard deviation to calculate the test statistic \(t\) via formula
 \eqref{eq:t-pairedsamples}, with \((N-1)\) degrees of freedom. Finally,
 we again use
-Appendix \ref{app:criticaltvalues} to determine the critical value.
+Appendix \ref{app-criticaltvalues} to determine the critical value.
 and with it, the p-value \(p\) for the value of the sample size
 \(t\) under H0.
 
@@ -6529,7 +6524,7 @@ For the above example with \emph{U} or \emph{je} as forms of address,
 we thus find \(\overline{D}=-2.2\) and \(s_D=1.0\). If we put this into
 formula \eqref{eq:t-pairedsamples}, we find \(t=-6.74\) with \(N-1=9\) d.f.
 We again look for the corresponding critical value \(t^*\)
-in Appendix \ref{app:criticaltvalues}. Thereby, we ignore the sign of \(t\),
+in Appendix \ref{app-criticaltvalues}. Thereby, we ignore the sign of \(t\),
 because, after all, the probability distribution of \(t\) is symmetric.
 In the row for 9 d.f., we find \(t^*=4.297\) in the last column.
 For two-sided testing, we have to double the p-value corresponding to this
@@ -6622,7 +6617,7 @@ The data from the above example can be found in the file \texttt{data/ujedata.cs
 ##  Paired t-test
 ## 
 ## data:  cond.u and cond.je
-## t = -6.7361, df = 9, p-value = 0.00008498
+## t = -6.7361, df = 9, p-value = 8.498e-05
 ## alternative hypothesis: true difference in means is not equal to 0
 ## 95 percent confidence interval:
 ##  -2.938817 -1.461183
@@ -6683,7 +6678,7 @@ differences, i.e.~usually large differences. We have to appreciate
 that studies also entail costs in terms of money, time,
 effort, privacy, and loss of naïveté for other studies
 (see Chapter
-\ref{ch:integrity}). We thus do not what to want to perform studies
+\ref{ch-integrity}). We thus do not what to want to perform studies
 on trivial effects needlessly. A researcher should thus determine in advance
 what the smallest effect is that he/she wants to be able to detect, e.g.
 1 point difference in the score of the grammar test. Differences smaller than
@@ -7012,7 +7007,7 @@ effect size:
 (see the correspond
 formula \eqref{eq:t-onesampleCI}).
 
-After substituting \(t^*_9=2.262\) (see Appendix~\ref{app:criticaltvalues}) and
+After substituting \(t^*_9=2.262\) (see Appendix~\ref{app-criticaltvalues}) and
 \(\textrm{se}_d = 0.519\), we eventually find a 95\% confidence interval of \((-3.30,-0.96)\).
 We thus
 know with 95\% confidence that the unknown effect size in the population
@@ -7025,8 +7020,8 @@ about the extent or size of the effect is often more useful and more interesting
 than the binary decision of whether or not there is an effect (whether or not
 to reject H0) \citep{Cumm12}.
 
-\hypertarget{ch:power}{%
-\chapter{Power}\label{ch:power}}
+\hypertarget{ch-power}{%
+\chapter{Power}\label{ch-power}}
 
 \hypertarget{sec:power-introduction}{%
 \section{Introduction}\label{sec:power-introduction}}
@@ -7036,7 +7031,7 @@ observed differences or effects (or of even larger differences or effects
 than observed) if H0 were true, and thus if
 the observed difference had to be attributed solely to chance
 (see §\ref{sec:empiricalcycle} and
-Chapter~\ref{ch:testing}). If the probability \(P\) is very small, then
+Chapter~\ref{ch-testing}). If the probability \(P\) is very small, then
 we have thus found results which are very improbable if H0 were true.
 We then conclude that H0 is presumably \emph{not true} and we thus reject
 H0. We then call the difference or effect found, the ``significant''
@@ -7173,7 +7168,7 @@ The increase is steeper (power increases more quickly) with larger
 effects (right-hand side) than with smaller effects (left-hand side). Put differently:
 with small effects, the sample is actually always too small to detect
 these small effects with sufficient power. We already saw that in
-Example 13.3 (Chapter \ref{ch:testing}).
+Example 13.3 (Chapter \ref{ch-testing}).
 
 The two figures \ref{fig:powercontours-alpha01} and
 \ref{fig:powercontours-alpha05} are based on the comparison between two groups which are equally large, each with
@@ -7228,7 +7223,7 @@ a treatment method which is actually better is not recognised as such,
 a patient is not or wrongly diagnosed, a useful innovation is wrongly pushed
 aside. This error hinders the growth of our knowledge and our insight, and hinders
 scientific progress (see also
-Example 3.2 in Chapter \ref{ch:integrity}).
+Example 3.2 in Chapter \ref{ch-integrity}).
 
 \begin{figure}
 \centering
@@ -7252,7 +7247,7 @@ instruments? All that follow up research is \emph{superfluous} though: the mixed
 picture from these studies can be explained by the small
 power of each study. The needless and superfluous follow up research
 costs much time and money (and indirect costs,
-see Chapter \ref{ch:integrity}), and comes at the cost of other, more useful
+see Chapter \ref{ch-integrity}), and comes at the cost of other, more useful
 research \citep[p.118]{Schm96}. Put otherwise: one well designed study
 with power which is more than sufficient can avoid many needless follow up studies.
 
@@ -7296,8 +7291,8 @@ a study with insufficient power is after all in opposition with the earlier disc
 ethical and moral principles of diligence and responsibility
 (§\ref{sec:integrity-introduction}).
 
-\hypertarget{ch:anova}{%
-\chapter{Analysis of variance}\label{ch:anova}}
+\hypertarget{ch-anova}{%
+\chapter{Analysis of variance}\label{ch-anova}}
 
 \hypertarget{sec:introduction}{%
 \section{Introduction}\label{sec:introduction}}
@@ -7354,11 +7349,9 @@ The values of this factor are also referred to as `levels', or in many studies
 as `groups' or `conditions'. Each level or each group or condition forms
 a `cell' of the design, and the observations from that cell are also
 called `replications' (consider why they are called this).
-The speech tempo is the dependent variable. The null hypothesis is that the
-dependent variable means are equal for all groups, thus
+The speech tempo is the dependent variable. The null hypothesis is that the dependent variable means are equal for all groups, thus
 H0: \(\mu_M = \mu_N = \mu_Z = \mu_W\). If we reject H0, then that means
-\emph{only} that not all means are equal, but it does \emph{not} mean that each group
-mean deviates from each other group mean. For this, a further (post-hoc)
+\emph{only} that not all means are equal, but it does \emph{not} mean that each group mean deviates from each other group mean. For this, a further (post-hoc)
 study is necessary; we will return to this later.
 
 \begin{longtable}[]{@{}lccc@{}}
@@ -7868,7 +7861,7 @@ If the sum of these products is null, then the two
 contrasts are orthogonal.
 
 \hypertarget{sec:anova-oneway-posthoc}{%
-\subsection{Post-hoc comparisons}\label{sec:anova-oneway-posthoc}}
+\subsection{Post hoc comparisons}\label{sec:anova-oneway-posthoc}}
 
 In many studies, a researcher has no idea about the expected differences
 between the groups or conditions. Only after the analysis of variance,
@@ -7999,16 +7992,18 @@ The command in the Syntax window should eventually look like the one
 below, after you have added the line \texttt{/CONTRAST}. The command
 must be terminated with a full stop.\\
 
-\begin{verbatim}
-UNIANOVA score BY colour
-  /METHOD=SSTYPE(1)
-  /INTERCEPT=INCLUDE
-  /EMMEANS=TABLES(colour) 
-  /PRINT=ETASQ HOMOGENEITY
-  /CRITERIA=ALPHA(.05)
-  /DESIGN=colour
-  /CONTRAST(colour)=special(0.5 0.5 -1, 1 -1 0).
-\end{verbatim}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{UNIANOVA score BY colour}
+\NormalTok{  /METHOD=SSTYPE(1)}
+\NormalTok{  /INTERCEPT=INCLUDE}
+\NormalTok{  /EMMEANS=TABLES(colour) }
+\NormalTok{  /PRINT=ETASQ HOMOGENEITY}
+\NormalTok{  /CRITERIA=ALPHA(.05)}
+\NormalTok{  /DESIGN=colour}
+\NormalTok{  /CONTRAST(colour)=special(0.5 0.5 {-}1, 1 {-}1 0).}
+\end{Highlighting}
+\end{Shaded}
 
 Place the cursor somewhere between the word \texttt{UNIANOVA} and the terminating
 full stop, and then click on the large green arrow to the right (\texttt{Run\ Selection})
@@ -8290,29 +8285,51 @@ score deviates from the predicted value based on the two main effects.
 \subsection{An intuitive explanation}\label{an-intuitive-explanation}}
 
 In many studies, we are interested in the \emph{combined} effects
-of two or more factors. In
-Table~\ref{tab:sylduration2way}, we already saw mean speech tempos,
-split up according to the speaker's region of origin and sex.
-If the differences between the regions are different for men compared with
-women, or put differently, if the differences between men and women are
-different for the different regions then we speak of an interaction. By adding
-a second factor into the study, we thus have to deal with a third factor,
-namely the interaction between the first and second factor\footnote{If we add more factors then the situation quickly becomes confusing.
+of two or more factors. We will use the following example for an intuitive explanation.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{quote}
+\emph{Example 15.5}:
+Pupils and students need to read a lot of texts (such as this one!).
+Presumably, a textbook text is easier to read and comprehend, if the text is enriched with elements that mark its structure, such as sub-headings, cue words (e.g., \emph{however}, \emph{because}), etc.
+\citet{DBE12} investigated whether study texts with such structural markers were easier to comprehend than alternative versions of the same texts without those markers. Hence the first factor is the version, with markers present or absent in the text.
+\end{quote}
+
+\begin{quote}
+The researchers also expect an effect of the reading skill of the participants. Weak readers will understand less of a text than strong readers. Hence the second factor is the type of reader, here categorized as `weak', `average' or `strong'.
+\end{quote}
+
+\begin{quote}
+Moreover, the researchers also expect that weak readers will need the structure markers more than strong readers will, and that weak weak readers will benefit more from the markers than strong readers; ``strong readers are able to read and understand texts, irrespective of the presence of structural markers'' \citep[p.33, transl.HQ]{DBE12}.
+Hence the researchers also expect an \textbf{interaction} between the two main factors: the differences between the versions will be different across the types of readers, or in other words, the differences between the reader types will be different across the versions of the texts.
+\end{quote}
+
+\begin{quote}
+The results in Figure \ref{fig:DBE12interaction} show these three effects on the comprehension score, for one of the texts in this study. First, the comprehension scores are indeed better (higher) for the version with markers (light) than for the version without markers (dark). Second, the reader types perform differently: in general, weak readers obtain lower scores than average readers, and in general, strong readers obtain higher scores.
+\end{quote}
+
+\begin{quote}
+However, the most striking effect is the interaction: the effect of markers in the text is far larger for weak readers than for strong readers, as predicted. In other words, the differences between weak, average and strong readers are large in the text version without markers, but far smaller or even absent in the version with markers in the text.
+\end{quote}
+
+\textbackslash begin\{figure\}
+\includegraphics[width=15.86in]{figures/DBE2012interaction_v2} \textbackslash caption\{Average comprehension score (along Y axis, with 95\% confidence intervals), for text versions with (met) and without (zonder) structure markers, for weak (zwak), average (gemidd) and strong (sterk) readers (after Van Dooren, Van den Bergh and Evers-Vermeul, 2012).\}\label{fig:DBE12interaction}
+\textbackslash end\{figure\}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+If a significant interaction is present, as in the example above, then we can no longer draw conclusions about the main effects involved in that interaction. This is because the effect of a factor now depends on the levels of the other factor, i.e., on the interaction with other factor(s) \footnote{If we add more factors then the situation quickly becomes confusing.
   With three main effects, there are already 3 two-way interactions plus 1 three-way
   interaction. With four main effects, there are already 6 two-way interactions, plus
   4 three-way interactions, plus 1 four-way interaction.}.
+In the example above: the difference in comprehension scores between the text versions (factor A) is large for weak readers, but absent for strong readers. The difference between reader types (factor B) is larg for a text without markers, but far smaller for a text with structural markers.
 
-If a significant interaction is present then we can no longer make
-general statements about the main effect we are concerned with. After all, the
-impact of a main effect is also dependent on the interaction with
-(an) other main effect(s), as can be seen in
-Figure~\ref{fig:drakebenelheni2003fig2} (§\ref{sec:factorial-designs}).
-The listener group's scores are \emph{on average}
-not higher compared with those of the other groups,
-and the scores are also \emph{on average} not higher in one condition than in the other.
-The main effects are thus not significant --- but their interaction
-on the other hand is indeed significant. In general, interaction occurs when the effect of one factor varies depending on the different levels of another factor.
-In this example of two-way interaction, the effect of one factor is in opposite directions for the two levels of the other factor.
+We have already seen a different pattern of interaction, in
+Figure \ref{fig:drakebenelheni2003fig2} (§\ref{sec:factorial-designs}).
+There, the scores are \emph{on average} about the same for the two groups of listeners, and \emph{on average} the scores are about the same for the two conditions too. Hence the two main effects are not significant, but their interaction is highly significant. In that study, the effect of the one factor is opposite in the two levels of the other factor.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{a-formal-explanation}{%
 \subsection{A formal explanation}\label{a-formal-explanation}}
@@ -8330,7 +8347,14 @@ In the one-way analysis of variance the total `sums of squares' is split up
 into two components, namely between and within conditions (see
 equation \eqref{eq:SStotal}).
 With the two-way analysis of variance, there are now however
-\emph{four} components:
+\emph{four} components,
+viz.~three between conditions and one within conditions (\emph{w}ithin):
+
+\begin{equation}
+  \label{eq:SStotal2way-short}
+    { SS_t } = SS_A + SS_B + SS_{AB} + SS_{within} 
+\end{equation}
+
 \begin{align}
   \label{eq:SStotal2way}
     { \sum (x_{ijk} - \overline{x})^2 } = &  { \sum_j n_j (\bar{x}_j - \bar{x})^2 } + \\ 
@@ -8344,10 +8368,10 @@ again:
 \begin{align}
   \label{eq:dftotal2}
     { (N-1) } &= (A-1) &+ (B-1) &+ (A-1)(B-1) &+ (N-AB) \\
-    \textrm{df}_t &= \textrm{df}_A &+ \textrm{df}_B &+ \textrm{df}_{AB} &+ \textrm{df}_w
+    \textrm{df}_t &= \textrm{df}_A &+ \textrm{df}_B &+ \textrm{df}_{AB} &+ \textrm{df}_{within}
 \end{align}
 
-Just like with the one-way analysis of variance, we again calculate the
+Just as with the one-way analysis of variance, we again calculate the
 `mean squares' by dividing the sums of squares by their degrees of freedom.
 
 We now test \emph{three} null hypotheses, namely for the two main effects and their
@@ -8360,92 +8384,74 @@ the degrees of freedom and p-values, are carried out by computer
 nowadays.
 
 The results are summarised again in an ANOVA table, which has now been somewhat
-extended in Table \ref{tab:syldur2way-anova}. We now test and report three
-hypotheses. If the interaction is significant, then you should first report
-the interaction, and only then the main effects. After all, the interaction present
-has an influence on how we should interpret the main effects. If the interaction
-is not significant, like in our current example with speech tempos from
-Table~\ref{tab:sylduration2way}, then it is usual to first report the main
-effects, and then the non-significant interaction effect.
-
-\begin{quote}
-The observed speech tempos differ significantly between the four
-regions of origin of the speakers
-\([F(3,71)=6.09, p<.001\), \(\omega^2=.14]\), and men speak significantly faster
-than women \([F(1,71)=15.03, p=.0002, \omega^2=.13]\).
-The two factors show no interaction
-\([F(3,71)=1.41, \textrm{n.s.}, \omega^2=.01]\).
-A post hoc comparison between the regions showed that speakers from
-the West speak significantly more quickly than those from the North (Tukey's
-HSD test, \(p=.0006\)) and from those from the South (\(p=.0164\)); other
-pairwise differences between regions were not significant.
-\end{quote}
+extended in Table \ref{tab:DBE12anova}. We now test and report three hypotheses.
 
 \begin{longtable}[]{@{}lccccc@{}}
-\caption{\label{tab:syldur2way-anova} Summary of two-way analysis of variance of the speech
-tempos in Table~\ref{tab:sylduration2way}.}\tabularnewline
+\caption{\label{tab:DBE12anova} Summary of two-way analysis of variance (ANOVA) of the comprehension scores of two text versions and three reader types.}\tabularnewline
 \toprule
-Source of variance & df & SS & MS & \(F\) & \(p\) \\
+source & df & SS & MS & \(F\) & \(p\) \\
 \midrule
 \endfirsthead
 \toprule
-Source of variance & df & SS & MS & \(F\) & \(p\) \\
+source & df & SS & MS & \(F\) & \(p\) \\
 \midrule
 \endhead
-(i) Regio & 3 & 0.0124 & 0.0041 & 6.09 & \textless.001 \\
-(ii) Sex & 1 & 0.0102 & 0.0102 & 15.03 & \textless.001 \\
-(iii) Region \(\times\) Sex & 3 & 0.0029 & 0.0010 & 1.41 & .248 \\
-within & 71 & 0.0484 & 0.0007 & & \\
+(A) text version & 1 & 91.2663 & 91.2663 & 63.75 & \textless.001 \\
+(B) reader type & 2 & 96.0800 & 48.0400 & 33.56 & \textless.001 \\
+(C) interaction & 2 & 30.7416 & 15.3708 & 10.74 & \textless.001 \\
+within & 88 & 125.9830 & 1.4316 & & \\
 \bottomrule
 \end{longtable}
+
+It is customary to present the results of the main effects before the interaction effects.
+For the interpretation, it matters whether or not the \emph{interaction} is significant.
+If the interaction is significant, then first we present the main effects without interpreting them, then we present and interpret the interaction, and finally we interpret the main effects that are significant and that are not involved in the interaction.
+If the interaction is not significant, then it may be easier to first present and interpret the main effects, and then we present the interaction (which is not interpreted).
+
+\hypertarget{sec:anova-twoway-posthoc}{%
+\subsection{Post hoc comparisons}\label{sec:anova-twoway-posthoc}}
+
+In two-way ANOVA too, we can perform post hoc comparisons (cf.~§\ref{sec:anova-oneway-posthoc}) to investigate which cells or conditions differ from each other. Again we use the Tukey HSD test, which provides a 95\% confidence interval of the difference between two cells, and/or a \(p\) value of that difference.
+
+\begin{quote}
+The comprehension scores showed a significant main effect of structure markings in the text \([F(1,88)=63.75, p<.001, \omega^2=0.26]\), as well as a significant main effect of the reader type \([F(2,88)=33.56, p<.001, \omega^2=0.27]\).
+There was also a significant interaction between text version and reader type \([F(2,88)=10.74, p<.001, \omega^2=0.08]\), see Figure \ref{fig:DBE12interaction}; this interaction was further explored using the Tukey HSD test (among 6 cells).
+Weak readers perform worse than average readers, in the text version without markers (\(p<.001\)), but not in the version with markers (\(p=.999\)).
+Strong readers perform better than average readers, in the version without markers (\(p<.001\)) as well as with markers (\(p=.013\)).
+Text markers have an effect for weak readers (\(p<.001\)) and for average readers (\(p<.001\)) but not for strong readers (\(p=.888\)); hence strong readers do not benefit from structure markers in the text, but weak and average readers do.
+Also of interest is the finding that weak readers understand a text with markers as well as strong readers do understand the same text without markers (\(p=.722\)).
+\end{quote}
 
 \hypertarget{spss-13}{%
 \subsection{SPSS}\label{spss-13}}
 
-\hypertarget{preparation-4}{%
-\subsubsection{Preparation}\label{preparation-4}}
+The data for the example above are in \texttt{data/DBE2012.csv}.
 
-One speaker has a very long average syllable duration; we will ignore this
-observation from now on.
-
-\begin{verbatim}
-Data > Select cases...
-\end{verbatim}
-
-Specify that we are only using observations which satisfy a condition,
-and specify the condition as \texttt{syldur\ \textless{}\ 0.4}.
-
-\hypertarget{anova-and-post-hoc-tests}{%
-\subsubsection{ANOVA and post hoc tests}\label{anova-and-post-hoc-tests}}
+\hypertarget{anova-3}{%
+\subsubsection{ANOVA}\label{anova-3}}
 
 \begin{verbatim}
 Analyze > General Linear Model > Univariate...
 \end{verbatim}
 
-Drag the dependent variable (\texttt{syldur}) to the box Dependent
-variable. Drag the two independent variables (\texttt{sex}, \texttt{region}) to the
-Fixed factor(s) box.\\
-For the post hoc test, select the button \texttt{Post\ Hoc...}. Select the
-\texttt{region} factor and select \texttt{Tukey}. Confirm with \texttt{Continue} and then again
-with \texttt{OK}.
+Drag the dependent variable (\texttt{MCBiScore}) to the panel Dependent
+variable. Drag the two independent variable (with Dutch variable names, \texttt{Versie} for text version, \texttt{Groep} for group or reader type) to the panel Fixed factor(s).
 
 \hypertarget{jasp-14}{%
 \subsection{JASP}\label{jasp-14}}
 
-\hypertarget{preparation-5}{%
-\subsubsection{preparation}\label{preparation-5}}
+\hypertarget{preparation-4}{%
+\subsubsection{preparation}\label{preparation-4}}
 
-One speaker has a very long average syllable duration; we will ignore this observation from now on. We do so by setting a filter which excludes this particular observation. Go to the data sheet, and click on the funnel or filter symbol in the top left cell. A working panel will appear in which you can specify the selection.
-Select the variable \emph{syldur} from the lefthand menu, so that it moves to the working panel. Then click on the symbol \texttt{\textless{}} from the top menu of operators, and place the cursor to the right of the \texttt{\textless{}} symbol on the working panel, and then type \texttt{0.4}. The complete condition on the working panel should now be \texttt{syldur\ \textless{}\ 0.4}.
-Next click on the button \texttt{Apply\ pass-through\ filter} below the working panel in order to apply this filter. In the data sheet, you should see immediately that the row of excluded data (speaker with overlong syllable duration) is greyed out. That row (observation) will no longer be used, until you cancel the selection (instructions for which are in §\ref{sec:jaspttestonesample}).
+The data for the example above are in \texttt{data/DBE2012.csv}.
 
 Examine whether the responses are normally distributed within each group or cell, using the
 techniques from Part II of this textbook (especially
 §\ref{sec:isvarnormaldistributed}).
 Note: In JASP it is possible to examine the distribution at the same time as the analysis of variance itself, see below.
 
-\hypertarget{anova-3}{%
-\subsubsection{ANOVA}\label{anova-3}}
+\hypertarget{anova-4}{%
+\subsubsection{ANOVA}\label{anova-4}}
 
 In the top menu bar, choose:
 
@@ -8453,7 +8459,7 @@ In the top menu bar, choose:
 ANOVA > Classical: ANOVA
 \end{verbatim}
 
-Select the variable \emph{score} and move it to the field ``Dependent Variable'', and move the variables \emph{region} and \emph{sex} to the field ``Fixed Factors''.\\
+Select the variable \emph{MCBiScore} and move it to the field ``Dependent Variable'', and move the variables \emph{Version} (text version) and \emph{Group} (reader type) to the field ``Fixed Factors''.\\
 Under the heading ``Display'' check \texttt{Estimates\ of\ effect\ size}, and select \(\omega^2\) and/or (partial) \(\eta^2\). In this book we prefer \(\omega^2\).
 You can also check \texttt{Descriptive\ statistics} to learn more about the scores in each cell.
 
@@ -8461,9 +8467,9 @@ Open the menu bar named ``Model'' and for ``Sum of squares'' choose option \text
 Open the menu bar named ``Assumption Checks'' and check \texttt{Homogeneity\ tests}.\\
 ``Homogeneity corrections'' may remain at the default value of \texttt{None}.~
 Here you can also examine whether the distribution within each group or cell is normal, as assumed by the analysis of variance. This is equivalent to assuming a normal distribution of the \emph{residuals} of the analysis of variance. You can inspect the latter by checking \texttt{Q-Q\ plot\ of\ residuals}. If the assumption is met (and if residuals are distributed normally) then the residuals should fall on an approximately straight line in the resulting Q-Q plot (see §\ref{sec:isvarnormaldistributed}).\\
-Open the menu bar named ``Descriptive Plots'' and select \emph{region} for the field ``Horizontal Axis'' and select \emph{sex} for the field ``Separate Lines''.
+Open the menu bar named ``Descriptive Plots'' and select \emph{Group} for the field ``Horizontal Axis'' and select \emph{Version} for the field ``Separate Lines''.
 
-The output summarizes the analysis of variance in a table similar to Table \ref{tab:syldur2way-anova}, with the effect size included.
+The output summarizes the analysis of variance in a table similar to Table \ref{tab:DBE12anova}, with the effect size included.
 The \emph{Descriptive plots} section provides a visualisation which may be helpful in understanding a possible interaction effect.
 
 The output under \textbf{Assumption Check} also reports Levene's test for equal variances (homogeneity of variance). This test does not suggest rejection of H0, so we may conclude that the variances are indeed approximately equal, i.e., that that particular assumption of the analysis of variance is warranted.
@@ -8473,57 +8479,69 @@ The output under \textbf{Assumption Check} also reports Levene's test for equal 
 
 For an analysis of variance with post-hoc comparisons we need to specify the post-hoc comparisons. The procedure is initially the same as above, so repeat the instructions given under \textbf{ANOVA} above.
 
-Next, open the bar named ``Post Hoc Tests'', and move the factor \emph{region} to the righthand field.
+Next, open the bar named ``Post Hoc Tests'', and move the interaction \emph{Versie} \(\times\) \emph{Groep} to the righthand field.
 Check that ``Type'' is set to \texttt{Standard} and that the option \texttt{Effect\ size} is also checked.
 Under ``Correction'' check the option \texttt{Tukey}, and under ``Display'' check the option \texttt{Confidence\ intervals}.
 
-The output of the \emph{Post Hoc Tests} shows for each pairwise comparison the difference, the standard error, and the 95\% confidence interval of the difference. If the interval does \emph{not} contain zero, then the scores are probably different between the two groups. For each pairwise comparison JASP reports a \(t\) test with its adjusted \(p\) value using Tukey's correction. We see that speakers from the North and West regions differ, as do speakers from the South and West, with large effect sizes for these two differences. The other differences among regions are not significant.
+The output of the \emph{Post Hoc Tests} shows for each pairwise comparison the difference, the standard error, and the 95\% confidence interval of the difference. If the interval does \emph{not} contain zero, then the scores are probably different between the two groups. For each pairwise comparison JASP reports a \(t\) test with its adjusted \(p\) value using Tukey's correction.
+
+For the version without markers (`zonder') we see that the cell \texttt{zonder:zwak} scores lower than the cell \texttt{zonder:gemiddeld} (\(p<.001\)), and that the cell \texttt{zonder:sterk} scores higher than the cell \texttt{zonder:gemiddeld} (\(p<.001\)).
+For the version with markers (`met') we see that the cell \texttt{met:zwak} scores about equally with the cell \texttt{met:gemiddeld} (\(p=.999\)), and that the cell \texttt{met:sterk} scores higher than the cell \texttt{met:gemiddeld} (\(p=.013\)). Hence strong readers perform better than average and/or weak readers, in both text versions.
+We also see that \texttt{zonder:zwak} scores lower than \texttt{met:zwak} (\(p<.001\)),
+and that \texttt{zonder:gemiddeld} scores lower than \texttt{met:gemiddeld} (\(p<.001\)),
+while there is no difference between \texttt{zonder:sterk} and \texttt{met:sterk} (\(p=.888\)).
+Hence strong readers do not benefit from structure markers in the text.
+Also of interest is the finding that weak readers understand a text with markers as well as strong readers do understand a text without markers (\(p=.722\)).
 
 \hypertarget{r-16}{%
 \subsection{R}\label{r-16}}
 
-\hypertarget{preparation-6}{%
-\subsubsection{preparation}\label{preparation-6}}
+\hypertarget{preparation-5}{%
+\subsubsection{preparation}\label{preparation-5}}
+
+The data for the example above are in \texttt{data/DBE2012.csv}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{require}\NormalTok{(hqmisc) }\CommentTok{\# for hqmisc::talkers data set}
-\FunctionTok{data}\NormalTok{(talkers)}
-\NormalTok{ok }\OtherTok{\textless{}{-}}\NormalTok{ talkers}\SpecialCharTok{$}\NormalTok{syldur}\SpecialCharTok{\textless{}}\FloatTok{0.4} \CommentTok{\# TRUE for 79 of 80 talkers}
-\CommentTok{\# table of means, see Table 15.2 in main text}
-\FunctionTok{with}\NormalTok{(talkers, }\FunctionTok{tapply}\NormalTok{( syldur[ok], }\FunctionTok{list}\NormalTok{(region[ok],sex[ok]), mean ))}
+\NormalTok{DBE2012 }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\AttributeTok{file=}\StringTok{"data/DBE2012.csv"}\NormalTok{)}
+\CommentTok{\# Versie: 1=with=met, 2=without=zonder structure markers}
+\CommentTok{\# Groep: 1=weak=zwak, 2=average=gemiddeld, 3=strong=sterk}
+\CommentTok{\# ensure that Versie and Groep are factors, levels are in Dutch here}
+\NormalTok{DBE2012}\SpecialCharTok{$}\NormalTok{Versie }\OtherTok{\textless{}{-}} \FunctionTok{factor}\NormalTok{(DBE2012}\SpecialCharTok{$}\NormalTok{Versie, }\AttributeTok{labels=}\FunctionTok{c}\NormalTok{(}\StringTok{"met"}\NormalTok{,}\StringTok{"zonder"}\NormalTok{) ) }
+\NormalTok{DBE2012}\SpecialCharTok{$}\NormalTok{Groep }\OtherTok{\textless{}{-}} \FunctionTok{factor}\NormalTok{(DBE2012}\SpecialCharTok{$}\NormalTok{Groep, }\AttributeTok{labels=}\FunctionTok{c}\NormalTok{(}\StringTok{"zwak"}\NormalTok{,}\StringTok{"gemiddeld"}\NormalTok{,}\StringTok{"sterk"}\NormalTok{) )}
+\CommentTok{\# DV: MCBiScore: number of comprehension questions (out of 10) }
+\CommentTok{\#     that were answered correctly, from a biology text}
+\CommentTok{\# make table of means, see Figure 15.3}
+\FunctionTok{with}\NormalTok{( DBE2012, }\FunctionTok{tapply}\NormalTok{( MCBiScore, }\FunctionTok{list}\NormalTok{(Versie,Groep), mean ))}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-##           0       1
-## M 0.2707400 0.23460
-## N 0.2846000 0.25282
-## S 0.2691444 0.25175
-## W 0.2378100 0.23199
+##            zwak gemiddeld    sterk
+## met    6.800000  6.653846 8.222222
+## zonder 2.666667  4.642857 7.571429
 \end{verbatim}
 
-\hypertarget{anova-4}{%
-\subsubsection{ANOVA}\label{anova-4}}
+\hypertarget{anova-5}{%
+\subsubsection{ANOVA}\label{anova-5}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\# approximately similar to Table 15.5 in main text, but R uses Type I SS}
-\FunctionTok{summary}\NormalTok{( }\FunctionTok{aov}\NormalTok{(syldur}\SpecialCharTok{\textasciitilde{}}\NormalTok{region}\SpecialCharTok{*}\NormalTok{sex, }\AttributeTok{data=}\NormalTok{talkers, }\AttributeTok{subset=}\NormalTok{ok) }\OtherTok{{-}\textgreater{}}\NormalTok{ m03 )}
+\FunctionTok{summary}\NormalTok{( }\FunctionTok{aov}\NormalTok{(MCBiScore}\SpecialCharTok{\textasciitilde{}}\NormalTok{Versie}\SpecialCharTok{*}\NormalTok{Groep, }\AttributeTok{data=}\NormalTok{DBE2012) }\OtherTok{{-}\textgreater{}}\NormalTok{ DBE2012.m1 )}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-##             Df  Sum Sq  Mean Sq F value   Pr(>F)    
-## region       3 0.01234 0.004114   6.039 0.001009 ** 
-## sex          1 0.01031 0.010310  15.135 0.000223 ***
-## region:sex   3 0.00287 0.000958   1.406 0.248231    
-## Residuals   71 0.04837 0.000681                     
+##              Df Sum Sq Mean Sq F value   Pr(>F)    
+## Versie        1 121.18  121.18   84.64 1.59e-14 ***
+## Groep         2  81.41   40.71   28.43 2.98e-10 ***
+## Versie:Groep  2  30.74   15.37   10.74 6.72e-05 ***
+## Residuals    88 125.98    1.43                     
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 \end{verbatim}
 
-The results are slightly different from those reported in Table \ref{tab:syldur2way-anova} above, because R computes the sums of squares somewhat differently\footnote{The default type of computing sums of squares in R (Type I) may be used in JASP by choosing: Model, Sum of squares: Type I. The default type of computing sums of squares in JASP (Type III) may be achieved in R by various workarounds, see e.g.~\url{https://www.r-bloggers.com/2011/03/anova-\%E2\%80\%93-type-iiiiii-ss-explained}.}.
+The results are slightly different from those reported in Table \ref{tab:DBE12anova} above, because R computes the sums of squares somewhat differently\footnote{The default type of computing sums of squares in R (Type I) may be used in JASP by choosing: Model, Sum of squares: Type I. The default type of computing sums of squares in JASP (Type III) may be achieved in R by various workarounds, see e.g.~\url{https://www.r-bloggers.com/2011/03/anova-\%E2\%80\%93-type-iiiiii-ss-explained}.}.
 
 \hypertarget{effectsize}{%
 \subsubsection{Effect size}\label{effectsize}}
@@ -8533,32 +8551,32 @@ In order to assess effect size, we will use the previously programmed function \
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{omegasq}\NormalTok{(m03, }\StringTok{"region"}\NormalTok{)      }\CommentTok{\# [1] 0.1380875}
+\FunctionTok{omegasq}\NormalTok{(DBE2012.m1, }\StringTok{"Versie"}\NormalTok{)        }\CommentTok{\# [1] 0.33}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.1380875
+## [1] 0.3319423
 \end{verbatim}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{omegasq}\NormalTok{(m03, }\StringTok{"sex"}\NormalTok{)         }\CommentTok{\# [1] 0.1291232}
+\FunctionTok{omegasq}\NormalTok{(DBE2012.m1, }\StringTok{"Groep"}\NormalTok{)         }\CommentTok{\# [1] 0.22}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.1291232
+## [1] 0.2177437
 \end{verbatim}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{omegasq}\NormalTok{(m03, }\StringTok{"region:sex"}\NormalTok{)  }\CommentTok{\# [1] 0.01112131}
+\FunctionTok{omegasq}\NormalTok{(DBE2012.m1, }\StringTok{"Versie:Groep"}\NormalTok{)  }\CommentTok{\# [1] 0.08}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.01112131
+## [1] 0.07727868
 \end{verbatim}
 
 These results too differ slighly from those reported in the main text above, because R computes the sums of squares somewhat differently.
@@ -8568,39 +8586,49 @@ These results too differ slighly from those reported in the main text above, bec
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{TukeyHSD}\NormalTok{(}\AttributeTok{x=}\NormalTok{m03, }\AttributeTok{which=}\StringTok{"region"}\NormalTok{)}
+\FunctionTok{TukeyHSD}\NormalTok{(}\AttributeTok{x=}\NormalTok{DBE2012.m1, }\AttributeTok{which=}\StringTok{"Versie:Groep"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
-
-\begin{verbatim}
-## Warning in replications(paste("~", xx), data = mf): non-factors ignored: sex
-\end{verbatim}
-
-\begin{verbatim}
-## Warning in replications(paste("~", xx), data = mf): non-factors ignored: region,
-## sex
-\end{verbatim}
 
 \begin{verbatim}
 ##   Tukey multiple comparisons of means
 ##     95% family-wise confidence level
 ## 
-## Fit: aov(formula = syldur ~ region * sex, data = talkers, subset = ok)
+## Fit: aov(formula = MCBiScore ~ Versie * Groep, data = DBE2012)
 ## 
-## $region
-##             diff          lwr          upr     p adj
-## N-M  0.016040000 -0.005674448  0.037754448 0.2195083
-## S-M  0.007319474 -0.014678836  0.029317783 0.8175548
-## W-M -0.017770000 -0.039484448  0.003944448 0.1466280
-## S-N -0.008720526 -0.030718836  0.013277783 0.7248801
-## W-N -0.033810000 -0.055524448 -0.012095552 0.0006238
-## W-S -0.025089474 -0.047087783 -0.003091164 0.0190285
+## $`Versie:Groep`
+##                                      diff         lwr        upr     p adj
+## zonder:zwak-met:zwak           -4.1333333 -5.60315087 -2.6635158 0.0000000
+## met:gemiddeld-met:zwak         -0.1461538 -1.27642935  0.9841217 0.9989799
+## zonder:gemiddeld-met:zwak      -2.1571429 -3.27255218 -1.0417335 0.0000031
+## met:sterk-met:zwak              1.4222222 -0.04759532  2.8920398 0.0637117
+## zonder:sterk-met:zwak           0.7714286 -0.82423518  2.3670923 0.7218038
+## met:gemiddeld-zonder:zwak       3.9871795  2.63899048  5.3353685 0.0000000
+## zonder:gemiddeld-zonder:zwak    1.9761905  0.64044018  3.3119408 0.0005900
+## met:sterk-zonder:zwak           5.5555556  3.91224959  7.1988615 0.0000000
+## zonder:sterk-zonder:zwak        4.9047619  3.14799393  6.6615299 0.0000000
+## zonder:gemiddeld-met:gemiddeld -2.0109890 -2.96040355 -1.0615745 0.0000003
+## met:sterk-met:gemiddeld         1.5683761  0.22018706  2.9165651 0.0130213
+## zonder:sterk-met:gemiddeld      0.9175824 -0.56680056  2.4019654 0.4704754
+## met:sterk-zonder:gemiddeld      3.5793651  2.24361478  4.9151154 0.0000000
+## zonder:sterk-zonder:gemiddeld   2.9285714  1.45547670  4.4016662 0.0000016
+## zonder:sterk-met:sterk         -0.6507937 -2.40756162  1.1059743 0.8883523
 \end{verbatim}
 
 These results too differ slighly from those reported in the main text above, because R computes the sums of squares somewhat differently.
 
-\hypertarget{ch:chi-square-tests}{%
-\chapter{Chi-square-tests}\label{ch:chi-square-tests}}
+For each pairwise comparison among the 2x3 cells we see the difference, the lower and upper boundary of the 95\% confidence interval of the difference, and the adjusted \(p\) value using Tukey's HSD correction.
+
+For the version without markers (`zonder') we see that the cell \texttt{zonder:zwak} scores lower than the cell \texttt{zonder:gemiddeld} (\(p<.001\)), and that the cell \texttt{zonder:sterk} scores higher than the cell \texttt{zonder:gemiddeld} (\(p<.001\)).
+For the version with markers (`met') we see that the cell \texttt{met:zwak} scores about equally with the cell \texttt{met:gemiddeld} (\(p=.999\)), and that the cell \texttt{met:sterk} scores higher than the cell \texttt{met:gemiddeld} (\(p=.013\)). Hence strong readers perform better than average and/or weak readers, in both text versions.
+We also see that \texttt{zonder:zwak} scores lower than \texttt{met:zwak} (\(p<.001\)),
+and that \texttt{zonder:gemiddeld} scores lower than \texttt{met:gemiddeld} (\(p<.001\)),
+while there is no difference between \texttt{zonder:sterk} and \texttt{met:sterk} (\(p=.888\)).
+Hence strong readers do not benefit from structure markers in the text.
+Also of interest is the finding that weak readers understand a text with markers as well as strong readers do understand a text without markers (\(p=.722\)).
+
+\hypertarget{ch-chi-square-tests}{%
+\chapter{Chi-square-tests}\label{ch-chi-square-tests}}
 
 \hypertarget{sec:ch16introduction}{%
 \section{Introduction}\label{sec:ch16introduction}}
@@ -8609,7 +8637,7 @@ Earlier, we already saw that we cannot always make use of a
 parametric test such as the \emph{t} test or analysis of variance, because
 the collected data do not satisfy the assumptions. If the collected data
 have been measured on an interval level of measurement (see Chapter
-\ref{ch:levelsofmeasurement}), or if the probability distribution
+\ref{ch-levelsofmeasurement}), or if the probability distribution
 of the data is far from normal (see
 §\ref{sec:whatifnotnormal}), then a non-parametric test is to be
 preferred over such a parametric test. If the collected data
@@ -8617,7 +8645,7 @@ do satisfy the assumptions for a parametric test, then a non-parametric
 test is less sensitive (more conservative) than a parametric test, i.e.~the
 non-parametric test requires a larger effect and/or a larger sample, and generally
 has less power than a parametric test when seeking out an effect
-(see Chapter \ref{ch:power}).
+(see Chapter \ref{ch-power}).
 
 In this Chapter, we discuss the most used non-parametric
 test: the so-called \(\chi^2\) test, pronounced as ``chi-square-test'' (with the greek letter ``chi'').
@@ -8658,7 +8686,7 @@ with 5 degrees of freedom (see
 degrees of freedom), with \(p=.0297\). We usually use the computer to
 calculate this probability value, but we can also estimate this probability
 via a table with critical
-\(\chi^2\)-values, see Appendix \ref{app:criticalchi2values}, and footnote
+\(\chi^2\)-values, see Appendix \ref{app-criticalchi2values}, and footnote
 \footnote{The value found \(\chi^2=12.44\) is slightly under the critical value for 5 d.f. and \(p=.025\), (there \((\chi^2)^*=12.83\)), thus the corresponding probability of this value or a larger value is slightly greater than \(0.025\).}).
 If H0 is true, then we have only 3\% probability
 of finding this outcome (or an even more uneven distribution of outcomes).
@@ -8771,7 +8799,7 @@ in order to use the test.
 \begin{itemize}
 \item
   The data have to be measured on a nominal level of measurement, or have
-  to be simplified to nominal level (see Chapter \ref{ch:levelsofmeasurement}).
+  to be simplified to nominal level (see Chapter \ref{ch-levelsofmeasurement}).
 \item
   All observations have to be independent of each other, and based
   on (a) random sample(s) of the population(s) (see
@@ -8818,7 +8846,7 @@ It is more insightful to compute the \emph{standardized} residual for each cell 
   \label{eq:chi2-stdresidu}
   e_{ij} = \frac{(O_{ij}-E_{ij})}{\sqrt{E_{ij}\times(1-\frac{R_i}{N})\times(1-\frac{C_j}{N})}}
 \end{equation}
-These standardized residuals may be interpreted as standard normal \(Z\) scores, using the critical \(Z\) values given in Appendix \ref{app:criticalZvalues}. Hence the adjusted standardized residuals provide insight in the source of a significant outcome of the \(\chi^2\) test, and they also allow us to assess the contribution of each cell to that outcome\footnote{If multiple comparisons are performed, then the critical value of \(\alpha\) should be adjusted accordingly, in order to prevent Type I errors somewhere among the comparisons. With \(k\) cells and \(k\) comparisons, a safe precaution is to use \(\alpha/k\) instead of \(\alpha\) for each comparison -- this is called Bonferroni's adjustement of the \(\alpha\) value, or Dunn's procedure \citep[p.202]{MD04}. See also §\ref{sec:anova-oneway-posthoc}.}.
+These standardized residuals may be interpreted as standard normal \(Z\) scores, using the critical \(Z\) values given in Appendix \ref{app-criticalZvalues}. Hence the adjusted standardized residuals provide insight in the source of a significant outcome of the \(\chi^2\) test, and they also allow us to assess the contribution of each cell to that outcome\footnote{If multiple comparisons are performed, then the critical value of \(\alpha\) should be adjusted accordingly, in order to prevent Type I errors somewhere among the comparisons. With \(k\) cells and \(k\) comparisons, a safe precaution is to use \(\alpha/k\) instead of \(\alpha\) for each comparison -- this is called Bonferroni's adjustement of the \(\alpha\) value, or Dunn's procedure \citep[p.202]{MD04}. See also §\ref{sec:anova-oneway-posthoc}.}.
 
 For the example given in §\ref{sec:chi2gof} we find the following six standardized residuals for the six possible outcomes of the die: \((1.39, -0.35, +0.35, 0.00, 1.73, -3.12)\). The first five of these outcomes are observed approximately as frequently as expected, but the sixth of these outcomes is observed significantly less often than expected (\(p=.003\)).
 
@@ -8935,7 +8963,7 @@ Analyze > Descriptives > Crosstabs...
 Select the variables \texttt{class} (in ``Rows'' panel) and \texttt{survivor} (in
 ``Columns'' panel) for
 contingency table \ref{tab:titanic}.\\
-Choose \texttt{Statistics\ldots{}} and tick the option \texttt{Chi-square}. Confirm firstly with
+Choose \texttt{Statistics…} and tick the option \texttt{Chi-square}. Confirm firstly with
 \texttt{Continue} and afterwards again with \texttt{OK}.
 
 \hypertarget{jasp-15}{%
@@ -9196,8 +9224,8 @@ lung cancer seemed to be more than \(12\times\) as great for smokers as for
 non-smokers.
 \end{quote}
 
-\hypertarget{ch:other-nonpar-tests}{%
-\chapter{Other nonparametric tests}\label{ch:other-nonpar-tests}}
+\hypertarget{ch-other-nonpar-tests}{%
+\chapter{Other nonparametric tests}\label{ch-other-nonpar-tests}}
 
 \hypertarget{sec:h17introduction}{%
 \section{Introduction}\label{sec:h17introduction}}
@@ -9205,7 +9233,7 @@ non-smokers.
 In this chapter, we discuss different nonparametric tests.
 These tests can be used when the data is not
 measured on an interval level of measurement (see Chapter
-\ref{ch:levelsofmeasurement}), or if the probability distribution of the
+\ref{ch-levelsofmeasurement}), or if the probability distribution of the
 data deviates from the normal distribution (see
 §\ref{sec:whatifnotnormal}). The nonparametric tests do not make
 assumptions about the parameters of the probability distribution of the data.
@@ -9483,7 +9511,7 @@ multiple groups.)
 The test statistic \(H\) has a probability distribution which resembles that of
 \(\chi^2\), with \(k-1\) degrees of freedom. The significance of the
 test statistic \(H\) is thus determined via the probability distribution of
-\(\chi^2\) (see Appendix \ref{app:criticalchi2values}).
+\(\chi^2\) (see Appendix \ref{app-criticalchi2values}).
 This approximation via \(\chi^2\) however only works if \(k\ge3\)
 and \(n_j\ge5\) for the smallest group \citep{Ferg89}.
 If \(k=2\) or \(n_j<5\) then the probability \(P(H)\) is calculated exactly.
@@ -9492,8 +9520,8 @@ If \(k=2\) or \(n_j<5\) then the probability \(P(H)\) is calculated exactly.
 \appendix}
 
 
-\hypertarget{app:randomnumbers}{%
-\chapter{Random numbers}\label{app:randomnumbers}}
+\hypertarget{app-randomnumbers}{%
+\chapter{Random numbers}\label{app-randomnumbers}}
 
 \begin{table}
 
@@ -9530,8 +9558,8 @@ If \(k=2\) or \(n_j<5\) then the probability \(P(H)\) is calculated exactly.
 \end{tabular}
 \end{table}
 
-\hypertarget{app:criticalZvalues}{%
-\chapter{Standard normal probability distribution}\label{app:criticalZvalues}}
+\hypertarget{app-criticalZvalues}{%
+\chapter{Standard normal probability distribution}\label{app-criticalZvalues}}
 
 \includegraphics{QMS-EN_files/figure-latex/kritiekeZwaarden-hulpfiguur-1.pdf}
 
@@ -9559,15 +9587,15 @@ The second table reports the probabilities \(p\) and confidence intervals \(B\) 
 
 \begin{tabular}{cccccccc}
 \toprule
-p & 0.3085 & 0.1587 & 0.0668 & 0.0228 & 0.0062 & 0.0013 & 0.0002\\
+p & 3e-01 & 2e-01 & 7e-02 & 2e-02 & 6e-03 & 1e-03 & 2e-04\\
 \midrule
 B & 38.29\% & 68.27\% & 86.64\% & 95.45\% & 98.76\% & 99.73\% & 99.95\%\\
 Z* & 0.5 & 1 & 1.5 & 2 & 2.5 & 3 & 3.5\\
 \bottomrule
 \end{tabular}
 
-\hypertarget{app:criticaltvalues}{%
-\chapter{\texorpdfstring{Critical values for \(t\)-distribution}{Critical values for t-distribution}}\label{app:criticaltvalues}}
+\hypertarget{app-criticaltvalues}{%
+\chapter{\texorpdfstring{Critical values for \(t\)-distribution}{Critical values for t-distribution}}\label{app-criticaltvalues}}
 
 \includegraphics{QMS-EN_files/figure-latex/criticaltvalues-auxiliaryfigure-1.pdf}
 
@@ -9625,8 +9653,8 @@ confidence intervals \(B\), for the degrees of freedom indicated in the first co
 \bottomrule
 \end{tabular}
 
-\hypertarget{app:criticalchi2values}{%
-\chapter{\texorpdfstring{Critical values for \(\chi^2\)-distribution}{Critical values for \textbackslash chi\^{}2-distribution}}\label{app:criticalchi2values}}
+\hypertarget{app-criticalchi2values}{%
+\chapter{\texorpdfstring{Critical values for \(\chi^2\)-distribution}{Critical values for \textbackslash chi\^{}2-distribution}}\label{app-criticalchi2values}}
 
 \includegraphics{QMS-EN_files/figure-latex/criticalchi2values-auxiliaryfigure-1.pdf}
 

@@ -1,8 +1,8 @@
-# Reliability {#ch:reliability}
+# Reliability {#ch-reliability}
 
 ## Introduction
 
-In Chapter \@ref(ch:validity), we talked about, amongst other matters, 
+In Chapter \@ref(ch-validity), we talked about, amongst other matters, 
 construct validity, the distance between the intended (theoretical)
 concept or construct on the one hand, and the independent or dependent variable
 on the other hand. In this Chapter, we will look at another very important
@@ -15,7 +15,7 @@ Often validity and reliability are mentioned in the same breath, and discussed i
 chapters. There is something to be said for this, since both concepts are about how you define and 
 operationalise your variables. Nevertheless, we have chosen a different ordering here. Reliability
 will only be discussed following our discussion of correlation (Chapter 
-\@ref(ch:correlation-regression)), since reliability is based on the relation or correlation 
+\@ref(ch-correlation-regression)), since reliability is based on the relation or correlation 
 between observations.
 
 ## What is reliability?
@@ -83,7 +83,7 @@ measurement is stable: five minutes later, the same weighing scale with the same
 person under the same circumstances will also yield (almost)
 the same measurement. Stability is often expressed in a so-called
 correlation coefficient (a measurement for association, see Chapter
-\@ref(ch:correlation-regression)). This correlation coefficient can assume all
+\@ref(ch-correlation-regression)). This correlation coefficient can assume all
 values between $+1$ and $-1$. The more similar the first and second measurement,
 the higher the correlation is, and the higher the association between the first and second
 measurement. Conversely, the lower the association between the first and second
@@ -272,7 +272,7 @@ First, reliability can be interpreted as the proportion of
 true score variance (see formula \@ref(eq:rho-reliability)), or
 as the proportion of variance which is "systematic". 
 This is different from the proportion of variance resulting from the concept-as-defined,
-the "valid" variance (see Chapter \@ref(ch:validity)). 
+the "valid" variance (see Chapter \@ref(ch-validity)). 
 The variance resulting from the concept-as-defined is part of the proportion of 
 true score variance. 
 However, many other factors may systematically influence
@@ -486,7 +486,7 @@ When a measurement is reliable, then "something" has been measured reliably.
 But this still does not show *what* has been measured! There is a 
 relation between reliability (how measurements are made) and construct
 validity (what is measured, see
-Chapter \@ref(ch:validity)), but these two terms are not identical.
+Chapter \@ref(ch-validity)), but these two terms are not identical.
 Sufficient reliability is a requirement for validity, but
 is not a sufficient condition for it. Put otherwise: a test which
 is not reliable can also not be valid (since this test also measures noise),    

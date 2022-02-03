@@ -1,4 +1,4 @@
-# Analysis of variance {#ch:anova}
+# Analysis of variance {#ch-anova}
 
 ## Introduction {#sec:introduction}
 
@@ -51,11 +51,9 @@ The values of this factor are also referred to as 'levels', or in many studies
 as 'groups' or 'conditions'. Each level or each group or condition forms 
 a 'cell' of the design, and the observations from that cell are also
 called 'replications' (consider why they are called this).
-The speech tempo is the dependent variable. The null hypothesis is that the 
-dependent variable means are equal for all groups, thus 
+The speech tempo is the dependent variable. The null hypothesis is that the dependent variable means are equal for all groups, thus 
 H0: $\mu_M = \mu_N = \mu_Z = \mu_W$. If we reject H0, then that means
-*only* that not all means are equal, but it does *not* mean that each group 
-mean deviates from each other group mean. For this, a further (post-hoc)
+*only* that not all means are equal, but it does *not* mean that each group mean deviates from each other group mean. For this, a further (post-hoc)
 study is necessary; we will return to this later.
 
 Table: (#tab:sylduration) Mean speech tempos, with standard deviation and numbers
@@ -563,7 +561,7 @@ $0 -0.5 + 0.5 = 0$. \
 If the sum of these products is null, then the two
 contrasts are orthogonal.
 
-### Post-hoc comparisons {#sec:anova-oneway-posthoc}
+### Post hoc comparisons {#sec:anova-oneway-posthoc}
 
 In many studies, a researcher has no idea about the expected differences
 between the groups or conditions. Only after the analysis of variance, 
@@ -876,26 +874,38 @@ score deviates from the predicted value based on the two main effects.
 ### An intuitive explanation {#an-intuitive-explanation}
 
 In many studies, we are interested in the *combined* effects
-of two or more factors. In 
-Table \@ref(tab:sylduration2way), we already saw mean speech tempos,
-split up according to the speaker's region of origin and sex.
-If the differences between the regions are different for men compared with
-women, or put differently, if the differences between men and women are 
-different for the different regions then we speak of an interaction. By adding
-a second factor into the study, we thus have to deal with a third factor,
-namely the interaction between the first and second factor[^fn15-2].
+of two or more factors. We will use the following example for an intuitive explanation. 
 
-If a significant interaction is present then we can no longer make
-general statements about the main effect we are concerned with. After all, the
-impact of a main effect is also dependent on the interaction with
-(an) other main effect(s), as can be seen in 
-Figure \@ref(fig:drakebenelheni2003fig2) (§\@ref(sec:factorial-designs)).
-The listener group's scores are *on average* 
-not higher compared with those of the other groups,
-and the scores are also *on average* not higher in one condition than in the other.
-The main effects are thus not significant --- but their interaction
-on the other hand is indeed significant. In general, interaction occurs when the effect of one factor varies depending on the different levels of another factor.
-In this example of two-way interaction, the effect of one factor is in opposite directions for the two levels of the other factor. 
+---
+
+> *Example 15.5*:
+> Pupils and students need to read a lot of texts (such as this one!).
+Presumably, a textbook text is easier to read and comprehend, if the text is enriched with elements that mark its structure, such as sub-headings, cue words (e.g., *however*, *because*), etc. 
+> @DBE12 investigated whether study texts with such structural markers were easier to comprehend than alternative versions of the same texts without those markers. Hence the first factor is the version, with markers present or absent in the text. 
+
+> The researchers also expect an effect of the reading skill of the participants. Weak readers will understand less of a text than strong readers. Hence the second factor is the type of reader, here categorized as 'weak', 'average' or 'strong'. 
+
+> Moreover, the researchers also expect that weak readers will need the structure markers more than strong readers will, and that weak weak readers will benefit more from the markers than strong readers; "strong readers are able to read and understand texts, irrespective of the presence of structural markers" [@DBE12, p.33, transl.HQ]. 
+> Hence the researchers also expect an **interaction** between the two main factors: the differences between the versions will be different across the types of readers, or in other words, the differences between the reader types will be different across the versions of the texts. 
+
+> The results in Figure \@ref(fig:DBE12interaction) show these three effects on the comprehension score, for one of the texts in this study. First, the comprehension scores are indeed better (higher) for the version with markers (light) than for the version without markers (dark). Second, the reader types perform differently: in general, weak readers obtain lower scores than average readers, and in general, strong readers obtain higher scores. 
+
+> However, the most striking effect is the interaction: the effect of markers in the text is far larger for weak readers than for strong readers, as predicted. In other words, the differences between weak, average and strong readers are large in the text version without markers, but far smaller or even absent in the version with markers in the text. 
+
+```{r DBE12interaction, echo=FALSE, fig.cap="Average comprehension score (along Y axis, with 95% confidence intervals), for text versions with (met) and without (zonder) structure markers, for weak (zwak), average (gemidd) and strong (sterk) readers (after Van Dooren, Van den Bergh and Evers-Vermeul, 2012).", fig.width=5}
+knitr::include_graphics("figures/DBE2012interaction_v2.png")
+```
+
+---
+
+If a significant interaction is present, as in the example above, then we can no longer draw conclusions about the main effects involved in that interaction. This is because the effect of a factor now depends on the levels of the other factor, i.e., on the interaction with other factor(s)  [^fn15-2]. 
+In the example above: the difference in comprehension scores between the text versions (factor A) is large for weak readers, but absent for strong readers. The difference between reader types (factor B) is larg for a text without markers, but far smaller for a text with structural markers. 
+
+We have already seen a different pattern of interaction, in 
+Figure \@ref(fig:drakebenelheni2003fig2) (§\@ref(sec:factorial-designs)). 
+There, the scores are *on average* about the same for the two groups of listeners, and *on average* the scores are about the same for the two conditions too. Hence the two main effects are not significant, but their interaction is highly significant. In that study, the effect of the one factor is opposite in the two levels of the other factor. 
+
+---
 
 ### A formal explanation {#a-formal-explanation}
 
@@ -912,7 +922,14 @@ In the one-way analysis of variance the total 'sums of squares' is split up
 into two components, namely between and within conditions (see 
 equation \@ref(eq:SStotal)).
 With the two-way analysis of variance, there are now however
-*four* components: 
+*four* components, 
+viz. three between conditions and one within conditions (*w*ithin):
+
+\begin{equation}
+  (\#eq:SStotal2way-short)
+    { SS_t } = SS_A + SS_B + SS_{AB} + SS_{within} 
+\end{equation}
+
 \begin{align}
   (\#eq:SStotal2way)
     { \sum (x_{ijk} - \overline{x})^2 } = &  { \sum_j n_j (\bar{x}_j - \bar{x})^2 } + \\ 
@@ -926,10 +943,10 @@ again:
 \begin{align}
   (\#eq:dftotal2)
     { (N-1) } &= (A-1) &+ (B-1) &+ (A-1)(B-1) &+ (N-AB) \\
-    \textrm{df}_t &= \textrm{df}_A &+ \textrm{df}_B &+ \textrm{df}_{AB} &+ \textrm{df}_w
+    \textrm{df}_t &= \textrm{df}_A &+ \textrm{df}_B &+ \textrm{df}_{AB} &+ \textrm{df}_{within}
 \end{align}
 
-Just like with the one-way analysis of variance, we again calculate the
+Just as with the one-way analysis of variance, we again calculate the
 'mean squares' by dividing the sums of squares by their degrees of freedom.
 
 We now test *three* null hypotheses, namely for the two main effects and their
@@ -942,67 +959,51 @@ the degrees of freedom and p-values, are carried out by computer
 nowadays. 
 
 The results are summarised again in an ANOVA table, which has now been somewhat 
-extended in Table \@ref(tab:syldur2way-anova). We now test and report three 
-hypotheses. If the interaction is significant, then you should first report 
-the interaction, and only then the main effects. After all, the interaction present
-has an influence on how we should interpret the main effects. If the interaction
-is not significant, like in our current example with speech tempos from
-Table \@ref(tab:sylduration2way), then it is usual to first report the main
-effects, and then the non-significant interaction effect. 
+extended in Table \@ref(tab:DBE12anova). We now test and report three hypotheses. 
 
-> The observed speech tempos differ significantly between the four
-regions of origin of the speakers
-$[F(3,71)=6.09, p<.001$, $\omega^2=.14]$, and men speak significantly faster
-than women $[F(1,71)=15.03, p=.0002, \omega^2=.13]$. 
-The two factors show no interaction
-$[F(3,71)=1.41, \textrm{n.s.}, \omega^2=.01]$. 
-A post hoc comparison between the regions showed that speakers from
-the West speak significantly more quickly than those from the North (Tukey's
-HSD test, $p=.0006$) and from those from the South ($p=.0164$); other
-pairwise differences between regions were not significant. 
+Table: (#tab:DBE12anova) Summary of two-way analysis of variance (ANOVA) of the comprehension scores of two text versions and three reader types. 
 
-Table: (#tab:syldur2way-anova) Summary of two-way analysis of variance of the speech
-tempos in Table \@ref(tab:sylduration2way).
+  source             df    SS         MS       $F$      $p$
+  ----------------- ---- --------- ---------- -------- --------
+  (A) text version     1    91.2663  91.2663    63.75    <.001
+  (B) reader type      2    96.0800  48.0400    33.56    <.001
+  (C) interaction      2    30.7416  15.3708    10.74    <.001
+  within              88   125.9830   1.4316  
+  
+It is customary to present the results of the main effects before the interaction effects. 
+For the interpretation, it matters whether or not the *interaction* is significant. 
+If the interaction is significant, then first we present the main effects without interpreting them, then we present and interpret the interaction, and finally we interpret the main effects that are significant and that are not involved in the interaction. 
+If the interaction is not significant, then it may be easier to first present and interpret the main effects, and then we present the interaction (which is not interpreted). 
 
-  Source of variance                 df    SS         MS       $F$      $p$
-  --------------------------------- ---- --------- ---------- -------- --------
-  (i) Regio                           3   0.0124    0.0041     6.09     <.001
-  (ii) Sex                            1   0.0102    0.0102    15.03     <.001
-  (iii) Region $\times$ Sex           3   0.0029    0.0010     1.41      .248
-  within                             71   0.0484    0.0007           
+### Post hoc comparisons {#sec:anova-twoway-posthoc}
+
+In two-way ANOVA too, we can perform post hoc comparisons (cf. §\@ref(sec:anova-oneway-posthoc)) to investigate which cells or conditions differ from each other. Again we use the Tukey HSD test, which provides a 95% confidence interval of the difference between two cells, and/or a $p$ value of that difference.  
+
+> The comprehension scores showed a significant main effect of structure markings in the text $[F(1,88)=63.75, p<.001, \omega^2=0.26]$, as well as a significant main effect of the reader type $[F(2,88)=33.56, p<.001, \omega^2=0.27]$.
+> There was also a significant interaction between text version and reader type $[F(2,88)=10.74, p<.001, \omega^2=0.08]$, see Figure \@ref(fig:DBE12interaction); this interaction was further explored using the Tukey HSD test (among 6 cells). 
+Weak readers perform worse than average readers, in the text version without markers ($p<.001$), but not in the version with markers ($p=.999$). 
+Strong readers perform better than average readers, in the version without markers ($p<.001$) as well as with markers ($p=.013$). 
+Text markers have an effect for weak readers ($p<.001$) and for average readers ($p<.001$) but not for strong readers ($p=.888$); hence strong readers do not benefit from structure markers in the text, but weak and average readers do. 
+Also of interest is the finding that weak readers understand a text with markers as well as strong readers do understand the same text without markers ($p=.722$).
 
 
 ### SPSS
 
-#### Preparation
+The data for the example above are in `data/DBE2012.csv`.
 
-One speaker has a very long average syllable duration; we will ignore this 
-observation from now on. 
-```
-Data > Select cases...
-```
-Specify that we are only using observations which satisfy a condition,
-and specify the condition as `syldur < 0.4`.
-
-#### ANOVA and post hoc tests
+#### ANOVA
 
 ```
 Analyze > General Linear Model > Univariate...
 ```
-Drag the dependent variable (`syldur`) to the box Dependent
-variable. Drag the two independent variables (`sex`, `region`) to the
-Fixed factor(s) box.\
-For the post hoc test, select the button `Post Hoc...`. Select the 
-`region` factor and select `Tukey`. Confirm with `Continue` and then again
-with `OK`.
+Drag the dependent variable (`MCBiScore`) to the panel Dependent
+variable. Drag the two independent variable (with Dutch variable names, `Versie` for text version, `Groep` for group or reader type) to the panel Fixed factor(s).
 
 ### JASP
 
 #### preparation
 
-One speaker has a very long average syllable duration; we will ignore this observation from now on. We do so by setting a filter which excludes this particular observation. Go to the data sheet, and click on the funnel or filter symbol in the top left cell. A working panel will appear in which you can specify the selection.
-Select the variable *syldur* from the lefthand menu, so that it moves to the working panel. Then click on the symbol `<` from the top menu of operators, and place the cursor to the right of the `<` symbol on the working panel, and then type `0.4`. The complete condition on the working panel should now be `syldur < 0.4`.
-Next click on the button `Apply pass-through filter` below the working panel in order to apply this filter. In the data sheet, you should see immediately that the row of excluded data (speaker with overlong syllable duration) is greyed out. That row (observation) will no longer be used, until you cancel the selection (instructions for which are in §\@ref(sec:jaspttestonesample)).
+The data for the example above are in `data/DBE2012.csv`.
 
 Examine whether the responses are normally distributed within each group or cell, using the
 techniques from Part II of this textbook (especially
@@ -1015,7 +1016,7 @@ In the top menu bar, choose:
 ```
 ANOVA > Classical: ANOVA
 ```
-Select the variable *score* and move it to the field "Dependent Variable", and move the variables *region* and *sex* to the field "Fixed Factors".\
+Select the variable *MCBiScore* and move it to the field "Dependent Variable", and move the variables *Version* (text version) and *Group* (reader type) to the field "Fixed Factors".\
 Under the heading "Display" check `Estimates of effect size`, and select $\omega^2$ and/or  (partial) $\eta^2$. In this book we prefer $\omega^2$. 
 You can also check `Descriptive statistics` to learn more about the scores in each cell. 
 
@@ -1023,9 +1024,9 @@ Open the menu bar named "Model" and for "Sum of squares" choose option `Type III
 Open the menu bar named "Assumption Checks" and check `Homogeneity tests`.\
 "Homogeneity corrections" may remain at the default value of  `None`.\ 
 Here you can also examine whether the distribution within each group or cell is normal, as assumed by the analysis of variance. This is equivalent to assuming a normal distribution of the *residuals* of the analysis of variance. You can inspect the latter by checking `Q-Q plot of residuals`. If the assumption is met (and if residuals are distributed normally) then the residuals should fall on an approximately straight line in the resulting Q-Q plot (see §\@ref(sec:isvarnormaldistributed)).\
-Open the menu bar named "Descriptive Plots" and select *region* for the field "Horizontal Axis" and select *sex* for the field "Separate Lines". 
+Open the menu bar named "Descriptive Plots" and select *Group* for the field "Horizontal Axis" and select *Version* for the field "Separate Lines". 
 
-The output summarizes the analysis of variance in a table similar to Table \@ref(tab:syldur2way-anova), with the effect size included. 
+The output summarizes the analysis of variance in a table similar to Table \@ref(tab:DBE12anova), with the effect size included. 
 The *Descriptive plots* section provides a visualisation which may be helpful in understanding a possible interaction effect.
 
 The output under **Assumption Check** also reports Levene's test for equal variances (homogeneity of variance). This test does not suggest rejection of H0, so we may conclude that the variances are indeed approximately equal, i.e., that that particular assumption of the analysis of variance is warranted. 
@@ -1034,33 +1035,46 @@ The output under **Assumption Check** also reports Levene's test for equal varia
 
 For an analysis of variance with post-hoc comparisons we need to specify the post-hoc comparisons. The procedure is initially the same as above, so repeat the instructions given under **ANOVA** above. 
 
-Next, open the bar named "Post Hoc Tests", and move the factor *region* to the righthand field. 
+Next, open the bar named "Post Hoc Tests", and move the interaction *Versie* $\times$ *Groep* to the righthand field. 
 Check that "Type" is set to `Standard` and that the option `Effect size` is also checked. 
 Under "Correction" check the option `Tukey`, and under "Display" check the option `Confidence intervals`. 
 
-The output of the *Post Hoc Tests* shows for each pairwise comparison the difference, the standard error, and the 95% confidence interval of the difference. If the interval does *not* contain zero, then the scores are probably different between the two groups. For each pairwise comparison JASP reports a $t$ test with its adjusted $p$ value using Tukey's correction. We see that speakers from the North and West regions differ, as do speakers from the South and West, with large effect sizes for these two differences. The other differences among regions are not significant. 
+The output of the *Post Hoc Tests* shows for each pairwise comparison the difference, the standard error, and the 95% confidence interval of the difference. If the interval does *not* contain zero, then the scores are probably different between the two groups. For each pairwise comparison JASP reports a $t$ test with its adjusted $p$ value using Tukey's correction. 
 
+For the version without markers ('zonder') we see that the cell `zonder:zwak` scores lower than the cell `zonder:gemiddeld` ($p<.001$), and that the cell `zonder:sterk` scores higher than the cell `zonder:gemiddeld` ($p<.001$).
+For the version with markers ('met') we see that the cell `met:zwak` scores about equally with the cell `met:gemiddeld` ($p=.999$), and that the cell `met:sterk` scores higher than the cell `met:gemiddeld` ($p=.013$). Hence strong readers perform better than average and/or weak readers, in both text versions. 
+We also see that `zonder:zwak` scores lower than `met:zwak` ($p<.001$), 
+and that `zonder:gemiddeld` scores lower than `met:gemiddeld` ($p<.001$), 
+while there is no difference between `zonder:sterk` and `met:sterk` ($p=.888$). 
+Hence strong readers do not benefit from structure markers in the text. 
+Also of interest is the finding that weak readers understand a text with markers as well as strong readers do understand a text without markers ($p=.722$).
 
 ### R 
 
 #### preparation
 
+The data for the example above are in `data/DBE2012.csv`.
+
 ```{r}
-require(hqmisc) # for hqmisc::talkers data set
-data(talkers)
-ok <- talkers$syldur<0.4 # TRUE for 79 of 80 talkers
-# table of means, see Table 15.2 in main text
-with(talkers, tapply( syldur[ok], list(region[ok],sex[ok]), mean ))
+DBE2012 <- read.csv(file="data/DBE2012.csv")
+# Versie: 1=with=met, 2=without=zonder structure markers
+# Groep: 1=weak=zwak, 2=average=gemiddeld, 3=strong=sterk
+# ensure that Versie and Groep are factors, levels are in Dutch here
+DBE2012$Versie <- factor(DBE2012$Versie, labels=c("met","zonder") ) 
+DBE2012$Groep <- factor(DBE2012$Groep, labels=c("zwak","gemiddeld","sterk") )
+# DV: MCBiScore: number of comprehension questions (out of 10) 
+#     that were answered correctly, from a biology text
+# make table of means, see Figure 15.3
+with( DBE2012, tapply( MCBiScore, list(Versie,Groep), mean ))
 ```
 
 #### ANOVA
 
 ```{r}
-# approximately similar to Table 15.5 in main text, but R uses Type I SS
-summary( aov(syldur~region*sex, data=talkers, subset=ok) -> m03 )
+summary( aov(MCBiScore~Versie*Groep, data=DBE2012) -> DBE2012.m1 )
 ```
 
-The results are slightly different from those reported in Table \@ref(tab:syldur2way-anova) above, because R computes the sums of squares somewhat differently[^fn15-3]. 
+The results are slightly different from those reported in Table \@ref(tab:DBE12anova) above, because R computes the sums of squares somewhat differently[^fn15-3]. 
 
 #### Effect size {#effectsize}
 
@@ -1068,9 +1082,9 @@ In order to assess effect size, we will use the previously programmed function `
 (§\@ref(R:omega-square)):
 
 ```{r}
-omegasq(m03, "region")      # [1] 0.1380875
-omegasq(m03, "sex")         # [1] 0.1291232
-omegasq(m03, "region:sex")  # [1] 0.01112131
+omegasq(DBE2012.m1, "Versie")        # [1] 0.33
+omegasq(DBE2012.m1, "Groep")         # [1] 0.22
+omegasq(DBE2012.m1, "Versie:Groep")  # [1] 0.08
 ```
 
 These results too differ slighly from those reported in the main text above, because R computes the sums of squares somewhat differently. 
@@ -1078,10 +1092,20 @@ These results too differ slighly from those reported in the main text above, bec
 #### post-hoc tests
 
 ```{r}
-TukeyHSD(x=m03, which="region")
+TukeyHSD(x=DBE2012.m1, which="Versie:Groep")
 ```
 
 These results too differ slighly from those reported in the main text above, because R computes the sums of squares somewhat differently. 
+
+For each pairwise comparison among the 2x3 cells we see the difference, the lower and upper boundary of the 95% confidence interval of the difference, and the adjusted $p$ value using Tukey's HSD correction. 
+
+For the version without markers ('zonder') we see that the cell `zonder:zwak` scores lower than the cell `zonder:gemiddeld` ($p<.001$), and that the cell `zonder:sterk` scores higher than the cell `zonder:gemiddeld` ($p<.001$).
+For the version with markers ('met') we see that the cell `met:zwak` scores about equally with the cell `met:gemiddeld` ($p=.999$), and that the cell `met:sterk` scores higher than the cell `met:gemiddeld` ($p=.013$). Hence strong readers perform better than average and/or weak readers, in both text versions. 
+We also see that `zonder:zwak` scores lower than `met:zwak` ($p<.001$), 
+and that `zonder:gemiddeld` scores lower than `met:gemiddeld` ($p<.001$), 
+while there is no difference between `zonder:sterk` and `met:sterk` ($p=.888$). 
+Hence strong readers do not benefit from structure markers in the text. 
+Also of interest is the finding that weak readers understand a text with markers as well as strong readers do understand a text without markers ($p=.722$).
 
 
 [^fn15-1]: If (1) red does differ from grey and blue, and if (2) grey and blue

@@ -324,7 +324,7 @@ div.csl-indent {
 <li class="chapter" data-level="10.4.2" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#r-6"><i class="fa fa-check"></i><b>10.4.2</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="10.5" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:whatifnotnormal"><i class="fa fa-check"></i><b>10.5</b> What if my variable is not normally distributed?</a></li>
-<li class="chapter" data-level="10.6" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:Centrallimittheorem"><i class="fa fa-check"></i><b>10.6</b> Probability distribution of average</a></li>
+<li class="chapter" data-level="10.6" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:CentralLimitTheorem"><i class="fa fa-check"></i><b>10.6</b> Probability distribution of average</a></li>
 <li class="chapter" data-level="10.7" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#sec:confidenceinterval-mean"><i class="fa fa-check"></i><b>10.7</b> Confidence interval of the mean</a>
 <ul>
 <li class="chapter" data-level="10.7.1" data-path="ch-probability-distributions.html"><a href="ch-probability-distributions.html#formulas-2"><i class="fa fa-check"></i><b>10.7.1</b> formulas</a></li>
@@ -744,7 +744,7 @@ For a <span class="math inline">\(\chi^2\)</span>-test with one nominal variable
   e_{ij} = \frac{(O_{ij}-E_{ij})}{\sqrt{E_{ij}}}
 \end{equation}\]</span>
 If we square these raw residuals and then sum the squares, the result is the <span class="math inline">\(\chi^2\)</span> test statistic given in Eq.<a href="ch-chi-square-tests.html#eq:chisquared">(16.1)</a> above.</p>
-<p>It is more insightful to compute the <em>standardized</em> residual for each cell of the frequency table <span class="citation">(<a href="#ref-Agre07" role="doc-biblioref"><strong>Agre07?</strong></a>)</span>. The standardization means that the standard error of the residuals is taken into account (by using row totals <span class="math inline">\(R_i\)</span>, column totals <span class="math inline">\(C_j\)</span>, and the grand total <span class="math inline">\(N\)</span>):
+<p>It is more insightful to compute the <em>standardized</em> residual for each cell of the frequency table <span class="citation">(<a href="#ref-Agre07" role="doc-biblioref">Agresti 2007, 38</a>)</span>. The standardization means that the standard error of the residuals is taken into account (by using row totals <span class="math inline">\(R_i\)</span>, column totals <span class="math inline">\(C_j\)</span>, and the grand total <span class="math inline">\(N\)</span>):
 <span class="math display" id="eq:chi2-stdresidu">\[\begin{equation}
   \tag{16.3}
   e_{ij} = \frac{(O_{ij}-E_{ij})}{\sqrt{E_{ij}\times(1-\frac{R_i}{N})\times(1-\frac{C_j}{N})}}
@@ -1033,6 +1033,9 @@ non-smokers.</p>
 </div>
 <h3>References</h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Agre07" class="csl-entry">
+Agresti, Alan. 2007. <em>Introduction to Categorical Data Analysis</em>. Hoboken, NJ: Wiley.
+</div>
 <div id="ref-DollHill1956" class="csl-entry">
 Doll, Richard, and A. Bradford Hill. 1956. <span>“Lung Cancer and Other Causes of Death in Relation to Smoking: <span>A</span> Second Report on the Mortality of <span>British</span> Doctors.”</span> <em>British Medical Journal</em>, 1071–81. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2035864/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2035864/</a>.
 </div>

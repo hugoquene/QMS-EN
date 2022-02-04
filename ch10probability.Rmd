@@ -687,7 +687,7 @@ statistical power (for a discussion of power,
 see Chapter \@ref(ch-power)): they are less sensitive, and thus require larger
 samples to establish an effect.
 
-## Probability distribution of average {#sec:Centrallimittheorem}
+## Probability distribution of average {#sec:CentralLimitTheorem}
 
 ```{r echo=FALSE}
 set.seed(202009)

@@ -582,8 +582,8 @@ div.csl-indent {
 <div id="sec:pretest-posttest-control-group-design" class="section level2" number="6.5">
 <h2><span class="header-section-number">6.5</span> The pretest-posttest-control group design</h2>
 <p>The problems mentioned above can partially be solved by adding a control group to the design, which results in a pretest-posttest-control group design. This means that the study involves two groups of elements (participants), which, in a diagram, is shown as two lines. This design is used very often. Whenever possible, researchers try to make the two groups as closely comparable as possible by assigning participants to the two groups at random. This model can be schematized as follows (<code>R</code> stands for random assignment to the two groups):</p>
-<pre><code>  R   O1   X   O2
-  R   O3       O4</code></pre>
+<pre><code>   R   O1   X   O2
+   R   O3       O4</code></pre>
 <p>This research design is popular because it can neutralize many threats to internal validity (see §<a href="ch-validity.html#sec:internalvalidity">5.4</a>). The effect of the manipulation or treatment (<code>X</code>) is evaluated by comparing two differences, <code>(O2 – O1)</code> and <code>(O4 – O3)</code>. Strictly speaking, this research design has not one but two independent variables that may influence measurements: (1) the manipulation or treatment, <code>X</code> or not <code>X</code>, varying between participants (“between subjects”), and (2) the time of measurement, usually indicated as a pretest, <code>T0</code>, and a posttest, <code>T1</code>, varying within subjects.</p>
 <p>This design does take effects of history into account, at least, to the degree that such effects may have occurred equally for both groups. It does not take into account events that might have influenced just one of the groups (conditions). This does means that, if such an event has occurred for one group and not the other, this difference in history might also be responsible for an unequal difference between pretest and posttest in one group compared to the other.</p>
 <p>Threats to internal validity coming from maturation can be easily eliminated in this research design. After all, we expect any effect of maturation to be equally manifested in both groups, which is why it cannot be of any influence on the difference between <code>(O2 – O1)</code> and <code>(O4 – O3)</code>. Of course, this does presume that the pretest was administered to both groups at the same time, and that the same holds for the posttest.</p>
@@ -601,10 +601,10 @@ div.csl-indent {
 <h2><span class="header-section-number">6.6</span> The Solomon-four-groups design</h2>
 <p>The Solomon four-group design is used much less often than the pretest-posttest control group design. Despite this, the former design is clearly preferable to the pretest-posttest control group design: in particular, it allows for better control of threats to construct validity.</p>
 <p>In the Solomon four-group design, four conditions are distinguished, to which participants are assigned at random. In the first two conditions, a pretest is administered first, after which one of both groups is given the experimental treatment. Then, both groups undergo a posttest. Up until this point, the Solomon four-group design is identical to the pretest-posttest control group design. However, no pretest is administered in the third and fourth conditions. In one of the two conditions, participants are given the experimental treatment, but not in the other condition. Finally, both of these groups are given a posttest. We may schematize the Solomon four-group design as follows:</p>
-<pre><code>  O1   X   O2
-  O3       O4
-       X   O5
-           O6</code></pre>
+<pre><code>  R   O1   X   O2
+  R   O3       O4
+  R        X   O5
+  R            O6</code></pre>
 <p>Summarizing, we can say that the Solomon four-group design is an expansion of the pretest-posttest control group design by two groups, which do not participate in the pretest. Because of these two additional conditions with no pretest, we can take into account the guiding influence of pretests (see example 5.14), since this guiding influence is absent from the third and fourth groups. In addition, the effect of manipulating the independent variable, <code>X</code>, is tested several times, namely, in the four comparisons of <code>O2</code> versus <code>O1</code>, <code>O2</code> versus <code>O4</code>, <code>O5</code> versus <code>O6</code>, and <code>(O2 – O1)</code> versus <code>(O4 – O3)</code>. The effect of the possibly guiding pretest is tested in the two comparisons of <code>O2</code> versus <code>O5</code>, <code>O4</code> versus <code>O6</code>. Thus, we can show effects of both treatment and pretest in the same study. However, this does mean we must employ two additional groups of participants (compared to the pretest-posttest control group design).</p>
 <hr />
 <blockquote>
@@ -615,8 +615,8 @@ div.csl-indent {
 <div id="the-posttest-only-control-group-design" class="section level2" number="6.7">
 <h2><span class="header-section-number">6.7</span> The posttest-only control group design</h2>
 <p>A great amount of studies feature a pretest, because researchers want to demonstrate that the two (or more) groups researched do not differ from one another at the beginning of the study. Nevertheless, an adequate research design does not have to feature a pretest. If the groups are of sufficient size, and if participants (or other units of interest) have been assigned to groups in a completely random way, statistical analysis alone is sufficient to show that the groups are quite comparable. For instance, if we divide 100 participants between 2 groups in a completely random way, there is an extraordinarily small chance of the two groups’ showing a difference on the pretest. Therefore, for many cases like this, a posttest control group design is sufficient. This design may be schematized as follows:</p>
-<pre><code>      X   O5
-          O6</code></pre>
+<pre><code>  R   X   O5
+  R       O6</code></pre>
 <p>However, this design is only adequate if the groups are large enough, and if participants have been randomly assigned to the conditions. If these demands cannot be met, this design is also insufficient.</p>
 <hr />
 <blockquote>
@@ -674,10 +674,10 @@ In the meantime, we will concentrate on designs that have just one independent v
 <p>Secondly, all respondents might have been influenced by any events that took place between the two time points (history), for instance, by some instruction relevant to the subject matter of the test. Because there is no control group, we cannot take this type of effect into account.</p>
 <p>A third problem lies in the way in which the reasoning from findings to conclusions is constructed. For the current example, we defined this reasoning as follows: if scores on both tests are sufficiently correlated, both tests measure the same thing. If you stop and think about it, you might agree with us that this is a strange bit of reasoning. The underlying research question really seems to be whether the correlation between performance on different tests with different types of questions is the same as the correlation between performance on different tests with the same types of questions, since we do assume that the latter group of tests measure the same thing. This, in itself, defines a control group: respondents who, at both points in time, write tests with the same types of questions. Just to be sure, let us add not one, but two control groups: one with open questions at both time points, and one with closed questions at both time points.</p>
 <p>By doing this, we have improved the design in at least two ways: (1) tests are randomized between times of measurement, and (2) relevant control groups have been added. At this point, we may schematize our design as follows:</p>
-<pre><code>       Exp. group 1       Open    O1   Closed   O2
-       Exp. group 2      Closed   O3    Open    O4
-      Control group 1     Open    O5    Open    O6
-      Control group 2    Closed   O7   Closed   O8</code></pre>
+<pre><code>  R       Exp. group 1       Open    O1   Closed   O2
+  R       Exp. group 2      Closed   O3    Open    O4
+  R      Control group 1     Open    O5    Open    O6
+  R      Control group 2    Closed   O7   Closed   O8</code></pre>
 <p>For all four groups, we may now determine the correlation between their performance at the first and the second time point. We can subsequently compare these correlation results between the four groups, and use this to answer the research question. This example shows us that the conclusions that can be draw from research results are directly dependent on the design that was chosen <span class="citation">(<a href="#ref-Levin99" role="doc-biblioref">Levin 1999</a>)</span>. In the first design, a low correlation would lead to a conclusion that the two types of testing investigated do <em>not</em> test for the same intellectual skills in our respondents. However, in the second design, the same low correlation in the first group (experimental group 1) does not have to lead to the same conclusion! This is because the conclusion also depends on the degree of correlation that was found in the other groups.</p>
 </div>
 <div id="in-conclusion" class="section level2" number="6.11">

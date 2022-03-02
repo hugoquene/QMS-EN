@@ -67,7 +67,7 @@ appendixZ2 <- matrix("",nrow=1,ncol=length(pvals)+1)
 #                               digits=3, nsmall=1 )
 appendixZ2[1,2:ncol(appendixZ2)] <- Zvals
 appendixZ2 <- rbind(
-  c( "p", format(pvals, digits=1, nsmall=4) ),
+  c( "p", format(pvals, digits=1, scientific=FALSE) ),
   c( "B", paste(as.character(round(100-200*pvals,digits=2)),"%",sep="" ) ),
   appendixZ2
 )

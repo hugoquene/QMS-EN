@@ -1,0 +1,16 @@
+overzicht van wijzigingen in QMS textbook
+
+* alle statistische toetsingsgrootheden met 2 decimale cijfers: F=1.23, t=3.45, enz. 
+
+* p-waarden met 2 decimale cijfers: p=.28, p=.01, enz.
+
+* als p-waarden kleiner dan .01, dan met 3 decimale cijfers: p=.008, p=.002, enz. 
+
+* als p-waarden kleiner dan .001, dan rapporteer altijd als p<.001
+
+* haakjes rondom referentie, niet altijd met haakjes, maar alleen als dat volgens APA nodig is. 
+Quené (2008) heeft beweerd...., zonder haakjes: @Quene08
+....is eerder gevonden (Quené, 2008), met haakjes: [@Quene08]
+
+
+HQ 20220309

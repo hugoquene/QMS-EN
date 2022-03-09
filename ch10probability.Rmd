@@ -442,7 +442,7 @@ What is the probability $p$ that $Z>3$? In the second subtable, we find
 for boundary value $Z^*=3$ the p-value 
 $p=0.0013$. Thus, for a normally distributed variable $Z$
 there is a p-value $p=0.0013$ of finding a value of $Z$
-which is at least three standard variations above the average.
+which is at least three standard variations above the average (this is typically reported as $p<.001$). 
 
 We often want to know the opposite: when we choose a certain p-value,
 what should the boundary value $Z^*$ be?

@@ -441,7 +441,7 @@ $1-0.1587=0.8413$. Moreover, we know that the distribution is symmetric
 What is the probability $p$ that $Z>3$? In the second subtable, we find
 for boundary value $Z^*=3$ the p-value 
 $p=0.0013$. Thus, for a normally distributed variable $Z$
-there is a p-value $p=0.0013$ (often reported as $p<.001$) of finding a value of $Z$
+there is a p-value $p=0.0013$ (often reported as $p=.001$) of finding a value of $Z$
 which is at least three standard deviations above the average. 
 
 We often want to know the opposite: when we choose a certain p-value,

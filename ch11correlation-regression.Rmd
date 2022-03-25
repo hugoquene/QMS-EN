@@ -383,7 +383,7 @@ Based on a linear regression analysis, it appears that the score
 for Arithmetic is related to that for Reading: $b=0.51, r=.79, p_r=.007$, over $n=10$
 pupils. This linear regression model explains $r^2=.51$ of the 
 total variance in the arithmetic scores (the residual standard deviation is
-$s_e= \sqrt{82.803/(n-1-1)} = 3.217$).
+$s_e= \sqrt{82.803/(n-1-1)} = 3.22$).
 
 ---
 
@@ -428,7 +428,7 @@ the line titled `Reading` states coefficient $b=0.51$.\
 The table titled *Residual Statistics* provides information about both
 the predicted values and the residuals. Check whether the mean of the residual 
 is indeed null. In this table, we can also see (line 2, column 4) that
-the standard variation of the residuals is $3.212$.
+the standard variation of the residuals is $3.21$.
 
 ### JASP
 
@@ -445,7 +445,7 @@ Open the menu bar `Plots`, and choose plots for `Residuals vs. histogram` and `Q
 The resulting output contains several tables and figure, which do not conform to APA guidelines and hence cannot be used directly in your report (see also Example 11.3 above).\
 The table titled **Model Summary** reports the correlation coefficient, here reported with capital $R=.75$.\
 The table titled **Coefficients** contains the regression coefficients. The row with indication `(Intercept)` reports the constant $a=13.25$; the row with indication `Reading` reports the slope or regression coefficient $b=0.51$.\
-The table titled **Residual Statistics** provides information about the predicted values and residuals. Inspect whether the mean of the residuals is approximately zero (it should be). We also see here (row 2, column 4) that the standard deviation of the residuals is $3.212$.
+The table titled **Residual Statistics** provides information about the predicted values and residuals. Inspect whether the mean of the residuals is approximately zero (it should be). We also see here (row 2, column 4) that the standard deviation of the residuals is $3.21$.
 
 ### R
 

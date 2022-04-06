@@ -708,7 +708,7 @@ or the second row of the output of the Independent Samples Test
 (a test which investigates whether the means from the two groups are equal).
 In this example, the variances are around equal, as the 
 Levene's test also indicates. We thus use the first line of the output,
-and report $t(38)=-3.765, p=.001$.
+and report $t(38)=-3.77, p=.001$.
 
 ### JASP {#sec:JASP-ttest-unpaired}
 

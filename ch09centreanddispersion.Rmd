@@ -662,7 +662,7 @@ meaningful if the ratio or fraction's denominator is larger than 1000.
 > Example 9.13:
 > In 2013, 154 students began a two-year research master's degree. After 
 2 years, 69 of them had graduated. The nominal return for this cohort is
-thus $69/154=$ 0.448052, which should be rounded off and reported as 44%
+thus $69/154=$ 0.448052, which should be rounded off and reported as 45%
 (not as 44.81%).
 
 ---

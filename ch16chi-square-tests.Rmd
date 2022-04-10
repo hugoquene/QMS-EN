@@ -51,7 +51,7 @@ referred to as a test of the 'goodness of fit'.
 For this example, we find the outcome of the testing $\chi^2=12.44$
 with 5 degrees of freedom (see
 §\@ref(sec:ttest-freedomdegrees) for explanation about
-degrees of freedom), with $p=.0297$. We usually use the computer to 
+degrees of freedom), with $p=.03$. We usually use the computer to 
 calculate this probability value, but we can also estimate this probability
 via a table with critical
 $\chi^2$-values, see Appendix \@ref(app-criticalchi2values), and footnote
@@ -472,6 +472,6 @@ as great for the smokers as for the non-smokers. We report this as follows:
 > non-smokers.
 
 
-[^fn16-1]: The value found $\chi^2=12.44$ is slightly under the critical value for 5 d.f. and $p=.025$, (there $(\chi^2)^*=12.83$), thus the corresponding probability of this value or a larger value is slightly greater than $0.025$.
+[^fn16-1]: The value found $\chi^2=12.44$ is slightly under the critical value for 5 d.f. and $p=.03$, (there $(\chi^2)^*=12.83$), thus the corresponding probability of this value or a larger value is slightly greater than $0.03$.
 
 [^fn16-2]: If one variable's observations are paired rather than independent (e.g. before/after treatment, passed/failed, etc.), then the McNemar test is a useful alternative.

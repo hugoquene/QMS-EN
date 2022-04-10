@@ -586,9 +586,9 @@ test statistic is $t < t^*$, thus $p<.05$. We thus decide
 to *indeed* reject H0, and report that as follows: 
 
 > The mean duration of a syllable spoken by a speaker from the West
-> of the Netherlands is $0.235$ seconds ($s=0.028$). This is
+> of the Netherlands is $0.235$ seconds ($s=0.03$). This is
 > significantly shorter than from speakers from the North of the Netherlands
-> ($\overline{x}=0.269$ s, $s=0.029$) ($t(38)=-3.76, p<.05$).  In the
+> ($\overline{x}=0.269$ s, $s=0.03$) ($t(38)=-3.76, p<.05$).  In the
 > investigated recordings from 1999, the speakers from the West thus
 > speak more quickly than those from the North of the Netherlands.
 
@@ -991,9 +991,9 @@ $(0.235-0.269)/0.029 \approx 1.15$. We can report this relatively large
 effect as follows:
 
 > The average length of a syllable spoken by a speaker from
-> the West of the Netherlands is $0.235$ seconds ($s=0.028$). This is
+> the West of the Netherlands is $0.235$ seconds ($s=0.03$). This is
 > considerably shorter than for speakers from the North of the Netherlands
-> $(\overline{x}=0.269 \textrm{s}, s=0.029)$. The difference is ca. 10%; this
+> $(\overline{x}=0.269 \textrm{s}, s=0.03)$. The difference is ca. 10%; this
 > difference is very large $(d=-1.15)$ and significant
 > $[t(38)=-3.76, p<.05]$. In the investigated recordings from 1999, the 
 > speakers from the West thus speak considerably more quickly than those from
@@ -1237,7 +1237,7 @@ formula 18]:
 In
 our earlier example of the $n=10$ paired judgements about a webpage
 with *U* or *je* as forms of address we found $d=-2.13$. We also find
-that $r=.9135$. With these data, we find $\textrm{se}_d = 0.519$ via
+that $r=.91$. With these data, we find $\textrm{se}_d = 0.52$ via
 formula \@ref(eq:d-paired-se).
 
 With this, we then determine the confidence interval for the 

@@ -413,14 +413,14 @@ Table: (#tab:colours-anova) Summary of analysis of variance of the observations 
 
   Variance Source     df    SS      MS      $F$     $p$
   ----------------   ---- ------- ------- ------- --------
-  Group                2    14.50   7.248   9.356   0.0004
+  Group                2    14.50   7.248   9.36   <.001
   (within)            42    32.54   0.775          
 
 ---
 
 > *Example 15.2*: 
 The mean scores are not equal for the red, grey and blue group 
-$[F(2,42) = 9.35$, $p = .0004$, $\omega^2 = 0.28]$.
+$[F(2,42) = 9.35$, $p < .001$, $\omega^2 = 0.28]$.
 
 ---
 
@@ -524,9 +524,9 @@ Table: (#tab:colours-anova-contrast) Summary of analysis of variance of the obse
 
   Variance source        df   SS       MS      $F$      $p$
   --------------------- ---- ------- -------- -------- --------
-  Group                    2  14.50    7.248    9.356    0.0004
-    Group, contrast 1      1  14.31   14.308   18.470    0.0001
-    Group, contrast 2      1   0.19    0.188    0.243    0.6248
+  Group                    2  14.50    7.248    9.36    <.001
+    Group, contrast 1      1  14.31   14.308   18.47    <.001
+    Group, contrast 2      1   0.19    0.188    0.24    0.62
   (within)                42  32.54    0.775            
 
 The analysis of variance with planned comparisons can thus be used 

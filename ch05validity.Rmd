@@ -134,7 +134,7 @@ In an experimental study, an independent variable is manipulated. Depending on t
 
 ---
 
-> *Example 5.7*: As indicated above, the concept of reading ability may be operationalized in various ways. Some argue that reading ability cannot be properly measured by multiple choice questions [@Hout86,@Shoh84]. In multiple choice questions, answers are very strongly influenced by other notions, such as general background, aptitude at guessing, experience with earlier tests, and the way the question itself is asked, as is illustrated in the following question:
+> *Example 5.7*: As indicated above, the concept of reading ability may be operationalized in various ways. Some argue that reading ability cannot be properly measured by multiple choice questions (Houtman 1986, Shohamy 1984). In multiple choice questions, answers are very strongly influenced by other notions, such as general background, aptitude at guessing, experience with earlier tests, and the way the question itself is asked, as is illustrated in the following question:
 
 > Who of the following individuals published an autobiography within the last few years?\
 a. Joan of Arc *(general background)*\

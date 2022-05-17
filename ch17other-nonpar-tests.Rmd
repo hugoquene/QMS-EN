@@ -81,7 +81,7 @@ The smallest of
 these two sums ($W_+$ or $|W_-|$) forms the test statistic; here, we use
 $|W_-|$. 
 We will not discuss the probability distribution of the test statistic
-but instead have the significance calculated by computer: $P(|W_-|)=.0055$. The
+but instead have the significance calculated by computer: $P(|W_-|)=.006$. The
 probability of this outcome according to H0 is so small that, in light of this 
 observed (and presumably valid)
 outcome, we again decide to reject H0. 
@@ -112,7 +112,7 @@ a correlation [@Rose91 Eq.2.18]:
     r = \frac {z} {\sqrt{N}}
 \end{equation}
 For the example above, we find 
-$z=-2.803$, and $r=-.89$, which indicates an extremely large effect.
+$z=-2.80$, and $r=-.89$, which indicates an extremely large effect.
 
 
 ## Independent observations, multiple samples
@@ -193,7 +193,7 @@ test[^fn17-1], this raw sum is used to calculate the significance.
 In other test versions[^fn17-2], this raw sum is firstly corrected for the 
 minimal value of $W_1$ (see the formulas below): the test statistic
 is then $U=W_1 - \textrm{min}(W_1) = 67-45=22$. Afterwards, the significance
-of $W_1=67$ or of $U=22$ is calculated. We find that $p=.0653$. If we do a 
+of $W_1=67$ or of $U=22$ is calculated. We find that $p=.07$. If we do a 
 two-sided test (H0: judgements in conditions 2 are no higher and no lower
 than those in condition 1) with $\alpha=.05$, then there is no reason to
 reject H0[^fn17-3].
@@ -224,7 +224,7 @@ corresponding value of $z$ [@Ferg89]:
 
 With this, we again determine the effect size, using equation \@ref(eq:es-z2r). 
 For the above example, we find 
-$\bar{W_1}=22.5$, $z=1.837$, and $r=.42$, which indicates a
+$\bar{W_1}=22.5$, $z=1.84$, and $r=.42$, which indicates a
 'medium' effect. That this considerable effect still does
 not lead to a significant difference (with two-sided testing) is presumably
 a consequence of the (too) small size of the two groups.  

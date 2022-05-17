@@ -413,14 +413,14 @@ Table: (#tab:colours-anova) Summary of analysis of variance of the observations 
 
   Variance Source     df    SS      MS      $F$     $p$
   ----------------   ---- ------- ------- ------- --------
-  Group                2    14.50   7.248   9.356   0.0004
+  Group                2    14.50   7.248   9.36   <.001
   (within)            42    32.54   0.775          
 
 ---
 
 > *Example 15.2*: 
 The mean scores are not equal for the red, grey and blue group 
-$[F(2,42) = 9.35$, $p = .0004$, $\omega^2 = 0.28]$.
+$[F(2,42) = 9.35$, $p < .001$, $\omega^2 = 0.28]$.
 
 ---
 
@@ -443,7 +443,7 @@ variance in the *sample* can be assigned to the independent
 variable. 
 
 The second measure for effect size with analysis of variance is the so-called
-$\omega^2$ ("omega squared") (@MD04, p.296): 
+$\omega^2$ ("omega squared") [@MD04, p.296]: 
 \begin{equation}
   (\#eq:omegasq)
     \omega^2 = \frac{ \textrm{SS}_b - (k-1) \textrm{MS}_w} { \textrm{SS}_t + \textrm{MS}_w }
@@ -524,9 +524,9 @@ Table: (#tab:colours-anova-contrast) Summary of analysis of variance of the obse
 
   Variance source        df   SS       MS      $F$      $p$
   --------------------- ---- ------- -------- -------- --------
-  Group                    2  14.50    7.248    9.356    0.0004
-    Group, contrast 1      1  14.31   14.308   18.470    0.0001
-    Group, contrast 2      1   0.19    0.188    0.243    0.6248
+  Group                    2  14.50    7.248    9.36    <.001
+    Group, contrast 1      1  14.31   14.308   18.47    <.001
+    Group, contrast 2      1   0.19    0.188    0.24    0.62
   (within)                42  32.54    0.775            
 
 The analysis of variance with planned comparisons can thus be used 
@@ -598,7 +598,7 @@ and/or in a $p$-value for the difference between two conditions.
 > *Example 15.4*:
 The mean scores are not equal for the red, grey and blue group 
 $[F(2,42) = 9.35$, $p = .0004$, $\omega^2 = 0.28]$.
-Post-hoc comparisons using Tukey's HSD test show that the grey and blue groups do not differ ($p=.875$), while there are significant differences between the red and blue groups ($p<.001$) and between the red and grey group ($p=.003$).
+Post-hoc comparisons using Tukey's HSD test show that the grey and blue groups do not differ ($p=.88$), while there are significant differences between the red and blue groups ($p<.001$) and between the red and grey group ($p=.003$).
 
 ---
 
@@ -981,10 +981,10 @@ In two-way ANOVA too, we can perform post hoc comparisons (cf. §\@ref(sec:anova
 
 > The comprehension scores showed a significant main effect of structure markings in the text $[F(1,88)=63.75, p<.001, \omega^2=0.26]$, as well as a significant main effect of the reader type $[F(2,88)=33.56, p<.001, \omega^2=0.27]$.
 > There was also a significant interaction between text version and reader type $[F(2,88)=10.74, p<.001, \omega^2=0.08]$, see Figure \@ref(fig:DBE12interaction); this interaction was further explored using the Tukey HSD test (among 6 cells). 
-Weak readers perform worse than average readers, in the text version without markers ($p<.001$), but not in the version with markers ($p=.999$). 
-Strong readers perform better than average readers, in the version without markers ($p<.001$) as well as with markers ($p=.013$). 
-Text markers have an effect for weak readers ($p<.001$) and for average readers ($p<.001$) but not for strong readers ($p=.888$); hence strong readers do not benefit from structure markers in the text, but weak and average readers do. 
-Also of interest is the finding that weak readers understand a text with markers as well as strong readers do understand the same text without markers ($p=.722$).
+Weak readers perform worse than average readers, in the text version without markers ($p<.001$), but not in the version with markers ($p=.99$). 
+Strong readers perform better than average readers, in the version without markers ($p<.001$) as well as with markers ($p=.01$). 
+Text markers have an effect for weak readers ($p<.001$) and for average readers ($p<.001$) but not for strong readers ($p=.89$); hence strong readers do not benefit from structure markers in the text, but weak and average readers do. 
+Also of interest is the finding that weak readers understand a text with markers as well as strong readers do understand the same text without markers ($p=.72$).
 
 
 ### SPSS
@@ -1042,12 +1042,12 @@ Under "Correction" check the option `Tukey`, and under "Display" check the optio
 The output of the *Post Hoc Tests* shows for each pairwise comparison the difference, the standard error, and the 95% confidence interval of the difference. If the interval does *not* contain zero, then the scores are probably different between the two groups. For each pairwise comparison JASP reports a $t$ test with its adjusted $p$ value using Tukey's correction. 
 
 For the version without markers ('zonder') we see that the cell `zonder:zwak` scores lower than the cell `zonder:gemiddeld` ($p<.001$), and that the cell `zonder:sterk` scores higher than the cell `zonder:gemiddeld` ($p<.001$).
-For the version with markers ('met') we see that the cell `met:zwak` scores about equally with the cell `met:gemiddeld` ($p=.999$), and that the cell `met:sterk` scores higher than the cell `met:gemiddeld` ($p=.013$). Hence strong readers perform better than average and/or weak readers, in both text versions. 
+For the version with markers ('met') we see that the cell `met:zwak` scores about equally with the cell `met:gemiddeld` ($p=.99$), and that the cell `met:sterk` scores higher than the cell `met:gemiddeld` ($p=.01$). Hence strong readers perform better than average and/or weak readers, in both text versions. 
 We also see that `zonder:zwak` scores lower than `met:zwak` ($p<.001$), 
 and that `zonder:gemiddeld` scores lower than `met:gemiddeld` ($p<.001$), 
-while there is no difference between `zonder:sterk` and `met:sterk` ($p=.888$). 
+while there is no difference between `zonder:sterk` and `met:sterk` ($p=.89$). 
 Hence strong readers do not benefit from structure markers in the text. 
-Also of interest is the finding that weak readers understand a text with markers as well as strong readers do understand a text without markers ($p=.722$).
+Also of interest is the finding that weak readers understand a text with markers as well as strong readers do understand a text without markers ($p=.72$).
 
 ### R 
 
@@ -1100,12 +1100,12 @@ These results too differ slighly from those reported in the main text above, bec
 For each pairwise comparison among the 2x3 cells we see the difference, the lower and upper boundary of the 95% confidence interval of the difference, and the adjusted $p$ value using Tukey's HSD correction. 
 
 For the version without markers ('zonder') we see that the cell `zonder:zwak` scores lower than the cell `zonder:gemiddeld` ($p<.001$), and that the cell `zonder:sterk` scores higher than the cell `zonder:gemiddeld` ($p<.001$).
-For the version with markers ('met') we see that the cell `met:zwak` scores about equally with the cell `met:gemiddeld` ($p=.999$), and that the cell `met:sterk` scores higher than the cell `met:gemiddeld` ($p=.013$). Hence strong readers perform better than average and/or weak readers, in both text versions. 
+For the version with markers ('met') we see that the cell `met:zwak` scores about equally with the cell `met:gemiddeld` ($p=.99$), and that the cell `met:sterk` scores higher than the cell `met:gemiddeld` ($p=.01$). Hence strong readers perform better than average and/or weak readers, in both text versions. 
 We also see that `zonder:zwak` scores lower than `met:zwak` ($p<.001$), 
 and that `zonder:gemiddeld` scores lower than `met:gemiddeld` ($p<.001$), 
-while there is no difference between `zonder:sterk` and `met:sterk` ($p=.888$). 
+while there is no difference between `zonder:sterk` and `met:sterk` ($p=.89$). 
 Hence strong readers do not benefit from structure markers in the text. 
-Also of interest is the finding that weak readers understand a text with markers as well as strong readers do understand a text without markers ($p=.722$).
+Also of interest is the finding that weak readers understand a text with markers as well as strong readers do understand a text without markers ($p=.72$).
 
 
 [^fn15-1]: If (1) red does differ from grey and blue, and if (2) grey and blue

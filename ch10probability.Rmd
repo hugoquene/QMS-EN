@@ -441,12 +441,12 @@ $1-0.1587=0.8413$. Moreover, we know that the distribution is symmetric
 What is the probability $p$ that $Z>3$? In the second subtable, we find
 for boundary value $Z^*=3$ the p-value 
 $p=0.0013$. Thus, for a normally distributed variable $Z$
-there is a p-value $p=0.0013$ of finding a value of $Z$
-which is at least three standard variations above the average.
+there is a p-value $p=0.0013$ (often reported as $p=.001$) of finding a value of $Z$
+which is at least three standard deviations above the average. 
 
 We often want to know the opposite: when we choose a certain p-value,
 what should the boundary value $Z^*$ be?
-Which boundary value distinguishes the highest 5% of observations from the 
+Which boundary value of $Z^*$ distinguishes the highest 5% of observations from the 
 lowest 95% ($p=0.05$)? In the first subtable, we find for p-value 
 $p=0.05$ the boundary value $Z^*=1.645$. This boundary value, calculated back
 to the original variable, is often referred to as the 95th percentile or

@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>17 Other nonparametric tests | Quantitative Methods and Statistics</title>
   <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="17 Other nonparametric tests | Quantitative Methods and Statistics" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
   <meta name="github-repo" content="rstudio/QMS-EN" />
@@ -31,7 +30,6 @@
   
 <link rel="prev" href="ch-chi-square-tests.html"/>
 <link rel="next" href="app-randomnumbers.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -49,8 +47,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -530,10 +529,10 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ch-other-nonpar-tests" class="section level1" number="17">
-<h1><span class="header-section-number">17</span> Other nonparametric tests</h1>
-<div id="sec:h17introduction" class="section level2" number="17.1">
-<h2><span class="header-section-number">17.1</span> Introduction</h2>
+<div id="ch-other-nonpar-tests" class="section level1 hasAnchor" number="17">
+<h1><span class="header-section-number">17</span> Other nonparametric tests<a href="ch-other-nonpar-tests.html#ch-other-nonpar-tests" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="sec:h17introduction" class="section level2 hasAnchor" number="17.1">
+<h2><span class="header-section-number">17.1</span> Introduction<a href="ch-other-nonpar-tests.html#sec:h17introduction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In this chapter, we discuss different nonparametric tests.
 These tests can be used when the data is not
 measured on an interval level of measurement (see Chapter
@@ -553,10 +552,10 @@ which use information of the nominal level (sign tests and related) and
 then the tests which use information of the ordinal level, i.e. which are based on the
 rank order of the observed values.</p>
 </div>
-<div id="paired-observations-single-sample" class="section level2" number="17.2">
-<h2><span class="header-section-number">17.2</span> Paired observations, single sample</h2>
-<div id="sec:signtest" class="section level3" number="17.2.1">
-<h3><span class="header-section-number">17.2.1</span> Sign test</h3>
+<div id="paired-observations-single-sample" class="section level2 hasAnchor" number="17.2">
+<h2><span class="header-section-number">17.2</span> Paired observations, single sample<a href="ch-other-nonpar-tests.html#paired-observations-single-sample" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="sec:signtest" class="section level3 hasAnchor" number="17.2.1">
+<h3><span class="header-section-number">17.2.1</span> Sign test<a href="ch-other-nonpar-tests.html#sec:signtest" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A handy test for paired observations is the so-called sign test.
 This test can be viewed as a nonparametric, nominal counterpart of
 the <em>t</em>-test for paired observations
@@ -590,8 +589,8 @@ with <em>je</em> as the form of address; this is a significant difference
 (sign test, <span class="math inline">\(p&lt;.001\)</span>).</p>
 </blockquote>
 </div>
-<div id="sec:Wilcoxon-signed-rank" class="section level3" number="17.2.2">
-<h3><span class="header-section-number">17.2.2</span> Wilcoxon signed-ranks test</h3>
+<div id="sec:Wilcoxon-signed-rank" class="section level3 hasAnchor" number="17.2.2">
+<h3><span class="header-section-number">17.2.2</span> Wilcoxon signed-ranks test<a href="ch-other-nonpar-tests.html#sec:Wilcoxon-signed-rank" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The Wilcoxon signed-ranks test can be viewed as a
 nonparametric, ordinal counterpart of the <em>t</em>-test for paired
 observations (§<a href="ch-testing.html#sec:ttest-paired">13.7</a>).</p>
@@ -610,7 +609,7 @@ The smallest of
 these two sums (<span class="math inline">\(W_+\)</span> or <span class="math inline">\(|W_-|\)</span>) forms the test statistic; here, we use
 <span class="math inline">\(|W_-|\)</span>.
 We will not discuss the probability distribution of the test statistic
-but instead have the significance calculated by computer: <span class="math inline">\(P(|W_-|)=.0055\)</span>. The
+but instead have the significance calculated by computer: <span class="math inline">\(P(|W_-|)=.006\)</span>. The
 probability of this outcome according to H0 is so small that, in light of this
 observed (and presumably valid)
 outcome, we again decide to reject H0.</p>
@@ -624,8 +623,8 @@ considers only the (nominal) <em>sign</em> of the differences, the
 Wilcoxon signed-rank is based on the (ordinal) <em>ranking</em> of the
 differences, and the <em>t</em>-test is based on the (interval) <em>size</em> of the
 differences.</p>
-<div id="formulas-7" class="section level4" number="17.2.2.1">
-<h4><span class="header-section-number">17.2.2.1</span> formulas</h4>
+<div id="formulas-7" class="section level4 hasAnchor" number="17.2.2.1">
+<h4><span class="header-section-number">17.2.2.1</span> formulas<a href="ch-other-nonpar-tests.html#formulas-7" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>We not only calculate <span class="math inline">\(W_+\)</span> (or <span class="math inline">\(|W_-|\)</span>) in the aforementioned manner, but also
 the corresponding value of <span class="math inline">\(z\)</span> <span class="citation">(<a href="#ref-Ferg89" role="doc-biblioref">Ferguson and Takane 1989</a>)</span>:
 <span class="math display" id="eq:Wilcoxon-signedrank-z">\[\begin{equation}
@@ -639,14 +638,14 @@ a correlation <span class="citation">(<a href="#ref-Rose91" role="doc-biblioref"
     r = \frac {z} {\sqrt{N}}
 \end{equation}\]</span>
 For the example above, we find
-<span class="math inline">\(z=-2.803\)</span>, and <span class="math inline">\(r=-.89\)</span>, which indicates an extremely large effect.</p>
+<span class="math inline">\(z=-2.80\)</span>, and <span class="math inline">\(r=-.89\)</span>, which indicates an extremely large effect.</p>
 </div>
 </div>
 </div>
-<div id="independent-observations-multiple-samples" class="section level2" number="17.3">
-<h2><span class="header-section-number">17.3</span> Independent observations, multiple samples</h2>
-<div id="median-test" class="section level3" number="17.3.1">
-<h3><span class="header-section-number">17.3.1</span> Median test</h3>
+<div id="independent-observations-multiple-samples" class="section level2 hasAnchor" number="17.3">
+<h2><span class="header-section-number">17.3</span> Independent observations, multiple samples<a href="ch-other-nonpar-tests.html#independent-observations-multiple-samples" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="median-test" class="section level3 hasAnchor" number="17.3.1">
+<h3><span class="header-section-number">17.3.1</span> Median test<a href="ch-other-nonpar-tests.html#median-test" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The median test can be viewed as a nonparametric, nominal
 counterpart
 of the <em>t</em>-test for unpaired, independent observations. It is actually
@@ -659,8 +658,8 @@ do not differ from each other, and that approximately half of the observations
 in both samples lie above the joint median, and the other half lies below
 it.</p>
 </div>
-<div id="sec:wilcoxon-rank-sum" class="section level3" number="17.3.2">
-<h3><span class="header-section-number">17.3.2</span> Wilcoxon rank sum test, or Mann-Whitney U test</h3>
+<div id="sec:wilcoxon-rank-sum" class="section level3 hasAnchor" number="17.3.2">
+<h3><span class="header-section-number">17.3.2</span> Wilcoxon rank sum test, or Mann-Whitney U test<a href="ch-other-nonpar-tests.html#sec:wilcoxon-rank-sum" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The Wilcoxon rank sum test is equivalent to the Mann-Whitney U test.
 Both can be viewed as nonparametric, ordinal counterparts
 of the <em>t</em>-test for unpaired, independent observations
@@ -752,16 +751,16 @@ significance.</p>
 in the first condition (original version), i.e. that the text in this condition
 received lower judgements. The sum of the rankings for this
 smallest condition is the test statistic <span class="math inline">\(W_1=67\)</span>. In some versions of the
-test<a href="references.html#fn42" class="footnote-ref" id="fnref42"><sup>42</sup></a>, this raw sum is used to calculate the significance.
-In other test versions<a href="references.html#fn43" class="footnote-ref" id="fnref43"><sup>43</sup></a>, this raw sum is firstly corrected for the
+test<a href="#fn42" class="footnote-ref" id="fnref42"><sup>42</sup></a>, this raw sum is used to calculate the significance.
+In other test versions<a href="#fn43" class="footnote-ref" id="fnref43"><sup>43</sup></a>, this raw sum is firstly corrected for the
 minimal value of <span class="math inline">\(W_1\)</span> (see the formulas below): the test statistic
 is then <span class="math inline">\(U=W_1 - \textrm{min}(W_1) = 67-45=22\)</span>. Afterwards, the significance
-of <span class="math inline">\(W_1=67\)</span> or of <span class="math inline">\(U=22\)</span> is calculated. We find that <span class="math inline">\(p=.0653\)</span>. If we do a
+of <span class="math inline">\(W_1=67\)</span> or of <span class="math inline">\(U=22\)</span> is calculated. We find that <span class="math inline">\(p=.07\)</span>. If we do a
 two-sided test (H0: judgements in conditions 2 are no higher and no lower
 than those in condition 1) with <span class="math inline">\(\alpha=.05\)</span>, then there is no reason to
-reject H0<a href="references.html#fn44" class="footnote-ref" id="fnref44"><sup>44</sup></a>.</p>
-<div id="formulas-8" class="section level4" number="17.3.2.1">
-<h4><span class="header-section-number">17.3.2.1</span> formulas</h4>
+reject H0<a href="#fn44" class="footnote-ref" id="fnref44"><sup>44</sup></a>.</p>
+<div id="formulas-8" class="section level4 hasAnchor" number="17.3.2.1">
+<h4><span class="header-section-number">17.3.2.1</span> formulas<a href="ch-other-nonpar-tests.html#formulas-8" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>For the sums of the rankings, it is the case that
 <span class="math inline">\(W_1 + W_2 = (n_1+n_2) (n_1+n_2+1) / 2\)</span>.</p>
 <p>If all the lowest rankings (i.e. all lowest judgements) are in the smallest (first) condition,
@@ -783,14 +782,14 @@ corresponding value of <span class="math inline">\(z\)</span> <span class="citat
 \end{equation}\]</span></p>
 <p>With this, we again determine the effect size, using equation <a href="ch-other-nonpar-tests.html#eq:es-z2r">(17.3)</a>.
 For the above example, we find
-<span class="math inline">\(\bar{W_1}=22.5\)</span>, <span class="math inline">\(z=1.837\)</span>, and <span class="math inline">\(r=.42\)</span>, which indicates a
+<span class="math inline">\(\bar{W_1}=22.5\)</span>, <span class="math inline">\(z=1.84\)</span>, and <span class="math inline">\(r=.42\)</span>, which indicates a
 ‘medium’ effect. That this considerable effect still does
 not lead to a significant difference (with two-sided testing) is presumably
 a consequence of the (too) small size of the two groups.</p>
 </div>
 </div>
-<div id="kruskall-wallis-h-test" class="section level3" number="17.3.3">
-<h3><span class="header-section-number">17.3.3</span> Kruskall-Wallis H test</h3>
+<div id="kruskall-wallis-h-test" class="section level3 hasAnchor" number="17.3.3">
+<h3><span class="header-section-number">17.3.3</span> Kruskall-Wallis H test<a href="ch-other-nonpar-tests.html#kruskall-wallis-h-test" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The Kruskall-Wallis H test can be viewed as an expansion of the
 Wilcoxon rank sum test (see
 §<a href="ch-other-nonpar-tests.html#sec:wilcoxon-rank-sum">17.3.2</a> above), for <span class="math inline">\(k \ge 2\)</span> independent samples
@@ -803,8 +802,8 @@ variance analysis, not on the observations themselves but on the rankings of the
 observations. We calculate <span class="math inline">\(H\)</span> as the test statistic based on the rankings
 of the observations in the <span class="math inline">\(k\)</span> different
 groups.</p>
-<div id="formula" class="section level4" number="17.3.3.1">
-<h4><span class="header-section-number">17.3.3.1</span> formula</h4>
+<div id="formula" class="section level4 hasAnchor" number="17.3.3.1">
+<h4><span class="header-section-number">17.3.3.1</span> formula<a href="ch-other-nonpar-tests.html#formula" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p><span class="math display" id="eq:kruskall-wallis-H">\[\begin{equation}
   \tag{17.6}
     H = \frac{12}{N(N+1)} \sum^{k} (\frac{R^2_j}{n_j}) - 3(N+1)
@@ -829,7 +828,7 @@ If <span class="math inline">\(k=2\)</span> or <span class="math inline">\(n_j&l
 
 
 
-<h3>References</h3>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-Ferg89" class="csl-entry">
 Ferguson, George A., and Yoshio Takane. 1989. <em>Statistical Analysis in Psychology and Education</em>. 6e ed. New York: McGraw-Hill.
@@ -837,6 +836,19 @@ Ferguson, George A., and Yoshio Takane. 1989. <em>Statistical Analysis in Psycho
 <div id="ref-Rose91" class="csl-entry">
 Rosenthal, Robert. 1991. <em>Meta-Analytic Procedures for Social Research</em>. 2nd ed. Newbury Park, CA: Sage.
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="42">
+<li id="fn42"><p>Wilcoxon rank sum test in SPSS.<a href="ch-other-nonpar-tests.html#fnref42" class="footnote-back">↩︎</a></p></li>
+<li id="fn43"><p>Mann-Whitney test in SPSS and in R, and Wilcoxon rank sum test in R.<a href="ch-other-nonpar-tests.html#fnref43" class="footnote-back">↩︎</a></p></li>
+<li id="fn44"><p>If we do a two-sided test with <span class="math inline">\(\alpha=.10\)</span>, then we could indeed
+reject H0. If we do a one-sided test (H0: judgements in condition 2 are not higher
+than in condition 1), then we may halve the calculated <span class="math inline">\(p\)</span>, since the calculated
+<span class="math inline">\(p\)</span> assumes two-sided testing. We would then find <span class="math inline">\(p=.0653/2=.0326\)</span>, and,
+as this probability is smaller than <span class="math inline">\(\alpha=.05\)</span>, we would then indeed
+be able to reject H0.<a href="ch-other-nonpar-tests.html#fnref44" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 

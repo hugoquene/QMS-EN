@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>10 Probability distributions | Quantitative Methods and Statistics</title>
   <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="10 Probability distributions | Quantitative Methods and Statistics" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
   <meta name="github-repo" content="rstudio/QMS-EN" />
@@ -31,7 +30,6 @@
   
 <link rel="prev" href="ch-centre-and-dispersion.html"/>
 <link rel="next" href="ch-correlation-regression.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -49,8 +47,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -530,10 +529,10 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ch-probability-distributions" class="section level1" number="10">
-<h1><span class="header-section-number">10</span> Probability distributions</h1>
-<div id="sec:probabilities" class="section level2" number="10.1">
-<h2><span class="header-section-number">10.1</span> Probabilities</h2>
+<div id="ch-probability-distributions" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number">10</span> Probability distributions<a href="ch-probability-distributions.html#ch-probability-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="sec:probabilities" class="section level2 hasAnchor" number="10.1">
+<h2><span class="header-section-number">10.1</span> Probabilities<a href="ch-probability-distributions.html#sec:probabilities" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Calling behind the wheel increases the chance of an accident <span class="citation">(<a href="#ref-Bhar13" role="doc-biblioref">Bhargava and Pathania 2013</a>)</span>.
 The average chance of precipitation in the Netherlands is 7%. My order has a
 10% chance of being delivered a day later than promised. Chances and probabilities
@@ -546,7 +545,7 @@ probabilities and
 probability distributions. This is the subject of the present chapter.</p>
 <p>As an introduction, let us take a look at a Dutch <em>Scrabble</em> game.
 The game contains a bag with 102 tiles inside, each of which has a letter on it
-<a href="references.html#fn21" class="footnote-ref" id="fnref21"><sup>21</sup></a>. Of the 102 tiles, 6 have the letter A on them. If I take one tile from a
+<a href="#fn21" class="footnote-ref" id="fnref21"><sup>21</sup></a>. Of the 102 tiles, 6 have the letter A on them. If I take one tile from a
 full and well-mixed bag, what is the chance that I draw the letter A? The
 probability-of-the-outcome-A is referred to as <span class="math inline">\(P(\textrm{A})\)</span>, with the <span class="math inline">\(P\)</span> of
 <em>Probabilitas</em> (Lat. “chance, probability”), and can be determined as
@@ -645,8 +644,8 @@ vowel from the second bag is
 </blockquote>
 <hr />
 </div>
-<div id="sec:binomial-distribution" class="section level2" number="10.2">
-<h2><span class="header-section-number">10.2</span> Binomial probability distribution</h2>
+<div id="sec:binomial-distribution" class="section level2 hasAnchor" number="10.2">
+<h2><span class="header-section-number">10.2</span> Binomial probability distribution<a href="ch-probability-distributions.html#sec:binomial-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>For the remainder of this chapter, we will adopt two changes to the
 Scrabble game. Firstly, we will remove the 2 blank, letter-less titles
 from the bag. There are now precisely 100 tiles left, of which
@@ -673,7 +672,7 @@ letter bag, or the hand of the person drawing tiles does not have any memory. At
 <em>each</em> draw, the probability of a hit is <span class="math inline">\(p=.38\)</span>, even if a vowel
 has just been drawn <span class="math inline">\(100\times\)</span> or $1000. The same is the case
 for consecutive outcomes with roulette: in <em>each</em> round, the probability
-of a hit is <span class="math inline">\(1/37\)</span>, even if the ball has just landed on the same number <span class="math inline">\(100\times\)</span><a href="references.html#fn22" class="footnote-ref" id="fnref22"><sup>22</sup></a>.</p>
+of a hit is <span class="math inline">\(1/37\)</span>, even if the ball has just landed on the same number <span class="math inline">\(100\times\)</span><a href="#fn22" class="footnote-ref" id="fnref22"><sup>22</sup></a>.</p>
 <p>With the aforementioned changes, let us now conduct <span class="math inline">\(n=3\)</span> draws
 (with replacement, see above), and for each possible outcome determine
 the probability of the outcome, see
@@ -785,8 +784,8 @@ Figure 10.1: Probability distribution of a binomial variable with <span class="m
 probability distribution, also referred to as the binomial distribution.
 You can calculate the precise probabilities of the binomial
 probability distribution with the formula <a href="ch-probability-distributions.html#eq:prob-binomial">(10.5)</a> below.</p>
-<div id="formulas" class="section level3" number="10.2.1">
-<h3><span class="header-section-number">10.2.1</span> formulas</h3>
+<div id="formulas" class="section level3 hasAnchor" number="10.2.1">
+<h3><span class="header-section-number">10.2.1</span> formulas<a href="ch-probability-distributions.html#formulas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The probability of an <span class="math inline">\(x\)</span> number of hits in <span class="math inline">\(n\)</span> draws is given as
 <span class="math display" id="eq:prob-binomial">\[\begin{equation}
   P(x\,\mbox{hits}) = {n \choose x} p^x (1-p)^{n-x}
@@ -828,7 +827,7 @@ orderings of <span class="math inline">\(x=2\)</span> persons over <span class="
 The uppermost row is that for <span class="math inline">\(n=0\)</span>. The fifth row is that for <span class="math inline">\(n=4\)</span> and we
 can see the binomial coefficients for <span class="math inline">\(x= 0, 1, 2, 3, 4\)</span> there one after another.
 For <span class="math inline">\({4 \choose 2}\)</span>, we find there the binomial coefficient <span class="math inline">\(6\)</span>.
-Every coefficient is the total of the two coefficients above<a href="references.html#fn23" class="footnote-ref" id="fnref23"><sup>23</sup></a>, and
+Every coefficient is the total of the two coefficients above<a href="#fn23" class="footnote-ref" id="fnref23"><sup>23</sup></a>, and
 every coefficient can be understood as the number of possible
 routes descending from the top of the triangle
 to the cell.</p>
@@ -996,16 +995,16 @@ Figure <a href="ch-probability-distributions.html#fig:binomprobabilitydistributi
 </blockquote>
 <hr />
 </div>
-<div id="jasp-4" class="section level3" number="10.2.2">
-<h3><span class="header-section-number">10.2.2</span> JASP</h3>
+<div id="jasp-4" class="section level3 hasAnchor" number="10.2.2">
+<h3><span class="header-section-number">10.2.2</span> JASP<a href="ch-probability-distributions.html#jasp-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The binomial probability distribution such as shown in Figure <a href="ch-probability-distributions.html#fig:binomprobabilitydistribution3">10.1</a> may be obtained in JASP by selecting the following option in the top menu bar:</p>
 <pre><code>Distributions &gt; Discrete: Binomial</code></pre>
 <p>If the <code>Distributions</code> option is not shown in the top bar, then you can add the option by clicking on the blue <strong>+</strong>-button in the top right corner, and checking option <code>Distributions</code>.<br />
 In the “Binomial” input, there is an input panel <code>Show Distribution</code>. In that panel, enter the appropriate values for <span class="math inline">\(p\)</span> (under “free parameter”) and for <span class="math inline">\(n\)</span> (under “fixed parameter”). In the “Display” input, check option <code>Probability mass function</code>.
 The output panel now shows the binomial <em>Probability Mass Plot</em>.</p>
 </div>
-<div id="r-4" class="section level3" number="10.2.3">
-<h3><span class="header-section-number">10.2.3</span> R</h3>
+<div id="r-4" class="section level3 hasAnchor" number="10.2.3">
+<h3><span class="header-section-number">10.2.3</span> R<a href="ch-probability-distributions.html#r-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="ch-probability-distributions.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>( <span class="dv">0</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">size=</span><span class="dv">3</span>, <span class="at">prob=</span>.<span class="dv">38</span> )</span></code></pre></div>
 <pre><code>## [1] 0.238328 0.438216 0.268584 0.054872</code></pre>
 <p>The output is shown in Table <a href="ch-probability-distributions.html#tab:binomprobabilitydistribution3">10.2</a> below.</p>
@@ -1024,8 +1023,8 @@ The output panel now shows the binomial <em>Probability Mass Plot</em>.</p>
 <p>Pascal’s triangle can be found on the left under the diagonal of this matrix.</p>
 </div>
 </div>
-<div id="sec:normaldistribution" class="section level2" number="10.3">
-<h2><span class="header-section-number">10.3</span> Normal probability distribution</h2>
+<div id="sec:normaldistribution" class="section level2 hasAnchor" number="10.3">
+<h2><span class="header-section-number">10.3</span> Normal probability distribution<a href="ch-probability-distributions.html#sec:normaldistribution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The more the sample size <span class="math inline">\(n\)</span> increases, the less gradually the binomial probability
 distribution will move up, and the more fluid the probability
 distribution will become, as is shown in
@@ -1117,11 +1116,11 @@ we find <span class="math inline">\(p=0.1587\)</span>. Based on this, we also kn
 What is the probability <span class="math inline">\(p\)</span> that <span class="math inline">\(Z&gt;3\)</span>? In the second subtable, we find
 for boundary value <span class="math inline">\(Z^*=3\)</span> the p-value
 <span class="math inline">\(p=0.0013\)</span>. Thus, for a normally distributed variable <span class="math inline">\(Z\)</span>
-there is a p-value <span class="math inline">\(p=0.0013\)</span> of finding a value of <span class="math inline">\(Z\)</span>
-which is at least three standard variations above the average.</p>
+there is a p-value <span class="math inline">\(p=0.0013\)</span> (often reported as <span class="math inline">\(p=.001\)</span>) of finding a value of <span class="math inline">\(Z\)</span>
+which is at least three standard deviations above the average.</p>
 <p>We often want to know the opposite: when we choose a certain p-value,
 what should the boundary value <span class="math inline">\(Z^*\)</span> be?
-Which boundary value distinguishes the highest 5% of observations from the
+Which boundary value of <span class="math inline">\(Z^*\)</span> distinguishes the highest 5% of observations from the
 lowest 95% (<span class="math inline">\(p=0.05\)</span>)? In the first subtable, we find for p-value
 <span class="math inline">\(p=0.05\)</span> the boundary value <span class="math inline">\(Z^*=1.645\)</span>. This boundary value, calculated back
 to the original variable, is often referred to as the 95th percentile or
@@ -1180,8 +1179,8 @@ which is equally large as or larger than this lower boundary $Z^*$. We call
 this precise probability $p$, the *p-value* which belongs 
 to the value of $Z$ according to the probability distribution.
 -->
-<div id="formulas-1" class="section level3" number="10.3.1">
-<h3><span class="header-section-number">10.3.1</span> formulas</h3>
+<div id="formulas-1" class="section level3 hasAnchor" number="10.3.1">
+<h3><span class="header-section-number">10.3.1</span> formulas<a href="ch-probability-distributions.html#formulas-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>If variable <span class="math inline">\(X\)</span> has a normal probability distribution, with average <span class="math inline">\(\mu\)</span>
 and standard deviation <span class="math inline">\(\sigma\)</span>, then this is shown as
 <span class="math display" id="eq:normallydistributed">\[\begin{equation}
@@ -1201,8 +1200,8 @@ standard deviation <span class="math inline">\(\sigma\)</span> is
   \tag{10.9}
 \end{equation}\]</span></p>
 </div>
-<div id="jasp-5" class="section level3" number="10.3.2">
-<h3><span class="header-section-number">10.3.2</span> JASP</h3>
+<div id="jasp-5" class="section level3 hasAnchor" number="10.3.2">
+<h3><span class="header-section-number">10.3.2</span> JASP<a href="ch-probability-distributions.html#jasp-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The normal probability distribution such as shown in Figure <a href="ch-probability-distributions.html#fig:normalprobabilitydistribution">10.3</a> may be obtained in JASP by selecting the following option in the top menu bar:</p>
 <pre><code>Distributions &gt; Continuous: Normal</code></pre>
 <p>If the <code>Distributions</code> option is not shown in the top bar, then you can add the option by clicking on the blue <strong>+</strong>-button in the top right corner, and checking option <code>Distributions</code>.<br />
@@ -1210,8 +1209,8 @@ In the “Normal” input panel, there is an input panel <code>Show Distribution
 For <em>other</em> normal density distributions, the values of <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span> may be adjusted, and you may specify the domain shown (under “Options”, then “range of x”).
 Note that, under the heading “Parameters”, you should select the option labeled “<span class="math inline">\(\mu\)</span>, <span class="math inline">\(\sigma\)</span>” if you enter the mean and standard deviation (the default option is “<span class="math inline">\(\mu\)</span>, <span class="math inline">\(\sigma^2\)</span>” using variance; for the <em>standard</em> normal distribution <span class="math inline">\(\sigma=\sigma^2=1\)</span>).</p>
 </div>
-<div id="r-5" class="section level3" number="10.3.3">
-<h3><span class="header-section-number">10.3.3</span> R</h3>
+<div id="r-5" class="section level3 hasAnchor" number="10.3.3">
+<h3><span class="header-section-number">10.3.3</span> R<a href="ch-probability-distributions.html#r-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The normal probability distribution in Figure <a href="ch-probability-distributions.html#fig:normalprobabilitydistribution">10.3</a> may be plotted in R using the command below. A <code>curve</code> is plotted, with <code>x</code> in the specified domain, and <code>y</code> being the function which computes the normal probability density using equation <a href="ch-probability-distributions.html#eq:prob-normal">(10.8)</a>:</p>
 <div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="ch-probability-distributions.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>( <span class="fu">dnorm</span>( x, <span class="at">mean=</span><span class="dv">0</span>, <span class="at">sd=</span><span class="dv">1</span> ), <span class="co"># function specifying y values, normal density</span></span>
 <span id="cb60-2"><a href="ch-probability-distributions.html#cb60-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">from=</span><span class="sc">-</span><span class="dv">5</span>, <span class="at">to=</span><span class="sc">+</span><span class="dv">5</span>, <span class="co"># domain of x</span></span>
@@ -1222,8 +1221,8 @@ Note that, under the heading “Parameters”, you should select the option labe
 <p>If used with the additional argument <code>curve( ..., add=TRUE )</code>, then the curve will be added to the most recent plot (see e.g. Figure <a href="ch-probability-distributions.html#fig:itunesmeanshist">10.6</a> below).</p>
 </div>
 </div>
-<div id="sec:isvarnormaldistributed" class="section level2" number="10.4">
-<h2><span class="header-section-number">10.4</span> Does my variable have a normal probability distribution?</h2>
+<div id="sec:isvarnormaldistributed" class="section level2 hasAnchor" number="10.4">
+<h2><span class="header-section-number">10.4</span> Does my variable have a normal probability distribution?<a href="ch-probability-distributions.html#sec:isvarnormaldistributed" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The longest song in my digital music library lasts around 50
 minutes (it’s a piece of classical Indian music, a ‘morning raga’).
 A histogram of all music number lengths is shown in
@@ -1271,8 +1270,8 @@ for normality, and the Kolmogorov–Smirnov test (with test statistic <span clas
 normality. Both tests investigate the
 H0:<span class="math inline">\(X\sim\mathcal{N}(\bar{X},s)\)</span> (see
 formula <a href="ch-probability-distributions.html#eq:normallydistributed">(10.7)</a>).</p>
-<div id="spss-4" class="section level3" number="10.4.1">
-<h3><span class="header-section-number">10.4.1</span> SPSS</h3>
+<div id="spss-4" class="section level3 hasAnchor" number="10.4.1">
+<h3><span class="header-section-number">10.4.1</span> SPSS<a href="ch-probability-distributions.html#spss-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <pre><code>Analyze &gt; Descriptive Statistics &gt; Explore...</code></pre>
 <p>Select the variable Time (drag to the Dependent List panel).<br />
 Choose the button <code>Plots</code>, and tick <code>Normality plots with tests</code>, which
@@ -1287,8 +1286,8 @@ warning in
 the lengths of music numbers are not normally distributed. After these
 test results, there is, amongst others, a Q-Q plot.</p>
 </div>
-<div id="r-6" class="section level3" number="10.4.2">
-<h3><span class="header-section-number">10.4.2</span> R</h3>
+<div id="r-6" class="section level3 hasAnchor" number="10.4.2">
+<h3><span class="header-section-number">10.4.2</span> R<a href="ch-probability-distributions.html#r-6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="ch-probability-distributions.html#cb62-1" aria-hidden="true" tabindex="-1"></a>itunes <span class="ot">&lt;-</span> <span class="fu">read.table</span>( <span class="at">file=</span><span class="st">&quot;data/itunestimes20120511.txt&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span> )</span>
 <span id="cb62-2"><a href="ch-probability-distributions.html#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Size in bytes, Time in ms</span></span>
 <span id="cb62-3"><a href="ch-probability-distributions.html#cb62-3" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(itunes<span class="sc">$</span>Time<span class="sc">/</span><span class="dv">60000</span>, <span class="at">datax=</span>T, <span class="at">plot.it=</span><span class="cn">FALSE</span>) <span class="co"># normally we&#39;d use plot.it=TRUE  </span></span>
@@ -1306,8 +1305,8 @@ reject H0 and conclude that the length of music numbers is not normally
 distributed.</p>
 </div>
 </div>
-<div id="sec:whatifnotnormal" class="section level2" number="10.5">
-<h2><span class="header-section-number">10.5</span> What if my variable is not normally distributed?</h2>
+<div id="sec:whatifnotnormal" class="section level2 hasAnchor" number="10.5">
+<h2><span class="header-section-number">10.5</span> What if my variable is not normally distributed?<a href="ch-probability-distributions.html#sec:whatifnotnormal" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In Part III, we will discuss various statistical tests.
 The tests which we discuss in Chapters <a href="ch-testing.html#ch-testing">13</a> and <a href="ch-power.html#ch-power">14</a> and
 <a href="ch-anova.html#ch-anova">15</a> however require that the independent
@@ -1335,8 +1334,8 @@ statistical power (for a discussion of power,
 see Chapter <a href="ch-power.html#ch-power">14</a>): they are less sensitive, and thus require larger
 samples to establish an effect.</p>
 </div>
-<div id="sec:CentralLimitTheorem" class="section level2" number="10.6">
-<h2><span class="header-section-number">10.6</span> Probability distribution of average</h2>
+<div id="sec:CentralLimitTheorem" class="section level2 hasAnchor" number="10.6">
+<h2><span class="header-section-number">10.6</span> Probability distribution of average<a href="ch-probability-distributions.html#sec:CentralLimitTheorem" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In this section, we consider the music numbers in my digital
 music library as a <em>population</em>. We now take a random
 sample of <span class="math inline">\(n=\)</span> 50 numbers, and determine the average length of these
@@ -1391,8 +1390,8 @@ derive the probability distribution of the mean from only one sample of
 <span class="math inline">\(n\)</span> observations, with a sample mean <span class="math inline">\(\bar{X}\)</span> and one standard
 deviation <span class="citation">(<a href="#ref-Cumm12" role="doc-biblioref">Cumming 2012</a>)</span>. Reread this paragraph carefully.</p>
 </div>
-<div id="sec:confidenceinterval-mean" class="section level2" number="10.7">
-<h2><span class="header-section-number">10.7</span> Confidence interval of the mean</h2>
+<div id="sec:confidenceinterval-mean" class="section level2 hasAnchor" number="10.7">
+<h2><span class="header-section-number">10.7</span> Confidence interval of the mean<a href="ch-probability-distributions.html#sec:confidenceinterval-mean" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>As explained above, we can use the mean of the sample, <span class="math inline">\(\bar{X}\)</span>,
 as a good estimate of the unknown mean in the population, <span class="math inline">\(\mu\)</span>. On
 the basis of the Central Limit Theorem (§<a href="ch-probability-distributions.html#sec:CentralLimitTheorem">10.6</a>),
@@ -1448,7 +1447,7 @@ the population parameters.</p>
 <blockquote>
 <p>For a sample of <span class="math inline">\(n=30\)</span> speakers, we find <span class="math inline">\(\overline{x}=0.215\)</span>
 and
-<span class="math inline">\(s=0.0203\)</span> seconds. From this, we estimate <a href="references.html#fn24" class="footnote-ref" id="fnref24"><sup>24</sup></a>
+<span class="math inline">\(s=0.0203\)</span> seconds. From this, we estimate <a href="#fn24" class="footnote-ref" id="fnref24"><sup>24</sup></a>
 <span class="math inline">\(\hat{\mu}=0.215\)</span> and
 <span class="math inline">\(\hat{\sigma}=0.0203\)</span>. Since <span class="math inline">\(\sigma\)</span> is not known, we use
 the <em>t</em>-distribution to determine the confidence interval. We
@@ -1460,7 +1459,7 @@ between <span class="math inline">\(\overline{x}-2.05\times s_{\bar{x}}\)</span>
 or between <span class="math inline">\(0.215-2.05\times0.0037\)</span> and
 <span class="math inline">\(0.215+2.05\times0.0037\)</span>,
 or between <span class="math inline">\(0.208\)</span> and <span class="math inline">\(0.223\)</span> seconds.
-If the true value in the population is within these limits, then the observed sample value has a probability of 95% of occurring <span class="citation">(<a href="#ref-Spie19" role="doc-biblioref">Spiegelhalter 2019, 241</a>)</span>.</p>
+If the true value in the population is within these limits, then the observed sample value has a probability of 95% of occurring <span class="citation">(<a href="#ref-Spie19" role="doc-biblioref">Spiegelhalter 2020, 241</a>)</span>.</p>
 </blockquote>
 <hr />
 <p>In Figure <a href="ch-probability-distributions.html#fig:tempo95CIs">10.8</a>, you can see the results of a
@@ -1476,8 +1475,8 @@ But for 5 out of 100 samples, from a population with <span class="math inline">\
 Figure 10.8: 95% confidence intervals and sample means, over 100 simulated samples (n=30) out of a population with mean 0.220 and s.d. 0.0225; see text.
 </p>
 </div>
-<div id="formulas-2" class="section level3" number="10.7.1">
-<h3><span class="header-section-number">10.7.1</span> formulas</h3>
+<div id="formulas-2" class="section level3 hasAnchor" number="10.7.1">
+<h3><span class="header-section-number">10.7.1</span> formulas<a href="ch-probability-distributions.html#formulas-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The two-sided <span class="math inline">\(B\)</span>% confidence interval for the population
 average is
 <span class="math display" id="eq:t-onesampleCI">\[\begin{equation}
@@ -1491,7 +1490,7 @@ Appendix <a href="app-criticaltvalues.html#app-criticaltvalues">C</a>, see
 </div>
 </div>
 </div>
-<h3>References</h3>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-Bhar13" class="csl-entry">
 Bhargava, Saurabh, and Vikram Pathania. 2013. <span>“Driving Under the (Cellular) Influence.”</span> <em>American Economic Journal: Economic Policy</em> 5 (3): 92–125.
@@ -1506,8 +1505,20 @@ Quené, Hugo. 2008. <span>“Multilevel Modeling of Between-Speaker and Within-S
 Schuurman, Wouter, and Hans De Kluiver. 2001. <em>Kop of Munt: Kansrekening in Het Dagelijks Leven</em>. Amsterdam: Bert Bakker.
 </div>
 <div id="ref-Spie19" class="csl-entry">
-Spiegelhalter, David. 2019. <em>The Art of Statistics: Learning from Data</em>. Pelican.
+Spiegelhalter, David. 2020. <em>The Art of Statistics: Learning from Data</em>. Pelican.
 </div>
+<div id="ref-Weis15" class="csl-entry">
+Weisstein, Eric W. 2015. <span>“Pascal’s Formula.”</span> Wolfram. <a href="http://mathworld.wolfram.com/PascalsFormula.html">http://mathworld.wolfram.com/PascalsFormula.html</a>.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="21">
+<li id="fn21"><p>However, two of the tiles are blank (without any letter); later in this section we will remove these blank tiles from the bag.<a href="ch-probability-distributions.html#fnref21" class="footnote-back">↩︎</a></p></li>
+<li id="fn22"><p>Roulette players can gamble on 36 of the 37 possible outcomes, so in the long term the casino receives a <span class="math inline">\(1/37\)</span> share of all bets.<a href="ch-probability-distributions.html#fnref22" class="footnote-back">↩︎</a></p></li>
+<li id="fn23"><p>Thus, <span class="math inline">\({n \choose x} = {n-1 \choose x} + {n-1 \choose x-1}\)</span> <span class="citation">(<a href="#ref-Weis15" role="doc-biblioref">Weisstein 2015</a>)</span>.<a href="ch-probability-distributions.html#fnref23" class="footnote-back">↩︎</a></p></li>
+<li id="fn24"><p>Estimations of parameters are indicated with a “circumflex” or “hat” above them.<a href="ch-probability-distributions.html#fnref24" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 

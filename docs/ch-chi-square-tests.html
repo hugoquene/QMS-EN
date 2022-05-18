@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>16 Chi-square-tests | Quantitative Methods and Statistics</title>
   <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="16 Chi-square-tests | Quantitative Methods and Statistics" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
   <meta name="github-repo" content="rstudio/QMS-EN" />
@@ -31,7 +30,6 @@
   
 <link rel="prev" href="ch-anova.html"/>
 <link rel="next" href="ch-other-nonpar-tests.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -49,8 +47,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -530,10 +529,10 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ch-chi-square-tests" class="section level1" number="16">
-<h1><span class="header-section-number">16</span> Chi-square-tests</h1>
-<div id="sec:ch16introduction" class="section level2" number="16.1">
-<h2><span class="header-section-number">16.1</span> Introduction</h2>
+<div id="ch-chi-square-tests" class="section level1 hasAnchor" number="16">
+<h1><span class="header-section-number">16</span> Chi-square-tests<a href="ch-chi-square-tests.html#ch-chi-square-tests" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="sec:ch16introduction" class="section level2 hasAnchor" number="16.1">
+<h2><span class="header-section-number">16.1</span> Introduction<a href="ch-chi-square-tests.html#sec:ch16introduction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Earlier, we already saw that we cannot always make use of a
 parametric test such as the <em>t</em> test or analysis of variance, because
 the collected data do not satisfy the assumptions. If the collected data
@@ -550,8 +549,8 @@ has less power than a parametric test when seeking out an effect
 <p>In this Chapter, we discuss the most used non-parametric
 test: the so-called <span class="math inline">\(\chi^2\)</span> test, pronounced as “chi-square-test” (with the greek letter “chi”).</p>
 </div>
-<div id="sec:chi2gof" class="section level2" number="16.2">
-<h2><span class="header-section-number">16.2</span> <span class="math inline">\(\chi^2\)</span> test for “goodness of fit” in single sample</h2>
+<div id="sec:chi2gof" class="section level2 hasAnchor" number="16.2">
+<h2><span class="header-section-number">16.2</span> <span class="math inline">\(\chi^2\)</span> test for “goodness of fit” in single sample<a href="ch-chi-square-tests.html#sec:chi2gof" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Data of nominal level of measurement are often analysed with the
 <span class="math inline">\(\chi^2\)</span> test. The number of dots on a dice
 is an example of a dependent variable of nominal level of measurement:
@@ -580,11 +579,11 @@ referred to as a test of the ‘goodness of fit’.</p>
 <p>For this example, we find the outcome of the testing <span class="math inline">\(\chi^2=12.44\)</span>
 with 5 degrees of freedom (see
 §<a href="ch-testing.html#sec:ttest-freedomdegrees">13.2.1</a> for explanation about
-degrees of freedom), with <span class="math inline">\(p=.0297\)</span>. We usually use the computer to
+degrees of freedom), with <span class="math inline">\(p=.03\)</span>. We usually use the computer to
 calculate this probability value, but we can also estimate this probability
 via a table with critical
 <span class="math inline">\(\chi^2\)</span>-values, see Appendix <a href="app-criticalchi2values.html#app-criticalchi2values">D</a>, and footnote
-<a href="references.html#fn39" class="footnote-ref" id="fnref39"><sup>39</sup></a>).
+<a href="#fn39" class="footnote-ref" id="fnref39"><sup>39</sup></a>).
 If H0 is true, then we have only 3% probability
 of finding this outcome (or an even more uneven distribution of outcomes).
 The significance <span class="math inline">\(p\)</span> found is smaller than <span class="math inline">\(\alpha=.05\)</span>, and we thus
@@ -592,8 +591,8 @@ reject H0. We conclude that this die is not honest: the distribution
 of outcomes found deviates significantly from the expected
 distribution according to H0.</p>
 </div>
-<div id="chi2-test-for-homogeneity-of-a-variable-in-multiple-samples" class="section level2" number="16.3">
-<h2><span class="header-section-number">16.3</span> <span class="math inline">\(\chi^2\)</span> test for homogeneity of a variable in multiple samples</h2>
+<div id="chi2-test-for-homogeneity-of-a-variable-in-multiple-samples" class="section level2 hasAnchor" number="16.3">
+<h2><span class="header-section-number">16.3</span> <span class="math inline">\(\chi^2\)</span> test for homogeneity of a variable in multiple samples<a href="ch-chi-square-tests.html#chi2-test-for-homogeneity-of-a-variable-in-multiple-samples" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The <span class="math inline">\(\chi^2\)</span> test can also be used for a research design with <em>one</em> nominal
 variable which we have observed in two or more samples. The
 question is then whether the distribution of the observations over the
@@ -609,8 +608,8 @@ in distribution between the two samples), the distribution of observations
 across the columns should be approximately equal for all rows
 (and vice versa).</p>
 </div>
-<div id="chi2-test-for-association-between-two-variables-in-single-sample" class="section level2" number="16.4">
-<h2><span class="header-section-number">16.4</span> <span class="math inline">\(\chi^2\)</span> test for association between two variables in single sample</h2>
+<div id="chi2-test-for-association-between-two-variables-in-single-sample" class="section level2 hasAnchor" number="16.4">
+<h2><span class="header-section-number">16.4</span> <span class="math inline">\(\chi^2\)</span> test for association between two variables in single sample<a href="ch-chi-square-tests.html#chi2-test-for-association-between-two-variables-in-single-sample" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Finally, the <span class="math inline">\(\chi^2\)</span> test can equally well be used for a research design
 with <em>two</em> nominal variables, which we have observed in a single
 sample. The question then is whether the distribution of observations
@@ -702,8 +701,8 @@ was <em>unevenly</em> distributed for the four classes of those on board the <em
 (§<a href="ch-correlation-regression.html#sec:correlationcausation">11.7</a>)
 — these are also applicable here.</p>
 </div>
-<div id="sec:chi2test-assumptions" class="section level2" number="16.5">
-<h2><span class="header-section-number">16.5</span> assumptions</h2>
+<div id="sec:chi2test-assumptions" class="section level2 hasAnchor" number="16.5">
+<h2><span class="header-section-number">16.5</span> assumptions<a href="ch-chi-square-tests.html#sec:chi2test-assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The <span class="math inline">\(\chi^2\)</span>-test requires three assumptions which must be satisfied
 in order to use the test.</p>
 <ul>
@@ -714,7 +713,7 @@ on (a) random sample(s) of the population(s) (see
 §<a href="ch-samples.html#sec:random-samples">7.3</a>), or on random assignment of the elements
 from the sample to experimental conditions (randomisation, see
 §<a href="ch-validity.html#sec:internalvalidity">5.4</a>, point 5). Each element for the sample can thus only
-contribute one observation to one cell<a href="references.html#fn40" class="footnote-ref" id="fnref40"><sup>40</sup></a>.</p></li>
+contribute one observation to one cell<a href="#fn40" class="footnote-ref" id="fnref40"><sup>40</sup></a>.</p></li>
 <li><p>The sample has to be large enough so that the expected frequency
 (<span class="math inline">\(E\)</span>) for each cell is at least 5. If the expected frequency or frequencies
 in one or more cells is/are less than 5, then reduce the number
@@ -722,8 +721,8 @@ of cells by merging bordering cells, and determine the expected
 frequencies again.</p></li>
 </ul>
 </div>
-<div id="formulas-6" class="section level2" number="16.6">
-<h2><span class="header-section-number">16.6</span> formulas</h2>
+<div id="formulas-6" class="section level2 hasAnchor" number="16.6">
+<h2><span class="header-section-number">16.6</span> formulas<a href="ch-chi-square-tests.html#formulas-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The test statistic <span class="math inline">\(\chi^2\)</span> is defined as
 <span class="math display" id="eq:chisquared">\[\begin{equation}
   \tag{16.1}
@@ -749,13 +748,13 @@ If we square these raw residuals and then sum the squares, the result is the <sp
   \tag{16.3}
   e_{ij} = \frac{(O_{ij}-E_{ij})}{\sqrt{E_{ij}\times(1-\frac{R_i}{N})\times(1-\frac{C_j}{N})}}
 \end{equation}\]</span>
-These standardized residuals may be interpreted as standard normal <span class="math inline">\(Z\)</span> scores, using the critical <span class="math inline">\(Z\)</span> values given in Appendix <a href="app-criticalZvalues.html#app-criticalZvalues">B</a>. Hence the adjusted standardized residuals provide insight in the source of a significant outcome of the <span class="math inline">\(\chi^2\)</span> test, and they also allow us to assess the contribution of each cell to that outcome<a href="references.html#fn41" class="footnote-ref" id="fnref41"><sup>41</sup></a>.</p>
+These standardized residuals may be interpreted as standard normal <span class="math inline">\(Z\)</span> scores, using the critical <span class="math inline">\(Z\)</span> values given in Appendix <a href="app-criticalZvalues.html#app-criticalZvalues">B</a>. Hence the adjusted standardized residuals provide insight in the source of a significant outcome of the <span class="math inline">\(\chi^2\)</span> test, and they also allow us to assess the contribution of each cell to that outcome<a href="#fn41" class="footnote-ref" id="fnref41"><sup>41</sup></a>.</p>
 <p>For the example given in §<a href="ch-chi-square-tests.html#sec:chi2gof">16.2</a> we find the following six standardized residuals for the six possible outcomes of the die: <span class="math inline">\((1.39, -0.35, +0.35, 0.00, 1.73, -3.12)\)</span>. The first five of these outcomes are observed approximately as frequently as expected, but the sixth of these outcomes is observed significantly less often than expected (<span class="math inline">\(p=.003\)</span>).</p>
 </div>
-<div id="spss-14" class="section level2" number="16.7">
-<h2><span class="header-section-number">16.7</span> SPSS</h2>
-<div id="goodness-of-fit-preparation" class="section level3" number="16.7.1">
-<h3><span class="header-section-number">16.7.1</span> goodness of fit: preparation</h3>
+<div id="spss-14" class="section level2 hasAnchor" number="16.7">
+<h2><span class="header-section-number">16.7</span> SPSS<a href="ch-chi-square-tests.html#spss-14" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="goodness-of-fit-preparation" class="section level3 hasAnchor" number="16.7.1">
+<h3><span class="header-section-number">16.7.1</span> goodness of fit: preparation<a href="ch-chi-square-tests.html#goodness-of-fit-preparation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>If we want to investigate a nominal variable, then it must of course
 be marked as a column in the SPSS data file. Every observation
 forms a separate row in the data file, and the nominal independent
@@ -783,8 +782,8 @@ entry field. Confirm with <code>OK</code>.</p>
 <p>Choose and select the variable <code>number</code> in
 input field. Confirm with <code>OK</code>.</p>
 </div>
-<div id="goodness-of-fit-testing" class="section level3" number="16.7.2">
-<h3><span class="header-section-number">16.7.2</span> goodness of fit: testing</h3>
+<div id="goodness-of-fit-testing" class="section level3 hasAnchor" number="16.7.2">
+<h3><span class="header-section-number">16.7.2</span> goodness of fit: testing<a href="ch-chi-square-tests.html#goodness-of-fit-testing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <pre><code>Analyze &gt; Nonparametric tests &gt; Legacy Dialogs &gt; Chi-square...</code></pre>
 <p>Select the variables <code>outcome</code> (in “Test variable list” panel) and
 indicate that we expect <em>equal</em> numbers of observations in each cell.
@@ -792,8 +791,8 @@ indicate that we expect <em>equal</em> numbers of observations in each cell.
 if other, unequal frequencies are expected according to H0.)
 Confirm with <code>OK</code>.</p>
 </div>
-<div id="contingency-tables-preparation" class="section level3" number="16.7.3">
-<h3><span class="header-section-number">16.7.3</span> contingency tables: preparation</h3>
+<div id="contingency-tables-preparation" class="section level3 hasAnchor" number="16.7.3">
+<h3><span class="header-section-number">16.7.3</span> contingency tables: preparation<a href="ch-chi-square-tests.html#contingency-tables-preparation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>If we want to investigate two nominal variables, then they must
 both be marked as columns in the SPSS data file. Each observation
 forms a separate row in the data file, and the nominal variables
@@ -825,8 +824,8 @@ for each cell).</p>
 <p>Choose <code>Weigh cases by...</code> and select the variable <code>number</code> in
 entry field. Confirm with <code>OK</code>.</p>
 </div>
-<div id="contingency-tables-testing" class="section level3" number="16.7.4">
-<h3><span class="header-section-number">16.7.4</span> contingency tables: testing</h3>
+<div id="contingency-tables-testing" class="section level3 hasAnchor" number="16.7.4">
+<h3><span class="header-section-number">16.7.4</span> contingency tables: testing<a href="ch-chi-square-tests.html#contingency-tables-testing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The testing proceeds in the same way as described in
 §<a href="ch-correlation-regression.html#sec:Phi">11.6</a> for
 the association between two nominal variables.</p>
@@ -838,10 +837,10 @@ Choose <code>Statistics…</code> and tick the option <code>Chi-square</code>. C
 <code>Continue</code> and afterwards again with <code>OK</code>.</p>
 </div>
 </div>
-<div id="jasp-15" class="section level2" number="16.8">
-<h2><span class="header-section-number">16.8</span> JASP</h2>
-<div id="goodness-of-fit-preparation-1" class="section level3" number="16.8.1">
-<h3><span class="header-section-number">16.8.1</span> goodness of fit: preparation</h3>
+<div id="jasp-15" class="section level2 hasAnchor" number="16.8">
+<h2><span class="header-section-number">16.8</span> JASP<a href="ch-chi-square-tests.html#jasp-15" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="goodness-of-fit-preparation-1" class="section level3 hasAnchor" number="16.8.1">
+<h3><span class="header-section-number">16.8.1</span> goodness of fit: preparation<a href="ch-chi-square-tests.html#goodness-of-fit-preparation-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The nominal data to investigate are typically coded as a “long” column in the data file. Each observation typically forms a separate row in the data file, and the nominal independent variable is a column in the data file. However, for the “goodness of fit” <span class="math inline">\(\chi^2\)</span> test in JASP, the data have to be entered not in this “long” fashion (with <span class="math inline">\(N\)</span> rows), but in the form of a summary of numbers of observations (counts, frequency) per category of the nominal variable (with <span class="math inline">\(k\)</span> rows, one row for each of <span class="math inline">\(k\)</span> categories).</p>
 <p>For the example in §<a href="ch-chi-square-tests.html#sec:chi2gof">16.2</a> these summary data would look like this:</p>
 <pre><code>outcome count
@@ -853,8 +852,8 @@ Choose <code>Statistics…</code> and tick the option <code>Chi-square</code>. C
  6         1</code></pre>
 <p>In order to enter these data in JASP, create a data file (using e.g. Excel or any text editor) with the contents as listed above, including the column headers. Save the file in CSV format (<code>.csv</code>, not <code>.xlsx</code>) and open it in JASP.</p>
 </div>
-<div id="goodness-of-fit-testing-1" class="section level3" number="16.8.2">
-<h3><span class="header-section-number">16.8.2</span> goodness of fit: testing</h3>
+<div id="goodness-of-fit-testing-1" class="section level3 hasAnchor" number="16.8.2">
+<h3><span class="header-section-number">16.8.2</span> goodness of fit: testing<a href="ch-chi-square-tests.html#goodness-of-fit-testing-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In the top menu bar, choose</p>
 <pre><code>Frequencies &gt; Classical: Multinomial Test</code></pre>
 <p>Select the variable containing the categories of the nominal variable, here <code>outcome</code>, and place it in the entry field “Factor”.
@@ -865,8 +864,8 @@ If you choose <code>Expected proportions (chi-square test)</code>, you may adjus
 <p>You may also check <code>Descriptives</code> and <code>Confidence interval</code> under the heading “Additional Statistics”, and check <code>Descriptives plot</code> under “Plots”, so as to gain better insight in the patterns in your data.</p>
 <p>In JASP it is not possible to obtain the (adjusted) standardized residuals; however you can compute these manually from the observed and expected counts.</p>
 </div>
-<div id="contingency-tables-preparation-1" class="section level3" number="16.8.3">
-<h3><span class="header-section-number">16.8.3</span> contingency tables: preparation</h3>
+<div id="contingency-tables-preparation-1" class="section level3 hasAnchor" number="16.8.3">
+<h3><span class="header-section-number">16.8.3</span> contingency tables: preparation<a href="ch-chi-square-tests.html#contingency-tables-preparation-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The nominal data to investigate are typically coded as two or more “long” columns in the data file. Each observation (e.g. each person on the Titanic, in Example 16.1) corresponds with a separate row in the data file, and the nominal variables are in columns in the data file (e.g. <code>class</code> and <code>outcome</code>). We can use such a “long” data file for creating a contingency table in JASP, and for performing a <span class="math inline">\(\chi^2\)</span> test on that contingency table — see the end of the next subsection for further instructions.</p>
 <p>However, for performing a <span class="math inline">\(\chi^2\)</span> test on a contingency table in JASP, the data do not necessarily have to be entered in this “long” fashion (with <span class="math inline">\(N\)</span> rows); the data may also be in the form of a summary of numbers of observations (counts, frequency) per category of the nominal variable (with <span class="math inline">\(k\)</span> rows, one row for each of <span class="math inline">\(k\)</span> cells or combinations of categories).</p>
 <p>For example 16.1, the data would then look as follows:</p>
@@ -881,8 +880,8 @@ crew    died       673
 crew    survived   212</code></pre>
 <p>In order to enter these data in JASP, create a data file (using e.g. Excel or any text editor) with the contents as listed above, including the column headers. Save the file in CSV format (<code>.csv</code>, not <code>.xlsx</code>) and open it in JASP.</p>
 </div>
-<div id="contingency-tables-testing-1" class="section level3" number="16.8.4">
-<h3><span class="header-section-number">16.8.4</span> contingency tables: testing</h3>
+<div id="contingency-tables-testing-1" class="section level3 hasAnchor" number="16.8.4">
+<h3><span class="header-section-number">16.8.4</span> contingency tables: testing<a href="ch-chi-square-tests.html#contingency-tables-testing-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The <span class="math inline">\(\chi^2\)</span> test on a contingency table proceeds in the same way as described in
 §<a href="ch-correlation-regression.html#sec:Phi">11.6</a> for association between two nominal variables.</p>
 <p>In the top menu bar, choose:</p>
@@ -898,10 +897,10 @@ Open the <code>Cells</code> section bar, and check the option <code>Expected cou
 <p>In JASP it is not possible to obtain the (adjusted) standardized residuals; however you can compute these manually from the observed and expected counts.</p>
 </div>
 </div>
-<div id="r-17" class="section level2" number="16.9">
-<h2><span class="header-section-number">16.9</span> R</h2>
-<div id="goodness-of-fit-testing-2" class="section level3" number="16.9.1">
-<h3><span class="header-section-number">16.9.1</span> goodness of fit: testing</h3>
+<div id="r-17" class="section level2 hasAnchor" number="16.9">
+<h2><span class="header-section-number">16.9</span> R<a href="ch-chi-square-tests.html#r-17" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="goodness-of-fit-testing-2" class="section level3 hasAnchor" number="16.9.1">
+<h3><span class="header-section-number">16.9.1</span> goodness of fit: testing<a href="ch-chi-square-tests.html#goodness-of-fit-testing-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="ch-chi-square-tests.html#cb172-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>( <span class="fu">c</span>( <span class="dv">14</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">1</span> ) ) <span class="ot">-&gt;</span> dobbel.chi2.htest <span class="co"># die §16.2</span></span>
 <span id="cb172-2"><a href="ch-chi-square-tests.html#cb172-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(dobbel.chi2.htest)</span></code></pre></div>
 <pre><code>## 
@@ -916,8 +915,8 @@ Open the <code>Cells</code> section bar, and check the option <code>Expected cou
 <div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="ch-chi-square-tests.html#cb178-1" aria-hidden="true" tabindex="-1"></a>dobbel.chi2.htest<span class="sc">$</span>stdres <span class="co"># standardized residuals</span></span></code></pre></div>
 <pre><code>## [1]  1.3856406 -0.3464102  0.3464102  0.0000000  1.7320508 -3.1176915</code></pre>
 </div>
-<div id="contingency-table-preparation-and-testing" class="section level3" number="16.9.2">
-<h3><span class="header-section-number">16.9.2</span> contingency table: preparation and testing</h3>
+<div id="contingency-table-preparation-and-testing" class="section level3 hasAnchor" number="16.9.2">
+<h3><span class="header-section-number">16.9.2</span> contingency table: preparation and testing<a href="ch-chi-square-tests.html#contingency-table-preparation-and-testing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In R, the dataset <code>Titanic</code> is provided as a multidimensional matrix. We sum
 the observations and make a contingency table of the first dimension (class) and
 the fourth dimension (outcome).</p>
@@ -941,8 +940,8 @@ The resulting <code>chisq.htest</code> object is saved within R in order to insp
 <p>The adjusted standardized residuals show the remarkably high number of survivors among the first class passengers, and the remarkably low number of survivors among the ship’s crew.</p>
 </div>
 </div>
-<div id="effect-size-odds-ratio" class="section level2" number="16.10">
-<h2><span class="header-section-number">16.10</span> Effect size: odds ratio</h2>
+<div id="effect-size-odds-ratio" class="section level2 hasAnchor" number="16.10">
+<h2><span class="header-section-number">16.10</span> Effect size: odds ratio<a href="ch-chi-square-tests.html#effect-size-odds-ratio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>When using the <span class="math inline">\(\chi^2\)</span>-test, the effect size can be reported in the form
 of the so-called “odds ratio”. The ‘odds ratio’ is derived from the contingency
 table with frequencies per cell; the odds ratio is most commonly used with <span class="math inline">\(2 \times 2\)</span> contingency tables.
@@ -1031,7 +1030,7 @@ non-smokers.</p>
 
 </div>
 </div>
-<h3>References</h3>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-Agre07" class="csl-entry">
 Agresti, Alan. 2007. <em>Introduction to Categorical Data Analysis</em>. Hoboken, NJ: Wiley.
@@ -1042,6 +1041,17 @@ Doll, Richard, and A. Bradford Hill. 1956. <span>“Lung Cancer and Other Causes
 <div id="ref-Ferg89" class="csl-entry">
 Ferguson, George A., and Yoshio Takane. 1989. <em>Statistical Analysis in Psychology and Education</em>. 6e ed. New York: McGraw-Hill.
 </div>
+<div id="ref-MD04" class="csl-entry">
+Maxwell, Scott E., and Harold D. Delaney. 2004. <em>Designing Experiments and Analyzing Data: A Model Comparison Perspective</em>. Book. 2nd ed. Mahwah, NJ: Lawrence Erlbaum Associates.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="39">
+<li id="fn39"><p>The value found <span class="math inline">\(\chi^2=12.44\)</span> is slightly under the critical value for 5 d.f. and <span class="math inline">\(p=.03\)</span>, (there <span class="math inline">\((\chi^2)^*=12.83\)</span>), thus the corresponding probability of this value or a larger value is slightly greater than <span class="math inline">\(0.03\)</span>.<a href="ch-chi-square-tests.html#fnref39" class="footnote-back">↩︎</a></p></li>
+<li id="fn40"><p>If one variable’s observations are paired rather than independent (e.g. before/after treatment, passed/failed, etc.), then the McNemar test is a useful alternative.<a href="ch-chi-square-tests.html#fnref40" class="footnote-back">↩︎</a></p></li>
+<li id="fn41"><p>If multiple comparisons are performed, then the critical value of <span class="math inline">\(\alpha\)</span> should be adjusted accordingly, in order to prevent Type I errors somewhere among the comparisons. With <span class="math inline">\(k\)</span> cells and <span class="math inline">\(k\)</span> comparisons, a safe precaution is to use <span class="math inline">\(\alpha/k\)</span> instead of <span class="math inline">\(\alpha\)</span> for each comparison – this is called Bonferroni’s adjustement of the <span class="math inline">\(\alpha\)</span> value, or Dunn’s procedure <span class="citation">(<a href="#ref-MD04" role="doc-biblioref">Maxwell and Delaney 2004, 202</a>)</span>. See also §<a href="ch-anova.html#sec:anova-oneway-posthoc">15.3.5</a>.<a href="ch-chi-square-tests.html#fnref41" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 

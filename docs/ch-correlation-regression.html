@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>11 Correlation and regression | Quantitative Methods and Statistics</title>
   <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="11 Correlation and regression | Quantitative Methods and Statistics" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
   <meta name="github-repo" content="rstudio/QMS-EN" />
@@ -31,7 +30,6 @@
   
 <link rel="prev" href="ch-probability-distributions.html"/>
 <link rel="next" href="ch-reliability.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -49,8 +47,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -530,10 +529,10 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ch-correlation-regression" class="section level1" number="11">
-<h1><span class="header-section-number">11</span> Correlation and regression</h1>
-<div id="introduction-5" class="section level2" number="11.1">
-<h2><span class="header-section-number">11.1</span> Introduction</h2>
+<div id="ch-correlation-regression" class="section level1 hasAnchor" number="11">
+<h1><span class="header-section-number">11</span> Correlation and regression<a href="ch-correlation-regression.html#ch-correlation-regression" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="introduction-5" class="section level2 hasAnchor" number="11.1">
+<h2><span class="header-section-number">11.1</span> Introduction<a href="ch-correlation-regression.html#introduction-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Most empirical research is focused on establishing associations between
 variables. In experimental research, this primarily concerns associations
 between independent and dependent variables. In the coming section, we will
@@ -591,8 +590,8 @@ Figure <a href="ch-centre-and-dispersion.html#fig:cito-boxplot">9.3</a>);
 such outliers can have a disproportionately
 large influence on the correlation found.</p>
 </div>
-<div id="sec:Pearson" class="section level2" number="11.2">
-<h2><span class="header-section-number">11.2</span> Pearson product-moment correlation</h2>
+<div id="sec:Pearson" class="section level2 hasAnchor" number="11.2">
+<h2><span class="header-section-number">11.2</span> Pearson product-moment correlation<a href="ch-correlation-regression.html#sec:Pearson" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The Pearson product-moment correlation coefficient is referred to with
 the symbol <span class="math inline">\(r\)</span> (in the case of two variables). This coefficient can be
 used if both variables are observed on the interval level of measurement
@@ -645,7 +644,7 @@ i.e. is <em>significant</em>. We often see a small probability <span class="mat
 correlation <span class="math inline">\(r\)</span>. The correlation coefficient <span class="math inline">\(r\)</span> indicates the direction
 and strength of the relation, and the significance <span class="math inline">\(p\)</span> indicates the probability
 of finding this relation by chance if <span class="math inline">\(\rho=0\)</span> in the population. We report
-these findings as follows<a href="references.html#fn25" class="footnote-ref" id="fnref25"><sup>25</sup></a>:</p>
+these findings as follows<a href="#fn25" class="footnote-ref" id="fnref25"><sup>25</sup></a>:</p>
 <hr />
 <blockquote>
 <p><em>Example 11.1:</em>
@@ -688,8 +687,8 @@ test, as summarised in Table <a href="ch-centre-and-dispersion.html#tab:cito">9.
 </tr>
 <tr class="odd">
 <td>Geography</td>
-<td align="center">-0.51 (.131)</td>
-<td align="center">-0.01 (.970)</td>
+<td align="center">-0.51 (.13)</td>
+<td align="center">-0.01 (.97)</td>
 <td align="center">1.00</td>
 </tr>
 </tbody>
@@ -714,8 +713,8 @@ score on the Arithmetic test. The remaining correlations were
 not significant.</p>
 </blockquote>
 <hr />
-<div id="formulas-3" class="section level3" number="11.2.1">
-<h3><span class="header-section-number">11.2.1</span> Formulas</h3>
+<div id="formulas-3" class="section level3 hasAnchor" number="11.2.1">
+<h3><span class="header-section-number">11.2.1</span> Formulas<a href="ch-correlation-regression.html#formulas-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The simplest formula for the Pearson product-moment correlation coefficient
 <span class="math inline">\(r\)</span> makes use of the standard normal scores we already used earlier
 (§<a href="ch-centre-and-dispersion.html#sec:standardscores">9.8</a>):
@@ -727,8 +726,8 @@ not significant.</p>
 (formula <a href="ch-centre-and-dispersion.html#eq:variance">(9.3)</a>), we divide again by
 <span class="math inline">\((n-1)\)</span> to make an estimate of the association in the population.</p>
 </div>
-<div id="spss-5" class="section level3" number="11.2.2">
-<h3><span class="header-section-number">11.2.2</span> SPSS</h3>
+<div id="spss-5" class="section level3 hasAnchor" number="11.2.2">
+<h3><span class="header-section-number">11.2.2</span> SPSS<a href="ch-correlation-regression.html#spss-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>For Pearson’s product-moment correlation coefficient:</p>
 <pre><code>Analyze &gt; Correlate &gt; Bivariate...</code></pre>
 <p>Choose <code>Pearsons</code> correlation coefficient, tick:
@@ -736,8 +735,8 @@ not significant.</p>
 output (table) does not satisfy the style requirements; as such, you should
 take the data into or convert it into a table of your own which does satisfy these requirements.</p>
 </div>
-<div id="jasp-6" class="section level3" number="11.2.3">
-<h3><span class="header-section-number">11.2.3</span> JASP</h3>
+<div id="jasp-6" class="section level3 hasAnchor" number="11.2.3">
+<h3><span class="header-section-number">11.2.3</span> JASP<a href="ch-correlation-regression.html#jasp-6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>For Pearson’s product-moment correlation coefficient, go to the top menu bar and choose:</p>
 <pre><code>Regression &gt; Classical: Correlation</code></pre>
 <p>In the field “Variables”, select the variables of which you want to know the correlation.
@@ -745,8 +744,8 @@ Make sure that under “Sample Correlation Coefficient”, option <code>Pearson'
 Under “Additional Options”, check <code>Report significance</code>, <code>Flag significant correlations</code> and <code>Sample size</code>. You may also check the option <code>Display pairwise</code> to obtain simple table output.
 Note that with or without this option checked, the output table does not adhere to APA guidelines for reporting such tables; hence you’ll need to revise the table or create your own using the JASP output.</p>
 </div>
-<div id="r-7" class="section level3" number="11.2.4">
-<h3><span class="header-section-number">11.2.4</span> R</h3>
+<div id="r-7" class="section level3 hasAnchor" number="11.2.4">
+<h3><span class="header-section-number">11.2.4</span> R<a href="ch-correlation-regression.html#r-7" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="ch-correlation-regression.html#cb67-1" aria-hidden="true" tabindex="-1"></a>cito <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="at">file=</span><span class="st">&quot;data/cito.txt&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>)</span>
 <span id="cb67-2"><a href="ch-correlation-regression.html#cb67-2" aria-hidden="true" tabindex="-1"></a><span class="co"># variable names are Lezen=Reading, Rekenen=Arithmetic, WO=Geography, ...</span></span>
 <span id="cb67-3"><a href="ch-correlation-regression.html#cb67-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dimnames</span>(cito)[[<span class="dv">2</span>]] <span class="ot">&lt;-</span> <span class="fu">c</span>( <span class="st">&quot;Pupil&quot;</span>, <span class="st">&quot;Reading&quot;</span>, <span class="st">&quot;Arithmetic&quot;</span>, <span class="st">&quot;Geography&quot;</span>,</span>
@@ -770,8 +769,8 @@ Note that with or without this option checked, the output table does not adhere 
 ## 0.7492103</code></pre>
 </div>
 </div>
-<div id="sec:regression" class="section level2" number="11.3">
-<h2><span class="header-section-number">11.3</span> Regression</h2>
+<div id="sec:regression" class="section level2 hasAnchor" number="11.3">
+<h2><span class="header-section-number">11.3</span> Regression<a href="ch-correlation-regression.html#sec:regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The simplest relation that we can distinguish and describe is a linear
 relation, i.e. a straight line in the scatter plot
 (see Fig.<a href="ch-correlation-regression.html#fig:cor-scatter">11.2</a>). This straight line indicates which value
@@ -785,7 +784,7 @@ of <span class="math inline">\(X_i\)</span> and the linear relation between <spa
 \end{equation}\]</span><br />
 The straight line is described with
 two parameters, namely the intercept (or constant) <span class="math inline">\(a\)</span> and the slope <span class="math inline">\(b\)</span>
-<a href="references.html#fn26" class="footnote-ref" id="fnref26"><sup>26</sup></a>. The straight line which describes the linear relation is often
+<a href="#fn26" class="footnote-ref" id="fnref26"><sup>26</sup></a>. The straight line which describes the linear relation is often
 referred to as the “regression line”;
 after all, we try to trace the observed values of <span class="math inline">\(Y\)</span> back to this linear
 function of the values of <span class="math inline">\(X\)</span>.</p>
@@ -873,11 +872,11 @@ Based on a linear regression analysis, it appears that the score
 for Arithmetic is related to that for Reading: <span class="math inline">\(b=0.51, r=.79, p_r=.007\)</span>, over <span class="math inline">\(n=10\)</span>
 pupils. This linear regression model explains <span class="math inline">\(r^2=.51\)</span> of the
 total variance in the arithmetic scores (the residual standard deviation is
-<span class="math inline">\(s_e= \sqrt{82.803/(n-1-1)} = 3.217\)</span>).</p>
+<span class="math inline">\(s_e= \sqrt{82.803/(n-1-1)} = 3.22\)</span>).</p>
 </blockquote>
 <hr />
-<div id="sec:regression-formulas" class="section level3" number="11.3.1">
-<h3><span class="header-section-number">11.3.1</span> Formulas</h3>
+<div id="sec:regression-formulas" class="section level3 hasAnchor" number="11.3.1">
+<h3><span class="header-section-number">11.3.1</span> Formulas<a href="ch-correlation-regression.html#sec:regression-formulas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>For linear regression of <span class="math inline">\(y\)</span> on <span class="math inline">\(x\)</span>, we try to estimate the coefficients <span class="math inline">\(a\)</span>
 and <span class="math inline">\(b\)</span> such that (the square of) the deviation between the predicted value <span class="math inline">\(\hat{y}\)</span>
 and the observed value <span class="math inline">\(y\)</span> is as small as possible, in other words that the
@@ -888,8 +887,8 @@ square of the residuals <span class="math inline">\((y-\hat{y})\)</span> is as s
 <span class="math display">\[b = \frac{ \sum_{i=1}^n (x_i-\overline{x})(y_i-\overline{y}) } { \sum_{i=1}^n (x_i-\overline{x})^2 }\]</span></p>
 <p>The best estimation for <span class="math inline">\(a\)</span> is <span class="math display">\[a = \overline{y} - b \overline{x}\]</span></p>
 </div>
-<div id="spss-6" class="section level3" number="11.3.2">
-<h3><span class="header-section-number">11.3.2</span> SPSS</h3>
+<div id="spss-6" class="section level3 hasAnchor" number="11.3.2">
+<h3><span class="header-section-number">11.3.2</span> SPSS<a href="ch-correlation-regression.html#spss-6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>For linear regression:</p>
 <pre class="console"><code>Analyze &gt; Regression &gt; Linear...</code></pre>
 <p>Choose <code>Dependent variable: Arithmetic</code> and choose
@@ -905,17 +904,17 @@ the constant coefficient <span class="math inline">\(a\)</span> calculated. Conf
 <p>The resulting output includes several tables and figures; you cannot
 transfer these directly into your report. The table titled <em>Model
 Summary</em> contains the correlation coefficient, indicated here with capital
-letter <span class="math inline">\(R=.749\)</span>.<br />
+letter <span class="math inline">\(R=.75\)</span>.<br />
 The table titled <em>Coefficients</em> contains the regression coefficients. The
 line which has the designation <code>(Constant)</code> states coefficient <span class="math inline">\(a=13.25\)</span>;
 the line titled <code>Reading</code> states coefficient <span class="math inline">\(b=0.51\)</span>.<br />
 The table titled <em>Residual Statistics</em> provides information about both
 the predicted values and the residuals. Check whether the mean of the residual
 is indeed null. In this table, we can also see (line 2, column 4) that
-the standard variation of the residuals is <span class="math inline">\(3.212\)</span>.</p>
+the standard variation of the residuals is <span class="math inline">\(3.21\)</span>.</p>
 </div>
-<div id="jasp-7" class="section level3" number="11.3.3">
-<h3><span class="header-section-number">11.3.3</span> JASP</h3>
+<div id="jasp-7" class="section level3 hasAnchor" number="11.3.3">
+<h3><span class="header-section-number">11.3.3</span> JASP<a href="ch-correlation-regression.html#jasp-7" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>For linear regression, go to the top menu bar and choose:</p>
 <pre><code>Regression &gt; Classical: Linear Regression</code></pre>
 <p>Choose the variable <em>Arithmetic</em> as “Dependent Variable”, and choose the variable <em>Reading</em> under “Covariates”.<br />
@@ -924,12 +923,12 @@ Open the menu bar <code>Statistics</code>, and check the options <code>Estimates
 Under “Residuals”, check <code>Statistics</code> to obtain a numerical summary of the residuals.
 Open the menu bar <code>Plots</code>, and choose plots for <code>Residuals vs. histogram</code> and <code>Q-Q plot standardized residuals</code>; these allow visual inspection of the (distribution of) residuals.</p>
 <p>The resulting output contains several tables and figure, which do not conform to APA guidelines and hence cannot be used directly in your report (see also Example 11.3 above).<br />
-The table titled <strong>Model Summary</strong> reports the correlation coefficient, here reported with capital <span class="math inline">\(R=.749\)</span>.<br />
+The table titled <strong>Model Summary</strong> reports the correlation coefficient, here reported with capital <span class="math inline">\(R=.75\)</span>.<br />
 The table titled <strong>Coefficients</strong> contains the regression coefficients. The row with indication <code>(Intercept)</code> reports the constant <span class="math inline">\(a=13.25\)</span>; the row with indication <code>Reading</code> reports the slope or regression coefficient <span class="math inline">\(b=0.51\)</span>.<br />
-The table titled <strong>Residual Statistics</strong> provides information about the predicted values and residuals. Inspect whether the mean of the residuals is approximately zero (it should be). We also see here (row 2, column 4) that the standard deviation of the residuals is <span class="math inline">\(3.212\)</span>.</p>
+The table titled <strong>Residual Statistics</strong> provides information about the predicted values and residuals. Inspect whether the mean of the residuals is approximately zero (it should be). We also see here (row 2, column 4) that the standard deviation of the residuals is <span class="math inline">\(3.21\)</span>.</p>
 </div>
-<div id="r-8" class="section level3" number="11.3.4">
-<h3><span class="header-section-number">11.3.4</span> R</h3>
+<div id="r-8" class="section level3 hasAnchor" number="11.3.4">
+<h3><span class="header-section-number">11.3.4</span> R<a href="ch-correlation-regression.html#r-8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="ch-correlation-regression.html#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>( m1 <span class="ot">&lt;-</span> <span class="fu">lm</span>( Arithmetic<span class="sc">~</span>Reading, <span class="at">data=</span>cito ) )</span></code></pre></div>
 <pre><code>## 
 ## Call:
@@ -958,8 +957,8 @@ saved as an object called <code>m1</code>, and that is used again directly as an
 <pre><code>## [1] 3.211533</code></pre>
 </div>
 </div>
-<div id="influential-observations" class="section level2" number="11.4">
-<h2><span class="header-section-number">11.4</span> Influential observations</h2>
+<div id="influential-observations" class="section level2 hasAnchor" number="11.4">
+<h2><span class="header-section-number">11.4</span> Influential observations<a href="ch-correlation-regression.html#influential-observations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In the previous section, we saw that the aim in a correlation analysis
 or regression analysis is for a minimal residual variance.
 Earlier we also already saw that outliers or extreme observations, by definition,
@@ -987,8 +986,8 @@ may have been influenced by one or a few observation(s). Pay
 particular attention to observations which are far away from the mean, for each
 of the two variables, and to observations which are far away from the regression line.</p>
 </div>
-<div id="sec:Spearman" class="section level2" number="11.5">
-<h2><span class="header-section-number">11.5</span> Spearman’s rank correlation coefficient</h2>
+<div id="sec:Spearman" class="section level2 hasAnchor" number="11.5">
+<h2><span class="header-section-number">11.5</span> Spearman’s rank correlation coefficient<a href="ch-correlation-regression.html#sec:Spearman" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The variables whose correlation we want to investigate
 are not always both expressed on the interval level of measurement
 (§<a href="ch-levelsofmeasurement.html#sec:interval">4.4</a>), regardless whether or not the researchers
@@ -1084,8 +1083,8 @@ then the two rankings would match perfectly.</p>
 negative relation (<span class="math inline">\(r_s=-1\)</span>) between the scores for Reading and
 Arithmetic, and how the table would look if there were no correlation whatsoever
 (<span class="math inline">\(r_s=0\)</span>) between these scores.</p>
-<div id="formulas-4" class="section level3" number="11.5.1">
-<h3><span class="header-section-number">11.5.1</span> Formulas</h3>
+<div id="formulas-4" class="section level3 hasAnchor" number="11.5.1">
+<h3><span class="header-section-number">11.5.1</span> Formulas<a href="ch-correlation-regression.html#formulas-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The association between the rankings of the two variables is expressed
 in the Spearman’s rank correlation coefficient:
 <span class="math display" id="eq:spearman">\[\begin{equation}
@@ -1109,8 +1108,8 @@ Spearman’s coefficient is, amongst others, less sensitive for influential extr
 observations — after all, such outliers have less weighting once the
 raw scores have been replaced by the ranks.</p>
 </div>
-<div id="spss-7" class="section level3" number="11.5.2">
-<h3><span class="header-section-number">11.5.2</span> SPSS</h3>
+<div id="spss-7" class="section level3 hasAnchor" number="11.5.2">
+<h3><span class="header-section-number">11.5.2</span> SPSS<a href="ch-correlation-regression.html#spss-7" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>For Spearman’s rank correlation coefficient:</p>
 <pre><code>Analyze &gt; Correlate &gt; Bivariate...</code></pre>
 <p>Choose <code>Spearman</code> rank correlation coefficient, tick:
@@ -1119,8 +1118,8 @@ output (table) does not satisfy the style requirements; you thus have to take
 the data into or convert it into a table of your own which does satisfy these requirements,
 and report according to the usual conventions for correlation analysis.</p>
 </div>
-<div id="jasp-8" class="section level3" number="11.5.3">
-<h3><span class="header-section-number">11.5.3</span> JASP</h3>
+<div id="jasp-8" class="section level3 hasAnchor" number="11.5.3">
+<h3><span class="header-section-number">11.5.3</span> JASP<a href="ch-correlation-regression.html#jasp-8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>For Spearman’s rank correlation coefficient, go to the top menu bar and choose:</p>
 <pre><code>Regression &gt; Classical: Correlation</code></pre>
 <p>In the field “Variables”, select the variables of which you want to know the correlation.
@@ -1128,8 +1127,8 @@ Make sure that under “Sample Correlation Coefficient”, option <code>Spearman
 Under “Additional Options”, check <code>Report significance</code>, <code>Flag significant correlations</code> and <code>Sample size</code>. You may also check the option <code>Display pairwise</code> to obtain simple table output.
 Note that with or without this option checked, the output table does not adhere to APA guidelines for reporting such tables; hence you’ll need to revise the table or create your own using the JASP output.</p>
 </div>
-<div id="r-9" class="section level3" number="11.5.4">
-<h3><span class="header-section-number">11.5.4</span> R</h3>
+<div id="r-9" class="section level3 hasAnchor" number="11.5.4">
+<h3><span class="header-section-number">11.5.4</span> R<a href="ch-correlation-regression.html#r-9" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="ch-correlation-regression.html#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(cito, <span class="fu">cor.test</span>( Reading,Arithmetic, <span class="at">method=</span><span class="st">&quot;spearman&quot;</span> ) )</span></code></pre></div>
 <pre><code>## Warning in cor.test.default(Reading, Arithmetic, method = &quot;spearman&quot;): Cannot
 ## compute exact p-value with ties</code></pre>
@@ -1144,8 +1143,8 @@ Note that with or without this option checked, the output table does not adhere 
 ## 0.8470988</code></pre>
 </div>
 </div>
-<div id="sec:Phi" class="section level2" number="11.6">
-<h2><span class="header-section-number">11.6</span> Phi</h2>
+<div id="sec:Phi" class="section level2 hasAnchor" number="11.6">
+<h2><span class="header-section-number">11.6</span> Phi<a href="ch-correlation-regression.html#sec:Phi" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The two variables for which we want to investigate the association are themselves
 not always expressed on an ordinal level of measurement (Chapter <a href="ch-levelsofmeasurement.html#ch-levelsofmeasurement">4</a>).
 Even if both of the variables are measured only on a nominal level of measurement,
@@ -1214,8 +1213,8 @@ between the binomial codes of the rows (origin) and those of the columns
 (score categories) in Table <a href="ch-correlation-regression.html#tab:cito-contingency-table">11.3</a>.
 This association is quantified in the
 correlation coefficient <span class="math inline">\(r_\Phi=0.65\)</span> for this data.</p>
-<div id="formulas-5" class="section level3" number="11.6.1">
-<h3><span class="header-section-number">11.6.1</span> Formulas</h3>
+<div id="formulas-5" class="section level3 hasAnchor" number="11.6.1">
+<h3><span class="header-section-number">11.6.1</span> Formulas<a href="ch-correlation-regression.html#formulas-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The nominal correlation coefficient <span class="math inline">\(r_\Phi\)</span> is calculated as follows,
 where the letters refer to the numbers in the cells of a contingency table
 (see Table <a href="ch-correlation-regression.html#tab:cito-contingency-table">11.3</a>):
@@ -1228,13 +1227,13 @@ where the letters refer to the numbers in the cells of a contingency table
     r_\Phi = \frac{(15-0)}{\sqrt{(5)(5)(7)(3)}} = \frac{15}{22.91} = 0.65
 \]</span></p>
 </div>
-<div id="spss-8" class="section level3" number="11.6.2">
-<h3><span class="header-section-number">11.6.2</span> SPSS</h3>
+<div id="spss-8" class="section level3 hasAnchor" number="11.6.2">
+<h3><span class="header-section-number">11.6.2</span> SPSS<a href="ch-correlation-regression.html#spss-8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The dataset <code>cito</code> already contains the variable <code>UrbanRural</code> which indicates the
 origin of the pupils. However, for completeness, we will still show how you can
 construct a variable like this for yourself.</p>
-<div id="construct-new-variable" class="section level4" number="11.6.2.1">
-<h4><span class="header-section-number">11.6.2.1</span> construct new variable</h4>
+<div id="construct-new-variable" class="section level4 hasAnchor" number="11.6.2.1">
+<h4><span class="header-section-number">11.6.2.1</span> construct new variable<a href="ch-correlation-regression.html#construct-new-variable" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <pre><code>Transform &gt; Recode into different variables...</code></pre>
 <p>Choose <code>Pupil</code> as the old variable and fill in as the new name for the new variable
 <code>UrbanRural2</code>. Indicate that the old values in <code>Range</code> from
@@ -1248,8 +1247,8 @@ All values from the lowest value to the mean (<span class="math inline">\(27.2\)
 new value 0 for this new variable. All values
 from the mean (<span class="math inline">\(27.2\)</span>) to the highest value are transformed to the new value 1.</p>
 </div>
-<div id="correlation-analysis" class="section level4" number="11.6.2.2">
-<h4><span class="header-section-number">11.6.2.2</span> correlation analysis</h4>
+<div id="correlation-analysis" class="section level4 hasAnchor" number="11.6.2.2">
+<h4><span class="header-section-number">11.6.2.2</span> correlation analysis<a href="ch-correlation-regression.html#correlation-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>After this preparatory work, we can finally calculate <span class="math inline">\(r_\Phi\)</span>.</p>
 <pre><code>Analyze &gt; Descriptives &gt; Crosstabs...</code></pre>
 <p>Select the variables <code>UrbanRural2</code> (in the “Rows” panel) and <code>Arithmetic2</code>
@@ -1259,15 +1258,15 @@ Choose <code>Statistics…</code> and tick the option <code>Phi and Cramer’s V
 Confirm firstly with <code>Continue</code> and then again with <code>OK</code>.</p>
 </div>
 </div>
-<div id="jasp-9" class="section level3" number="11.6.3">
-<h3><span class="header-section-number">11.6.3</span> JASP</h3>
+<div id="jasp-9" class="section level3 hasAnchor" number="11.6.3">
+<h3><span class="header-section-number">11.6.3</span> JASP<a href="ch-correlation-regression.html#jasp-9" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The dataset <code>cito</code> already contains a variable <code>UrbanRural</code> which indicates the pupils’ origins.
 However, for completeness, let us still see how you can construct such a variable for yourself.</p>
-<div id="construct-new-variable-1" class="section level4" number="11.6.3.1">
-<h4><span class="header-section-number">11.6.3.1</span> construct new variable</h4>
+<div id="construct-new-variable-1" class="section level4 hasAnchor" number="11.6.3.1">
+<h4><span class="header-section-number">11.6.3.1</span> construct new variable<a href="ch-correlation-regression.html#construct-new-variable-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>First, create a new variable by clicking the <strong>+</strong> button which is to the right of the rightmost column header in the data sheet. A new panel “Create Computed Column” will appear, in which you can enter a name for the new variable, such as <code>UrbanRural2</code>.
 There are two methods to specify the new variable, using <code>R</code> commands or using a hand pointer sign (manual specification). Below we will explain for both options how to specify the new variable. You can also indicate the measurement level of the new variable; in this example we will use <code>Nominal</code>. Finally, click on <code>Create Column</code> to create the new variable, which will appear as a new empty column in the data sheet.</p>
-<p>If you chose the <code>R</code> command method to define a new variable, then a new panel will appear above the data sheet, with the text “#Enter your R code here :)”. You can enter some <code>R</code> commands and use <code>R</code> functions<a href="references.html#fn27" class="footnote-ref" id="fnref27"><sup>27</sup></a> to define the new variable. Enter your <code>R</code> commands and click on <code>Compute column</code> to fill the empty variable with the new values.</p>
+<p>If you chose the <code>R</code> command method to define a new variable, then a new panel will appear above the data sheet, with the text “#Enter your R code here :)”. You can enter some <code>R</code> commands and use <code>R</code> functions<a href="#fn27" class="footnote-ref" id="fnref27"><sup>27</sup></a> to define the new variable. Enter your <code>R</code> commands and click on <code>Compute column</code> to fill the empty variable with the new values.</p>
 <p>For the new <code>UrbanRural2</code> variable in this example we may use this code:</p>
 <pre><code>ifelse(Leerling &lt;= 5, 1, 0) </code></pre>
 <p>This command means: <em>if</em> the value of ID variable <code>Leerling</code> (Pupil) is less than or equal to 5 (this if-condition is the first argument), then the new value will be 1 (the second argument), <em>else</em> the new value will be 0 (the third argument). In short: if Leerling <span class="math inline">\(\leq\)</span> 5, then 1, else 0.
@@ -1287,8 +1286,8 @@ The complete expression should read <code>ifElse(Leerling &lt;= 5,1,0)</code>, a
 <p>If you chose the manual specification method (hand pointer) to define the new variable, then you need to select the function <code>ifElse(y)</code> once more. For “test”, select the <span class="math inline">\(&lt;\)</span> operator from the top, drag the function <code>mean(y)</code> from the righthand menu to the preceding dots, and drag the variable <code>Arithmetic</code> from the lefthand menu to the “values” part of the <code>mean(y)</code> function. For “then” enter <code>0</code> and for “else” enter <code>1</code>. The complete expression should read <code>ifElse(Arithmetic &lt; mean(Arithmetic), 0, 1)</code>, and this expression is equivalent to the <code>R</code> command discussed above.
 After you have built your expression, click on <code>Compute column</code> to fill the empty variable with the new values.</p>
 </div>
-<div id="correlation-analysis-1" class="section level4" number="11.6.3.2">
-<h4><span class="header-section-number">11.6.3.2</span> correlation analysis</h4>
+<div id="correlation-analysis-1" class="section level4 hasAnchor" number="11.6.3.2">
+<h4><span class="header-section-number">11.6.3.2</span> correlation analysis<a href="ch-correlation-regression.html#correlation-analysis-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>After all this preparatory work, we can finally calculate <span class="math inline">\(r_\Phi\)</span>. From the top menu bar, choose</p>
 <pre><code>Frequencies &gt; Classical: Contingency Tables</code></pre>
 <p>Select the variables <code>UrbanRural2</code> (for the “Rows” panel) and <code>Arithmetic2</code> (for the “Columns” panel) to obtain the contingency table (see Table <a href="ch-correlation-regression.html#tab:cito-contingency-table">11.3</a>) .
@@ -1296,19 +1295,19 @@ Open the <code>Statistics</code> menu bar, and under “Nominal” check <code>P
 The value of <span class="math inline">\(r_\Phi\)</span> is reported in the output under the heading <strong>Phi coefficient</strong>.</p>
 </div>
 </div>
-<div id="r-10" class="section level3" number="11.6.4">
-<h3><span class="header-section-number">11.6.4</span> R</h3>
+<div id="r-10" class="section level3 hasAnchor" number="11.6.4">
+<h3><span class="header-section-number">11.6.4</span> R<a href="ch-correlation-regression.html#r-10" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The dataset <code>cito</code> already contains a variable <code>UrbanRural</code> which indicates the pupils’ origins.
 However, for completeness, let us still see how you can construct such a variable for yourself.</p>
-<div id="construct-new-variable-2" class="section level4" number="11.6.4.1">
-<h4><span class="header-section-number">11.6.4.1</span> construct new variable</h4>
+<div id="construct-new-variable-2" class="section level4 hasAnchor" number="11.6.4.1">
+<h4><span class="header-section-number">11.6.4.1</span> construct new variable<a href="ch-correlation-regression.html#construct-new-variable-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="ch-correlation-regression.html#cb87-1" aria-hidden="true" tabindex="-1"></a>UrbanRural2 <span class="ot">&lt;-</span> <span class="fu">ifelse</span>( cito<span class="sc">$</span>Pupil<span class="sc">&lt;</span><span class="dv">6</span>, <span class="dv">1</span>, <span class="dv">0</span>) <span class="co"># 1=urban, 0=rural</span></span>
 <span id="cb87-2"><a href="ch-correlation-regression.html#cb87-2" aria-hidden="true" tabindex="-1"></a>Arithmetic2 <span class="ot">&lt;-</span> <span class="fu">ifelse</span>( cito<span class="sc">$</span>Arithmetic<span class="sc">&gt;</span><span class="fu">mean</span>(cito<span class="sc">$</span>Arithmetic), <span class="dv">1</span>, <span class="dv">0</span> ) <span class="co"># 1=high, 0=low</span></span></code></pre></div>
 <p>Here we build a new variable <code>Arithmetic2</code>, which has the value <code>1</code> if the score for
 Arithmetic is higher than the average, and otherwise has the value <code>0</code>.</p>
 </div>
-<div id="correlation-analysis-2" class="section level4" number="11.6.4.2">
-<h4><span class="header-section-number">11.6.4.2</span> correlation analysis</h4>
+<div id="correlation-analysis-2" class="section level4 hasAnchor" number="11.6.4.2">
+<h4><span class="header-section-number">11.6.4.2</span> correlation analysis<a href="ch-correlation-regression.html#correlation-analysis-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>In R, we also start by making a contingency table (Table <a href="ch-correlation-regression.html#tab:cito-contingency-table">11.3</a>) and we then calculate the <span class="math inline">\(r_\Phi\)</span> over the contingency table.</p>
 <div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="ch-correlation-regression.html#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>( <span class="fu">table</span>(UrbanRural2,Arithmetic2) <span class="ot">-&gt;</span> citocontingencytable ) </span></code></pre></div>
 <pre><code>##            Arithmetic2
@@ -1324,8 +1323,8 @@ Arithmetic is higher than the average, and otherwise has the value <code>0</code
 </div>
 </div>
 </div>
-<div id="sec:correlationcausation" class="section level2" number="11.7">
-<h2><span class="header-section-number">11.7</span> Last but not least</h2>
+<div id="sec:correlationcausation" class="section level2 hasAnchor" number="11.7">
+<h2><span class="header-section-number">11.7</span> Last but not least<a href="ch-correlation-regression.html#sec:correlationcausation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>At the end of this chapter, we want to emphasise again that an association or correlation
 between two variables does not necessarily mean
 that there is a causal relation between the variables, in other words
@@ -1335,13 +1334,23 @@ The common saying for this is “correlation does not imply
 causation,” see also Example 6.1 (Chapter <a href="ch-design.html#ch-design">6</a>)
 and accompanying Figure <a href="ch-correlation-regression.html#fig:xkcd552">11.4</a> (borrowed with permission from <a href="http://xkcd.com/552" class="uri">http://xkcd.com/552</a> ).</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:xkcd552"></span>
-<img src="figures/correlation.png" alt="Correlation does not imply causation" width="230" />
+<img src="figures/correlation.png" alt="Correlation does not imply causation"  />
 <p class="caption">
 Figure 11.4: Correlation does not imply causation
 </p>
 </div>
 
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="25">
+<li id="fn25"><p>When the correlation found <span class="math inline">\(r\)</span> is <em>not</em> significant, then this can thus be by chance,
+and then we discount an interpretation of the correlation. We do then state in our report
+the correlation coefficient found and the established significance for it.<a href="ch-correlation-regression.html#fnref25" class="footnote-back">↩︎</a></p></li>
+<li id="fn26"><p>In some school books, this equation is described as <span class="math inline">\(Y = a X + b\)</span>, with <span class="math inline">\(a\)</span> as the slope and <span class="math inline">\(b\)</span> as the intercept; however, we keep to the conventional international notation here.<a href="ch-correlation-regression.html#fnref26" class="footnote-back">↩︎</a></p></li>
+<li id="fn27"><p>Only selected <code>R</code> functions from a so-called “whitelist” of functions are allowed.<a href="ch-correlation-regression.html#fnref27" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 

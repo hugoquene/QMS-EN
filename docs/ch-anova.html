@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>15 Analysis of variance | Quantitative Methods and Statistics</title>
   <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="15 Analysis of variance | Quantitative Methods and Statistics" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
   <meta name="github-repo" content="rstudio/QMS-EN" />
@@ -31,7 +30,6 @@
   
 <link rel="prev" href="ch-power.html"/>
 <link rel="next" href="ch-chi-square-tests.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -49,8 +47,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -530,10 +529,10 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ch-anova" class="section level1" number="15">
-<h1><span class="header-section-number">15</span> Analysis of variance</h1>
-<div id="sec:introduction" class="section level2" number="15.1">
-<h2><span class="header-section-number">15.1</span> Introduction</h2>
+<div id="ch-anova" class="section level1 hasAnchor" number="15">
+<h1><span class="header-section-number">15</span> Analysis of variance<a href="ch-anova.html#ch-anova" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="sec:introduction" class="section level2 hasAnchor" number="15.1">
+<h2><span class="header-section-number">15.1</span> Introduction<a href="ch-anova.html#sec:introduction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This chapter is about an often used statistical analysis, called
 analysis of variance (often abbreviated to ANOVA).</p>
 <p>The structure of this chapter is as follows. We will begin in §<a href="ch-anova.html#sec:anova-examples">15.2</a>
@@ -546,8 +545,8 @@ in an intuitive manner by looking at the thinking behind the test. In
 §<a href="ch-anova.html#sec:anova-oneway-formal">15.3.2</a> we derive a formal form for the most important
 test statistic, the <span class="math inline">\(F\)</span>-ratio.</p>
 </div>
-<div id="sec:anova-examples" class="section level2" number="15.2">
-<h2><span class="header-section-number">15.2</span> Some examples</h2>
+<div id="sec:anova-examples" class="section level2 hasAnchor" number="15.2">
+<h2><span class="header-section-number">15.2</span> Some examples<a href="ch-anova.html#sec:anova-examples" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Just like the <em>t</em>-test, analysis of variance is a statistical generalisation
 technique, which is to say: an instrument that can be used
 when formulating statements about the population characteristics,
@@ -566,7 +565,7 @@ when we want to analyse data from a factorial design
 speed of four groups of speakers, namely originating from the Middle, North,
 South and West of the Netherlands. The speech tempo is expressed as the mean
 duration of a syllable (in seconds), with the mean taken over an interview of approximately
-15 minutes with each speaker <span class="citation">(<a href="#ref-Quene08" role="doc-biblioref">Quené 2008</a>)</span> <span class="citation">(<a href="#ref-R-hqmisc" role="doc-biblioref">Quené 2014</a>)</span>.
+15 minutes with each speaker <span class="citation">(<a href="#ref-Quene08" role="doc-biblioref">Quené 2008</a>)</span> <span class="citation">(<a href="#ref-R-hqmisc" role="doc-biblioref">Quené 2022</a>)</span>.
 A shorter mean syllable duration thus corresponds to a faster speaker (cf. skating, where a faster skater has shorter lap durations). There were 20
 speakers per group, but 1 speaker (from the South), who had an extremely high value,
 was removed from the sample.</p>
@@ -749,8 +748,8 @@ numbers of speakers, divided according to gender and the speaker’s region of o
 West speak more quickly than the others, and that (ii) men speak more quickly than
 women (!). And (iii) the difference between men and women appears to be smaller
 for speakers from the West than for speakers from other regions.</p>
-<div id="assumptions" class="section level3" number="15.2.1">
-<h3><span class="header-section-number">15.2.1</span> assumptions</h3>
+<div id="assumptions" class="section level3 hasAnchor" number="15.2.1">
+<h3><span class="header-section-number">15.2.1</span> assumptions<a href="ch-anova.html#assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The analysis of variance requires four assumptions which
 must be satisfied to use this test; these assumptions match those of the
 <em>t</em>-test
@@ -775,10 +774,10 @@ Analysis of variance does require that data satisfy multiple
 conditions.</p>
 </div>
 </div>
-<div id="one-way-analysis-of-variance" class="section level2" number="15.3">
-<h2><span class="header-section-number">15.3</span> One-way analysis of variance</h2>
-<div id="sec:anova-oneway-explanation" class="section level3" number="15.3.1">
-<h3><span class="header-section-number">15.3.1</span> An intuitive explanation</h3>
+<div id="one-way-analysis-of-variance" class="section level2 hasAnchor" number="15.3">
+<h2><span class="header-section-number">15.3</span> One-way analysis of variance<a href="ch-anova.html#one-way-analysis-of-variance" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="sec:anova-oneway-explanation" class="section level3 hasAnchor" number="15.3.1">
+<h3><span class="header-section-number">15.3.1</span> An intuitive explanation<a href="ch-anova.html#sec:anova-oneway-explanation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>As stated, we use analysis of variance to investigate whether the
 scores of different groups, or those collected under different conditions,
 differ from each other. However — scores <em>always</em> differ
@@ -868,8 +867,8 @@ which groups differ from each other - for this another further
 (post-hoc) analysis is needed
 (§<a href="ch-anova.html#sec:anova-oneway-posthoc">15.3.5</a> below).</p>
 </div>
-<div id="sec:anova-oneway-formal" class="section level3" number="15.3.2">
-<h3><span class="header-section-number">15.3.2</span> A formal explanation</h3>
+<div id="sec:anova-oneway-formal" class="section level3 hasAnchor" number="15.3.2">
+<h3><span class="header-section-number">15.3.2</span> A formal explanation<a href="ch-anova.html#sec:anova-oneway-formal" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>For our explanation, we begin with the observed scores. We assume that
 the scores are constructed according to a certain statistical model, namely
 as the sum of the population mean (<span class="math inline">\(\mu\)</span>), a systematic
@@ -969,8 +968,8 @@ one sentence, see Example 15.2.</p>
 <td align="center">2</td>
 <td align="center">14.50</td>
 <td align="center">7.248</td>
-<td align="center">9.356</td>
-<td align="center">0.0004</td>
+<td align="center">9.36</td>
+<td align="center">&lt;.001</td>
 </tr>
 <tr class="even">
 <td align="left">(within)</td>
@@ -986,12 +985,12 @@ one sentence, see Example 15.2.</p>
 <blockquote>
 <p><em>Example 15.2</em>:
 The mean scores are not equal for the red, grey and blue group
-<span class="math inline">\([F(2,42) = 9.35\)</span>, <span class="math inline">\(p = .0004\)</span>, <span class="math inline">\(\omega^2 = 0.28]\)</span>.</p>
+<span class="math inline">\([F(2,42) = 9.35\)</span>, <span class="math inline">\(p &lt; .001\)</span>, <span class="math inline">\(\omega^2 = 0.28]\)</span>.</p>
 </blockquote>
 <hr />
 </div>
-<div id="sec:anova-oneway-effectsize" class="section level3" number="15.3.3">
-<h3><span class="header-section-number">15.3.3</span> Effect size</h3>
+<div id="sec:anova-oneway-effectsize" class="section level3 hasAnchor" number="15.3.3">
+<h3><span class="header-section-number">15.3.3</span> Effect size<a href="ch-anova.html#sec:anova-oneway-effectsize" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Just like with the <span class="math inline">\(t\)</span>-test, it is not only important to make a binary decision
 about H0, but it is at least equally important to know how large
 the observed effect is (see also
@@ -1006,7 +1005,7 @@ differences between the groups or conditions: <span class="math display">\[\labe
 variance in the <em>sample</em> can be assigned to the independent
 variable.</p>
 <p>The second measure for effect size with analysis of variance is the so-called
-<span class="math inline">\(\omega^2\)</span> (“omega squared”) (<span class="citation">Maxwell and Delaney (<a href="#ref-MD04" role="doc-biblioref">2004</a>)</span>, p.296):
+<span class="math inline">\(\omega^2\)</span> (“omega squared”) <span class="citation">(<a href="#ref-MD04" role="doc-biblioref">Maxwell and Delaney 2004, 296</a>)</span>:
 <span class="math display" id="eq:omegasq">\[\begin{equation}
   \tag{15.7}
     \omega^2 = \frac{ \textrm{SS}_b - (k-1) \textrm{MS}_w} { \textrm{SS}_t + \textrm{MS}_w }
@@ -1030,8 +1029,8 @@ association of independent and dependent variables [i.e., effect size
 coefficients] are <em>indispensable</em> parts of research results” <span class="citation">(<a href="#ref-KL00" role="doc-biblioref">Kerlinger and Lee 2000, 327</a>, emphasis added)</span>.</p>
 </blockquote>
 </div>
-<div id="sec:anova-oneway-planned" class="section level3" number="15.3.4">
-<h3><span class="header-section-number">15.3.4</span> Planned comparisons</h3>
+<div id="sec:anova-oneway-planned" class="section level3 hasAnchor" number="15.3.4">
+<h3><span class="header-section-number">15.3.4</span> Planned comparisons<a href="ch-anova.html#sec:anova-oneway-planned" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In Example 15.2 (see
 Figure <a href="ch-anova.html#fig:colours-obs">15.2</a>), we investigated the differences between
 scores from the red, grey and blue groups. The null hypothesis which was tested
@@ -1050,7 +1049,7 @@ in a planned way (1) whether the red group scores lower than the other two group
 and (2)
 whether the grey and blue groups differ from each other (H0:
 <span class="math inline">\(\mu_\textrm{grey} = \mu_\textrm{blue}\)</span>)
-<a href="references.html#fn36" class="footnote-ref" id="fnref36"><sup>36</sup></a>.</p>
+<a href="#fn36" class="footnote-ref" id="fnref36"><sup>36</sup></a>.</p>
 <p>The factor ‘group’ or ‘colour’ has 2 degrees of freedom, and that means that we
 can make precisely 2 of such planned comparisons or ‘contrasts’ which are
 independent of each other. Such independent contrasts
@@ -1095,24 +1094,24 @@ grey group and than the blue group.</p>
 <td align="center">2</td>
 <td align="center">14.50</td>
 <td align="center">7.248</td>
-<td align="center">9.356</td>
-<td align="center">0.0004</td>
+<td align="center">9.36</td>
+<td align="center">&lt;.001</td>
 </tr>
 <tr class="even">
 <td align="left">  Group, contrast 1</td>
 <td align="center">1</td>
 <td align="center">14.31</td>
 <td align="center">14.308</td>
-<td align="center">18.470</td>
-<td align="center">0.0001</td>
+<td align="center">18.47</td>
+<td align="center">&lt;.001</td>
 </tr>
 <tr class="odd">
 <td align="left">  Group, contrast 2</td>
 <td align="center">1</td>
 <td align="center">0.19</td>
 <td align="center">0.188</td>
-<td align="center">0.243</td>
-<td align="center">0.6248</td>
+<td align="center">0.24</td>
+<td align="center">0.62</td>
 </tr>
 <tr class="even">
 <td align="left">(within)</td>
@@ -1130,8 +1129,8 @@ certain (combinations of) groups or conditions. “A priori” means that these
 hypotheses (contrasts) are formulated before the observations have been made.
 These hypotheses can be based on theoretical considerations, or on
 previous research results.</p>
-<div id="orthogonal-contrasts" class="section level4" number="15.3.4.1">
-<h4><span class="header-section-number">15.3.4.1</span> Orthogonal contrasts</h4>
+<div id="orthogonal-contrasts" class="section level4 hasAnchor" number="15.3.4.1">
+<h4><span class="header-section-number">15.3.4.1</span> Orthogonal contrasts<a href="ch-anova.html#orthogonal-contrasts" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Each contrast can be expressed in the form of weights for each
 condition. For the contrasts discussed above, that can be done
 in the form of the following weights:</p>
@@ -1173,8 +1172,8 @@ If the sum of these products is null, then the two
 contrasts are orthogonal.</p>
 </div>
 </div>
-<div id="sec:anova-oneway-posthoc" class="section level3" number="15.3.5">
-<h3><span class="header-section-number">15.3.5</span> Post hoc comparisons</h3>
+<div id="sec:anova-oneway-posthoc" class="section level3 hasAnchor" number="15.3.5">
+<h3><span class="header-section-number">15.3.5</span> Post hoc comparisons<a href="ch-anova.html#sec:anova-oneway-posthoc" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In many studies, a researcher has no idea about the expected differences
 between the groups or conditions. Only after the analysis of variance,
 <em>after</em> a significant effect has been found, does the researcher decide
@@ -1207,14 +1206,14 @@ and/or in a <span class="math inline">\(p\)</span>-value for the difference betw
 <p><em>Example 15.4</em>:
 The mean scores are not equal for the red, grey and blue group
 <span class="math inline">\([F(2,42) = 9.35\)</span>, <span class="math inline">\(p = .0004\)</span>, <span class="math inline">\(\omega^2 = 0.28]\)</span>.
-Post-hoc comparisons using Tukey’s HSD test show that the grey and blue groups do not differ (<span class="math inline">\(p=.875\)</span>), while there are significant differences between the red and blue groups (<span class="math inline">\(p&lt;.001\)</span>) and between the red and grey group (<span class="math inline">\(p=.003\)</span>).</p>
+Post-hoc comparisons using Tukey’s HSD test show that the grey and blue groups do not differ (<span class="math inline">\(p=.88\)</span>), while there are significant differences between the red and blue groups (<span class="math inline">\(p&lt;.001\)</span>) and between the red and grey group (<span class="math inline">\(p=.003\)</span>).</p>
 </blockquote>
 <hr />
 </div>
-<div id="spss-12" class="section level3" number="15.3.6">
-<h3><span class="header-section-number">15.3.6</span> SPSS</h3>
-<div id="preparation-1" class="section level4" number="15.3.6.1">
-<h4><span class="header-section-number">15.3.6.1</span> preparation</h4>
+<div id="spss-12" class="section level3 hasAnchor" number="15.3.6">
+<h3><span class="header-section-number">15.3.6</span> SPSS<a href="ch-anova.html#spss-12" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="preparation-1" class="section level4 hasAnchor" number="15.3.6.1">
+<h4><span class="header-section-number">15.3.6.1</span> preparation<a href="ch-anova.html#preparation-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>We will use the data in the file <code>data/kleurgroepen.txt</code>; these data are also shown in Figure <a href="ch-anova.html#fig:colours-obs">15.2</a>.
 Read first the required data, and check this:</p>
 <pre><code>File &gt; Import Data &gt; Text Data...</code></pre>
@@ -1234,8 +1233,8 @@ techniques from Part II of this textbook (especially
 are equal, as required for the analysis of variance. We will do that at the same
 time as the analysis of variance itself.</p>
 </div>
-<div id="anova" class="section level4" number="15.3.6.2">
-<h4><span class="header-section-number">15.3.6.2</span> ANOVA</h4>
+<div id="anova" class="section level4 hasAnchor" number="15.3.6.2">
+<h4><span class="header-section-number">15.3.6.2</span> ANOVA<a href="ch-anova.html#anova" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>In SPSS, you can conduct an analysis of variance in several
 different ways. We
 will use a generally applicable approach here, where we indicate that there
@@ -1263,8 +1262,8 @@ the form of <code> Partial eta square</code>.
 As explained above, it would be better, however, to report
 <span class="math inline">\(\omega^2\)</span>, but you do have to calculate that yourself!</p>
 </div>
-<div id="planned-comparison" class="section level4" number="15.3.6.3">
-<h4><span class="header-section-number">15.3.6.3</span> planned comparison</h4>
+<div id="planned-comparison" class="section level4 hasAnchor" number="15.3.6.3">
+<h4><span class="header-section-number">15.3.6.3</span> planned comparison<a href="ch-anova.html#planned-comparison" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>For an analysis of variance with planned comparisons, we have to
 indicate the desired contrasts for the factor <code>kleur</code>
 (the Dutch variable name for colour of the group).
@@ -1301,8 +1300,8 @@ is indeed significant (<code>Sig. .000</code>, report as <span class="math inlin
 §<a href="ch-testing.html#sec:plargerthannull">13.3</a>), and the second is not, see
 Table <a href="ch-anova.html#tab:colours-anova-contrast">15.4</a>.</p>
 </div>
-<div id="post-hoc-comparison" class="section level4" number="15.3.6.4">
-<h4><span class="header-section-number">15.3.6.4</span> post hoc comparison</h4>
+<div id="post-hoc-comparison" class="section level4 hasAnchor" number="15.3.6.4">
+<h4><span class="header-section-number">15.3.6.4</span> post hoc comparison<a href="ch-anova.html#post-hoc-comparison" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>First repeat the instructions above.<br />
 Select the button <code>Post Hoc...</code>, and select the factor <code>kleur</code>
 (the Dutch variable name for colour of the group) (move this term to the window “Post Hoc Tests for:”).
@@ -1317,10 +1316,10 @@ differs from blue, that red differs from grey, and that the scores of the
 grey and blue groups do not differ.</p>
 </div>
 </div>
-<div id="jasp-13" class="section level3" number="15.3.7">
-<h3><span class="header-section-number">15.3.7</span> JASP</h3>
-<div id="preparation-2" class="section level4" number="15.3.7.1">
-<h4><span class="header-section-number">15.3.7.1</span> preparation</h4>
+<div id="jasp-13" class="section level3 hasAnchor" number="15.3.7">
+<h3><span class="header-section-number">15.3.7</span> JASP<a href="ch-anova.html#jasp-13" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="preparation-2" class="section level4 hasAnchor" number="15.3.7.1">
+<h4><span class="header-section-number">15.3.7.1</span> preparation<a href="ch-anova.html#preparation-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>We will use the data in the file <code>data/kleurgroepen.txt</code>; these data are also shown in Figure <a href="ch-anova.html#fig:colours-obs">15.2</a>.
 First read the required data, and check this.</p>
 <p>Examine whether the responses are normally distributed within each group, using the
@@ -1331,8 +1330,8 @@ Note: In JASP it is possible to examine the distribution at the same time as the
 are equal, as required for the analysis of variance. We will do that too at the same
 time as the analysis of variance itself.</p>
 </div>
-<div id="anova-1" class="section level4" number="15.3.7.2">
-<h4><span class="header-section-number">15.3.7.2</span> ANOVA</h4>
+<div id="anova-1" class="section level4 hasAnchor" number="15.3.7.2">
+<h4><span class="header-section-number">15.3.7.2</span> ANOVA<a href="ch-anova.html#anova-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>From the top menu bar, choose</p>
 <pre><code>ANOVA &gt; Classical: ANOVA</code></pre>
 <p>Select the variable <em>score</em> and move it to the field “Dependent Variable”, and move the variable <em>kleur</em> (the Dutch variable name for “colour” of the group) to the field “Fixed Factors”.<br />
@@ -1344,16 +1343,16 @@ Here you can also examine whether the distribution within each group is normal, 
 <p>The analysis of variance is summarized in the output in a table similar to Table <a href="ch-anova.html#tab:colours-anova">15.3</a>, in which the effect size should be reported as well.</p>
 <p>The output also contains the summary of Levene’s test for equal variances (homogeneity of variance). This test does not support rejection of H0, so we may conclude that the variances are indeed approximately equal, i.e., that that particular assumption of the analysis of variance is warranted.</p>
 </div>
-<div id="planned-comparison-1" class="section level4" number="15.3.7.3">
-<h4><span class="header-section-number">15.3.7.3</span> planned comparison</h4>
+<div id="planned-comparison-1" class="section level4 hasAnchor" number="15.3.7.3">
+<h4><span class="header-section-number">15.3.7.3</span> planned comparison<a href="ch-anova.html#planned-comparison-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>For an analysis of variance with planned comparisons we need to specify the planned comparisons for the factor <code>kleur</code>. The procedure is initially the same as above, so repeat the instructions given under <strong>ANOVA</strong> above.</p>
 <p>Next, open the bar named “Contrasts”. The field “Factors” should contain the factor <em>kleur</em> followed by “none”.
 Instead of “none” select the option “custom”. Now below the field there appears a work sheet titled “Custom for kleur”. Enter the the values for the contrast as specified above (§<a href="ch-anova.html#sec:anova-oneway-planned">15.3.4</a>). For contrast 1, enter <span class="math inline">\(-1\)</span> for red and <span class="math inline">\(0.5\)</span> for blue and grey both. Next, click on <code>Add contrast</code> to add another contrast, and for contrast 2 enter <span class="math inline">\(0\)</span> for red (i.e. ignore this group), <span class="math inline">\(-1\)</span> for grey and <span class="math inline">\(+1\)</span> for blue.</p>
 <p>The output of the planned contrasts provides the test value, its significance, and optionally the confidence interval of the contrasts. Note that in the text above (§<a href="ch-anova.html#sec:anova-oneway-planned">15.3.4</a>), the planned contrasts were tested using the <span class="math inline">\(F\)</span> test statistic, whereas JASP uses the <span class="math inline">\(t\)</span> test. The reported <span class="math inline">\(p\)</span> values are identical. Report the testing of the planned contrasts using the <span class="math inline">\(t\)</span> values and <span class="math inline">\(p\)</span> values, just as you would do for a regular <span class="math inline">\(t\)</span> test.
 The first contrast is indeed significant and the second is not, see Example 15.3 and Table <a href="ch-anova.html#tab:colours-anova-contrast">15.4</a>.</p>
 </div>
-<div id="post-hoc-comparisons" class="section level4" number="15.3.7.4">
-<h4><span class="header-section-number">15.3.7.4</span> post-hoc comparisons</h4>
+<div id="post-hoc-comparisons" class="section level4 hasAnchor" number="15.3.7.4">
+<h4><span class="header-section-number">15.3.7.4</span> post-hoc comparisons<a href="ch-anova.html#post-hoc-comparisons" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>For an analysis of variance with post-hoc comparisons we need to specify the post-hoc comparisons for the factor <code>kleur</code>. The procedure is initially the same as above, so repeat the instructions given under <strong>ANOVA</strong> above.</p>
 <p>Next, open the bar named “Post Hoc Tests”, and move the factor <em>kleur</em> to the righthand field.
 Check that “Type” is set to <code>Standard</code> and that the option <code>Effect size</code> is also checked.
@@ -1361,10 +1360,10 @@ Under “Correction” check the option <code>Tukey</code>, and under “Display
 <p>The output of the <em>Post Hoc Tests</em> shows for each pairwise comparison the difference, the standard error, and the 95% confidence interval of the difference. If the interval does <em>not</em> contain zero, then the scores are probably different between the two groups. For each pairwise comparison JASP reports a <span class="math inline">\(t\)</span> test with its adjusted <span class="math inline">\(p\)</span> value. We see that red differs from blue, that red differs from grey, and that scores do not differ between the blue and grey groups. Report that you have used Tukey’s HSD test, and report the <span class="math inline">\(p\)</span> values for each comparison, as in Example 15.4 above.</p>
 </div>
 </div>
-<div id="r-15" class="section level3" number="15.3.8">
-<h3><span class="header-section-number">15.3.8</span> R</h3>
-<div id="preparation-3" class="section level4" number="15.3.8.1">
-<h4><span class="header-section-number">15.3.8.1</span> preparation</h4>
+<div id="r-15" class="section level3 hasAnchor" number="15.3.8">
+<h3><span class="header-section-number">15.3.8</span> R<a href="ch-anova.html#r-15" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="preparation-3" class="section level4 hasAnchor" number="15.3.8.1">
+<h4><span class="header-section-number">15.3.8.1</span> preparation<a href="ch-anova.html#preparation-3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>We will use the data in the file <code>data/kleurgroepen.txt</code>; these data are also shown in Figure <a href="ch-anova.html#fig:colours-obs">15.2</a>. First read the data, and check this:</p>
 <div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="ch-anova.html#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="co"># same data as used in Fig.15.2</span></span>
 <span id="cb131-2"><a href="ch-anova.html#cb131-2" aria-hidden="true" tabindex="-1"></a>colourgroups <span class="ot">&lt;-</span> <span class="fu">read.table</span>( <span class="st">&quot;data/kleurgroepen.txt&quot;</span>, </span>
@@ -1383,8 +1382,8 @@ test this H0 using Bartlett’s test.</p>
 ## data:  colourgroups$score and colourgroups$kleur
 ## Bartlett&#39;s K-squared = 3.0941, df = 2, p-value = 0.2129</code></pre>
 </div>
-<div id="anova-2" class="section level4" number="15.3.8.2">
-<h4><span class="header-section-number">15.3.8.2</span> ANOVA</h4>
+<div id="anova-2" class="section level4 hasAnchor" number="15.3.8.2">
+<h4><span class="header-section-number">15.3.8.2</span> ANOVA<a href="ch-anova.html#anova-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="ch-anova.html#cb134-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>( <span class="fu">aov</span>( score<span class="sc">~</span>kleur, <span class="at">data=</span>colourgroups) <span class="ot">-&gt;</span> m01 ) <span class="co"># see Table 15.3</span></span></code></pre></div>
 <pre><code>##             Df Sum Sq Mean Sq F value   Pr(&gt;F)    
 ## kleur        2  14.50   7.248   9.356 0.000436 ***
@@ -1392,8 +1391,8 @@ test this H0 using Bartlett’s test.</p>
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 </div>
-<div id="R:omega-square" class="section level4" number="15.3.8.3">
-<h4><span class="header-section-number">15.3.8.3</span> effect size</h4>
+<div id="R:omega-square" class="section level4 hasAnchor" number="15.3.8.3">
+<h4><span class="header-section-number">15.3.8.3</span> effect size<a href="ch-anova.html#R:omega-square" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="ch-anova.html#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="co"># own function to calculate omega2, see comparison (15.7) in the main text,</span></span>
 <span id="cb136-2"><a href="ch-anova.html#cb136-2" aria-hidden="true" tabindex="-1"></a><span class="co"># for effect called `term` in summary(`model`)</span></span>
 <span id="cb136-3"><a href="ch-anova.html#cb136-3" aria-hidden="true" tabindex="-1"></a>omegasq <span class="ot">&lt;-</span> <span class="cf">function</span> ( model, term ) {   </span>
@@ -1406,8 +1405,8 @@ test this H0 using Bartlett’s test.</p>
 <span id="cb136-10"><a href="ch-anova.html#cb136-10" aria-hidden="true" tabindex="-1"></a><span class="fu">omegasq</span>( m01, <span class="st">&quot;kleur&quot;</span> ) <span class="co"># call function with 2 arguments</span></span></code></pre></div>
 <pre><code>## [1] 0.2708136</code></pre>
 </div>
-<div id="planned-comparison-2" class="section level4" number="15.3.8.4">
-<h4><span class="header-section-number">15.3.8.4</span> planned comparison</h4>
+<div id="planned-comparison-2" class="section level4 hasAnchor" number="15.3.8.4">
+<h4><span class="header-section-number">15.3.8.4</span> planned comparison<a href="ch-anova.html#planned-comparison-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>When specifying the contrasts, we have to take into account the
 <em>alphabetic</em> ordering of the conditions: <em>blue, grey, red</em>.
 (Note that the predictor itself is named <em>kleur</em> which is the Dutch term for colour of the group).</p>
@@ -1437,8 +1436,8 @@ test this H0 using Bartlett’s test.</p>
 <div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="ch-anova.html#cb144-1" aria-hidden="true" tabindex="-1"></a>(<span class="fl">0.188</span><span class="dv">-1</span><span class="sc">*</span><span class="fl">0.775</span>)<span class="sc">/</span>(<span class="fl">0.775+14.308+0.19+32.54</span>) <span class="co"># rounded off 0.00</span></span></code></pre></div>
 <pre><code>## [1] -0.012277</code></pre>
 </div>
-<div id="r-post-hoc-comparisons" class="section level4" number="15.3.8.5">
-<h4><span class="header-section-number">15.3.8.5</span> post hoc comparisons</h4>
+<div id="r-post-hoc-comparisons" class="section level4 hasAnchor" number="15.3.8.5">
+<h4><span class="header-section-number">15.3.8.5</span> post hoc comparisons<a href="ch-anova.html#r-post-hoc-comparisons" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="ch-anova.html#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="fu">TukeyHSD</span>(m02)</span></code></pre></div>
 <pre><code>##   Tukey multiple comparisons of means
 ##     95% family-wise confidence level
@@ -1461,8 +1460,8 @@ blue, and that the grey and blue scores do not differ.</p>
 </div>
 </div>
 </div>
-<div id="two-way-analysis-of-variance" class="section level2" number="15.4">
-<h2><span class="header-section-number">15.4</span> Two-way analysis of variance</h2>
+<div id="two-way-analysis-of-variance" class="section level2 hasAnchor" number="15.4">
+<h2><span class="header-section-number">15.4</span> Two-way analysis of variance<a href="ch-anova.html#two-way-analysis-of-variance" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In §<a href="ch-anova.html#sec:anova-examples">15.2</a>, we already gave an example
 of a research study with two factors which were investigated in one analysis
 of variance. In this way, we can investigate (i) whether there is a
@@ -1473,8 +1472,8 @@ A such interaction implies that the differences between conditions of
 one factor are not the same
 for the conditions of the other factor, or put otherwise, that a cell’s mean
 score deviates from the predicted value based on the two main effects.</p>
-<div id="an-intuitive-explanation" class="section level3" number="15.4.1">
-<h3><span class="header-section-number">15.4.1</span> An intuitive explanation</h3>
+<div id="an-intuitive-explanation" class="section level3 hasAnchor" number="15.4.1">
+<h3><span class="header-section-number">15.4.1</span> An intuitive explanation<a href="ch-anova.html#an-intuitive-explanation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In many studies, we are interested in the <em>combined</em> effects
 of two or more factors. We will use the following example for an intuitive explanation.</p>
 <hr />
@@ -1498,21 +1497,21 @@ Hence the researchers also expect an <strong>interaction</strong> between the tw
 <p>However, the most striking effect is the interaction: the effect of markers in the text is far larger for weak readers than for strong readers, as predicted. In other words, the differences between weak, average and strong readers are large in the text version without markers, but far smaller or even absent in the version with markers in the text.</p>
 </blockquote>
 <div class="figure"><span style="display:block;" id="fig:DBE12interaction"></span>
-<img src="figures/DBE2012interaction_v2.png" alt="Average comprehension score (along Y axis, with 95% confidence intervals), for text versions with (met) and without (zonder) structure markers, for weak (zwak), average (gemidd) and strong (sterk) readers (after Van Dooren, Van den Bergh and Evers-Vermeul, 2012)." width="571" />
+<img src="figures/DBE2012interaction_v2.png" alt="Average comprehension score (along Y axis, with 95% confidence intervals), for text versions with (met) and without (zonder) structure markers, for weak (zwak), average (gemidd) and strong (sterk) readers (after Van Dooren, Van den Bergh and Evers-Vermeul, 2012)."  />
 <p class="caption">
 Figure 15.3: Average comprehension score (along Y axis, with 95% confidence intervals), for text versions with (met) and without (zonder) structure markers, for weak (zwak), average (gemidd) and strong (sterk) readers (after Van Dooren, Van den Bergh and Evers-Vermeul, 2012).
 </p>
 </div>
 <hr />
-<p>If a significant interaction is present, as in the example above, then we can no longer draw conclusions about the main effects involved in that interaction. This is because the effect of a factor now depends on the levels of the other factor, i.e., on the interaction with other factor(s) <a href="references.html#fn37" class="footnote-ref" id="fnref37"><sup>37</sup></a>.
+<p>If a significant interaction is present, as in the example above, then we can no longer draw conclusions about the main effects involved in that interaction. This is because the effect of a factor now depends on the levels of the other factor, i.e., on the interaction with other factor(s) <a href="#fn37" class="footnote-ref" id="fnref37"><sup>37</sup></a>.
 In the example above: the difference in comprehension scores between the text versions (factor A) is large for weak readers, but absent for strong readers. The difference between reader types (factor B) is larg for a text without markers, but far smaller for a text with structural markers.</p>
 <p>We have already seen a different pattern of interaction, in
 Figure <a href="ch-design.html#fig:drakebenelheni2003fig2">6.1</a> (§<a href="ch-design.html#sec:factorial-designs">6.8</a>).
 There, the scores are <em>on average</em> about the same for the two groups of listeners, and <em>on average</em> the scores are about the same for the two conditions too. Hence the two main effects are not significant, but their interaction is highly significant. In that study, the effect of the one factor is opposite in the two levels of the other factor.</p>
 <hr />
 </div>
-<div id="a-formal-explanation" class="section level3" number="15.4.2">
-<h3><span class="header-section-number">15.4.2</span> A formal explanation</h3>
+<div id="a-formal-explanation" class="section level3 hasAnchor" number="15.4.2">
+<h3><span class="header-section-number">15.4.2</span> A formal explanation<a href="ch-anova.html#a-formal-explanation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We again assume that the scores have been built up according to
 a statistical model, namely as the sum of the population mean
 <span class="math inline">\(\mu\)</span>, a systematic effect <span class="math inline">\(\beta_k\)</span> of the <span class="math inline">\(k\)</span>’the condition of
@@ -1608,40 +1607,40 @@ For the interpretation, it matters whether or not the <em>interaction</em> is si
 If the interaction is significant, then first we present the main effects without interpreting them, then we present and interpret the interaction, and finally we interpret the main effects that are significant and that are not involved in the interaction.
 If the interaction is not significant, then it may be easier to first present and interpret the main effects, and then we present the interaction (which is not interpreted).</p>
 </div>
-<div id="sec:anova-twoway-posthoc" class="section level3" number="15.4.3">
-<h3><span class="header-section-number">15.4.3</span> Post hoc comparisons</h3>
+<div id="sec:anova-twoway-posthoc" class="section level3 hasAnchor" number="15.4.3">
+<h3><span class="header-section-number">15.4.3</span> Post hoc comparisons<a href="ch-anova.html#sec:anova-twoway-posthoc" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In two-way ANOVA too, we can perform post hoc comparisons (cf. §<a href="ch-anova.html#sec:anova-oneway-posthoc">15.3.5</a>) to investigate which cells or conditions differ from each other. Again we use the Tukey HSD test, which provides a 95% confidence interval of the difference between two cells, and/or a <span class="math inline">\(p\)</span> value of that difference.</p>
 <blockquote>
 <p>The comprehension scores showed a significant main effect of structure markings in the text <span class="math inline">\([F(1,88)=63.75, p&lt;.001, \omega^2=0.26]\)</span>, as well as a significant main effect of the reader type <span class="math inline">\([F(2,88)=33.56, p&lt;.001, \omega^2=0.27]\)</span>.
 There was also a significant interaction between text version and reader type <span class="math inline">\([F(2,88)=10.74, p&lt;.001, \omega^2=0.08]\)</span>, see Figure <a href="ch-anova.html#fig:DBE12interaction">15.3</a>; this interaction was further explored using the Tukey HSD test (among 6 cells).
-Weak readers perform worse than average readers, in the text version without markers (<span class="math inline">\(p&lt;.001\)</span>), but not in the version with markers (<span class="math inline">\(p=.999\)</span>).
-Strong readers perform better than average readers, in the version without markers (<span class="math inline">\(p&lt;.001\)</span>) as well as with markers (<span class="math inline">\(p=.013\)</span>).
-Text markers have an effect for weak readers (<span class="math inline">\(p&lt;.001\)</span>) and for average readers (<span class="math inline">\(p&lt;.001\)</span>) but not for strong readers (<span class="math inline">\(p=.888\)</span>); hence strong readers do not benefit from structure markers in the text, but weak and average readers do.
-Also of interest is the finding that weak readers understand a text with markers as well as strong readers do understand the same text without markers (<span class="math inline">\(p=.722\)</span>).</p>
+Weak readers perform worse than average readers, in the text version without markers (<span class="math inline">\(p&lt;.001\)</span>), but not in the version with markers (<span class="math inline">\(p=.99\)</span>).
+Strong readers perform better than average readers, in the version without markers (<span class="math inline">\(p&lt;.001\)</span>) as well as with markers (<span class="math inline">\(p=.01\)</span>).
+Text markers have an effect for weak readers (<span class="math inline">\(p&lt;.001\)</span>) and for average readers (<span class="math inline">\(p&lt;.001\)</span>) but not for strong readers (<span class="math inline">\(p=.89\)</span>); hence strong readers do not benefit from structure markers in the text, but weak and average readers do.
+Also of interest is the finding that weak readers understand a text with markers as well as strong readers do understand the same text without markers (<span class="math inline">\(p=.72\)</span>).</p>
 </blockquote>
 </div>
-<div id="spss-13" class="section level3" number="15.4.4">
-<h3><span class="header-section-number">15.4.4</span> SPSS</h3>
+<div id="spss-13" class="section level3 hasAnchor" number="15.4.4">
+<h3><span class="header-section-number">15.4.4</span> SPSS<a href="ch-anova.html#spss-13" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The data for the example above are in <code>data/DBE2012.csv</code>.</p>
-<div id="anova-3" class="section level4" number="15.4.4.1">
-<h4><span class="header-section-number">15.4.4.1</span> ANOVA</h4>
+<div id="anova-3" class="section level4 hasAnchor" number="15.4.4.1">
+<h4><span class="header-section-number">15.4.4.1</span> ANOVA<a href="ch-anova.html#anova-3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <pre><code>Analyze &gt; General Linear Model &gt; Univariate...</code></pre>
 <p>Drag the dependent variable (<code>MCBiScore</code>) to the panel Dependent
 variable. Drag the two independent variable (with Dutch variable names, <code>Versie</code> for text version, <code>Groep</code> for group or reader type) to the panel Fixed factor(s).</p>
 </div>
 </div>
-<div id="jasp-14" class="section level3" number="15.4.5">
-<h3><span class="header-section-number">15.4.5</span> JASP</h3>
-<div id="preparation-4" class="section level4" number="15.4.5.1">
-<h4><span class="header-section-number">15.4.5.1</span> preparation</h4>
+<div id="jasp-14" class="section level3 hasAnchor" number="15.4.5">
+<h3><span class="header-section-number">15.4.5</span> JASP<a href="ch-anova.html#jasp-14" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="preparation-4" class="section level4 hasAnchor" number="15.4.5.1">
+<h4><span class="header-section-number">15.4.5.1</span> preparation<a href="ch-anova.html#preparation-4" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The data for the example above are in <code>data/DBE2012.csv</code>.</p>
 <p>Examine whether the responses are normally distributed within each group or cell, using the
 techniques from Part II of this textbook (especially
 §<a href="ch-probability-distributions.html#sec:isvarnormaldistributed">10.4</a>).
 Note: In JASP it is possible to examine the distribution at the same time as the analysis of variance itself, see below.</p>
 </div>
-<div id="anova-4" class="section level4" number="15.4.5.2">
-<h4><span class="header-section-number">15.4.5.2</span> ANOVA</h4>
+<div id="anova-4" class="section level4 hasAnchor" number="15.4.5.2">
+<h4><span class="header-section-number">15.4.5.2</span> ANOVA<a href="ch-anova.html#anova-4" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>In the top menu bar, choose:</p>
 <pre><code>ANOVA &gt; Classical: ANOVA</code></pre>
 <p>Select the variable <em>MCBiScore</em> and move it to the field “Dependent Variable”, and move the variables <em>Version</em> (text version) and <em>Group</em> (reader type) to the field “Fixed Factors”.<br />
@@ -1656,26 +1655,26 @@ Open the menu bar named “Descriptive Plots” and select <em>Group</em> for th
 The <em>Descriptive plots</em> section provides a visualisation which may be helpful in understanding a possible interaction effect.</p>
 <p>The output under <strong>Assumption Check</strong> also reports Levene’s test for equal variances (homogeneity of variance). This test does not suggest rejection of H0, so we may conclude that the variances are indeed approximately equal, i.e., that that particular assumption of the analysis of variance is warranted.</p>
 </div>
-<div id="post-hoc-comparisons-1" class="section level4" number="15.4.5.3">
-<h4><span class="header-section-number">15.4.5.3</span> post hoc comparisons</h4>
+<div id="post-hoc-comparisons-1" class="section level4 hasAnchor" number="15.4.5.3">
+<h4><span class="header-section-number">15.4.5.3</span> post hoc comparisons<a href="ch-anova.html#post-hoc-comparisons-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>For an analysis of variance with post-hoc comparisons we need to specify the post-hoc comparisons. The procedure is initially the same as above, so repeat the instructions given under <strong>ANOVA</strong> above.</p>
 <p>Next, open the bar named “Post Hoc Tests”, and move the interaction <em>Versie</em> <span class="math inline">\(\times\)</span> <em>Groep</em> to the righthand field.
 Check that “Type” is set to <code>Standard</code> and that the option <code>Effect size</code> is also checked.
 Under “Correction” check the option <code>Tukey</code>, and under “Display” check the option <code>Confidence intervals</code>.</p>
 <p>The output of the <em>Post Hoc Tests</em> shows for each pairwise comparison the difference, the standard error, and the 95% confidence interval of the difference. If the interval does <em>not</em> contain zero, then the scores are probably different between the two groups. For each pairwise comparison JASP reports a <span class="math inline">\(t\)</span> test with its adjusted <span class="math inline">\(p\)</span> value using Tukey’s correction.</p>
 <p>For the version without markers (‘zonder’) we see that the cell <code>zonder:zwak</code> scores lower than the cell <code>zonder:gemiddeld</code> (<span class="math inline">\(p&lt;.001\)</span>), and that the cell <code>zonder:sterk</code> scores higher than the cell <code>zonder:gemiddeld</code> (<span class="math inline">\(p&lt;.001\)</span>).
-For the version with markers (‘met’) we see that the cell <code>met:zwak</code> scores about equally with the cell <code>met:gemiddeld</code> (<span class="math inline">\(p=.999\)</span>), and that the cell <code>met:sterk</code> scores higher than the cell <code>met:gemiddeld</code> (<span class="math inline">\(p=.013\)</span>). Hence strong readers perform better than average and/or weak readers, in both text versions.
+For the version with markers (‘met’) we see that the cell <code>met:zwak</code> scores about equally with the cell <code>met:gemiddeld</code> (<span class="math inline">\(p=.99\)</span>), and that the cell <code>met:sterk</code> scores higher than the cell <code>met:gemiddeld</code> (<span class="math inline">\(p=.01\)</span>). Hence strong readers perform better than average and/or weak readers, in both text versions.
 We also see that <code>zonder:zwak</code> scores lower than <code>met:zwak</code> (<span class="math inline">\(p&lt;.001\)</span>),
 and that <code>zonder:gemiddeld</code> scores lower than <code>met:gemiddeld</code> (<span class="math inline">\(p&lt;.001\)</span>),
-while there is no difference between <code>zonder:sterk</code> and <code>met:sterk</code> (<span class="math inline">\(p=.888\)</span>).
+while there is no difference between <code>zonder:sterk</code> and <code>met:sterk</code> (<span class="math inline">\(p=.89\)</span>).
 Hence strong readers do not benefit from structure markers in the text.
-Also of interest is the finding that weak readers understand a text with markers as well as strong readers do understand a text without markers (<span class="math inline">\(p=.722\)</span>).</p>
+Also of interest is the finding that weak readers understand a text with markers as well as strong readers do understand a text without markers (<span class="math inline">\(p=.72\)</span>).</p>
 </div>
 </div>
-<div id="r-16" class="section level3" number="15.4.6">
-<h3><span class="header-section-number">15.4.6</span> R</h3>
-<div id="preparation-5" class="section level4" number="15.4.6.1">
-<h4><span class="header-section-number">15.4.6.1</span> preparation</h4>
+<div id="r-16" class="section level3 hasAnchor" number="15.4.6">
+<h3><span class="header-section-number">15.4.6</span> R<a href="ch-anova.html#r-16" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="preparation-5" class="section level4 hasAnchor" number="15.4.6.1">
+<h4><span class="header-section-number">15.4.6.1</span> preparation<a href="ch-anova.html#preparation-5" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The data for the example above are in <code>data/DBE2012.csv</code>.</p>
 <div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="ch-anova.html#cb150-1" aria-hidden="true" tabindex="-1"></a>DBE2012 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">&quot;data/DBE2012.csv&quot;</span>)</span>
 <span id="cb150-2"><a href="ch-anova.html#cb150-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Versie: 1=with=met, 2=without=zonder structure markers</span></span>
@@ -1691,8 +1690,8 @@ Also of interest is the finding that weak readers understand a text with markers
 ## met    6.800000  6.653846 8.222222
 ## zonder 2.666667  4.642857 7.571429</code></pre>
 </div>
-<div id="anova-5" class="section level4" number="15.4.6.2">
-<h4><span class="header-section-number">15.4.6.2</span> ANOVA</h4>
+<div id="anova-5" class="section level4 hasAnchor" number="15.4.6.2">
+<h4><span class="header-section-number">15.4.6.2</span> ANOVA<a href="ch-anova.html#anova-5" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="ch-anova.html#cb152-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>( <span class="fu">aov</span>(MCBiScore<span class="sc">~</span>Versie<span class="sc">*</span>Groep, <span class="at">data=</span>DBE2012) <span class="ot">-&gt;</span> DBE2012.m1 )</span></code></pre></div>
 <pre><code>##              Df Sum Sq Mean Sq F value   Pr(&gt;F)    
 ## Versie        1 121.18  121.18   84.64 1.59e-14 ***
@@ -1701,10 +1700,10 @@ Also of interest is the finding that weak readers understand a text with markers
 ## Residuals    88 125.98    1.43                     
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<p>The results are slightly different from those reported in Table <a href="ch-anova.html#tab:DBE12anova">15.5</a> above, because R computes the sums of squares somewhat differently<a href="references.html#fn38" class="footnote-ref" id="fnref38"><sup>38</sup></a>.</p>
+<p>The results are slightly different from those reported in Table <a href="ch-anova.html#tab:DBE12anova">15.5</a> above, because R computes the sums of squares somewhat differently<a href="#fn38" class="footnote-ref" id="fnref38"><sup>38</sup></a>.</p>
 </div>
-<div id="effectsize" class="section level4" number="15.4.6.3">
-<h4><span class="header-section-number">15.4.6.3</span> Effect size</h4>
+<div id="effectsize" class="section level4 hasAnchor" number="15.4.6.3">
+<h4><span class="header-section-number">15.4.6.3</span> Effect size<a href="ch-anova.html#effectsize" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>In order to assess effect size, we will use the previously programmed function <code>omegasq</code>
 (§<a href="ch-anova.html#R:omega-square">15.3.8.3</a>):</p>
 <div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="ch-anova.html#cb154-1" aria-hidden="true" tabindex="-1"></a><span class="fu">omegasq</span>(DBE2012.m1, <span class="st">&quot;Versie&quot;</span>)        <span class="co"># [1] 0.33</span></span></code></pre></div>
@@ -1715,8 +1714,8 @@ Also of interest is the finding that weak readers understand a text with markers
 <pre><code>## [1] 0.07727868</code></pre>
 <p>These results too differ slighly from those reported in the main text above, because R computes the sums of squares somewhat differently.</p>
 </div>
-<div id="post-hoc-tests" class="section level4" number="15.4.6.4">
-<h4><span class="header-section-number">15.4.6.4</span> post-hoc tests</h4>
+<div id="post-hoc-tests" class="section level4 hasAnchor" number="15.4.6.4">
+<h4><span class="header-section-number">15.4.6.4</span> post-hoc tests<a href="ch-anova.html#post-hoc-tests" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="ch-anova.html#cb160-1" aria-hidden="true" tabindex="-1"></a><span class="fu">TukeyHSD</span>(<span class="at">x=</span>DBE2012.m1, <span class="at">which=</span><span class="st">&quot;Versie:Groep&quot;</span>)</span></code></pre></div>
 <pre><code>##   Tukey multiple comparisons of means
 ##     95% family-wise confidence level
@@ -1743,18 +1742,18 @@ Also of interest is the finding that weak readers understand a text with markers
 <p>These results too differ slighly from those reported in the main text above, because R computes the sums of squares somewhat differently.</p>
 <p>For each pairwise comparison among the 2x3 cells we see the difference, the lower and upper boundary of the 95% confidence interval of the difference, and the adjusted <span class="math inline">\(p\)</span> value using Tukey’s HSD correction.</p>
 <p>For the version without markers (‘zonder’) we see that the cell <code>zonder:zwak</code> scores lower than the cell <code>zonder:gemiddeld</code> (<span class="math inline">\(p&lt;.001\)</span>), and that the cell <code>zonder:sterk</code> scores higher than the cell <code>zonder:gemiddeld</code> (<span class="math inline">\(p&lt;.001\)</span>).
-For the version with markers (‘met’) we see that the cell <code>met:zwak</code> scores about equally with the cell <code>met:gemiddeld</code> (<span class="math inline">\(p=.999\)</span>), and that the cell <code>met:sterk</code> scores higher than the cell <code>met:gemiddeld</code> (<span class="math inline">\(p=.013\)</span>). Hence strong readers perform better than average and/or weak readers, in both text versions.
+For the version with markers (‘met’) we see that the cell <code>met:zwak</code> scores about equally with the cell <code>met:gemiddeld</code> (<span class="math inline">\(p=.99\)</span>), and that the cell <code>met:sterk</code> scores higher than the cell <code>met:gemiddeld</code> (<span class="math inline">\(p=.01\)</span>). Hence strong readers perform better than average and/or weak readers, in both text versions.
 We also see that <code>zonder:zwak</code> scores lower than <code>met:zwak</code> (<span class="math inline">\(p&lt;.001\)</span>),
 and that <code>zonder:gemiddeld</code> scores lower than <code>met:gemiddeld</code> (<span class="math inline">\(p&lt;.001\)</span>),
-while there is no difference between <code>zonder:sterk</code> and <code>met:sterk</code> (<span class="math inline">\(p=.888\)</span>).
+while there is no difference between <code>zonder:sterk</code> and <code>met:sterk</code> (<span class="math inline">\(p=.89\)</span>).
 Hence strong readers do not benefit from structure markers in the text.
-Also of interest is the finding that weak readers understand a text with markers as well as strong readers do understand a text without markers (<span class="math inline">\(p=.722\)</span>).</p>
+Also of interest is the finding that weak readers understand a text with markers as well as strong readers do understand a text without markers (<span class="math inline">\(p=.72\)</span>).</p>
 
 </div>
 </div>
 </div>
 </div>
-<h3>References</h3>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-KL00" class="csl-entry">
 Kerlinger, Fred N., and Howard B. Lee. 2000. <em>Foundations of Behavioral Research</em>. 4th ed. Fort Worth: Harcourt College Publishers.
@@ -1769,11 +1768,24 @@ Olejnik, Stephen, and James Algina. 2003. <span>“Generalized Eta and Omega Squ
 Quené, Hugo. 2008. <span>“Multilevel Modeling of Between-Speaker and Within-Speaker Variation in Spontaneous Speech Tempo.”</span> <em>Journal of the Acoustical Society of America</em> 123 (2): 1104–13.
 </div>
 <div id="ref-R-hqmisc" class="csl-entry">
-———. 2014. <em>Hqmisc: Miscellaneous Convenience Functions and Dataset</em>. <a href="https://CRAN.R-project.org/package=hqmisc">https://CRAN.R-project.org/package=hqmisc</a>.
+———. 2022. <em>Hqmisc: Miscellaneous Convenience Functions and Dataset</em>.
 </div>
 <div id="ref-DBE12" class="csl-entry">
 Van Dooren, Wendy, Huub Van den Bergh, and Jacqueline Evers-Vermeul. 2012. <span>“Leesbare Teksten? Over de Invloed van Structuurmarkeringen Op Het Tekstbegrip En Tekstwaardering van Zwakke En Sterke Lezers.”</span> <em>Levende Talen Tijdschrift</em> 13 (4): 31–38. <a href="https://lt-tijdschriften.nl/ojs/index.php/ltt/article/view/152">https://lt-tijdschriften.nl/ojs/index.php/ltt/article/view/152</a>.
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="36">
+<li id="fn36"><p>If (1) red does differ from grey and blue, and if (2) grey and blue
+also differ from each other, then this implies that red differs from grey (a new
+finding) and that red differs from blue (we already knew that).<a href="ch-anova.html#fnref36" class="footnote-back">↩︎</a></p></li>
+<li id="fn37"><p>If we add more factors then the situation quickly becomes confusing.
+With three main effects, there are already 3 two-way interactions plus 1 three-way
+interaction. With four main effects, there are already 6 two-way interactions, plus
+4 three-way interactions, plus 1 four-way interaction.<a href="ch-anova.html#fnref37" class="footnote-back">↩︎</a></p></li>
+<li id="fn38"><p>The default type of computing sums of squares in R (Type I) may be used in JASP by choosing: Model, Sum of squares: Type I. The default type of computing sums of squares in JASP (Type III) may be achieved in R by various workarounds, see e.g. <a href="https://www.r-bloggers.com/2011/03/anova-%E2%80%93-type-iiiiii-ss-explained" class="uri">https://www.r-bloggers.com/2011/03/anova-%E2%80%93-type-iiiiii-ss-explained</a>.<a href="ch-anova.html#fnref38" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 

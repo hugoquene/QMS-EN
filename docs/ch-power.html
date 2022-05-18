@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>14 Power | Quantitative Methods and Statistics</title>
   <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="14 Power | Quantitative Methods and Statistics" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
   <meta name="github-repo" content="rstudio/QMS-EN" />
@@ -31,7 +30,6 @@
   
 <link rel="prev" href="ch-testing.html"/>
 <link rel="next" href="ch-anova.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -49,8 +47,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -530,10 +529,10 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ch-power" class="section level1" number="14">
-<h1><span class="header-section-number">14</span> Power</h1>
-<div id="sec:power-introduction" class="section level2" number="14.1">
-<h2><span class="header-section-number">14.1</span> Introduction</h2>
+<div id="ch-power" class="section level1 hasAnchor" number="14">
+<h1><span class="header-section-number">14</span> Power<a href="ch-power.html#ch-power" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="sec:power-introduction" class="section level2 hasAnchor" number="14.1">
+<h2><span class="header-section-number">14.1</span> Introduction<a href="ch-power.html#sec:power-introduction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>With statistical testing of H0, we determine the probability <span class="math inline">\(P\)</span> of the
 observed differences or effects (or of even larger differences or effects
 than observed) if H0 were true, and thus if
@@ -604,8 +603,8 @@ Figure 14.2: Power expressed in contours (see graduation), dependent on the stan
 </p>
 </div>
 </div>
-<div id="sec:effectsize-power" class="section level2" number="14.2">
-<h2><span class="header-section-number">14.2</span> Relation between effect size and power</h2>
+<div id="sec:effectsize-power" class="section level2 hasAnchor" number="14.2">
+<h2><span class="header-section-number">14.2</span> Relation between effect size and power<a href="ch-power.html#sec:effectsize-power" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The two figures <a href="ch-power.html#fig:powercontours-alpha01">14.1</a> and
 <a href="ch-power.html#fig:powercontours-alpha05">14.2</a> show that, in general, the larger the effect to be
 tested is (more to the right in each figure), the larger the power.
@@ -654,8 +653,8 @@ then <span class="math inline">\(s\)</span> can be roughly estimated from some i
 (range) of these, divide this range by 4, and use the outcome of this as
 a rough estimation for <span class="math inline">\(s\)</span> <span class="citation">(<a href="#ref-PD08" role="doc-biblioref">Peck and Devore 2008</a>)</span>.</p>
 </div>
-<div id="sec:samplesize-power" class="section level2" number="14.3">
-<h2><span class="header-section-number">14.3</span> Relation between sample size and power</h2>
+<div id="sec:samplesize-power" class="section level2 hasAnchor" number="14.3">
+<h2><span class="header-section-number">14.3</span> Relation between sample size and power<a href="ch-power.html#sec:samplesize-power" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The relation between the sample size <span class="math inline">\(N\)</span> and the power of a study
 is illustrated in
 Figure <a href="ch-power.html#fig:powercontours-alpha01">14.1</a> for a strict significance
@@ -684,8 +683,8 @@ than necessary (see also §<a href="ch-integrity.html#sec:design">3.2</a>) <span
 </blockquote>
 <hr />
 </div>
-<div id="sec:significancelevel-power" class="section level2" number="14.4">
-<h2><span class="header-section-number">14.4</span> Relation between significance level and power</h2>
+<div id="sec:significancelevel-power" class="section level2 hasAnchor" number="14.4">
+<h2><span class="header-section-number">14.4</span> Relation between significance level and power<a href="ch-power.html#sec:significancelevel-power" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The relation between the significance level <span class="math inline">\(\alpha\)</span> and the power is
 illustrated by the difference between the two figures
 <a href="ch-power.html#fig:powercontours-alpha01">14.1</a> and
@@ -704,8 +703,8 @@ probability <span class="math inline">\(\alpha\)</span>) and Type II errors (wit
 this decision has to depend on the seriousness of (the consequences of) these
 two types of errors.</p>
 </div>
-<div id="disadvantages-of-insufficient-power" class="section level2" number="14.5">
-<h2><span class="header-section-number">14.5</span> Disadvantages of insufficient power</h2>
+<div id="disadvantages-of-insufficient-power" class="section level2 hasAnchor" number="14.5">
+<h2><span class="header-section-number">14.5</span> Disadvantages of insufficient power<a href="ch-power.html#disadvantages-of-insufficient-power" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Unfortunately, many examples can be found of ‘underpowered’ research
 in the domain of language and communication. This research has a too small
 probability of rejecting H0 when the investigated effect indeed
@@ -753,7 +752,7 @@ must be quite large to be found. In the leftmost panel, we can see that
 a significant effect has only been found <span class="math inline">\(31\times\)</span>. The average effect size of these
 31 significant outcomes is <span class="math inline">\(\overline{d_{\textrm{signif}}}=0.90\)</span> (black dashed line), i.e.
 a distortion or ‘bias’ of <span class="math inline">\(0.40\)</span> relative to the actual
-<span class="math inline">\(d=0.50\)</span> (grey dashed line)<a href="references.html#fn35" class="footnote-ref" id="fnref35"><sup>35</sup></a>. In the rightmost panel, we can see that
+<span class="math inline">\(d=0.50\)</span> (grey dashed line)<a href="#fn35" class="footnote-ref" id="fnref35"><sup>35</sup></a>. In the rightmost panel, we can see that
 a significant effect has been found <span class="math inline">\(91\times\)</span> (thus the power here is sufficient).
 The mean effect size of these 91 significant outcomes hardly deviates
 from the actual <span class="math inline">\(d\)</span>. Moreover, the standard deviation of the reported
@@ -778,7 +777,7 @@ ethical and moral principles of diligence and responsibility
 
 </div>
 </div>
-<h3>References</h3>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-ACA11" class="csl-entry">
 Aron, Arthur, Eliot J. Coups, and Elaine N. Aron. 2011. <em>Statistics for the Behavioral and Social Sciences: A Brief Course</em>. 5th ed. Boston: Pearson.
@@ -798,6 +797,15 @@ Schmidt, Frank L. 1996. <span>“Statistical Significance Testing and Cumulative
 <div id="ref-Kolf93" class="csl-entry">
 Van Kolfschooten, Frank. 1993. <em>Valse Vooruitgang: Bedrog in de <span>N</span>ederlandse Wetenschap</em>. Amsterdam: L.J. Veen.
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="35">
+<li id="fn35"><p>A replication study which does have sufficient power, thus typically finds a smaller effect than the
+original ‘underpowered’ study. The smaller effect found in the replication study is then typically also not
+significant. We then say that the replication study “fails to replicate” the effect that was significant in
+the original study - but that was actually a spurious finding.<a href="ch-power.html#fnref35" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 

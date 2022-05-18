@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>13 Testing hypotheses | Quantitative Methods and Statistics</title>
   <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="13 Testing hypotheses | Quantitative Methods and Statistics" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
   <meta name="github-repo" content="rstudio/QMS-EN" />
@@ -31,7 +30,6 @@
   
 <link rel="prev" href="ch-reliability.html"/>
 <link rel="next" href="ch-power.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -49,8 +47,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -530,10 +529,10 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ch-testing" class="section level1" number="13">
-<h1><span class="header-section-number">13</span> Testing hypotheses</h1>
-<div id="sec:testing-introduction" class="section level2" number="13.1">
-<h2><span class="header-section-number">13.1</span> Introduction</h2>
+<div id="ch-testing" class="section level1 hasAnchor" number="13">
+<h1><span class="header-section-number">13</span> Testing hypotheses<a href="ch-testing.html#ch-testing" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="sec:testing-introduction" class="section level2 hasAnchor" number="13.1">
+<h2><span class="header-section-number">13.1</span> Introduction<a href="ch-testing.html#sec:testing-introduction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>From this chapter onwards, we will be concerned with the testing of
 research hypotheses and, in particular, with null hypothesis significance testing (NHST),
 as explained in Chapter <a href="ch-research.html#ch-research">2</a>.</p>
@@ -558,7 +557,7 @@ tests.</p>
 §<a href="ch-research.html#sec:falsification">2.4</a> and §<a href="ch-research.html#sec:empiricalcycle">2.5</a>.
 We will illustrate this again here
 with an example. We investigate the statement H1:<br />
-‘Linguistics students master traditional grammar <em>better</em> than the average language student’. As a measurement instrument, we use the so-called “grammar test”<a href="references.html#fn33" class="footnote-ref" id="fnref33"><sup>33</sup></a> which is compulsory
+‘Linguistics students master traditional grammar <em>better</em> than the average language student’. As a measurement instrument, we use the so-called “grammar test”<a href="#fn33" class="footnote-ref" id="fnref33"><sup>33</sup></a> which is compulsory
 for most students
 in language programs at Utrecht University. On the basis of previous cohorts (year groups),
 we expect a mean score of 73 on this test; this is the mean number of good answers
@@ -641,8 +640,8 @@ what type of error will I be making?</p>
 </blockquote>
 <hr />
 </div>
-<div id="sec:ttest-onesample" class="section level2" number="13.2">
-<h2><span class="header-section-number">13.2</span> One-sample <span class="math inline">\(t\)</span>-test</h2>
+<div id="sec:ttest-onesample" class="section level2 hasAnchor" number="13.2">
+<h2><span class="header-section-number">13.2</span> One-sample <span class="math inline">\(t\)</span>-test<a href="ch-testing.html#sec:ttest-onesample" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The Student’s <span class="math inline">\(t\)</span>-test is used to investigate a difference
 between the mean score of a sample, and an a priori assumed value
 of the mean. We use this test when the standard deviation
@@ -693,8 +692,8 @@ We report the result as follows:</p>
 84.4 (<span class="math inline">\(s=8.4\)</span>); this is significantly better than the assumed
 population mean of 73 <span class="math inline">\([t(33)=7.9, p&lt;.001]\)</span>.</p>
 </blockquote>
-<div id="sec:ttest-freedomdegrees" class="section level3" number="13.2.1">
-<h3><span class="header-section-number">13.2.1</span> Degrees of freedom</h3>
+<div id="sec:ttest-freedomdegrees" class="section level3 hasAnchor" number="13.2.1">
+<h3><span class="header-section-number">13.2.1</span> Degrees of freedom<a href="ch-testing.html#sec:ttest-freedomdegrees" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To explain the concept of degrees of freedom, we begin with an
 analogy. Imagine that there are three possible routes for getting
 from A to B: a coast path, a mountain path, and a motorway. It is true that a walker
@@ -724,15 +723,15 @@ statistical analysis program which we use.</p>
 number of observations <span class="math inline">\(N-1\)</span>. In the above discussed example, we thus have
 <span class="math inline">\(N-1 = 34-1 = 33\)</span> degrees of freedom.</p>
 </div>
-<div id="sec:formulas13-1" class="section level3" number="13.2.2">
-<h3><span class="header-section-number">13.2.2</span> formulas</h3>
+<div id="sec:formulas13-1" class="section level3 hasAnchor" number="13.2.2">
+<h3><span class="header-section-number">13.2.2</span> formulas<a href="ch-testing.html#sec:formulas13-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="math display" id="eq:t-onesample">\[\begin{equation}
   t = \frac{ \overline{y}-\mu} { s } \times \sqrt{N}
   \tag{13.1}
 \end{equation}\]</span></p>
 </div>
-<div id="sec:ttest-assumptions" class="section level3" number="13.2.3">
-<h3><span class="header-section-number">13.2.3</span> assumptions</h3>
+<div id="sec:ttest-assumptions" class="section level3 hasAnchor" number="13.2.3">
+<h3><span class="header-section-number">13.2.3</span> assumptions<a href="ch-testing.html#sec:ttest-assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The <span class="math inline">\(t\)</span>-test for a single sample requires three assumptions which
 must be satisfied in order to be able to use the test.</p>
 <ul>
@@ -743,8 +742,8 @@ Chapter <a href="ch-levelsofmeasurement.html#ch-levelsofmeasurement">4</a>).</p>
 §<a href="ch-probability-distributions.html#sec:normaldistribution">10.3</a>).</p></li>
 </ul>
 </div>
-<div id="spss-10" class="section level3" number="13.2.4">
-<h3><span class="header-section-number">13.2.4</span> SPSS</h3>
+<div id="spss-10" class="section level3 hasAnchor" number="13.2.4">
+<h3><span class="header-section-number">13.2.4</span> SPSS<a href="ch-testing.html#spss-10" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The above discussed data can be found in the file <code>data/grammaticatoets2013.csv</code>.</p>
 <p>To test our earlier hypothesis, in SPSS, we firstly have
 to select the observations of the Linguistics students.</p>
@@ -764,8 +763,8 @@ of a <em>two-sample</em> <span class="math inline">\(t\)</span>-test.</p>
 <p>When transferring this output, take good note of the warning in
 §<a href="ch-testing.html#sec:plargerthannull">13.3</a> below: SPSS reports as if <code>p=.000</code> but that is untrue.</p>
 </div>
-<div id="sec:jaspttestonesample" class="section level3" number="13.2.5">
-<h3><span class="header-section-number">13.2.5</span> JASP</h3>
+<div id="sec:jaspttestonesample" class="section level3 hasAnchor" number="13.2.5">
+<h3><span class="header-section-number">13.2.5</span> JASP<a href="ch-testing.html#sec:jaspttestonesample" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The above discussed data can be found in the file <code>data/grammaticatoets2013.csv</code>.</p>
 <p>To test our earlier hypothesis, in JASP, we firstly have
 to select or filter the observations of the Linguistics students. To do so, go to the data sheet, and click on the funnel or filter symbol in the top left cell. A working panel will appear in which you can specify the selection.<br />
@@ -781,8 +780,8 @@ Under the heading “Assumption checks”, finally, check the option <code>Norma
 The table titled <strong>Assumption Checks</strong> reports the Shapiro-Wilk test of normality. If checked in the input, descriptive statistics and summary plots are also reported. This visualises the test value (here: 73) relative to the scores of the students of Linguistics.</p>
 <p>Note that we have activated a filter to select only the students of Linguistics, and this filter remains in effect until it is deactivated. You can de-activate the filter by navigating to the data sheet, go to the top left corner, go to the filter working panel, and double-click on the trash can or waste bin symbol in the lower right corner. A confirmation text “Filter cleared” should appear, and all observations (rows) in the data sheet should be un-greyed and active.</p>
 </div>
-<div id="r-12" class="section level3" number="13.2.6">
-<h3><span class="header-section-number">13.2.6</span> R</h3>
+<div id="r-12" class="section level3 hasAnchor" number="13.2.6">
+<h3><span class="header-section-number">13.2.6</span> R<a href="ch-testing.html#r-12" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Our hypothesis discussed above can be tested with the following commands:</p>
 <div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="ch-testing.html#cb104-1" aria-hidden="true" tabindex="-1"></a>gramm2013 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>( <span class="at">file=</span><span class="st">&quot;data/grammaticatoets2013.csv&quot;</span>,<span class="at">header=</span>F)</span>
 <span id="cb104-2"><a href="ch-testing.html#cb104-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dimnames</span>(gramm2013)[[<span class="dv">2</span>]] <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;score&quot;</span>,<span class="st">&quot;progr&quot;</span>)</span>
@@ -804,8 +803,8 @@ The table titled <strong>Assumption Checks</strong> reports the Shapiro-Wilk tes
 <span class="math inline">\((1.913 \times 10^{-9})\)</span>.</p>
 </div>
 </div>
-<div id="sec:plargerthannull" class="section level2" number="13.3">
-<h2><span class="header-section-number">13.3</span> <span class="math inline">\(p\)</span>-value is always larger than zero</h2>
+<div id="sec:plargerthannull" class="section level2 hasAnchor" number="13.3">
+<h2><span class="header-section-number">13.3</span> <span class="math inline">\(p\)</span>-value is always larger than zero<a href="ch-testing.html#sec:plargerthannull" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The p-value <span class="math inline">\(p\)</span> can be very small but it is always larger than zero!
 In the grammar test example above,
 we found <span class="math inline">\(P=.000000001913\)</span>, a very small probability but one that is larger
@@ -825,8 +824,8 @@ accuracy, in this example as <span class="math inline">\(p&lt;.001\)</span> or e
 (taking into account the rounding off by SPSS to three decimal
 places).</p>
 </div>
-<div id="sec:ttest-onesidedtwosided" class="section level2" number="13.4">
-<h2><span class="header-section-number">13.4</span> One-sided and two-sided tests</h2>
+<div id="sec:ttest-onesidedtwosided" class="section level2 hasAnchor" number="13.4">
+<h2><span class="header-section-number">13.4</span> One-sided and two-sided tests<a href="ch-testing.html#sec:ttest-onesidedtwosided" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The procedure which we discussed above is valid for one-sided
 tests. This is to say that the alternative hypothesis does not only put forward
 that the means will differ but also in which direction that will be:
@@ -865,8 +864,8 @@ population mean of 73 (<span class="math inline">\(t(33)=7.9, p&lt;.002\)</span>
 of the test is not stated then you may assume that two-sided or two-tailed tests
 have been used.</p>
 </div>
-<div id="sec:t-confidenceinterval-mean" class="section level2" number="13.5">
-<h2><span class="header-section-number">13.5</span> Confidence interval of the mean</h2>
+<div id="sec:t-confidenceinterval-mean" class="section level2 hasAnchor" number="13.5">
+<h2><span class="header-section-number">13.5</span> Confidence interval of the mean<a href="ch-testing.html#sec:t-confidenceinterval-mean" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This section looks more deeply into a subject that was already discussed in
 §<a href="ch-probability-distributions.html#sec:confidenceinterval-mean">10.7</a>, and illustrates the confidence interval
 of the mean with the grammar test scores.</p>
@@ -908,8 +907,8 @@ is indeed within the interval, but for 5 of the 100 samples the confidence inter
 Figure 13.2: 95% confidence interval and sample means, over 100 simulated samples (n=34) from a population with population mean 84.4, population-s.d. 8.4.
 </p>
 </div>
-<div id="sec:formulas13-2" class="section level3" number="13.5.1">
-<h3><span class="header-section-number">13.5.1</span> formulas</h3>
+<div id="sec:formulas13-2" class="section level3 hasAnchor" number="13.5.1">
+<h3><span class="header-section-number">13.5.1</span> formulas<a href="ch-testing.html#sec:formulas13-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The two-sample confidence interval for <span class="math inline">\(B\)</span>% reliability for<br />
 a population mean <span class="math inline">\(\overline{y}\)</span> is
 <span class="math display" id="eq:t-onesampleCI">\[\begin{equation}
@@ -917,8 +916,8 @@ a population mean <span class="math inline">\(\overline{y}\)</span> is
   \tag{10.12}
 \end{equation}\]</span></p>
 </div>
-<div id="spss-11" class="section level3" number="13.5.2">
-<h3><span class="header-section-number">13.5.2</span> SPSS</h3>
+<div id="spss-11" class="section level3 hasAnchor" number="13.5.2">
+<h3><span class="header-section-number">13.5.2</span> SPSS<a href="ch-testing.html#spss-11" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <pre><code>Analyze &gt; Descriptive Statistics &gt; Explore...</code></pre>
 <p>Select dependent variables (drag to Dependent List panel).<br />
 Click on button <code>Statistics</code> and tick <code>Descriptives</code> with Confidence Interval
@@ -927,8 +926,8 @@ Confirm with <code>Continue</code> and with <code>OK</code>.<br />
 The output contains several descriptive statistic measures, now also
 including the 95% confidence interval of the mean.</p>
 </div>
-<div id="jasp-11" class="section level3" number="13.5.3">
-<h3><span class="header-section-number">13.5.3</span> JASP</h3>
+<div id="jasp-11" class="section level3 hasAnchor" number="13.5.3">
+<h3><span class="header-section-number">13.5.3</span> JASP<a href="ch-testing.html#jasp-11" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In JASP you can request the confidence interval of the mean by using a one sample <span class="math inline">\(t\)</span> test.
 So we conduct this test again and find the confidence interval of the mean in the output.</p>
 <p>For the example discussed above, make sure that the proper selection is used so that only observations about students of Linguistics will be included in the analysis (see §<a href="ch-testing.html#sec:jaspttestonesample">13.2.5</a> for how to filter observations).</p>
@@ -939,8 +938,8 @@ Under “Tests”, check <code>Student</code> (for Student’s <span class="math
 Under “Additional Statistics”, check <code>Location parameter</code> and <code>Confidence interval</code> too. Here you can specify the confidence limits; the default value of 95% is usually OK.</p>
 <p>The output reports the mean of <em>score</em>, because observed scores are now compared to the <code>test value</code> which is set to <span class="math inline">\(0\)</span>, so that the <code>Mean Difference</code> of <code>score-0</code> is now equal to the mean value of <em>score</em>. The same table also reports the <code>95% CI for Mean Difference</code>, which is equivalent here with the confidence interval of the mean of <em>score</em>.</p>
 </div>
-<div id="r-13" class="section level3" number="13.5.4">
-<h3><span class="header-section-number">13.5.4</span> R</h3>
+<div id="r-13" class="section level3 hasAnchor" number="13.5.4">
+<h3><span class="header-section-number">13.5.4</span> R<a href="ch-testing.html#r-13" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>R states the confidence interval of the mean (with self-specifiable
 confidence level) for a <span class="math inline">\(t\)</span>-test. We thus again conduct a <span class="math inline">\(t\)</span>-test
 and find the confidence interval of the mean in the
@@ -959,8 +958,8 @@ output.</p>
 ##  84.41176</code></pre>
 </div>
 </div>
-<div id="sec:ttest-indep" class="section level2" number="13.6">
-<h2><span class="header-section-number">13.6</span> Independent samples <span class="math inline">\(t\)</span>-tests</h2>
+<div id="sec:ttest-indep" class="section level2 hasAnchor" number="13.6">
+<h2><span class="header-section-number">13.6</span> Independent samples <span class="math inline">\(t\)</span>-tests<a href="ch-testing.html#sec:ttest-indep" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The Student’s <span class="math inline">\(t\)</span>-test is used to allow the investigation of a difference
 between the mean scores of two independent samples, e.g of
 comparable boys and girls. On the basis of the mean and the standard
@@ -1020,14 +1019,14 @@ test statistic is <span class="math inline">\(t &lt; t^*\)</span>, thus <span cl
 to <em>indeed</em> reject H0, and report that as follows:</p>
 <blockquote>
 <p>The mean duration of a syllable spoken by a speaker from the West
-of the Netherlands is <span class="math inline">\(0.235\)</span> seconds (<span class="math inline">\(s=0.028\)</span>). This is
+of the Netherlands is <span class="math inline">\(0.235\)</span> seconds (<span class="math inline">\(s=0.03\)</span>). This is
 significantly shorter than from speakers from the North of the Netherlands
-(<span class="math inline">\(\overline{x}=0.269\)</span> s, <span class="math inline">\(s=0.029\)</span>) (<span class="math inline">\(t(38)=-3.76, p&lt;.05\)</span>). In the
+(<span class="math inline">\(\overline{x}=0.269\)</span> s, <span class="math inline">\(s=0.03\)</span>) (<span class="math inline">\(t(38)=-3.76, p&lt;.05\)</span>). In the
 investigated recordings from 1999, the speakers from the West thus
 speak more quickly than those from the North of the Netherlands.</p>
 </blockquote>
-<div id="sec:ttest-unpaired-assumptions" class="section level3" number="13.6.1">
-<h3><span class="header-section-number">13.6.1</span> assumptions</h3>
+<div id="sec:ttest-unpaired-assumptions" class="section level3 hasAnchor" number="13.6.1">
+<h3><span class="header-section-number">13.6.1</span> assumptions<a href="ch-testing.html#sec:ttest-unpaired-assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The Student’s <span class="math inline">\(t\)</span>-test for two independent samples requires four assumptions
 which must be satisfied in order to use the test.</p>
 <ul>
@@ -1043,10 +1042,10 @@ to work with samples that are of (approximately) the same size, and preferably n
 variances is not so serious (see §<a href="ch-testing.html#sec:ttest-formulas">13.6.2</a> directly below).</p></li>
 </ul>
 </div>
-<div id="sec:ttest-formulas" class="section level3" number="13.6.2">
-<h3><span class="header-section-number">13.6.2</span> formulas</h3>
-<div id="test-statistic" class="section level4" number="13.6.2.1">
-<h4><span class="header-section-number">13.6.2.1</span> test statistic</h4>
+<div id="sec:ttest-formulas" class="section level3 hasAnchor" number="13.6.2">
+<h3><span class="header-section-number">13.6.2</span> formulas<a href="ch-testing.html#sec:ttest-formulas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="test-statistic" class="section level4 hasAnchor" number="13.6.2.1">
+<h4><span class="header-section-number">13.6.2.1</span> test statistic<a href="ch-testing.html#test-statistic" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>To calculate the test statistic <span class="math inline">\(t\)</span>, various formulas are used.</p>
 <p>If the samples have approximately <strong>equal variances</strong>, then we firstly compute
 the “pooled standard deviation” <span class="math inline">\(s_p\)</span> as an intermediate step. For this, the two
@@ -1074,8 +1073,8 @@ Then
   t = \frac{ \overline{x_1}-\overline{x_2} } { s_{\textrm{WS}} }
 \end{equation}\]</span></p>
 </div>
-<div id="freedomdegrees" class="section level4" number="13.6.2.2">
-<h4><span class="header-section-number">13.6.2.2</span> degrees of freedom</h4>
+<div id="freedomdegrees" class="section level4 hasAnchor" number="13.6.2.2">
+<h4><span class="header-section-number">13.6.2.2</span> degrees of freedom<a href="ch-testing.html#freedomdegrees" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The <span class="math inline">\(t\)</span> test is usually conducted by a computer program, which typically uses the following approximation of degrees of freedom (symbol <span class="math inline">\(\nu\)</span>, Greek “nu”, see §<a href="ch-testing.html#sec:ttest-freedomdegrees">13.2.1</a>).
 Firstly, <span class="math inline">\(g_1=s^2_1/n_1\)</span>
 and <span class="math inline">\(g_2=s^2_2/n_2\)</span> are calculated. The number of degrees of freedom of <span class="math inline">\(t\)</span> is then
@@ -1101,8 +1100,8 @@ Hence, for this example, you would use <span class="math inline">\(t*\)</span> c
 (see also §<a href="ch-testing.html#sec:ttest-onesample">13.2</a> above).</p>
 </div>
 </div>
-<div id="sec:SPSS-ttest-unpaired" class="section level3" number="13.6.3">
-<h3><span class="header-section-number">13.6.3</span> SPSS</h3>
+<div id="sec:SPSS-ttest-unpaired" class="section level3 hasAnchor" number="13.6.3">
+<h3><span class="header-section-number">13.6.3</span> SPSS<a href="ch-testing.html#sec:SPSS-ttest-unpaired" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Here, the second example above is worked out.</p>
 <pre><code>Analyze &gt; Compare Means &gt; Independent-Samples T Test</code></pre>
 <p>Drag the dependent variable <code>syldur</code> to the Test Variable(s) panel.
@@ -1113,8 +1112,8 @@ value <code>N</code> for region group 2. Confirm with <code>Continue</code> and 
 answer to the question whether the standard deviations of the two groups
 are around equal. SPSS solves this rather clumsily: you get to see all the
 relevant outputs, and have to make a choice from them yourself.</p>
-<div id="test-for-equality-of-variances" class="section level4" number="13.6.3.1">
-<h4><span class="header-section-number">13.6.3.1</span> Test for equality of variances</h4>
+<div id="test-for-equality-of-variances" class="section level4 hasAnchor" number="13.6.3.1">
+<h4><span class="header-section-number">13.6.3.1</span> Test for equality of variances<a href="ch-testing.html#test-for-equality-of-variances" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>With Levene’s test, you can investigate H0: <span class="math inline">\(s^2_1 = s^2_2\)</span>, i.e. whether
 the variances (and with them the standard deviations) of the two groups
 are equal. If you find a small value for the test statistic <span class="math inline">\(F\)</span>,
@@ -1123,26 +1122,26 @@ that the variances are equal. If you find a large value for <span class="math in
 with <span class="math inline">\(p&lt;.05\)</span>, then you should indeed reject this H0, and you cannot
 assume that the variances of these two groups are equal.</p>
 </div>
-<div id="test-for-equality-of-means" class="section level4" number="13.6.3.2">
-<h4><span class="header-section-number">13.6.3.2</span> Test for equality of means</h4>
+<div id="test-for-equality-of-means" class="section level4 hasAnchor" number="13.6.3.2">
+<h4><span class="header-section-number">13.6.3.2</span> Test for equality of means<a href="ch-testing.html#test-for-equality-of-means" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Depending on this outcome from Levene’s test, you have to use the first
 or the second row of the output of the Independent Samples Test
 (a test which investigates whether the means from the two groups are equal).
 In this example, the variances are around equal, as the
 Levene’s test also indicates. We thus use the first line of the output,
-and report <span class="math inline">\(t(38)=-3.765, p=.001\)</span>.</p>
+and report <span class="math inline">\(t(38)=-3.76, p=.001\)</span>.</p>
 </div>
 </div>
-<div id="sec:JASP-ttest-unpaired" class="section level3" number="13.6.4">
-<h3><span class="header-section-number">13.6.4</span> JASP</h3>
+<div id="sec:JASP-ttest-unpaired" class="section level3 hasAnchor" number="13.6.4">
+<h3><span class="header-section-number">13.6.4</span> JASP<a href="ch-testing.html#sec:JASP-ttest-unpaired" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Here, the second example above is worked out: the tempo (speech rate) of speakers from the West and North of the Netherlands is to be compared.</p>
-<div id="preparation" class="section level4" number="13.6.4.1">
-<h4><span class="header-section-number">13.6.4.1</span> preparation</h4>
+<div id="preparation" class="section level4 hasAnchor" number="13.6.4.1">
+<h4><span class="header-section-number">13.6.4.1</span> preparation<a href="ch-testing.html#preparation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>To this end, only observations from the Northern and Western speakers are to be used. This may be achieved by navigating to the data sheet, and click on the column header of the variable <em>region</em>. This will open a working panel, in which you can select and unselect <code>Values</code> (i.e. regions) of the nominal variable <em>region</em>. The column “Filter” normally has all values checked, which means that all observations are included. Uncheck the values to be excluded, i.e. <em>S</em>outh and <em>M</em>id, so that the check marks are crossed out, and the corresponding observations in the data sheet are greyed out. Only leave check marks at the <em>N</em>orth and <em>W</em>est values.</p>
 <p>Note: do not forget to remove the filter and include all regions for later analyses.</p>
 </div>
-<div id="t-test" class="section level4" number="13.6.4.2">
-<h4><span class="header-section-number">13.6.4.2</span> <em>t</em> test</h4>
+<div id="t-test" class="section level4 hasAnchor" number="13.6.4.2">
+<h4><span class="header-section-number">13.6.4.2</span> <em>t</em> test<a href="ch-testing.html#t-test" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>After filtering the observations, choose from the top menu bar:</p>
 <pre><code>T-Tests &gt; Classical: Independent Samples T-Test</code></pre>
 <p>In the field “Variables”, select the variable <em>syldur</em> to be tested.
@@ -1161,8 +1160,8 @@ If Levene’s test reports a high value of <span class="math inline">\(F\)</span
 <p>If checked in the input, descriptive statistics and summary plots are also reported. This provides insights into how the scores from the two groups differ.</p>
 </div>
 </div>
-<div id="sec:R-ttest-unpaired" class="section level3" number="13.6.5">
-<h3><span class="header-section-number">13.6.5</span> R</h3>
+<div id="sec:R-ttest-unpaired" class="section level3 hasAnchor" number="13.6.5">
+<h3><span class="header-section-number">13.6.5</span> R<a href="ch-testing.html#sec:R-ttest-unpaired" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="ch-testing.html#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(hqmisc)</span>
 <span id="cb112-2"><a href="ch-testing.html#cb112-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(talkers)</span>
 <span id="cb112-3"><a href="ch-testing.html#cb112-3" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(talkers, <span class="fu">t.test</span>( syldur[region<span class="sc">==</span><span class="st">&quot;W&quot;</span>], syldur[region<span class="sc">==</span><span class="st">&quot;N&quot;</span>], </span>
@@ -1180,8 +1179,8 @@ If Levene’s test reports a high value of <span class="math inline">\(F\)</span
 ##   0.23490   0.26871</code></pre>
 </div>
 </div>
-<div id="sec:ttest-paired" class="section level2" number="13.7">
-<h2><span class="header-section-number">13.7</span> <span class="math inline">\(t\)</span>-test for paired observations</h2>
+<div id="sec:ttest-paired" class="section level2 hasAnchor" number="13.7">
+<h2><span class="header-section-number">13.7</span> <span class="math inline">\(t\)</span>-test for paired observations<a href="ch-testing.html#sec:ttest-paired" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The Student’s <span class="math inline">\(t\)</span>-test is also used to investigate a difference between the
 means of two dependent or paired observations. This is the case if we only draw
 one sample (see Chapter <a href="ch-samples.html#ch-samples">7</a>), and then collect two observations
@@ -1315,8 +1314,8 @@ form of address is on average 2.2 points lower than their judgement
 over the comparable page with <em>je</em> as the form of address; this is
 a significant difference (<span class="math inline">\(t(9)=-6.74, p&lt;.002\)</span>).</p>
 </blockquote>
-<div id="assumptions-1" class="section level3" number="13.7.1">
-<h3><span class="header-section-number">13.7.1</span> assumptions</h3>
+<div id="assumptions-1" class="section level3 hasAnchor" number="13.7.1">
+<h3><span class="header-section-number">13.7.1</span> assumptions<a href="ch-testing.html#assumptions-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The <span class="math inline">\(t\)</span>-test for paired observations within a single sample requires three
 assumptions which must be satisfied, in order to be able to use these
 tests.</p>
@@ -1329,23 +1328,23 @@ each other.</p></li>
 observations in the sample is larger than ca 30 then the <span class="math inline">\(t\)</span> test is rather robust against violations of this assumption.</p></li>
 </ul>
 </div>
-<div id="sec:formulas13-4" class="section level3" number="13.7.2">
-<h3><span class="header-section-number">13.7.2</span> formulas</h3>
+<div id="sec:formulas13-4" class="section level3 hasAnchor" number="13.7.2">
+<h3><span class="header-section-number">13.7.2</span> formulas<a href="ch-testing.html#sec:formulas13-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="math display" id="eq:t-pairedsamples">\[\begin{equation}
   \tag{13.7}
   t = \frac{ \overline{D}-\mu_D} { s_D } \times \sqrt{N}
 \end{equation}\]</span></p>
 </div>
-<div id="sec:SPSS-ttest-paired" class="section level3" number="13.7.3">
-<h3><span class="header-section-number">13.7.3</span> SPSS</h3>
+<div id="sec:SPSS-ttest-paired" class="section level3 hasAnchor" number="13.7.3">
+<h3><span class="header-section-number">13.7.3</span> SPSS<a href="ch-testing.html#sec:SPSS-ttest-paired" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The data for the above example can be found in the file <code>data/ujedata.csv</code>.</p>
 <pre><code>Analyze &gt; Compare Means &gt; Paired-Samples T Test</code></pre>
 <p>Drag the first dependent variable <code>cond.u</code> to the Paired
 Variables panel under Variable1, and drag the second variable <code>cond.je</code> to
 the same panel under Variable2. Confirm with <code>OK</code>.</p>
 </div>
-<div id="sec:JASP-ttest-paired" class="section level3" number="13.7.4">
-<h3><span class="header-section-number">13.7.4</span> JASP</h3>
+<div id="sec:JASP-ttest-paired" class="section level3 hasAnchor" number="13.7.4">
+<h3><span class="header-section-number">13.7.4</span> JASP<a href="ch-testing.html#sec:JASP-ttest-paired" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The data for the above example can be found in the file <code>data/ujedata.csv</code>.</p>
 <p>In the top menu bar, choose</p>
 <pre><code>T-Tests &gt; Classical: Paired Samples T-Test</code></pre>
@@ -1357,8 +1356,8 @@ Under the heading “Assumption checks”, finally, check the option <code>Norma
 The table titled <strong>Assumption Checks</strong> reports the Shapiro-Wilk test of normality of the difference.<br />
 If checked in the input, descriptive statistics and summary plots are also reported. These provides insights into how the scores on the two variables differ.</p>
 </div>
-<div id="sec:R-ttest-paired" class="section level3" number="13.7.5">
-<h3><span class="header-section-number">13.7.5</span> R</h3>
+<div id="sec:R-ttest-paired" class="section level3 hasAnchor" number="13.7.5">
+<h3><span class="header-section-number">13.7.5</span> R<a href="ch-testing.html#sec:R-ttest-paired" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The data from the above example can be found in the file <code>data/ujedata.csv</code>.</p>
 <div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="ch-testing.html#cb116-1" aria-hidden="true" tabindex="-1"></a>ujedata <span class="ot">&lt;-</span> <span class="fu">read.table</span>( <span class="at">file=</span><span class="st">&quot;data/ujedata.csv&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">sep=</span><span class="st">&quot;;&quot;</span> )</span>
 <span id="cb116-2"><a href="ch-testing.html#cb116-2" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(ujedata, <span class="fu">t.test</span>( cond.u, cond.je, <span class="at">paired=</span><span class="cn">TRUE</span> ) )</span></code></pre></div>
@@ -1367,16 +1366,16 @@ If checked in the input, descriptive statistics and summary plots are also repor
 ## 
 ## data:  cond.u and cond.je
 ## t = -6.7361, df = 9, p-value = 8.498e-05
-## alternative hypothesis: true difference in means is not equal to 0
+## alternative hypothesis: true mean difference is not equal to 0
 ## 95 percent confidence interval:
 ##  -2.938817 -1.461183
 ## sample estimates:
-## mean of the differences 
-##                    -2.2</code></pre>
+## mean difference 
+##            -2.2</code></pre>
 </div>
 </div>
-<div id="sec:ttest-effectsize" class="section level2" number="13.8">
-<h2><span class="header-section-number">13.8</span> Effect size</h2>
+<div id="sec:ttest-effectsize" class="section level2 hasAnchor" number="13.8">
+<h2><span class="header-section-number">13.8</span> Effect size<a href="ch-testing.html#sec:ttest-effectsize" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Until now, we have mainly dealt with testing as a binary
 decision with regards to whether or not to reject H0, in the light
 of the observations. However, in addition to this, it is also of great importance to know how large the observed effect actually is: the <em>effect size</em> (‘ES’) <span class="citation">(<a href="#ref-Cohen88" role="doc-biblioref">Cohen 1988</a>; <a href="#ref-Thom02" role="doc-biblioref">B. Thompson 2002</a>; <a href="#ref-Naka07" role="doc-biblioref">Nakagawa and Cuthill 2007</a>)</span>.</p>
@@ -1439,7 +1438,7 @@ of the raw score. In §<a href="ch-testing.html#sec:ttest-indep">13.6</a>, we fo
 in vocabulary of <span class="math inline">\(D=95-85=10\)</span> between boys and girls.</p>
 <p>However, we mainly use the standardised effect size (see
 the formulas below), where we take into account the distribution in
-the observations, e.g. in the form of “pooled standard deviation” <span class="math inline">\(s_p\)</span> <a href="references.html#fn34" class="footnote-ref" id="fnref34"><sup>34</sup></a>.
+the observations, e.g. in the form of “pooled standard deviation” <span class="math inline">\(s_p\)</span> <a href="#fn34" class="footnote-ref" id="fnref34"><sup>34</sup></a>.
 In this way, we find a standardised effect size of
 <span class="math display" id="eq:d-standardized">\[\begin{equation}
   \tag{13.9}
@@ -1467,9 +1466,9 @@ in syllable length is about
 effect as follows:</p>
 <blockquote>
 <p>The average length of a syllable spoken by a speaker from
-the West of the Netherlands is <span class="math inline">\(0.235\)</span> seconds (<span class="math inline">\(s=0.028\)</span>). This is
+the West of the Netherlands is <span class="math inline">\(0.235\)</span> seconds (<span class="math inline">\(s=0.03\)</span>). This is
 considerably shorter than for speakers from the North of the Netherlands
-<span class="math inline">\((\overline{x}=0.269 \textrm{s}, s=0.029)\)</span>. The difference is ca. 10%; this
+<span class="math inline">\((\overline{x}=0.269 \textrm{s}, s=0.03)\)</span>. The difference is ca. 10%; this
 difference is very large <span class="math inline">\((d=-1.15)\)</span> and significant
 <span class="math inline">\([t(38)=-3.76, p&lt;.05]\)</span>. In the investigated recordings from 1999, the
 speakers from the West thus speak considerably more quickly than those from
@@ -1525,8 +1524,8 @@ difference. This difference has a 95% confidence interval of
 <span class="math inline">\(d=-2.13\)</span>; the probability that a randomly chosen respondent
 judges the <em>je</em>-version more highly than the <em>U</em>-version is <span class="math inline">\(p=.98\)</span>.</p>
 </blockquote>
-<div id="sec:formulas13-5" class="section level3" number="13.8.1">
-<h3><span class="header-section-number">13.8.1</span> formulas</h3>
+<div id="sec:formulas13-5" class="section level3 hasAnchor" number="13.8.1">
+<h3><span class="header-section-number">13.8.1</span> formulas<a href="ch-testing.html#sec:formulas13-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>For a single sample:
 <span class="math display" id="eq:d-onesample">\[\begin{equation}
    \tag{13.10}
@@ -1549,8 +1548,8 @@ where <span class="math inline">\(s_D\)</span> is the
 standard deviation from the difference <span class="math inline">\(D\)</span> according
 to the formula <a href="ch-testing.html#eq:d-paired">(13.12)</a>.</p>
 </div>
-<div id="spss-13-2" class="section level3" number="13.8.2">
-<h3><span class="header-section-number">13.8.2</span> SPSS</h3>
+<div id="spss-13-2" class="section level3 hasAnchor" number="13.8.2">
+<h3><span class="header-section-number">13.8.2</span> SPSS<a href="ch-testing.html#spss-13-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In SPSS, it is usually easiest to calculate the effect size
 by hand.</p>
 <p>For a simple sample
@@ -1575,13 +1574,13 @@ The information is in the output of the pairwise <span class="math inline">\(t\)
 <code>Std.Deviation</code>:<br />
 <span class="math inline">\(d = -2.200 / 1.033 = 2.130\)</span>, a super large effect.</p>
 </div>
-<div id="jasp-12" class="section level3" number="13.8.3">
-<h3><span class="header-section-number">13.8.3</span> JASP</h3>
+<div id="jasp-12" class="section level3 hasAnchor" number="13.8.3">
+<h3><span class="header-section-number">13.8.3</span> JASP<a href="ch-testing.html#jasp-12" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In JASP, the effect size can be requested when conducting the <span class="math inline">\(t\)</span> tests, just by checking the option <code>Effect size</code> under “Additional Statistics”. For more detailed instructions on how to specify this using JASP, see the respective subsections for conducting a <span class="math inline">\(t\)</span> test for a single sample (§<a href="ch-testing.html#sec:jaspttestonesample">13.2.5</a>), a <span class="math inline">\(t\)</span> test for two independent groups (§<a href="ch-testing.html#sec:JASP-ttest-unpaired">13.6.4</a>), and a <span class="math inline">\(t\)</span> test for paired observations (§<a href="ch-testing.html#sec:JASP-ttest-paired">13.7.4</a>).</p>
 <p>The output of the <span class="math inline">\(t\)</span> test will report Cohen’s <span class="math inline">\(d\)</span> as measure for the effect size. You can also ask for the <code>Confidence interval</code> of the effect size, which will typically report the 95% confidence interval of the effect size (see §<a href="ch-testing.html#sec:confint-effectsize">13.8.5</a> below).</p>
 </div>
-<div id="r-14" class="section level3" number="13.8.4">
-<h3><span class="header-section-number">13.8.4</span> R</h3>
+<div id="r-14" class="section level3 hasAnchor" number="13.8.4">
+<h3><span class="header-section-number">13.8.4</span> R<a href="ch-testing.html#r-14" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>For a single sample
 (formula <a href="ch-testing.html#eq:d-onesample">(13.10)</a>):<br />
 </p>
@@ -1624,8 +1623,8 @@ Example 13.3 above.</p>
 <span id="cb125-2"><a href="ch-testing.html#cb125-2" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>( ujedata, <span class="fu">mean</span>(cond.u<span class="sc">-</span>cond.je) <span class="sc">/</span> <span class="fu">sd</span>(cond.u<span class="sc">-</span>cond.je) )</span></code></pre></div>
 <pre><code>## [1] -2.130141</code></pre>
 </div>
-<div id="sec:confint-effectsize" class="section level3" number="13.8.5">
-<h3><span class="header-section-number">13.8.5</span> Confidence interval of the effect size</h3>
+<div id="sec:confint-effectsize" class="section level3 hasAnchor" number="13.8.5">
+<h3><span class="header-section-number">13.8.5</span> Confidence interval of the effect size<a href="ch-testing.html#sec:confint-effectsize" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Earlier, we already saw
 (§<a href="ch-probability-distributions.html#sec:confidenceinterval-mean">10.7</a> and
 §<a href="ch-testing.html#sec:t-confidenceinterval-mean">13.5</a>)
@@ -1668,7 +1667,7 @@ formula 18)</span>:<br />
 <p>In
 our earlier example of the <span class="math inline">\(n=10\)</span> paired judgements about a webpage
 with <em>U</em> or <em>je</em> as forms of address we found <span class="math inline">\(d=-2.13\)</span>. We also find
-that <span class="math inline">\(r=.9135\)</span>. With these data, we find <span class="math inline">\(\textrm{se}_d = 0.519\)</span> via
+that <span class="math inline">\(r=.91\)</span>. With these data, we find <span class="math inline">\(\textrm{se}_d = 0.52\)</span> via
 formula <a href="ch-testing.html#eq:d-paired-se">(13.13)</a>.</p>
 <p>With this, we then determine the confidence interval for the
 effect size:
@@ -1694,7 +1693,7 @@ to reject H0) <span class="citation">(<a href="#ref-Cumm12" role="doc-biblioref"
 </div>
 </div>
 </div>
-<h3>References</h3>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-Alde04" class="csl-entry">
 Alderson, Phil. 2004. <span>“Absence of Evidence Is Not Evidence of Absence: We Need to Report Uncertain Results and Do It Clearly.”</span> <em>British Medical Journal</em> 328 (7438): 476–77. <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC351831/">http://www.ncbi.nlm.nih.gov/pmc/articles/PMC351831/</a>.
@@ -1729,6 +1728,14 @@ Sagan, Carl. 1996. <em>The Demon-Haunted World: Science as a Candle in the Dark<
 <div id="ref-Thom02" class="csl-entry">
 Thompson, Bruce. 2002. <span>“<span>‘<span>S</span>tatistical,’</span> <span>‘Practical,’</span> and <span>‘Clinical’</span>: <span>H</span>ow Many Kinds of Significance Do Counselors Need to Consider?”</span> <em>Journal of Counseling and Development</em> 80 (1): 64–71.
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="33">
+<li id="fn33"><p>We would like to thank Els Rose for making these data available.<a href="ch-testing.html#fnref33" class="footnote-back">↩︎</a></p></li>
+<li id="fn34"><p>In this case, we use <span class="math inline">\(s_p = \sqrt{ \frac{122\times82^2+128\times98^2} {122+128} } = 90.5\)</span>, see formulas
+<a href="ch-testing.html#eq:sd-pooled">(13.2)</a> and <a href="ch-testing.html#eq:d-homoskedastic">(13.11)</a>.<a href="ch-testing.html#fnref34" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 

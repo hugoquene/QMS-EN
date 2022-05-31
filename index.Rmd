@@ -38,12 +38,17 @@ Els Rose,
 Tobias Quené, 
 Kirsten Schutter,
 Marijn Struiksma, 
+Tara Super, 
 and Joanna Wall, 
 for their advice, data, comments and suggestions. 
 
-We thank Rianne Kraakman for writing the subsections on JASP instructions, and Aleksei Nazarov and Joanna Wall for translating this book from Dutch to English. Special thanks to Marijn Struiksma, for inspiration and for coordinating the JASP additions and the translation. 
+We thank Rianne Kraakman for writing the subsections on JASP instructions, Aleksei Nazarov and Joanna Wall for translating this book from Dutch to English, and Tara Super for editing work (version 1.3.0). 
 
-Utrecht, February 2021
+Our special thanks are due to Marijn Struiksma, for inspiration and for coordinating the JASP additions and the translation. 
+
+version 1.1.1+: February 2021\
+version 1.2.0: June 2021\
+version 1.3.0: May 2022
 
 Hugo Quené, <https://www.hugoquene.nl>
 

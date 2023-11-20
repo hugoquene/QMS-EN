@@ -99,8 +99,8 @@ If you are working with digitized data (e.g., in Excel, or SPSS, or R), make sur
 
 Data remain the intellectual property of those who collected them. Use of other researchers' data with no citation may be seen as theft or plagiarism.
 
-Data fraud (fabricating data, meaning, coming up with data out of thin air, instead of observing them) is obviously at odds with multiple principles in the code of conduct mentioned above [@VSNU18]. Fraud harms the mutual trust on which science is based. It misleads other researchers who might be building on the fictional results, and any research funds allotted to a fraudulent line of research are taken away from other, non-fraudulent research – in other words, it is a mortal sin of academia. If you would like to discuss any questions or dilemmas around this topic, please contact 
-prof.dr. Christoph Baumgartner, confidential advisor on academic integrity for the Humanities at Utrecht University (`c.baumgartner@uu.nl`).
+Data fraud (fabricating data, meaning, coming up with data out of thin air, instead of observing them) is obviously at odds with multiple principles in the code of conduct mentioned above [@VSNU18]. Fraud harms the mutual trust on which science is based. It misleads other researchers who might be building on the fictional results, and any research funds allotted to a fraudulent line of research are taken away from other, non-fraudulent research – in other words, it is a mortal sin of academia. 
+Students and employees at Utrecht University who would like to discuss any questions or dilemmas around academic integrity are welcome to contact dr. Rick Nouwen, confidential advisor on academic integrity for the Humanities at Utrecht University (`r.w.f.nouwen@uu.nl`).
 
 
 ## Writing

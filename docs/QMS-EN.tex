@@ -5,16 +5,19 @@
 \documentclass[
 ]{book}
 \usepackage{amsmath,amssymb}
-\usepackage{lmodern}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math}
+  \usepackage{unicode-math} % this also loads fontspec
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -33,13 +36,6 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\hypersetup{
-  pdftitle={Quantitative Methods and Statistics},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
-\urlstyle{same} % disable monospaced font for URLs
 \usepackage{color}
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
@@ -51,13 +47,13 @@
 \newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
 \newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
 \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
 \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
 \newcommand{\BuiltInTok}[1]{#1}
 \newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
 \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
 \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
 \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
 \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
@@ -65,7 +61,7 @@
 \newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
 \newcommand{\ExtensionTok}[1]{#1}
 \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
 \newcommand{\ImportTok}[1]{#1}
 \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
@@ -74,7 +70,7 @@
 \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
 \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
 \newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
 \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
@@ -120,10 +116,17 @@
 \fi
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Quantitative Methods and Statistics},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
 
 \title{Quantitative Methods and Statistics}
 \author{true}
-\date{Version compiled 31 May 2022}
+\date{Version compiled 20 Nov 2023}
 
 \begin{document}
 \maketitle
@@ -370,14 +373,16 @@ Many empirical studies pursue the goal of establishing connections between (supp
 
 \begin{longtable}[]{@{}lll@{}}
 \caption{\label{tab:causeeffect} Possible causes and possible effects.}\tabularnewline
-\toprule
+\toprule\noalign{}
 Domain & Supposed cause & Supposed effect \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 Domain & Supposed cause & Supposed effect \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 trade & outside temperature & units of ice cream sold \\
 healthcare & type of treatment & degree of recovery \\
 eduction & method of instruction & performance on test \\
@@ -385,7 +390,6 @@ language & age at which L2 learning satrts & degree of proficiency \\
 education & class size & general performance in school \\
 healthcare & altitude & rate of malaria infection \\
 language & age & speaking rate (speech tempo) \\
-\bottomrule
 \end{longtable}
 
 In experimental research, the effect of a variable manipulated by the researcher on some other variable is investigated. The introduction already provided an example of an experimental study. A novel teaching method was tested by dividing students between two groups. One group was taught according to the novel method, while the other group was taught as usual. The researcher hoped and expected that her or his novel teaching method would have a beneficial effect, meaning that it would lead to better student performance.
@@ -564,14 +568,16 @@ Each form of testing also involves the risk of making the opposite mistake, i.e.
 
 \begin{longtable}[]{@{}lcl@{}}
 \caption{\label{tab:H0H1outcomes} Possible outcomes of the decision procedure.}\tabularnewline
-\toprule
+\toprule\noalign{}
 Reality & Decision & \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 Reality & Decision & \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 & \textbf{Reject H0} & \textbf{Maintain H0} \\
 H0 is true (H1 false) & Type I error (\(\alpha\)) & correct \\
 H0 is false (H1 true) & correct & Type II error (\(\beta\)) \\
@@ -581,7 +587,6 @@ defendant is guilty & correct & Type I error \\
 & \textbf{Discard message} & \textbf{Allow message} \\
 message is OK (H0) & Type I error & correct \\
 message is spam & correct & Type II error \\
-\bottomrule
 \end{longtable}
 
 If we set the level of significance to a higher value, e.g., \(\alpha = .20\), this also means that the chance of rejecting H0 is much higher. In the testing phase, we would reject H0 if the probability of observing these data (or any more extreme data) were smaller than 20\%. This would mean that 8 times heads within 10 coin tosses would be enough to reject H0 (i.e., judging the coin as unfair). Thus, more outcomes are possible that lead to rejecting H0. Consequently, this higher level of significance entails a greater risk of a Type 1 error, and, at the same time, a smaller risk of a Type II error. The balance between the two type of error depends on the exact circumstances under which the study is conducted, and on the consequences that each of the two types of error might have. Which type of error is worse: throwing away an innocent email, or letting a spam message through? The probability of making a Type I error (the level of significance) is controlled by the researcher themselves. The probability of a Type II error depends on three factors and is difficult to gauge. Chapter \ref{ch-power} will discuss this in more detail.
@@ -974,14 +979,16 @@ The results turned out to mainly support the second hypothesis: illustrations im
 
 \begin{longtable}[]{@{}cccc@{}}
 \caption{\label{tab:designDona83} Conditions in the study by Donald (1983).}\tabularnewline
-\toprule
+\toprule\noalign{}
 group & reading ability & condition & \(n\) \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 group & reading ability & condition & \(n\) \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 1 & weak & without & 15 \\
 1 & weak & with & 15 \\
 1 & strong & without & 15 \\
@@ -990,7 +997,6 @@ group & reading ability & condition & \(n\) \\
 3 & weak & with & 15 \\
 3 & strong & without & 15 \\
 3 & strong & with & 15 \\
-\bottomrule
 \end{longtable}
 
 So, what is wrong with this study? The answer to this question can be found in how students were selected. Readers were classified as `strong' or `less strong' based on a reading ability test, but their performance on this test are always influenced by random factors that have nothing to do with reading ability: Tom was not feeling well and did not perform well on the test, Sarah was not able to concentrate, Nick was having knee troubles, Julie was extraordinarily motivated and outdid herself. In other words: the assessment of reading ability was not entirely reliable. This means that (1) the less strong readers who happened to have performed above their level were unjustly classified as strong readers instead of as less strong readers; and, conversely, (2) strong readers who happened to have performed below their level were unjustly deemed to be less strong readers. Thus, the group of less strong readers will always contain some readers that are not that bad at all, and the group of strong readers will always contain a few that are not so strong, after all.
@@ -1792,11 +1798,13 @@ of first year students (Example 8.1).
 
 \begin{longtable}[]{@{}lcccccccccc@{}}
 \caption{\label{tab:shoesize} Frequency distribution of the self-reported shoe sizes of \(N=50\) students in a first year course (see Example 8.1 above).}\tabularnewline
-\toprule
+\toprule\noalign{}
+\endfirsthead
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 Shoe size & 36 & 37 & 38 & 39 & 40 & 41 & 42 & 43 & 44 & ?? \\
 Number & 2 & 6 & 6 & 19 & 6 & 5 & 2 & 2 & 1 & 1 \\
-\bottomrule
 \end{longtable}
 
 Nevertheless, when a numerical variable is able to assume a great many different
@@ -1820,14 +1828,16 @@ Table \ref{tab:queensspeech2012pauses}.
 \caption{\label{tab:queensspeech2012pauses} Frequency distribution of the length of speech pauses (seconds)
 in the Queen's Speech of 18th September 2012, given by Queen Beatrix of the Netherlands
 \((N=305)\).}\tabularnewline
-\toprule
+\toprule\noalign{}
 Interval & Number \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 Interval & Number \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 4.50--4.99 & 1 \\
 4.00--4.49 & 0 \\
 3.50--3.99 & 2 \\
@@ -1838,7 +1848,6 @@ Interval & Number \\
 1.00--1.49 & 16 \\
 0.50--0.99 & 67 \\
 0.00--0.49 & 151 \\
-\bottomrule
 \end{longtable}
 
 \hypertarget{sec:intervals}{%
@@ -2439,14 +2448,16 @@ To illustrate, we use the fictive reading test scores shown in Table
 \begin{longtable}[]{@{}cccc@{}}
 \caption{\label{tab:cito} The scores of N=10 pupils on three sections of the CITO test,
 taken in the final year of primary school in the Netherlands.}\tabularnewline
-\toprule
+\toprule\noalign{}
 Pupil & Reading & Arithmetic & Geography \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 Pupil & Reading & Arithmetic & Geography \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 1 & 18 & 22 & 55 \\
 2 & 32 & 36 & 55 \\
 3 & 45 & 34 & 38 \\
@@ -2459,7 +2470,6 @@ Pupil & Reading & Arithmetic & Geography \\
 10 & 25 & 27 & 47 \\
 \(\sum x\) & 270 & 270 & 475 \\
 \(\overline{x}\) & 27.0 & 27.0 & 47.5 \\
-\bottomrule
 \end{longtable}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -2665,19 +2675,20 @@ Table \ref{tab:signiffiguresmean}.
 \begin{longtable}[]{@{}clcc@{}}
 \caption{\label{tab:signiffiguresmean} The number of significant figures in the reported mean is
 equal to the number of significant figures of the number of observations.}\tabularnewline
-\toprule
+\toprule\noalign{}
 Num.obs. & Num.signif.figures & example mean & reported as \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 Num.obs. & Num.signif.figures & example mean & reported as \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 \(1\dots9\) & 1 & 21/8 = 2.625 & 3 \\
 \(10\dots99\) & 2 & 57/21 = 2.714286 & 2.7 \\
 \(100\dots999\) & 3 & 317/120 = 2.641667 & 2.64 \\
 \(1000\dots9999\) & 4 & 3179/1234 = 2.576175 & 2.576 \\
-\bottomrule
 \end{longtable}
 
 The number of significant figures in the reported standard deviation is
@@ -2727,19 +2738,20 @@ see Table \ref{tab:signiffigurepercentage}.
 \caption{\label{tab:signiffigurepercentage} The number of significant figures in the reported
 proportion (or percentage) is related to the number of significant figures of the number
 of observations in the denominator of the fraction.}\tabularnewline
-\toprule
+\toprule\noalign{}
 num.obs.(denominator) & num.signif.figures & example fraction & report as \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 num.obs.(denominator) & num.signif.figures & example fraction & report as \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 \(1\dots9\) & 1 & 3/8 = 0.4 & 3/8 \\
 \(10\dots99\) & 2 & 21/57 = 0.36 & 21/57 \\
 \(100\dots999\) & 3 & 120/317 = 0.378 & 38\% \\
 \(1000\dots9999\) & 4 12 & 34/3179 = 0.3882 & 38.8\% \\
-\bottomrule
 \end{longtable}
 
 \hypertarget{background-1}{%
@@ -2813,18 +2825,19 @@ as in Table \ref{tab:centredispersionmeasures}.
 
 \begin{longtable}[]{@{}lcc@{}}
 \caption{\label{tab:centredispersionmeasures} Overview of discussed centre measures and dispersion measures. For assumptions abbreviated to \emph{(a \& b \& c)}, see text below table.}\tabularnewline
-\toprule
+\toprule\noalign{}
 Distribution & Centre measure & Dispersion measure \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 Distribution & Centre measure & Dispersion measure \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 all & median & quartiles, IQR, MAD \\
 \ldots{} & trimmed or wins. mean & trimmed or wins.std.dev. \\
 (a \& b \& c) & mean & standard deviation \\
-\bottomrule
 \end{longtable}
 
 The most \textbf{robust} measures are
@@ -3302,14 +3315,16 @@ Table \ref{tab:vowelprobabilities}.
 \begin{longtable}[]{@{}lrc@{}}
 \caption{\label{tab:vowelprobabilities} Probabilities of possible outcomes of \(n=3\)
 vowel draws, \(p=.38\), with replacement (see text).}\tabularnewline
-\toprule
+\toprule\noalign{}
 Outcome & Number of vowels & Probabilitiy \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 Outcome & Number of vowels & Probabilitiy \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 CCC & 0 & \(qqq = q^3\) \\
 VCC & 1 & \(pqq = pq^2\) \\
 CVC & 1 & \(qpq = pq^2\) \\
@@ -3318,7 +3333,6 @@ VVC & 2 & \(ppq = p^2q\) \\
 VCV & 2 & \(pqp = p^2q\) \\
 CVV & 2 & \(qpp = p^2q\) \\
 VVV & 3 & \(ppp = p^3\) \\
-\bottomrule
 \end{longtable}
 
 The number of hits (vowels) in the \(n=3\) draws has the
@@ -3331,20 +3345,21 @@ In such a probability distribution, we can see, for each possible outcome of \(x
 \begin{longtable}[]{@{}llc@{}}
 \caption{\label{tab:binomprobabilitydistribution3} Probability distribution of a
 binomial variable with \(n=3\) and \(p=.38\).}\tabularnewline
-\toprule
+\toprule\noalign{}
 Number of vowels & Probability & Probability \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 Number of vowels & Probability & Probability \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 0 & \(1 q^3\) & = .2383 \\
 1 & \(3 p q^2\) & = .4383 \\
 2 & \(3 p^2 q\) & = .2686 \\
 3 & \(1 p^3\) & = .0549 \\
 total & \((p+q)^3\) & = 1.0000 \\
-\bottomrule
 \end{longtable}
 
 \begin{figure}
@@ -3416,8 +3431,11 @@ to the cell.
 \begin{longtable}[]{@{}llllllllclllllll@{}}
 \caption{\label{tab:pascaltriangle} Pascal's triangle: Binomial coefficients for the
 number of possible orderings for a combination of \(x\) elements from \(n\) (see text).}\tabularnewline
-\toprule
+\toprule\noalign{}
+\endfirsthead
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 \(n= 0\): & & & & & & & & 1 & & & & & & & \\
 \(n= 1\): & & & & & & & 1 & & 1 & & & & & & \\
 \(n= 2\): & & & & & & 1 & & 2 & & 1 & & & & & \\
@@ -3426,7 +3444,6 @@ number of possible orderings for a combination of \(x\) elements from \(n\) (see
 \(n= 5\): & & & 1 & & 5 & & 10 & & 10 & & 5 & & 1 & & \\
 \(n= 6\): & & 1 & & 6 & & 15 & & 20 & & 15 & & 6 & & 1 & \\
 \(n= 7\): & 1 & & 7 & & 21 & & 35 & & 35 & & 21 & & 7 & & 1 \\
-\bottomrule
 \end{longtable}
 
 The mean and the standard deviation of the binomial probability distribution
@@ -4188,18 +4205,19 @@ of all pairs of correlations are reported.
 \begin{longtable}[]{@{}lccc@{}}
 \caption{\label{tab:cito-correlations} Correlations between the three parts of the CITO
 test, as summarised in Table \ref{tab:cito}, with the accompanying significance level between brackets.}\tabularnewline
-\toprule
+\toprule\noalign{}
 & Reading & Arithmetic & Geography \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 & Reading & Arithmetic & Geography \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 Reading & 1.00 & & \\
 Arithmetic & 0.79 (.007) & 1.00 & \\
 Geography & -0.51 (.13) & -0.01 (.97) & 1.00 \\
-\bottomrule
 \end{longtable}
 
 In this matrix, only the lowest (left) half of the complete
@@ -4608,18 +4626,19 @@ and Arithmetic, ordered here according to the ranks for Reading.
 \begin{longtable}[]{@{}lccrccrcccc@{}}
 \caption{\label{tab:cito-ranks} Ranks for the scores of 10 pupils on parts of a test, as summarised in
 Table \ref{tab:cito}, with difference \(v_i\) between the two ranks per pupil.}\tabularnewline
-\toprule
+\toprule\noalign{}
 Pupil & 1 & 9 & 6 & 4 & 10 & 8 & 5 & 7 & 2 & 3 \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 Pupil & 1 & 9 & 6 & 4 & 10 & 8 & 5 & 7 & 2 & 3 \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 Reading & 1 & 2 & 3 & 4.5 & 4.5 & 6 & 7 & 8 & 9 & 10 \\
 Arithmetic & 2 & 4 & 1 & 4 & 6.5 & 4 & 8 & 6.5 & 10 & 9 \\
 Difference \(v_i\) & -1 & -2 & 1 & 0.5 & -2 & 2 & -1 & 1.5 & -1 & 1 \\
-\bottomrule
 \end{longtable}
 
 The ranking in Table \ref{tab:cito-ranks} makes it clear at a glance that
@@ -4751,18 +4770,19 @@ than the mean (high, code \texttt{1}). We summarise the number of pupils in each
 to origin (urban=1, rural=0) and according to category of score for the Arithmetic part of
 the CITO test (`mean split', low=0, high=1), with letter designations for the number
 of observations; see text.}\tabularnewline
-\toprule
+\toprule\noalign{}
 Origin & Low (0) & High (1) & Total \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 Origin & Low (0) & High (1) & Total \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 Rural (0) & 5 (A) & 0 (B) & 5 (A+B) \\
 Urban (1) & 2 (C) & 3 (D) & 5 (C+D) \\
 Total & 7 (A+C) & 3 (B+D) & 10 (A+B+C+D) \\
-\bottomrule
 \end{longtable}
 
 The nominal correlation coefficient \(r_\Phi\) is equal to the Pearson
@@ -5376,14 +5396,16 @@ the mean of the judgements from the first and second rater.
 \begin{longtable}[]{@{}cccc@{}}
 \caption{\label{tab:reliability} Judgements about language proficiency
 from \(n = 10\) students (rows) by \(k = 3\) raters (columns).}\tabularnewline
-\toprule
+\toprule\noalign{}
 Student & B1 & B2 & B3 \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 Student & B1 & B2 & B3 \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 1 & 67 & 64 & 70 \\
 2 & 72 & 75 & 74 \\
 3 & 83 & 89 & 73 \\
@@ -5396,7 +5418,6 @@ Student & B1 & B2 & B3 \\
 10 & 70 & 82 & 69 \\
 \(\overline{x_i}\) & 71.0 & 74.4 & 71.7 \\
 \(s_i\) & 5.6 & 7.0 & 4.7 \\
-\bottomrule
 \end{longtable}
 
 The judgements of only the first and the second assessor show a
@@ -6486,14 +6507,16 @@ respondents are summarised.
 \begin{longtable}[]{@{}cllc@{}}
 \caption{\label{tab:data-uje-paired} Fictional judgements of a webpage
 with \emph{U} or \emph{je} as the forms of addressed, by \(N=10\) respondents.}\tabularnewline
-\toprule
+\toprule\noalign{}
 ID & \emph{U} Condition & \emph{je} Condition & \(D\) \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 ID & \emph{U} Condition & \emph{je} Condition & \(D\) \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 1 & 8 & 9 & -1 \\
 2 & 5 & 6 & -1 \\
 3 & 6 & 9 & -3 \\
@@ -6505,7 +6528,6 @@ ID & \emph{U} Condition & \emph{je} Condition & \(D\) \\
 9 & 7 & 9 & -2 \\
 10 & 6 & 7 & -1 \\
 & & & \(\overline{D}\)=-2.2 \\
-\bottomrule
 \end{longtable}
 
 The pair of observations for the \(i\)-th member of the sample has a
@@ -6749,9 +6771,11 @@ speakers from the West thus speak considerably more quickly than those from
 the North of the Netherlands.
 \end{quote}
 
+If \(d\) is around 0.01, we speak of a very small effect \citep{Sawi09}.
 If \(d\) is around 0.2, we speak of a small effect. We call an effect size
 \(d\) of around 0.5 a medium effect, and we call one
 of around 0.8 or larger a large effect \citep{Cohen88, Rose08}.
+If \(d\) is around 1.2 then we speak of a very large effect, and if \(d\) is around 2.0 then we call that a huge effect \citep{Sawi09}.
 
 \begin{figure}
 \centering
@@ -7365,19 +7389,20 @@ study is necessary; we will return to this later.
 \caption{\label{tab:sylduration} Mean speech tempos, with standard deviation and numbers
 of speakers, divided according to region of origin of the speaker (see Example
 15.1).}\tabularnewline
-\toprule
+\toprule\noalign{}
 Region & Mean & s.d. & n \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 Region & Mean & s.d. & n \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 Middle & 0.253 & 0.028 & 20 \\
 North & 0.269 & 0.029 & 20 \\
 South & 0.260 & 0.030 & 19 \\
 West & 0.235 & 0.028 & 20 \\
-\bottomrule
 \end{longtable}
 
 \begin{figure}
@@ -7439,14 +7464,16 @@ regions). We call the latter differences the `interaction' between the two facto
 \caption{\label{tab:sylduration2way} Mean speech tempos, with standard deviation and
 numbers of speakers, divided according to gender and the speaker's region of origin
 (see Example 15.1).}\tabularnewline
-\toprule
+\toprule\noalign{}
 Gender & Region & Mean & s.d. & n \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 Gender & Region & Mean & s.d. & n \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 Woman & Middle & 0.271 & 0.021 & 10 \\
 Woman & North & 0.285 & 0.025 & 10 \\
 Woman & South & 0.269 & 0.028 & 9 \\
@@ -7455,7 +7482,6 @@ Man & Middle & 0.235 & 0.022 & 10 \\
 Man & North & 0.253 & 0.025 & 10 \\
 Man & South & 0.252 & 0.030 & 10 \\
 Man & West & 0.232 & 0.028 & 10 \\
-\bottomrule
 \end{longtable}
 
 The results in Table \ref{tab:sylduration2way} suggest that (i) speakers from the
@@ -7688,17 +7714,18 @@ one sentence, see Example 15.2.
 
 \begin{longtable}[]{@{}lccccc@{}}
 \caption{\label{tab:colours-anova} Summary of analysis of variance of the observations in Figure \ref{fig:colours-obs}.}\tabularnewline
-\toprule
+\toprule\noalign{}
 Variance Source & df & SS & MS & \(F\) & \(p\) \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 Variance Source & df & SS & MS & \(F\) & \(p\) \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 Group & 2 & 14.50 & 7.248 & 9.36 & \textless.001 \\
 (within) & 42 & 32.54 & 0.775 & & \\
-\bottomrule
 \end{longtable}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -7815,19 +7842,20 @@ grey group and than the blue group.
 
 \begin{longtable}[]{@{}lccccc@{}}
 \caption{\label{tab:colours-anova-contrast} Summary of analysis of variance of the observations in Figure \ref{fig:colours-obs}, with planned contrasts between groups.}\tabularnewline
-\toprule
+\toprule\noalign{}
 Variance source & df & SS & MS & \(F\) & \(p\) \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 Variance source & df & SS & MS & \(F\) & \(p\) \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 Group & 2 & 14.50 & 7.248 & 9.36 & \textless.001 \\
 ~~Group, contrast 1 & 1 & 14.31 & 14.308 & 18.47 & \textless.001 \\
 ~~Group, contrast 2 & 1 & 0.19 & 0.188 & 0.24 & 0.62 \\
 (within) & 42 & 32.54 & 0.775 & & \\
-\bottomrule
 \end{longtable}
 
 The analysis of variance with planned comparisons can thus be used
@@ -7845,14 +7873,15 @@ condition. For the contrasts discussed above, that can be done
 in the form of the following weights:
 
 \begin{longtable}[]{@{}ccc@{}}
-\toprule
+\toprule\noalign{}
 Condition & Contrast 1 & Contrast 2 \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 ~~Red & -1 & 0 \\
 ~~Grey & +0.5 & -1 \\
 ~~Blue & +0.5 & +1 \\
-\bottomrule
 \end{longtable}
 
 The H0 for contrast 2 (\(\mu_\textrm{grey} = \mu_\textrm{blue}\)) can be
@@ -8397,19 +8426,20 @@ extended in Table \ref{tab:DBE12anova}. We now test and report three hypotheses.
 
 \begin{longtable}[]{@{}lccccc@{}}
 \caption{\label{tab:DBE12anova} Summary of two-way analysis of variance (ANOVA) of the comprehension scores of two text versions and three reader types.}\tabularnewline
-\toprule
+\toprule\noalign{}
 source & df & SS & MS & \(F\) & \(p\) \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 source & df & SS & MS & \(F\) & \(p\) \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 (A) text version & 1 & 91.2663 & 91.2663 & 63.75 & \textless.001 \\
 (B) reader type & 2 & 96.0800 & 48.0400 & 33.56 & \textless.001 \\
 (C) interaction & 2 & 30.7416 & 15.3708 & 10.74 & \textless.001 \\
 within & 88 & 125.9830 & 1.4316 & & \\
-\bottomrule
 \end{longtable}
 
 It is customary to present the results of the main effects before the interaction effects.
@@ -8758,20 +8788,21 @@ outcomes.
 according to passage
 and status (survived or not). Data taken from the dataset
 \texttt{Titanic} in R.}\tabularnewline
-\toprule
+\toprule\noalign{}
 Class & Died & Survived & Total \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 Class & Died & Survived & Total \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 1st & 122 & 203 & 325 \\
 2nd & 167 & 118 & 285 \\
 3rd & 528 & 178 & 706 \\
 Crew & 673 & 212 & 885 \\
 Total & 1490 & 711 & 2201 \\
-\bottomrule
 \end{longtable}
 
 \begin{quote}
@@ -9190,18 +9221,19 @@ and older for the first survey, divided according to smoking behaviour (rows: (n
 smoker currently or previously) and according to death by lung cancer in the last
 4 years (columns), with letter indication for the numbers
 of observations.}\tabularnewline
-\toprule
+\toprule\noalign{}
 Smoking & No lung cancer & & Lung cancer & & Total & \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 Smoking & No lung cancer & & Lung cancer & & Total & \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 No (0) & 3092 & (A) & 1 & (B) & 3093 & (A+B) \\
 Yes (1) & 21178 & (C) & 83 & (D) & 21261 & (C+D) \\
 Total & 24270 & (A+C) & 84 & (B+D) & 24354 & (A+B+C+D) \\
-\bottomrule
 \end{longtable}
 
 \begin{quote}
@@ -9405,17 +9437,18 @@ in valuation between the two conditions.
 \begin{longtable}[]{@{}lllllllllll@{}}
 \caption{\label{tab:data-originalrewritten} Judgements of \(N=19\) participants on
 the original and rewritten versions of a text.}\tabularnewline
-\toprule
+\toprule\noalign{}
 Condition & & & & & & & & & & \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 Condition & & & & & & & & & & \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 Original & 10 & 17 & 35 & 2 & 19 & 4 & 18 & 28 & 24 & -- \\
 Rewritten & 15 & 22 & 8 & 48 & 29 & 25 & 27 & 39 & 31 & 36 \\
-\bottomrule
 \end{longtable}
 
 The Wilcoxon rank sum test is based on the \emph{ranking} of the

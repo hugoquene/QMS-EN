@@ -12,7 +12,8 @@ bibliography: [book.bib, packages.bib, hhmhto.bib, pandoc.bib]
 biblio-style: apalike
 link-citations: yes
 github-repo: rstudio/QMS-EN
-description: "Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands."
+description: "Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TW2V17002, TW2V19002, TL2V23004), Dept Languages Literature and Communication, Utrecht University, the Netherlands."
+
 ---
 
 # Preface {-}

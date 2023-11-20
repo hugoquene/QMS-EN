@@ -5,19 +5,19 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>13 Testing hypotheses | Quantitative Methods and Statistics</title>
-  <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
-  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+  <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TW2V17002, TW2V19002, TL2V23004), Dept Languages Literature and Communication, Utrecht University, the Netherlands." />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
   <meta property="og:title" content="13 Testing hypotheses | Quantitative Methods and Statistics" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
+  <meta property="og:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TW2V17002, TW2V19002, TL2V23004), Dept Languages Literature and Communication, Utrecht University, the Netherlands." />
   <meta name="github-repo" content="rstudio/QMS-EN" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="13 Testing hypotheses | Quantitative Methods and Statistics" />
   
-  <meta name="twitter:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
+  <meta name="twitter:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TW2V17002, TW2V19002, TL2V23004), Dept Languages Literature and Communication, Utrecht University, the Netherlands." />
   
 
 
@@ -90,7 +90,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -103,7 +103,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -117,6 +117,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
@@ -628,7 +632,7 @@ that <span class="math inline">\(P &gt; \alpha\)</span> is not conclusive eviden
 be all kinds of other, plausible reasons why an effect which exists (H0 is untrue)
 can still not be observed. If I do not hear any birds singing, that does not necessarily
 mean that there are genuinely no birds singing. More generally: “absence of evidence is not
-evidence of absence” <span class="citation">(<a href="#ref-Sagan96" role="doc-biblioref">Sagan 1996, 121</a>; <a href="#ref-Alde04" role="doc-biblioref">Alderson 2004</a>)</span>. It is therefore recommended to always report the size of the effect found; this is explained in more detail in
+evidence of absence” <span class="citation">(<a href="#ref-Sagan96">Sagan 1996, 121</a>; <a href="#ref-Alde04">Alderson 2004</a>)</span>. It is therefore recommended to always report the size of the effect found; this is explained in more detail in
 §<a href="ch-testing.html#sec:ttest-effectsize">13.8</a> below.</p>
 <hr />
 <blockquote>
@@ -783,11 +787,11 @@ The table titled <strong>Assumption Checks</strong> reports the Shapiro-Wilk tes
 <div id="r-12" class="section level3 hasAnchor" number="13.2.6">
 <h3><span class="header-section-number">13.2.6</span> R<a href="ch-testing.html#r-12" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Our hypothesis discussed above can be tested with the following commands:</p>
-<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="ch-testing.html#cb104-1" aria-hidden="true" tabindex="-1"></a>gramm2013 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>( <span class="at">file=</span><span class="st">&quot;data/grammaticatoets2013.csv&quot;</span>,<span class="at">header=</span>F)</span>
-<span id="cb104-2"><a href="ch-testing.html#cb104-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dimnames</span>(gramm2013)[[<span class="dv">2</span>]] <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;score&quot;</span>,<span class="st">&quot;progr&quot;</span>)</span>
-<span id="cb104-3"><a href="ch-testing.html#cb104-3" aria-hidden="true" tabindex="-1"></a><span class="co"># program levels have Dutch labels: TW=Linguistics</span></span>
-<span id="cb104-4"><a href="ch-testing.html#cb104-4" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>( gramm2013,</span>
-<span id="cb104-5"><a href="ch-testing.html#cb104-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">t.test</span>( score[progr<span class="sc">==</span><span class="st">&quot;TW&quot;</span>], <span class="at">mu=</span><span class="dv">73</span>, <span class="at">alt=</span><span class="st">&quot;greater&quot;</span> ) )</span></code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="ch-testing.html#cb104-1" tabindex="-1"></a>gramm2013 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>( <span class="at">file=</span><span class="st">&quot;data/grammaticatoets2013.csv&quot;</span>,<span class="at">header=</span>F)</span>
+<span id="cb104-2"><a href="ch-testing.html#cb104-2" tabindex="-1"></a><span class="fu">dimnames</span>(gramm2013)[[<span class="dv">2</span>]] <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;score&quot;</span>,<span class="st">&quot;progr&quot;</span>)</span>
+<span id="cb104-3"><a href="ch-testing.html#cb104-3" tabindex="-1"></a><span class="co"># program levels have Dutch labels: TW=Linguistics</span></span>
+<span id="cb104-4"><a href="ch-testing.html#cb104-4" tabindex="-1"></a><span class="fu">with</span>( gramm2013,</span>
+<span id="cb104-5"><a href="ch-testing.html#cb104-5" tabindex="-1"></a>      <span class="fu">t.test</span>( score[progr<span class="sc">==</span><span class="st">&quot;TW&quot;</span>], <span class="at">mu=</span><span class="dv">73</span>, <span class="at">alt=</span><span class="st">&quot;greater&quot;</span> ) )</span></code></pre></div>
 <pre><code>## 
 ##  One Sample t-test
 ## 
@@ -874,7 +878,7 @@ of an unknown mean in the population,
 <span class="math inline">\(\mu\)</span>. For this, we can also use the value found for <span class="math inline">\(t^*\)</span> to indicate how
 reliable the estimation is: the confidence interval. With this, we express
 with what (un)certainty we know that the sample mean, <span class="math inline">\(\overline{x}\)</span>, matches
-the population mean <span class="citation">(<a href="#ref-Cumm12" role="doc-biblioref">Cumming 2012</a>)</span>. We are also familiar with such error margins
+the population mean <span class="citation">(<a href="#ref-Cumm12">Cumming 2012</a>)</span>. We are also familiar with such error margins
 from election results, where they indicate with what certainty the result
 of the sample (of respondents) matches the actual election result for the whole
 population (of voters). An
@@ -888,7 +892,7 @@ that the unknown average score on the grammar test, from the population
 of all possible Linguistics students is larger than 81.5 and
 smaller than 87.3. We thus also know, with 95% certainty, that the
 <em>unknown</em> population mean <span class="math inline">\(\mu\)</span> deviates from the hypothesised
-value 73 <span class="citation">(<a href="#ref-Cumm12" role="doc-biblioref">Cumming 2012</a>)</span>. We report this as follows:</p>
+value 73 <span class="citation">(<a href="#ref-Cumm12">Cumming 2012</a>)</span>. We report this as follows:</p>
 <blockquote>
 <p>The mean score of Linguistics students (class of 2013) is
 84.4, with 95% confidence interval (81.5, 87.3), 33 d.f.</p>
@@ -944,7 +948,7 @@ Under “Additional Statistics”, check <code>Location parameter</code> and <co
 confidence level) for a <span class="math inline">\(t\)</span>-test. We thus again conduct a <span class="math inline">\(t\)</span>-test
 and find the confidence interval of the mean in the
 output.</p>
-<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="ch-testing.html#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>( gramm2013, <span class="fu">t.test</span>( score[progr<span class="sc">==</span><span class="st">&quot;TW&quot;</span>] ) )</span></code></pre></div>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="ch-testing.html#cb108-1" tabindex="-1"></a><span class="fu">with</span>( gramm2013, <span class="fu">t.test</span>( score[progr<span class="sc">==</span><span class="st">&quot;TW&quot;</span>] ) )</span></code></pre></div>
 <pre><code>## 
 ##  One Sample t-test
 ## 
@@ -968,7 +972,7 @@ If H0 is true, then the value <span class="math inline">\(t=0\)</span> is the mo
 between the two means, the larger <span class="math inline">\(t\)</span> is too. We again reject H0 if <span class="math inline">\(t&gt;t^*\)</span>
 for the chosen significance level <span class="math inline">\(\alpha\)</span>.</p>
 <p>As a first example, we will take a study of the productive vocabulary size
-of 18-month old Swedish girls and boys <span class="citation">(<a href="#ref-Ande11" role="doc-biblioref">Andersson et al. 2011</a>)</span>. We investigate the hypothesis
+of 18-month old Swedish girls and boys <span class="citation">(<a href="#ref-Ande11">Andersson et al. 2011</a>)</span>. We investigate the hypothesis
 that the vocabulary of girls differs from that of boys, i.e. 
 H1: <span class="math inline">\(\mu_{girls} \ne \mu_{boys}\)</span>.
 We cannot a priori assume that a potential difference can only go in one direction;
@@ -1162,10 +1166,10 @@ If Levene’s test reports a high value of <span class="math inline">\(F\)</span
 </div>
 <div id="sec:R-ttest-unpaired" class="section level3 hasAnchor" number="13.6.5">
 <h3><span class="header-section-number">13.6.5</span> R<a href="ch-testing.html#sec:R-ttest-unpaired" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="ch-testing.html#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(hqmisc)</span>
-<span id="cb112-2"><a href="ch-testing.html#cb112-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(talkers)</span>
-<span id="cb112-3"><a href="ch-testing.html#cb112-3" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(talkers, <span class="fu">t.test</span>( syldur[region<span class="sc">==</span><span class="st">&quot;W&quot;</span>], syldur[region<span class="sc">==</span><span class="st">&quot;N&quot;</span>], </span>
-<span id="cb112-4"><a href="ch-testing.html#cb112-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">paired=</span>F, <span class="at">var.equal=</span>T ) )</span></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="ch-testing.html#cb112-1" tabindex="-1"></a><span class="fu">require</span>(hqmisc)</span>
+<span id="cb112-2"><a href="ch-testing.html#cb112-2" tabindex="-1"></a><span class="fu">data</span>(talkers)</span>
+<span id="cb112-3"><a href="ch-testing.html#cb112-3" tabindex="-1"></a><span class="fu">with</span>(talkers, <span class="fu">t.test</span>( syldur[region<span class="sc">==</span><span class="st">&quot;W&quot;</span>], syldur[region<span class="sc">==</span><span class="st">&quot;N&quot;</span>], </span>
+<span id="cb112-4"><a href="ch-testing.html#cb112-4" tabindex="-1"></a>            <span class="at">paired=</span>F, <span class="at">var.equal=</span>T ) )</span></code></pre></div>
 <pre><code>## 
 ##  Two Sample t-test
 ## 
@@ -1359,8 +1363,8 @@ If checked in the input, descriptive statistics and summary plots are also repor
 <div id="sec:R-ttest-paired" class="section level3 hasAnchor" number="13.7.5">
 <h3><span class="header-section-number">13.7.5</span> R<a href="ch-testing.html#sec:R-ttest-paired" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The data from the above example can be found in the file <code>data/ujedata.csv</code>.</p>
-<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="ch-testing.html#cb116-1" aria-hidden="true" tabindex="-1"></a>ujedata <span class="ot">&lt;-</span> <span class="fu">read.table</span>( <span class="at">file=</span><span class="st">&quot;data/ujedata.csv&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">sep=</span><span class="st">&quot;;&quot;</span> )</span>
-<span id="cb116-2"><a href="ch-testing.html#cb116-2" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(ujedata, <span class="fu">t.test</span>( cond.u, cond.je, <span class="at">paired=</span><span class="cn">TRUE</span> ) )</span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="ch-testing.html#cb116-1" tabindex="-1"></a>ujedata <span class="ot">&lt;-</span> <span class="fu">read.table</span>( <span class="at">file=</span><span class="st">&quot;data/ujedata.csv&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">sep=</span><span class="st">&quot;;&quot;</span> )</span>
+<span id="cb116-2"><a href="ch-testing.html#cb116-2" tabindex="-1"></a><span class="fu">with</span>(ujedata, <span class="fu">t.test</span>( cond.u, cond.je, <span class="at">paired=</span><span class="cn">TRUE</span> ) )</span></code></pre></div>
 <pre><code>## 
 ##  Paired t-test
 ## 
@@ -1378,14 +1382,14 @@ If checked in the input, descriptive statistics and summary plots are also repor
 <h2><span class="header-section-number">13.8</span> Effect size<a href="ch-testing.html#sec:ttest-effectsize" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Until now, we have mainly dealt with testing as a binary
 decision with regards to whether or not to reject H0, in the light
-of the observations. However, in addition to this, it is also of great importance to know how large the observed effect actually is: the <em>effect size</em> (‘ES’) <span class="citation">(<a href="#ref-Cohen88" role="doc-biblioref">Cohen 1988</a>; <a href="#ref-Thom02" role="doc-biblioref">B. Thompson 2002</a>; <a href="#ref-Naka07" role="doc-biblioref">Nakagawa and Cuthill 2007</a>)</span>.</p>
+of the observations. However, in addition to this, it is also of great importance to know how large the observed effect actually is: the <em>effect size</em> (‘ES’) <span class="citation">(<a href="#ref-Cohen88">Cohen 1988</a>; <a href="#ref-Thom02">B. Thompson 2002</a>; <a href="#ref-Naka07">Nakagawa and Cuthill 2007</a>)</span>.</p>
 <p>In the formulas <a href="ch-testing.html#eq:t-onesample">(13.1)</a> and <a href="ch-testing.html#eq:t-pairedsamples">(13.7)</a>, it is expressed that the test statistic <span class="math inline">\(t\)</span> increases,
 as the effect increases,
 i.e. for a larger difference
 <span class="math inline">\((\overline{x}-\mu)\)</span> or <span class="math inline">\((\overline{x_1}-\overline{x_2})\)</span> or
 <span class="math inline">\((\overline{D}-\mu_D)\)</span>,
 <em>and/or</em> as the sample size increases.
-Put briefly <span class="citation">(<a href="#ref-Rose08" role="doc-biblioref">Rosenthal and Rosnow 2008, 338</a>, formula 11.10)</span>:
+Put briefly <span class="citation">(<a href="#ref-Rose08">Rosenthal and Rosnow 2008, 338</a>, formula 11.10)</span>:
 <span class="math display" id="eq:Rose08">\[\begin{equation}
   \tag{13.8}
     \textrm{significance of test} =
@@ -1400,7 +1404,7 @@ a very small sample.</p>
 <blockquote>
 <p><em>Example 13.2:</em>
 In an investigation of the life times of inhabitants from Austria
-and Denmark <span class="citation">(<a href="#ref-Dobl99" role="doc-biblioref">Doblhammer 1999</a>)</span>, it appears that life times differ according to
+and Denmark <span class="citation">(<a href="#ref-Dobl99">Doblhammer 1999</a>)</span>, it appears that life times differ according to
 the week of birth (within a calendar year). This is presumably because babies from “summer pregnancies”
 are (or were) on average somewhat healthier than those
 from “winter pregnancies”. In this investigation, the differences
@@ -1448,7 +1452,7 @@ In the first example below, the standardised effect size of the difference in
 vocabulary between girls and boys is thus 0.11. In this case, the difference
 between the groups is small with respect to the distribution
 within the groups — the probability that a randomly selected girl
-has a larger vocabulary than a randomly selected boy, is only 0.53 <span class="citation">(<a href="#ref-McGraw92" role="doc-biblioref">McGraw and Wong 1992</a>)</span>,
+has a larger vocabulary than a randomly selected boy, is only 0.53 <span class="citation">(<a href="#ref-McGraw92">McGraw and Wong 1992</a>)</span>,
 and that is barely better than the probability of 0.50 which we expect according to H0.
 It is then no surprise that this very small effect is not significant
 (see §<a href="ch-testing.html#sec:ttest-indep">13.6</a>). We could
@@ -1474,9 +1478,11 @@ difference is very large <span class="math inline">\((d=-1.15)\)</span> and sign
 speakers from the West thus speak considerably more quickly than those from
 the North of the Netherlands.</p>
 </blockquote>
-<p>If <span class="math inline">\(d\)</span> is around 0.2, we speak of a small effect. We call an effect size
+<p>If <span class="math inline">\(d\)</span> is around 0.01, we speak of a very small effect <span class="citation">(<a href="#ref-Sawi09">Sawilowsky 2009</a>)</span>.
+If <span class="math inline">\(d\)</span> is around 0.2, we speak of a small effect. We call an effect size
 <span class="math inline">\(d\)</span> of around 0.5 a medium effect, and we call one
-of around 0.8 or larger a large effect <span class="citation">(<a href="#ref-Cohen88" role="doc-biblioref">Cohen 1988</a>; <a href="#ref-Rose08" role="doc-biblioref">Rosenthal and Rosnow 2008</a>)</span>.</p>
+of around 0.8 or larger a large effect <span class="citation">(<a href="#ref-Cohen88">Cohen 1988</a>; <a href="#ref-Rose08">Rosenthal and Rosnow 2008</a>)</span>.
+If <span class="math inline">\(d\)</span> is around 1.2 then we speak of a very large effect, and if <span class="math inline">\(d\)</span> is around 2.0 then we call that a huge effect <span class="citation">(<a href="#ref-Sawi09">Sawilowsky 2009</a>)</span>.</p>
 <div class="figure"><span style="display:block;" id="fig:smallestsignifdifference"></span>
 <img src="QMS-EN_files/figure-html/smallestsignifdifference-1.png" alt="Relation between the sample size and the smallest effect (d) that is significant according to a *t*-test for unpaired, independent observations, with errors probabilities alpha=.05 and beta=.10." width="672" />
 <p class="caption">
@@ -1502,7 +1508,7 @@ chosen element from the population
 (formulas <a href="ch-testing.html#eq:d-onesample">(13.10)</a> and <a href="ch-testing.html#eq:d-paired">(13.12)</a>),
 or (if applicable) for two
 randomly and independently chosen elements from the two populations
-(formula <a href="ch-testing.html#eq:d-homoskedastic">(13.11)</a>) <span class="citation">(<a href="#ref-McGraw92" role="doc-biblioref">McGraw and Wong 1992</a>)</span>. Let us again return to
+(formula <a href="ch-testing.html#eq:d-homoskedastic">(13.11)</a>) <span class="citation">(<a href="#ref-McGraw92">McGraw and Wong 1992</a>)</span>. Let us again return to
 the grammar test from the Linguistics students
 (§<a href="ch-testing.html#sec:ttest-onesample">13.2</a>). The effect which we found is
 not only significant but also large. Expressed in terms of probability:
@@ -1584,16 +1590,16 @@ The information is in the output of the pairwise <span class="math inline">\(t\)
 <p>For a single sample
 (formula <a href="ch-testing.html#eq:d-onesample">(13.10)</a>):<br />
 </p>
-<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="ch-testing.html#cb119-1" aria-hidden="true" tabindex="-1"></a>gramm2013 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>( <span class="at">file=</span><span class="st">&quot;data/grammaticatoets2013.csv&quot;</span>,<span class="at">header=</span>F)</span>
-<span id="cb119-2"><a href="ch-testing.html#cb119-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dimnames</span>(gramm2013)[[<span class="dv">2</span>]] <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;score&quot;</span>,<span class="st">&quot;progr&quot;</span>)</span>
-<span id="cb119-3"><a href="ch-testing.html#cb119-3" aria-hidden="true" tabindex="-1"></a><span class="co"># programs have Dutch labels, TW=Linguistics</span></span>
-<span id="cb119-4"><a href="ch-testing.html#cb119-4" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(gramm2013, score[progr<span class="sc">==</span><span class="st">&quot;TW&quot;</span>]) <span class="ot">-&gt;</span> score.ling</span>
-<span id="cb119-5"><a href="ch-testing.html#cb119-5" aria-hidden="true" tabindex="-1"></a><span class="co"># auxiliary variable</span></span>
-<span id="cb119-6"><a href="ch-testing.html#cb119-6" aria-hidden="true" tabindex="-1"></a>( <span class="fu">mean</span>(score.ling)<span class="sc">-</span><span class="dv">73</span> ) <span class="sc">/</span> <span class="fu">sd</span>(score.ling) </span></code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="ch-testing.html#cb119-1" tabindex="-1"></a>gramm2013 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>( <span class="at">file=</span><span class="st">&quot;data/grammaticatoets2013.csv&quot;</span>,<span class="at">header=</span>F)</span>
+<span id="cb119-2"><a href="ch-testing.html#cb119-2" tabindex="-1"></a><span class="fu">dimnames</span>(gramm2013)[[<span class="dv">2</span>]] <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;score&quot;</span>,<span class="st">&quot;progr&quot;</span>)</span>
+<span id="cb119-3"><a href="ch-testing.html#cb119-3" tabindex="-1"></a><span class="co"># programs have Dutch labels, TW=Linguistics</span></span>
+<span id="cb119-4"><a href="ch-testing.html#cb119-4" tabindex="-1"></a><span class="fu">with</span>(gramm2013, score[progr<span class="sc">==</span><span class="st">&quot;TW&quot;</span>]) <span class="ot">-&gt;</span> score.ling</span>
+<span id="cb119-5"><a href="ch-testing.html#cb119-5" tabindex="-1"></a><span class="co"># auxiliary variable</span></span>
+<span id="cb119-6"><a href="ch-testing.html#cb119-6" tabindex="-1"></a>( <span class="fu">mean</span>(score.ling)<span class="sc">-</span><span class="dv">73</span> ) <span class="sc">/</span> <span class="fu">sd</span>(score.ling) </span></code></pre></div>
 <pre><code>## [1] 1.359783</code></pre>
 <p>The probability of a score larger than the population mean (the test value) <code>73</code> for a random Linguistics
 student (of which we assume that <span class="math inline">\(\mu=84.4\)</span> and <span class="math inline">\(s=8.4\)</span>):</p>
-<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="ch-testing.html#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>( <span class="dv">73</span>, <span class="at">mean=</span><span class="fl">84.4</span>, <span class="at">sd=</span><span class="fl">8.4</span> ) </span></code></pre></div>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="ch-testing.html#cb121-1" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>( <span class="dv">73</span>, <span class="at">mean=</span><span class="fl">84.4</span>, <span class="at">sd=</span><span class="fl">8.4</span> ) </span></code></pre></div>
 <pre><code>## [1] 0.9126321</code></pre>
 <p>For unpaired, independent observations, we can calculate the smallest
 significant effect (see also
@@ -1603,7 +1609,7 @@ also used to construct Fig.<a href="ch-testing.html#fig:smallestsignifdifference
 With this function, you have to set the desired <code>power</code> as
 an argument (power = <span class="math inline">\(1-\beta\)</span>; see
 §<a href="ch-power.html#sec:power-introduction">14.1</a>).</p>
-<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="ch-testing.html#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="fu">power.t.test</span>( <span class="at">n=</span><span class="dv">122</span>, <span class="at">sig=</span>.<span class="dv">05</span>, <span class="at">power=</span>.<span class="dv">90</span>, <span class="at">type=</span><span class="st">&quot;two.sample&quot;</span> )</span></code></pre></div>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="ch-testing.html#cb123-1" tabindex="-1"></a><span class="fu">power.t.test</span>( <span class="at">n=</span><span class="dv">122</span>, <span class="at">sig=</span>.<span class="dv">05</span>, <span class="at">power=</span>.<span class="dv">90</span>, <span class="at">type=</span><span class="st">&quot;two.sample&quot;</span> )</span></code></pre></div>
 <pre><code>## 
 ##      Two-sample t test power calculation 
 ## 
@@ -1619,8 +1625,8 @@ an argument (power = <span class="math inline">\(1-\beta\)</span>; see
 Example 13.3 above.</p>
 <p>For a single sample with two paired observations
 (formula<a href="ch-testing.html#eq:d-paired">(13.12)</a>):</p>
-<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="ch-testing.html#cb125-1" aria-hidden="true" tabindex="-1"></a>ujedata <span class="ot">&lt;-</span> <span class="fu">read.table</span>( <span class="at">file=</span><span class="st">&quot;data/ujedata.csv&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">sep=</span><span class="st">&quot;;&quot;</span> )</span>
-<span id="cb125-2"><a href="ch-testing.html#cb125-2" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>( ujedata, <span class="fu">mean</span>(cond.u<span class="sc">-</span>cond.je) <span class="sc">/</span> <span class="fu">sd</span>(cond.u<span class="sc">-</span>cond.je) )</span></code></pre></div>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="ch-testing.html#cb125-1" tabindex="-1"></a>ujedata <span class="ot">&lt;-</span> <span class="fu">read.table</span>( <span class="at">file=</span><span class="st">&quot;data/ujedata.csv&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">sep=</span><span class="st">&quot;;&quot;</span> )</span>
+<span id="cb125-2"><a href="ch-testing.html#cb125-2" tabindex="-1"></a><span class="fu">with</span>( ujedata, <span class="fu">mean</span>(cond.u<span class="sc">-</span>cond.je) <span class="sc">/</span> <span class="fu">sd</span>(cond.u<span class="sc">-</span>cond.je) )</span></code></pre></div>
 <pre><code>## [1] -2.130141</code></pre>
 </div>
 <div id="sec:confint-effectsize" class="section level3 hasAnchor" number="13.8.5">
@@ -1654,11 +1660,11 @@ assessors. We can also indicate the reliability of this estimation
 here, in the form of a <em>confidence interval</em> around the
 observed sample <span class="math inline">\(d=-2.13\)</span>.</p>
 <p>The confidence interval of the effect size is tricky to establish though
-<span class="citation">(<a href="#ref-Naka07" role="doc-biblioref">Nakagawa and Cuthill 2007</a>; <a href="#ref-Chen15" role="doc-biblioref">Chen and Peng 2015</a>)</span>. We illustrate it here in a simple manner for
+<span class="citation">(<a href="#ref-Naka07">Nakagawa and Cuthill 2007</a>; <a href="#ref-Chen15">Chen and Peng 2015</a>)</span>. We illustrate it here in a simple manner for
 the simplest case, namely that of the <span class="math inline">\(t\)</span>-test for a single sample,
 or for two paired observations. For this, we need two elements:
-firstly, the effect size expressed as a correlation <span class="citation">(<a href="#ref-Rose08" role="doc-biblioref">Rosenthal and Rosnow 2008, 359</a>, formula 12.1)</span>, <span class="math display">\[r = \sqrt{ \frac{t^2}{t^2+\textrm{df}} }\]</span> and secondly
-the standard error of the effect size <span class="math inline">\(d\)</span> <span class="citation">(<a href="#ref-Naka07" role="doc-biblioref">Nakagawa and Cuthill 2007, 600</a>,
+firstly, the effect size expressed as a correlation <span class="citation">(<a href="#ref-Rose08">Rosenthal and Rosnow 2008, 359</a>, formula 12.1)</span>, <span class="math display">\[r = \sqrt{ \frac{t^2}{t^2+\textrm{df}} }\]</span> and secondly
+the standard error of the effect size <span class="math inline">\(d\)</span> <span class="citation">(<a href="#ref-Naka07">Nakagawa and Cuthill 2007, 600</a>,
 formula 18)</span>:<br />
 <span class="math display" id="eq:d-paired-se">\[\begin{equation}
   \tag{13.13}
@@ -1688,7 +1694,7 @@ also <em>to what extent</em> the (standardised) preference deviates from zero,
 i.e. how strong the preference for the <em>je</em>-version is. This new knowledge
 about the extent or size of the effect is often more useful and more interesting
 than the binary decision of whether or not there is an effect (whether or not
-to reject H0) <span class="citation">(<a href="#ref-Cumm12" role="doc-biblioref">Cumming 2012</a>)</span>.</p>
+to reject H0) <span class="citation">(<a href="#ref-Cumm12">Cumming 2012</a>)</span>.</p>
 
 </div>
 </div>
@@ -1724,6 +1730,9 @@ Rosenthal, Robert, and Ralph L. Rosnow. 2008. <em>Essentials of Behavioral Resea
 </div>
 <div id="ref-Sagan96" class="csl-entry">
 Sagan, Carl. 1996. <em>The Demon-Haunted World: Science as a Candle in the Dark</em>. Random House.
+</div>
+<div id="ref-Sawi09" class="csl-entry">
+Sawilowsky, Shlomo. 2009. <span>“New Effect Size Rules of Thumb.”</span> <em>Journal of Modern Applied Statistical Methods</em> 8 (2). <a href="https://doi.org/10.22237/jmasm/1257035100">https://doi.org/10.22237/jmasm/1257035100</a>.
 </div>
 <div id="ref-Thom02" class="csl-entry">
 Thompson, Bruce. 2002. <span>“<span>‘<span>S</span>tatistical,’</span> <span>‘Practical,’</span> and <span>‘Clinical’</span>: <span>H</span>ow Many Kinds of Significance Do Counselors Need to Consider?”</span> <em>Journal of Counseling and Development</em> 80 (1): 64–71.
@@ -1803,7 +1812,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

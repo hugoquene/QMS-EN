@@ -999,9 +999,11 @@ effect as follows:
 > speakers from the West thus speak considerably more quickly than those from
 > the North of the Netherlands. 
 
+If $d$ is around 0.01, we speak of a very small effect [@Sawi09]. 
 If $d$ is around 0.2, we speak of a small effect. We call an effect size
 $d$ of around 0.5 a medium effect, and we call one 
 of around 0.8 or larger a large effect [@Cohen88; @Rose08].
+If $d$ is around 1.2 then we speak of a very large effect, and if $d$ is around 2.0 then we call that a huge effect [@Sawi09].
 
 ```{r smallestsignifdifference, echo=FALSE, fig.cap="Relation between the sample size and the smallest effect (d) that is significant according to a *t*-test for unpaired, independent observations, with errors probabilities alpha=.05 and beta=.10."}	
 # adapted from `plotsmallestsignifdifference.R`

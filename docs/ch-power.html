@@ -5,19 +5,19 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>14 Power | Quantitative Methods and Statistics</title>
-  <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
-  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+  <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TW2V17002, TW2V19002, TL2V23004), Dept Languages Literature and Communication, Utrecht University, the Netherlands." />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
   <meta property="og:title" content="14 Power | Quantitative Methods and Statistics" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
+  <meta property="og:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TW2V17002, TW2V19002, TL2V23004), Dept Languages Literature and Communication, Utrecht University, the Netherlands." />
   <meta name="github-repo" content="rstudio/QMS-EN" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="14 Power | Quantitative Methods and Statistics" />
   
-  <meta name="twitter:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
+  <meta name="twitter:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TW2V17002, TW2V19002, TL2V23004), Dept Languages Literature and Communication, Utrecht University, the Netherlands." />
   
 
 
@@ -90,7 +90,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -103,7 +103,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -117,6 +117,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
@@ -575,7 +579,7 @@ For some studies that might be justified but it is also easily
 conceivable that, under certain circumstances, a Type II error is
 actually more grave or serious than a Type I error. If we find both types of
 error more or less equally grave, then we should strive for
-a smaller <span class="math inline">\(\beta\)</span> and larger power <span class="citation">(<a href="#ref-Rose08" role="doc-biblioref">Rosenthal and Rosnow 2008</a>)</span>.</p>
+a smaller <span class="math inline">\(\beta\)</span> and larger power <span class="citation">(<a href="#ref-Rose08">Rosenthal and Rosnow 2008</a>)</span>.</p>
 <p>The power of a study depends on three factors: (i) the effect
 size <span class="math inline">\(d\)</span>, which itself is in turn dependent on the measured difference
 <span class="math inline">\(D\)</span> and the variation <span class="math inline">\(s\)</span> in the observations
@@ -618,7 +622,7 @@ with <span class="math inline">\(n=30\)</span> observations per group is thus ac
 whether a researcher will actually detect such an effect, and
 will reject H0. Put otherwise, the probability of a Type I error is
 admittedly safely low (<span class="math inline">\(\alpha=.05\)</span>) but the probability of a Type II error is
-more than <span class="math inline">\(10\times\)</span> as large, and thus dangerously high (<span class="math inline">\(\beta=.52\)</span>) <span class="citation">(<a href="#ref-Rose08" role="doc-biblioref">Rosenthal and Rosnow 2008, Ch.12</a>)</span>.</p>
+more than <span class="math inline">\(10\times\)</span> as large, and thus dangerously high (<span class="math inline">\(\beta=.52\)</span>) <span class="citation">(<a href="#ref-Rose08">Rosenthal and Rosnow 2008, Ch.12</a>)</span>.</p>
 <p>A larger effect has a higher probability of being detected. A larger
 effect of <span class="math inline">\(d=.8\)</span>, for example, results in a power of
 <span class="math inline">\(.86\)</span> with this testing. The probability of a Type II error <span class="math inline">\(\beta=.14\)</span> here is
@@ -642,7 +646,7 @@ with this, a lower power with the statistical testing.</p>
 the power will be, and how large the sample should be (see below).
 For this we need an estimation of the smallest effect size <span class="math inline">\(d\)</span>
 which we still want to detect
-(§<a href="ch-testing.html#sec:ttest-effectsize">13.8</a>) <span class="citation">(<a href="#ref-Quene10" role="doc-biblioref">Quené 2010</a>)</span>. To estimate the effect size, firstly,
+(§<a href="ch-testing.html#sec:ttest-effectsize">13.8</a>) <span class="citation">(<a href="#ref-Quene10">Quené 2010</a>)</span>. To estimate the effect size, firstly,
 an estimate of the raw difference <span class="math inline">\(D\)</span> between the groups or conditions is needed.
 Secondly, an estimation is needed of the variability <span class="math inline">\(s\)</span>
 in the observations. These estimations can be largely deduced from
@@ -651,7 +655,7 @@ earlier publications, in which the standard deviation
 then <span class="math inline">\(s\)</span> can be roughly estimated from some informal
 ‘pilot’ observations. Take the difference between the highest and the lowest
 (range) of these, divide this range by 4, and use the outcome of this as
-a rough estimation for <span class="math inline">\(s\)</span> <span class="citation">(<a href="#ref-PD08" role="doc-biblioref">Peck and Devore 2008</a>)</span>.</p>
+a rough estimation for <span class="math inline">\(s\)</span> <span class="citation">(<a href="#ref-PD08">Peck and Devore 2008</a>)</span>.</p>
 </div>
 <div id="sec:samplesize-power" class="section level2 hasAnchor" number="14.3">
 <h2><span class="header-section-number">14.3</span> Relation between sample size and power<a href="ch-power.html#sec:samplesize-power" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -679,7 +683,7 @@ advisable to ensure that the groups or samples which you compare are approximate
 (<span class="math inline">\(N=n_1+n_2=10+50=60\)</span>). The harmonic mean of <span class="math inline">\(n_1=10\)</span> and <span class="math inline">\(n_2=50\)</span> is <span class="math inline">\(H=17\)</span>. This study thus has the same
 power as a smaller study with two groups, each of 17 participants, thus 34 participants in total. For this
 study, thus, 26 participants more have been investigated (and bothered)
-than necessary (see also §<a href="ch-integrity.html#sec:design">3.2</a>) <span class="citation">(<a href="#ref-ACA11" role="doc-biblioref">Aron, Coups, and Aron 2011, 295</a>)</span>.</p>
+than necessary (see also §<a href="ch-integrity.html#sec:design">3.2</a>) <span class="citation">(<a href="#ref-ACA11">Aron, Coups, and Aron 2011, 295</a>)</span>.</p>
 </blockquote>
 <hr />
 </div>
@@ -708,7 +712,7 @@ two types of errors.</p>
 <p>Unfortunately, many examples can be found of ‘underpowered’ research
 in the domain of language and communication. This research has a too small
 probability of rejecting H0 when the investigated effect indeed
-exists (H0 is not true). Why is that bad <span class="citation">(<a href="#ref-Quene10" role="doc-biblioref">Quené 2010</a>)</span>?</p>
+exists (H0 is not true). Why is that bad <span class="citation">(<a href="#ref-Quene10">Quené 2010</a>)</span>?</p>
 <p>Firstly, the Type II error which occurs here can have serious consequences:
 a treatment method which is actually better is not recognised as such,
 a patient is not or wrongly diagnosed, a useful innovation is wrongly pushed
@@ -738,7 +742,7 @@ picture from these studies can be explained by the small
 power of each study. The needless and superfluous follow up research
 costs much time and money (and indirect costs,
 see Chapter <a href="ch-integrity.html#ch-integrity">3</a>), and comes at the cost of other, more useful
-research <span class="citation">(<a href="#ref-Schm96" role="doc-biblioref">Schmidt 1996, 118</a>)</span>. Put otherwise: one well designed study
+research <span class="citation">(<a href="#ref-Schm96">Schmidt 1996, 118</a>)</span>. Put otherwise: one well designed study
 with power which is more than sufficient can avoid many needless follow up studies.</p>
 <p>The third disadvantage is based on the experience that studies in which
 a significant effect is found (dark symbols) have a higher probability
@@ -766,7 +770,7 @@ scientific knowledge (practitioners, health insurers, developers,
 policy makers, etc.). In this way, these consumers get the impression
 that the scientific evidence for this investigated effect is not strong,
 and/or that the researchers are in disagreement about whether the effect exists
-and if it does, how large it then is <span class="citation">(<a href="#ref-Kolf93" role="doc-biblioref">Van Kolfschooten 1993</a>)</span> (Figure <a href="ch-power.html#fig:underpoweredeffectsizes">14.3</a>).
+and if it does, how large it then is <span class="citation">(<a href="#ref-Kolf93">Van Kolfschooten 1993</a>)</span> (Figure <a href="ch-power.html#fig:underpoweredeffectsizes">14.3</a>).
 This, also hinders scientific progress, and it hinders the use
 of scientific insights in societal applications.</p>
 <p>To avoid all these objections, researchers have to take into account
@@ -873,7 +877,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

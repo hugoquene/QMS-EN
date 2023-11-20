@@ -5,19 +5,19 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>9 Centre and dispersion | Quantitative Methods and Statistics</title>
-  <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
-  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+  <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TW2V17002, TW2V19002, TL2V23004), Dept Languages Literature and Communication, Utrecht University, the Netherlands." />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
   <meta property="og:title" content="9 Centre and dispersion | Quantitative Methods and Statistics" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
+  <meta property="og:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TW2V17002, TW2V19002, TL2V23004), Dept Languages Literature and Communication, Utrecht University, the Netherlands." />
   <meta name="github-repo" content="rstudio/QMS-EN" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="9 Centre and dispersion | Quantitative Methods and Statistics" />
   
-  <meta name="twitter:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
+  <meta name="twitter:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TW2V17002, TW2V19002, TL2V23004), Dept Languages Literature and Communication, Utrecht University, the Netherlands." />
   
 
 
@@ -90,7 +90,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -103,7 +103,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -117,6 +117,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
@@ -750,7 +754,7 @@ entirely. The mean of the remaining observations is called
 the <em>trimmed</em> mean. For a 10% trim, we remove the lowermost 10% <em>and</em> the
 uppermost 10% of the observations;
 as such, what remains is then only <span class="math inline">\((1- (2 \times (10/100))\times n\)</span>
-observations <span class="citation">(<a href="#ref-Wilcox12" role="doc-biblioref">Wilcox 2012</a>)</span>.</p>
+observations <span class="citation">(<a href="#ref-Wilcox12">Wilcox 2012</a>)</span>.</p>
 <hr />
 <blockquote>
 <p><em>Example 9.7</em>: The waiting times from Example 9.1
@@ -798,7 +802,7 @@ what the mean income is but also how large the <em>differences</em> in
 income are.</p>
 <div id="quartiles" class="section level3 hasAnchor" number="9.4.1">
 <h3><span class="header-section-number">9.4.1</span> Quartiles<a href="ch-centre-and-dispersion.html#quartiles" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Quartiles are a simple and useful measure for this <span class="citation">(<a href="#ref-Tukey77" role="doc-biblioref">Tukey 1977</a>)</span>.
+<p>Quartiles are a simple and useful measure for this <span class="citation">(<a href="#ref-Tukey77">Tukey 1977</a>)</span>.
 We split the ordered observations into two halves; the dividing line
 between these is the median. We then halve each of these halves again into quarters.
 The quartiles are formed by the dividing lines between these
@@ -937,7 +941,7 @@ characteristics, the so-called “five-number summary”, namely the minimum val
 median, <span class="math inline">\(Q_3\)</span>, and maximum value. These five characteristics are represented graphically
 in a so-called “boxplot”, see
 Figure <a href="ch-centre-and-dispersion.html#fig:cito-boxplot">9.3</a>
-for an example <span class="citation">(<a href="#ref-Tukey77" role="doc-biblioref">Tukey 1977, sec. 2C</a>)</span>.</p>
+for an example <span class="citation">(<a href="#ref-Tukey77">Tukey 1977, sec. 2C</a>)</span>.</p>
 <pre><code>## Loading required package: foreign</code></pre>
 <div class="figure"><span style="display:block;" id="fig:cito-boxplot"></span>
 <img src="QMS-EN_files/figure-html/cito-boxplot-1.png" alt="Boxplots of the scores of $N=10$ pupils on the Reading and Arithmetic sections of the CITO test (see Table 9.1), with outliers marked as open circles. The observed scores are marked along the vertical axes." width="384" />
@@ -1394,46 +1398,46 @@ Click on the button <code>Compute column</code> below the work sheet to fill the
 <div id="r-3" class="section level2 hasAnchor" number="9.11">
 <h2><span class="header-section-number">9.11</span> R<a href="ch-centre-and-dispersion.html#r-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>For <strong>quartiles and boxplot</strong> like Figure <a href="ch-centre-and-dispersion.html#fig:cito-boxplot">9.3</a>, we use the commands <code>fivenum</code>, <code>quantile</code>, and <code>boxplot</code>:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="ch-centre-and-dispersion.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(foreign) <span class="co"># for foreign::read.spss</span></span>
-<span id="cb33-2"><a href="ch-centre-and-dispersion.html#cb33-2" aria-hidden="true" tabindex="-1"></a>cito <span class="ot">&lt;-</span> <span class="fu">read.spss</span>(<span class="st">&quot;data/cito.sav&quot;</span>)</span>
-<span id="cb33-3"><a href="ch-centre-and-dispersion.html#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Columns in `cito.sav` have Dutch names:</span></span>
-<span id="cb33-4"><a href="ch-centre-and-dispersion.html#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="co"># in Dutch: Leerling Lezen Rekenen Wereldorientatie stadplat rek.f</span></span>
-<span id="cb33-5"><a href="ch-centre-and-dispersion.html#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="co"># in English: Pupil Reading Arithmetic Geography UrbRural Arith.factor</span></span>
-<span id="cb33-6"><a href="ch-centre-and-dispersion.html#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="fu">fivenum</span>(cito<span class="sc">$</span>Lezen) <span class="co"># minimum, Q1, median, Q3, maximum</span></span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="ch-centre-and-dispersion.html#cb33-1" tabindex="-1"></a><span class="fu">require</span>(foreign) <span class="co"># for foreign::read.spss</span></span>
+<span id="cb33-2"><a href="ch-centre-and-dispersion.html#cb33-2" tabindex="-1"></a>cito <span class="ot">&lt;-</span> <span class="fu">read.spss</span>(<span class="st">&quot;data/cito.sav&quot;</span>)</span>
+<span id="cb33-3"><a href="ch-centre-and-dispersion.html#cb33-3" tabindex="-1"></a><span class="co"># Columns in `cito.sav` have Dutch names:</span></span>
+<span id="cb33-4"><a href="ch-centre-and-dispersion.html#cb33-4" tabindex="-1"></a><span class="co"># in Dutch: Leerling Lezen Rekenen Wereldorientatie stadplat rek.f</span></span>
+<span id="cb33-5"><a href="ch-centre-and-dispersion.html#cb33-5" tabindex="-1"></a><span class="co"># in English: Pupil Reading Arithmetic Geography UrbRural Arith.factor</span></span>
+<span id="cb33-6"><a href="ch-centre-and-dispersion.html#cb33-6" tabindex="-1"></a><span class="fu">fivenum</span>(cito<span class="sc">$</span>Lezen) <span class="co"># minimum, Q1, median, Q3, maximum</span></span></code></pre></div>
 <pre><code>## [1] 19 22 26 29 44</code></pre>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="ch-centre-and-dispersion.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(cito<span class="sc">$</span>Lezen, <span class="fu">c</span>( <span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>, <span class="dv">3</span><span class="sc">/</span><span class="dv">4</span> ) ) <span class="co"># Q1 and Q3, calculated differently </span></span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="ch-centre-and-dispersion.html#cb35-1" tabindex="-1"></a><span class="fu">quantile</span>(cito<span class="sc">$</span>Lezen, <span class="fu">c</span>( <span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>, <span class="dv">3</span><span class="sc">/</span><span class="dv">4</span> ) ) <span class="co"># Q1 and Q3, calculated differently </span></span></code></pre></div>
 <pre><code>##   25%   75% 
 ## 22.75 28.75</code></pre>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="ch-centre-and-dispersion.html#cb37-1" aria-hidden="true" tabindex="-1"></a>op <span class="ot">&lt;-</span> <span class="fu">par</span>(<span class="at">mar=</span><span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">2</span>)<span class="sc">+</span><span class="fl">0.1</span>) <span class="co"># smaller margins</span></span>
-<span id="cb37-2"><a href="ch-centre-and-dispersion.html#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(cito, </span>
-<span id="cb37-3"><a href="ch-centre-and-dispersion.html#cb37-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">boxplot</span>(Lezen, Rekenen, <span class="at">col=</span><span class="st">&quot;grey80&quot;</span>, <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">lty=</span><span class="dv">1</span>, <span class="at">ylab=</span><span class="st">&quot;Score&quot;</span>, <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">17</span>,<span class="dv">45</span>) )</span>
-<span id="cb37-4"><a href="ch-centre-and-dispersion.html#cb37-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb37-5"><a href="ch-centre-and-dispersion.html#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="at">side=</span><span class="dv">1</span>, <span class="at">at=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;Reading&quot;</span>,<span class="st">&quot;Arithmetic&quot;</span>) )</span>
-<span id="cb37-6"><a href="ch-centre-and-dispersion.html#cb37-6" aria-hidden="true" tabindex="-1"></a>plotrix<span class="sc">::</span><span class="fu">axis.break</span>(<span class="at">axis=</span><span class="dv">2</span>) <span class="co"># break in left Y-aixs</span></span>
-<span id="cb37-7"><a href="ch-centre-and-dispersion.html#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="fu">rug</span>(cito<span class="sc">$</span>Lezen, <span class="at">side=</span><span class="dv">2</span>) <span class="co"># markings on left Y-axis</span></span>
-<span id="cb37-8"><a href="ch-centre-and-dispersion.html#cb37-8" aria-hidden="true" tabindex="-1"></a><span class="fu">rug</span>(cito<span class="sc">$</span>rekenen, <span class="at">side=</span><span class="dv">4</span>) <span class="co"># markings on right Y-axis</span></span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="ch-centre-and-dispersion.html#cb37-1" tabindex="-1"></a>op <span class="ot">&lt;-</span> <span class="fu">par</span>(<span class="at">mar=</span><span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">2</span>)<span class="sc">+</span><span class="fl">0.1</span>) <span class="co"># smaller margins</span></span>
+<span id="cb37-2"><a href="ch-centre-and-dispersion.html#cb37-2" tabindex="-1"></a><span class="fu">with</span>(cito, </span>
+<span id="cb37-3"><a href="ch-centre-and-dispersion.html#cb37-3" tabindex="-1"></a>  <span class="fu">boxplot</span>(Lezen, Rekenen, <span class="at">col=</span><span class="st">&quot;grey80&quot;</span>, <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">lty=</span><span class="dv">1</span>, <span class="at">ylab=</span><span class="st">&quot;Score&quot;</span>, <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">17</span>,<span class="dv">45</span>) )</span>
+<span id="cb37-4"><a href="ch-centre-and-dispersion.html#cb37-4" tabindex="-1"></a>)</span>
+<span id="cb37-5"><a href="ch-centre-and-dispersion.html#cb37-5" tabindex="-1"></a><span class="fu">axis</span>(<span class="at">side=</span><span class="dv">1</span>, <span class="at">at=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;Reading&quot;</span>,<span class="st">&quot;Arithmetic&quot;</span>) )</span>
+<span id="cb37-6"><a href="ch-centre-and-dispersion.html#cb37-6" tabindex="-1"></a>plotrix<span class="sc">::</span><span class="fu">axis.break</span>(<span class="at">axis=</span><span class="dv">2</span>) <span class="co"># break in left Y-aixs</span></span>
+<span id="cb37-7"><a href="ch-centre-and-dispersion.html#cb37-7" tabindex="-1"></a><span class="fu">rug</span>(cito<span class="sc">$</span>Lezen, <span class="at">side=</span><span class="dv">2</span>) <span class="co"># markings on left Y-axis</span></span>
+<span id="cb37-8"><a href="ch-centre-and-dispersion.html#cb37-8" tabindex="-1"></a><span class="fu">rug</span>(cito<span class="sc">$</span>rekenen, <span class="at">side=</span><span class="dv">4</span>) <span class="co"># markings on right Y-axis</span></span></code></pre></div>
 <p><img src="QMS-EN_files/figure-html/cito-summary-boxplot-1.png" width="672" /></p>
 <p>Many <strong>central tendencies</strong> are pre-programmed as functions in R:</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="ch-centre-and-dispersion.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(cito<span class="sc">$</span>Lezen) <span class="co"># mean</span></span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="ch-centre-and-dispersion.html#cb38-1" tabindex="-1"></a><span class="fu">mean</span>(cito<span class="sc">$</span>Lezen) <span class="co"># mean</span></span></code></pre></div>
 <pre><code>## [1] 27.2</code></pre>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="ch-centre-and-dispersion.html#cb40-1" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">winsor.mean</span>(cito<span class="sc">$</span>Lezen, <span class="at">trim=</span>.<span class="dv">1</span>) <span class="co"># winsorized mean, from psych package</span></span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="ch-centre-and-dispersion.html#cb40-1" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">winsor.mean</span>(cito<span class="sc">$</span>Lezen, <span class="at">trim=</span>.<span class="dv">1</span>) <span class="co"># winsorized mean, from psych package</span></span></code></pre></div>
 <pre><code>## [1] 26.3</code></pre>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="ch-centre-and-dispersion.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(cito<span class="sc">$</span>Lezen, <span class="at">trim=</span>.<span class="dv">1</span>) <span class="co"># trimmed mean</span></span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="ch-centre-and-dispersion.html#cb42-1" tabindex="-1"></a><span class="fu">mean</span>(cito<span class="sc">$</span>Lezen, <span class="at">trim=</span>.<span class="dv">1</span>) <span class="co"># trimmed mean</span></span></code></pre></div>
 <pre><code>## [1] 26.125</code></pre>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="ch-centre-and-dispersion.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(cito<span class="sc">$</span>Lezen)   <span class="co"># median</span></span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="ch-centre-and-dispersion.html#cb44-1" tabindex="-1"></a><span class="fu">median</span>(cito<span class="sc">$</span>Lezen)   <span class="co"># median</span></span></code></pre></div>
 <pre><code>## [1] 26</code></pre>
 <p>Various <strong>dispersion measures</strong> are also pre-programmed:</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="ch-centre-and-dispersion.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(cito<span class="sc">$</span>Lezen)  <span class="co"># variance</span></span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="ch-centre-and-dispersion.html#cb46-1" tabindex="-1"></a><span class="fu">var</span>(cito<span class="sc">$</span>Lezen)  <span class="co"># variance</span></span></code></pre></div>
 <pre><code>## [1] 50.17778</code></pre>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="ch-centre-and-dispersion.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(cito<span class="sc">$</span>Lezen)   <span class="co"># standard deviation, sd(x) = sqrt(var(x))</span></span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="ch-centre-and-dispersion.html#cb48-1" tabindex="-1"></a><span class="fu">sd</span>(cito<span class="sc">$</span>Lezen)   <span class="co"># standard deviation, sd(x) = sqrt(var(x))</span></span></code></pre></div>
 <pre><code>## [1] 7.083627</code></pre>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="ch-centre-and-dispersion.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mad</span>(cito<span class="sc">$</span>Lezen)  <span class="co"># MAD</span></span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="ch-centre-and-dispersion.html#cb50-1" tabindex="-1"></a><span class="fu">mad</span>(cito<span class="sc">$</span>Lezen)  <span class="co"># MAD</span></span></code></pre></div>
 <pre><code>## [1] 5.1891</code></pre>
 <p>In contrast, we have to calculate <strong>standard scores</strong> ourselves, and save them ourselves as a
 new variable, called here <code>zReading</code> (note the parentheses in the first command line):</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="ch-centre-and-dispersion.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># standardized (or z) reading scores</span></span>
-<span id="cb52-2"><a href="ch-centre-and-dispersion.html#cb52-2" aria-hidden="true" tabindex="-1"></a>zReading <span class="ot">&lt;-</span> (cito<span class="sc">$</span>Lezen<span class="sc">-</span><span class="fu">mean</span>(cito<span class="sc">$</span>Lezen)) <span class="sc">/</span> <span class="fu">sd</span>(cito<span class="sc">$</span>Lezen) </span>
-<span id="cb52-3"><a href="ch-centre-and-dispersion.html#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(zReading) <span class="co"># first few observations of variable zReading</span></span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="ch-centre-and-dispersion.html#cb52-1" tabindex="-1"></a><span class="co"># standardized (or z) reading scores</span></span>
+<span id="cb52-2"><a href="ch-centre-and-dispersion.html#cb52-2" tabindex="-1"></a>zReading <span class="ot">&lt;-</span> (cito<span class="sc">$</span>Lezen<span class="sc">-</span><span class="fu">mean</span>(cito<span class="sc">$</span>Lezen)) <span class="sc">/</span> <span class="fu">sd</span>(cito<span class="sc">$</span>Lezen) </span>
+<span id="cb52-3"><a href="ch-centre-and-dispersion.html#cb52-3" tabindex="-1"></a><span class="fu">head</span>(zReading) <span class="co"># first few observations of variable zReading</span></span></code></pre></div>
 <pre><code>## [1] -1.1575990  0.6776189  2.3716662 -0.3105753  0.1129365 -0.7340872</code></pre>
 
 </div>
@@ -1457,7 +1461,7 @@ two equally large halves.<a href="ch-centre-and-dispersion.html#fnref12" class="
 <li id="fn14"><p>This is comparable with sports like rowing, swimming, cycling, ice skating, etc., where
 the time over an agreed distance is measured and compared, rather than the speed over an
 agreed time.<a href="ch-centre-and-dispersion.html#fnref14" class="footnote-back">↩︎</a></p></li>
-<li id="fn15"><p>In a classic boxplot, the lines extend to the minimum and maximum <span class="citation">(<a href="#ref-Tukey77" role="doc-biblioref">Tukey 1977</a>)</span> and
+<li id="fn15"><p>In a classic boxplot, the lines extend to the minimum and maximum <span class="citation">(<a href="#ref-Tukey77">Tukey 1977</a>)</span> and
 outliers are not indicated separately.<a href="ch-centre-and-dispersion.html#fnref15" class="footnote-back">↩︎</a></p></li>
 <li id="fn16"><p>We divide by <span class="math inline">\(n-1\)</span> and not by <span class="math inline">\(n\)</span>, to get a better estimation of the dispersion in the
 <em>population</em>. In this way, we take into account the fact that we are using a characteristic of the
@@ -1535,7 +1539,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

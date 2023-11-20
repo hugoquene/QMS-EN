@@ -5,19 +5,19 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>15 Analysis of variance | Quantitative Methods and Statistics</title>
-  <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
-  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+  <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TW2V17002, TW2V19002, TL2V23004), Dept Languages Literature and Communication, Utrecht University, the Netherlands." />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
   <meta property="og:title" content="15 Analysis of variance | Quantitative Methods and Statistics" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
+  <meta property="og:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TW2V17002, TW2V19002, TL2V23004), Dept Languages Literature and Communication, Utrecht University, the Netherlands." />
   <meta name="github-repo" content="rstudio/QMS-EN" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="15 Analysis of variance | Quantitative Methods and Statistics" />
   
-  <meta name="twitter:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
+  <meta name="twitter:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TW2V17002, TW2V19002, TL2V23004), Dept Languages Literature and Communication, Utrecht University, the Netherlands." />
   
 
 
@@ -90,7 +90,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -103,7 +103,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -117,6 +117,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
@@ -565,7 +569,7 @@ when we want to analyse data from a factorial design
 speed of four groups of speakers, namely originating from the Middle, North,
 South and West of the Netherlands. The speech tempo is expressed as the mean
 duration of a syllable (in seconds), with the mean taken over an interview of approximately
-15 minutes with each speaker <span class="citation">(<a href="#ref-Quene08" role="doc-biblioref">Quené 2008</a>)</span> <span class="citation">(<a href="#ref-R-hqmisc" role="doc-biblioref">Quené 2022</a>)</span>.
+15 minutes with each speaker <span class="citation">(<a href="#ref-Quene08">Quené 2008</a>)</span> <span class="citation">(<a href="#ref-R-hqmisc"><strong>R-hqmisc?</strong></a>)</span>.
 A shorter mean syllable duration thus corresponds to a faster speaker (cf. skating, where a faster skater has shorter lap durations). There were 20
 speakers per group, but 1 speaker (from the South), who had an extremely high value,
 was removed from the sample.</p>
@@ -996,7 +1000,7 @@ about H0, but it is at least equally important to know how large
 the observed effect is (see also
 §<a href="ch-testing.html#sec:ttest-effectsize">13.8</a>). This effect size for
 analysis of variance can be expressed in different measures, of which we will
-discuss two (this section is based on <span class="citation">Kerlinger and Lee (<a href="#ref-KL00" role="doc-biblioref">2000</a>)</span>; see also <span class="citation">Olejnik and Algina (<a href="#ref-Olej03" role="doc-biblioref">2003</a>)</span>).</p>
+discuss two (this section is based on <span class="citation">Kerlinger and Lee (<a href="#ref-KL00">2000</a>)</span>; see also <span class="citation">Olejnik and Algina (<a href="#ref-Olej03">2003</a>)</span>).</p>
 <p>The simplest measure is the so-called <span class="math inline">\(\eta^2\)</span> (“eta
 squared”), the proportion of the total SS which can be attributed to the
 differences between the groups or conditions: <span class="math display">\[\label{eq:etasq}
@@ -1005,7 +1009,7 @@ differences between the groups or conditions: <span class="math display">\[\labe
 variance in the <em>sample</em> can be assigned to the independent
 variable.</p>
 <p>The second measure for effect size with analysis of variance is the so-called
-<span class="math inline">\(\omega^2\)</span> (“omega squared”) <span class="citation">(<a href="#ref-MD04" role="doc-biblioref">Maxwell and Delaney 2004, 296</a>)</span>:
+<span class="math inline">\(\omega^2\)</span> (“omega squared”) <span class="citation">(<a href="#ref-MD04">Maxwell and Delaney 2004, 296</a>)</span>:
 <span class="math display" id="eq:omegasq">\[\begin{equation}
   \tag{15.7}
     \omega^2 = \frac{ \textrm{SS}_b - (k-1) \textrm{MS}_w} { \textrm{SS}_t + \textrm{MS}_w }
@@ -1026,7 +1030,7 @@ how strong relations are. After all, with large enough <span class="math inline"
 <span class="math inline">\(t\)</span>-ratios can almost always be statistically significant. While often
 sobering in their effect, especially when they are low, coefficients of
 association of independent and dependent variables [i.e., effect size
-coefficients] are <em>indispensable</em> parts of research results” <span class="citation">(<a href="#ref-KL00" role="doc-biblioref">Kerlinger and Lee 2000, 327</a>, emphasis added)</span>.</p>
+coefficients] are <em>indispensable</em> parts of research results” <span class="citation">(<a href="#ref-KL00">Kerlinger and Lee 2000, 327</a>, emphasis added)</span>.</p>
 </blockquote>
 </div>
 <div id="sec:anova-oneway-planned" class="section level3 hasAnchor" number="15.3.4">
@@ -1178,7 +1182,7 @@ contrasts are orthogonal.</p>
 between the groups or conditions. Only after the analysis of variance,
 <em>after</em> a significant effect has been found, does the researcher decide
 to inspect more closely which conditions differ from each other. We speak
-then of <em>post hoc</em> comparisons, “suggested by the data” <span class="citation">(<a href="#ref-MD04" role="doc-biblioref">Maxwell and Delaney 2004, 200</a>)</span>.
+then of <em>post hoc</em> comparisons, “suggested by the data” <span class="citation">(<a href="#ref-MD04">Maxwell and Delaney 2004, 200</a>)</span>.
 When doing so, we have to work conservatively, precisely because
 after the analysis of variance we might already suspect that some
 comparisons will yield a significant result,
@@ -1365,9 +1369,9 @@ Under “Correction” check the option <code>Tukey</code>, and under “Display
 <div id="preparation-3" class="section level4 hasAnchor" number="15.3.8.1">
 <h4><span class="header-section-number">15.3.8.1</span> preparation<a href="ch-anova.html#preparation-3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>We will use the data in the file <code>data/kleurgroepen.txt</code>; these data are also shown in Figure <a href="ch-anova.html#fig:colours-obs">15.2</a>. First read the data, and check this:</p>
-<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="ch-anova.html#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="co"># same data as used in Fig.15.2</span></span>
-<span id="cb131-2"><a href="ch-anova.html#cb131-2" aria-hidden="true" tabindex="-1"></a>colourgroups <span class="ot">&lt;-</span> <span class="fu">read.table</span>( <span class="st">&quot;data/kleurgroepen.txt&quot;</span>, </span>
-<span id="cb131-3"><a href="ch-anova.html#cb131-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">stringsAsFactors=</span><span class="cn">TRUE</span> )</span></code></pre></div>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="ch-anova.html#cb131-1" tabindex="-1"></a><span class="co"># same data as used in Fig.15.2</span></span>
+<span id="cb131-2"><a href="ch-anova.html#cb131-2" tabindex="-1"></a>colourgroups <span class="ot">&lt;-</span> <span class="fu">read.table</span>( <span class="st">&quot;data/kleurgroepen.txt&quot;</span>, </span>
+<span id="cb131-3"><a href="ch-anova.html#cb131-3" tabindex="-1"></a>                            <span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">stringsAsFactors=</span><span class="cn">TRUE</span> )</span></code></pre></div>
 <p>Examine whether the responses are normally distributed within each group, using
 the techniques from Part II of this textbook (especially
 §<a href="ch-probability-distributions.html#sec:isvarnormaldistributed">10.4</a>).</p>
@@ -1375,7 +1379,7 @@ the techniques from Part II of this textbook (especially
 for analysis of variance. The H0 which we are testing is:
 <span class="math inline">\(s^2_\textrm{red} = s^2_\textrm{grey} = s^2_\textrm{blue}\)</span>. We
 test this H0 using Bartlett’s test.</p>
-<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="ch-anova.html#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bartlett.test</span>( <span class="at">x=</span>colourgroups<span class="sc">$</span>score, <span class="at">g=</span>colourgroups<span class="sc">$</span>kleur )</span></code></pre></div>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="ch-anova.html#cb132-1" tabindex="-1"></a><span class="fu">bartlett.test</span>( <span class="at">x=</span>colourgroups<span class="sc">$</span>score, <span class="at">g=</span>colourgroups<span class="sc">$</span>kleur )</span></code></pre></div>
 <pre><code>## 
 ##  Bartlett test of homogeneity of variances
 ## 
@@ -1384,7 +1388,7 @@ test this H0 using Bartlett’s test.</p>
 </div>
 <div id="anova-2" class="section level4 hasAnchor" number="15.3.8.2">
 <h4><span class="header-section-number">15.3.8.2</span> ANOVA<a href="ch-anova.html#anova-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="ch-anova.html#cb134-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>( <span class="fu">aov</span>( score<span class="sc">~</span>kleur, <span class="at">data=</span>colourgroups) <span class="ot">-&gt;</span> m01 ) <span class="co"># see Table 15.3</span></span></code></pre></div>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="ch-anova.html#cb134-1" tabindex="-1"></a><span class="fu">summary</span>( <span class="fu">aov</span>( score<span class="sc">~</span>kleur, <span class="at">data=</span>colourgroups) <span class="ot">-&gt;</span> m01 ) <span class="co"># see Table 15.3</span></span></code></pre></div>
 <pre><code>##             Df Sum Sq Mean Sq F value   Pr(&gt;F)    
 ## kleur        2  14.50   7.248   9.356 0.000436 ***
 ## Residuals   42  32.54   0.775                     
@@ -1393,16 +1397,16 @@ test this H0 using Bartlett’s test.</p>
 </div>
 <div id="R:omega-square" class="section level4 hasAnchor" number="15.3.8.3">
 <h4><span class="header-section-number">15.3.8.3</span> effect size<a href="ch-anova.html#R:omega-square" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="ch-anova.html#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="co"># own function to calculate omega2, see comparison (15.7) in the main text,</span></span>
-<span id="cb136-2"><a href="ch-anova.html#cb136-2" aria-hidden="true" tabindex="-1"></a><span class="co"># for effect called `term` in summary(`model`)</span></span>
-<span id="cb136-3"><a href="ch-anova.html#cb136-3" aria-hidden="true" tabindex="-1"></a>omegasq <span class="ot">&lt;-</span> <span class="cf">function</span> ( model, term ) {   </span>
-<span id="cb136-4"><a href="ch-anova.html#cb136-4" aria-hidden="true" tabindex="-1"></a>     mtab <span class="ot">&lt;-</span> <span class="fu">anova</span>(model)</span>
-<span id="cb136-5"><a href="ch-anova.html#cb136-5" aria-hidden="true" tabindex="-1"></a>     rterm <span class="ot">&lt;-</span> <span class="fu">dim</span>(mtab)[<span class="dv">1</span>] <span class="co"># resid term</span></span>
-<span id="cb136-6"><a href="ch-anova.html#cb136-6" aria-hidden="true" tabindex="-1"></a>     <span class="fu">return</span>( (mtab[term,<span class="dv">2</span>]<span class="sc">-</span>mtab[term,<span class="dv">1</span>]<span class="sc">*</span>mtab[rterm,<span class="dv">3</span>]) <span class="sc">/</span> </span>
-<span id="cb136-7"><a href="ch-anova.html#cb136-7" aria-hidden="true" tabindex="-1"></a>             (mtab[rterm,<span class="dv">3</span>]<span class="sc">+</span><span class="fu">sum</span>(mtab[,<span class="dv">2</span>])) )</span>
-<span id="cb136-8"><a href="ch-anova.html#cb136-8" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb136-9"><a href="ch-anova.html#cb136-9" aria-hidden="true" tabindex="-1"></a><span class="co"># variable kleur=colour is the term to inspect</span></span>
-<span id="cb136-10"><a href="ch-anova.html#cb136-10" aria-hidden="true" tabindex="-1"></a><span class="fu">omegasq</span>( m01, <span class="st">&quot;kleur&quot;</span> ) <span class="co"># call function with 2 arguments</span></span></code></pre></div>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="ch-anova.html#cb136-1" tabindex="-1"></a><span class="co"># own function to calculate omega2, see comparison (15.7) in the main text,</span></span>
+<span id="cb136-2"><a href="ch-anova.html#cb136-2" tabindex="-1"></a><span class="co"># for effect called `term` in summary(`model`)</span></span>
+<span id="cb136-3"><a href="ch-anova.html#cb136-3" tabindex="-1"></a>omegasq <span class="ot">&lt;-</span> <span class="cf">function</span> ( model, term ) {   </span>
+<span id="cb136-4"><a href="ch-anova.html#cb136-4" tabindex="-1"></a>     mtab <span class="ot">&lt;-</span> <span class="fu">anova</span>(model)</span>
+<span id="cb136-5"><a href="ch-anova.html#cb136-5" tabindex="-1"></a>     rterm <span class="ot">&lt;-</span> <span class="fu">dim</span>(mtab)[<span class="dv">1</span>] <span class="co"># resid term</span></span>
+<span id="cb136-6"><a href="ch-anova.html#cb136-6" tabindex="-1"></a>     <span class="fu">return</span>( (mtab[term,<span class="dv">2</span>]<span class="sc">-</span>mtab[term,<span class="dv">1</span>]<span class="sc">*</span>mtab[rterm,<span class="dv">3</span>]) <span class="sc">/</span> </span>
+<span id="cb136-7"><a href="ch-anova.html#cb136-7" tabindex="-1"></a>             (mtab[rterm,<span class="dv">3</span>]<span class="sc">+</span><span class="fu">sum</span>(mtab[,<span class="dv">2</span>])) )</span>
+<span id="cb136-8"><a href="ch-anova.html#cb136-8" tabindex="-1"></a>}</span>
+<span id="cb136-9"><a href="ch-anova.html#cb136-9" tabindex="-1"></a><span class="co"># variable kleur=colour is the term to inspect</span></span>
+<span id="cb136-10"><a href="ch-anova.html#cb136-10" tabindex="-1"></a><span class="fu">omegasq</span>( m01, <span class="st">&quot;kleur&quot;</span> ) <span class="co"># call function with 2 arguments</span></span></code></pre></div>
 <pre><code>## [1] 0.2708136</code></pre>
 </div>
 <div id="planned-comparison-2" class="section level4 hasAnchor" number="15.3.8.4">
@@ -1410,19 +1414,19 @@ test this H0 using Bartlett’s test.</p>
 <p>When specifying the contrasts, we have to take into account the
 <em>alphabetic</em> ordering of the conditions: <em>blue, grey, red</em>.
 (Note that the predictor itself is named <em>kleur</em> which is the Dutch term for colour of the group).</p>
-<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="ch-anova.html#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="co"># make matrix of two orthogonal contrasts (per column, not per row) </span></span>
-<span id="cb138-2"><a href="ch-anova.html#cb138-2" aria-hidden="true" tabindex="-1"></a>conmat <span class="ot">&lt;-</span> <span class="fu">matrix</span>( <span class="fu">c</span>(.<span class="dv">5</span>,.<span class="dv">5</span>,<span class="sc">-</span><span class="dv">1</span>, <span class="sc">+</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">0</span>), <span class="at">byrow=</span>F, <span class="at">nrow=</span><span class="dv">3</span> )</span>
-<span id="cb138-3"><a href="ch-anova.html#cb138-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dimnames</span>(conmat)[[<span class="dv">2</span>]] <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;.R.GB&quot;</span>,<span class="st">&quot;.0G.B&quot;</span>) <span class="co"># (1) R vs G+B, (2) G vs B </span></span>
-<span id="cb138-4"><a href="ch-anova.html#cb138-4" aria-hidden="true" tabindex="-1"></a><span class="fu">contrasts</span>(colourgroups<span class="sc">$</span>kleur) <span class="ot">&lt;-</span> conmat <span class="co"># assign contrasts to factor</span></span>
-<span id="cb138-5"><a href="ch-anova.html#cb138-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>( <span class="fu">aov</span>( score<span class="sc">~</span>kleur, <span class="at">data=</span>colourgroups) <span class="ot">-&gt;</span> m02 ) </span></code></pre></div>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="ch-anova.html#cb138-1" tabindex="-1"></a><span class="co"># make matrix of two orthogonal contrasts (per column, not per row) </span></span>
+<span id="cb138-2"><a href="ch-anova.html#cb138-2" tabindex="-1"></a>conmat <span class="ot">&lt;-</span> <span class="fu">matrix</span>( <span class="fu">c</span>(.<span class="dv">5</span>,.<span class="dv">5</span>,<span class="sc">-</span><span class="dv">1</span>, <span class="sc">+</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">0</span>), <span class="at">byrow=</span>F, <span class="at">nrow=</span><span class="dv">3</span> )</span>
+<span id="cb138-3"><a href="ch-anova.html#cb138-3" tabindex="-1"></a><span class="fu">dimnames</span>(conmat)[[<span class="dv">2</span>]] <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;.R.GB&quot;</span>,<span class="st">&quot;.0G.B&quot;</span>) <span class="co"># (1) R vs G+B, (2) G vs B </span></span>
+<span id="cb138-4"><a href="ch-anova.html#cb138-4" tabindex="-1"></a><span class="fu">contrasts</span>(colourgroups<span class="sc">$</span>kleur) <span class="ot">&lt;-</span> conmat <span class="co"># assign contrasts to factor</span></span>
+<span id="cb138-5"><a href="ch-anova.html#cb138-5" tabindex="-1"></a><span class="fu">summary</span>( <span class="fu">aov</span>( score<span class="sc">~</span>kleur, <span class="at">data=</span>colourgroups) <span class="ot">-&gt;</span> m02 ) </span></code></pre></div>
 <pre><code>##             Df Sum Sq Mean Sq F value   Pr(&gt;F)    
 ## kleur        2  14.50   7.248   9.356 0.000436 ***
 ## Residuals   42  32.54   0.775                     
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="ch-anova.html#cb140-1" aria-hidden="true" tabindex="-1"></a><span class="co"># output is necessary for omega2</span></span>
-<span id="cb140-2"><a href="ch-anova.html#cb140-2" aria-hidden="true" tabindex="-1"></a><span class="co"># see https://blogs.uoregon.edu/rclub/2015/11/03/anova-contrasts-in-r/</span></span>
-<span id="cb140-3"><a href="ch-anova.html#cb140-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary.aov</span>( m02, <span class="at">split=</span><span class="fu">list</span>(<span class="at">kleur=</span><span class="fu">list</span>(<span class="dv">1</span>,<span class="dv">2</span>)) )</span></code></pre></div>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="ch-anova.html#cb140-1" tabindex="-1"></a><span class="co"># output is necessary for omega2</span></span>
+<span id="cb140-2"><a href="ch-anova.html#cb140-2" tabindex="-1"></a><span class="co"># see https://blogs.uoregon.edu/rclub/2015/11/03/anova-contrasts-in-r/</span></span>
+<span id="cb140-3"><a href="ch-anova.html#cb140-3" tabindex="-1"></a><span class="fu">summary.aov</span>( m02, <span class="at">split=</span><span class="fu">list</span>(<span class="at">kleur=</span><span class="fu">list</span>(<span class="dv">1</span>,<span class="dv">2</span>)) )</span></code></pre></div>
 <pre><code>##             Df Sum Sq Mean Sq F value   Pr(&gt;F)    
 ## kleur        2  14.50   7.248   9.356 0.000436 ***
 ##   kleur: C1  1  14.31  14.308  18.470 0.000100 ***
@@ -1431,14 +1435,14 @@ test this H0 using Bartlett’s test.</p>
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p>When we have planned contrasts, the previously constructed function <code>omegasq</code> can no longer be used (and neither can the previously provided formula). We now have to calculate the <span class="math inline">\(\omega^2\)</span> by hand using the output from the summary of model <code>m02</code>:</p>
-<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="ch-anova.html#cb142-1" aria-hidden="true" tabindex="-1"></a>(<span class="fl">14.308</span><span class="dv">-1</span><span class="sc">*</span><span class="fl">0.775</span>)<span class="sc">/</span>(<span class="fl">0.775+14.308+0.19+32.54</span>) <span class="co"># 0.2830402</span></span></code></pre></div>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="ch-anova.html#cb142-1" tabindex="-1"></a>(<span class="fl">14.308</span><span class="dv">-1</span><span class="sc">*</span><span class="fl">0.775</span>)<span class="sc">/</span>(<span class="fl">0.775+14.308+0.19+32.54</span>) <span class="co"># 0.2830402</span></span></code></pre></div>
 <pre><code>## [1] 0.2830402</code></pre>
-<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="ch-anova.html#cb144-1" aria-hidden="true" tabindex="-1"></a>(<span class="fl">0.188</span><span class="dv">-1</span><span class="sc">*</span><span class="fl">0.775</span>)<span class="sc">/</span>(<span class="fl">0.775+14.308+0.19+32.54</span>) <span class="co"># rounded off 0.00</span></span></code></pre></div>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="ch-anova.html#cb144-1" tabindex="-1"></a>(<span class="fl">0.188</span><span class="dv">-1</span><span class="sc">*</span><span class="fl">0.775</span>)<span class="sc">/</span>(<span class="fl">0.775+14.308+0.19+32.54</span>) <span class="co"># rounded off 0.00</span></span></code></pre></div>
 <pre><code>## [1] -0.012277</code></pre>
 </div>
 <div id="r-post-hoc-comparisons" class="section level4 hasAnchor" number="15.3.8.5">
 <h4><span class="header-section-number">15.3.8.5</span> post hoc comparisons<a href="ch-anova.html#r-post-hoc-comparisons" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="ch-anova.html#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="fu">TukeyHSD</span>(m02)</span></code></pre></div>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="ch-anova.html#cb146-1" tabindex="-1"></a><span class="fu">TukeyHSD</span>(m02)</span></code></pre></div>
 <pre><code>##   Tukey multiple comparisons of means
 ##     95% family-wise confidence level
 ## 
@@ -1481,13 +1485,13 @@ of two or more factors. We will use the following example for an intuitive expla
 <p><em>Example 15.5</em>:
 Pupils and students need to read a lot of texts (such as this one!).
 Presumably, a textbook text is easier to read and comprehend, if the text is enriched with elements that mark its structure, such as sub-headings, cue words (e.g., <em>however</em>, <em>because</em>), etc.
-<span class="citation">Van Dooren, Van den Bergh, and Evers-Vermeul (<a href="#ref-DBE12" role="doc-biblioref">2012</a>)</span> investigated whether study texts with such structural markers were easier to comprehend than alternative versions of the same texts without those markers. Hence the first factor is the version, with markers present or absent in the text.</p>
+<span class="citation">Van Dooren, Van den Bergh, and Evers-Vermeul (<a href="#ref-DBE12">2012</a>)</span> investigated whether study texts with such structural markers were easier to comprehend than alternative versions of the same texts without those markers. Hence the first factor is the version, with markers present or absent in the text.</p>
 </blockquote>
 <blockquote>
 <p>The researchers also expect an effect of the reading skill of the participants. Weak readers will understand less of a text than strong readers. Hence the second factor is the type of reader, here categorized as ‘weak’, ‘average’ or ‘strong’.</p>
 </blockquote>
 <blockquote>
-<p>Moreover, the researchers also expect that weak readers will need the structure markers more than strong readers will, and that weak weak readers will benefit more from the markers than strong readers; “strong readers are able to read and understand texts, irrespective of the presence of structural markers” <span class="citation">(<a href="#ref-DBE12" role="doc-biblioref">Van Dooren, Van den Bergh, and Evers-Vermeul 2012, 33</a>, transl.HQ)</span>.
+<p>Moreover, the researchers also expect that weak readers will need the structure markers more than strong readers will, and that weak weak readers will benefit more from the markers than strong readers; “strong readers are able to read and understand texts, irrespective of the presence of structural markers” <span class="citation">(<a href="#ref-DBE12">Van Dooren, Van den Bergh, and Evers-Vermeul 2012, 33</a>, transl.HQ)</span>.
 Hence the researchers also expect an <strong>interaction</strong> between the two main factors: the differences between the versions will be different across the types of readers, or in other words, the differences between the reader types will be different across the versions of the texts.</p>
 </blockquote>
 <blockquote>
@@ -1676,23 +1680,23 @@ Also of interest is the finding that weak readers understand a text with markers
 <div id="preparation-5" class="section level4 hasAnchor" number="15.4.6.1">
 <h4><span class="header-section-number">15.4.6.1</span> preparation<a href="ch-anova.html#preparation-5" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The data for the example above are in <code>data/DBE2012.csv</code>.</p>
-<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="ch-anova.html#cb150-1" aria-hidden="true" tabindex="-1"></a>DBE2012 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">&quot;data/DBE2012.csv&quot;</span>)</span>
-<span id="cb150-2"><a href="ch-anova.html#cb150-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Versie: 1=with=met, 2=without=zonder structure markers</span></span>
-<span id="cb150-3"><a href="ch-anova.html#cb150-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Groep: 1=weak=zwak, 2=average=gemiddeld, 3=strong=sterk</span></span>
-<span id="cb150-4"><a href="ch-anova.html#cb150-4" aria-hidden="true" tabindex="-1"></a><span class="co"># ensure that Versie and Groep are factors, levels are in Dutch here</span></span>
-<span id="cb150-5"><a href="ch-anova.html#cb150-5" aria-hidden="true" tabindex="-1"></a>DBE2012<span class="sc">$</span>Versie <span class="ot">&lt;-</span> <span class="fu">factor</span>(DBE2012<span class="sc">$</span>Versie, <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;met&quot;</span>,<span class="st">&quot;zonder&quot;</span>) ) </span>
-<span id="cb150-6"><a href="ch-anova.html#cb150-6" aria-hidden="true" tabindex="-1"></a>DBE2012<span class="sc">$</span>Groep <span class="ot">&lt;-</span> <span class="fu">factor</span>(DBE2012<span class="sc">$</span>Groep, <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;zwak&quot;</span>,<span class="st">&quot;gemiddeld&quot;</span>,<span class="st">&quot;sterk&quot;</span>) )</span>
-<span id="cb150-7"><a href="ch-anova.html#cb150-7" aria-hidden="true" tabindex="-1"></a><span class="co"># DV: MCBiScore: number of comprehension questions (out of 10) </span></span>
-<span id="cb150-8"><a href="ch-anova.html#cb150-8" aria-hidden="true" tabindex="-1"></a><span class="co">#     that were answered correctly, from a biology text</span></span>
-<span id="cb150-9"><a href="ch-anova.html#cb150-9" aria-hidden="true" tabindex="-1"></a><span class="co"># make table of means, see Figure 15.3</span></span>
-<span id="cb150-10"><a href="ch-anova.html#cb150-10" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>( DBE2012, <span class="fu">tapply</span>( MCBiScore, <span class="fu">list</span>(Versie,Groep), mean ))</span></code></pre></div>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="ch-anova.html#cb150-1" tabindex="-1"></a>DBE2012 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">&quot;data/DBE2012.csv&quot;</span>)</span>
+<span id="cb150-2"><a href="ch-anova.html#cb150-2" tabindex="-1"></a><span class="co"># Versie: 1=with=met, 2=without=zonder structure markers</span></span>
+<span id="cb150-3"><a href="ch-anova.html#cb150-3" tabindex="-1"></a><span class="co"># Groep: 1=weak=zwak, 2=average=gemiddeld, 3=strong=sterk</span></span>
+<span id="cb150-4"><a href="ch-anova.html#cb150-4" tabindex="-1"></a><span class="co"># ensure that Versie and Groep are factors, levels are in Dutch here</span></span>
+<span id="cb150-5"><a href="ch-anova.html#cb150-5" tabindex="-1"></a>DBE2012<span class="sc">$</span>Versie <span class="ot">&lt;-</span> <span class="fu">factor</span>(DBE2012<span class="sc">$</span>Versie, <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;met&quot;</span>,<span class="st">&quot;zonder&quot;</span>) ) </span>
+<span id="cb150-6"><a href="ch-anova.html#cb150-6" tabindex="-1"></a>DBE2012<span class="sc">$</span>Groep <span class="ot">&lt;-</span> <span class="fu">factor</span>(DBE2012<span class="sc">$</span>Groep, <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;zwak&quot;</span>,<span class="st">&quot;gemiddeld&quot;</span>,<span class="st">&quot;sterk&quot;</span>) )</span>
+<span id="cb150-7"><a href="ch-anova.html#cb150-7" tabindex="-1"></a><span class="co"># DV: MCBiScore: number of comprehension questions (out of 10) </span></span>
+<span id="cb150-8"><a href="ch-anova.html#cb150-8" tabindex="-1"></a><span class="co">#     that were answered correctly, from a biology text</span></span>
+<span id="cb150-9"><a href="ch-anova.html#cb150-9" tabindex="-1"></a><span class="co"># make table of means, see Figure 15.3</span></span>
+<span id="cb150-10"><a href="ch-anova.html#cb150-10" tabindex="-1"></a><span class="fu">with</span>( DBE2012, <span class="fu">tapply</span>( MCBiScore, <span class="fu">list</span>(Versie,Groep), mean ))</span></code></pre></div>
 <pre><code>##            zwak gemiddeld    sterk
 ## met    6.800000  6.653846 8.222222
 ## zonder 2.666667  4.642857 7.571429</code></pre>
 </div>
 <div id="anova-5" class="section level4 hasAnchor" number="15.4.6.2">
 <h4><span class="header-section-number">15.4.6.2</span> ANOVA<a href="ch-anova.html#anova-5" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="ch-anova.html#cb152-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>( <span class="fu">aov</span>(MCBiScore<span class="sc">~</span>Versie<span class="sc">*</span>Groep, <span class="at">data=</span>DBE2012) <span class="ot">-&gt;</span> DBE2012.m1 )</span></code></pre></div>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="ch-anova.html#cb152-1" tabindex="-1"></a><span class="fu">summary</span>( <span class="fu">aov</span>(MCBiScore<span class="sc">~</span>Versie<span class="sc">*</span>Groep, <span class="at">data=</span>DBE2012) <span class="ot">-&gt;</span> DBE2012.m1 )</span></code></pre></div>
 <pre><code>##              Df Sum Sq Mean Sq F value   Pr(&gt;F)    
 ## Versie        1 121.18  121.18   84.64 1.59e-14 ***
 ## Groep         2  81.41   40.71   28.43 2.98e-10 ***
@@ -1706,17 +1710,17 @@ Also of interest is the finding that weak readers understand a text with markers
 <h4><span class="header-section-number">15.4.6.3</span> Effect size<a href="ch-anova.html#effectsize" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>In order to assess effect size, we will use the previously programmed function <code>omegasq</code>
 (§<a href="ch-anova.html#R:omega-square">15.3.8.3</a>):</p>
-<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="ch-anova.html#cb154-1" aria-hidden="true" tabindex="-1"></a><span class="fu">omegasq</span>(DBE2012.m1, <span class="st">&quot;Versie&quot;</span>)        <span class="co"># [1] 0.33</span></span></code></pre></div>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="ch-anova.html#cb154-1" tabindex="-1"></a><span class="fu">omegasq</span>(DBE2012.m1, <span class="st">&quot;Versie&quot;</span>)        <span class="co"># [1] 0.33</span></span></code></pre></div>
 <pre><code>## [1] 0.3319423</code></pre>
-<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="ch-anova.html#cb156-1" aria-hidden="true" tabindex="-1"></a><span class="fu">omegasq</span>(DBE2012.m1, <span class="st">&quot;Groep&quot;</span>)         <span class="co"># [1] 0.22</span></span></code></pre></div>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="ch-anova.html#cb156-1" tabindex="-1"></a><span class="fu">omegasq</span>(DBE2012.m1, <span class="st">&quot;Groep&quot;</span>)         <span class="co"># [1] 0.22</span></span></code></pre></div>
 <pre><code>## [1] 0.2177437</code></pre>
-<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="ch-anova.html#cb158-1" aria-hidden="true" tabindex="-1"></a><span class="fu">omegasq</span>(DBE2012.m1, <span class="st">&quot;Versie:Groep&quot;</span>)  <span class="co"># [1] 0.08</span></span></code></pre></div>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="ch-anova.html#cb158-1" tabindex="-1"></a><span class="fu">omegasq</span>(DBE2012.m1, <span class="st">&quot;Versie:Groep&quot;</span>)  <span class="co"># [1] 0.08</span></span></code></pre></div>
 <pre><code>## [1] 0.07727868</code></pre>
 <p>These results too differ slighly from those reported in the main text above, because R computes the sums of squares somewhat differently.</p>
 </div>
 <div id="post-hoc-tests" class="section level4 hasAnchor" number="15.4.6.4">
 <h4><span class="header-section-number">15.4.6.4</span> post-hoc tests<a href="ch-anova.html#post-hoc-tests" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="ch-anova.html#cb160-1" aria-hidden="true" tabindex="-1"></a><span class="fu">TukeyHSD</span>(<span class="at">x=</span>DBE2012.m1, <span class="at">which=</span><span class="st">&quot;Versie:Groep&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="ch-anova.html#cb160-1" tabindex="-1"></a><span class="fu">TukeyHSD</span>(<span class="at">x=</span>DBE2012.m1, <span class="at">which=</span><span class="st">&quot;Versie:Groep&quot;</span>)</span></code></pre></div>
 <pre><code>##   Tukey multiple comparisons of means
 ##     95% family-wise confidence level
 ## 
@@ -1766,9 +1770,6 @@ Olejnik, Stephen, and James Algina. 2003. <span>“Generalized Eta and Omega Squ
 </div>
 <div id="ref-Quene08" class="csl-entry">
 Quené, Hugo. 2008. <span>“Multilevel Modeling of Between-Speaker and Within-Speaker Variation in Spontaneous Speech Tempo.”</span> <em>Journal of the Acoustical Society of America</em> 123 (2): 1104–13.
-</div>
-<div id="ref-R-hqmisc" class="csl-entry">
-———. 2022. <em>Hqmisc: Miscellaneous Convenience Functions and Dataset</em>.
 </div>
 <div id="ref-DBE12" class="csl-entry">
 Van Dooren, Wendy, Huub Van den Bergh, and Jacqueline Evers-Vermeul. 2012. <span>“Leesbare Teksten? Over de Invloed van Structuurmarkeringen Op Het Tekstbegrip En Tekstwaardering van Zwakke En Sterke Lezers.”</span> <em>Levende Talen Tijdschrift</em> 13 (4): 31–38. <a href="https://lt-tijdschriften.nl/ojs/index.php/ltt/article/view/152">https://lt-tijdschriften.nl/ojs/index.php/ltt/article/view/152</a>.
@@ -1853,7 +1854,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

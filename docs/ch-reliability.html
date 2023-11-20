@@ -5,19 +5,19 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>12 Reliability | Quantitative Methods and Statistics</title>
-  <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
-  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+  <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TW2V17002, TW2V19002, TL2V23004), Dept Languages Literature and Communication, Utrecht University, the Netherlands." />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
   <meta property="og:title" content="12 Reliability | Quantitative Methods and Statistics" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
+  <meta property="og:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TW2V17002, TW2V19002, TL2V23004), Dept Languages Literature and Communication, Utrecht University, the Netherlands." />
   <meta name="github-repo" content="rstudio/QMS-EN" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="12 Reliability | Quantitative Methods and Statistics" />
   
-  <meta name="twitter:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
+  <meta name="twitter:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TW2V17002, TW2V19002, TL2V23004), Dept Languages Literature and Communication, Utrecht University, the Netherlands." />
   
 
 
@@ -90,7 +90,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -103,7 +103,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -117,6 +117,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
@@ -643,13 +647,13 @@ the relatively high costs and relatively low benefits.</p>
 <hr />
 <blockquote>
 <p><em>Example 12.3:</em>
-<span class="citation">Lata-Caneda et al. (<a href="#ref-Lata09" role="doc-biblioref">2009</a>)</span> developed
+<span class="citation">Lata-Caneda et al. (<a href="#ref-Lata09">2009</a>)</span> developed
 a Spanish-language questionnaire consisting of 39 questions, intended
 for aphasia patients to determine their quality of life. The quality of life
 is described as “the patient perception about, either the
 effects of a given disease, or the application of a certain treatment on
 different aspects of life, especially regarding its consequences on the
-physical, emotional and social welfare” <span class="citation">(<a href="#ref-Lata09" role="doc-biblioref">Lata-Caneda et al. 2009, 379</a>)</span>. The new questionnaire
+physical, emotional and social welfare” <span class="citation">(<a href="#ref-Lata09">Lata-Caneda et al. 2009, 379</a>)</span>. The new questionnaire
 was taken twice with a sample of 23
 Spanish-language patients with aphasia as a result of cerebral haemorrhage.
 The reported test-retest stability for this questionnaire was
@@ -817,14 +821,14 @@ coefficient <span class="math inline">\(\rho\)</span> as the correlation between
 with the same instrument.</p>
 <p>Thirdly, reliability can be interpreted as the loss
 of efficiency in the estimation of the mean score <span class="math inline">\(\overline{X}\)</span>
-<span class="citation">(<a href="#ref-Ferg89" role="doc-biblioref">Ferguson and Takane 1989, 474</a>)</span>. Imagine that we want to establish the mean score of a group of
+<span class="citation">(<a href="#ref-Ferg89">Ferguson and Takane 1989, 474</a>)</span>. Imagine that we want to establish the mean score of a group of
 <span class="math inline">\(n=50\)</span> participants, and for this we use a measurement instrument
 with reliability <span class="math inline">\(\rho_{xx}=0.8\)</span>. In this case, there is uncertainty in the estimation,
 which come from the chance deviations <span class="math inline">\(e_i\)</span> in the measurements.
 If the measurement instrument were perfectly reliable (<span class="math inline">\(\rho=1\)</span>), we would only
 need <span class="math inline">\(\rho_{xx}\times n = 0.8\times50=40\)</span> participants for the same accuracy in
 the estimation of <span class="math inline">\(\overline{X}\)</span>
-<span class="citation">(<a href="#ref-Ferg89" role="doc-biblioref">Ferguson and Takane 1989, 474</a>)</span>. As such, we have, as it were, played away 10 participants
+<span class="citation">(<a href="#ref-Ferg89">Ferguson and Takane 1989, 474</a>)</span>. As such, we have, as it were, played away 10 participants
 to compensate for the unreliability of the measurement instrument.</p>
 <p>Above, we spoke about measurements with the help of measurement instruments,
 and below we will talk about ratings done
@@ -986,7 +990,7 @@ measurement errors of the two raters tend to cancel each other out
 (see formula <a href="ch-reliability.html#eq:normal-error">(12.2)</a>).
 Reread the last two sentences carefully.</p>
 <p>Reliability is often expressed as <em>Cronbach’s Alpha</em>
-<span class="citation">(<a href="#ref-Cort93" role="doc-biblioref">Cortina 1993</a>)</span>. This number is a measure for the consistency or homogeneity
+<span class="citation">(<a href="#ref-Cort93">Cortina 1993</a>)</span>. This number is a measure for the consistency or homogeneity
 of the measurements, and thus also indicates the degree to which the two
 raters have rated the same construct. The simplest definition is
 based on <span class="math inline">\(\overline{r}\)</span>, the mean correlation between
@@ -1002,11 +1006,11 @@ as Cronbach’s Alpha but also as the Spearman-Brown formula
 or the Kuder-Richardson formula 20 (KR=20)<a href="#fn32" class="footnote-ref" id="fnref32"><sup>32</sup></a>.</p>
 <p>The value of Cronbach’s Alpha found is a bit tricky to evaluate
 since it is also dependent on the number of instruments or raters or
-questions in the test <span class="citation">(<a href="#ref-Cort93" role="doc-biblioref">Cortina 1993</a>; <a href="#ref-Glin01" role="doc-biblioref">Gliner, Morgan, and Harmon 2001</a>)</span>. For academic research,
+questions in the test <span class="citation">(<a href="#ref-Cort93">Cortina 1993</a>; <a href="#ref-Glin01">Gliner, Morgan, and Harmon 2001</a>)</span>. For academic research,
 a lower limit of 0.75 or 0.80 is often used. If the result of the test or measurement
 is of great importance to the person concerned, as in the case of medical or
 psychological patient diagnosis, or when recruiting and selecting personnel, then
-an even higher reliability of <span class="math inline">\(\alpha=.9\)</span> is recommended <span class="citation">(<a href="#ref-Glin01" role="doc-biblioref">Gliner, Morgan, and Harmon 2001</a>)</span>.</p>
+an even higher reliability of <span class="math inline">\(\alpha=.9\)</span> is recommended <span class="citation">(<a href="#ref-Glin01">Gliner, Morgan, and Harmon 2001</a>)</span>.</p>
 <p>If we want to increase reliability to <span class="math inline">\(\alpha=0.9\)</span> or higher, then
 we can achieve that in two ways. The first way is to expand the
 number of raters. If we combine more raters in the total score,
@@ -1140,10 +1144,10 @@ Under “Additional Options”, check <code>Report significance</code>, <code>Fl
 <p>For a reliability analysis of <span class="math inline">\(k=3\)</span> language proficiency
 judgements in Table <a href="ch-reliability.html#tab:reliability">12.1</a>:<br />
 </p>
-<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="ch-reliability.html#cb96-1" aria-hidden="true" tabindex="-1"></a>raters <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="at">file=</span><span class="st">&quot;data/beoordelaars.txt&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>)</span>
-<span id="cb96-2"><a href="ch-reliability.html#cb96-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">require</span>(psych)) { <span class="co"># for psych::alpha</span></span>
-<span id="cb96-3"><a href="ch-reliability.html#cb96-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">alpha</span>( raters[,<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>] ) <span class="co"># columns 2 to 4</span></span>
-<span id="cb96-4"><a href="ch-reliability.html#cb96-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="ch-reliability.html#cb96-1" tabindex="-1"></a>raters <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="at">file=</span><span class="st">&quot;data/beoordelaars.txt&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>)</span>
+<span id="cb96-2"><a href="ch-reliability.html#cb96-2" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">require</span>(psych)) { <span class="co"># for psych::alpha</span></span>
+<span id="cb96-3"><a href="ch-reliability.html#cb96-3" tabindex="-1"></a>  <span class="fu">alpha</span>( raters[,<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>] ) <span class="co"># columns 2 to 4</span></span>
+<span id="cb96-4"><a href="ch-reliability.html#cb96-4" tabindex="-1"></a>}</span></code></pre></div>
 <pre><code>## Number of categories should be increased  in order to count frequencies.</code></pre>
 <pre><code>## 
 ## Reliability analysis   
@@ -1175,7 +1179,7 @@ improve (from 0.68 to 0.84). Over all three raters,
 <code>average_r=0.41</code>.</p>
 <p>The output does contain the average inter-item correlation but not the correlations among all the individual items or raters.
 We need to obtain these correlations explicitly (see §<a href="ch-correlation-regression.html#sec:Pearson">11.2</a>):</p>
-<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="ch-reliability.html#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>( raters[ ,<span class="fu">c</span>(<span class="st">&quot;B1&quot;</span>,<span class="st">&quot;B2&quot;</span>,<span class="st">&quot;B3&quot;</span>) ] ) <span class="co"># explicit column names</span></span></code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="ch-reliability.html#cb99-1" tabindex="-1"></a><span class="fu">cor</span>( raters[ ,<span class="fu">c</span>(<span class="st">&quot;B1&quot;</span>,<span class="st">&quot;B2&quot;</span>,<span class="st">&quot;B3&quot;</span>) ] ) <span class="co"># explicit column names</span></span></code></pre></div>
 <pre><code>##           B1         B2         B3
 ## B1 1.0000000 0.74494845 0.40979738
 ## B2 0.7449484 1.00000000 0.08845909
@@ -1282,7 +1286,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

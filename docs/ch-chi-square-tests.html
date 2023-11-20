@@ -5,19 +5,19 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>16 Chi-square-tests | Quantitative Methods and Statistics</title>
-  <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
-  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+  <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TW2V17002, TW2V19002, TL2V23004), Dept Languages Literature and Communication, Utrecht University, the Netherlands." />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
   <meta property="og:title" content="16 Chi-square-tests | Quantitative Methods and Statistics" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
+  <meta property="og:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TW2V17002, TW2V19002, TL2V23004), Dept Languages Literature and Communication, Utrecht University, the Netherlands." />
   <meta name="github-repo" content="rstudio/QMS-EN" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="16 Chi-square-tests | Quantitative Methods and Statistics" />
   
-  <meta name="twitter:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TL2V17002), BA Linguistics, Utrecht University, the Netherlands." />
+  <meta name="twitter:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TW2V17002, TW2V19002, TL2V23004), Dept Languages Literature and Communication, Utrecht University, the Netherlands." />
   
 
 
@@ -90,7 +90,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -103,7 +103,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -117,6 +117,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
@@ -728,13 +732,13 @@ frequencies again.</p></li>
   \tag{16.1}
     \chi^2 = \sum \frac{(O-E)^2}{E}
 \end{equation}\]</span>
-in which <span class="math inline">\(O\)</span> and <span class="math inline">\(E\)</span> indicate the observed and expected numbers of observations for each cell of the frequency table <span class="citation">(<a href="#ref-Ferg89" role="doc-biblioref">Ferguson and Takane 1989</a>)</span>. The expected
+in which <span class="math inline">\(O\)</span> and <span class="math inline">\(E\)</span> indicate the observed and expected numbers of observations for each cell of the frequency table <span class="citation">(<a href="#ref-Ferg89">Ferguson and Takane 1989</a>)</span>. The expected
 numbers might also be rational numbers (e.g. <span class="math inline">\(45/6\)</span> for the 6 possible
 outcomes of an honest die, if we throw
 <span class="math inline">\(45\times\)</span>). The larger the difference <span class="math inline">\((O-E)\)</span> in one or several cells,
 the larger also <span class="math inline">\(\chi^2\)</span> will be (see below). Due to squaring, the test
 statistic <span class="math inline">\(\chi^2\)</span> is always null or positive, and never negative
-<span class="citation">(<a href="#ref-Ferg89" role="doc-biblioref">Ferguson and Takane 1989</a>)</span>.</p>
+<span class="citation">(<a href="#ref-Ferg89">Ferguson and Takane 1989</a>)</span>.</p>
 <p>The probability distribution of the test statistic <span class="math inline">\(\chi^2\)</span> is determined by the number of degrees of freedom (see §<a href="ch-testing.html#sec:ttest-freedomdegrees">13.2.1</a> for explanation of this concept).
 For a <span class="math inline">\(\chi^2\)</span>-test with one nominal variable (“goodness of fit”), the number of degrees of freedom must be equal to the number of cells minus 1. For a <span class="math inline">\(\chi^2\)</span>-test with multiple samples (homogeneity) and/or with two variables (correlations), with respectively <span class="math inline">\(k\)</span> and <span class="math inline">\(m\)</span> categories, the number of degrees of freedom is equal to <span class="math inline">\((k-1)\times(m-1)\)</span>.</p>
 <p>For each cell of the frequency table, in row <span class="math inline">\(i\)</span> and column <span class="math inline">\(j\)</span>, we can also compute the raw residual:
@@ -743,7 +747,7 @@ For a <span class="math inline">\(\chi^2\)</span>-test with one nominal variable
   e_{ij} = \frac{(O_{ij}-E_{ij})}{\sqrt{E_{ij}}}
 \end{equation}\]</span>
 If we square these raw residuals and then sum the squares, the result is the <span class="math inline">\(\chi^2\)</span> test statistic given in Eq.<a href="ch-chi-square-tests.html#eq:chisquared">(16.1)</a> above.</p>
-<p>It is more insightful to compute the <em>standardized</em> residual for each cell of the frequency table <span class="citation">(<a href="#ref-Agre07" role="doc-biblioref">Agresti 2007, 38</a>)</span>. The standardization means that the standard error of the residuals is taken into account (by using row totals <span class="math inline">\(R_i\)</span>, column totals <span class="math inline">\(C_j\)</span>, and the grand total <span class="math inline">\(N\)</span>):
+<p>It is more insightful to compute the <em>standardized</em> residual for each cell of the frequency table <span class="citation">(<a href="#ref-Agre07">Agresti 2007, 38</a>)</span>. The standardization means that the standard error of the residuals is taken into account (by using row totals <span class="math inline">\(R_i\)</span>, column totals <span class="math inline">\(C_j\)</span>, and the grand total <span class="math inline">\(N\)</span>):
 <span class="math display" id="eq:chi2-stdresidu">\[\begin{equation}
   \tag{16.3}
   e_{ij} = \frac{(O_{ij}-E_{ij})}{\sqrt{E_{ij}\times(1-\frac{R_i}{N})\times(1-\frac{C_j}{N})}}
@@ -901,18 +905,18 @@ Open the <code>Cells</code> section bar, and check the option <code>Expected cou
 <h2><span class="header-section-number">16.9</span> R<a href="ch-chi-square-tests.html#r-17" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="goodness-of-fit-testing-2" class="section level3 hasAnchor" number="16.9.1">
 <h3><span class="header-section-number">16.9.1</span> goodness of fit: testing<a href="ch-chi-square-tests.html#goodness-of-fit-testing-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="ch-chi-square-tests.html#cb172-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>( <span class="fu">c</span>( <span class="dv">14</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">1</span> ) ) <span class="ot">-&gt;</span> dobbel.chi2.htest <span class="co"># die §16.2</span></span>
-<span id="cb172-2"><a href="ch-chi-square-tests.html#cb172-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(dobbel.chi2.htest)</span></code></pre></div>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="ch-chi-square-tests.html#cb172-1" tabindex="-1"></a><span class="fu">chisq.test</span>( <span class="fu">c</span>( <span class="dv">14</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">1</span> ) ) <span class="ot">-&gt;</span> dobbel.chi2.htest <span class="co"># die §16.2</span></span>
+<span id="cb172-2"><a href="ch-chi-square-tests.html#cb172-2" tabindex="-1"></a><span class="fu">print</span>(dobbel.chi2.htest)</span></code></pre></div>
 <pre><code>## 
 ##  Chi-squared test for given probabilities
 ## 
 ## data:  c(14, 9, 11, 10, 15, 1)
 ## X-squared = 12.4, df = 5, p-value = 0.0297</code></pre>
-<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="ch-chi-square-tests.html#cb174-1" aria-hidden="true" tabindex="-1"></a>dobbel.chi2.htest<span class="sc">$</span>residuals <span class="co"># raw residuals</span></span></code></pre></div>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="ch-chi-square-tests.html#cb174-1" tabindex="-1"></a>dobbel.chi2.htest<span class="sc">$</span>residuals <span class="co"># raw residuals</span></span></code></pre></div>
 <pre><code>## [1]  1.2649111 -0.3162278  0.3162278  0.0000000  1.5811388 -2.8460499</code></pre>
-<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="ch-chi-square-tests.html#cb176-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>( (dobbel.chi2.htest<span class="sc">$</span>residuals)<span class="sc">^</span><span class="dv">2</span> ) <span class="co"># chi2 = sum of sq of raw resid</span></span></code></pre></div>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="ch-chi-square-tests.html#cb176-1" tabindex="-1"></a><span class="fu">sum</span>( (dobbel.chi2.htest<span class="sc">$</span>residuals)<span class="sc">^</span><span class="dv">2</span> ) <span class="co"># chi2 = sum of sq of raw resid</span></span></code></pre></div>
 <pre><code>## [1] 12.4</code></pre>
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="ch-chi-square-tests.html#cb178-1" aria-hidden="true" tabindex="-1"></a>dobbel.chi2.htest<span class="sc">$</span>stdres <span class="co"># standardized residuals</span></span></code></pre></div>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="ch-chi-square-tests.html#cb178-1" tabindex="-1"></a>dobbel.chi2.htest<span class="sc">$</span>stdres <span class="co"># standardized residuals</span></span></code></pre></div>
 <pre><code>## [1]  1.3856406 -0.3464102  0.3464102  0.0000000  1.7320508 -3.1176915</code></pre>
 </div>
 <div id="contingency-table-preparation-and-testing" class="section level3 hasAnchor" number="16.9.2">
@@ -920,17 +924,17 @@ Open the <code>Cells</code> section bar, and check the option <code>Expected cou
 <p>In R, the dataset <code>Titanic</code> is provided as a multidimensional matrix. We sum
 the observations and make a contingency table of the first dimension (class) and
 the fourth dimension (outcome).</p>
-<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="ch-chi-square-tests.html#cb180-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>( Titanic, <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>), sum ) <span class="ot">-&gt;</span> Titanic.classoutcome</span></code></pre></div>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="ch-chi-square-tests.html#cb180-1" tabindex="-1"></a><span class="fu">apply</span>( Titanic, <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>), sum ) <span class="ot">-&gt;</span> Titanic.classoutcome</span></code></pre></div>
 <p>Next, we use the contingency (frequency) table as the input for a <code>chisq.test</code>.
 The resulting <code>chisq.htest</code> object is saved within R in order to inspect its residuals.</p>
-<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="ch-chi-square-tests.html#cb181-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>( Titanic.classoutcome ) <span class="ot">-&gt;</span> Titanic.chisq.htest</span>
-<span id="cb181-2"><a href="ch-chi-square-tests.html#cb181-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(Titanic.chisq.htest)</span></code></pre></div>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="ch-chi-square-tests.html#cb181-1" tabindex="-1"></a><span class="fu">chisq.test</span>( Titanic.classoutcome ) <span class="ot">-&gt;</span> Titanic.chisq.htest</span>
+<span id="cb181-2"><a href="ch-chi-square-tests.html#cb181-2" tabindex="-1"></a><span class="fu">print</span>(Titanic.chisq.htest)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s Chi-squared test
 ## 
 ## data:  Titanic.classoutcome
 ## X-squared = 190.4, df = 3, p-value &lt; 2.2e-16</code></pre>
-<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="ch-chi-square-tests.html#cb183-1" aria-hidden="true" tabindex="-1"></a>Titanic.chisq.htest<span class="sc">$</span>stdres <span class="co"># standardized residuals</span></span></code></pre></div>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="ch-chi-square-tests.html#cb183-1" tabindex="-1"></a>Titanic.chisq.htest<span class="sc">$</span>stdres <span class="co"># standardized residuals</span></span></code></pre></div>
 <pre><code>##       Survived
 ## Class          No       Yes
 ##   1st  -12.593038 12.593038
@@ -949,7 +953,7 @@ We will explain all these matters using the following example of a <span class="
 <hr />
 <blockquote>
 <p><em>Example 16.2</em>:
-<span class="citation">Doll and Hill (<a href="#ref-DollHill1956" role="doc-biblioref">1956</a>)</span> investigated the relation between smoking
+<span class="citation">Doll and Hill (<a href="#ref-DollHill1956">1956</a>)</span> investigated the relation between smoking
 and lung cancer. They first surveyed all British doctors about
 their age and smoking behaviour. Next, the researchers kept up over the years with
 the death notices and cause of death of all those surveyed. The first
@@ -1021,7 +1025,7 @@ AD/BC =
 ‘odds’ of dying from lung cancer are thus more than <span class="math inline">\(12\times\)</span>
 as great for the smokers as for the non-smokers. We report this as follows:</p>
 <blockquote>
-<p><span class="citation">Doll and Hill (<a href="#ref-DollHill1956" role="doc-biblioref">1956</a>)</span> found a significant relation between
+<p><span class="citation">Doll and Hill (<a href="#ref-DollHill1956">1956</a>)</span> found a significant relation between
 smoking behaviour and death from lung cancer,
 <span class="math inline">\(\chi^2(1)=10.35, p&lt;.01, \textrm{OR}=12.1\)</span>. The ‘odds’ of dying from
 lung cancer seemed to be more than <span class="math inline">\(12\times\)</span> as great for smokers as for
@@ -1050,7 +1054,7 @@ Maxwell, Scott E., and Harold D. Delaney. 2004. <em>Designing Experiments and An
 <ol start="39">
 <li id="fn39"><p>The value found <span class="math inline">\(\chi^2=12.44\)</span> is slightly under the critical value for 5 d.f. and <span class="math inline">\(p=.03\)</span>, (there <span class="math inline">\((\chi^2)^*=12.83\)</span>), thus the corresponding probability of this value or a larger value is slightly greater than <span class="math inline">\(0.03\)</span>.<a href="ch-chi-square-tests.html#fnref39" class="footnote-back">↩︎</a></p></li>
 <li id="fn40"><p>If one variable’s observations are paired rather than independent (e.g. before/after treatment, passed/failed, etc.), then the McNemar test is a useful alternative.<a href="ch-chi-square-tests.html#fnref40" class="footnote-back">↩︎</a></p></li>
-<li id="fn41"><p>If multiple comparisons are performed, then the critical value of <span class="math inline">\(\alpha\)</span> should be adjusted accordingly, in order to prevent Type I errors somewhere among the comparisons. With <span class="math inline">\(k\)</span> cells and <span class="math inline">\(k\)</span> comparisons, a safe precaution is to use <span class="math inline">\(\alpha/k\)</span> instead of <span class="math inline">\(\alpha\)</span> for each comparison – this is called Bonferroni’s adjustement of the <span class="math inline">\(\alpha\)</span> value, or Dunn’s procedure <span class="citation">(<a href="#ref-MD04" role="doc-biblioref">Maxwell and Delaney 2004, 202</a>)</span>. See also §<a href="ch-anova.html#sec:anova-oneway-posthoc">15.3.5</a>.<a href="ch-chi-square-tests.html#fnref41" class="footnote-back">↩︎</a></p></li>
+<li id="fn41"><p>If multiple comparisons are performed, then the critical value of <span class="math inline">\(\alpha\)</span> should be adjusted accordingly, in order to prevent Type I errors somewhere among the comparisons. With <span class="math inline">\(k\)</span> cells and <span class="math inline">\(k\)</span> comparisons, a safe precaution is to use <span class="math inline">\(\alpha/k\)</span> instead of <span class="math inline">\(\alpha\)</span> for each comparison – this is called Bonferroni’s adjustement of the <span class="math inline">\(\alpha\)</span> value, or Dunn’s procedure <span class="citation">(<a href="#ref-MD04">Maxwell and Delaney 2004, 202</a>)</span>. See also §<a href="ch-anova.html#sec:anova-oneway-posthoc">15.3.5</a>.<a href="ch-chi-square-tests.html#fnref41" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -1119,7 +1123,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

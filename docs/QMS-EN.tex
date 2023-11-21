@@ -5720,7 +5720,7 @@ We already discussed the general principle of testing briefly in
 §\ref{sec:falsification} and §\ref{sec:empiricalcycle}.
 We will illustrate this again here
 with an example. We investigate the statement H1:\\
-`Linguistics students master traditional grammar \emph{better} than the average language student'. As a measurement instrument, we use the so-called ``grammar test''\footnote{We would like to thank Els Rose for making these data available.} which is compulsory
+`Linguistics students master traditional grammar \emph{better} than the average language student'. As a measurement instrument, we use the so-called ``grammar test''\footnote{We thank Els Rose for sharing these data.} which is compulsory
 for most students
 in language programs at Utrecht University. On the basis of previous cohorts (year groups),
 we expect a mean score of 73 on this test; this is the mean number of good answers
@@ -6992,13 +6992,13 @@ uncertainty or reliability: perhaps the unknown parameter differs
 in the population somewhat from the sample characteristic,
 which we use as an estimator, as a result of chance variations in the
 sample. The (un)certainty and (un)reliability is expressed as
-a confidence interval of the estimated characteristic. We then know
-with a certain reliability (mainly 95\%) that the unknown parameter
-will lie within that interval
+a confidence interval of the estimated characteristic.
+If we would repeatedly draw many samples from the same population, then the unknown population mean would be within the sample confidence interval in 95\% of the resamples
 (§\ref{sec:confidenceinterval-mean} and §\ref{sec:t-confidenceinterval-mean}).
 
-This reasoning is now valid not only for the mean score, or for the mean or for the
-variance, but equally for the effect size. After all, the effect size
+This reasoning applies not only to the mean score, or to the
+variance, but equally for the effect size as obtained from a single sample.
+After all, the effect size
 is also an unknown parameter from the population, which we are trying to estimate
 based on a limited sample. For the fictional judgements
 about the webpages with the formal \emph{U} or informal \emph{je} pronouns (see
@@ -7039,10 +7039,7 @@ formula \eqref{eq:t-onesampleCI}).
 
 After substituting \(t^*_9=2.262\) (see Appendix~\ref{app-criticaltvalues}) and
 \(\textrm{se}_d = 0.519\), we eventually find a 95\% confidence interval of \((-3.30,-0.96)\).
-We thus
-know with 95\% confidence that the unknown effect size in the population
-is somewhere within this interval, and thus also that it is smaller than
-zero. On the basis of this last consideration, we may reject H0.
+We can be 95\% confident that the unknown true effect size may be within this interval (remember, if we would resample many times from the same population, then in 5\% of the resamples the observed effect size would be outside this CI of the effect size). As the confidence interval is entirely below zero, we may conclude that the true effect size is probably negative, and smaller than zero. On the basis of this last consideration, we may reject H0.
 And: we now know not only \emph{that} the preference deviates from zero, but
 also \emph{to what extent} the (standardised) preference deviates from zero,
 i.e.~how strong the preference for the \emph{je}-version is. This new knowledge

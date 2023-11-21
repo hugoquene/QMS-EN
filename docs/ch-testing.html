@@ -1639,12 +1639,12 @@ uncertainty or reliability: perhaps the unknown parameter differs
 in the population somewhat from the sample characteristic,
 which we use as an estimator, as a result of chance variations in the
 sample. The (un)certainty and (un)reliability is expressed as
-a confidence interval of the estimated characteristic. We then know
-with a certain reliability (mainly 95%) that the unknown parameter
-will lie within that interval
+a confidence interval of the estimated characteristic.
+If we would repeatedly draw many samples from the same population, then the unknown population mean would be within the sample confidence interval in 95% of the resamples
 (§<a href="ch-probability-distributions.html#sec:confidenceinterval-mean">10.7</a> and §<a href="ch-testing.html#sec:t-confidenceinterval-mean">13.5</a>).</p>
-<p>This reasoning is now valid not only for the mean score, or for the mean or for the
-variance, but equally for the effect size. After all, the effect size
+<p>This reasoning applies not only to the mean score, or to the
+variance, but equally for the effect size as obtained from a single sample.
+After all, the effect size
 is also an unknown parameter from the population, which we are trying to estimate
 based on a limited sample. For the fictional judgements
 about the webpages with the formal <em>U</em> or informal <em>je</em> pronouns (see
@@ -1681,10 +1681,7 @@ effect size:
 formula <a href="ch-probability-distributions.html#eq:t-onesampleCI">(10.12)</a>).</p>
 <p>After substituting <span class="math inline">\(t^*_9=2.262\)</span> (see Appendix <a href="app-criticaltvalues.html#app-criticaltvalues">C</a>) and
 <span class="math inline">\(\textrm{se}_d = 0.519\)</span>, we eventually find a 95% confidence interval of <span class="math inline">\((-3.30,-0.96)\)</span>.
-We thus
-know with 95% confidence that the unknown effect size in the population
-is somewhere within this interval, and thus also that it is smaller than
-zero. On the basis of this last consideration, we may reject H0.
+We can be 95% confident that the unknown true effect size may be within this interval (remember, if we would resample many times from the same population, then in 5% of the resamples the observed effect size would be outside this CI of the effect size). As the confidence interval is entirely below zero, we may conclude that the true effect size is probably negative, and smaller than zero. On the basis of this last consideration, we may reject H0.
 And: we now know not only <em>that</em> the preference deviates from zero, but
 also <em>to what extent</em> the (standardised) preference deviates from zero,
 i.e. how strong the preference for the <em>je</em>-version is. This new knowledge
@@ -1740,7 +1737,7 @@ Wright, Daniel B. 2003. <span>“Making Friends with Your Data: Improving How St
 <div class="footnotes">
 <hr />
 <ol start="33">
-<li id="fn33"><p>We would like to thank Els Rose for making these data available.<a href="ch-testing.html#fnref33" class="footnote-back">↩︎</a></p></li>
+<li id="fn33"><p>We thank Els Rose for sharing these data.<a href="ch-testing.html#fnref33" class="footnote-back">↩︎</a></p></li>
 <li id="fn34"><p>In this case, we use <span class="math inline">\(s_p = \sqrt{ \frac{122\times82^2+128\times98^2} {122+128} } = 90.5\)</span>, see formulas
 <a href="ch-testing.html#eq:sd-pooled">(13.2)</a> and <a href="ch-testing.html#eq:d-homoskedastic">(13.11)</a>.<a href="ch-testing.html#fnref34" class="footnote-back">↩︎</a></p></li>
 </ol>

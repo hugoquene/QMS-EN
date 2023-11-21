@@ -859,7 +859,7 @@ thus the two-sided p-value is even smaller than
 follows:</p>
 <blockquote>
 <p>The mean score of Linguistics students (class of 2013) is
-84.4 (<span class="math inline">\(s=8.4\)</span>); the differs significantly from the hypothesised
+84.4 (<span class="math inline">\(s=8.4\)</span>); this observed sample mean differs significantly from the hypothesised
 population mean of 73 (<span class="math inline">\(t(33)=7.9, p&lt;.002\)</span>).</p>
 </blockquote>
 <p>In the majority of studies two-sided tests are used; if the direction
@@ -873,26 +873,23 @@ have been used.</p>
 of the mean with the grammar test scores.</p>
 <p>We can consider the sample’s mean, <span class="math inline">\(\overline{x}\)</span>, as a good estimation
 of an unknown mean in the population,
-<span class="math inline">\(\mu\)</span>. For this, we can also use the value found for <span class="math inline">\(t^*\)</span> to indicate how
-reliable the estimation is: the confidence interval. With this, we express
-with what (un)certainty we know that the sample mean, <span class="math inline">\(\overline{x}\)</span>, matches
-the population mean <span class="citation">(<a href="#ref-Cumm12">Cumming 2012</a>)</span>. We are also familiar with such error margins
+<span class="math inline">\(\mu\)</span>. The confidence interval (CI) expresses how
+(un)trustworthy the estimate is, that is,
+with what (un)certainty the sample mean, <span class="math inline">\(\overline{x}\)</span> is related to the population mean <span class="math inline">\(\mu\)</span> <span class="citation">(<a href="#ref-Cumm12">Cumming 2012</a>)</span>.
+We are familiar with such error margins
 from election results, where they indicate with what certainty the result
 of the sample (of respondents) matches the actual election result for the whole
 population (of voters). An
-error margin of 2% means that it is 95% certain that <span class="math inline">\(x\)</span>, the percentage voting
+error margin of 2% typically means that it is 95% certain that <span class="math inline">\(x\)</span>, the percentage voting
 for a certain party, will lie between <span class="math inline">\((x-2)\)</span>% and <span class="math inline">\((x+2)\)</span>%.</p>
 <p>In our example with 30 d.f., we find <span class="math inline">\(t^*=2.042\)</span> for 95%
 reliability. Via formula
 <a href="ch-testing.html#eq:t-onesampleCI">(13.2)</a>, we arrive at the 95%
-confidence interval <span class="math inline">\((81.5, 87.3)\)</span>. We know with 95% certainty
-that the unknown average score on the grammar test, from the population
-of all possible Linguistics students is larger than 81.5 and
-smaller than 87.3. We thus also know, with 95% certainty, that the
-<em>unknown</em> population mean <span class="math inline">\(\mu\)</span> deviates from the hypothesised
-value 73 <span class="citation">(<a href="#ref-Cumm12">Cumming 2012</a>)</span>. We report this as follows:</p>
+confidence interval <span class="math inline">\((81.5, 87.3)\)</span>.
+With repeated samples from the same population of Linguistics students, the reported confidence interval will contain the true population mean for 95% of the repeated samples, and it will not contain the true population mean in 5% of the repeated samples. The CI expresses the “confidence in the algorithm and [is] not a statement about a single CI” (<a href="https://rpsychologist.com/d3/ci/" class="uri">https://rpsychologist.com/d3/ci/</a>).</p>
+<p>We report the CI as follows:</p>
 <blockquote>
-<p>The mean score of Linguistics students (class of 2013) is
+<p>The average score of Linguistics students (class of 2013) is
 84.4, with 95% confidence interval (81.5, 87.3), 33 d.f.</p>
 </blockquote>
 <p>In Figure <a href="ch-testing.html#fig:gramm2013CIs">13.2</a>, you can see the results of
@@ -902,18 +899,19 @@ illustrates the same point. We have drawn <span class="math inline">\(100\times\
 with <span class="math inline">\(\mu=84.4\)</span> and <span class="math inline">\(\sigma=8.4\)</span> (see §<a href="ch-centre-and-dispersion.html#sec:standarddeviation">9.5.2</a>) and <span class="math inline">\(N=34\)</span>.
 For each sample, we have drawn the 95%
 confidence interval. For 95 of the 100 samples, the population mean <span class="math inline">\(\mu=84.4\)</span>
-is indeed within the interval, but for 5 of the 100 samples the confidence interval does not contain the population mean (these are marked along the right hand side).</p>
+is indeed within the interval, but for 5 of the 100 samples the confidence interval does not contain the population mean (these are marked along the right hand side). The website <a href="https://rpsychologist.com/d3/ci/" class="uri">https://rpsychologist.com/d3/ci/</a> shows more of such visual explanations of the concept of confidence intervals.</p>
 <div class="figure"><span style="display:block;" id="fig:gramm2013CIs"></span>
 <img src="QMS-EN_files/figure-html/gramm2013CIs-1.png" alt="95% confidence interval and sample means, over 100 simulated samples (n=34) from a population with population mean 84.4, population-s.d. 8.4." width="672" />
 <p class="caption">
 Figure 13.2: 95% confidence interval and sample means, over 100 simulated samples (n=34) from a population with population mean 84.4, population-s.d. 8.4.
 </p>
 </div>
+<p>From formula (<a href="ch-testing.html#eq:t-onesampleCI">(13.2)</a>) below, it follows that if the sample standard deviation <span class="math inline">\(s\)</span> decreases, and/or if the sample size <span class="math inline">\(N\)</span> increases, then the confidence interval becomes smaller, i.e., the sample mean becomes a more trustworthy estimate of the population mean.</p>
 <div id="sec:formulas13-2" class="section level3 hasAnchor" number="13.5.1">
 <h3><span class="header-section-number">13.5.1</span> formulas<a href="ch-testing.html#sec:formulas13-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The two-sample confidence interval for <span class="math inline">\(B\)</span>% reliability for<br />
-a population mean <span class="math inline">\(\overline{y}\)</span> is
-<span class="math display" id="eq:t-onesampleCI">\[\begin{equation}
+a population mean <span class="math inline">\(\overline{y}\)</span> is</p>
+<p><span class="math display" id="eq:t-onesampleCI">\[\begin{equation}
     \overline{y} \pm t^*_{N-1} \times \frac{s}{\sqrt{N}}
   \tag{13.2}
 \end{equation}\]</span></p>

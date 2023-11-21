@@ -379,7 +379,7 @@ $2\times.001$. We can report our two-sided testing as
 follows:
 
 > The mean score of Linguistics students (class of 2013) is 
-> 84.4 ($s=8.4$); the differs significantly from the hypothesised
+> 84.4 ($s=8.4$); this observed sample mean differs significantly from the hypothesised
 > population mean of 73 ($t(33)=7.9, p<.002$).
 
 In the majority of studies two-sided tests are used; if the direction
@@ -394,27 +394,25 @@ of the mean with the grammar test scores.
 
 We can consider the sample's mean, $\overline{x}$, as a good estimation
 of an unknown mean in the population,
-$\mu$. For this, we can also use the value found for $t^*$ to indicate how
-reliable the estimation is: the confidence interval. With this, we express
-with what (un)certainty we know that the sample mean, $\overline{x}$, matches
-the population mean [@Cumm12]. We are also familiar with such error margins
+$\mu$. The confidence interval (CI) expresses how
+(un)trustworthy the estimate is, that is, 
+with what (un)certainty the sample mean, $\overline{x}$ is related to the population mean $\mu$ [@Cumm12]. 
+We are familiar with such error margins
 from election results, where they indicate with what certainty the result
-of the sample (of respondents) matches the actual election result for the whole
-population (of voters). An
-error margin of 2% means that it is 95% certain that $x$, the percentage voting
+of the polling sample (of respondents) matches the actual election result for the entire population (of voters). An
+error margin of 2% typically means that it is 95% certain that $x$, the percentage voting
 for a certain party, will lie between $(x-2)$% and $(x+2)$%.
 
 In our example with 30 d.f., we find $t^*=2.042$ for 95%
 reliability. Via formula
 \@ref(eq:t-onesampleCI), we arrive at the 95%
-confidence interval $(81.5, 87.3)$. We know with 95% certainty
-that the unknown average score on the grammar test, from the population
-of all possible Linguistics students is larger than 81.5 and
-smaller than 87.3. We thus also know, with 95% certainty, that the
-*unknown* population mean $\mu$ deviates from the hypothesised
-value 73 [@Cumm12]. We report this as follows:
+confidence interval $(81.5, 87.3)$. 
+What does this confidence interval mean? 
+If we would (and could) draw repeated samples from the same population of Linguistics students, then the reported confidence interval will contain the true population mean for 95% of the repeated samples, and in 5% of the samples the true population mean will be outside the 95% CI. Thus the CI expresses the "confidence in the algorithm and [it is] not a statement about a single CI" (<https://rpsychologist.com/d3/ci/>). 
 
-> The mean score of Linguistics students (class of 2013) is
+We report the CI as follows:
+
+> The average score of Linguistics students (class of 2013) is
 > 84.4, with 95% confidence interval (81.5, 87.3), 33 d.f.
 
 In Figure \@ref(fig:gramm2013CIs), you can see the results of 
@@ -424,7 +422,7 @@ illustrates the same point. We have drawn $100\times$ samples from Linguistics s
 with $\mu=84.4$ and $\sigma=8.4$ (see §\@ref(sec:standarddeviation)) and $N=34$. 
 For each sample, we have drawn the 95%
 confidence interval. For 95 of the 100 samples, the population mean $\mu=84.4$
-is indeed within the interval, but for 5 of the 100 samples the confidence interval does not contain the population mean (these are marked along the right hand side).
+is indeed within the interval, but for 5 of the 100 samples the confidence interval does not contain the population mean (these are marked along the right hand side). The website <https://rpsychologist.com/d3/ci/> shows more of such visual explanations of the concept of confidence intervals. 
 
 ```{r gramm2013CIs, echo=FALSE, fig.cap="95% confidence interval and sample means, over 100 simulated samples (n=34) from a population with population mean 84.4, population-s.d. 8.4."}
 # adapted from similar chunk in Ch.10
@@ -470,11 +468,14 @@ rm(aux,lb,ub)
 par(op)
 ```
 
+From formula (\@ref(eq:t-onesampleCI)) below, it follows sensibly that if the sample standard deviation $s$ decreases, and/or if the sample size $N$ increases, then the confidence interval becomes smaller, i.e., the sample mean becomes a more trustworthy estimate of the population mean. 
+
 
 ### formulas {#sec:formulas13-2}
 
 The two-sample confidence interval for $B$% reliability for 	
 a population mean $\overline{y}$ is 
+
 \begin{equation}
     \overline{y} \pm t^*_{N-1} \times \frac{s}{\sqrt{N}}
   (\#eq:t-onesampleCI)

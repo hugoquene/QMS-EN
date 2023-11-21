@@ -340,11 +340,9 @@ because the outcome of the test statistic cannot be established a priori.
 In SPSS, however, the p-value is rounded off, and can then appear as
 `‘Sig. .000’` or $p=.000$. This is incorrect.
 The p-value or significance is not equal to zero, but has
-been *rounded off* to zero, and that is not the same. 
+been *rounded down* to zero, and that is not the same. 
 Always report the p-value or significance with the correct
-accuracy, in this example as $p<.001$ or even $p<.0005$
-(taking into account the rounding off by SPSS to three decimal 
-places).
+accuracy, in this example as $p<.001$ [@Wright09, p.125].
 
 ## One-sided and two-sided tests {#sec:ttest-onesidedtwosided}
 

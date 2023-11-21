@@ -342,7 +342,7 @@ In SPSS, however, the p-value is rounded off, and can then appear as
 The p-value or significance is not equal to zero, but has
 been *rounded down* to zero, and that is not the same. 
 Always report the p-value or significance with the correct
-accuracy, in this example as $p<.001$ [@Wright09, p.125].
+accuracy, in this example as $p<.001$ [@Wright03, p.125].
 
 ## One-sided and two-sided tests {#sec:ttest-onesidedtwosided}
 
@@ -468,7 +468,7 @@ rm(aux,lb,ub)
 par(op)
 ```
 
-From formula (\@ref(eq:t-onesampleCI)) below, it follows sensibly that if the sample standard deviation $s$ decreases, and/or if the sample size $N$ increases, then the confidence interval becomes smaller, i.e., the sample mean becomes a more trustworthy estimate of the population mean. 
+From formula \@ref(eq:t-onesampleCI) below, it follows sensibly that if the sample standard deviation $s$ decreases, and/or if the sample size $N$ increases, then the confidence interval becomes smaller, i.e., we can be more confident that the observed sample mean is close to the unknown population mean. 
 
 
 ### formulas {#sec:formulas13-2}

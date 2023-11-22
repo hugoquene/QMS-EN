@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.2.8)  21 NOV 2023 21:02
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.2.8)  22 NOV 2023 11:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1142,7 +1142,7 @@ Missing character: There is no   (U+2006) in font [lmroman10-regular]:mapping=
 Missing character: There is no   (U+2006) in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no   (U+2006) in font [lmroman10-regular]:mapping=tex-text;!
 [214] [215] [216] [217]
-Overfull \hbox (17.25pt too wide) in paragraph at lines 6481--6481
+Overfull \hbox (17.25pt too wide) in paragraph at lines 6480--6480
 []\TU/lmtt/m/n/10 ## alternative hypothesis: true difference in means is not equal to 0[] 
  []
 
@@ -1153,12 +1153,12 @@ Missing character: There is no   (U+2006) in font [lmroman10-regular]:mapping=
 File: QMS-EN_files/figure-latex/smallestsignifdifference-1.pdf Graphic file (type pdf)
 <use QMS-EN_files/figure-latex/smallestsignifdifference-1.pdf>
 [224] [225]
-Underfull \hbox (badness 10000) in paragraph at lines 6903--6905
+Underfull \hbox (badness 10000) in paragraph at lines 6902--6904
 
  []
 
 [226] [227]
-Underfull \hbox (badness 10000) in paragraph at lines 7017--7020
+Underfull \hbox (badness 10000) in paragraph at lines 7016--7019
 
  []
 
@@ -1175,7 +1175,7 @@ File: QMS-EN_files/figure-latex/powercontours-alpha05-1.pdf Graphic file (type p
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [232] [233] [234]
-Underfull \hbox (badness 1194) in paragraph at lines 7220--7220
+Underfull \hbox (badness 1194) in paragraph at lines 7219--7219
 []\TU/lmr/bx/n/14.4 Relation between significance level and
  []
 
@@ -1185,7 +1185,7 @@ File: QMS-EN_files/figure-latex/underpoweredeffectsizes-1.pdf Graphic file (type
 [236] [237] [238]
 Chapter 15.
 
-Package natbib Warning: Citation `R-hqmisc' on page 239 undefined on input line 7363.
+Package natbib Warning: Citation `R-hqmisc' on page 239 undefined on input line 7362.
 
 [239
 
@@ -1194,15 +1194,15 @@ File: QMS-EN_files/figure-latex/sylduration-boxplot-1.pdf Graphic file (type pdf
 <use QMS-EN_files/figure-latex/sylduration-boxplot-1.pdf>
 [240] [241] [242]
 
-LaTeX Warning: Reference `fig:colours-obs' on page 243 undefined on input line 7551.
+LaTeX Warning: Reference `fig:colours-obs' on page 243 undefined on input line 7550.
 
 File: QMS-EN_files/figure-latex/colours-obs-1.pdf Graphic file (type pdf)
 <use QMS-EN_files/figure-latex/colours-obs-1.pdf>
 
-LaTeX Warning: Reference `fig:colours-obs' on page 243 undefined on input line 7563.
+LaTeX Warning: Reference `fig:colours-obs' on page 243 undefined on input line 7562.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7560--7571
+Underfull \hbox (badness 10000) in paragraph at lines 7559--7570
 [][]
  []
 
@@ -1211,128 +1211,128 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [243]
 
-LaTeX Warning: Reference `fig:colours-obs' on page 244 undefined on input line 7594.
+LaTeX Warning: Reference `fig:colours-obs' on page 244 undefined on input line 7593.
 
 [244] [245]
 
-LaTeX Warning: Reference `fig:colours-obs' on page 246 undefined on input line 7712.
+LaTeX Warning: Reference `fig:colours-obs' on page 246 undefined on input line 7711.
 
 
-LaTeX Warning: Reference `fig:colours-obs' on page 246 undefined on input line 7712.
+LaTeX Warning: Reference `fig:colours-obs' on page 246 undefined on input line 7711.
 
 [246] [247]
 
-LaTeX Warning: Reference `fig:colours-obs' on page 248 undefined on input line 7786.
+LaTeX Warning: Reference `fig:colours-obs' on page 248 undefined on input line 7785.
 
 [248]
 
-LaTeX Warning: Reference `fig:colours-obs' on page 249 undefined on input line 7840.
+LaTeX Warning: Reference `fig:colours-obs' on page 249 undefined on input line 7839.
 
 
-LaTeX Warning: Reference `fig:colours-obs' on page 249 undefined on input line 7840.
+LaTeX Warning: Reference `fig:colours-obs' on page 249 undefined on input line 7839.
 
 [249]
 
-LaTeX Warning: Reference `fig:colours-obs' on page 250 undefined on input line 7945.
+LaTeX Warning: Reference `fig:colours-obs' on page 250 undefined on input line 7944.
 
 [250]
-Underfull \hbox (badness 10000) in paragraph at lines 7973--7977
+Underfull \hbox (badness 10000) in paragraph at lines 7972--7976
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8008--8026
+Underfull \hbox (badness 10000) in paragraph at lines 8007--8025
 
  []
 
 [251] [252]
 
-LaTeX Warning: Reference `fig:colours-obs' on page 253 undefined on input line 8073.
+LaTeX Warning: Reference `fig:colours-obs' on page 253 undefined on input line 8072.
 
 [253]
 
-LaTeX Warning: Reference `fig:colours-obs' on page 254 undefined on input line 8134.
+LaTeX Warning: Reference `fig:colours-obs' on page 254 undefined on input line 8133.
 
 [254] [255] [256] [257]
 File: figures/DBE2012interaction_v2.png Graphic file (type bmp)
 <figures/DBE2012interaction_v2.png>
 [258] [259] [260] [261] [262] [263] [264] [265]
-Overfull \hbox (59.25pt too wide) in paragraph at lines 8651--8651
+Overfull \hbox (59.25pt too wide) in paragraph at lines 8650--8650
 []\TU/lmtt/m/n/10 ##                                      diff         lwr        upr     p adj[] 
  []
 
 
-Overfull \hbox (59.25pt too wide) in paragraph at lines 8651--8651
+Overfull \hbox (59.25pt too wide) in paragraph at lines 8650--8650
 []\TU/lmtt/m/n/10 ## zonder:zwak-met:zwak           -4.1333333 -5.60315087 -2.6635158 0.0000000[] 
  []
 
 
-Overfull \hbox (59.25pt too wide) in paragraph at lines 8651--8651
+Overfull \hbox (59.25pt too wide) in paragraph at lines 8650--8650
 []\TU/lmtt/m/n/10 ## met:gemiddeld-met:zwak         -0.1461538 -1.27642935  0.9841217 0.9989799[] 
  []
 
 
-Overfull \hbox (59.25pt too wide) in paragraph at lines 8651--8651
+Overfull \hbox (59.25pt too wide) in paragraph at lines 8650--8650
 []\TU/lmtt/m/n/10 ## zonder:gemiddeld-met:zwak      -2.1571429 -3.27255218 -1.0417335 0.0000031[] 
  []
 
 
-Overfull \hbox (59.25pt too wide) in paragraph at lines 8651--8651
+Overfull \hbox (59.25pt too wide) in paragraph at lines 8650--8650
 []\TU/lmtt/m/n/10 ## met:sterk-met:zwak              1.4222222 -0.04759532  2.8920398 0.0637117[] 
  []
 
 
-Overfull \hbox (59.25pt too wide) in paragraph at lines 8651--8651
+Overfull \hbox (59.25pt too wide) in paragraph at lines 8650--8650
 []\TU/lmtt/m/n/10 ## zonder:sterk-met:zwak           0.7714286 -0.82423518  2.3670923 0.7218038[] 
  []
 
 
-Overfull \hbox (59.25pt too wide) in paragraph at lines 8651--8651
+Overfull \hbox (59.25pt too wide) in paragraph at lines 8650--8650
 []\TU/lmtt/m/n/10 ## met:gemiddeld-zonder:zwak       3.9871795  2.63899048  5.3353685 0.0000000[] 
  []
 
 
-Overfull \hbox (59.25pt too wide) in paragraph at lines 8651--8651
+Overfull \hbox (59.25pt too wide) in paragraph at lines 8650--8650
 []\TU/lmtt/m/n/10 ## zonder:gemiddeld-zonder:zwak    1.9761905  0.64044018  3.3119408 0.0005900[] 
  []
 
 
-Overfull \hbox (59.25pt too wide) in paragraph at lines 8651--8651
+Overfull \hbox (59.25pt too wide) in paragraph at lines 8650--8650
 []\TU/lmtt/m/n/10 ## met:sterk-zonder:zwak           5.5555556  3.91224959  7.1988615 0.0000000[] 
  []
 
 
-Overfull \hbox (59.25pt too wide) in paragraph at lines 8651--8651
+Overfull \hbox (59.25pt too wide) in paragraph at lines 8650--8650
 []\TU/lmtt/m/n/10 ## zonder:sterk-zonder:zwak        4.9047619  3.14799393  6.6615299 0.0000000[] 
  []
 
 
-Overfull \hbox (59.25pt too wide) in paragraph at lines 8651--8651
+Overfull \hbox (59.25pt too wide) in paragraph at lines 8650--8650
 []\TU/lmtt/m/n/10 ## zonder:gemiddeld-met:gemiddeld -2.0109890 -2.96040355 -1.0615745 0.0000003[] 
  []
 
 
-Overfull \hbox (59.25pt too wide) in paragraph at lines 8651--8651
+Overfull \hbox (59.25pt too wide) in paragraph at lines 8650--8650
 []\TU/lmtt/m/n/10 ## met:sterk-met:gemiddeld         1.5683761  0.22018706  2.9165651 0.0130213[] 
  []
 
 
-Overfull \hbox (59.25pt too wide) in paragraph at lines 8651--8651
+Overfull \hbox (59.25pt too wide) in paragraph at lines 8650--8650
 []\TU/lmtt/m/n/10 ## zonder:sterk-met:gemiddeld      0.9175824 -0.56680056  2.4019654 0.4704754[] 
  []
 
 
-Overfull \hbox (59.25pt too wide) in paragraph at lines 8651--8651
+Overfull \hbox (59.25pt too wide) in paragraph at lines 8650--8650
 []\TU/lmtt/m/n/10 ## met:sterk-zonder:gemiddeld      3.5793651  2.24361478  4.9151154 0.0000000[] 
  []
 
 
-Overfull \hbox (59.25pt too wide) in paragraph at lines 8651--8651
+Overfull \hbox (59.25pt too wide) in paragraph at lines 8650--8650
 []\TU/lmtt/m/n/10 ## zonder:sterk-zonder:gemiddeld   2.9285714  1.45547670  4.4016662 0.0000016[] 
  []
 
 
-Overfull \hbox (59.25pt too wide) in paragraph at lines 8651--8651
+Overfull \hbox (59.25pt too wide) in paragraph at lines 8650--8650
 []\TU/lmtt/m/n/10 ## zonder:sterk-met:sterk         -0.6507937 -2.40756162  1.1059743 0.8883523[] 
  []
 
@@ -1349,32 +1349,32 @@ Overfull \hbox (72.13423pt too wide) has occurred while \output is active
  []
 
 [269] [270] [271] [272] [273] [274] [275] [276]
-Overfull \hbox (33.0pt too wide) in paragraph at lines 9124--9124
+Overfull \hbox (33.0pt too wide) in paragraph at lines 9123--9123
 []\TU/lmtt/m/n/10 ## [1]  1.2649111 -0.3162278  0.3162278  0.0000000  1.5811388 -2.8460499[] 
  []
 
 
-Overfull \hbox (33.0pt too wide) in paragraph at lines 9144--9144
+Overfull \hbox (33.0pt too wide) in paragraph at lines 9143--9143
 []\TU/lmtt/m/n/10 ## [1]  1.3856406 -0.3464102  0.3464102  0.0000000  1.7320508 -3.1176915[] 
  []
 
 [277]
-Overfull \hbox (29.9901pt too wide) in alignment at lines 9214--9223
+Overfull \hbox (29.9901pt too wide) in alignment at lines 9213--9222
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (29.9901pt too wide) in alignment at lines 9223--9227
+Overfull \hbox (29.9901pt too wide) in alignment at lines 9222--9226
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (29.9901pt too wide) in alignment at lines 9227--9229
+Overfull \hbox (29.9901pt too wide) in alignment at lines 9226--9228
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (29.9901pt too wide) in alignment at lines 9229--9233
+Overfull \hbox (29.9901pt too wide) in alignment at lines 9228--9232
  [] [] [] [] [] [] [] 
  []
 
@@ -1395,27 +1395,27 @@ File: QMS-EN_files/figure-latex/kritiekeZwaarden-hulpfiguur-1.pdf Graphic file (
 ] [290]
 Appendix C.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 24.88pt on input line 9636.
+(Font)              scaled to size 24.88pt on input line 9635.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 20.74pt on input line 9636.
+(Font)              scaled to size 20.74pt on input line 9635.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 17.28pt on input line 9636.
+(Font)              scaled to size 17.28pt on input line 9635.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 24.88228pt on input line 9636.
+(Font)              scaled to size 24.88228pt on input line 9635.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 20.7419pt on input line 9636.
+(Font)              scaled to size 20.7419pt on input line 9635.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 17.28157pt on input line 9636.
+(Font)              scaled to size 17.28157pt on input line 9635.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 24.87733pt on input line 9636.
+(Font)              scaled to size 24.87733pt on input line 9635.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 20.73778pt on input line 9636.
+(Font)              scaled to size 20.73778pt on input line 9635.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 17.27815pt on input line 9636.
+(Font)              scaled to size 17.27815pt on input line 9635.
 File: QMS-EN_files/figure-latex/criticaltvalues-auxiliaryfigure-1.pdf Graphic file (type pdf)
 <use QMS-EN_files/figure-latex/criticaltvalues-auxiliaryfigure-1.pdf>
 
-Overfull \hbox (19.32014pt too wide) in paragraph at lines 9648--9693
+Overfull \hbox (19.32014pt too wide) in paragraph at lines 9647--9692
 [][] 
  []
 
@@ -1429,7 +1429,7 @@ Appendix D.
 File: QMS-EN_files/figure-latex/criticalchi2values-auxiliaryfigure-1.pdf Graphic file (type pdf)
 <use QMS-EN_files/figure-latex/criticalchi2values-auxiliaryfigure-1.pdf>
 
-Overfull \hbox (17.80014pt too wide) in paragraph at lines 9704--9747
+Overfull \hbox (17.80014pt too wide) in paragraph at lines 9703--9746
 [][] 
  []
 

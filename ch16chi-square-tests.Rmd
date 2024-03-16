@@ -5,7 +5,7 @@
 Earlier, we already saw that we cannot always make use of a 
 parametric test such as the *t* test or analysis of variance, because
 the collected data do not satisfy the assumptions. If the collected data 
-have been measured on an interval level of measurement (see Chapter 
+have not been measured on an interval level of measurement (see Chapter 
 \@ref(ch-levelsofmeasurement)), or if the probability distribution
 of the data is far from normal (see
 §\@ref(sec:whatifnotnormal)), then a non-parametric test is to be 

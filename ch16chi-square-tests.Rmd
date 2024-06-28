@@ -454,7 +454,7 @@ there is an association between smoking behaviour and death from lung cancer.
 For the effect size, we firstly calculate the 'odds' of death from
 lung cancer for the smokers: D/C= $83/21178 =0.00392$. Amongst the smokers,
 there are 83 deaths from lung cancer, compared with 21178
-deaths not from lung cancer (the 'odds' of dying from
+persons not dying from lung cancer (the 'odds' of dying from
 lung cancer are 1 in 0.00392). For the non-smokers: 
 B/A=$1/3092 =0.00032$ (the 'odds' are 1 in 0.00032).
 

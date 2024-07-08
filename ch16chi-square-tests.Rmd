@@ -380,9 +380,9 @@ The resulting value of the $\chi^2$ test statistic is reported in the output und
 
 If you have a "long" data sheet, with one observation per row, then you only need to select one nominal variable (`class`) in the "Rows" field, and the other nominal variable (`outcome`) in the "Columns" field, to set up the contingency table (Table \@ref(tab:titanic)).\
 Open the `Statistics` section bar, and check the option `Chi-square` ($\chi^2$). 
-Open the `Cells` section bar, and check the option `Expected counts`. 
+Open the `Cells` section bar, and check the option `Expected counts`. Also check the `Pearson residuals` and `Standardized (adjusted Pearson)`. 
 
-In JASP it is not possible to obtain the (adjusted) standardized residuals; however you can compute these manually from the observed and expected counts. 
+The number of survivors is significantly larger than expected under H0 for passengers in first and second class (positive standardized residuals for these cells, both $p<.001$) and significantly lower than expected under H0 for passenger in third class and for crew (negative standardized residuals, both $p<.001$).  
 
 
 ## R
@@ -415,7 +415,7 @@ Titanic.chisq.htest$stdres # standardized residuals
 ```
 
 The adjusted standardized residuals show the remarkably high number of survivors among the first class passengers, and the remarkably low number of survivors among the ship's crew. 
-
+Note that R here reports the standardized (but not otherwise adjusted) Pearson residuals. 
 
 ## Effect size: odds ratio
 

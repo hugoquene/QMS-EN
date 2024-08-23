@@ -110,7 +110,8 @@ JASP is freely available at <https://jasp-stats.org>. The JASP website also offe
 * **R** (version 3.0 and later): a somewhat more challenging, but also much more powerful and versatile software package that is gaining popularity among researchers.    
 R is freely available at <https://www.R-project.org>. 
 A brief introduction to R can be found at <https://hugoquene.github.io/emlar2020/>.
-Longer introductions are available in @Dalg02 and in excellent web books; a list of recommended books is available at <https://statisticalhorizons.com/resources/free-web-books-for-learning-r>. 
+Longer introductions are available in @Dalg02 and in excellent web books; a list of resources is available at 
+<https://statisticalhorizons.com/resources/free-r-resources>. 
 
 For students and employees at Utrecht University, these packages are pre-installed in `MyWorkPlace`. 
 

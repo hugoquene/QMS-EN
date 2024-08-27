@@ -101,7 +101,7 @@ abline( v=testmean+qnorm(.975)*(testsd/sqrt(34)), lty=2, col="grey" )
 curve( dnorm(x, mean=testmean, sd=(testsd/sqrt(34)) ), 
        n=500, lwd=3, from=60, to=100, add=T ) # overwrite curve over lines and polygons, long tails!
 arrows( 84.4, y0=.04, y1=0.002, lwd=3, col="darkred" )
-text( 84.4, .06, "perceived\nmean", adj=1/2 )
+text( 84.4, .06, "observed\nmean", adj=1/2 )
 ```
 
 Figure \@ref(fig:gramm2013onesample) shows the probability of the 
@@ -927,7 +927,7 @@ from "winter pregnancies". In this investigation, the differences
 in life times were very small $\pm 0.30$ year in Austria, $\pm 0.15$ year
 in Denmark), but the number of observations (deceased persons) was very large.
 
-> Meanwhile, the difference in body length between dwarfs (shorter than
+> Meanwhile, the difference in body height between dwarfs (shorter than
 1.5 m) and giants (taller than 2.0 m) is so large that the difference can be firmly
 empirically established on the basis of only $n=2$ in each group. 
 

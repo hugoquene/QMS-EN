@@ -163,11 +163,10 @@ the score 2 occurs the most often ($4\times$); this is the mode.
 
 ---
 
-> *Example 9.4*: In 2018, the mean income per household in the Netherlands was €29,500.
-The modal income (per household) was between €18,000 and €20,000[^fn09-2]. As such, in 
-2018, most households in the Netherlands fell within this income class.
+> *Example 9.4*: In 2022, the mean income per household in the Netherlands was about €35,000.
+The modal income (per household) was between €22,000 and €24,000[^fn09-2]: this income category contained the largest number of households. 
 
-[^fn09-2]: https://www.cbs.nl/nl-nl/visualisaties/inkomensverdeling 
+[^fn09-2]: https://www.cbs.nl/nl-nl/visualisaties/inkomensverdeling
 
 ---
 
@@ -181,11 +180,11 @@ The mode can be used with variables of all levels of measurement.
 ### Harmonic mean {#sec:harmonicmean}
 
 If the dependent variable is a fraction or ratio, 
-like the speed with which a task is conducted, then 
+such as the speed with which a task is conducted, then 
 the (arithmetic) mean of formula \@ref(eq:average) does 
 not actually provide a good indication for the 
 most characteristic or central value. In that case, it is better
-for you to use the harmonic mean:
+to use the harmonic mean:
 
 \begin{equation}
   H = \frac{1}{\frac{1}{n} \sum\limits_{i}^n \frac{1}{x_i} } = \frac{n}{\sum\limits_{i}^n \frac{1}{x_i}}
@@ -198,21 +197,22 @@ for you to use the harmonic mean:
 A student writes $n=3$ texts. For the first text (500 words) (s)he takes
 2.5 hours, for the second text (1,000 words) (s)he takes 4 hours, and
 for the third text (300 words) (s)he takes 0.6 hours. What is this student's
-mean speed of writing? The speeds of writing are respectively 200, 250 and 500
+mean speed of writing?
+The speeds of writing are respectively 200, 250 and 500
 words per hour, and the "normal" (arithmetic) mean of these is 
-317 words per hour. Nevertheless, the "actual" mean is
+317 words per hour, averaging over three texts. 
+Nevertheless, it took 7.1 hours to write 1800 words, hence 
+the "actual" mean is
  $(500+1000+300)/(2.5+4+0.6)$ $=1800/7.1=254$ words per hour. The high
- writing speed of the short text counts for $1/n$ parts in the arithmetic
- mean, even though the text only contains $300/1,800=1/6$
- of the total number of words.
+writing speed of the short text counts for $1/n$ parts in the arithmetic mean, even though the text only contains $300/1,800=1/6$ of the total number of words.
 
 > Since the dependent variable is a fraction (speed, words/hour), 
-the harmonic mean is a better central tendency. We firstly convert
+the harmonic mean is a better measure of central tendency. We firstly convert
 the speed (words per time unit) into its inverse 
 (see \@ref(eq:harmonicmean), in denominator, within sum sign),
 i.e. to *time* per word: 0.005, 0.004, and 0.002 (time units per
 word, see footnote[^fn09-3]). We then average these times, to
-a mean of 0.00366 hours per word, and finally we again take the 
+a mean of 0.00366 hours per word (13.2 seconds per word), and finally we again take the 
 inverse of this. The harmonic mean speed of writing is then $1/0.00366=273$
 words per hour, closer to the "actual" mean of 254 words per hour.
 

@@ -340,7 +340,7 @@ If you choose `Expected proportions (chi-square test)`, you may adjust the expec
 
 You may also check `Descriptives` and `Confidence interval` under the heading "Additional Statistics", and check `Descriptives plot` under "Plots", so as to gain better insight in the patterns in your data. 
 
-In JASP it is not possible to obtain the (adjusted) standardized residuals; however you can compute these manually from the observed and expected counts. 
+In JASP it is not possible to obtain the (adjusted) standardized residuals for this test; however you can compute these manually from the observed and expected counts. 
 
 ### contingency tables: preparation
 

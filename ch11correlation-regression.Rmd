@@ -164,7 +164,7 @@ these findings as follows[^fn11-1]:
 > *Example 11.1:* 
 The scores of the $n=10$ pupils on the CITO test subparts in
 Table \@ref(tab:cito) show a strong correlation between the scores
-on the Reading and Arithmetic tests: Pearson $r=0.79, p=.007$. Pupils 
+on the Reading and Arithmetic tests: Pearson $r=.79, p=.007$. Pupils 
 with a relatively high score on one test generally also achieve
 a relatively high score on the other test.
 
@@ -183,16 +183,15 @@ test, as summarised in Table \@ref(tab:cito), with the accompanying significance
                         Reading       Arithmetic      Geography
   ------------------ -------------- -------------- --------------
   Reading             1.00                 
-  Arithmetic          0.79 (.007)    1.00   
-  Geography          -0.51 (.13)    -0.01 (.97)         1.00
+  Arithmetic          .79 (.007)    1.00   
+  Geography          -.51 (.13)    -.01 (.97)         1.00
 
 In this matrix, only the lowest (left) half of the complete
-matrix is shown. This also suffices because the cells are mirrored
+matrix is shown. This suffices because the cells are mirrored
 along the diagonal: after all, the correlation between Reading (column 1) and Arithmetic
 (row 2) is the same as the correlation between Arithmetic (row 2) and
 Reading (row 1). In the cells on the diagonal, the pairwise correlation matrix 
-always contains the value $1.00$, since a variable always correlates perfectly with 
-itself.
+always contains the value $1.00$, since a variable always correlates perfectly with itself.
 We report these findings as follows:
 
 ---

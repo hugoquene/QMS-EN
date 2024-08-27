@@ -27,7 +27,7 @@ What is a variable? Roughly speaking, a variable is a particular kind of propert
 
 In our world, almost everything exists in varying quantities, in varying manners, or to various extents. Even a difficult to define property, like a person's popularity within a certain group, may form a variable. This is because we can rank people in a group from most to least popular. There are ample examples of variables:
 
-*	regarding *individuals*: their length, their weight, shoe size, speaking rate, number of siblings, number of children, political preference, income, sex, popularity within a group, etc.
+*	regarding *individuals*: their height, their weight, shoe size, speaking rate, number of siblings, number of children, political preference, income, sex, popularity within a group, etc.
 
 *	regarding *texts*: the total number of words ('tokens'), the number of unique words ('types'), number of typos, number of sentences, number of signs of interpunction, etc.
 

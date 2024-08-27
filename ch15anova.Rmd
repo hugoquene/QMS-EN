@@ -420,7 +420,7 @@ Table: (#tab:colours-anova) Summary of analysis of variance of the observations 
 
 > *Example 15.2*: 
 The mean scores are not equal for the red, grey and blue group 
-$[F(2,42) = 9.35$, $p < .001$, $\omega^2 = 0.28]$.
+$[F(2,42) = 9.35$, $p < .001$, $\omega^2 = .28]$.
 
 ---
 
@@ -512,9 +512,9 @@ about the differences between the groups in our example:
 > *Example 15.3*:
 The mean score of the red
 group is significantly lower than that from the two other groups combined
-[$F(1,42)=18.47, p=.0001, \omega^2=0.28$]. The mean score is
+[$F(1,42)=18.47, p=.0001, \omega^2=.28$]. The mean score is
 almost the same for the grey and blue group
-[$F(1,42)<1, \textrm{n.s.}, \omega^2=0.00$]. 
+[$F(1,42)<1, \textrm{n.s.}, \omega^2=.00$]. 
 This implies that the red group achieves significantly lower scores than the
 grey group and than the blue group. 
 
@@ -597,7 +597,7 @@ and/or in a $p$-value for the difference between two conditions.
 
 > *Example 15.4*:
 The mean scores are not equal for the red, grey and blue group 
-$[F(2,42) = 9.35$, $p = .0004$, $\omega^2 = 0.28]$.
+$[F(2,42) = 9.35$, $p = .0004$, $\omega^2 = .28]$.
 Post-hoc comparisons using Tukey's HSD test show that the grey and blue groups do not differ ($p=.88$), while there are significant differences between the red and blue groups ($p<.001$) and between the red and grey group ($p=.003$).
 
 ---
@@ -979,8 +979,8 @@ If the interaction is not significant, then it may be easier to first present an
 
 In two-way ANOVA too, we can perform post hoc comparisons (cf. §\@ref(sec:anova-oneway-posthoc)) to investigate which cells or conditions differ from each other. Again we use the Tukey HSD test, which provides a 95% confidence interval of the difference between two cells, and/or a $p$ value of that difference.  
 
-> The comprehension scores showed a significant main effect of structure markings in the text $[F(1,88)=63.75, p<.001, \omega^2=0.26]$, as well as a significant main effect of the reader type $[F(2,88)=33.56, p<.001, \omega^2=0.27]$.
-> There was also a significant interaction between text version and reader type $[F(2,88)=10.74, p<.001, \omega^2=0.08]$, see Figure \@ref(fig:DBE12interaction); this interaction was further explored using the Tukey HSD test (among 6 cells). 
+> The comprehension scores showed a significant main effect of structure markings in the text $[F(1,88)=63.75, p<.001, \omega^2=.26]$, as well as a significant main effect of the reader type $[F(2,88)=33.56, p<.001, \omega^2=.27]$.
+> There was also a significant interaction between text version and reader type $[F(2,88)=10.74, p<.001, \omega^2=.08]$, see Figure \@ref(fig:DBE12interaction); this interaction was further explored using the Tukey HSD test (among 6 cells). 
 Weak readers perform worse than average readers, in the text version without markers ($p<.001$), but not in the version with markers ($p=.99$). 
 Strong readers perform better than average readers, in the version without markers ($p<.001$) as well as with markers ($p=.01$). 
 Text markers have an effect for weak readers ($p<.001$) and for average readers ($p<.001$) but not for strong readers ($p=.89$); hence strong readers do not benefit from structure markers in the text, but weak and average readers do. 

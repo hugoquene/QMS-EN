@@ -141,7 +141,7 @@
 Data are becoming ever more important, in all parts of society, including academia, and including the humanities. The availability of large amounts of digital data (such as text, speech, video, behavioural measurements) raises new research questions, which are typically and often investigated using quantitative methods.
 Aimed at humanities researchers and students, this book offers an overview of and introduction into the most important quantitative methods and statistical techniques used in the humanities. The book provides a solid methodological foundation for quantitative research, and it introduces the most commonly used statistical techniques to describe data and to test hypotheses. This will also enable the reader to critically evaluate such quantitative research.
 
-This textbook is being used in the course \emph{Methods and Statistics 1} at Utrecht University (Linguistics program). The book is also highly suitable for self-study at a basic level, for everybody who wishes to learn more about quantitative methods and statistics.
+This textbook is being used in the course \emph{Methods and Statistics} at Utrecht University (Linguistics program). The book is also highly suitable for self-study at a basic level, for everybody who wishes to learn more about quantitative methods and statistics.
 
 The main text has been kept free of mathematical derivations and formulas, which are typically not very helpful for humanities scholars and students. Our explanation is rather conceptual, and rich in examples. Where necessary we present derivations and formulas in separate sections.
 
@@ -387,7 +387,7 @@ In our world, almost everything exists in varying quantities, in varying manners
 
 \begin{itemize}
 \item
-  regarding \emph{individuals}: their length, their weight, shoe size, speaking rate, number of siblings, number of children, political preference, income, sex, popularity within a group, etc.
+  regarding \emph{individuals}: their height, their weight, shoe size, speaking rate, number of siblings, number of children, political preference, income, sex, popularity within a group, etc.
 \item
   regarding \emph{texts}: the total number of words (`tokens'), the number of unique words (`types'), number of typos, number of sentences, number of signs of interpunction, etc.
 \item
@@ -813,7 +813,7 @@ In the above, we have discussed the levels of measurement in order of increasing
 
 It is always possible to reinterpret data measured at a high level of measurement as if they had been measured at a lower level. For instance, if, for each individual in a sample, we had measured their monthly income at a ratio level (in €), we would be able to make an ordinal variable out of this with no problem (e.g.~\emph{less than average, average to twice the average, more than twice the average}). This would mean discarding information: the original measurements in terms of € contain more information than the classification into three ordered categories derived from it.
 
-Of course, the opposite is not possible: a variable at a low level of measurement cannot be reinterpreted at a higher level. We would have to add, after the fact, information that we did not collect during the original measurement of this variable. It is therefore imperative to observe the relevant variables at the correct level of measurement. Supposed we wanted to compare body height in adult men and women. If we measure body height at an ordinal level (having defined three categories, \emph{short, medium, and tall}, equally for all individuals), this means that we cannot calculate the average body length, and we can also not use any statistical test that would refer to the average body length. This does not have to be a problem, but it is a good idea to think through the consequences of using a particular level of measurement in advance of the actual measurement.
+Of course, the opposite is not possible: a variable at a low level of measurement cannot be reinterpreted at a higher level. We would have to add, after the fact, information that we did not collect during the original measurement of this variable. It is therefore imperative to observe the relevant variables at the correct level of measurement. Supposed we wanted to compare body height in adult men and women. If we measure body height at an ordinal level (having defined three categories, \emph{short, medium, and tall}, equally for all individuals), this means that we cannot calculate the average body height, and we can also not use any statistical test that would refer to the average body height. This does not have to be a problem, but it is a good idea to think through the consequences of using a particular level of measurement in advance of the actual measurement.
 
 \chapter{Validity}\label{ch-validity}
 
@@ -2194,9 +2194,8 @@ the score 2 occurs the most often (\(4\times\)); this is the mode.
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{quote}
-\emph{Example 9.4}: In 2018, the mean income per household in the Netherlands was €29,500.
-The modal income (per household) was between €18,000 and €20,000\footnote{\url{https://www.cbs.nl/nl-nl/visualisaties/inkomensverdeling}}. As such, in
-2018, most households in the Netherlands fell within this income class.
+\emph{Example 9.4}: In 2022, the mean income per household in the Netherlands was about €35,000.
+The modal income (per household) was between €22,000 and €24,000\footnote{\url{https://www.cbs.nl/nl-nl/visualisaties/inkomensverdeling}}: this income category contained the largest number of households.
 \end{quote}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -2211,11 +2210,11 @@ The mode can be used with variables of all levels of measurement.
 \subsection{Harmonic mean}\label{sec:harmonicmean}
 
 If the dependent variable is a fraction or ratio,
-like the speed with which a task is conducted, then
+such as the speed with which a task is conducted, then
 the (arithmetic) mean of formula \eqref{eq:average} does
 not actually provide a good indication for the
 most characteristic or central value. In that case, it is better
-for you to use the harmonic mean:
+to use the harmonic mean:
 
 \begin{equation}
   H = \frac{1}{\frac{1}{n} \sum\limits_{i}^n \frac{1}{x_i} } = \frac{n}{\sum\limits_{i}^n \frac{1}{x_i}}
@@ -2229,25 +2228,26 @@ for you to use the harmonic mean:
 A student writes \(n=3\) texts. For the first text (500 words) (s)he takes
 2.5 hours, for the second text (1,000 words) (s)he takes 4 hours, and
 for the third text (300 words) (s)he takes 0.6 hours. What is this student's
-mean speed of writing? The speeds of writing are respectively 200, 250 and 500
+mean speed of writing?
+The speeds of writing are respectively 200, 250 and 500
 words per hour, and the ``normal'' (arithmetic) mean of these is
-317 words per hour. Nevertheless, the ``actual'' mean is
+317 words per hour, averaging over three texts.
+Nevertheless, it took 7.1 hours to write 1800 words, hence
+the ``actual'' mean is
 \((500+1000+300)/(2.5+4+0.6)\) \(=1800/7.1=254\) words per hour. The high
-writing speed of the short text counts for \(1/n\) parts in the arithmetic
-mean, even though the text only contains \(300/1,800=1/6\)
-of the total number of words.
+writing speed of the short text counts for \(1/n\) parts in the arithmetic mean, even though the text only contains \(300/1,800=1/6\) of the total number of words.
 \end{quote}
 
 \begin{quote}
 Since the dependent variable is a fraction (speed, words/hour),
-the harmonic mean is a better central tendency. We firstly convert
+the harmonic mean is a better measure of central tendency. We firstly convert
 the speed (words per time unit) into its inverse
 (see \eqref{eq:harmonicmean}, in denominator, within sum sign),
 i.e.~to \emph{time} per word: 0.005, 0.004, and 0.002 (time units per
 word, see footnote\footnote{This is comparable with sports like rowing, swimming, cycling, ice skating, etc., where
   the time over an agreed distance is measured and compared, rather than the speed over an
   agreed time.}). We then average these times, to
-a mean of 0.00366 hours per word, and finally we again take the
+a mean of 0.00366 hours per word (13.2 seconds per word), and finally we again take the
 inverse of this. The harmonic mean speed of writing is then \(1/0.00366=273\)
 words per hour, closer to the ``actual'' mean of 254 words per hour.
 \end{quote}
@@ -4060,7 +4060,7 @@ these findings as follows\footnote{When the correlation found \(r\) is \emph{not
 \emph{Example 11.1:}
 The scores of the \(n=10\) pupils on the CITO test subparts in
 Table \ref{tab:cito} show a strong correlation between the scores
-on the Reading and Arithmetic tests: Pearson \(r=0.79, p=.007\). Pupils
+on the Reading and Arithmetic tests: Pearson \(r=.79, p=.007\). Pupils
 with a relatively high score on one test generally also achieve
 a relatively high score on the other test.
 \end{quote}
@@ -4088,17 +4088,16 @@ test, as summarised in Table \ref{tab:cito}, with the accompanying significance 
 \bottomrule\noalign{}
 \endlastfoot
 Reading & 1.00 & & \\
-Arithmetic & 0.79 (.007) & 1.00 & \\
-Geography & -0.51 (.13) & -0.01 (.97) & 1.00 \\
+Arithmetic & .79 (.007) & 1.00 & \\
+Geography & -.51 (.13) - & .01 (.97) & 1.00 \\
 \end{longtable}
 
 In this matrix, only the lowest (left) half of the complete
-matrix is shown. This also suffices because the cells are mirrored
+matrix is shown. This suffices because the cells are mirrored
 along the diagonal: after all, the correlation between Reading (column 1) and Arithmetic
 (row 2) is the same as the correlation between Arithmetic (row 2) and
 Reading (row 1). In the cells on the diagonal, the pairwise correlation matrix
-always contains the value \(1.00\), since a variable always correlates perfectly with
-itself.
+always contains the value \(1.00\), since a variable always correlates perfectly with itself.
 We report these findings as follows:
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -6491,7 +6490,7 @@ in Denmark), but the number of observations (deceased persons) was very large.
 \end{quote}
 
 \begin{quote}
-Meanwhile, the difference in body length between dwarfs (shorter than
+Meanwhile, the difference in body height between dwarfs (shorter than
 1.5 m) and giants (taller than 2.0 m) is so large that the difference can be firmly
 empirically established on the basis of only \(n=2\) in each group.
 \end{quote}
@@ -7508,7 +7507,7 @@ Group & 2 & 14.50 & 7.248 & 9.36 & \textless.001 \\
 \begin{quote}
 \emph{Example 15.2}:
 The mean scores are not equal for the red, grey and blue group
-\([F(2,42) = 9.35\), \(p < .001\), \(\omega^2 = 0.28]\).
+\([F(2,42) = 9.35\), \(p < .001\), \(\omega^2 = .28]\).
 \end{quote}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -7604,9 +7603,9 @@ about the differences between the groups in our example:
 \emph{Example 15.3}:
 The mean score of the red
 group is significantly lower than that from the two other groups combined
-{[}\(F(1,42)=18.47, p=.0001, \omega^2=0.28\){]}. The mean score is
+{[}\(F(1,42)=18.47, p=.0001, \omega^2=.28\){]}. The mean score is
 almost the same for the grey and blue group
-{[}\(F(1,42)<1, \textrm{n.s.}, \omega^2=0.00\){]}.
+{[}\(F(1,42)<1, \textrm{n.s.}, \omega^2=.00\){]}.
 This implies that the red group achieves significantly lower scores than the
 grey group and than the blue group.
 \end{quote}
@@ -7705,7 +7704,7 @@ and/or in a \(p\)-value for the difference between two conditions.
 \begin{quote}
 \emph{Example 15.4}:
 The mean scores are not equal for the red, grey and blue group
-\([F(2,42) = 9.35\), \(p = .0004\), \(\omega^2 = 0.28]\).
+\([F(2,42) = 9.35\), \(p = .0004\), \(\omega^2 = .28]\).
 Post-hoc comparisons using Tukey's HSD test show that the grey and blue groups do not differ (\(p=.88\)), while there are significant differences between the red and blue groups (\(p<.001\)) and between the red and grey group (\(p=.003\)).
 \end{quote}
 
@@ -8204,8 +8203,8 @@ If the interaction is not significant, then it may be easier to first present an
 In two-way ANOVA too, we can perform post hoc comparisons (cf.~§\ref{sec:anova-oneway-posthoc}) to investigate which cells or conditions differ from each other. Again we use the Tukey HSD test, which provides a 95\% confidence interval of the difference between two cells, and/or a \(p\) value of that difference.
 
 \begin{quote}
-The comprehension scores showed a significant main effect of structure markings in the text \([F(1,88)=63.75, p<.001, \omega^2=0.26]\), as well as a significant main effect of the reader type \([F(2,88)=33.56, p<.001, \omega^2=0.27]\).
-There was also a significant interaction between text version and reader type \([F(2,88)=10.74, p<.001, \omega^2=0.08]\), see Figure \ref{fig:DBE12interaction}; this interaction was further explored using the Tukey HSD test (among 6 cells).
+The comprehension scores showed a significant main effect of structure markings in the text \([F(1,88)=63.75, p<.001, \omega^2=.26]\), as well as a significant main effect of the reader type \([F(2,88)=33.56, p<.001, \omega^2=.27]\).
+There was also a significant interaction between text version and reader type \([F(2,88)=10.74, p<.001, \omega^2=.08]\), see Figure \ref{fig:DBE12interaction}; this interaction was further explored using the Tukey HSD test (among 6 cells).
 Weak readers perform worse than average readers, in the text version without markers (\(p<.001\)), but not in the version with markers (\(p=.99\)).
 Strong readers perform better than average readers, in the version without markers (\(p<.001\)) as well as with markers (\(p=.01\)).
 Text markers have an effect for weak readers (\(p<.001\)) and for average readers (\(p<.001\)) but not for strong readers (\(p=.89\)); hence strong readers do not benefit from structure markers in the text, but weak and average readers do.
@@ -8772,7 +8771,7 @@ If you choose \texttt{Expected\ proportions\ (chi-square\ test)}, you may adjust
 
 You may also check \texttt{Descriptives} and \texttt{Confidence\ interval} under the heading ``Additional Statistics'', and check \texttt{Descriptives\ plot} under ``Plots'', so as to gain better insight in the patterns in your data.
 
-In JASP it is not possible to obtain the (adjusted) standardized residuals; however you can compute these manually from the observed and expected counts.
+In JASP it is not possible to obtain the (adjusted) standardized residuals for this test; however you can compute these manually from the observed and expected counts.
 
 \subsection{contingency tables: preparation}\label{contingency-tables-preparation-1}
 

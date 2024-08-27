@@ -5,19 +5,19 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>16 Chi-square-tests | Quantitative Methods and Statistics</title>
-  <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TW2V17002, TW2V19002, TL2V23004), Dept Languages Literature and Communication, Utrecht University, the Netherlands." />
-  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+  <meta name="description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics (TW3V24001, TL2V23004, TW2V19002, TW2V17002), Dept of Languages Literature and Communication, Utrecht University, the Netherlands." />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
   <meta property="og:title" content="16 Chi-square-tests | Quantitative Methods and Statistics" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TW2V17002, TW2V19002, TL2V23004), Dept Languages Literature and Communication, Utrecht University, the Netherlands." />
+  <meta property="og:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics (TW3V24001, TL2V23004, TW2V19002, TW2V17002), Dept of Languages Literature and Communication, Utrecht University, the Netherlands." />
   <meta name="github-repo" content="rstudio/QMS-EN" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="16 Chi-square-tests | Quantitative Methods and Statistics" />
   
-  <meta name="twitter:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TW2V17002, TW2V19002, TL2V23004), Dept Languages Literature and Communication, Utrecht University, the Netherlands." />
+  <meta name="twitter:description" content="Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics (TW3V24001, TL2V23004, TW2V19002, TW2V17002), Dept of Languages Literature and Communication, Utrecht University, the Netherlands." />
   
 
 
@@ -54,7 +54,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -126,6 +126,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -540,7 +541,7 @@ div.csl-indent {
 <p>Earlier, we already saw that we cannot always make use of a
 parametric test such as the <em>t</em> test or analysis of variance, because
 the collected data do not satisfy the assumptions. If the collected data
-have been measured on an interval level of measurement (see Chapter
+have not been measured on an interval level of measurement (see Chapter
 <a href="ch-levelsofmeasurement.html#ch-levelsofmeasurement">4</a>), or if the probability distribution
 of the data is far from normal (see
 §<a href="ch-probability-distributions.html#sec:whatifnotnormal">10.5</a>), then a non-parametric test is to be
@@ -690,7 +691,8 @@ and the unequal distribution of outcomes (1490 non-survivors and 711
 survivors). If there were no association between the class and the survival
 status, we would expect there to be 220 non-survivors amongst the first class
 passengers <span class="math inline">\([(1490/2201) \times 325 = (325 \times 1490) / 2201 = 220]\)</span>
-and 105 non-survivors <span class="math inline">\([(711/2201) \times 325 = (325 \times 711) / 2201 = 105]\)</span>. In this way, we can determine the expected frequencies for each cell,
+and 105 non-survivors <span class="math inline">\([(711/2201) \times 325 = (325 \times 711) / 2201 =
+105]\)</span>. In this way, we can determine the expected frequencies for each cell,
 taking into account the marginal totals. With the help of these
 expected frequencies, we then calculate <span class="math inline">\(\chi^2=190.4\)</span>, here with 3 d.f.,
 <span class="math inline">\(p&lt;.001\)</span>. The significance <span class="math inline">\(p\)</span> found is smaller than <span class="math inline">\(\alpha=.001\)</span>, and
@@ -897,8 +899,8 @@ Open the <code>Cells</code> section bar, and check the option <code>Expected cou
 <p>The resulting value of the <span class="math inline">\(\chi^2\)</span> test statistic is reported in the output under <strong>Chi-Squared Tests</strong>.</p>
 <p>If you have a “long” data sheet, with one observation per row, then you only need to select one nominal variable (<code>class</code>) in the “Rows” field, and the other nominal variable (<code>outcome</code>) in the “Columns” field, to set up the contingency table (Table <a href="ch-chi-square-tests.html#tab:titanic">16.1</a>).<br />
 Open the <code>Statistics</code> section bar, and check the option <code>Chi-square</code> (<span class="math inline">\(\chi^2\)</span>).
-Open the <code>Cells</code> section bar, and check the option <code>Expected counts</code>.</p>
-<p>In JASP it is not possible to obtain the (adjusted) standardized residuals; however you can compute these manually from the observed and expected counts.</p>
+Open the <code>Cells</code> section bar, and check the option <code>Expected counts</code>. Also check the <code>Pearson residuals</code> and <code>Standardized (adjusted Pearson)</code>.</p>
+<p>The number of survivors is significantly larger than expected under H0 for passengers in first and second class (positive standardized residuals for these cells, both <span class="math inline">\(p&lt;.001\)</span>) and significantly lower than expected under H0 for passenger in third class and for crew (negative standardized residuals, both <span class="math inline">\(p&lt;.001\)</span>).</p>
 </div>
 </div>
 <div id="r-17" class="section level2 hasAnchor" number="16.9">
@@ -941,7 +943,8 @@ The resulting <code>chisq.htest</code> object is saved within R in order to insp
 ##   2nd   -3.521022  3.521022
 ##   3rd    4.888701 -4.888701
 ##   Crew   6.868541 -6.868541</code></pre>
-<p>The adjusted standardized residuals show the remarkably high number of survivors among the first class passengers, and the remarkably low number of survivors among the ship’s crew.</p>
+<p>The adjusted standardized residuals show the remarkably high number of survivors among the first class passengers, and the remarkably low number of survivors among the ship’s crew.
+Note that R here reports the standardized (but not otherwise adjusted) Pearson residuals.</p>
 </div>
 </div>
 <div id="effect-size-odds-ratio" class="section level2 hasAnchor" number="16.10">
@@ -1015,7 +1018,7 @@ there is an association between smoking behaviour and death from lung cancer.</p
 <p>For the effect size, we firstly calculate the ‘odds’ of death from
 lung cancer for the smokers: D/C= <span class="math inline">\(83/21178 =0.00392\)</span>. Amongst the smokers,
 there are 83 deaths from lung cancer, compared with 21178
-deaths not from lung cancer (the ‘odds’ of dying from
+persons not dying from lung cancer (the ‘odds’ of dying from
 lung cancer are 1 in 0.00392). For the non-smokers:
 B/A=<span class="math inline">\(1/3092 =0.00032\)</span> (the ‘odds’ are 1 in 0.00032).</p>
 <p>We call the <em>ratio</em> of these two ‘odds’ for the two groups the
@@ -1035,7 +1038,7 @@ non-smokers.</p>
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-Agre07" class="csl-entry">
 Agresti, Alan. 2007. <em>Introduction to Categorical Data Analysis</em>. Hoboken, NJ: Wiley.
 </div>

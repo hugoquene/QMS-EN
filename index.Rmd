@@ -12,7 +12,7 @@ bibliography: [book.bib, packages.bib, hhmhto.bib, pandoc.bib]
 biblio-style: apalike
 link-citations: yes
 github-repo: rstudio/QMS-EN
-description: "Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics 1 (TW2V17002, TW2V19002, TL2V23004), Dept Languages Literature and Communication, Utrecht University, the Netherlands."
+description: "Textbook on Quantitative Methods and Statistics, used a.o. in undergraduate course Methods and Statistics (TW3V24001, TL2V23004, TW2V19002, TW2V17002), Dept of Languages Literature and Communication, Utrecht University, the Netherlands."
 
 ---
 
@@ -77,8 +77,8 @@ https://www.gnu.org/licenses/gpl-3.0.en.html).
 
 Please cite this work as follows (in APA style, and substitute the date):
 
-Quené, H. \& Van den Bergh, H. (2021). *Quantitative Methods and Statistics*. 
-Retrieved 29 January 2021 from <https://hugoquene.github.io/QMS-EN/> .
+Quené, H. \& Van den Bergh, H. (2024). *Quantitative Methods and Statistics*. 
+Retrieved 27 Aug 2024 from <https://hugoquene.github.io/QMS-EN/> .
 
 ## Technical details {-}
 
@@ -93,8 +93,8 @@ The English translation is based on the Dutch LaTeX version (for Part I) and Rma
 
 ## About the authors {-}
 
-Both authors work at the Faculty of Humanities at Utrecht University, the Netherlands.
-HQ is professor in the Quantitative Methods of Empirical Research in the Humanities, and he is also founding director of the Centre for Digital Humanities at Utrecht University. HvdB is professor in the Pedagogy and Testing of Language Proficiency, and he is also section chair in Dutch Language and Literature at the Dutch National Board of Tests and Examinations (CvTE).
+HQ is professor in the Quantitative Methods of Empirical Research in the Humanities, and he is also founding director of the Centre for Digital Humanities (CDH), both at Utrecht University. 
+HvdB is professor emeritus in the Pedagogy and Testing of Language Proficiency at Utrecht University, and former section chair in Dutch Language and Literature at the Dutch National Board of Tests and Examinations (CvTE).
 
 ```{r include=FALSE}
 # automatically create a bib database for R packages

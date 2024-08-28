@@ -1,16 +1,25 @@
 # Critical values for $t$-distribution {#app-criticaltvalues}
 
 ```{r criticaltvalues-auxiliaryfigure, echo=FALSE, fig.height=2}
-# adapted from `kritieketwaarden_hulpfiguur.R`
-# HQ 20140320
-# everything with df=49
+# adapted from `kritieketwaarden_hulpfiguur` chunk in KMS-nl version
+# HQ 20240828
+# alles met df=49
 op <- par(mar=c(3,1,1,1)+0.1)
 xx <- seq(1,4,by=.01)
 yy <- dt(xx,df=49)
 curve( dt(x,df=49), from=-4, to=4, xaxt="n", yaxt="n", xlab="", ylab="", bty="n", lwd=3 )
 polygon( x=c(1,xx), y=c(0,yy), col="lavender", border="lavender" )
+# 20240828 added other polygon corresponding to B, three commands
+xx <- seq(-1,1,by=.01) 
+yy <- dt(xx,df=49)
+polygon( x=c(-1,xx,1), y=c(0,yy,0), col="wheat1", border="wheat1" )
+#
 curve( dt(x,df=49), from=-4, to=4, xaxt="n", yaxt="n", xlab="", ylab="", bty="n", lwd=3, add=TRUE )
 text( 1.5, dt(1.5,df=49)*.4, "p", adj=.5, cex=1 )
+# 20240828 added other polygon corresponding to B, two more commands
+text( -0.5, dt(0.5,df=49)*.4, "B/2", adj=.5, cex=1 )
+text( +0.5, dt(0.5,df=49)*.4, "B/2", adj=.5, cex=1 )
+#
 axis( side=1, at=c(0,1), labels=c("0","t*"), cex=1, tick=F, line=-1 ) # cex is ignored
 abline( h=0, lty=1, col="grey70" )
 segments( x0=0, x1=0, y0=0, y1=dt(0,df=49), col="grey70" )

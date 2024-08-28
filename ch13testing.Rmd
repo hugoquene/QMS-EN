@@ -28,48 +28,50 @@ tests.
 
 We already discussed the general principle of testing briefly in
 §\@ref(sec:falsification) and §\@ref(sec:empiricalcycle).
-We will illustrate this again here
+We will illustrate this once more here
 with an example. We investigate the statement H1:		
-'Linguistics students master traditional grammar *better* than the average language student'. As a measurement instrument, we use the so-called "grammar test"[^fn13-1] which is compulsory 
+'Linguistics students master traditional grammar *better* than the average language student'.    
+As a measurement instrument, we use the so-called "grammar test"[^fn13-1] which is compulsory 
 for most students
 in language programs at Utrecht University. On the basis of previous cohorts (year groups),
-we expect a mean score of 73 on this test; this is the mean number of good answers
-from 100 questions. We thus operationalise this first as $\mu > 73$, and from this deduce
+we expect a mean score of 73 on this test; 
+this is the mean number of correct answers to 100 questions. 
+We thus operationalise H1 as $\mu > 73$, and from this deduce
 the accompanying null hypothesis which is actually tested:
 $\mu = 73$.
 (In §\@ref(sec:ttest-onesidedtwosided) below, we will go into more detail 
 about whether or not to specify the *direction* of the difference in H1). 
 
-For the first year Linguistics students ($n=34$) from a certain cohort,
+For a sample consisting of the first year Linguistics students ($n=34$) from a certain cohort,
 we find an average score of 84.4. That is indeed far above the reference value
 of 73 --- but that might also be a coincidence.
 Perhaps, H0 is true, and, by chance, there happen to be many grammar experts
 in our sample (from the population of possible first year students
 in Linguistics). We can calculate the probability $P$ of this situation, 
 i.e. the probability $P$ of finding a mean score of $\overline{x}=84.4$,
-given a random sample of $n=34$ people and given that 
+given a random sample of $n=34$ participants and given that 
 H0 is in fact true (i.e. $\mu=73$): this probability
-$P=.000000001913$. This probability $P$ represents the probability of finding this 
+$P=.000000001913$. 
+This probability $P$ represents the probability of finding this 
 data, whilst H0 is true:
-$P(\overline{x}=84.4|\textrm{H0},n=34)$. 
+$P(\overline{x}=84.4|\textrm{H0}, n=34)$. 
 In this example, the probability $P$ is very small.
 
 For the argumentation, it is essential that the data are valid and
 reliable --- this is precisely the reason why we discussed validity 
 (Chapter \@ref(ch-validity)) and reliability 
 (Chapter \@ref(ch-reliability)). If we have done everything properly,
-we can, after all, trust the data obtained. 
-We are then *not* reasonably able to attribute the low probability of the data according 
-to H0 to errors in operationalisation, or measurement errors, or other deviations in the data.
+we may, after all, trust the data obtained. 
+We are then *not* able to attribute the low $P$ (probability of the data according to H0) to errors in operationalisation, or to measurement errors, or to other deviations or artefacts in the data.
 The logical conclusion then must be that the improbable outcome shows that the
 premise (H0) is probably *not* true: we reject H0; H0 has thus been
 falsified. Thereby, our knowledge has increased because we can now 
 assume on legitimate grounds that H0 is untrue (and thus that H1
-is true).
+must be true).
 
 If we reject H0 on the basis of the reasoning above which in turn is
 based on probability, then we do have to take into account the small
-probability $P$ that rejecting H0 is an unjustified decision (Type I error; see 
+probability $P$ that rejecting H0 is an incorrect decision (Type I error; see 
 §\@ref(sec:empiricalcycle)). After all, there is the probability $P$ that
 we find these data when H0 is in fact true (in this example: when the linguists
 on average do not score better than $\mu=73$).
@@ -105,11 +107,9 @@ text( 84.4, .06, "observed\nmean", adj=1/2 )
 ```
 
 Figure \@ref(fig:gramm2013onesample) shows the probability of the 
-sample mean ($n=34$) if H0 is true. We see that the value 73 can have
+sample mean ($n=34$) if H0 is true. We see that the value 73 has
 the highest probability, but also 72 or 74 are probable mean scores 
-according to H0. However, a mean of 84.4 is very improbable, the probability
-$P$ of this mean score (height of the curve) is almost null according to
-H0.
+according to H0. However, a mean of 84.4 is very improbable: the probability $P$ of observing this mean score, or a higher score (area under the curve, to the right of the observed mean) is almost null according to H0.
 
 The boundary value for $P$, at which we reject H0 is called the significance 
 level, often referred to with the symbol $\alpha$ (see
@@ -117,8 +117,7 @@ level, often referred to with the symbol $\alpha$ (see
 but sometimes other boundary values are also used. In Figure
 \@ref(fig:gramm2013onesample), you see that the probability of a mean score
 of 77.7 or more has a probability of $P=.05$ or smaller, according to
-H0. This can be seen from the area under the curve. The coloured part has 
-precisely an area of 0.05 of the total area under
+H0. This can be seen from the area under the curve. The coloured part has precisely an area of 0.05 or 5% of the total area under
 the curve. 
 
 The decision about whether or not to reject H0 is based on the probability 
@@ -204,31 +203,32 @@ We report the result as follows:
 
 To explain the concept of degrees of freedom, we begin with an 
 analogy. Imagine that there are three possible routes for getting
-from A to B: a coast path, a mountain path, and a motorway. It is true that a walker
-who wants to travel from A to B has three options but there are only
+from A to B: a coast path, a mountain path, and a motorway. A walker
+who wants to travel from A to B has three options, but there are only
 two degrees of freedom for the walker: he or she only has to make 
-two choices to choose from the three options. Firstly, the motorway drops out 
-(first choice), and then the mountain path (second choice), 
-and then the chosen route along the coast is the only one left over. There are thus two
-choices 'free' in order to choose one of the three possible routes in the end.
-If we know the two choices, then we can deduce from them which
+two choices to choose from the three options. Firstly, the motorway option is discarded (first choice), 
+and then the mountain path is discarded (second choice), 
+after which the coast path is the only option remaining. 
+Thus there are two 'free' choices,
+in order to choose one of the three possible routes.
+If we know the two choices, then we can deduce which
 route must have been chosen.
 
 Now, we will look at a student who on average has achieved a $\overline{x}=7.0$ 
 over the $N=4$ courses from the first introductory track of his or her
 degree programme. The mean of $7.0$ can be arrived at in many ways, 
 e.g. $(8,7,7,6)$ or $(5,6,8,9)$. But if we know the result of three of the courses,
-and we also know that the mean is a 7.0 then we also know what the value
+and we also know that the mean is a 7.0, then we also know what the value
 of the fourth observation must be. This last observation is thus no longer
 'free' but is now fixed by the first three observations, in combination 
 with the mean over $N=4$ observations. We then say that you have $N-1$
-degrees of freedom to determine this characteristic of the sample, like the sample mean here, or like the test statistic $t$.
+degrees of freedom to determine this characteristic of the sample, such as the sample mean here, or such as the test statistic $t$.
 The degrees of freedom is often abbreviated to 'd.f.' (symbol $\nu$, Greek letter "nu").
 
 In practice, the number of degrees of freedom is not difficult to determine.
-We namely indicate for every test how the degrees of freedom are established
---- and the number of d.f. is usually also calculated by the 
-statistical analysis program which we use. 
+We indicate for every test how the degrees of freedom are established
+--- and the number of d.f. is usually also calculated and reported by the 
+statistical analysis program that we use. 
 
 For the $t$-test of a single sample, the number of degrees of freedom is the 
 number of observations $N-1$. In the above discussed example, we thus have

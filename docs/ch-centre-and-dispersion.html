@@ -638,7 +638,7 @@ Figure 9.1: Histogram of N=10 waiting times, with the mean marked.
 <div id="sec:median" class="section level3 hasAnchor" number="9.3.2">
 <h3><span class="header-section-number">9.3.2</span> median<a href="ch-centre-and-dispersion.html#sec:median" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The median (symbol <span class="math inline">\(Md\)</span> or <span class="math inline">\(\tilde{x}\)</span>) is the observation in the middle
-of the order of observations <a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a>. When we sort the scores of <span class="math inline">\(X\)</span>
+of the sequence of sorted observations <a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. When we sort the observed values of variable <span class="math inline">\(X\)</span>
 from smallest to largest, the median is the midpoint of the sorted
 sequence. Half of the observations are smaller than the median,
 and the other half is larger than the median.</p>
@@ -677,7 +677,7 @@ the score 2 occurs the most often (<span class="math inline">\(4\times\)</span>)
 <hr />
 <blockquote>
 <p><em>Example 9.4</em>: In 2022, the mean income per household in the Netherlands was about €35,000.
-The modal income (per household) was between €22,000 and €24,000<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a>: this income category contained the largest number of households.</p>
+The modal income (per household) was between €22,000 and €24,000<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>: this income category contained the highest number of households.</p>
 </blockquote>
 <hr />
 <p>The mode is even less sensitive than the mean to extreme values of
@@ -719,7 +719,7 @@ the harmonic mean is a better measure of central tendency. We firstly convert
 the speed (words per time unit) into its inverse
 (see <a href="ch-centre-and-dispersion.html#eq:harmonicmean">(9.2)</a>, in denominator, within sum sign),
 i.e. to <em>time</em> per word: 0.005, 0.004, and 0.002 (time units per
-word, see footnote<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a>). We then average these times, to
+word, see footnote<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>). We then average these times, to
 a mean of 0.00366 hours per word (13.2 seconds per word), and finally we again take the
 inverse of this. The harmonic mean speed of writing is then <span class="math inline">\(1/0.00366=273\)</span>
 words per hour, closer to the “actual” mean of 254 words per hour.</p>
@@ -953,7 +953,7 @@ Figure 9.3: Boxplots of the scores of <span class="math inline">\(N=10\)</span> 
 <p>The box spans (approximately) the area from <span class="math inline">\(Q_1\)</span> to <span class="math inline">\(Q_3\)</span>, and
 thus spans the central half of the observations. The thicker line in the
 box marks the median. The lines extend to the smallest and largest
-values <em>which are not outliers</em> <a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a>. The separate outliers
+values <em>which are not outliers</em> <a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>. The separate outliers
 are indicated here with a distinct symbol.</p>
 </div>
 </div>
@@ -970,7 +970,7 @@ Instead of calculating the mean of the deviations themselves, we thus calculate 
 of the squares of those deviations. Both the positive and negative deviations
 result in positive squared deviations. We then calculate the mean of all
 those squared deviations, i.e. we add them up and divide them by
-<span class="math inline">\((n-1)\)</span>, see Footnote<a href="#fn16" class="footnote-ref" id="fnref16"><sup>16</sup></a>. We call the result the
+<span class="math inline">\((n-1)\)</span>, see Footnote<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>. We call the result the
 <em>variance</em>, indicated by the symbol <span class="math inline">\(s^2\)</span>:
 <span class="math display" id="eq:variance">\[\begin{equation}
   s^2 = \frac{ \sum (x_i - \overline{x})^2 } {n-1}
@@ -1029,7 +1029,7 @@ which does not use the mean. This measure is therefore less
 sensitive for outliers (more robust), which is sometimes useful.</p>
 <p>For this, we look for the deviation of every observation from
 the median (not the mean). We then take the absolute value
-of these deviations<a href="#fn17" class="footnote-ref" id="fnref17"><sup>17</sup></a> (not the square). Finally, we
+of these deviations<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a> (not the square). Finally, we
 determine again the median of these absolute deviations (not the mean).
 We call the result the “median absolute deviation” (MAD):
 <span class="math display" id="eq:MAD">\[\begin{equation}
@@ -1132,7 +1132,7 @@ in this example is not as good as this decimal number suggests. In fact,
 here one deviant answer already brings about a deviation of
 <span class="math inline">\(\pm0.06667\)</span> in the mean. Besides, a mean score
 is always the result of a division operation, and
-“[for] quantities created from measured quantities by multiplication and division, the calculated result should have as many significant figures as the measured number with the least number of significant figures” <a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup></a>.
+“[for] quantities created from measured quantities by multiplication and division, the calculated result should have as many significant figures as the measured number with the least number of significant figures” <a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a>.
 In this example, the mean’s numerator (<span class="math inline">\(43\)</span>) and its denominator (<span class="math inline">\(15\)</span>) both consist
 of 2 significant figures. The mean score should be reported as <span class="math inline">\(2.9\)</span> points, with only
 one figure after the decimal point.</p>
@@ -1217,7 +1217,7 @@ failed students (i.e. a number with one significant figure) means we have
 to render the proportion with only one significant figure, and thus not
 as a percentage. It is preferable to report the proportion itself (<span class="math inline">\(23/29\)</span>), or
 the “odds” (<span class="math inline">\(23/6=4\)</span>) rounded off to the correct number of significant
-figures<a href="#fn19" class="footnote-ref" id="fnref19"><sup>19</sup></a>.</p>
+figures<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a>.</p>
 </blockquote>
 <hr />
 <p>On the basis of the same considerations, a percentage with one decimal
@@ -1315,7 +1315,7 @@ of <span class="math inline">\(x\)</span>, expressed in units of standard deviat
 standard score of <span class="math inline">\(z=-1\)</span>, the observed score is precisely <span class="math inline">\(1 \times s\)</span>
 below the average <span class="math inline">\(\overline{x}\)</span>. For a standard score of <span class="math inline">\(z=+2\)</span>,
 then the observed score is precisely <span class="math inline">\(2 \times s\)</span> above the
-mean<a href="#fn20" class="footnote-ref" id="fnref20"><sup>20</sup></a>.</p>
+mean<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a>.</p>
 <p>Z-scores are also useful for comparing two variables which
 are in fact measured on the same scale (for example, a scale of
 <span class="math inline">\(1 \dots 100\)</span>), but which nevertheless have different means and/or
@@ -1384,61 +1384,65 @@ From the top bar, choose</p>
 Other quantiles are also possible: check the option <code>Cut points for:</code> and enter a number, e.g. <code>6</code> will produce sextiles. If you want to know a specific percentile, e.g. the 17th percentile, check the option <code>Percentiles:</code> and enter the desired percentile value (here <code>17</code>).</p>
 <p>For summaries of central tendency and dispersion, check the options (under the heading “Central Tendency”) for <code>Mean</code>, <code>Median</code>, <code>Mode</code> en <code>Sum</code> , as well as those (under the heading “Dispersion”) for <code>Variance</code>, <code>Std.deviation</code>, <code>MAD Robust</code> (with constant value fixed at 1; see Eq.<a href="ch-centre-and-dispersion.html#eq:MAD">(9.5)</a> above), <code>IQR</code>, <code>Minimum</code> and <code>Maximum</code> . This will produce a summary table showing the requested descriptive statistics of the variable(s).</p>
 <p>In JASP, a column of <strong>standard scores</strong> can be created by first creating a new variable (column) and subsequently filling that column with standard scores.</p>
-<p>To create a new variable, click on the <strong>+</strong> button to the right of the last column name in the data tab. A “Create Computed Column” panel appears, where you can enter a name for the new variable, e.g. <code>Lezen_Z</code>. You can also choose between <code>R</code> and a pointer. These are the two options in JASP to define formulas with which the new (empty) variable is filled; using <code>R</code> code, or manually using JASP. The paragraphs below explain how standard scores can be computed using these two options. Finally, you can check which measurement level the new variable should be (see Chapter <a href="ch-levelsofmeasurement.html#ch-levelsofmeasurement">4</a>). For standard scores, you can leave this at <code>Scale</code>. Next, click on <code>Create Column</code> to create the new variable. The new variable (empty column) appears as the rightmost variable in the data set.</p>
-<p>If the <strong>R</strong> option is chosen to define the new variable, a field with “#Enter your R code here :)” appears above the data. Here you can enter R code (see below) that produces standardized values.<br />
+<p>To create a new variable, click on the <strong>+</strong> button to the right of the last column name in the data tab. A “Create Computed Column” panel appears, where you can enter a name for the new variable, e.g. <code>Lezen_Z</code>. You can also choose between <code>R</code> and a hand-shaped pointer. These are the two options in JASP to define formulas with which the new (empty) variable is filled: using <code>R</code> code, or manually using JASP. The paragraphs below explain how standard scores can be computed using these two options. Finally, you can check which measurement level the new variable should be (see Chapter <a href="ch-levelsofmeasurement.html#ch-levelsofmeasurement">4</a>). For standard scores, you can leave this at <code>Scale</code>. Next, click on <code>Create Column</code> to create the new variable. The new variable (empty column) appears as the rightmost variable in the data set.</p>
+<p>If the <strong>computed with R code</strong> option is chosen to define the new variable, a field containing the text “Enter your R code here” appears above the data. Here you can enter R code (see below) that produces standardized values.<br />
 This snippet of R code produces standard scores of the variable <code>Lezen</code>:</p>
 <pre><code>((Lezen - mean(Lezen)) / sd(Lezen))</code></pre>
-<p>Enter this R code, and click on the button <code>Compute column</code> below the work sheet to fill the empty variable.</p>
-<p>If the <strong>pointer</strong> or <strong>manual</strong> option is chosen to define the new variable, a work sheet will appear above the data. To the left of the work sheet are the variables, above it are math symbols, and to the right of the work sheet are several functions. From those functions you can pick the ones required to compute standard scores. If something goes wrong, items on the work sheet can be erased by dragging them to the trash bin on the lower right bottom. After you have completed the specification on the work sheet, then click on the button <code>Compute column</code> under the work sheet, to fill the new variable with the generated numbers.<br />
+<p>Enter this R code, fill out the other fields,
+and click on the button <code>Compute column</code> below the work sheet to fill the empty variable.</p>
+<p><em>Note that in JASP, applying mathematics to variable values is only possible if the measurement levels of all variables involved are set to ‘Scale’.</em></p>
+<p>If the <strong>hand pointer</strong> or <strong>drag-and-drop</strong> option is chosen to define the new variable, a work sheet will appear above the data. To the left of the work sheet are the variables, above it are math symbols, and to the right of the work sheet are several functions. From those functions you can pick the ones required to compute standard scores. If something goes wrong, items on the work sheet can be erased by dragging them to the trash bin on the lower right bottom. After you have completed the specification on the work sheet, then click on the button <code>Compute column</code> under the work sheet, to fill the new variable with the generated numbers.<br />
 Drag the variable to convert into the empty sheet. Pick function <code>mean(y)</code> from the right.
 Drag the variable to convert to “values”. Pick <span class="math inline">\(\div\)</span> from the math symbols at the top.
 Pick the function <span class="math inline">\(\sigma\)</span>_y from the right and drag it to the denominator part of the fraction (below the fraction bar). For this function too, drag the variable to convert to “values”.
-Eventually the definition of standard scores (here for variable named <code>Lezen</code>) should look like this: <span class="math display">\[\frac{(Lezen-mean(Lezen))}{\sigma (Lezen)}\]</span><br />
-Click on the button <code>Compute column</code> below the work sheet to fill the empty variable with the newly computed standard scores.</p>
+Eventually the definition of standard scores (here for a variable named <code>Lezen</code>) should look like this: <span class="math display">\[\frac{(Lezen-mean(Lezen))}{\sigma (Lezen)}\]</span><br />
+Fill out the other fields, and then click on the button <code>Compute column</code> below the work sheet, to fill the empty variable with the newly computed standard scores.</p>
+<p><em>Note that in JASP, applying mathematics to variable values is only possible if the measurement levels of all variables involved are set to ‘Scale’.</em></p>
+<p>If you have made a mistake or want to adjust the code of the new variable, you can always return to this ‘Computed Column’ field by clicking on the formula icon <span class="math inline">\(f_x\)</span> next to the variable name, or by clicking on the variable name.</p>
 </div>
 <div id="r-3" class="section level2 hasAnchor" number="9.11">
 <h2><span class="header-section-number">9.11</span> R<a href="ch-centre-and-dispersion.html#r-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>For <strong>quartiles and boxplot</strong> like Figure <a href="ch-centre-and-dispersion.html#fig:cito-boxplot">9.3</a>, we use the commands <code>fivenum</code>, <code>quantile</code>, and <code>boxplot</code>:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="ch-centre-and-dispersion.html#cb33-1" tabindex="-1"></a><span class="fu">require</span>(foreign) <span class="co"># for foreign::read.spss</span></span>
-<span id="cb33-2"><a href="ch-centre-and-dispersion.html#cb33-2" tabindex="-1"></a>cito <span class="ot">&lt;-</span> <span class="fu">read.spss</span>(<span class="st">&quot;data/cito.sav&quot;</span>)</span>
-<span id="cb33-3"><a href="ch-centre-and-dispersion.html#cb33-3" tabindex="-1"></a><span class="co"># Columns in `cito.sav` have Dutch names:</span></span>
-<span id="cb33-4"><a href="ch-centre-and-dispersion.html#cb33-4" tabindex="-1"></a><span class="co"># in Dutch: Leerling Lezen Rekenen Wereldorientatie stadplat rek.f</span></span>
-<span id="cb33-5"><a href="ch-centre-and-dispersion.html#cb33-5" tabindex="-1"></a><span class="co"># in English: Pupil Reading Arithmetic Geography UrbRural Arith.factor</span></span>
-<span id="cb33-6"><a href="ch-centre-and-dispersion.html#cb33-6" tabindex="-1"></a><span class="fu">fivenum</span>(cito<span class="sc">$</span>Lezen) <span class="co"># minimum, Q1, median, Q3, maximum</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="ch-centre-and-dispersion.html#cb9-1" tabindex="-1"></a><span class="fu">require</span>(foreign) <span class="co"># for foreign::read.spss</span></span>
+<span id="cb9-2"><a href="ch-centre-and-dispersion.html#cb9-2" tabindex="-1"></a>cito <span class="ot">&lt;-</span> <span class="fu">read.spss</span>(<span class="st">&quot;data/cito.sav&quot;</span>)</span>
+<span id="cb9-3"><a href="ch-centre-and-dispersion.html#cb9-3" tabindex="-1"></a><span class="co"># Columns in `cito.sav` have Dutch names:</span></span>
+<span id="cb9-4"><a href="ch-centre-and-dispersion.html#cb9-4" tabindex="-1"></a><span class="co"># in Dutch: Leerling Lezen Rekenen Wereldorientatie stadplat rek.f</span></span>
+<span id="cb9-5"><a href="ch-centre-and-dispersion.html#cb9-5" tabindex="-1"></a><span class="co"># in English: Pupil Reading Arithmetic Geography UrbRural Arith.factor</span></span>
+<span id="cb9-6"><a href="ch-centre-and-dispersion.html#cb9-6" tabindex="-1"></a><span class="fu">fivenum</span>(cito<span class="sc">$</span>Lezen) <span class="co"># minimum, Q1, median, Q3, maximum</span></span></code></pre></div>
 <pre><code>## [1] 19 22 26 29 44</code></pre>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="ch-centre-and-dispersion.html#cb35-1" tabindex="-1"></a><span class="fu">quantile</span>(cito<span class="sc">$</span>Lezen, <span class="fu">c</span>( <span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>, <span class="dv">3</span><span class="sc">/</span><span class="dv">4</span> ) ) <span class="co"># Q1 and Q3, calculated differently </span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="ch-centre-and-dispersion.html#cb11-1" tabindex="-1"></a><span class="fu">quantile</span>(cito<span class="sc">$</span>Lezen, <span class="fu">c</span>( <span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>, <span class="dv">3</span><span class="sc">/</span><span class="dv">4</span> ) ) <span class="co"># Q1 and Q3, calculated differently </span></span></code></pre></div>
 <pre><code>##   25%   75% 
 ## 22.75 28.75</code></pre>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="ch-centre-and-dispersion.html#cb37-1" tabindex="-1"></a>op <span class="ot">&lt;-</span> <span class="fu">par</span>(<span class="at">mar=</span><span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">2</span>)<span class="sc">+</span><span class="fl">0.1</span>) <span class="co"># smaller margins</span></span>
-<span id="cb37-2"><a href="ch-centre-and-dispersion.html#cb37-2" tabindex="-1"></a><span class="fu">with</span>(cito, </span>
-<span id="cb37-3"><a href="ch-centre-and-dispersion.html#cb37-3" tabindex="-1"></a>  <span class="fu">boxplot</span>(Lezen, Rekenen, <span class="at">col=</span><span class="st">&quot;grey80&quot;</span>, <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">lty=</span><span class="dv">1</span>, <span class="at">ylab=</span><span class="st">&quot;Score&quot;</span>, <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">17</span>,<span class="dv">45</span>) )</span>
-<span id="cb37-4"><a href="ch-centre-and-dispersion.html#cb37-4" tabindex="-1"></a>)</span>
-<span id="cb37-5"><a href="ch-centre-and-dispersion.html#cb37-5" tabindex="-1"></a><span class="fu">axis</span>(<span class="at">side=</span><span class="dv">1</span>, <span class="at">at=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;Reading&quot;</span>,<span class="st">&quot;Arithmetic&quot;</span>) )</span>
-<span id="cb37-6"><a href="ch-centre-and-dispersion.html#cb37-6" tabindex="-1"></a>plotrix<span class="sc">::</span><span class="fu">axis.break</span>(<span class="at">axis=</span><span class="dv">2</span>) <span class="co"># break in left Y-aixs</span></span>
-<span id="cb37-7"><a href="ch-centre-and-dispersion.html#cb37-7" tabindex="-1"></a><span class="fu">rug</span>(cito<span class="sc">$</span>Lezen, <span class="at">side=</span><span class="dv">2</span>) <span class="co"># markings on left Y-axis</span></span>
-<span id="cb37-8"><a href="ch-centre-and-dispersion.html#cb37-8" tabindex="-1"></a><span class="fu">rug</span>(cito<span class="sc">$</span>rekenen, <span class="at">side=</span><span class="dv">4</span>) <span class="co"># markings on right Y-axis</span></span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="ch-centre-and-dispersion.html#cb13-1" tabindex="-1"></a>op <span class="ot">&lt;-</span> <span class="fu">par</span>(<span class="at">mar=</span><span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">2</span>)<span class="sc">+</span><span class="fl">0.1</span>) <span class="co"># smaller margins</span></span>
+<span id="cb13-2"><a href="ch-centre-and-dispersion.html#cb13-2" tabindex="-1"></a><span class="fu">with</span>(cito, </span>
+<span id="cb13-3"><a href="ch-centre-and-dispersion.html#cb13-3" tabindex="-1"></a>  <span class="fu">boxplot</span>(Lezen, Rekenen, <span class="at">col=</span><span class="st">&quot;grey80&quot;</span>, <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">lty=</span><span class="dv">1</span>, <span class="at">ylab=</span><span class="st">&quot;Score&quot;</span>, <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">17</span>,<span class="dv">45</span>) )</span>
+<span id="cb13-4"><a href="ch-centre-and-dispersion.html#cb13-4" tabindex="-1"></a>)</span>
+<span id="cb13-5"><a href="ch-centre-and-dispersion.html#cb13-5" tabindex="-1"></a><span class="fu">axis</span>(<span class="at">side=</span><span class="dv">1</span>, <span class="at">at=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;Reading&quot;</span>,<span class="st">&quot;Arithmetic&quot;</span>) )</span>
+<span id="cb13-6"><a href="ch-centre-and-dispersion.html#cb13-6" tabindex="-1"></a>plotrix<span class="sc">::</span><span class="fu">axis.break</span>(<span class="at">axis=</span><span class="dv">2</span>) <span class="co"># break in left Y-aixs</span></span>
+<span id="cb13-7"><a href="ch-centre-and-dispersion.html#cb13-7" tabindex="-1"></a><span class="fu">rug</span>(cito<span class="sc">$</span>Lezen, <span class="at">side=</span><span class="dv">2</span>) <span class="co"># markings on left Y-axis</span></span>
+<span id="cb13-8"><a href="ch-centre-and-dispersion.html#cb13-8" tabindex="-1"></a><span class="fu">rug</span>(cito<span class="sc">$</span>rekenen, <span class="at">side=</span><span class="dv">4</span>) <span class="co"># markings on right Y-axis</span></span></code></pre></div>
 <p><img src="QMS-EN_files/figure-html/cito-summary-boxplot-1.png" width="672" /></p>
 <p>Many <strong>central tendencies</strong> are pre-programmed as functions in R:</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="ch-centre-and-dispersion.html#cb38-1" tabindex="-1"></a><span class="fu">mean</span>(cito<span class="sc">$</span>Lezen) <span class="co"># mean</span></span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="ch-centre-and-dispersion.html#cb14-1" tabindex="-1"></a><span class="fu">mean</span>(cito<span class="sc">$</span>Lezen) <span class="co"># mean</span></span></code></pre></div>
 <pre><code>## [1] 27.2</code></pre>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="ch-centre-and-dispersion.html#cb40-1" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">winsor.mean</span>(cito<span class="sc">$</span>Lezen, <span class="at">trim=</span>.<span class="dv">1</span>) <span class="co"># winsorized mean, from psych package</span></span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="ch-centre-and-dispersion.html#cb16-1" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">winsor.mean</span>(cito<span class="sc">$</span>Lezen, <span class="at">trim=</span>.<span class="dv">1</span>) <span class="co"># winsorized mean, from psych package</span></span></code></pre></div>
 <pre><code>## [1] 26.3</code></pre>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="ch-centre-and-dispersion.html#cb42-1" tabindex="-1"></a><span class="fu">mean</span>(cito<span class="sc">$</span>Lezen, <span class="at">trim=</span>.<span class="dv">1</span>) <span class="co"># trimmed mean</span></span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="ch-centre-and-dispersion.html#cb18-1" tabindex="-1"></a><span class="fu">mean</span>(cito<span class="sc">$</span>Lezen, <span class="at">trim=</span>.<span class="dv">1</span>) <span class="co"># trimmed mean</span></span></code></pre></div>
 <pre><code>## [1] 26.125</code></pre>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="ch-centre-and-dispersion.html#cb44-1" tabindex="-1"></a><span class="fu">median</span>(cito<span class="sc">$</span>Lezen)   <span class="co"># median</span></span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="ch-centre-and-dispersion.html#cb20-1" tabindex="-1"></a><span class="fu">median</span>(cito<span class="sc">$</span>Lezen)   <span class="co"># median</span></span></code></pre></div>
 <pre><code>## [1] 26</code></pre>
 <p>Various <strong>dispersion measures</strong> are also pre-programmed:</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="ch-centre-and-dispersion.html#cb46-1" tabindex="-1"></a><span class="fu">var</span>(cito<span class="sc">$</span>Lezen)  <span class="co"># variance</span></span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="ch-centre-and-dispersion.html#cb22-1" tabindex="-1"></a><span class="fu">var</span>(cito<span class="sc">$</span>Lezen)  <span class="co"># variance</span></span></code></pre></div>
 <pre><code>## [1] 50.17778</code></pre>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="ch-centre-and-dispersion.html#cb48-1" tabindex="-1"></a><span class="fu">sd</span>(cito<span class="sc">$</span>Lezen)   <span class="co"># standard deviation, sd(x) = sqrt(var(x))</span></span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="ch-centre-and-dispersion.html#cb24-1" tabindex="-1"></a><span class="fu">sd</span>(cito<span class="sc">$</span>Lezen)   <span class="co"># standard deviation, sd(x) = sqrt(var(x))</span></span></code></pre></div>
 <pre><code>## [1] 7.083627</code></pre>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="ch-centre-and-dispersion.html#cb50-1" tabindex="-1"></a><span class="fu">mad</span>(cito<span class="sc">$</span>Lezen)  <span class="co"># MAD</span></span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="ch-centre-and-dispersion.html#cb26-1" tabindex="-1"></a><span class="fu">mad</span>(cito<span class="sc">$</span>Lezen)  <span class="co"># MAD</span></span></code></pre></div>
 <pre><code>## [1] 5.1891</code></pre>
 <p>In contrast, we have to calculate <strong>standard scores</strong> ourselves, and save them ourselves as a
 new variable, called here <code>zReading</code> (note the parentheses in the first command line):</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="ch-centre-and-dispersion.html#cb52-1" tabindex="-1"></a><span class="co"># standardized (or z) reading scores</span></span>
-<span id="cb52-2"><a href="ch-centre-and-dispersion.html#cb52-2" tabindex="-1"></a>zReading <span class="ot">&lt;-</span> (cito<span class="sc">$</span>Lezen<span class="sc">-</span><span class="fu">mean</span>(cito<span class="sc">$</span>Lezen)) <span class="sc">/</span> <span class="fu">sd</span>(cito<span class="sc">$</span>Lezen) </span>
-<span id="cb52-3"><a href="ch-centre-and-dispersion.html#cb52-3" tabindex="-1"></a><span class="fu">head</span>(zReading) <span class="co"># first few observations of variable zReading</span></span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="ch-centre-and-dispersion.html#cb28-1" tabindex="-1"></a><span class="co"># standardized (or z) reading scores</span></span>
+<span id="cb28-2"><a href="ch-centre-and-dispersion.html#cb28-2" tabindex="-1"></a>zReading <span class="ot">&lt;-</span> (cito<span class="sc">$</span>Lezen<span class="sc">-</span><span class="fu">mean</span>(cito<span class="sc">$</span>Lezen)) <span class="sc">/</span> <span class="fu">sd</span>(cito<span class="sc">$</span>Lezen) </span>
+<span id="cb28-3"><a href="ch-centre-and-dispersion.html#cb28-3" tabindex="-1"></a><span class="fu">head</span>(zReading) <span class="co"># first few observations of variable zReading</span></span></code></pre></div>
 <pre><code>## [1] -1.1575990  0.6776189  2.3716662 -0.3105753  0.1129365 -0.7340872</code></pre>
 
 </div>
@@ -1454,24 +1458,23 @@ Wilcox, Rand R. 2012. <em>Introduction to Robust Estimation and Hypothesis Testi
 </div>
 <div class="footnotes">
 <hr />
-<ol start="12">
-<li id="fn12"><p>In American English, the strip of ground in the middle of a road is called the
-“median (strip)” (British English: “central reservation”); this strip splits the road into
-two equally large halves.<a href="ch-centre-and-dispersion.html#fnref12" class="footnote-back">↩︎</a></p></li>
-<li id="fn13"><p><a href="https://www.cbs.nl/nl-nl/visualisaties/inkomensverdeling" class="uri">https://www.cbs.nl/nl-nl/visualisaties/inkomensverdeling</a><a href="ch-centre-and-dispersion.html#fnref13" class="footnote-back">↩︎</a></p></li>
-<li id="fn14"><p>This is comparable with sports like rowing, swimming, cycling, ice skating, etc., where
+<ol start="1">
+<li id="fn1"><p>In American English, the area in the middle of a road (separating traffic in opposite directions) is called the
+“median (strip)” (British English: “central reservation”); this strip typically splits the road into two equally large halves.<a href="ch-centre-and-dispersion.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p><a href="https://www.cbs.nl/nl-nl/visualisaties/inkomensverdeling" class="uri">https://www.cbs.nl/nl-nl/visualisaties/inkomensverdeling</a><a href="ch-centre-and-dispersion.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>This is comparable with sports like rowing, swimming, cycling, ice skating, etc., where
 the time over an agreed distance is measured and compared, rather than the speed over an
-agreed time.<a href="ch-centre-and-dispersion.html#fnref14" class="footnote-back">↩︎</a></p></li>
-<li id="fn15"><p>In a classic boxplot, the lines extend to the minimum and maximum <span class="citation">(<a href="#ref-Tukey77">Tukey 1977</a>)</span> and
-outliers are not indicated separately.<a href="ch-centre-and-dispersion.html#fnref15" class="footnote-back">↩︎</a></p></li>
-<li id="fn16"><p>We divide by <span class="math inline">\(n-1\)</span> and not by <span class="math inline">\(n\)</span>, to get a better estimation of the dispersion in the
+agreed time.<a href="ch-centre-and-dispersion.html#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>In a classic boxplot, the lines extend to the minimum and maximum <span class="citation">(<a href="#ref-Tukey77">Tukey 1977</a>)</span> and
+outliers are not indicated separately.<a href="ch-centre-and-dispersion.html#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>We divide by <span class="math inline">\(n-1\)</span> and not by <span class="math inline">\(n\)</span>, to get a better estimation of the dispersion in the
 <em>population</em>. In this way, we take into account the fact that we are using a characteristic of the
 sample (namely the mean) to determine the dispersion. If you are only interested in the
-dispersion in your <em>sample</em> of observations, and not in the population, divide it by <span class="math inline">\(n\)</span>.<a href="ch-centre-and-dispersion.html#fnref16" class="footnote-back">↩︎</a></p></li>
-<li id="fn17"><p>Positive deviations remain unchanged, negative deviations are reversed.<a href="ch-centre-and-dispersion.html#fnref17" class="footnote-back">↩︎</a></p></li>
-<li id="fn18"><p><a href="https://en.wikipedia.org/wiki/Significant_figures" class="uri">https://en.wikipedia.org/wiki/Significant_figures</a><a href="ch-centre-and-dispersion.html#fnref18" class="footnote-back">↩︎</a></p></li>
-<li id="fn19"><p>These “odds” indicate that there are 23 successful students to 6 failed students, i.e., rounded up, 4 successful students for every failed student.<a href="ch-centre-and-dispersion.html#fnref19" class="footnote-back">↩︎</a></p></li>
-<li id="fn20"><p>Check: <span class="math inline">\(z = +2 = \frac{(x_i-\overline{x})}{s_x}\)</span>, thus <span class="math inline">\(2 s = (x_i-\overline{x})\)</span>, thus <span class="math inline">\(x_i = \overline{x}+2s\)</span>.<a href="ch-centre-and-dispersion.html#fnref20" class="footnote-back">↩︎</a></p></li>
+dispersion in your <em>sample</em> of observations, and not in the population, divide it by <span class="math inline">\(n\)</span>.<a href="ch-centre-and-dispersion.html#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn6"><p>Positive deviations remain unchanged, negative deviations are reversed.<a href="ch-centre-and-dispersion.html#fnref6" class="footnote-back">↩︎</a></p></li>
+<li id="fn7"><p><a href="https://en.wikipedia.org/wiki/Significant_figures" class="uri">https://en.wikipedia.org/wiki/Significant_figures</a><a href="ch-centre-and-dispersion.html#fnref7" class="footnote-back">↩︎</a></p></li>
+<li id="fn8"><p>These “odds” indicate that there are 23 successful students to 6 failed students, i.e., rounded up, 4 successful students for every failed student.<a href="ch-centre-and-dispersion.html#fnref8" class="footnote-back">↩︎</a></p></li>
+<li id="fn9"><p>Check: <span class="math inline">\(z = +2 = \frac{(x_i-\overline{x})}{s_x}\)</span>, thus <span class="math inline">\(2 s = (x_i-\overline{x})\)</span>, thus <span class="math inline">\(x_i = \overline{x}+2s\)</span>.<a href="ch-centre-and-dispersion.html#fnref9" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

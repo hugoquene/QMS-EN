@@ -116,14 +116,13 @@ axis(side=1, at=mean(x), labels="", lwd.ticks=6, tcl=1.3, col="maroon")
 ### median {#sec:median}
 
 The median (symbol $Md$ or $\tilde{x}$) is the observation in the middle 
-of the order of observations [^fn09-1]. When we sort the scores of $X$
+of the sequence of sorted observations [^fn09-1]. When we sort the observed values of variable $X$
 from smallest to largest, the median is the midpoint of the sorted
 sequence. Half of the observations are smaller than the median, 
 and the other half is larger than the median. 
 
-[^fn09-1]: In American English, the strip of ground in the middle of a road is called the 
-"median (strip)" (British English: "central reservation"); this strip splits the road into 
-two equally large halves.
+[^fn09-1]: In American English, the area in the middle of a road (separating traffic in opposite directions) is called the 
+"median (strip)" (British English: "central reservation"); this strip typically splits the road into two equally large halves.
 
 For an odd number of observations, the middlemost observation is the median.
 For an even number of observations, the median is usually formed from
@@ -164,7 +163,7 @@ the score 2 occurs the most often ($4\times$); this is the mode.
 ---
 
 > *Example 9.4*: In 2022, the mean income per household in the Netherlands was about €35,000.
-The modal income (per household) was between €22,000 and €24,000[^fn09-2]: this income category contained the largest number of households. 
+The modal income (per household) was between €22,000 and €24,000[^fn09-2]: this income category contained the highest number of households. 
 
 [^fn09-2]: https://www.cbs.nl/nl-nl/visualisaties/inkomensverdeling
 
@@ -823,22 +822,28 @@ For summaries of central tendency and dispersion, check the options (under the h
 
 In JASP, a column of **standard scores** can be created by first creating a new variable (column) and subsequently filling that column with standard scores.  
 
-To create a new variable, click on the **+** button to the right of the last column name in the data tab. A "Create Computed Column" panel appears, where you can enter a name for the new variable, e.g. `Lezen_Z`. You can also choose between `R` and a pointer. These are the two options in JASP to define formulas with which the new (empty) variable is filled; using `R` code, or manually using JASP. The paragraphs below explain how standard scores can be computed using these two options. Finally, you can check which measurement level the new variable should be (see Chapter \@ref(ch-levelsofmeasurement)). For standard scores, you can leave this at `Scale`. Next, click on `Create Column` to create the new variable. The new variable (empty column) appears as the rightmost variable in the data set. 
+To create a new variable, click on the **+** button to the right of the last column name in the data tab. A "Create Computed Column" panel appears, where you can enter a name for the new variable, e.g. `Lezen_Z`. You can also choose between `R` and a hand-shaped pointer. These are the two options in JASP to define formulas with which the new (empty) variable is filled: using `R` code, or manually using JASP. The paragraphs below explain how standard scores can be computed using these two options. Finally, you can check which measurement level the new variable should be (see Chapter \@ref(ch-levelsofmeasurement)). For standard scores, you can leave this at `Scale`. Next, click on `Create Column` to create the new variable. The new variable (empty column) appears as the rightmost variable in the data set. 
 
-If the **R** option is chosen to define the new variable, a field with "#Enter your R code here :)" appears above the data. Here you can enter R code (see below) that produces standardized values. \
+If the **computed with R code** option is chosen to define the new variable, a field containing the text "Enter your R code here" appears above the data. Here you can enter R code (see below) that produces standardized values. \
 This snippet of R code produces standard scores of the variable `Lezen`: 
 ```
 ((Lezen - mean(Lezen)) / sd(Lezen))
 ```
-Enter this R code, and click on the button `Compute column` below the work sheet to fill the empty variable. 
+Enter this R code, fill out the other fields, 
+and click on the button `Compute column` below the work sheet to fill the empty variable. 
 
-If the **pointer** or **manual** option is chosen to define the new variable, a work sheet will appear above the data. To the left of the work sheet are the variables, above it are math symbols, and to the right of the work sheet are several functions. From those functions you can pick the ones required to compute standard scores. If something goes wrong, items on the work sheet can be erased by dragging them to the trash bin on the lower right bottom. After you have completed the specification on the work sheet, then click on the button `Compute column` under the work sheet, to fill the new variable with the generated numbers.\
+*Note that in JASP, applying mathematics to variable values is only possible if the measurement levels of all variables involved are set to 'Scale'.*
+
+If the **hand pointer** or **drag-and-drop** option is chosen to define the new variable, a work sheet will appear above the data. To the left of the work sheet are the variables, above it are math symbols, and to the right of the work sheet are several functions. From those functions you can pick the ones required to compute standard scores. If something goes wrong, items on the work sheet can be erased by dragging them to the trash bin on the lower right bottom. After you have completed the specification on the work sheet, then click on the button `Compute column` under the work sheet, to fill the new variable with the generated numbers.\
 Drag the variable to convert into the empty sheet. Pick function `mean(y)` from the right. 
 Drag the variable to convert to "values". Pick $\div$ from the math symbols at the top. 
 Pick the function $\sigma$_y from the right and drag it to the denominator part of the fraction (below the fraction bar). For this function too, drag the variable to convert to "values". 
-Eventually the definition of standard scores (here for variable named `Lezen`) should look like this: \[\frac{(Lezen-mean(Lezen))}{\sigma (Lezen)}\] \
-Click on the button `Compute column` below the work sheet to fill the empty variable with the newly computed standard scores.  
+Eventually the definition of standard scores (here for a variable named `Lezen`) should look like this: \[\frac{(Lezen-mean(Lezen))}{\sigma (Lezen)}\] \
+Fill out the other fields, and then click on the button `Compute column` below the work sheet, to fill the empty variable with the newly computed standard scores.  
 
+*Note that in JASP, applying mathematics to variable values is only possible if the measurement levels of all variables involved are set to 'Scale'.*
+
+If you have made a mistake or want to adjust the code of the new variable, you can always return to this 'Computed Column' field by clicking on the formula icon $f_x$ next to the variable name, or by clicking on the variable name.
 
 ## R
 

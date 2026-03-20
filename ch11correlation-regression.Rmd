@@ -531,7 +531,7 @@ Table \@ref(tab:cito), with difference $v_i$ between the two ranks per pupil.
   ---------------- ---- ---- --- ----- ----- --- ---- ----- ---- ----
   Reading           1    2    3   4.5   4.5   6   7     8    9    10
   Arithmetic        2    4    1    4    6.5   4   8    6.5   10   9
-  Difference $v_i$ -1   -2    1   0.5   -2    2   -1   1.5   -1   1
+  Difference $v_i$ -1   -2    2   0.5   -2    2   -1   1.5   -1   1
 
 The ranking in Table \@ref(tab:cito-ranks) makes it clear at a glance that
 the three pupils with the lowest score for Reading (nos. 1, 9, 6) also almost achieved

@@ -1,10 +1,11 @@
 % Options for packages loaded elsewhere
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
-%
 \documentclass[
 ]{book}
+\usepackage{xcolor}
 \usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
@@ -35,7 +36,6 @@
 }{% if KOMA class
   \KOMAoptions{parskip=half}}
 \makeatother
-\usepackage{xcolor}
 \usepackage{color}
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
@@ -88,21 +88,24 @@
 \makesavenoteenv{longtable}
 \usepackage{graphicx}
 \makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
 % Set default figure placement to htbp
-\makeatletter
 \def\fps@figure{htbp}
 \makeatother
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{5}
+\usepackage[]{natbib}
+\bibliographystyle{apalike}
 \usepackage{booktabs}
 \usepackage{amsthm}
 \makeatletter
@@ -111,11 +114,6 @@
   \thm@postskip=\thm@preskip
 }
 \makeatother
-\ifLuaTeX
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
-\usepackage[]{natbib}
-\bibliographystyle{apalike}
 \usepackage{bookmark}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
@@ -126,7 +124,7 @@
 
 \title{Quantitative Methods and Statistics}
 \author{true}
-\date{Version compiled 28 Aug 2024}
+\date{Version compiled 20 Mar 2026}
 
 \begin{document}
 \maketitle
@@ -141,7 +139,7 @@
 Data are becoming ever more important, in all parts of society, including academia, and including the humanities. The availability of large amounts of digital data (such as text, speech, video, behavioural measurements) raises new research questions, which are typically and often investigated using quantitative methods.
 Aimed at humanities researchers and students, this book offers an overview of and introduction into the most important quantitative methods and statistical techniques used in the humanities. The book provides a solid methodological foundation for quantitative research, and it introduces the most commonly used statistical techniques to describe data and to test hypotheses. This will also enable the reader to critically evaluate such quantitative research.
 
-This textbook is being used in the course \emph{Methods and Statistics} at Utrecht University (Linguistics program). The book is also highly suitable for self-study at a basic level, for everybody who wishes to learn more about quantitative methods and statistics.
+This textbook is being used in the introductory course \emph{Methods and Statistics} at Utrecht University (Linguistics program). The book is also highly suitable for self-study at a basic level, for everybody who wishes to learn more about quantitative methods and statistics.
 
 The main text has been kept free of mathematical derivations and formulas, which are typically not very helpful for humanities scholars and students. Our explanation is rather conceptual, and rich in examples. Where necessary we present derivations and formulas in separate sections.
 
@@ -1907,7 +1905,7 @@ show that we are dealing with discrete categories.
 
 \begin{figure}
 \centering
-\includegraphics{QMS-EN_files/figure-latex/klankfreq-barplot-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{QMS-EN_files/figure-latex/klankfreq-barplot-1.pdf}}
 \caption{\label{fig:klankfreq-barplot}Bar chart of the frequency distribution of phonological class of speech sounds in the Corpus of Spoken Dutch (C=consonant, V=vowel).}
 \end{figure}
 
@@ -1941,7 +1939,7 @@ along the horizontal axis.
 
 \begin{figure}
 \centering
-\includegraphics{QMS-EN_files/figure-latex/troonrede2012-hist-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{QMS-EN_files/figure-latex/troonrede2012-hist-1.pdf}}
 \caption{\label{fig:troonrede2012-hist}Histogram for the lengths of pauses (in seconds) in the Queen's Speech of 18 September 2012, read by Queen Beatrix (N=305).}
 \end{figure}
 
@@ -2137,7 +2135,7 @@ level of measurement.
 
 \begin{figure}
 \centering
-\includegraphics{QMS-EN_files/figure-latex/waittime-hist-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{QMS-EN_files/figure-latex/waittime-hist-1.pdf}}
 \caption{\label{fig:waittime-hist}Histogram of N=10 waiting times, with the mean marked.}
 \end{figure}
 
@@ -2310,7 +2308,7 @@ the various central tendencies, for asymmetrically distributed observations.
 
 \begin{figure}
 \centering
-\includegraphics{QMS-EN_files/figure-latex/centraltendencies-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{QMS-EN_files/figure-latex/centraltendencies-1.pdf}}
 \caption{\label{fig:centraltendencies}Histogram of a variable with positively skewed (asymmetric) frequency distribution, with (1) the median, (2) the 10\% trimmed mean, (3) the 10\% winsorized mean, and (4) the arithmetic mean, indicated. The observed scores are marked along the horizontal axis.}
 \end{figure}
 
@@ -2432,7 +2430,7 @@ for an example \citep[ §2C]{Tukey77}.
 
 \begin{figure}
 \centering
-\includegraphics{QMS-EN_files/figure-latex/cito-boxplot-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{QMS-EN_files/figure-latex/cito-boxplot-1.pdf}}
 \caption{\label{fig:cito-boxplot}Boxplots of the scores of \(N=10\) pupils on the Reading and Arithmetic sections of the CITO test (see Table 9.1), with outliers marked as open circles. The observed scores are marked along the vertical axes.}
 \end{figure}
 
@@ -2948,7 +2946,7 @@ For \textbf{quartiles and boxplot} like Figure \ref{fig:cito-boxplot}, we use th
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{QMS-EN_files/figure-latex/cito-summary-boxplot-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{QMS-EN_files/figure-latex/cito-summary-boxplot-1.pdf}}
 
 Many \textbf{central tendencies} are pre-programmed as functions in R:
 
@@ -3259,7 +3257,7 @@ total & \((p+q)^3\) & = 1.0000 \\
 
 \begin{figure}
 \centering
-\includegraphics{QMS-EN_files/figure-latex/binomprobabilitydistribution3-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{QMS-EN_files/figure-latex/binomprobabilitydistribution3-1.pdf}}
 \caption{\label{fig:binomprobabilitydistribution3}Probability distribution of a binomial variable with \(n=3\) and \(p=.38\).}
 \end{figure}
 
@@ -3414,7 +3412,7 @@ Figure \ref{fig:binomprobabilitydistribution50n500}.
 
 \begin{figure}
 \centering
-\includegraphics{QMS-EN_files/figure-latex/binomprobabilitydistribution50n500-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{QMS-EN_files/figure-latex/binomprobabilitydistribution50n500-1.pdf}}
 \caption{\label{fig:binomprobabilitydistribution50n500}Probability distribution of a binomial variable x with n=50 (left) and n=500 (right) and p=.38.}
 \end{figure}
 
@@ -3432,7 +3430,7 @@ probability).
 
 \begin{figure}
 \centering
-\includegraphics{QMS-EN_files/figure-latex/normalprobabilitydistribution-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{QMS-EN_files/figure-latex/normalprobabilitydistribution-1.pdf}}
 \caption{\label{fig:normalprobabilitydistribution}Normal probability distribution of a variable x with average 0 and standard deviation 1.}
 \end{figure}
 
@@ -3631,7 +3629,7 @@ The normal probability distribution in Figure \ref{fig:normalprobabilitydistribu
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{QMS-EN_files/figure-latex/curve.dnorm-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{QMS-EN_files/figure-latex/curve.dnorm-1.pdf}}
 
 If used with the additional argument \texttt{curve(\ ...,\ add=TRUE\ )}, then the curve will be added to the most recent plot (see e.g.~Figure \ref{fig:itunesmeanshist} below).
 
@@ -3642,7 +3640,7 @@ minutes (it's a piece of classical Indian music, a `morning raga').
 A histogram of all music number lengths is shown in
 Figure \ref{fig:itunestimeshist}.
 
-\includegraphics{QMS-EN_files/figure-latex/itunestimeshist-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{QMS-EN_files/figure-latex/itunestimeshist-1.pdf}}
 This histogram shows that these lengths clearly
 do \emph{not} follow a normal probability distribution: the distribution is not
 symmetric, and the lowest tail does not go on infinitely (there are
@@ -3667,7 +3665,7 @@ Figure \ref{fig:itunestimesqqplot}.
 
 \begin{figure}
 \centering
-\includegraphics{QMS-EN_files/figure-latex/itunestimesqqplot-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{QMS-EN_files/figure-latex/itunestimesqqplot-1.pdf}}
 \caption{\label{fig:itunestimesqqplot}Quantile-quantile plot of the lengths of music numbers in my digital library.}
 \end{figure}
 
@@ -3782,7 +3780,7 @@ Figure \ref{fig:itunesmeanshist}.
 
 \begin{figure}
 \centering
-\includegraphics{QMS-EN_files/figure-latex/itunesmeanshist-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{QMS-EN_files/figure-latex/itunesmeanshist-1.pdf}}
 \caption{\label{fig:itunesmeanshist}Frequency distribution of 250 averages, each over a random sample of \(n=50\) music numbers (the dependent variable is the length of a music number, in minutes). The matching normal distribution is shown as a fluid curve.}
 \end{figure}
 
@@ -3860,7 +3858,7 @@ the t-distribution then approximates the standard normal probability distributio
 
 \begin{figure}
 \centering
-\includegraphics{QMS-EN_files/figure-latex/tprobabilitydistribution-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{QMS-EN_files/figure-latex/tprobabilitydistribution-1.pdf}}
 \caption{\label{fig:tprobabilitydistribution}Probability distribution according to the t-distribution of a variable \(x\) with mean 0 and standard deviation 1, for n=600 and n=6.}
 \end{figure}
 
@@ -3914,7 +3912,7 @@ But for 5 out of 100 samples, from a population with \(\mu=0.220\), the sample's
 
 \begin{figure}
 \centering
-\includegraphics{QMS-EN_files/figure-latex/tempo95CIs-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{QMS-EN_files/figure-latex/tempo95CIs-1.pdf}}
 \caption{\label{fig:tempo95CIs}95\% confidence intervals and sample means, over 100 simulated samples (n=30) out of a population with mean 0.220 and s.d. 0.0225; see text.}
 \end{figure}
 
@@ -4504,7 +4502,7 @@ Pupil & 1 & 9 & 6 & 4 & 10 & 8 & 5 & 7 & 2 & 3 \\
 \endlastfoot
 Reading & 1 & 2 & 3 & 4.5 & 4.5 & 6 & 7 & 8 & 9 & 10 \\
 Arithmetic & 2 & 4 & 1 & 4 & 6.5 & 4 & 8 & 6.5 & 10 & 9 \\
-Difference \(v_i\) & -1 & -2 & 1 & 0.5 & -2 & 2 & -1 & 1.5 & -1 & 1 \\
+Difference \(v_i\) & -1 & -2 & 2 & 0.5 & -2 & 2 & -1 & 1.5 & -1 & 1 \\
 \end{longtable}
 
 The ranking in Table \ref{tab:cito-ranks} makes it clear at a glance that
@@ -5604,7 +5602,7 @@ on average do not score better than \(\mu=73\)).
 
 \begin{figure}
 \centering
-\includegraphics{QMS-EN_files/figure-latex/gramm2013onesample-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{QMS-EN_files/figure-latex/gramm2013onesample-1.pdf}}
 \caption{\label{fig:gramm2013onesample}Probability distribution of the mean score from a sample (n=34) with a population mean 73 and population s.d. 14. The coloured area covers 5\% of the total area under the curve; outcomes along the X-axis of this area thus have a probability of at most 5\% of occurring if H0 is true.}
 \end{figure}
 
@@ -5958,7 +5956,7 @@ is indeed within the interval, but for 5 of the 100 samples the confidence inter
 
 \begin{figure}
 \centering
-\includegraphics{QMS-EN_files/figure-latex/gramm2013CIs-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{QMS-EN_files/figure-latex/gramm2013CIs-1.pdf}}
 \caption{\label{fig:gramm2013CIs}95\% confidence interval and sample means, over 100 simulated samples (n=34) from a population with population mean 84.4, population-s.d. 8.4.}
 \end{figure}
 
@@ -6580,7 +6578,7 @@ If \(d\) is around 1.2 then we speak of a very large effect, and if \(d\) is aro
 
 \begin{figure}
 \centering
-\includegraphics{QMS-EN_files/figure-latex/smallestsignifdifference-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{QMS-EN_files/figure-latex/smallestsignifdifference-1.pdf}}
 \caption{\label{fig:smallestsignifdifference}Relation between the sample size and the smallest effect (d) that is significant according to a \emph{t}-test for unpaired, independent observations, with errors probabilities alpha=.05 and beta=.10.}
 \end{figure}
 
@@ -6912,13 +6910,13 @@ tests.
 
 \begin{figure}
 \centering
-\includegraphics{QMS-EN_files/figure-latex/powercontours-alpha01-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{QMS-EN_files/figure-latex/powercontours-alpha01-1.pdf}}
 \caption{\label{fig:powercontours-alpha01}Power expressed in contours (see shading), dependent on the standardised effect size (d) and sample size according to a two-sided t-test for unpaired, independent observations, with two-sided significance level alpha=.01.}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics{QMS-EN_files/figure-latex/powercontours-alpha05-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{QMS-EN_files/figure-latex/powercontours-alpha05-1.pdf}}
 \caption{\label{fig:powercontours-alpha05}Power expressed in contours (see graduation), dependent on the standardised effect size (d) and the sample size (n), according to a two-sided t-test for unpaired, independent observations with significance level alpha=.05.}
 \end{figure}
 
@@ -7045,7 +7043,7 @@ Example 3.2 in Chapter \ref{ch-integrity}).
 
 \begin{figure}
 \centering
-\includegraphics{QMS-EN_files/figure-latex/underpoweredeffectsizes-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{QMS-EN_files/figure-latex/underpoweredeffectsizes-1.pdf}}
 \caption{\label{fig:underpoweredeffectsizes}Effect sizes (along the horizontal axis) found in simulated experiments (two-sided t-test for independent observations, alpha=.05), broken down according to sample size (left \(n=20\), right \(n=80\)) and according to testing result (dark symbols: significant; light symbols: not significant). The true effect size between groups is always \(d=0.5\), indicated by the grey dashed line. The mean effect size found from the significant outcomes is referred to with the black dashed line. For each sample size, 100 simulations have been carried out (long vertical axis).}
 \end{figure}
 
@@ -7191,7 +7189,7 @@ West & 0.235 & 0.028 & 20 \\
 
 \begin{figure}
 \centering
-\includegraphics{QMS-EN_files/figure-latex/sylduration-boxplot-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{QMS-EN_files/figure-latex/sylduration-boxplot-1.pdf}}
 \caption{\label{fig:sylduration-boxplot}Boxplot of the mean length of syllable, split up according to region of origin of the speaker.}
 \end{figure}
 
@@ -7342,7 +7340,7 @@ mean scores of) the three groups. However, are these systematic
 differences now comparatively larger than the chance differences within each
 group? If so, then we reject H0.
 
-\includegraphics{QMS-EN_files/figure-latex/colours-obs-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{QMS-EN_files/figure-latex/colours-obs-1.pdf}}
 The systematic differences \emph{between} the groups correspond with the
 differences from the red, grey and blue group means
 (dashed lines in Figure \ref{fig:colours-obs}) relative to the mean over
@@ -8109,7 +8107,7 @@ However, the most striking effect is the interaction: the effect of markers in t
 
 \begin{figure}
 \centering
-\includegraphics{figures/DBE2012interaction_v2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figures/DBE2012interaction_v2.png}}
 \caption{\label{fig:DBE12interaction}Average comprehension score (along Y axis, with 95\% confidence intervals), for text versions with (met) and without (zonder) structure markers, for weak (zwak), average (gemidd) and strong (sterk) readers (after Van Dooren, Van den Bergh and Evers-Vermeul, 2012).}
 \end{figure}
 
@@ -9314,7 +9312,7 @@ If \(k=2\) or \(n_j<5\) then the probability \(P(H)\) is calculated exactly.
 
 \chapter{Standard normal probability distribution}\label{app-criticalZvalues}
 
-\includegraphics{QMS-EN_files/figure-latex/kritiekeZwaarden-hulpfiguur-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{QMS-EN_files/figure-latex/kritiekeZwaarden-hulpfiguur-1.pdf}}
 
 The critical value \(Z^*\) given below has a probability of \(p\) under \(H_0\), i.e.,
 \(P(Z > Z^*|H_0)=p\) (the blue area),
@@ -9349,7 +9347,7 @@ Z* & 0.5 & 1 & 1.5 & 2 & 2.5 & 3 & 3.5\\
 
 \chapter{\texorpdfstring{Critical values for \(t\)-distribution}{Critical values for t-distribution}}\label{app-criticaltvalues}
 
-\includegraphics{QMS-EN_files/figure-latex/criticaltvalues-auxiliaryfigure-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{QMS-EN_files/figure-latex/criticaltvalues-auxiliaryfigure-1.pdf}}
 
 The critical boundary value \(t^*\) given below has a critical probability \(p\)
 under \(H_0\), i.e.~\(P(t \geq t^*|H_0)=p\), and has probability \(B\) of a
@@ -9407,7 +9405,7 @@ confidence intervals \(B\), for the degrees of freedom indicated in the first co
 
 \chapter{\texorpdfstring{Critical values for \(\chi^2\)-distribution}{Critical values for \textbackslash chi\^{}2-distribution}}\label{app-criticalchi2values}
 
-\includegraphics{QMS-EN_files/figure-latex/criticalchi2values-auxiliaryfigure-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{QMS-EN_files/figure-latex/criticalchi2values-auxiliaryfigure-1.pdf}}
 
 The critical value \((\chi^2)^*\) given below has a critical probability \(p\) under
 \(H_0\), i.e.~\(P(\chi^2 \geq (\chi^2)^*|H_0)=p\).
@@ -9458,6 +9456,6 @@ The table below provides the critical boundary values \((\chi^2)^*\) for much us
 \bottomrule
 \end{tabular}
 
-  \bibliography{book.bib,packages.bib,hhmhto.bib,pandoc.bib}
+\bibliography{book.bib,packages.bib,hhmhto.bib,pandoc.bib}
 
 \end{document}
